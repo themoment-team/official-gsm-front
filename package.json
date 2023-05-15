@@ -1,0 +1,15 @@
+{
+  "name": "official-gsm-front",
+  "scripts": {
+    "client": "pnpm --filter client",
+    "admin": "pnpm --filter admin",
+    "storybook": "pnpm --filter storybook",
+    "common": "pnpm --filter common",
+    "ui": "pnpm --filter ui",
+    "tsconfig": "pnpm --filter tsconfig",
+    "eslint-config-custom": "pnpm --filter eslint-config-custom"
+  },
+  "private": true,
+  "license": "MIT",
+  "packageManager": "pnpm@8.3.1"
+}

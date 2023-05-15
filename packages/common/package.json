@@ -1,0 +1,10 @@
+{
+  "name": "common",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "tsconfig": "workspace:^",
+    "typescript": "5.0.4"
+  }
+}
