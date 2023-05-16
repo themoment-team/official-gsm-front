@@ -28,4 +28,5 @@ const Content = styled.div`
   height: 39.875rem;
   border-radius: 1.25rem;
   background-color: #ffffff;
+  box-shadow: 0 0.25rem 3.75rem rgba(0, 0, 0, 0.04);
 `;
