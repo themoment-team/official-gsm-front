@@ -1,4 +1,5 @@
 "use client";
+
 import GlobalStyle from "common/styles/GlobalStyle";
 
 export default function RootLayout({
