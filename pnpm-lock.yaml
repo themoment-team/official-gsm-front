@@ -104,6 +104,12 @@ importers:
       common:
         specifier: workspace:^
         version: link:../../packages/common
+      tsconfig:
+        specifier: workspace:^
+        version: link:../../packages/tsconfig
+      typescript:
+        specifier: 5.0.4
+        version: 5.0.4
     devDependencies:
       '@emotion/babel-preset-css-prop':
         specifier: ^11.11.0

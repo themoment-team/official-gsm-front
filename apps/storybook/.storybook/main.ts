@@ -1,5 +1,6 @@
-/** @type { import('@storybook/nextjs').StorybookConfig } */
-const config = {
+import type { StorybookConfig } from "@storybook/nextjs";
+
+const config: StorybookConfig = {
   stories: [
     "../../../packages/ui/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)",
   ],
@@ -16,7 +17,7 @@ const config = {
     autodocs: "tag",
   },
   babel: async (options) => {
-    options.presets.push("@emotion/babel-preset-css-prop");
+    options.presets?.push("@emotion/babel-preset-css-prop");
     return options;
   },
 };

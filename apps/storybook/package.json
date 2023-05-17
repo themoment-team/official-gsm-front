@@ -19,6 +19,8 @@
     "storybook": "^7.0.6"
   },
   "dependencies": {
-    "common": "workspace:^"
+    "common": "workspace:^",
+    "tsconfig": "workspace:^",
+    "typescript": "5.0.4"
   }
 }
