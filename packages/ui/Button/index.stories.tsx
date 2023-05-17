@@ -16,3 +16,16 @@ export const basic = Template.bind({});
 basic.args = {
   children: "Button",
 };
+
+export const disabled = Template.bind({});
+
+disabled.args = {
+  children: "Button",
+  disabled: true,
+};
+
+export const loading = Template.bind({});
+
+loading.args = {
+  children: "Button",
+};
