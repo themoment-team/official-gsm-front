@@ -29,3 +29,10 @@ export const loading = Template.bind({});
 loading.args = {
   isLoading: true,
 };
+
+export const large = Template.bind({});
+
+large.args = {
+  children: "Button",
+  widthREM: 36.125,
+};
