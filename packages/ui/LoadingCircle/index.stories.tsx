@@ -1,5 +1,5 @@
 import LoadingCricle from ".";
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "LoadingCircle",
@@ -12,8 +12,6 @@ export default {
   },
 } as Meta<typeof LoadingCricle>;
 
-const Template: StoryFn<typeof LoadingCricle> = (args) => (
-  <LoadingCricle {...args} />
-);
+type Story = StoryObj<typeof LoadingCricle>;
 
-export const basic = Template.bind({});
+export const Basic: Story = {};
