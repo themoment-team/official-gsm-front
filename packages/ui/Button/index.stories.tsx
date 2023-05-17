@@ -36,3 +36,11 @@ large.args = {
   children: "Button",
   widthREM: 36.125,
 };
+
+export const signup = Template.bind({});
+
+signup.args = {
+  children: "회원가입",
+  bgColor: "#DEE449",
+  fontColor: "#050505",
+};
