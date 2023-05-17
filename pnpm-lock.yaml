@@ -141,6 +141,12 @@ importers:
 
   packages/common:
     dependencies:
+      '@emotion/react':
+        specifier: ^11.10.6
+        version: 11.10.6(@types/react@18.0.38)(react@18.2.0)
+      emotion-reset:
+        specifier: ^3.0.1
+        version: 3.0.1(@emotion/react@11.10.6)
       tsconfig:
         specifier: workspace:^
         version: link:../tsconfig
@@ -5093,6 +5099,14 @@ packages:
     resolution: {integrity: sha512-/kyM18EfinwXZbno9FyUGeFh87KC8HRQBQGildHZbEuRyWFOmv1U10o9BBp8XVZDVNNuQKyIGIu5ZYAAXJ0V2Q==}
     engines: {node: '>= 4'}
     dev: true
+
+  /emotion-reset@3.0.1(@emotion/react@11.10.6):
+    resolution: {integrity: sha512-v6scW83qSu+wtxg7lX1s0+/2U4EAAGFxDQMkvXE10jhKtyuXCzy3/su5/MU9ZjXeNv6ZjxZH51WktrKosKUy9g==}
+    peerDependencies:
+      '@emotion/react': '>=11'
+    dependencies:
+      '@emotion/react': 11.10.6(@types/react@18.0.38)(react@18.2.0)
+    dev: false
 
   /encodeurl@1.0.2:
     resolution: {integrity: sha512-TPJXq8JqFaVYm2CWmPvnP2Iyo4ZSM7/QKcSmuMLDObfpH5fi7RUGmd/rTDf+rut/saiDiQEeVTNgAmJEdAOx0w==}
