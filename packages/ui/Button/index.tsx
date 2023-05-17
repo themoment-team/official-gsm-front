@@ -14,13 +14,10 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <S.Button
-      css={
-        disabled &&
-        css`
-          background: #dcdcdc;
-          pointer-events: none;
-        `
-      }
+      css={css`
+        background: ${disabled && "#dcdcdc"};
+        pointer-events: ${(disabled || isLoading) && "none"};
+      `}
     >
       {isLoading ? "" : children}
     </S.Button>

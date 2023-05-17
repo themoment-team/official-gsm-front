@@ -27,5 +27,5 @@ disabled.args = {
 export const loading = Template.bind({});
 
 loading.args = {
-  children: "Button",
+  isLoading: true,
 };
