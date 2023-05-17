@@ -1,5 +1,5 @@
 import { css } from "@emotion/react";
-import * as S from "./style";
+import { CustomButton } from "./style";
 import LoadingCircle from "../LoadingCircle";
 
 interface ButtonProps {
@@ -16,15 +16,15 @@ const Button: React.FC<ButtonProps> = ({
   widthREM,
 }) => {
   return (
-    <S.Button
+    <CustomButton
       css={css`
-        background: ${disabled && "#dcdcdc"};
-        pointer-events: ${(disabled || isLoading) && "none"};
+        pointer-events: ${isLoading && "none"};
         width: ${widthREM && `${widthREM}rem`};
       `}
+      disabled={disabled}
     >
       {isLoading ? <LoadingCircle /> : children}
-    </S.Button>
+    </CustomButton>
   );
 };
 

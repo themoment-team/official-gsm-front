@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const Button = styled.button`
+export const CustomButton = styled.button`
   width: 300px;
   height: 50px;
   display: flex;
@@ -16,5 +16,9 @@ export const Button = styled.button`
   :hover {
     background: #a4a4a4;
     transition: background 0.2s ease-in-out;
+  }
+  :disabled {
+    background: #dcdcdc;
+    pointer-events: none;
   }
 `;
