@@ -13,6 +13,11 @@ export default function GlobalStyle() {
             "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
             "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
         }
+
+        button {
+          border: none;
+          padding: 0;
+        }
       `}
     />
   );
