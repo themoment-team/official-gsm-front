@@ -1,5 +1,5 @@
 import Button from ".";
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "Button",
@@ -9,39 +9,40 @@ export default {
   },
 } as Meta<typeof Button>;
 
-const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
+type Story = StoryObj<typeof Button>;
 
-export const basic = Template.bind({});
-
-basic.args = {
-  children: "Button",
+export const Primary: Story = {
+  args: {
+    children: "Button",
+  },
 };
 
-export const disabled = Template.bind({});
-
-disabled.args = {
-  children: "Button",
-  disabled: true,
+export const Disabled: Story = {
+  args: {
+    ...Primary.args,
+    disabled: true,
+  },
 };
 
-export const loading = Template.bind({});
-
-loading.args = {
-  isLoading: true,
+export const Loading: Story = {
+  args: {
+    ...Primary.args,
+    isLoading: true,
+  },
 };
 
-export const large = Template.bind({});
-
-large.args = {
-  children: "Button",
-  widthREM: 36.125,
+export const Large: Story = {
+  args: {
+    ...Primary.args,
+    widthREM: 36.125,
+  },
 };
 
-export const signup = Template.bind({});
-
-signup.args = {
-  children: "회원가입",
-  bgColor: "#DEE449",
-  fontColor: "#050505",
-  hoverBgColor: "#E9EC9E",
+export const signup: Story = {
+  args: {
+    children: "회원가입",
+    bgColor: "#DEE449",
+    fontColor: "#050505",
+    hoverBgColor: "#E9EC9E",
+  },
 };
