@@ -1,8 +1,8 @@
 import React from "react";
-import * as S from "./style";
+import { Spinner } from "./style";
 
 const LoadingCircle: React.FC = () => {
-  return <S.Spinner />;
+  return <Spinner />;
 };
 
 export default LoadingCircle;
