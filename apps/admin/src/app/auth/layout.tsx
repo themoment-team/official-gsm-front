@@ -21,6 +21,10 @@ const Background = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-height: 50rem) {
+    height: auto;
+    align-items: baseline;
+  }
 `;
 
 const Content = styled.div`
@@ -29,4 +33,7 @@ const Content = styled.div`
   border-radius: 1.25rem;
   background-color: #ffffff;
   box-shadow: 0 0.25rem 3.75rem rgba(0, 0, 0, 0.04);
+  @media (max-height: 50rem) {
+    margin: 5rem 0;
+  }
 `;
