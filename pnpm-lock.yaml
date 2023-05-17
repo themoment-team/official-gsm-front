@@ -104,9 +104,6 @@ importers:
       common:
         specifier: workspace:^
         version: link:../../packages/common
-      ui:
-        specifier: workspace:^
-        version: link:../../packages/ui
     devDependencies:
       '@emotion/babel-preset-css-prop':
         specifier: ^11.11.0

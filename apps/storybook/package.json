@@ -19,7 +19,6 @@
     "storybook": "^7.0.6"
   },
   "dependencies": {
-    "common": "workspace:^",
-    "ui": "workspace:^"
+    "common": "workspace:^"
   }
 }

@@ -1,8 +1,7 @@
 /** @type { import('@storybook/nextjs').StorybookConfig } */
 const config = {
   stories: [
-    // "../../../packages/ui/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)",
-    "../node_modules/ui/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)",
+    "../../../packages/ui/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)",
   ],
   addons: [
     "@storybook/addon-links",
@@ -21,4 +20,5 @@ const config = {
     return options;
   },
 };
+
 export default config;
