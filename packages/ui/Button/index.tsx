@@ -7,6 +7,8 @@ interface ButtonProps {
   disabled?: boolean;
   isLoading?: boolean;
   widthREM?: number;
+  bgColor?: string;
+  fontColor?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -14,12 +16,16 @@ const Button: React.FC<ButtonProps> = ({
   disabled = false,
   isLoading = false,
   widthREM,
+  bgColor,
+  fontColor,
 }) => {
   return (
     <CustomButton
       css={css`
         pointer-events: ${isLoading && "none"};
         width: ${widthREM && `${widthREM}rem`};
+        background: ${bgColor && bgColor};
+        color: ${fontColor && fontColor};
       `}
       disabled={disabled}
     >
