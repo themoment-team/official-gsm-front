@@ -1,6 +1,9 @@
 /** @type { import('@storybook/nextjs').StorybookConfig } */
 const config = {
-  stories: ["../node_modules/ui/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)"],
+  stories: [
+    // "../../../packages/ui/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)",
+    "../node_modules/ui/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)",
+  ],
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
@@ -12,6 +15,10 @@ const config = {
   },
   docs: {
     autodocs: "tag",
+  },
+  babel: async (options) => {
+    options.presets.push("@emotion/babel-preset-css-prop");
+    return options;
   },
 };
 export default config;
