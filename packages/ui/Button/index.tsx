@@ -9,6 +9,7 @@ interface ButtonProps {
   widthREM?: number;
   bgColor?: string;
   fontColor?: string;
+  hoverBgColor?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -18,6 +19,7 @@ const Button: React.FC<ButtonProps> = ({
   widthREM,
   bgColor,
   fontColor,
+  hoverBgColor,
 }) => {
   return (
     <CustomButton
@@ -26,6 +28,9 @@ const Button: React.FC<ButtonProps> = ({
         width: ${widthREM && `${widthREM}rem`};
         background: ${bgColor && bgColor};
         color: ${fontColor && fontColor};
+        :hover {
+          background: ${hoverBgColor && hoverBgColor};
+        }
       `}
       disabled={disabled}
     >

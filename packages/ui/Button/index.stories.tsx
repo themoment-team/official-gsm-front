@@ -43,4 +43,5 @@ signup.args = {
   children: "회원가입",
   bgColor: "#DEE449",
   fontColor: "#050505",
+  hoverBgColor: "#E9EC9E",
 };
