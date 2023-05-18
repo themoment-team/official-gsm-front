@@ -10,6 +10,8 @@ interface ButtonProps {
   bgColor?: string;
   fontColor?: string;
   hoverBgColor?: string;
+  position?: "absolute" | "relative" | "fixed" | "static" | "sticky";
+  bottomREM?: number;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -20,6 +22,8 @@ const Button: React.FC<ButtonProps> = ({
   bgColor,
   fontColor,
   hoverBgColor,
+  position,
+  bottomREM,
 }) => {
   return (
     <CustomButton
@@ -28,6 +32,8 @@ const Button: React.FC<ButtonProps> = ({
         width: ${widthREM && `${widthREM}rem`};
         background: ${bgColor && bgColor};
         color: ${fontColor && fontColor};
+        position: ${position && position};
+        bottom: ${bottomREM && `${bottomREM}rem`};
         :hover {
           background: ${hoverBgColor && hoverBgColor};
         }
