@@ -1,7 +1,11 @@
 "use client";
 
-import { Button } from "ui";
+import { Header } from "components";
 
 export default function Home() {
-  return <Button>button</Button>;
+  return (
+    <div>
+      <Header hasNotification={false} name={"정문정"} />
+    </div>
+  );
 }

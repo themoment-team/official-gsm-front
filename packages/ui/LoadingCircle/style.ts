@@ -8,7 +8,6 @@ export const Spinner = styled.div`
   border: 0.188rem solid #d9d9d9;
   border-top: 0.188rem solid #ffffff;
   border-right: 0.188rem solid #ffffff;
-  box-sizing: border-box;
 
   animation: spin 1s ease-in-out infinite;
 
