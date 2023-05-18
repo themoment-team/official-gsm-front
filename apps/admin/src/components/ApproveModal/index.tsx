@@ -13,11 +13,18 @@ const testData = [
   { name: "정문정", date: "2022.05.23" },
 ];
 
-const ApproveModal = () => {
+interface ApproveModalProps {
+  close: () => void;
+}
+
+const ApproveModal = ({ close }: ApproveModalProps) => {
   return (
     <S.ModalConatiner>
       <S.ModalHeader>
-        🤝 가입 요청 <I.ModalCloseIcon />
+        🤝 가입 요청
+        <div onClick={close}>
+          <I.ModalCloseIcon />
+        </div>
       </S.ModalHeader>
       {testData.map(({ name, date }, i) => (
         <ApproveItem name={name} date={date} key={i} />

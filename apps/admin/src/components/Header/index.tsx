@@ -39,7 +39,9 @@ const Header = ({ hasNotification, name }: HeaderProps) => {
           {hasNotification && <S.Notification />}
         </S.Notofication>
       </S.Nav>
-      {hasNotification && showApproveModal && <ApproveModal />}
+      {hasNotification && showApproveModal && (
+        <ApproveModal close={() => setShowApproveModal(false)} />
+      )}
       <S.UserNameText>{name} 선생님</S.UserNameText>
     </S.Header>
   );

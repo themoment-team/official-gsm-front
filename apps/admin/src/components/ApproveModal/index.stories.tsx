@@ -11,7 +11,6 @@ type Story = StoryObj<typeof ApproveModal>;
 
 export const Primary: Story = {
   args: {
-    date: "2023.05.24",
-    name: "정문정",
+    close,
   },
 };
