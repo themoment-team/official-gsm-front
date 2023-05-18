@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 
 export const NoticeCard = styled.div`
-  height: 70px;
-  width: 1080px;
-  border-radius: 20px;
+  height: 4.375rem;
+  width: 67.5rem;
+  border-radius: 1.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,34 +14,34 @@ export const NoticeCard = styled.div`
 `;
 
 export const TitleWrap = styled.div`
-  margin-left: 24px;
+  margin-left: 1.5rem;
 `;
 
 export const Title = styled.div`
-  height: 20px;
-  width: 230px;
-  font-size: 14px;
+  height: 1.25rem;
+  width: 14.375rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  line-height: 20px;
+  line-height: 1.25rem;
   letter-spacing: 0em;
 `;
 
 export const SubTitle = styled.div`
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 400;
-  line-height: 16px;
+  line-height: 1rem;
   letter-spacing: 0em;
-  padding-top: 4px;
+  padding-top: 0.25rem;
 `;
 
 export const WriterDateWrap = styled.div`
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
-  line-height: 16px;
+  line-height: 1rem;
   letter-spacing: 0em;
   display: flex;
-  width: 130px;
-  margin-right: 43px;
+  width: 8.125rem;
+  margin-right: 2.6875rem;
   color: rgba(130, 130, 130, 1);
   justify-content: space-between;
   align-items: center;
@@ -50,9 +50,9 @@ export const WriterDateWrap = styled.div`
 export const Writer = styled.div``;
 
 export const Dot = styled.div`
-  height: 4px;
-  width: 4px;
-  border-radius: 100px;
+  height: 0.25rem;
+  width: 0.25rem;
+  border-radius: 6.25rem;
   background-color: rgba(130, 130, 130, 1);
 `;
 
