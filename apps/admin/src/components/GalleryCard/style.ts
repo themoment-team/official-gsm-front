@@ -1,13 +1,13 @@
 import styled from "@emotion/styled";
 import Image from "next/image";
 
-export const CardWrpapper = styled.div`
+export const CardWrapper = styled.div`
   width: 21.8125rem;
   height: 23.8125rem;
   cursor: pointer;
 `;
 
-export const IMGWrpapper = styled.div`
+export const IMGWrapper = styled.div`
   width: 21.8125rem;
   height: 13.75rem;
   background: #eeeeee;
@@ -40,7 +40,7 @@ export const Text = styled.pre`
   margin-bottom: 1.5rem;
 `;
 
-export const DetailWrpapper = styled.div`
+export const DetailWrapper = styled.div`
   width: 8.125rem;
   display: flex;
   justify-content: space-between;

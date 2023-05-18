@@ -16,17 +16,17 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
   date,
 }) => {
   return (
-    <S.CardWrpapper>
-      <S.IMGWrpapper>
+    <S.CardWrapper>
+      <S.IMGWrapper>
         <S.ContentIMG width={349} height={220} src={imgUrl} alt="ContentIMG" />
-      </S.IMGWrpapper>
+      </S.IMGWrapper>
       <S.Title>{title}</S.Title>
       <S.Text>{description}</S.Text>
-      <S.DetailWrpapper>
+      <S.DetailWrapper>
         <S.Details>{writer}</S.Details>
         <S.Details>{date}</S.Details>
-      </S.DetailWrpapper>
-    </S.CardWrpapper>
+      </S.DetailWrapper>
+    </S.CardWrapper>
   );
 };
 

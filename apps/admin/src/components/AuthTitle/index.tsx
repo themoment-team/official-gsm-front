@@ -17,7 +17,7 @@ const AuthTitle: React.FC<AuthTitleProps> = ({
   textAlign = "left",
 }) => {
   return (
-    <S.TitleWrpapper
+    <S.TitleWrapper
       css={css`
         text-align: ${textAlign};
       `}
@@ -25,7 +25,7 @@ const AuthTitle: React.FC<AuthTitleProps> = ({
       {titleArray.map((text, index) => (
         <S.Title key={index}>{text}</S.Title>
       ))}
-    </S.TitleWrpapper>
+    </S.TitleWrapper>
   );
 };
 
