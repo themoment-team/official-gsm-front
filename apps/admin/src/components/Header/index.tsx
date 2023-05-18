@@ -5,7 +5,8 @@ import * as I from "../../assets";
 import Link from "next/link";
 import { css } from "@emotion/react";
 import { useState } from "react";
-import { ApproveModal } from "components";
+// import { ApproveModal } from "components";
+import { ApproveModal } from "../../components";
 
 interface HeaderProps {
   hasNotification: boolean;

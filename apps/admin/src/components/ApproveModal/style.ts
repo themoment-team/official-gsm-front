@@ -2,14 +2,27 @@ import styled from "@emotion/styled";
 
 export const ModalConatiner = styled.div`
   position: absolute;
-  width: 331px;
-  height: 270px;
-  left: 237px;
-  top: 104px;
-  background: #fdfdfd;
-  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.11);
-  border-radius: 20px;
-  padding: 26px 22px 42px 16px;
+  width: 20.625rem;
+  height: 16.875rem;
+  left: 14.813rem;
+  top: 6.5rem;
+  background-color: #fdfdfd;
+  box-shadow: 0px 0.25rem 1.875rem rgba(0, 0, 0, 0.11);
+  border-radius: 1.25rem;
+  padding: 1.625rem 1.375rem 2.625rem 1rem;
+  overflow: scroll;
 `;
 
-export const ModalHeader = styled.div``;
+export const ModalHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #000000;
+  margin-bottom: 1.125rem;
+
+  svg {
+    cursor: pointer;
+  }
+`;
