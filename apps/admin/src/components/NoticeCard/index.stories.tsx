@@ -1,13 +1,13 @@
-import InformCard from ".";
+import NoticeCard from ".";
 import { Meta, StoryObj } from "@storybook/react";
 
 export default {
-  title: "admin/InformCard",
-  component: InformCard,
+  title: "admin/NoticeCard",
+  component: NoticeCard,
   parameters: {},
-} as Meta<typeof InformCard>;
+} as Meta<typeof NoticeCard>;
 
-type Story = StoryObj<typeof InformCard>;
+type Story = StoryObj<typeof NoticeCard>;
 
 export const Primary: Story = {
   args: {
