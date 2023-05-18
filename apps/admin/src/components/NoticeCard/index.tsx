@@ -16,7 +16,7 @@ const NoticeCard = ({ title, subtitle, writer, date }: NoticeCardProps) => {
       </S.TitleWrap>
       <S.WriterDateWrap>
         <S.Writer>{writer}</S.Writer>
-        <S.Dot/>
+        <S.Dot />
         <S.Date>{date}</S.Date>
       </S.WriterDateWrap>
     </S.NoticeCard>
