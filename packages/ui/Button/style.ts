@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 
 export const CustomButton = styled.button`
-  width: 300px;
-  height: 50px;
+  width: 21.4375rem;
+  height: 3.0625rem;
   display: flex;
   justify-content: center;
   align-items: center;
