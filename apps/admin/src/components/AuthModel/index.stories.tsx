@@ -11,6 +11,6 @@ type Story = StoryObj<typeof AuthModel>;
 
 export const Primary: Story = {
   args: {
-    modelUrl: "https://samplelib.com/lib/preview/webm/sample-5s.webm",
+    modelUrl: "/models/school.webm",
   },
 };
