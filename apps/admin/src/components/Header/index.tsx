@@ -4,6 +4,9 @@ import * as S from "./style";
 import * as I from "../../assets";
 import Link from "next/link";
 import { css } from "@emotion/react";
+import { useState } from "react";
+// import { ApproveModal } from "components";
+import { ApproveModal } from "../../components";
 
 interface HeaderProps {
   hasNotification: boolean;
@@ -11,15 +14,17 @@ interface HeaderProps {
 }
 
 const Header = ({ hasNotification, name }: HeaderProps) => {
+  const [showApproveModal, setShowApproveModal] = useState<boolean>(false);
+
   return (
     <S.Header>
       <S.Nav>
         <Image src="/GSMLogo.png" alt="" width="66" height="37" />
-        <I.HeaderRectangle />
+        <I.VerticalBarIcon />
         <Link href="/">
           <S.Text>홈</S.Text>
         </Link>
-        <S.Notofication>
+        <S.Notofication onClick={() => setShowApproveModal(!showApproveModal)}>
           <S.Text
             css={
               hasNotification &&
@@ -34,6 +39,7 @@ const Header = ({ hasNotification, name }: HeaderProps) => {
           {hasNotification && <S.Notification />}
         </S.Notofication>
       </S.Nav>
+      {hasNotification && showApproveModal && <ApproveModal />}
       <S.UserNameText>{name} 선생님</S.UserNameText>
     </S.Header>
   );
