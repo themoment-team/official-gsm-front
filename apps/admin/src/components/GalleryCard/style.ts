@@ -4,6 +4,7 @@ import Image from "next/image";
 export const CardWrpapper = styled.div`
   width: 21.8125rem;
   height: 23.8125rem;
+  cursor: pointer;
 `;
 
 export const IMGWrpapper = styled.div`
