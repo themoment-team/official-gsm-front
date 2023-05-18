@@ -3,7 +3,7 @@ import * as S from "./style";
 interface GalleryCardProps {
   imgUrl: string;
   title: string;
-  subTitle: string;
+  description: string;
   writer: string;
   date: string;
 }
@@ -11,7 +11,7 @@ interface GalleryCardProps {
 const GalleryCard: React.FC<GalleryCardProps> = ({
   imgUrl,
   title,
-  subTitle,
+  description,
   writer,
   date,
 }) => {
@@ -21,7 +21,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
         <S.ContentIMG width={349} height={220} src={imgUrl} alt="ContentIMG" />
       </S.IMGWrpapper>
       <S.Title>{title}</S.Title>
-      <S.Text>{subTitle}</S.Text>
+      <S.Text>{description}</S.Text>
       <S.DetailWrpapper>
         <S.Details>{writer}</S.Details>
         <S.Details>{date}</S.Details>
