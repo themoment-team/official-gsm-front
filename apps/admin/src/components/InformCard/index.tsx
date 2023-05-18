@@ -11,12 +11,12 @@ const InformCard = ({ title, subtitle, writer, date }: InformCardProps) => {
   return (
     <S.InformCard>
       <S.TitleWrap>
-        <S.Title></S.Title>
-        <S.SubTitle></S.SubTitle>
+        <S.Title>{title}</S.Title>
+        <S.SubTitle>{subtitle}</S.SubTitle>
       </S.TitleWrap>
       <S.WriterDateWrap>
-        <S.Writer></S.Writer>
-        <S.Date></S.Date>
+        <S.Writer>{writer}</S.Writer>
+        <S.Date>{date}</S.Date>
       </S.WriterDateWrap>
     </S.InformCard>
   );
