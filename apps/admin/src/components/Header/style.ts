@@ -16,10 +16,6 @@ export const Header = styled.header`
   padding: 0 4.8vw;
   font-weight: 600;
   font-size: 0.875rem;
-
-  a {
-    text-decoration: none;
-  }
 `;
 
 export const Nav = styled.nav`
