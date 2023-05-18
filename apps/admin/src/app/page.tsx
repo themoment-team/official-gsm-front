@@ -6,7 +6,7 @@ import { Button } from "ui";
 export default function Home() {
   return (
     <div>
-      <Header />
+      <Header hasNotification={false } name={'정문정'} />
       <Button>button</Button>
     </div>
   );

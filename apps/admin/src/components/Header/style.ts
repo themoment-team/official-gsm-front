@@ -24,7 +24,7 @@ export const Header = styled.header`
   }
 `;
 
-export const HeaderWrapper = styled.div`
+export const Nav = styled.nav`
   display: flex;
   gap: 1rem;
   align-items: center;
@@ -34,6 +34,20 @@ export const Text = styled.p`
   color: #828282;
 `;
 
-export const TeacherText = styled.p`
+export const UserNameText = styled.p`
   color: #505050;
+`;
+
+export const Notofication = styled.div`
+  position: relative;
+`;
+
+export const Notification = styled.div`
+  position: absolute;
+  top: 0;
+  right: -5px;
+  width: 4px;
+  height: 4px;
+  background-color: #f93535;
+  border-radius: 50%;
 `;
