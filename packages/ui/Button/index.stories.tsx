@@ -1,18 +1,48 @@
 import Button from ".";
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 
 export default {
-  title: "Button",
+  title: "ui/Button",
   component: Button,
   parameters: {
     layout: "centered",
   },
 } as Meta<typeof Button>;
 
-const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
+type Story = StoryObj<typeof Button>;
 
-export const basic = Template.bind({});
+export const Primary: Story = {
+  args: {
+    children: "Button",
+  },
+};
 
-basic.args = {
-  children: "Button",
+export const Disabled: Story = {
+  args: {
+    ...Primary.args,
+    disabled: true,
+  },
+};
+
+export const Loading: Story = {
+  args: {
+    ...Primary.args,
+    isLoading: true,
+  },
+};
+
+export const Large: Story = {
+  args: {
+    ...Primary.args,
+    widthREM: 36.125,
+  },
+};
+
+export const signup: Story = {
+  args: {
+    children: "회원가입",
+    bgColor: "#DEE449",
+    fontColor: "#050505",
+    hoverBgColor: "#E9EC9E",
+  },
 };
