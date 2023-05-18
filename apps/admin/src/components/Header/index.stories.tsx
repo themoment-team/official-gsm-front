@@ -20,6 +20,5 @@ export const HasNotification: Story = {
   args: {
     ...Primary.args,
     hasNotification: true,
-    name: "정문정",
   },
 };
