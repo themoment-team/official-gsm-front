@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 export const Header = styled.header`
   position: fixed;
   top: 0;
-  left: 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -11,6 +10,8 @@ export const Header = styled.header`
   width: 100vw;
   background-color: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(0.625rem);
+  left: 0px;
+  top: 0px;
   padding: 0 4.8vw;
   font-weight: 600;
   font-size: 0.875rem;
