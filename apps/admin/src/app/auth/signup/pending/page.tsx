@@ -1,16 +1,16 @@
 "use client";
 
 import styled from "@emotion/styled";
-import { AuthTitle, AuthModel, ToBackButton } from "components";
+import {
+  AuthTitle,
+  AuthModel,
+  ToBackButton,
+  AuthDescription,
+} from "components";
 import { useRouter } from "next/navigation";
 import { Button } from "ui";
 
-const titleArray = [
-  "관리자에게 요청을 보냈어요.",
-  "요청이 승인될 때 까지 기다려주세요.",
-];
-
-// TODO : react-query refetchInterval 사용하여 pending 상태 확인
+// TODO : react-query refetchInterval 사용하여 지속적으로 pending 여부 확인
 
 export default function IntroPage() {
   const { replace } = useRouter();
@@ -18,8 +18,13 @@ export default function IntroPage() {
   return (
     <PageWrapper>
       <ToBackButton onClick={() => replace("/auth/signin")} />
-      <AuthTitle titleArray={titleArray} textAlign="center" />
-      <AuthModel modelUrl="/models/school.webm" />
+      <AuthTitle textAlign="center">
+        관리자에게 요청을 보냈어요.
+        <br />
+        요청이 승인될 때 까지 기다려주세요.
+      </AuthTitle>
+      <AuthDescription>상황에 따라 시간이 걸릴 수 있어요.</AuthDescription>
+      <AuthModel modelUrl="/models/pending.webm" marginTopREM={2.5} />
       <Button position="absolute" bottomREM={0} disabled={true}>
         대기중
       </Button>
