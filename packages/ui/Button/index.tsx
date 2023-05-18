@@ -3,6 +3,7 @@ import { CustomButton } from "./style";
 import LoadingCircle from "../LoadingCircle";
 
 interface ButtonProps {
+  onClick?: () => void;
   children?: React.ReactNode;
   disabled?: boolean;
   isLoading?: boolean;
@@ -15,6 +16,7 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({
+  onClick,
   children = "",
   disabled = false,
   isLoading = false,
@@ -27,6 +29,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <CustomButton
+      onClick={isLoading ? undefined : onClick}
       css={css`
         pointer-events: ${isLoading && "none"};
         width: ${widthREM && `${widthREM}rem`};
