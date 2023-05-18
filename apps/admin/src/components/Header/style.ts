@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 export const Header = styled.header`
-  box-sizing: border-box;
   position: fixed;
   top: 0;
   display: flex;
