@@ -1,1 +1,2 @@
-export { default as HeaderReactangle } from "./Icon/HeaderReactangle";
+export { default as ToBackIcon } from "./svg/icon/ToBackIcon";
+export { default as HeaderReactangle } from "./svg/icon/HeaderReactangle";
