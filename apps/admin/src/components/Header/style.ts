@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 export const Header = styled.header`
   position: fixed;
   top: 0;
-  left: 0px;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;

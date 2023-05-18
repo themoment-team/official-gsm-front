@@ -21,7 +21,7 @@ export const ApproveItem = styled.div`
 
   &:hover {
     background-color: #eeeeee;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     transition: all ease-in-out 0.1s;
   }
 `;
