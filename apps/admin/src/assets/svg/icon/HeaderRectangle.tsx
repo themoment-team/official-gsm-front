@@ -1,4 +1,4 @@
-const HeaderReactangle = () => (
+const HeaderRectangle = () => (
   <svg
     width="2"
     height="15"
@@ -10,5 +10,4 @@ const HeaderReactangle = () => (
   </svg>
 );
 
-
-export default HeaderReactangle;
+export default HeaderRectangle;

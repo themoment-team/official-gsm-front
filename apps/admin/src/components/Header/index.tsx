@@ -3,7 +3,6 @@ import * as S from "./style";
 // import * as I from "assets";
 import * as I from "../../assets";
 import Link from "next/link";
-import { useState } from "react";
 import { css } from "@emotion/react";
 
 interface HeaderProps {
@@ -16,7 +15,7 @@ const Header = ({ hasNotification, name }: HeaderProps) => {
     <S.Header>
       <S.Nav>
         <Image src="/GSMLogo.png" alt="" width="66" height="37" />
-        <I.HeaderReactangle />
+        <I.HeaderRectangle />
         <Link href="/">
           <S.Text>홈</S.Text>
         </Link>
