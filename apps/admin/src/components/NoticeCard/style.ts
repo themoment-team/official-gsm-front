@@ -23,14 +23,12 @@ export const Title = styled.div`
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.25rem;
-  letter-spacing: 0em;
 `;
 
 export const SubTitle = styled.div`
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1rem;
-  letter-spacing: 0em;
   padding-top: 0.25rem;
 `;
 
