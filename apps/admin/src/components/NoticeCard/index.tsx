@@ -1,25 +1,26 @@
 import * as S from "./style";
 
-interface InformCardProps {
+interface NoticeCardProps {
   title: string;
   subtitle: string;
   writer: string;
   date: string;
 }
 
-const InformCard = ({ title, subtitle, writer, date }: InformCardProps) => {
+const NoticeCard = ({ title, subtitle, writer, date }: NoticeCardProps) => {
   return (
-    <S.InformCard>
+    <S.NoticeCard>
       <S.TitleWrap>
         <S.Title>{title}</S.Title>
         <S.SubTitle>{subtitle}</S.SubTitle>
       </S.TitleWrap>
       <S.WriterDateWrap>
         <S.Writer>{writer}</S.Writer>
+        <S.Dot></S.Dot>
         <S.Date>{date}</S.Date>
       </S.WriterDateWrap>
-    </S.InformCard>
+    </S.NoticeCard>
   );
 };
 
-export default InformCard;
+export default NoticeCard;
