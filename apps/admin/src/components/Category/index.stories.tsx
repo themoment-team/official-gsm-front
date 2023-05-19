@@ -2,7 +2,7 @@ import Category from ".";
 import { Meta, StoryObj } from "@storybook/react";
 
 export default {
-  title: "admin/Header",
+  title: "admin/Category",
   component: Category,
   parameters: {},
 } as Meta<typeof Category>;
