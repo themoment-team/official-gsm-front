@@ -1,5 +1,4 @@
 import styled from "@emotion/styled";
-import Image from "next/image";
 
 export const CardWrapper = styled.div`
   width: 21.8125rem;
@@ -13,12 +12,8 @@ export const IMGWrapper = styled.div`
   background: #eeeeee;
   border-radius: 1.25rem;
   margin-bottom: 1rem;
-`;
-
-export const ContentIMG = styled(Image)`
-  width: 100%;
-  height: 100%;
-  border-radius: 1.25rem;
+  overflow: hidden;
+  position: relative;
 `;
 
 export const Title = styled.h2`

@@ -1,4 +1,5 @@
 import * as S from "./style";
+import Image from "next/image";
 
 interface GalleryCardProps {
   imgUrl: string;
@@ -18,7 +19,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
   return (
     <S.CardWrapper>
       <S.IMGWrapper>
-        <S.ContentIMG width={349} height={220} src={imgUrl} alt="ContentIMG" />
+        <Image fill src={imgUrl} alt="ContentIMG" />
       </S.IMGWrapper>
       <S.Title>{title}</S.Title>
       <S.Description>{description}</S.Description>
