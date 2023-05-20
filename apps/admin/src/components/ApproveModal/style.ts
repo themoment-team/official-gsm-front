@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 
 export const ModalConatiner = styled.div`
+  display: flex;
+  flex-direction: column;
   position: absolute;
   width: 20.625rem;
   height: 16.875rem;
@@ -9,7 +11,7 @@ export const ModalConatiner = styled.div`
   background-color: #fdfdfd;
   box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.11);
   border-radius: 1.25rem;
-  padding: 1.625rem 1.375rem 2.625rem 1rem;
+  padding: 1.625rem 1.375rem 1.5rem 1rem;
   overflow: scroll;
 `;
 
@@ -25,4 +27,9 @@ export const ModalHeader = styled.div`
   svg {
     cursor: pointer;
   }
+`;
+
+export const ModalContent = styled.div`
+  flex: 1;
+  overflow: scroll;
 `;

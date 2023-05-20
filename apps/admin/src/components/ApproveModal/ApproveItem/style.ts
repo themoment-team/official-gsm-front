@@ -10,6 +10,7 @@ export const ApproveItem = styled.div`
   height: 3.125rem;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 1rem;
 
   .approve {
     color: #2089ea;

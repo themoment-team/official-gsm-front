@@ -26,9 +26,11 @@ const ApproveModal = ({ close }: ApproveModalProps) => {
           <I.ModalCloseIcon />
         </div>
       </S.ModalHeader>
-      {testData.map(({ name, date }, i) => (
-        <ApproveItem name={name} date={date} key={i} />
-      ))}
+      <S.ModalContent>
+        {testData.map(({ name, date }, i) => (
+          <ApproveItem name={name} date={date} key={i} />
+        ))}
+      </S.ModalContent>
     </S.ModalConatiner>
   );
 };
