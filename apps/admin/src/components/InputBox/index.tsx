@@ -7,7 +7,7 @@ interface HandleInput {
   placeholder: string;
 }
 
-const InputBox = ({ width, height, placeholder }: HandleInput) => {
+const InputBox: React.FC<HandleInput> = ({ width, height, placeholder }) => {
   return (
     <label>
       <S.InputBox
