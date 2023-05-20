@@ -9,13 +9,16 @@ interface HandleInput {
 
 const InputBox = ({ width, height, placeholder }: HandleInput) => {
   return (
-    <S.InputBox
-      css={css`
-        width: ${width};
-        height: ${height};
-      `}
-      placeholder={placeholder}
-    />
+    <label>
+      <S.InputBox
+        css={css`
+          width: ${width};
+          height: ${height};
+          cursor: pointer;
+        `}
+        placeholder={placeholder}
+      />
+    </label>
   );
 };
 
