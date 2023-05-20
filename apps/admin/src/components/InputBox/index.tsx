@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import * as S from "./style";
 
 interface HandleInput {
@@ -7,7 +8,15 @@ interface HandleInput {
 }
 
 const InputBox = ({ width, height, placeholder }: HandleInput) => {
-  return <S.InputBox width={width} height={height} placeholder={placeholder} />;
+  return (
+    <S.InputBox
+      css={css`
+        width: ${width};
+        height: ${height};
+      `}
+      placeholder={placeholder}
+    />
+  );
 };
 
 export default InputBox;

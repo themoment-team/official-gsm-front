@@ -1,11 +1,6 @@
 import styled from "@emotion/styled";
 
-export const InputBox = styled.textarea<{
-  width: string;
-  height: string;
-}>`
-  width: ${({ width }) => width};
-  height: ${({ height }) => height};
+export const InputBox = styled.textarea`
   border-radius: 1.25rem;
   border: 0.0625rem solid #dcdcdc;
   background-color: #fff;
