@@ -29,7 +29,7 @@ export const Title = styled.h2`
   margin-bottom: 0.5rem;
 `;
 
-export const Text = styled.pre`
+export const Description = styled.pre`
   font-weight: 400;
   font-size: 0.9375rem;
   line-height: 1.5rem;

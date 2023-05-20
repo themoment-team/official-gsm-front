@@ -21,7 +21,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
         <S.ContentIMG width={349} height={220} src={imgUrl} alt="ContentIMG" />
       </S.IMGWrapper>
       <S.Title>{title}</S.Title>
-      <S.Text>{description}</S.Text>
+      <S.Description>{description}</S.Description>
       <S.DetailWrapper>
         <S.Details>{writer}</S.Details>
         <S.Details>{date}</S.Details>
