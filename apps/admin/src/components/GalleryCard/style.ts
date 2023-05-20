@@ -24,13 +24,14 @@ export const Title = styled.h2`
   margin-bottom: 0.5rem;
 `;
 
-export const Description = styled.pre`
+export const Description = styled.p`
   font-weight: 400;
   font-size: 0.9375rem;
   line-height: 1.5rem;
   letter-spacing: 0.0096em;
   color: #505050;
   margin-bottom: 1.5rem;
+  word-break: keep-all;
 `;
 
 export const DetailWrapper = styled.div`
