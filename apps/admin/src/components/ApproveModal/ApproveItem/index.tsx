@@ -10,7 +10,7 @@ interface ApproveItemProps {
 const ApproveItem: React.FC<ApproveItemProps> = ({ name, date }) => {
   return (
     <S.ApproveItem>
-      <p>{name} 선생님</p>
+      <p className="teacher">{name} 선생님</p>
       <p className="gray">{date}</p>
       <S.Approve>
         <p className="approve">승인</p> <I.VerticalBarIcon />

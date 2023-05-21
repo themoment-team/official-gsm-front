@@ -6,8 +6,8 @@ import { ApproveItem } from "..";
 
 const testData = [
   { name: "정문정", date: "2022.05.23" },
-  { name: "정문정", date: "2022.05.23" },
-  { name: "정문정", date: "2022.05.23" },
+  { name: "강권", date: "2022.05.23" },
+  { name: "스테파니", date: "2022.05.23" },
   { name: "정문정", date: "2022.05.23" },
   { name: "정문정", date: "2022.05.23" },
   { name: "정문정", date: "2022.05.23" },

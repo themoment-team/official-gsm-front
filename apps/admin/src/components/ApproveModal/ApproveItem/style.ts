@@ -12,16 +12,12 @@ export const ApproveItem = styled.div`
   justify-content: space-between;
   margin-bottom: 1rem;
 
+  .teacher {
+    width: 4rem;
+  }
+
   &:last-child {
     margin-bottom: 0;
-  }
-
-  .approve {
-    color: #2089ea;
-  }
-
-  .gray {
-    color: #828282;
   }
 
   &:hover {
@@ -38,5 +34,13 @@ export const Approve = styled.div`
 
   p {
     cursor: pointer;
+  }
+
+  .approve {
+    color: #2089ea;
+  }
+
+  .gray {
+    color: #828282;
   }
 `;
