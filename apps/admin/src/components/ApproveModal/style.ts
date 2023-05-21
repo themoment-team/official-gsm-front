@@ -6,8 +6,8 @@ export const ModalConatiner = styled.div`
   position: absolute;
   width: 20.625rem;
   height: 16.875rem;
-  left: 14.813rem;
-  top: 6.5rem;
+  left: 0;
+  top: 3.375rem;
   background-color: #fdfdfd;
   box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.11);
   border-radius: 1.25rem;

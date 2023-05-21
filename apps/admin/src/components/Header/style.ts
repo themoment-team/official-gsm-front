@@ -24,6 +24,7 @@ export const Nav = styled.nav`
 
 export const Text = styled.p`
   color: #828282;
+  cursor: pointer;
 `;
 
 export const UserNameText = styled.p`
