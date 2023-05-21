@@ -13,7 +13,15 @@ export const ApproveItem = styled.div`
   margin-bottom: 1rem;
 
   .teacher {
-    width: 4rem;
+    width: 4.5rem;
+  }
+
+  .gray {
+    color: #828282;
+  }
+
+  .approve {
+    color: #2089ea;
   }
 
   &:last-child {
@@ -34,13 +42,5 @@ export const Approve = styled.div`
 
   p {
     cursor: pointer;
-  }
-
-  .approve {
-    color: #2089ea;
-  }
-
-  .gray {
-    color: #828282;
   }
 `;
