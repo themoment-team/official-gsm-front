@@ -11,8 +11,8 @@ type Story = StoryObj<typeof TextArea>;
 
 export const ContentTextarea: Story = {
   args: {
-    width: "578px",
-    height: "108px",
+    width: "36.125rem",
+    height: "6.75rem",
     placeholder: "내용을 입력해주세요.",
   },
 };
