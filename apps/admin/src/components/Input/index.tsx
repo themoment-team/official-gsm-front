@@ -9,16 +9,14 @@ interface InputProps {
 
 const Input: React.FC<InputProps> = ({ width, height, placeholder }) => {
   return (
-    <label>
-      <S.InputBox
-        css={css`
-          width: ${width};
-          height: ${height};
-          cursor: pointer;
-        `}
-        placeholder={placeholder}
-      />
-    </label>
+    <S.InputBox
+      css={css`
+        width: ${width};
+        height: ${height};
+        cursor: pointer;
+      `}
+      placeholder={placeholder}
+    />
   );
 };
 
