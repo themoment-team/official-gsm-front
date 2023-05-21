@@ -13,7 +13,8 @@ const ApproveItem: React.FC<ApproveItemProps> = ({ name, date }) => {
       <p className="teacher">{name} 선생님</p>
       <p className="gray">{date}</p>
       <S.Approve>
-        <p className="approve">승인</p> <I.VerticalBarIcon />
+        <p className="approve">승인</p>
+        <I.VerticalBarIcon />
         <p className="gray">거절</p>
       </S.Approve>
     </S.ApproveItem>
