@@ -7,7 +7,12 @@ interface NoticeCardProps {
   date: string;
 }
 
-const NoticeCard = ({ title, subtitle, writer, date }: NoticeCardProps) => {
+const NoticeCard: React.FC<NoticeCardProps> = ({
+  title,
+  subtitle,
+  writer,
+  date,
+}) => {
   return (
     <S.NoticeCard>
       <S.TitleWrap>

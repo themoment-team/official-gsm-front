@@ -10,7 +10,7 @@ export const NoticeCard = styled.div`
   padding-left: 1.5rem;
   padding-right: 2.6875rem;
   :hover {
-    background: rgba(238, 238, 238, 1);
+    background: #eeeeee;
     transition: ease-in-out 300ms;
   }
 `;
