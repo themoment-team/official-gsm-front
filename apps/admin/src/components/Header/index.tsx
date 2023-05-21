@@ -15,7 +15,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ hasNotification, name }) => {
   const [showApproveModal, setShowApproveModal] = useState<boolean>(false);
-  console.log(showApproveModal);
+
   return (
     <S.Header>
       <S.Nav>
