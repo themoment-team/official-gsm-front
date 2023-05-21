@@ -9,6 +9,7 @@ export const InputBox = styled.input`
   font-size: 0.75rem;
   color: #a4a4a4;
   transition: ease-in-out 0.3s;
+  outline: none;
 
   :hover {
     border: 0.0625rem solid #050505;
@@ -16,6 +17,7 @@ export const InputBox = styled.input`
 
   :focus {
     color: #505050;
+    border: 0.0625rem solid #050505;
   }
 
   ::placeholder {
