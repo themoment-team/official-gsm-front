@@ -1,4 +1,4 @@
-const HeaderRectangle = () => (
+const VerticalBarIcon = () => (
   <svg
     width="2"
     height="15"
@@ -10,4 +10,4 @@ const HeaderRectangle = () => (
   </svg>
 );
 
-export default HeaderRectangle;
+export default VerticalBarIcon;
