@@ -4,7 +4,7 @@ import * as S from "./style";
 import * as I from "../../assets";
 import Link from "next/link";
 import { css } from "@emotion/react";
-import { useState } from "react";
+import React, { useState } from "react";
 // import { ApproveModal } from "components";
 import { ApproveModal } from "../../components";
 
@@ -13,7 +13,7 @@ interface HeaderProps {
   name: string;
 }
 
-const Header = ({ hasNotification, name }: HeaderProps) => {
+const Header: React.FC<HeaderProps> = ({ hasNotification, name }) => {
   const [showApproveModal, setShowApproveModal] = useState<boolean>(false);
 
   return (

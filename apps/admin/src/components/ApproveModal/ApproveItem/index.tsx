@@ -7,7 +7,7 @@ interface ApproveItemProps {
   date: string;
 }
 
-const ApproveItem = ({ name, date }: ApproveItemProps) => {
+const ApproveItem: React.FC<ApproveItemProps> = ({ name, date }) => {
   return (
     <S.ApproveItem>
       <p>{name} 선생님</p>

@@ -17,7 +17,7 @@ interface ApproveModalProps {
   close: () => void;
 }
 
-const ApproveModal = ({ close }: ApproveModalProps) => {
+const ApproveModal: React.FC<ApproveModalProps> = ({ close }) => {
   return (
     <S.ModalConatiner>
       <S.ModalHeader>
