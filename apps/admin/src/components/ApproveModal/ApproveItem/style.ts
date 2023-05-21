@@ -16,7 +16,8 @@ export const ApproveItem = styled.div`
     width: 4.5rem;
   }
 
-  .gray {
+  .date,
+  .refuse {
     color: #828282;
   }
 
@@ -40,7 +41,7 @@ export const Approve = styled.div`
   align-items: center;
   gap: 0.75rem;
 
-  p {
-    cursor: pointer;
+  button {
+    font-size: 0.688rem;
   }
 `;
