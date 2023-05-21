@@ -9,7 +9,11 @@ const test = [
   { path: "/familyCorrespondence", label: "가정통신문" },
 ];
 
-const Category = () => {
+interface CategoryProps {
+  isActive?: boolean;
+}
+
+const Category = ({ isActive }: CategoryProps) => {
   const router = useRouter();
   const { pathname } = router;
   return (
@@ -27,9 +31,8 @@ const Category = () => {
                     width: 85px;
                   `}
                 >
-                  <S.Path isActive={pathname === tab.path}>
-                    ∙&nbsp;&nbsp;{tab.label}
-                  </S.Path>
+                  <S.Path isActive={isActive}>∙&nbsp;&nbsp;{tab.label}</S.Path>
+                  {/* <S.Path isActive={pathname === tab.path}>{tab.label}</S.Path> */}
                 </div>
               </Link>
             </S.Menu>

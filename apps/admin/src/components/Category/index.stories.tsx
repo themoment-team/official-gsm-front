@@ -10,9 +10,14 @@ export default {
 type Story = StoryObj<typeof Category>;
 
 export const Primary: Story = {
-  args: [
-    { path: "/notice", label: "공지사항" },
-    { path: "/gallery", label: "행사갤러리" },
-    { path: "/familyCorrespondence", label: "가정통신문" },
-  ],
+  args: {
+    isActive: true,
+  },
+};
+
+export const isActive: Story = {
+  args: {
+    ...Primary.args,
+    isActive: false,
+  },
 };
