@@ -13,18 +13,18 @@ export const UpdateBox = styled.div`
   width: 124px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const AddFileBTN = styled.div`
   width: 89px;
   height: 27px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 5px 10px;
-  gap: 10px;
+  padding: 5px 10px 6px 12.67px;
   background: #eeeeee;
   border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const AddFileText = styled.p`
