@@ -20,14 +20,8 @@ export const Menu = styled.button`
   width: 85px;
   height: 20px;
   padding-right: 24px;
-  color: rgba(164, 164, 164, 1);
-  :focus {
-    color: rgba(255, 255, 255, 1);
-  }
 `;
-export const Dot = styled.div`
-  width: 3px;
-  height: 3px;
-  border-radius: 100%;
-  background-color: rgba(255, 255, 255, 1);
+
+export const Path = styled.div<{ isActive: boolean }>`
+  color: ${(props) => (props.isActive ? "#FFFFFF" : "#a4a4a4")};
 `;

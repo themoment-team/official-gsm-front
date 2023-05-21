@@ -10,7 +10,9 @@ export default {
 type Story = StoryObj<typeof Category>;
 
 export const Primary: Story = {
-  args: {
-    menu: ["행사갤러리", "공지사항", "가정통신문"],
-  },
+  args: [
+    { path: "/notice", label: "공지사항" },
+    { path: "/gallery", label: "행사갤러리" },
+    { path: "/familyCorrespondence", label: "가정통신문" },
+  ],
 };
