@@ -30,7 +30,7 @@ export const UserNameText = styled.p`
   color: #505050;
 `;
 
-export const Notofication = styled.div`
+export const ApproveRequest = styled.div`
   position: relative;
 `;
 

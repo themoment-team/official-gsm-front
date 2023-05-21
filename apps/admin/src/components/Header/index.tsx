@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ hasNotification, name }) => {
           <Image src="/GSMLogo.png" alt="" width="66" height="37" />
         </Link>
         <I.VerticalBarIcon />
-        <S.Notofication onClick={() => setShowApproveModal(!showApproveModal)}>
+        <S.ApproveRequest onClick={() => setShowApproveModal(!showApproveModal)}>
           <S.Text
             css={
               hasNotification &&
@@ -36,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({ hasNotification, name }) => {
             가입 요청
           </S.Text>
           {hasNotification && <S.Notification />}
-        </S.Notofication>
+        </S.ApproveRequest>
       </S.Nav>
       {hasNotification && showApproveModal && (
         <ApproveModal close={() => setShowApproveModal(false)} />
