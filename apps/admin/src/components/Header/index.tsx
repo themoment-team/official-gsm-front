@@ -19,11 +19,10 @@ const Header: React.FC<HeaderProps> = ({ hasNotification, name }) => {
   return (
     <S.Header>
       <S.Nav>
-        <Image src="/GSMLogo.png" alt="" width="66" height="37" />
-        <I.VerticalBarIcon />
         <Link href="/">
-          <S.Text>홈</S.Text>
+          <Image src="/GSMLogo.png" alt="" width="66" height="37" />
         </Link>
+        <I.VerticalBarIcon />
         <S.Notofication onClick={() => setShowApproveModal(!showApproveModal)}>
           <S.Text
             css={
