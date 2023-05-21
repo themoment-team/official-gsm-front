@@ -11,7 +11,7 @@ export const ModalConatiner = styled.div`
   background-color: #fdfdfd;
   box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.11);
   border-radius: 1.25rem;
-  padding: 1.625rem 1.375rem 1.5rem 1rem;
+  padding: 1.625rem 1rem 0.5rem 1rem;
   overflow: scroll;
 `;
 
