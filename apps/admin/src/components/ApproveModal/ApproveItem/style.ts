@@ -5,7 +5,7 @@ export const ApproveItem = styled.div`
   display: flex;
   padding: 0 1.5rem;
   font-weight: 600;
-  font-size: 0.625rem;
+  font-size: 0.688rem;
   color: #050505;
   height: 3.125rem;
   align-items: center;
