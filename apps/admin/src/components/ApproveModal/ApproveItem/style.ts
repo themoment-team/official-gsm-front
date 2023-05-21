@@ -12,6 +12,10 @@ export const ApproveItem = styled.div`
   justify-content: space-between;
   margin-bottom: 1rem;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   .approve {
     color: #2089ea;
   }
