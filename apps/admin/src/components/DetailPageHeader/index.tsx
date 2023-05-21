@@ -5,14 +5,16 @@ import { ToBackButton } from "components";
 const DetailPageHeader = () => {
   return (
     <S.Header>
-      <ToBackButton />
-      <S.UpdateBox>
-        <WriteIcon />
-        <S.AddFileBTN>
-          <FileIcon />
-          <S.AddFileText>첨부 파일</S.AddFileText>
-        </S.AddFileBTN>
-      </S.UpdateBox>
+      <S.HeaderWrapper>
+        <ToBackButton />
+        <S.UpdateBox>
+          <WriteIcon />
+          <S.AddFileBTN>
+            <FileIcon />
+            <S.AddFileText>첨부 파일</S.AddFileText>
+          </S.AddFileBTN>
+        </S.UpdateBox>
+      </S.HeaderWrapper>
     </S.Header>
   );
 };

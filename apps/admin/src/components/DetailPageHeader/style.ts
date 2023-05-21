@@ -3,7 +3,13 @@ import styled from "@emotion/styled";
 export const Header = styled.header`
   width: 100vw;
   height: 5rem;
-  padding: 0 15.0625rem 0 15.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const HeaderWrapper = styled.div`
+  width: 793px;
   display: flex;
   align-items: center;
   justify-content: space-between;
