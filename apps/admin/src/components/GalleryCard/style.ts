@@ -14,6 +14,9 @@ export const IMGWrapper = styled.div`
   margin-bottom: 1rem;
   overflow: hidden;
   position: relative;
+  img {
+    object-fit: contain;
+  }
 `;
 
 export const Title = styled.h2`
