@@ -1,11 +1,14 @@
 import { css } from "@emotion/react";
 import { CustomButton } from "./style";
 import LoadingCircle from "../LoadingCircle";
+import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 
-interface ButtonProps {
-  onClick?: () => void;
+interface ButtonProps
+  extends DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
   children?: React.ReactNode;
-  disabled?: boolean;
   isLoading?: boolean;
   widthREM?: number;
   bgColor?: string;
@@ -16,9 +19,7 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({
-  onClick,
   children = "",
-  disabled = false,
   isLoading = false,
   widthREM,
   bgColor,
@@ -26,12 +27,11 @@ const Button: React.FC<ButtonProps> = ({
   hoverBgColor,
   position,
   bottomREM,
+  ...attributes
 }) => {
   return (
     <CustomButton
-      onClick={isLoading ? undefined : onClick}
       css={css`
-        pointer-events: ${isLoading && "none"};
         width: ${widthREM && `${widthREM}rem`};
         background: ${bgColor && bgColor};
         color: ${fontColor && fontColor};
@@ -40,8 +40,12 @@ const Button: React.FC<ButtonProps> = ({
         :hover {
           background: ${hoverBgColor && hoverBgColor};
         }
+        :disabled {
+          background: ${isLoading && (bgColor || "#050505")};
+        }
       `}
-      disabled={disabled}
+      disabled={isLoading}
+      {...attributes}
     >
       {isLoading ? <LoadingCircle /> : children}
     </CustomButton>
