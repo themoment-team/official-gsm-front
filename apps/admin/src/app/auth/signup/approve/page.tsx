@@ -18,7 +18,11 @@ export default function IntroPage() {
       <AuthTitle textAlign="center" marginTopREM={5}>
         승인이 완료되었습니다.
       </AuthTitle>
-      <AuthModel modelUrl="/models/approve.webm" marginTopREM={2.5} />
+      <AuthModel
+        modelUrl="/models/approve.webm"
+        loop={false}
+        marginTopREM={0}
+      />
       <Button
         position="absolute"
         bottomREM={0}
