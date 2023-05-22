@@ -13,7 +13,7 @@ export default function IntroPage() {
   const { back } = useRouter();
 
   return (
-    <PageWrapper>
+    <>
       <ToBackButton onClick={back} />
       <AuthTitle textAlign="center">
         교사 회원 가입을 위해 이름과
@@ -23,7 +23,7 @@ export default function IntroPage() {
       <AuthModel modelUrl="/models/school.webm" />
       <Button
         position="absolute"
-        bottomREM={0}
+        bottomREM={1}
         onClick={() => {
           setIsLoading(true);
         }}
@@ -31,15 +31,9 @@ export default function IntroPage() {
       >
         <CustomLink href="/auth/signup">작성</CustomLink>
       </Button>
-    </PageWrapper>
+    </>
   );
 }
-
-const PageWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
-`;
 
 const CustomLink = styled(Link)`
   width: 100%;
