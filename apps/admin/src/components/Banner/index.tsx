@@ -1,14 +1,9 @@
-import React from "react";
 import { BannerWrapper, Video } from "./style";
 
-interface BannerProps {
-  modelUrl: string;
-}
-
-const Banner: React.FC<BannerProps> = ({ modelUrl }) => {
+const Banner = () => {
   return (
     <BannerWrapper>
-      <Video src={modelUrl} autoPlay={true} muted={true} loop />
+      <Video src="/models/school.WebM" autoPlay={true} muted={true} loop />
     </BannerWrapper>
   );
 };

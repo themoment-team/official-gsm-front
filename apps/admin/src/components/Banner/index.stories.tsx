@@ -9,8 +9,4 @@ export default {
 
 type Story = StoryObj<typeof Banner>;
 
-export const Primary: Story = {
-  args: {
-    modelUrl: "/models/school.WebM",
-  },
-};
+export const Primary: Story = {};
