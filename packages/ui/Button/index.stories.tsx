@@ -34,7 +34,7 @@ export const Loading: Story = {
 export const Large: Story = {
   args: {
     ...Primary.args,
-    widthREM: 36.125,
+    width: "36.125rem",
   },
 };
 

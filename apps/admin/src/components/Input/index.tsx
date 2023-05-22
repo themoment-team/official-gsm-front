@@ -1,21 +1,24 @@
 import { css } from "@emotion/react";
 import * as S from "./style";
+import { DetailedHTMLProps, InputHTMLAttributes } from "react";
 
-interface InputProps {
-  width: string;
-  height: string;
-  placeholder: string;
+interface InputProps
+  extends DetailedHTMLProps<
+    InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {
+  width?: string;
+  height?: string;
 }
 
-const Input: React.FC<InputProps> = ({ width, height, placeholder }) => {
+const Input: React.FC<InputProps> = ({ width, height, ...attributes }) => {
   return (
     <S.InputBox
       css={css`
         width: ${width};
         height: ${height};
-        cursor: pointer;
       `}
-      placeholder={placeholder}
+      {...attributes}
     />
   );
 };

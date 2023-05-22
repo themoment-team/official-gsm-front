@@ -8,12 +8,12 @@ interface AuthModelProps
     HTMLVideoElement
   > {
   modelUrl: string;
-  marginTopREM?: number;
+  marginTop?: string;
 }
 
 const AuthModel: React.FC<AuthModelProps> = ({
   modelUrl,
-  marginTopREM,
+  marginTop,
   ...attributes
 }) => {
   return (
@@ -24,7 +24,7 @@ const AuthModel: React.FC<AuthModelProps> = ({
       loop={true}
       {...attributes}
       css={css`
-        margin-top: ${marginTopREM && `${marginTopREM}rem`};
+        margin-top: ${marginTop};
       `}
     />
   );
