@@ -5,12 +5,11 @@ export const BannerWrapper = styled.div`
   height: 14.0625rem;
   background-color: #0e0e10;
   display: flex;
-  align-items: center;
   justify-content: center;
-  overflow: hidden;
 `;
 
 export const Video = styled.video`
   width: 15.9375rem;
-  height: 15.9375rem;
+  height: 100%;
+  object-fit: cover;
 `;
