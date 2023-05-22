@@ -24,7 +24,7 @@ export default function PendingPage() {
         요청이 승인될 때 까지 기다려주세요.
       </AuthTitle>
       <AuthDescription>상황에 따라 시간이 걸릴 수 있어요.</AuthDescription>
-      <AuthModel modelUrl="/models/pending.webm" marginTopREM={2.5} />
+      <AuthModel modelUrl="/models/pending.webm" marginTop="2.5rem" />
       <Button position="absolute" bottom="1.5rem" disabled={true}>
         대기중
       </Button>

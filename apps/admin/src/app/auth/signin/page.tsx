@@ -11,7 +11,7 @@ export default function SigninPage() {
 
   return (
     <>
-      <AuthTitle marginTopREM={1.5} textAlign="center" fontSizeREM={1.75}>
+      <AuthTitle marginTop="1.5rem" textAlign="center" fontSize="1.75rem">
         교사 로그인
       </AuthTitle>
       <Form>

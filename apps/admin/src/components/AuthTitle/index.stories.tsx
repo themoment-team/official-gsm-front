@@ -19,7 +19,7 @@ export const Primary: Story = {
       </>
     ),
     textAlign: "left",
-    marginTopREM: 0,
+    marginTop: "0",
   },
 };
 

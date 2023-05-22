@@ -4,8 +4,8 @@ import { Title } from "./style";
 interface AuthTitleProps {
   children: React.ReactNode;
   textAlign?: "left" | "center" | "right";
-  marginTopREM?: number;
-  fontSizeREM?: number;
+  marginTop?: string;
+  fontSize?: string;
 }
 
 /**
@@ -13,21 +13,21 @@ interface AuthTitleProps {
  *
  * @prop children: React.ReactNode
  * @prop textAlign: "left" | "center" | "right" - 타이틀 정렬 방식
- * @prop marginTopREM: number - default = 2.5rem
- * @prop fontSizeREM: number
+ * @prop marginTop: number - default = 2.5rem
+ * @prop fontSize: number - default = 1.125rem
  */
 const AuthTitle: React.FC<AuthTitleProps> = ({
   children,
   textAlign = "left",
-  marginTopREM,
-  fontSizeREM,
+  marginTop,
+  fontSize,
 }) => {
   return (
     <Title
       css={css`
-        margin-top: ${marginTopREM && `${marginTopREM}rem`};
+        margin-top: ${marginTop};
         text-align: ${textAlign};
-        font-size: ${fontSizeREM && `${fontSizeREM}rem`};
+        font-size: ${fontSize};
       `}
     >
       {children}
