@@ -11,8 +11,15 @@ type Story = StoryObj<typeof AuthTitle>;
 
 export const Primary: Story = {
   args: {
-    titleArray: ["저희 학교 선생님인지", "확인하기 위해 성함을 입력해주세요."],
+    children: (
+      <>
+        교사 회원 가입을 위해 이름과
+        <br />
+        아이디 비밀번호를 입력해야 돼요.
+      </>
+    ),
     textAlign: "left",
+    marginTopREM: 0,
   },
 };
 
