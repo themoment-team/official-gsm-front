@@ -21,7 +21,7 @@ export default function IntroPage() {
     <PageWrapper>
       <ToBackButton onClick={back} />
       <AuthTitle titleArray={titleArray} textAlign="center" />
-      <AuthModel modelUrl="/models/school.webm" />
+      <AuthModel modelUrl="/models/school.WebM" />
       <Button
         position="absolute"
         bottomREM={0}

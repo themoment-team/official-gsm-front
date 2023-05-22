@@ -11,6 +11,6 @@ type Story = StoryObj<typeof Banner>;
 
 export const Primary: Story = {
   args: {
-    modelUrl: "/models/school.webm",
+    modelUrl: "/models/school.WebM",
   },
 };
