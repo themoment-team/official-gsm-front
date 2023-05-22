@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 export const InputBox = styled.input`
   border-radius: 1.25rem;
   border: 0.0625rem solid #dcdcdc;
-  box-sizing: border-box;
   background-color: #fff;
   padding: 0 20px 0 20px;
   font-size: 0.75rem;
