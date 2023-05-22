@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 
 export const InputBox = styled.input`
+  width: 21.4375rem;
+  height: 2.75rem;
   border-radius: 1.25rem;
   border: 0.0625rem solid #dcdcdc;
   background-color: #fff;
