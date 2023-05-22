@@ -13,7 +13,7 @@ export default function IntroPage() {
   const { back } = useRouter();
 
   return (
-    <PageWrapper>
+    <>
       <ToBackButton onClick={back} />
       <AuthTitle textAlign="center" marginTopREM={5}>
         승인이 완료되었습니다.
@@ -25,7 +25,7 @@ export default function IntroPage() {
       />
       <Button
         position="absolute"
-        bottomREM={0}
+        bottomREM={1.5}
         onClick={() => {
           setIsLoading(true);
         }}
@@ -33,15 +33,9 @@ export default function IntroPage() {
       >
         <CustomLink href="/">확인</CustomLink>
       </Button>
-    </PageWrapper>
+    </>
   );
 }
-
-const PageWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  position: relative;
-`;
 
 const CustomLink = styled(Link)`
   width: 100%;
