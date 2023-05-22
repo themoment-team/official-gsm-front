@@ -8,37 +8,36 @@ interface ButtonProps
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > {
-  children?: React.ReactNode;
   isLoading?: boolean;
-  widthREM?: number;
+  width?: string;
   bgColor?: string;
   fontColor?: string;
   hoverBgColor?: string;
   position?: "absolute" | "relative" | "fixed" | "static" | "sticky";
-  bottomREM?: number;
+  bottom?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
   children = "",
   isLoading = false,
-  widthREM,
+  width,
   bgColor,
   fontColor,
   hoverBgColor,
   position,
-  bottomREM,
+  bottom,
   ...attributes
 }) => {
   return (
     <CustomButton
       css={css`
-        width: ${widthREM && `${widthREM}rem`};
-        background: ${bgColor && bgColor};
-        color: ${fontColor && fontColor};
-        position: ${position && position};
-        bottom: ${bottomREM && `${bottomREM}rem`};
+        width: ${width};
+        background: ${bgColor};
+        color: ${fontColor};
+        position: ${position};
+        bottom: ${bottom};
         :hover {
-          background: ${hoverBgColor && hoverBgColor};
+          background: ${hoverBgColor};
         }
         :disabled {
           background: ${isLoading && (bgColor || "#050505")};
@@ -47,7 +46,7 @@ const Button: React.FC<ButtonProps> = ({
       disabled={isLoading}
       {...attributes}
     >
-      {isLoading ? <LoadingCircle /> : children}
+      {isLoading ? <LoadingCircle backgroundColor={bgColor} /> : children}
     </CustomButton>
   );
 };

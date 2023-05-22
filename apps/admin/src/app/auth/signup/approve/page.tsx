@@ -25,7 +25,7 @@ export default function IntroPage() {
       />
       <Button
         position="absolute"
-        bottomREM={1.5}
+        bottom="1.5rem"
         onClick={() => {
           setIsLoading(true);
         }}

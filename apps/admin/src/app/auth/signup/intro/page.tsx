@@ -23,7 +23,7 @@ export default function IntroPage() {
       <AuthModel modelUrl="/models/school.webm" />
       <Button
         position="absolute"
-        bottomREM={1.5}
+        bottom="1.5rem"
         onClick={() => {
           setIsLoading(true);
         }}
