@@ -10,5 +10,11 @@ export default {
 type Story = StoryObj<typeof PostContent>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    postSeq: 2,
+    postTitle: "제목",
+    postWriter: "최장우",
+    createdAt: "2023-05-02T23:22:46.366966",
+    fileIsExist: false,
+  },
 };
