@@ -1,8 +1,12 @@
-import React from "react";
+import React, { DetailedHTMLProps, VideoHTMLAttributes } from "react";
 import { Video } from "./style";
 import { css } from "@emotion/react";
 
-interface AuthModelProps extends React.VideoHTMLAttributes<HTMLVideoElement> {
+interface AuthModelProps
+  extends DetailedHTMLProps<
+    VideoHTMLAttributes<HTMLVideoElement>,
+    HTMLVideoElement
+  > {
   modelUrl: string;
   marginTopREM?: number;
 }
