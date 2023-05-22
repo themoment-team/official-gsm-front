@@ -9,7 +9,7 @@ export const Header = styled.header`
 `;
 
 export const HeaderWrapper = styled.div`
-  width: 793px;
+  width: 49.5625rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
