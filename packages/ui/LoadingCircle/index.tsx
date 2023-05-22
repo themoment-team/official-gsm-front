@@ -3,14 +3,14 @@ import { Spinner } from "./style";
 import { css } from "@emotion/react";
 
 interface LoadingCircleProps {
-  backgroundColor?: string;
+  bgColor?: string;
 }
 
-const LoadingCircle: React.FC<LoadingCircleProps> = ({ backgroundColor }) => {
+const LoadingCircle: React.FC<LoadingCircleProps> = ({ bgColor }) => {
   return (
     <Spinner
       css={css`
-        background-color: ${backgroundColor};
+        background-color: ${bgColor};
       `}
     />
   );

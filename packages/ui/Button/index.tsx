@@ -46,7 +46,7 @@ const Button: React.FC<ButtonProps> = ({
       disabled={isLoading}
       {...attributes}
     >
-      {isLoading ? <LoadingCircle backgroundColor={bgColor} /> : children}
+      {isLoading ? <LoadingCircle bgColor={bgColor} /> : children}
     </CustomButton>
   );
 };
