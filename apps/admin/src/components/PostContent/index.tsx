@@ -1,6 +1,7 @@
 import * as S from "./style";
 import React from "react";
 import Image from "next/image";
+import { css } from "@emotion/react";
 
 interface PostContentProps {
   postSeq: number;
@@ -30,7 +31,10 @@ const PostContent: React.FC<PostContentProps> = ({
         ) : (
           <Image
             alt="content img"
-            src="/GSMGrayLogo.jpg"
+            src={"/GSMLogo2.png"}
+            css={css`
+              mix-blend-mode: luminosity;
+            `}
             width={87}
             height={53}
           />
