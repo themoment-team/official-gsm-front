@@ -7,11 +7,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Button } from "ui";
 
-const titleArray = [
-  "교사 회원 가입을 위해 이름과",
-  "아이디 비밀번호를 입력해야 돼요.",
-];
-
 export default function IntroPage() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
@@ -20,7 +15,11 @@ export default function IntroPage() {
   return (
     <PageWrapper>
       <ToBackButton onClick={back} />
-      <AuthTitle titleArray={titleArray} textAlign="center" />
+      <AuthTitle textAlign="center">
+        교사 회원 가입을 위해 이름과
+        <br />
+        아이디 비밀번호를 입력해야 돼요.
+      </AuthTitle>
       <AuthModel modelUrl="/models/school.webm" />
       <Button
         position="absolute"
