@@ -1,6 +1,7 @@
 import * as S from "./style";
 import { FileIcon, WriteIcon } from "../../assets";
-import { ToBackButton } from "components";
+// import { ToBackButton } from "components";
+import ToBackButton from "../ToBackButton";
 
 const DetailPageHeader = () => {
   return (
