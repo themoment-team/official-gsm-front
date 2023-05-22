@@ -25,7 +25,16 @@ const PostContent: React.FC<PostContentProps> = ({
   return (
     <S.ContentWrapper>
       <S.ImageWrapper>
-        {<Image alt="content img" src={`${fileIsExist ? "" : ""}`} />}
+        {!fileIsExist ? (
+          <Image alt="content img" src={""} fill />
+        ) : (
+          <Image
+            alt="content img"
+            src="/GSMGrayLogo.jpg"
+            width={87}
+            height={53}
+          />
+        )}
       </S.ImageWrapper>
       <S.TextWrapper>
         <S.Title>{postTitle}</S.Title>

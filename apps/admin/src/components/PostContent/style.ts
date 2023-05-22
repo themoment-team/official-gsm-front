@@ -15,6 +15,11 @@ export const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  position: relative;
+  img {
+    object-fit: cover;
+  }
 `;
 
 export const TextWrapper = styled.div`
