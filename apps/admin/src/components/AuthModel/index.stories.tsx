@@ -20,3 +20,10 @@ export const Pending: Story = {
     modelUrl: "/models/pending.webm",
   },
 };
+
+export const Approve: Story = {
+  args: {
+    modelUrl: "/models/approve.webm",
+    loop: false,
+  },
+};
