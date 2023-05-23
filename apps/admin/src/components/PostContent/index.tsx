@@ -31,7 +31,7 @@ const PostContent: React.FC<PostContentProps> = ({
         ) : (
           <Image
             alt="content img"
-            src={"/GSMLogo2.png"}
+            src={"/blurGSMLogo.png"}
             css={css`
               mix-blend-mode: luminosity;
             `}
