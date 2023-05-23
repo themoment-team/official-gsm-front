@@ -48,7 +48,7 @@ export default function SignupPage() {
     setIsLoading(true);
     setTimeout(() => {
       step === "name"
-        ? replace("/auth/login")
+        ? replace("/auth/signin")
         : setStep((value) => previousStep(value));
       setIsLoading(false);
     }, 1000);
