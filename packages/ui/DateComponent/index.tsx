@@ -7,9 +7,12 @@ interface DateProps {
 
 const DateComponent: React.FC<DateProps> = ({ createdAt }) => {
   const createdAtDate = new Date(createdAt);
+
+  const year = createdAtDate.getFullYear();
   const month = formatDate(createdAtDate.getMonth() + 1);
   const date = formatDate(createdAtDate.getDate());
-  return <S.Date>{`${createdAtDate.getFullYear()}.${month}.${date}`}</S.Date>;
+  
+  return <S.Date>{`${year}.${month}.${date}`}</S.Date>;
 };
 
 export default DateComponent;
