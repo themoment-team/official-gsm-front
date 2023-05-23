@@ -31,7 +31,7 @@ export default function SigninPage() {
             로그인
           </Button>
           <Button bgColor="#DEE449" hoverBgColor="#E9EC9E" fontColor="#050505">
-            <CustomLink href="/auth/signup">회원가입</CustomLink>
+            <CustomLink href="/auth/signup/intro">회원가입</CustomLink>
           </Button>
         </ButtonBox>
       </Form>
