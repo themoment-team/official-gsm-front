@@ -9,7 +9,6 @@ export const BlaHeader = styled.header`
 `;
 
 export const CategoryTitle = styled.h1`
-  height: 26px;
   font-weight: 700;
   font-size: 20px;
   line-height: 26px;
@@ -24,4 +23,18 @@ export const BlaBTN = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const SeeMoreException = styled.div`
+  height: 26px;
+  display: flex;
+  align-items: center;
+`;
+
+export const SeeMoreText = styled.p`
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 25px;
+  color: #505050;
+  margin: 0 8px 0 14px;
 `;

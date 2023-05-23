@@ -1,19 +1,30 @@
 import * as S from "./style";
 import React from "react";
-import { PlusIcon } from "../../assets";
+import { PlusIcon, SeeMoreIcon } from "../../assets";
 
 interface BlaHeaderProps {
   kind: string;
-  isGallery: boolean;
+  seeMore: boolean;
+  isAdmin: boolean;
 }
 
-const BlaHeader: React.FC<BlaHeaderProps> = ({ kind, isGallery }) => {
+const BlaHeader: React.FC<BlaHeaderProps> = ({ kind, seeMore, isAdmin }) => {
   return (
     <S.BlaHeader>
-      <S.CategoryTitle>{kind}</S.CategoryTitle>
-      <S.BlaBTN>
-        <PlusIcon />
-      </S.BlaBTN>
+      {seeMore ? (
+        <S.SeeMoreException>
+          <S.CategoryTitle>{kind}</S.CategoryTitle>
+          <S.SeeMoreText>더보기</S.SeeMoreText>
+          <SeeMoreIcon />
+        </S.SeeMoreException>
+      ) : (
+        <S.CategoryTitle>{kind}</S.CategoryTitle>
+      )}
+      {isAdmin && (
+        <S.BlaBTN>
+          <PlusIcon />
+        </S.BlaBTN>
+      )}
     </S.BlaHeader>
   );
 };
