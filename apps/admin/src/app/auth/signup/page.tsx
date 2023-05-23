@@ -44,9 +44,29 @@ export default function SignupPage() {
   const [isLoading, setIsLoading] = useState(false);
   const { replace } = useRouter();
 
+  const clickToBack = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      step === "name"
+        ? replace("/auth/login")
+        : setStep((value) => previousStep(value));
+      setIsLoading(false);
+    }, 1000);
+  };
+
+  const clickToNextButton = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      step === "password"
+        ? replace("/auth/signup/pending")
+        : setStep((value) => nextStep(value));
+      setIsLoading(false);
+    }, 1000);
+  };
+
   return (
     <>
-      <ToBackButton onClick={() => setStep((value) => previousStep(value))} />
+      <ToBackButton onClick={clickToBack} />
       <SignupTitle step={step} />
       <Input placeholder={placeholders[step]} marginTop="2.5rem" />
       {step === "password" && (
@@ -54,7 +74,7 @@ export default function SignupPage() {
       )}
       <SignupDescription step={step} />
       <Button
-        onClick={() => setStep((value) => nextStep(value))}
+        onClick={clickToNextButton}
         position="absolute"
         bottom="1.5rem"
         isLoading={isLoading}
