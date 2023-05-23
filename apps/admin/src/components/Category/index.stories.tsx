@@ -11,4 +11,11 @@ type Story = StoryObj<typeof Category>;
 
 export const Primary: Story = {
   args: {},
+  parameters: {
+    nextjs: {
+      navigation: {
+        pathname: "/notice",
+      },
+    },
+  },
 };
