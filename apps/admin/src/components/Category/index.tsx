@@ -1,6 +1,6 @@
 import * as S from "./style";
 import { css } from "@emotion/react";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const test = [
@@ -14,8 +14,8 @@ interface CategoryProps {
 }
 
 const Category = ({ isActive }: CategoryProps) => {
-  const router = useRouter();
-  const { pathname } = router;
+  const pathname = usePathname();
+
   return (
     <S.Category>
       <S.MenuWrap>
