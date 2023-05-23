@@ -5,5 +5,5 @@ export const Date = styled.p`
   font-size: 0.813rem;
   line-height: 1rem;
   color: #828282;
-  width: 4.438rem;
+  font-feature-settings: "tnum";
 `;
