@@ -9,6 +9,14 @@ interface PostContentProps {
   postWriter: string;
   createdAt: string;
   fileIsExist: boolean;
+  postContent: string;
+  fileInfo: [
+    {
+      fileUrl: string;
+      fileName: string;
+      fileExtension: string;
+    }
+  ];
 }
 
 const PostContent: React.FC<PostContentProps> = ({
@@ -17,6 +25,8 @@ const PostContent: React.FC<PostContentProps> = ({
   postWriter,
   createdAt,
   fileIsExist,
+  postContent,
+  fileInfo,
 }) => {
   const updateDate = (date: string) => {
     const newDate = date.slice(0, 10).replace(/-/g, ".");
@@ -26,8 +36,8 @@ const PostContent: React.FC<PostContentProps> = ({
   return (
     <S.ContentWrapper>
       <S.ImageWrapper>
-        {!fileIsExist ? (
-          <Image alt="content img" src={""} fill />
+        {fileIsExist ? (
+          <Image alt="content img" src={fileInfo[0].fileUrl} fill />
         ) : (
           <Image
             alt="content img"
@@ -47,7 +57,7 @@ const PostContent: React.FC<PostContentProps> = ({
           <S.Dot />
           <S.Details>{updateDate(createdAt)}</S.Details>
         </S.DetailWrapper>
-        <S.Description>{}</S.Description>
+        <S.Description>{postContent}</S.Description>
       </S.TextWrapper>
     </S.ContentWrapper>
   );
