@@ -9,14 +9,21 @@ interface InputProps
   > {
   width?: string;
   height?: string;
+  marginTop?: string;
 }
 
-const Input: React.FC<InputProps> = ({ width, height, ...attributes }) => {
+const Input: React.FC<InputProps> = ({
+  width,
+  height,
+  marginTop,
+  ...attributes
+}) => {
   return (
     <S.InputBox
       css={css`
         width: ${width};
         height: ${height};
+        margin-top: ${marginTop};
       `}
       {...attributes}
     />
