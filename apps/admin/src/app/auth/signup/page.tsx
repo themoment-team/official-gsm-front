@@ -17,26 +17,16 @@ const placeholders = {
   password: "비밀번호를 입력해주세요.",
 };
 
+const stepArray: StepType[] = ["name", "id", "password"];
+
 const nextStep = (step: StepType) => {
-  switch (step) {
-    case "name":
-      return "id";
-    case "id":
-      return "password";
-    case "password":
-      return "password";
-  }
+  const currentValueIndex = stepArray.indexOf(step);
+  return stepArray[currentValueIndex + 1];
 };
 
 const previousStep = (step: StepType) => {
-  switch (step) {
-    case "name":
-      return "name";
-    case "id":
-      return "name";
-    case "password":
-      return "id";
-  }
+  const currentValueIndex = stepArray.indexOf(step);
+  return stepArray[currentValueIndex - 1];
 };
 
 export default function SignupPage() {
