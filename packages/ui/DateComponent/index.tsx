@@ -2,13 +2,14 @@ import * as S from "./style";
 import formatDate from "./formatDate";
 
 interface DateProps {
-  createdAt: Date;
+  createdAt: string;
 }
 
 const DateComponent: React.FC<DateProps> = ({ createdAt }) => {
-  const month = formatDate(createdAt.getMonth() + 1);
-  const date = formatDate(createdAt.getDate());
-  return <S.Date>{`${createdAt.getFullYear()}.${month}.${date}`}</S.Date>;
+  const createdAtDate = new Date(createdAt);
+  const month = formatDate(createdAtDate.getMonth() + 1);
+  const date = formatDate(createdAtDate.getDate());
+  return <S.Date>{`${createdAtDate.getFullYear()}.${month}.${date}`}</S.Date>;
 };
 
 export default DateComponent;
