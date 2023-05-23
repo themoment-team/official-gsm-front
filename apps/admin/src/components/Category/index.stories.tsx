@@ -10,14 +10,5 @@ export default {
 type Story = StoryObj<typeof Category>;
 
 export const Primary: Story = {
-  args: {
-    isActive: true,
-  },
-};
-
-export const isActive: Story = {
-  args: {
-    ...Primary.args,
-    isActive: false,
-  },
+  args: {},
 };

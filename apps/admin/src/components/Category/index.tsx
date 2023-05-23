@@ -31,8 +31,7 @@ const Category = ({ isActive }: CategoryProps) => {
                     width: 85px;
                   `}
                 >
-                  <S.Path isActive={isActive}>∙&nbsp;&nbsp;{tab.label}</S.Path>
-                  {/* <S.Path isActive={pathname === tab.path}>{tab.label}</S.Path> */}
+                  <S.Path isActive={pathname === tab.path}>{tab.label}</S.Path>
                 </div>
               </Link>
             </S.Menu>
