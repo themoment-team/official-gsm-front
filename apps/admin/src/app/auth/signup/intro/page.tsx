@@ -29,7 +29,9 @@ export default function IntroPage() {
         }}
         isLoading={isLoading}
       >
-        <CustomLink href="/auth/signup">작성</CustomLink>
+        <CustomLink replace={true} href="/auth/signup">
+          작성
+        </CustomLink>
       </Button>
     </>
   );
