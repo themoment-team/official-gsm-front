@@ -3,6 +3,7 @@ import { Description } from "./style";
 
 interface AuthDescriptionProps {
   children: React.ReactNode;
+  className?: string;
 }
 
 /**
@@ -10,8 +11,11 @@ interface AuthDescriptionProps {
  *
  * @prop children: React.ReactNode
  */
-const AuthDescription: React.FC<AuthDescriptionProps> = ({ children }) => {
-  return <Description>{children}</Description>;
+const AuthDescription: React.FC<AuthDescriptionProps> = ({
+  children,
+  className,
+}) => {
+  return <Description className={className}>{children}</Description>;
 };
 
 export default AuthDescription;
