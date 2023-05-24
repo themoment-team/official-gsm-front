@@ -15,7 +15,7 @@ const placeholders = {
   name: "성함을 입력해주세요.",
   id: "아이디를 입력해주세요.",
   password: "비밀번호를 입력해주세요.",
-};
+} as const;
 
 const stepArray: StepType[] = ["name", "id", "password"];
 
