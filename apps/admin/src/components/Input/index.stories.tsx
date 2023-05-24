@@ -14,5 +14,14 @@ export const PasswordTextarea: Story = {
     width: "21.4375rem",
     height: "2.75rem",
     placeholder: "비밀번호를 입력해주세요.",
+    resetBtn: true,
+  },
+};
+
+export const InputTitle: Story = {
+  args: {
+    width: "578px",
+    height: "2.75rem",
+    placeholder: "제목을 입력해주세요.",
   },
 };
