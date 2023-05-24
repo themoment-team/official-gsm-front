@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const InputWrapper = styled.div<{ isResetBtn: boolean }>`
-  width: ${({ isResetBtn }) => (isResetBtn ? "343px" : "100%")};
+  width: ${({ isResetBtn }) => (isResetBtn ? "21.4375rem" : "100%")};
   height: 2.75rem;
   position: relative;
   display: flex;
