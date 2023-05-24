@@ -39,7 +39,13 @@ const Input: React.FC<InputProps> = ({
   };
 
   return (
-    <S.InputWrapper isResetBtn={resetBtn}>
+    <S.InputWrapper
+      isResetBtn={resetBtn}
+      css={css`
+        width: ${width};
+        height: ${height};
+      `}
+    >
       {resetBtn ? (
         <div
           onClick={() => handleDivClick()}
@@ -62,10 +68,6 @@ const Input: React.FC<InputProps> = ({
         ""
       )}
       <S.InputBox
-        css={css`
-          width: ${width};
-          height: ${height};
-        `}
         {...attributes}
         ref={inputRef}
         value={inputValue}

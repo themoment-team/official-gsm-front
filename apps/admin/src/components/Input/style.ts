@@ -1,16 +1,14 @@
 import styled from "@emotion/styled";
 
 export const InputWrapper = styled.div<{ isResetBtn: boolean }>`
-  width: ${({ isResetBtn }) => (isResetBtn ? "21.4375rem" : "100%")};
-  height: 2.75rem;
   position: relative;
   display: flex;
   align-items: center;
 `;
 
 export const InputBox = styled.input`
-  width: 21.4375rem;
-  height: 2.75rem;
+  width: 100%;
+  height: 100%;
   border-radius: 1.25rem;
   border: 0.0625rem solid #dcdcdc;
   background-color: #fff;
