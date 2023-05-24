@@ -14,7 +14,7 @@ export const InputBox = styled.input`
   border-radius: 1.25rem;
   border: 0.0625rem solid #dcdcdc;
   background-color: #fff;
-  padding: 0 20px 0 20px;
+  padding: 0 1.25rem 0 1.25rem;
   font-size: 0.75rem;
   color: #a4a4a4;
   transition: ease-in-out 0.3s;
