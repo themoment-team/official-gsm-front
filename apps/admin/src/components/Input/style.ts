@@ -1,5 +1,13 @@
 import styled from "@emotion/styled";
 
+export const InputWrapper = styled.div<{ isResetBtn: boolean }>`
+  width: ${({ isResetBtn }) => (isResetBtn ? "343px" : "100%")};
+  height: 2.75rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+`;
+
 export const InputBox = styled.input`
   width: 21.4375rem;
   height: 2.75rem;
