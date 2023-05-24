@@ -29,6 +29,7 @@ export const SeeMoreException = styled.div`
   height: 26px;
   display: flex;
   align-items: center;
+  cursor: pointer;
 `;
 
 export const SeeMoreText = styled.p`
