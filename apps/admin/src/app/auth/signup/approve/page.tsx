@@ -15,12 +15,10 @@ export default function IntroPage() {
   return (
     <>
       <ToBackButton onClick={back} />
-      <AuthTitle textAlign="center">
-        교사 회원 가입을 위해 이름과
-        <br />
-        아이디 비밀번호를 입력해야 돼요.
+      <AuthTitle textAlign="center" marginTop="5rem">
+        승인이 완료되었습니다.
       </AuthTitle>
-      <AuthModel modelUrl="/models/school.webm" />
+      <AuthModel modelUrl="/models/approve.webm" loop={false} marginTop="0" />
       <Button
         position="absolute"
         bottom="1.5rem"
@@ -29,7 +27,7 @@ export default function IntroPage() {
         }}
         isLoading={isLoading}
       >
-        <CustomLink href="/auth/signup">작성</CustomLink>
+        <CustomLink href="/">확인</CustomLink>
       </Button>
     </>
   );
