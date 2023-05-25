@@ -6,7 +6,8 @@ export { default as AuthDescription } from "./AuthDescription";
 export { default as Header } from "./Header";
 export { default as DetailPageHeader } from "./DetailPageHeader";
 export { default as PostContent } from "./PostContent";
+export { default as TextArea } from "./TextArea";
 export { default as Input } from "./Input";
 export { default as ApproveModal } from "./ApproveModal";
 export { default as ApproveItem } from "./ApproveModal/ApproveItem";
-
+export { default as AuthError } from "./AuthError";

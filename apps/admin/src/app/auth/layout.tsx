@@ -34,6 +34,7 @@ const Content = styled.div`
   background-color: #ffffff;
   box-shadow: 0 0.25rem 3.75rem rgba(0, 0, 0, 0.04);
   padding: 1.5rem 1rem;
+  position: relative;
   @media (max-height: 50rem) {
     margin: 5rem 0;
   }
