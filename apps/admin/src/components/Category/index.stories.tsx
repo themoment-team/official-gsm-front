@@ -14,7 +14,7 @@ export const Primary: Story = {
   parameters: {
     nextjs: {
       navigation: {
-        pathname: "/notice",
+        pathname: ["*/notice", "*/gallery", "*/familyCorrespondence"],
       },
     },
   },

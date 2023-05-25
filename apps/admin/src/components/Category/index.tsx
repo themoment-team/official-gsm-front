@@ -4,16 +4,12 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const test = [
-  { path: "/notice", label: "공지사항" },
-  { path: "/gallery", label: "행사갤러리" },
-  { path: "/familyCorrespondence", label: "가정통신문" },
+  { path: "*/notice", label: "공지사항" },
+  { path: "*/gallery", label: "행사갤러리" },
+  { path: "*/familyCorrespondence", label: "가정통신문" },
 ];
 
-interface CategoryProps {
-  isActive?: boolean;
-}
-
-const Category = ({ isActive }: CategoryProps) => {
+const Category = () => {
   const pathname = usePathname();
 
   return (
