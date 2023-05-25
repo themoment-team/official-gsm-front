@@ -1,17 +1,18 @@
 import * as S from "./style";
+import DateComponent from "../../../../../packages/ui/DateComponent";
 
 interface NoticeCardProps {
   title: string;
   subtitle: string;
   writer: string;
-  date: string;
+  createdAt: string;
 }
 
 const NoticeCard: React.FC<NoticeCardProps> = ({
   title,
   subtitle,
   writer,
-  date,
+  createdAt,
 }) => {
   return (
     <S.NoticeCard>
@@ -22,7 +23,9 @@ const NoticeCard: React.FC<NoticeCardProps> = ({
       <S.WriterDateWrap>
         <S.Writer>{writer}</S.Writer>
         <S.Dot />
-        <S.Date>{date}</S.Date>
+        <S.Date>
+          <DateComponent createdAt={createdAt}></DateComponent>
+        </S.Date>
       </S.WriterDateWrap>
     </S.NoticeCard>
   );

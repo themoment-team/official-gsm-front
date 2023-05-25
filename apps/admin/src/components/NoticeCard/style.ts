@@ -48,7 +48,7 @@ export const Writer = styled.div``;
 export const Dot = styled.div`
   height: 0.25rem;
   width: 0.25rem;
-  border-radius: 6.25rem;
+  border-radius: 100%;
   background-color: rgba(130, 130, 130, 1);
 `;
 
