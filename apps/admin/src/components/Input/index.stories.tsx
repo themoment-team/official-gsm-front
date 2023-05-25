@@ -20,7 +20,7 @@ export const PasswordTextarea: Story = {
 
 export const InputTitle: Story = {
   args: {
-    width: "578px",
+    width: "36.125rem",
     height: "2.75rem",
     placeholder: "제목을 입력해주세요.",
   },
