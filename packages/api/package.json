@@ -1,0 +1,12 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "dependencies": {
+    "@types/node": "20.1.4",
+    "axios": "^1.4.0"
+  },
+  "devDependencies": {
+    "tsconfig": "workspace:^"
+  }
+}
