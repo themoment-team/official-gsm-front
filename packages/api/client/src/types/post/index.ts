@@ -15,14 +15,14 @@ interface FileInfoType {
 }
 
 export interface PostListType {
-  content: [
-    {
-      postSeq: number;
-      postTitle: string;
-      postWriter: string;
-      createdAt: string;
-      thumbnailUrl: string;
-      fileIsExist: boolean;
-    }
-  ];
+  content: ContentType[];
+}
+
+export interface ContentType {
+  postSeq: number;
+  postTitle: string;
+  postWriter: string;
+  createdAt: string;
+  thumbnailUrl: string;
+  fileIsExist: boolean;
 }
