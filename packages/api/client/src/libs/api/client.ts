@@ -5,18 +5,35 @@ const instance = axios.create({
   withCredentials: true,
 });
 
-export const get = <T>(...args: Parameters<typeof instance.get>) => {
-  return instance.get<T>(...args);
+export const get = async (...args: Parameters<typeof instance.get>) => {
+  try {
+    const { data } = await instance.get(...args);
+    return data;
+  } catch (error) {
+    return error;
+  }
 };
 
-export const post = <T>(...args: Parameters<typeof instance.post>) => {
-  return instance.post<T>(...args);
+export const post = async <T>(...args: Parameters<typeof instance.post>) => {
+  try {
+    await instance.post<T>(...args);
+  } catch (error) {
+    return error;
+  }
 };
 
-export const patch = <T>(...args: Parameters<typeof instance.patch>) => {
-  return instance.patch<T>(...args);
+export const patch = async <T>(...args: Parameters<typeof instance.patch>) => {
+  try {
+    await instance.patch<T>(...args);
+  } catch (error) {
+    return error;
+  }
 };
 
-export const del = <T>(...args: Parameters<typeof instance.delete>) => {
-  return instance.delete<T>(...args);
+export const del = async <T>(...args: Parameters<typeof instance.delete>) => {
+  try {
+    await instance.delete<T>(...args);
+  } catch (error) {
+    return error;
+  }
 };
