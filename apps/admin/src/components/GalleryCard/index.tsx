@@ -1,5 +1,6 @@
 import * as S from "./style";
 import Image from "next/image";
+import { DateComponent } from "../../../../../packages/ui";
 
 interface GalleryCardProps {
   imgUrl: string;
@@ -24,8 +25,8 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
       <S.Title>{title}</S.Title>
       <S.Description>{description}</S.Description>
       <S.DetailWrapper>
-        <S.Details>{writer}</S.Details>
-        <S.Details>{date}</S.Details>
+        <S.Writer>{writer}</S.Writer>
+        <DateComponent createdAt={date} />
       </S.DetailWrapper>
     </S.CardWrapper>
   );
