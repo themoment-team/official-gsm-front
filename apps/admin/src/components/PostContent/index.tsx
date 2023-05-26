@@ -2,6 +2,7 @@ import * as S from "./style";
 import React from "react";
 import Image from "next/image";
 import { css } from "@emotion/react";
+import { DateComponent } from "../../../../../packages/ui";
 
 interface PostContentProps {
   postSeq: number;
@@ -28,11 +29,6 @@ const PostContent: React.FC<PostContentProps> = ({
   postContent,
   fileInfo,
 }) => {
-  const updateDate = (date: string) => {
-    const newDate = date.slice(0, 10).replace(/-/g, ".");
-    return newDate;
-  };
-
   return (
     <S.ContentWrapper>
       <S.ImageWrapper>
@@ -55,7 +51,7 @@ const PostContent: React.FC<PostContentProps> = ({
         <S.DetailWrapper>
           <S.Details>{postWriter}</S.Details>
           <S.Dot />
-          <S.Details>{updateDate(createdAt)}</S.Details>
+          <DateComponent createdAt={createdAt} />
         </S.DetailWrapper>
         <S.Description>{postContent}</S.Description>
       </S.TextWrapper>
