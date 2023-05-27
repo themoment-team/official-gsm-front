@@ -7,15 +7,31 @@ export default {
   parameters: {},
 } as Meta<typeof Category>;
 
-type Story = StoryObj<typeof Category>;
+type StoryProps = {
+  pathname?: string | string[];
+};
 
-export const Primary: Story = {
-  args: {},
-  parameters: {
-    nextjs: {
-      navigation: {
-        pathname: ["*/notice", "*/gallery", "*/familyCorrespondence"],
-      },
+export const Primary: StoryObj<Partial<StoryProps>> = (
+  args: Partial<StoryProps>
+) => <Category {...args} />;
+
+Primary.argTypes = {
+  pathname: {
+    control: {
+      type: "select",
+      options: ["/notice", "/gallery", "/familyCorrespondence"],
+    },
+  },
+};
+
+Primary.args = {
+  pathname: "/notice",
+};
+
+Primary.parameters = {
+  nextjs: {
+    navigation: {
+      pathname: "/notice",
     },
   },
 };

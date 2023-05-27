@@ -4,14 +4,18 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 const test = [
-  { path: "*/notice", label: "공지사항" },
-  { path: "*/gallery", label: "행사갤러리" },
-  { path: "*/familyCorrespondence", label: "가정통신문" },
+  { path: "/notice", label: "공지사항" },
+  { path: "/gallery", label: "행사갤러리" },
+  { path: "/familyCorrespondence", label: "가정통신문" },
 ];
 
-const Category = () => {
-  const pathname = usePathname();
+interface CategoryProps {
+  pathname?: string | string[];
+}
 
+const Category: React.FC<CategoryProps> = ({ pathname }) => {
+  const currentPath = usePathname();
+  const path = pathname;
   return (
     <S.Category>
       <S.MenuWrap>
@@ -27,7 +31,9 @@ const Category = () => {
                     width: 85px;
                   `}
                 >
-                  <S.Path isActive={pathname === tab.path}>{tab.label}</S.Path>
+                  <S.Path isActive={currentPath === tab.path}>
+                    ∙&nbsp;&nbsp;{tab.label}
+                  </S.Path>
                 </div>
               </Link>
             </S.Menu>
