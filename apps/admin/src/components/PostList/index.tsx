@@ -14,25 +14,54 @@ interface PostType {
   postTitle: string;
   postWriter: string;
   createdAt: string;
-  thumbnailUrl: string;
+  thumbnailUrl: string | null;
   fileIsExist: boolean;
 }
 
 const PostList: React.FC<PostListHeader> = ({ kind, seeMore, isAdmin }) => {
-  const [postList, setPostList] = useState<PostType[]>();
+  const [postList, setPostList] = useState<PostType[]>([
+    {
+      postSeq: 1,
+      postTitle: "Test",
+      postWriter: "Tester",
+      createdAt: "2023-05-03T19:47:01.250197",
+      thumbnailUrl: null,
+      fileIsExist: true,
+    },
+    {
+      postSeq: 1,
+      postTitle: "Test",
+      postWriter: "Tester",
+      createdAt: "2023-05-03T19:47:01.250197",
+      thumbnailUrl: null,
+      fileIsExist: true,
+    },
+    {
+      postSeq: 1,
+      postTitle: "Test",
+      postWriter: "Tester",
+      createdAt: "2023-05-03T19:47:01.250197",
+      thumbnailUrl: null,
+      fileIsExist: true,
+    },
+  ]);
 
   return (
     <>
       <PostListHeader kind={kind} seeMore={seeMore} isAdmin={isAdmin} />
-      {postList?.map((post) => {
-        const subTitle = "postSeq => postContent 요청하기";
-        <PostCard
-          title={post.postTitle}
-          subtitle={subTitle}
-          writer={post.postWriter}
-          createdAt={post.createdAt}
-        />;
-      })}
+      <div style={{ marginTop: "19px" }}>
+        {postList?.map((post) => {
+          const subTitle = "postSeq => postContent 요청하기";
+          return (
+            <PostCard
+              title={post.postTitle}
+              subtitle={subTitle}
+              writer={post.postWriter}
+              createdAt={post.createdAt}
+            />
+          );
+        })}
+      </div>
     </>
   );
 };
