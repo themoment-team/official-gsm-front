@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 
 export const PostListHeader = styled.header`
-  width: 1080px;
-  height: 36px;
+  width: 67.5rem;
+  height: 2.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -10,15 +10,15 @@ export const PostListHeader = styled.header`
 
 export const CategoryTitle = styled.h1`
   font-weight: 700;
-  font-size: 20px;
-  line-height: 26px;
+  font-size: 1.25rem;
+  line-height: 1.625rem;
   color: #050505;
 `;
 
 export const BlaBTN = styled.button`
-  width: 36px;
-  height: 36px;
-  border-radius: 18px;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 1.125rem;
   background: #dee449;
   display: flex;
   align-items: center;
@@ -26,7 +26,7 @@ export const BlaBTN = styled.button`
 `;
 
 export const SeeMoreException = styled.div`
-  height: 26px;
+  height: 1.625rem;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -34,8 +34,8 @@ export const SeeMoreException = styled.div`
 
 export const SeeMoreText = styled.p`
   font-weight: 500;
-  font-size: 16px;
-  line-height: 25px;
+  font-size: 1rem;
+  line-height: 1.5625rem;
   color: #505050;
-  margin: 0 8px 0 14px;
+  margin: 0 0.5rem 0 0.875rem;
 `;

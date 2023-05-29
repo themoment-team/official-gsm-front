@@ -49,7 +49,7 @@ const PostList: React.FC<PostListHeader> = ({ kind, seeMore, isAdmin }) => {
   return (
     <>
       <PostListHeader kind={kind} seeMore={seeMore} isAdmin={isAdmin} />
-      <div style={{ marginTop: "19px" }}>
+      <div style={{ marginTop: "1.1875rem" }}>
         {postList?.map((post) => {
           const subTitle = "postSeq => postContent 요청하기";
           return (
