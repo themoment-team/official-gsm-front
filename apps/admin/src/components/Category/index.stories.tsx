@@ -1,4 +1,3 @@
-import React from "react";
 import Category from ".";
 import { Meta, StoryObj } from "@storybook/react";
 
