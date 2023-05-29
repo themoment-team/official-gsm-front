@@ -1,14 +1,14 @@
 import * as S from "./style";
 import DateComponent from "ui/DateComponent";
 
-interface NoticeCardProps {
+interface PostCardProps {
   title: string;
   subtitle: string;
   writer: string;
   createdAt: string;
 }
 
-const NoticeCard: React.FC<NoticeCardProps> = ({
+const PostCard: React.FC<PostCardProps> = ({
   title,
   subtitle,
   writer,
@@ -31,4 +31,4 @@ const NoticeCard: React.FC<NoticeCardProps> = ({
   );
 };
 
-export default NoticeCard;
+export default PostCard;

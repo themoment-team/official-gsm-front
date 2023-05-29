@@ -1,13 +1,13 @@
-import NoticeCard from ".";
+import PostCard from ".";
 import { Meta, StoryObj } from "@storybook/react";
 
 export default {
-  title: "admin/NoticeCard",
-  component: NoticeCard,
+  title: "admin/PostCard",
+  component: PostCard,
   parameters: {},
-} as Meta<typeof NoticeCard>;
+} as Meta<typeof PostCard>;
 
-type Story = StoryObj<typeof NoticeCard>;
+type Story = StoryObj<typeof PostCard>;
 
 export const Primary: Story = {
   args: {
