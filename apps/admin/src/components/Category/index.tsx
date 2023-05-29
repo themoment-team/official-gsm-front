@@ -13,8 +13,9 @@ const test = [
 ];
 
 const Category: React.FC<CategoryProps> = ({ pathname }) => {
-  // 실제 코드는 아래 변수를 활성화 시키고 pathname -> currentPath 로 변경시 적용됩니다..!
+  // storybook 테스트를 위해 주석처리 해 두었습니다
   // const currentPath = usePathname();
+
   return (
     <S.Category>
       <S.MenuWrap>
