@@ -23,9 +23,7 @@ const PostCard: React.FC<PostCardProps> = ({
       <S.WriterDateWrap>
         <S.Writer>{writer}</S.Writer>
         <S.Dot />
-        <S.Date>
-          <DateComponent createdAt={createdAt}></DateComponent>
-        </S.Date>
+        <DateComponent createdAt={createdAt}></DateComponent>
       </S.WriterDateWrap>
     </S.NoticeCard>
   );

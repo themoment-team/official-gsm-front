@@ -51,5 +51,3 @@ export const Dot = styled.div`
   border-radius: 100%;
   background-color: rgba(130, 130, 130, 1);
 `;
-
-export const Date = styled.div``;
