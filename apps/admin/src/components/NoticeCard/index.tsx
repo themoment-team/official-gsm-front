@@ -1,5 +1,5 @@
 import * as S from "./style";
-import DateComponent from "../../../../../packages/ui/DateComponent";
+import DateComponent from "ui/DateComponent";
 
 interface NoticeCardProps {
   title: string;
