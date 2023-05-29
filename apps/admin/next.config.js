@@ -2,9 +2,21 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  transpilePackages: ["ui", "common"],
+  transpilePackages: ["ui", "common", "api"],
   compiler: {
     emotion: true,
+  },
+  rewrites: async () => {
+    return [
+      {
+        source: "/api/client/:path*",
+        destination: `${process.env.CLIENT_API_URL}/api/:path*`,
+      },
+      // {
+      //   source: "/api/admin/:path*",
+      //   destination: `${process.env.ADMIN_API_URL}/api/:path*`,
+      // },
+    ];
   },
 };
 
