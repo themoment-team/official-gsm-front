@@ -1,37 +1,22 @@
+import React from "react";
 import Category from ".";
 import { Meta, StoryObj } from "@storybook/react";
 
 export default {
   title: "admin/Category",
   component: Category,
-  parameters: {},
-} as Meta<typeof Category>;
-
-type StoryProps = {
-  pathname?: string | string[];
-};
-
-export const Primary: StoryObj<Partial<StoryProps>> = (
-  args: Partial<StoryProps>
-) => <Category {...args} />;
-
-Primary.argTypes = {
-  pathname: {
-    control: {
-      type: "select",
+  argTypes: {
+    pathname: {
+      control: { type: "select" },
       options: ["/notice", "/gallery", "/familyCorrespondence"],
     },
   },
-};
+} as Meta<typeof Category>;
+
+type Story = StoryObj<typeof Category>;
+
+export const Primary: Story = (args: any) => <Category {...args} />;
 
 Primary.args = {
   pathname: "/notice",
-};
-
-Primary.parameters = {
-  nextjs: {
-    navigation: {
-      pathname: "/notice",
-    },
-  },
 };

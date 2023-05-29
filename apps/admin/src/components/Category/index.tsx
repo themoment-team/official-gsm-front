@@ -3,19 +3,18 @@ import { css } from "@emotion/react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
+interface CategoryProps {
+  pathname?: string;
+}
 const test = [
   { path: "/notice", label: "공지사항" },
   { path: "/gallery", label: "행사갤러리" },
   { path: "/familyCorrespondence", label: "가정통신문" },
 ];
 
-interface CategoryProps {
-  pathname?: string | string[];
-}
-
 const Category: React.FC<CategoryProps> = ({ pathname }) => {
-  const currentPath = usePathname();
-  const path = pathname;
+  // 실제 코드는 아래 변수를 활성화 시키고 pathname -> currentPath 로 변경시 적용됩니다..!
+  // const currentPath = usePathname();
   return (
     <S.Category>
       <S.MenuWrap>
@@ -31,7 +30,7 @@ const Category: React.FC<CategoryProps> = ({ pathname }) => {
                     width: 85px;
                   `}
                 >
-                  <S.Path isActive={currentPath === tab.path}>
+                  <S.Path isActive={pathname === tab.path}>
                     ∙&nbsp;&nbsp;{tab.label}
                   </S.Path>
                 </div>
