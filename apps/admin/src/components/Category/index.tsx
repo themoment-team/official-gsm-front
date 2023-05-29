@@ -28,7 +28,7 @@ const Category: React.FC<CategoryProps> = ({ pathname }) => {
                     display: flex;
                     align-items: center;
                     justify-content: space-evenly;
-                    width: 85px;
+                    width: 5.3125rem;
                   `}
                 >
                   <S.Path isActive={pathname === tab.path}>
