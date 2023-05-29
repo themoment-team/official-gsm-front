@@ -8,4 +8,5 @@ export { default as Input } from "./Input";
 export { default as ApproveModal } from "./ApproveModal";
 export { default as ApproveItem } from "./ApproveModal/ApproveItem";
 export { default as AuthError } from "./AuthError";
-export { default as BlaHeader } from "./BlaHeader";
+export { default as PostListHeader } from "./PostListHeader";
+export { default as PostList } from "./PostList";
