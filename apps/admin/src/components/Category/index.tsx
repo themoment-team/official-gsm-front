@@ -31,6 +31,7 @@ const Category: React.FC<CategoryProps> = ({ pathname }) => {
                     width: 5.3125rem;
                   `}
                 >
+                  {/* pathname -> currentPath */}
                   <S.Path isActive={pathname === tab.path}>
                     ∙&nbsp;&nbsp;{tab.label}
                   </S.Path>
