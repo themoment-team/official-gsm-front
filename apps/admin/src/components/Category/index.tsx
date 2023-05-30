@@ -23,19 +23,12 @@ const Category: React.FC<CategoryProps> = ({ pathname }) => {
           return (
             <S.Menu key={tab.path}>
               <Link href={tab.path}>
-                <div
-                  css={css`
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    width: 5.3125rem;
-                  `}
-                >
+                <S.LinkWrap>
                   {/* pathname -> currentPath */}
                   <S.Path isActive={pathname === tab.path}>
                     ∙&nbsp;&nbsp;{tab.label}
                   </S.Path>
-                </div>
+                </S.LinkWrap>
               </Link>
             </S.Menu>
           );

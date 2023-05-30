@@ -20,6 +20,13 @@ export const Menu = styled.button`
   padding-right: 1.5rem;
 `;
 
+export const LinkWrap = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 5.3125rem;
+`;
+
 export const Path = styled.div<{ isActive?: boolean }>`
   color: ${(props) => (props.isActive ? "#FFFFFF" : "#a4a4a4")};
 `;
