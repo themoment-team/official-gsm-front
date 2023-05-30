@@ -2,7 +2,7 @@ import * as S from "./style";
 import React from "react";
 import Image from "next/image";
 import { css } from "@emotion/react";
-import { DateComponent } from "../../../../../packages/ui";
+import { DateComponent } from "ui";
 
 interface PostContentProps {
   postSeq: number;
