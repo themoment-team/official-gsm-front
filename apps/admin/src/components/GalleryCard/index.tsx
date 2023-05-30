@@ -1,6 +1,6 @@
 import * as S from "./style";
 import Image from "next/image";
-import { DateComponent } from "../../../../../packages/ui";
+import { DateComponent } from "ui";
 
 interface GalleryCardProps {
   imgUrl: string;
