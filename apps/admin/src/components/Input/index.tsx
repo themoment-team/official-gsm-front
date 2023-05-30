@@ -47,23 +47,12 @@ const Input: React.FC<InputProps> = ({
       `}
     >
       {resetBtn ? (
-        <div
+        <S.InputValueResetBtn
+          isInputFocused={isInputFocused}
           onClick={() => handleDivClick()}
-          css={css`
-            position: absolute;
-            right: 1rem;
-            opacity: 0;
-            transition: ease-in-out 0.3s;
-            ${isInputFocused
-              ? css`
-                  opacity: 1;
-                  cursor: pointer;
-                `
-              : ""}
-          `}
         >
           <InputValueResetBtn />
-        </div>
+        </S.InputValueResetBtn>
       ) : (
         ""
       )}
