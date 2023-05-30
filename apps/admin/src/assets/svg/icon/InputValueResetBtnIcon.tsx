@@ -1,4 +1,4 @@
-const InputValueResetBtn = () => (
+const InputValueResetBtnIcon = () => (
   <svg
     width="16"
     height="16"
@@ -17,4 +17,4 @@ const InputValueResetBtn = () => (
   </svg>
 );
 
-export default InputValueResetBtn;
+export default InputValueResetBtnIcon;
