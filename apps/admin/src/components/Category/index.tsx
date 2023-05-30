@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 interface CategoryProps {
-  pathname?: string;
+  category?: string;
 }
 const test = [
   { path: "/notice", label: "공지사항" },
@@ -12,7 +12,7 @@ const test = [
   { path: "/familyCorrespondence", label: "가정통신문" },
 ];
 
-const Category: React.FC<CategoryProps> = ({ pathname }) => {
+const Category: React.FC<CategoryProps> = ({ category }) => {
   // storybook 테스트를 위해 주석처리 해 두었습니다
   // const currentPath = usePathname();
 
@@ -25,7 +25,7 @@ const Category: React.FC<CategoryProps> = ({ pathname }) => {
               <Link href={tab.path}>
                 <S.LinkWrap>
                   {/* pathname -> currentPath */}
-                  <S.Path isActive={pathname === tab.path}>
+                  <S.Path isActive={category === tab.path}>
                     ∙&nbsp;&nbsp;{tab.label}
                   </S.Path>
                 </S.LinkWrap>
