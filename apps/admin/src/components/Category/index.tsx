@@ -1,6 +1,4 @@
 import * as S from "./style";
-import { css } from "@emotion/react";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 interface CategoryProps {
@@ -13,9 +11,6 @@ const test = [
 ];
 
 const Category: React.FC<CategoryProps> = ({ category }) => {
-  // storybook 테스트를 위해 주석처리 해 두었습니다
-  // const currentPath = usePathname();
-
   return (
     <S.Category>
       <S.MenuWrap>
@@ -24,7 +19,6 @@ const Category: React.FC<CategoryProps> = ({ category }) => {
             <S.Menu key={tab.path}>
               <Link href={tab.path}>
                 <S.LinkWrap>
-                  {/* pathname -> currentPath */}
                   <S.Path isActive={category === tab.path}>
                     ∙&nbsp;&nbsp;{tab.label}
                   </S.Path>
