@@ -1,49 +1,52 @@
 import { css } from "@emotion/react";
 import { CustomButton } from "./style";
 import LoadingCircle from "../LoadingCircle";
+import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
 
-interface ButtonProps {
-  onClick?: () => void;
-  children?: React.ReactNode;
-  disabled?: boolean;
+interface ButtonProps
+  extends DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
   isLoading?: boolean;
-  widthREM?: number;
+  width?: string;
   bgColor?: string;
   fontColor?: string;
   hoverBgColor?: string;
   position?: "absolute" | "relative" | "fixed" | "static" | "sticky";
-  bottomREM?: number;
+  bottom?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
-  onClick,
   children = "",
-  disabled = false,
   isLoading = false,
-  widthREM,
+  width,
   bgColor,
   fontColor,
   hoverBgColor,
   position,
-  bottomREM,
+  bottom,
+  ...attributes
 }) => {
   return (
     <CustomButton
-      onClick={isLoading ? undefined : onClick}
       css={css`
-        pointer-events: ${isLoading && "none"};
-        width: ${widthREM && `${widthREM}rem`};
-        background: ${bgColor && bgColor};
-        color: ${fontColor && fontColor};
-        position: ${position && position};
-        bottom: ${bottomREM && `${bottomREM}rem`};
+        width: ${width};
+        background: ${bgColor};
+        color: ${fontColor};
+        position: ${position};
+        bottom: ${bottom};
         :hover {
-          background: ${hoverBgColor && hoverBgColor};
+          background: ${hoverBgColor};
+        }
+        :disabled {
+          background: ${isLoading && (bgColor || "#050505")};
         }
       `}
-      disabled={disabled}
+      disabled={isLoading}
+      {...attributes}
     >
-      {isLoading ? <LoadingCircle /> : children}
+      {isLoading ? <LoadingCircle bgColor={bgColor} /> : children}
     </CustomButton>
   );
 };

@@ -1,31 +1,37 @@
 import { css } from "@emotion/react";
-import * as S from "./style";
+import { Title } from "./style";
 
 interface AuthTitleProps {
-  titleArray: string[];
+  children: React.ReactNode;
   textAlign?: "left" | "center" | "right";
+  marginTop?: string;
+  fontSize?: string;
 }
 
 /**
  * `auth/*` path 에서 사용되는 타이틀
  *
- * @prop titleArray: string[] - 줄 단위(\n)로 문자열을 나눈 배열을 받음
+ * @prop children: React.ReactNode
  * @prop textAlign: "left" | "center" | "right" - 타이틀 정렬 방식
+ * @prop marginTop: number - default = 2.5rem
+ * @prop fontSize: number - default = 1.125rem
  */
 const AuthTitle: React.FC<AuthTitleProps> = ({
-  titleArray,
+  children,
   textAlign = "left",
+  marginTop,
+  fontSize,
 }) => {
   return (
-    <S.TitleWrpapper
+    <Title
       css={css`
+        margin-top: ${marginTop};
         text-align: ${textAlign};
+        font-size: ${fontSize};
       `}
     >
-      {titleArray.map((text, index) => (
-        <S.Title key={index}>{text}</S.Title>
-      ))}
-    </S.TitleWrpapper>
+      {children}
+    </Title>
   );
 };
 

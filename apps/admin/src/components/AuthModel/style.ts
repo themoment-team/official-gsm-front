@@ -7,5 +7,4 @@ export const Video = styled.video`
   display: block;
   margin: 0 auto;
   margin-top: 4.5rem;
-  background-color: #eeeeee;
 `;
