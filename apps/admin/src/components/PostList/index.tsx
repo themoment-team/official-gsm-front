@@ -50,11 +50,11 @@ const PostList: React.FC<PostListHeader> = ({ kind, seeMore, isAdmin }) => {
     <>
       <PostListHeader kind={kind} seeMore={seeMore} isAdmin={isAdmin} />
       <div style={{ marginTop: "1.1875rem" }}>
-        {postList?.map((post, i) => {
+        {postList?.map((post) => {
           const subTitle = "postSeq => postContent 요청하기";
           return (
             <PostCard
-              key={i}
+              key={post.postSeq}
               title={post.postTitle}
               subtitle={subTitle}
               writer={post.postWriter}
