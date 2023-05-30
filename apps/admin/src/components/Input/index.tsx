@@ -18,7 +18,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ width, height, resetBtn = false, ...attributes }, ref) => {
     const inputRef = useForwardRef<HTMLInputElement>(ref);
 
-    const handleDivClick = () => {
+    const resetButtonClick = () => {
       if (inputRef) {
         inputRef.current.value = "";
         inputRef.current.focus();
@@ -34,7 +34,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       >
         <S.InputBox {...attributes} ref={inputRef} />
         {resetBtn && (
-          <S.InputValueResetBtn onClick={() => handleDivClick()}>
+          <S.InputValueResetBtn onClick={() => resetButtonClick()}>
             <InputValueResetBtnIcon />
           </S.InputValueResetBtn>
         )}
