@@ -6,6 +6,14 @@ export const InputWrapper = styled.div<{ isResetBtn: boolean }>`
   align-items: center;
 `;
 
+export const InputValueResetBtn = styled.button`
+  height: 1rem;
+  position: absolute;
+  right: 1rem;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+`;
+
 export const InputBox = styled.input`
   width: 100%;
   height: 100%;
@@ -27,15 +35,12 @@ export const InputBox = styled.input`
     border: 0.0625rem solid #050505;
   }
 
+  &:focus + ${InputValueResetBtn} {
+    opacity: 1;
+    cursor: pointer;
+  }
+
   ::placeholder {
     color: #a4a4a4;
   }
-`;
-export const InputValueResetBtn = styled.div<{ isInputFocused: boolean }>`
-  position: absolute;
-  right: 1rem;
-  opacity: 0;
-  transition: ease-in-out 0.3s;
-  opacity: ${({ isInputFocused }) => (isInputFocused ? "1" : "0")};
-  cursor: ${({ isInputFocused }) => (isInputFocused ? "pointer" : "")};
 `;

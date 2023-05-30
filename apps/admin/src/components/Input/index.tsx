@@ -2,13 +2,8 @@
 
 import { css } from "@emotion/react";
 import * as S from "./style";
-import {
-  DetailedHTMLProps,
-  InputHTMLAttributes,
-  useState,
-  useRef,
-} from "react";
-import { InputValueResetBtn } from "../../assets";
+import { DetailedHTMLProps, InputHTMLAttributes, useRef } from "react";
+import { InputValueResetBtnIcon } from "../../assets";
 
 interface InputProps
   extends DetailedHTMLProps<
@@ -24,16 +19,13 @@ const Input: React.FC<InputProps> = ({
   width,
   height,
   resetBtn = false,
+  ref = null,
   ...attributes
 }) => {
-  const [inputValue, setInputValue] = useState<string>("");
-  const [isInputFocused, setIsInputFocused] = useState<boolean>(false);
-  const inputRef = useRef<HTMLInputElement | null>(null);
-
   const handleDivClick = () => {
-    if (inputRef.current) {
-      setIsInputFocused(true);
-      setInputValue("");
+    if (ref) {
+      console.log(ref.current.value);
+      inputRef.current.value = "";
       inputRef.current.focus();
     }
   };
@@ -46,24 +38,12 @@ const Input: React.FC<InputProps> = ({
         height: ${height};
       `}
     >
-      {resetBtn ? (
-        <S.InputValueResetBtn
-          isInputFocused={isInputFocused}
-          onClick={() => handleDivClick()}
-        >
-          <InputValueResetBtn />
+      <S.InputBox {...attributes} ref={ref} />
+      {resetBtn && (
+        <S.InputValueResetBtn onClick={() => handleDivClick()}>
+          <InputValueResetBtnIcon />
         </S.InputValueResetBtn>
-      ) : (
-        ""
       )}
-      <S.InputBox
-        {...attributes}
-        ref={inputRef}
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        onFocus={() => setIsInputFocused(true)}
-        onBlur={() => setIsInputFocused(false)}
-      />
     </S.InputWrapper>
   );
 };
