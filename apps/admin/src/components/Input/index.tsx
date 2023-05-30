@@ -29,7 +29,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
     return (
       <S.InputWrapper
-        isResetBtn={resetBtn}
         css={css`
           width: ${width};
           height: ${height};

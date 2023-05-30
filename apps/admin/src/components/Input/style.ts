@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const InputWrapper = styled.div<{ isResetBtn: boolean }>`
+export const InputWrapper = styled.div`
   position: relative;
   display: flex;
   align-items: center;
