@@ -9,7 +9,7 @@ export default {
 
 type Story = StoryObj<typeof Input>;
 
-export const PasswordTextarea: Story = {
+export const PasswordInput: Story = {
   args: {
     width: "21.4375rem",
     height: "2.75rem",
@@ -18,10 +18,11 @@ export const PasswordTextarea: Story = {
   },
 };
 
-export const InputTitle: Story = {
+export const TitleInput: Story = {
   args: {
+    ...PasswordInput.args,
     width: "36.125rem",
-    height: "2.75rem",
     placeholder: "제목을 입력해주세요.",
+    resetBtn: false,
   },
 };
