@@ -1,5 +1,4 @@
 import * as S from "./style";
-// import * as I from "assets";
 import * as I from "admin/assets";
 
 interface ApproveItemProps {
