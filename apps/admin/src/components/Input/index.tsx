@@ -52,12 +52,12 @@ const Input: React.FC<InputProps> = ({
           css={css`
             position: absolute;
             right: 1rem;
-            cursor: pointer;
             opacity: 0;
             transition: ease-in-out 0.3s;
             ${isInputFocused
               ? css`
                   opacity: 1;
+                  cursor: pointer;
                 `
               : ""}
           `}
