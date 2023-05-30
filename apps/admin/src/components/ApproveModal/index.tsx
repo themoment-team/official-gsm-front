@@ -1,5 +1,4 @@
 import * as S from "./style";
-// import * as I from "assets";
 import * as I from "admin/assets";
 // import { ApproveItem } from "components";
 import { ApproveItem } from "..";
