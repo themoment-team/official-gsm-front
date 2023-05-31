@@ -1,20 +1,32 @@
 "use client";
 
-import { Category, Header } from "components";
+import styled from "@emotion/styled";
+import { CategoryType } from "admin/types";
+import { Category, Header, Banner } from "admin/components";
 
-type Category = "" | "newsletter" | "gallery";
-
-interface CategoryPageProps {
-  params: { category: Category };
+interface ListPageProps {
+  params: { category: CategoryType };
 }
 
-export default function CategoryPage({
-  params: { category },
-}: CategoryPageProps) {
+export default function ListPage({ params: { category } }: ListPageProps) {
   return (
     <>
       <Header hasNotification={false} name={"정문정"} />
-      <Category category={category} />
+      <Banner />
+      <ContentWrapper>
+        <Category category={category} />
+      </ContentWrapper>
     </>
   );
+}
+
+const ContentWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2.5rem;
+`;
+
+export async function generateStaticParams() {
+  return [{ category: "newsletter" }, { category: "gallery" }];
 }
