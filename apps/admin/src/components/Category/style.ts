@@ -1,12 +1,15 @@
 import styled from "@emotion/styled";
 
-export const Category = styled.div`
+export const Category = styled.div<{ width: string }>`
+  width: ${({ width }) => width};
   height: 4.25rem;
-  width: 67.5rem;
   display: flex;
   align-items: center;
   padding-left: 2.5rem;
-  border-radius: 1.25rem;
+  border-radius: ${({ width }) =>
+    width === "36.125rem"
+      ? "0.625rem"
+      : "1.25rem"}; //게시글 작성페이지에서는 border-radius가 10px입니다.
   background: #050505;
 `;
 
