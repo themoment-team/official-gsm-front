@@ -4,6 +4,7 @@ import Link from "next/link";
 interface CategoryProps {
   category?: string;
 }
+
 const test = [
   { path: "/notice", label: "공지사항" },
   { path: "/gallery", label: "행사갤러리" },
