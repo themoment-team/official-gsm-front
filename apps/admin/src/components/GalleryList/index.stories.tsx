@@ -1,13 +1,13 @@
-import PostList from ".";
+import GalleryList from ".";
 import { Meta, StoryObj } from "@storybook/react";
 
 export default {
-  title: "admin/PostList",
-  component: PostList,
+  title: "admin/GalleryList",
+  component: GalleryList,
   parameters: {},
-} as Meta<typeof PostList>;
+} as Meta<typeof GalleryList>;
 
-type Story = StoryObj<typeof PostList>;
+type Story = StoryObj<typeof GalleryList>;
 
 export const Gallery: Story = {
   args: {
