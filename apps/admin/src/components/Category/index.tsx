@@ -1,8 +1,8 @@
 import * as S from "./style";
 import Link from "next/link";
-
 interface CategoryProps {
   category?: string;
+  width: string;
 }
 const test = [
   { path: "/notice", label: "공지사항" },
@@ -10,9 +10,9 @@ const test = [
   { path: "/familyCorrespondence", label: "가정통신문" },
 ];
 
-const Category: React.FC<CategoryProps> = ({ category }) => {
+const Category: React.FC<CategoryProps> = ({ category, width }) => {
   return (
-    <S.Category>
+    <S.Category width={width}>
       <S.MenuWrap>
         {test.map((tab) => {
           return (
