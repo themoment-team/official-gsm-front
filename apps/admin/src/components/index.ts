@@ -12,3 +12,4 @@ export { default as ApproveItem } from "./ApproveModal/ApproveItem";
 export { default as AuthError } from "./AuthError";
 export { default as PostListHeader } from "./PostListHeader";
 export { default as PostList } from "./PostList";
+export { default as GalleryList } from "./GalleryList";
