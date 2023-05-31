@@ -1,8 +1,6 @@
 import * as S from "./style";
-// import * as I from "assets";
-import * as I from "../../assets";
-// import { ApproveItem } from "components";
-import { ApproveItem } from "..";
+import * as I from "admin/assets";
+import { ApproveItem } from "admin/components";
 
 const testData = [
   { name: "정문정", date: "2022.05.23" },

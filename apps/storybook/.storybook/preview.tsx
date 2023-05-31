@@ -20,6 +20,9 @@ const preview: Preview = {
         },
       ],
     },
+    nextjs: {
+      appDirectory: true,
+    },
   },
   decorators: [
     (Story) => (
