@@ -1,5 +1,4 @@
-// import { ToBackIcon } from "assets";
-import { ToBackIcon } from "../../assets";
+import { ToBackIcon } from "admin/assets";
 import React from "react";
 import { Button } from "./style";
 

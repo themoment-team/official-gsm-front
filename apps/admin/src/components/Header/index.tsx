@@ -1,12 +1,10 @@
 import Image from "next/image";
 import * as S from "./style";
-// import * as I from "assets";
-import * as I from "../../assets";
+import * as I from "admin/assets";
 import Link from "next/link";
 import { css } from "@emotion/react";
 import React, { useState } from "react";
-// import { ApproveModal } from "components";
-import { ApproveModal } from "../../components";
+import { ApproveModal } from "admin/components";
 
 interface HeaderProps {
   hasNotification: boolean;
