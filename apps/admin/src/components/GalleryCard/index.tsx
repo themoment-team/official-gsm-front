@@ -1,32 +1,38 @@
 import * as S from "./style";
 import Image from "next/image";
+import React from "react";
 import { DateComponent } from "ui";
 
+interface FileInfo {
+  fileUrl: string;
+  fileName: string;
+}
+
 interface GalleryCardProps {
-  imgUrl: string;
+  fileInfo: FileInfo[];
   title: string;
   description: string;
   writer: string;
-  date: string;
+  createdAt: string;
 }
 
 const GalleryCard: React.FC<GalleryCardProps> = ({
-  imgUrl,
+  fileInfo,
   title,
   description,
   writer,
-  date,
+  createdAt,
 }) => {
   return (
     <S.CardWrapper>
       <S.IMGWrapper>
-        <Image fill src={imgUrl} alt="ContentIMG" />
+        <Image fill src={fileInfo[0].fileUrl} alt="ContentIMG" />
       </S.IMGWrapper>
       <S.Title>{title}</S.Title>
       <S.Description>{description}</S.Description>
       <S.DetailWrapper>
         <S.Writer>{writer}</S.Writer>
-        <DateComponent createdAt={date} />
+        <DateComponent createdAt={createdAt} />
       </S.DetailWrapper>
     </S.CardWrapper>
   );
