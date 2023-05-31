@@ -1,9 +1,4 @@
-import axios from "axios";
-
-const instance = axios.create({
-  baseURL: "/api/client",
-  withCredentials: true,
-});
+import { instance } from "./instance";
 
 export const get = async (...args: Parameters<typeof instance.get>) => {
   try {
