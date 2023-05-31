@@ -1,8 +1,8 @@
 import { css } from "@emotion/react";
 import * as S from "./style";
 import { DetailedHTMLProps, InputHTMLAttributes, forwardRef } from "react";
-import { InputValueResetBtnIcon } from "../../assets";
-import { useForwardRef } from "../../hooks";
+import { InputValueResetBtnIcon } from "admin/assets";
+import { useForwardRef } from "admin/hooks";
 
 interface InputProps
   extends DetailedHTMLProps<
