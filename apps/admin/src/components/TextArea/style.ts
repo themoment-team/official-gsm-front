@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 
 export const TextAreaBox = styled.textarea`
-  border-radius: 1.25rem;
   border: 0.0625rem solid #dcdcdc;
   outline: none;
   background-color: #fff;
