@@ -1,5 +1,6 @@
 import React from "react";
 import { GalleryCard } from "../../components";
+import * as S from "./style";
 
 interface GalleryListProps {
   postList: PostType[];
@@ -16,7 +17,7 @@ interface PostType {
 
 const GalleryList: React.FC<GalleryListProps> = ({ postList }) => {
   return (
-    <div style={{ marginTop: "1.1875rem" }}>
+    <S.CardContainer>
       {postList?.map((post) => {
         const subTitle = "postSeq => postContent 요청하기";
         const fileInfo = [
@@ -36,7 +37,7 @@ const GalleryList: React.FC<GalleryListProps> = ({ postList }) => {
           />
         );
       })}
-    </div>
+    </S.CardContainer>
   );
 };
 
