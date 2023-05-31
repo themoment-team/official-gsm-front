@@ -1,7 +1,6 @@
 import React from "react";
-import PostListHeader from "../PostListHeader";
+import { PostListHeader, GalleryCard } from "../../components";
 import { useState } from "react";
-import GalleryCard from "../GalleryCard";
 
 interface PostListHeader {
   kind: string;
