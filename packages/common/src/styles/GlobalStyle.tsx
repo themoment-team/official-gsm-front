@@ -1,7 +1,7 @@
 import { Global, css } from "@emotion/react";
 import emotionReset from "emotion-reset";
 
-export default function GlobalStyle() {
+export function GlobalStyle() {
   return (
     <Global
       styles={css`
