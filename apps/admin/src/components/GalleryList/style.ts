@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 
 export const CardContainer = styled.div`
-  width: 1216px;
-  height: 630px;
+  width: 76rem;
+  height: 39.375rem;
   margin-top: 1.1875rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 24px 16px;
+  gap: 1.5rem 1rem;
 `;
