@@ -9,7 +9,7 @@ export default function CategoryPage() {
       <Header hasNotification={false} name={"정문정"} />
       <Banner />
       <ContentWrapper>
-        <Category category="" />
+        <Category category="notice" />
       </ContentWrapper>
     </>
   );
