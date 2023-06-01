@@ -9,26 +9,43 @@ export default {
 
 type Story = StoryObj<typeof PostList>;
 
-export const Gallery: Story = {
-  args: {
-    kind: "👇지금 우리 학교는",
-    seeMore: true,
-    isAdmin: true,
+const postList = [
+  {
+    postSeq: 1,
+    postTitle: "Test",
+    postWriter: "Tester",
+    createdAt: "2023-05-03T19:47:01.250197",
+    thumbnailUrl: null,
+    fileIsExist: true,
   },
-};
-
-export const Notice: Story = {
-  args: {
-    kind: "📢 공지사항",
-    seeMore: false,
-    isAdmin: true,
+  {
+    postSeq: 1,
+    postTitle: "Test",
+    postWriter: "Tester",
+    createdAt: "2023-05-03T19:47:01.250197",
+    thumbnailUrl: null,
+    fileIsExist: true,
   },
-};
+  {
+    postSeq: 1,
+    postTitle: "Test",
+    postWriter: "Tester",
+    createdAt: "2023-05-03T19:47:01.250197",
+    thumbnailUrl: null,
+    fileIsExist: true,
+  },
+  {
+    postSeq: 1,
+    postTitle: "Test",
+    postWriter: "Tester",
+    createdAt: "2023-05-03T19:47:01.250197",
+    thumbnailUrl: null,
+    fileIsExist: true,
+  },
+];
 
-export const FamilyCorrespondence: Story = {
+export const Primary: Story = {
   args: {
-    kind: "📄 가정통신문",
-    seeMore: false,
-    isAdmin: true,
+    postList: postList,
   },
 };
