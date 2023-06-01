@@ -1,1 +1,1 @@
-export type CategoryType = "" | "newsletter" | "gallery";
+export type CategoryType = "notice" | "newsletter" | "gallery";
