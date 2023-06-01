@@ -1,13 +1,14 @@
 'use client';
 
-import styled from '@emotion/styled';
+
+import { useRouter } from 'next/navigation';
+
 import {
   AuthTitle,
   AuthModel,
   ToBackButton,
   AuthDescription,
 } from 'components';
-import { useRouter } from 'next/navigation';
 import { Button } from 'ui';
 
 // TODO : react-query refetchInterval 사용하여 지속적으로 pending 여부 확인

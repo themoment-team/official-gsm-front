@@ -4,8 +4,8 @@ interface AuthErrorProps {
   children?: React.ReactNode;
 }
 
-const AuthError: React.FC<AuthErrorProps> = ({ children }) => {
-  return <ErrorText>{children}</ErrorText>;
-};
+const AuthError: React.FC<AuthErrorProps> = ({ children }) => (
+  <ErrorText>{children}</ErrorText>
+);
 
 export default AuthError;

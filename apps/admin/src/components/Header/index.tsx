@@ -1,17 +1,22 @@
+import { useState } from 'react';
+import type { FC } from 'react';
+
 import Image from 'next/image';
-import * as S from './style';
-import * as I from 'admin/assets';
 import Link from 'next/link';
+
 import { css } from '@emotion/react';
-import React, { useState } from 'react';
+
+import * as I from 'admin/assets';
 import { ApproveModal } from 'admin/components';
+
+import * as S from './style';
 
 interface HeaderProps {
   hasNotification: boolean;
   name: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ hasNotification, name }) => {
+const Header: FC<HeaderProps> = ({ hasNotification, name }) => {
   const [showApproveModal, setShowApproveModal] = useState<boolean>(false);
 
   return (

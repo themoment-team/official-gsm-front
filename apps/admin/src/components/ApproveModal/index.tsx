@@ -1,6 +1,7 @@
-import * as S from './style';
 import * as I from 'admin/assets';
 import { ApproveItem } from 'admin/components';
+
+import * as S from './style';
 
 const testData = [
   { name: '정문정', date: '2022.05.23' },
@@ -15,8 +16,7 @@ interface ApproveModalProps {
   close: () => void;
 }
 
-const ApproveModal: React.FC<ApproveModalProps> = ({ close }) => {
-  return (
+const ApproveModal: React.FC<ApproveModalProps> = ({ close }) => (
     <S.ModalConatiner>
       <S.ModalHeader>
         🤝 가입 요청
@@ -31,6 +31,5 @@ const ApproveModal: React.FC<ApproveModalProps> = ({ close }) => {
       </S.ModalContent>
     </S.ModalConatiner>
   );
-};
 
 export default ApproveModal;

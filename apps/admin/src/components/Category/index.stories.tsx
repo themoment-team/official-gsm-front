@@ -1,5 +1,7 @@
 import Category from '.';
-import { Meta, StoryObj } from '@storybook/react';
+
+import type { Meta, StoryObj } from '@storybook/react';
+
 
 export default {
   title: 'admin/Category',

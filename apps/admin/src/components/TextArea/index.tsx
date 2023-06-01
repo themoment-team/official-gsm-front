@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+
 import * as S from './style';
 
 interface TextAreaProps {
@@ -6,8 +7,7 @@ interface TextAreaProps {
   height: string;
   placeholder: string;
 }
-const TextArea: React.FC<TextAreaProps> = ({ width, height, placeholder }) => {
-  return (
+const TextArea: React.FC<TextAreaProps> = ({ width, height, placeholder }) => (
     <S.TextAreaBox
       css={css`
         width: ${width};
@@ -16,6 +16,5 @@ const TextArea: React.FC<TextAreaProps> = ({ width, height, placeholder }) => {
       placeholder={placeholder}
     />
   );
-};
 
 export default TextArea;

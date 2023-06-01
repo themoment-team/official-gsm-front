@@ -1,5 +1,6 @@
-import * as S from './style';
 import Link from 'next/link';
+
+import * as S from './style';
 
 interface CategoryProps {
   category?: string;
@@ -10,12 +11,10 @@ const test = [
   { path: '/familyCorrespondence', label: '가정통신문' },
 ];
 
-const Category: React.FC<CategoryProps> = ({ category }) => {
-  return (
+const Category: React.FC<CategoryProps> = ({ category }) => (
     <S.Category>
       <S.MenuWrap>
-        {test.map((tab) => {
-          return (
+        {test.map((tab) => (
             <S.Menu key={tab.path}>
               <Link href={tab.path}>
                 <S.LinkWrap>
@@ -25,11 +24,9 @@ const Category: React.FC<CategoryProps> = ({ category }) => {
                 </S.LinkWrap>
               </Link>
             </S.Menu>
-          );
-        })}
+          ))}
       </S.MenuWrap>
     </S.Category>
   );
-};
 
 export default Category;
