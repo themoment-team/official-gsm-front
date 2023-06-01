@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
-export const Category = styled.div<{ width: string }>`
-  width: ${({ width }) => width};
+export const Category = styled.div<{ width?: string }>`
+  width: ${({ width }) => (width ? width : "67.5rem[")};
   height: 4.25rem;
   display: flex;
   align-items: center;

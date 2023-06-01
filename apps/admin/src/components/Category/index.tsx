@@ -1,8 +1,9 @@
 import * as S from "./style";
 import Link from "next/link";
+import { css } from "@emotion/react";
 interface CategoryProps {
   category?: string;
-  width: string;
+  width?: string;
 }
 const test = [
   { path: "/notice", label: "공지사항" },
