@@ -57,17 +57,10 @@ export default function WritePage() {
           );
         })}
       </FormWrap>
-      <div
-        css={css`
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          margin-top: 3.1875rem;
-        `}
-      >
+      <BtnWrap>
         <CancelBtn>취소</CancelBtn>
         <CompleteBtn>완료</CompleteBtn>
-      </div>
+      </BtnWrap>
     </div>
   );
 }
@@ -128,6 +121,13 @@ const UploadBtn = styled.button`
   color: #ffffff;
   line-height: 1.125rem;
   font-weight: 600;
+`;
+
+const BtnWrap = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3.1875rem;
 `;
 
 const CancelBtn = styled.button`
