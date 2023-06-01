@@ -1,5 +1,5 @@
-import * as S from "./style";
-import { DateComponent } from "ui";
+import * as S from './style';
+import { DateComponent } from 'ui';
 
 interface PostCardProps {
   title: string;

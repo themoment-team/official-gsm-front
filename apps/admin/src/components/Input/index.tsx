@@ -1,8 +1,8 @@
-import { css } from "@emotion/react";
-import * as S from "./style";
-import { DetailedHTMLProps, InputHTMLAttributes, forwardRef } from "react";
-import { InputValueResetBtnIcon } from "admin/assets";
-import { useForwardRef } from "admin/hooks";
+import { css } from '@emotion/react';
+import * as S from './style';
+import { DetailedHTMLProps, InputHTMLAttributes, forwardRef } from 'react';
+import { InputValueResetBtnIcon } from 'admin/assets';
+import { useForwardRef } from 'admin/hooks';
 
 interface InputProps
   extends DetailedHTMLProps<
@@ -20,7 +20,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
 
     const resetButtonClick = () => {
       if (inputRef) {
-        inputRef.current.value = "";
+        inputRef.current.value = '';
         inputRef.current.focus();
       }
     };
@@ -43,6 +43,6 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
   }
 );
 
-Input.displayName = "Input";
+Input.displayName = 'Input';
 
 export default Input;

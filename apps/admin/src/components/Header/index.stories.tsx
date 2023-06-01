@@ -1,8 +1,8 @@
-import Header from ".";
-import { Meta, StoryObj } from "@storybook/react";
+import Header from '.';
+import { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: "admin/Header",
+  title: 'admin/Header',
   component: Header,
   parameters: {},
 } as Meta<typeof Header>;
@@ -12,7 +12,7 @@ type Story = StoryObj<typeof Header>;
 export const Primary: Story = {
   args: {
     hasNotification: false,
-    name: "정문정",
+    name: '정문정',
   },
 };
 

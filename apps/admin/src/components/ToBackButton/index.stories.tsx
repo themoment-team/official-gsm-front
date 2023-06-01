@@ -1,15 +1,15 @@
-import ToBackButton from ".";
-import { Meta, StoryObj } from "@storybook/react";
+import ToBackButton from '.';
+import { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: "admin/ToBackButton",
+  title: 'admin/ToBackButton',
   component: ToBackButton,
   argTypes: {
-    onClick: { action: "clicked" },
+    onClick: { action: 'clicked' },
   },
   parameters: {
     backgrounds: {
-      default: "dark",
+      default: 'dark',
     },
   },
 } as Meta<typeof ToBackButton>;
@@ -19,7 +19,7 @@ type Story = StoryObj<typeof ToBackButton>;
 export const Primary: Story = {
   args: {
     onClick: () => {
-      console.log("clicked");
+      console.log('clicked');
     },
   },
 };

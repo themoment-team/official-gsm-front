@@ -1,6 +1,6 @@
-import * as S from "./style";
-import Image from "next/image";
-import { DateComponent } from "ui";
+import * as S from './style';
+import Image from 'next/image';
+import { DateComponent } from 'ui';
 
 interface GalleryCardProps {
   imgUrl: string;
@@ -20,7 +20,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
   return (
     <S.CardWrapper>
       <S.IMGWrapper>
-        <Image fill src={imgUrl} alt="ContentIMG" />
+        <Image fill src={imgUrl} alt='ContentIMG' />
       </S.IMGWrapper>
       <S.Title>{title}</S.Title>
       <S.Description>{description}</S.Description>

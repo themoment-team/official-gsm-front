@@ -1,13 +1,13 @@
-import Category from ".";
-import { Meta, StoryObj } from "@storybook/react";
+import Category from '.';
+import { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: "admin/Category",
+  title: 'admin/Category',
   component: Category,
   argTypes: {
     pathname: {
-      control: { type: "select" },
-      options: ["/notice", "/gallery", "/newsletter"],
+      control: { type: 'select' },
+      options: ['/notice', '/gallery', '/newsletter'],
     },
   },
 } as Meta<typeof Category>;
@@ -17,5 +17,5 @@ type Story = StoryObj<typeof Category>;
 export const Primary: Story = (args: any) => <Category {...args} />;
 
 Primary.args = {
-  category: "/notice",
+  category: '/notice',
 };

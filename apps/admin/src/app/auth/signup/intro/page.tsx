@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import styled from "@emotion/styled";
-import { AuthTitle, AuthModel, ToBackButton } from "components";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { Button } from "ui";
+import styled from '@emotion/styled';
+import { AuthTitle, AuthModel, ToBackButton } from 'components';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import { Button } from 'ui';
 
 export default function IntroPage() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -15,21 +15,21 @@ export default function IntroPage() {
   return (
     <>
       <ToBackButton onClick={back} />
-      <AuthTitle textAlign="center">
+      <AuthTitle textAlign='center'>
         교사 회원 가입을 위해 이름과
         <br />
         아이디 비밀번호를 입력해야 돼요.
       </AuthTitle>
-      <AuthModel modelUrl="/models/school.webm" />
+      <AuthModel modelUrl='/models/school.webm' />
       <Button
-        position="absolute"
-        bottom="1.5rem"
+        position='absolute'
+        bottom='1.5rem'
         onClick={() => {
           setIsLoading(true);
         }}
         isLoading={isLoading}
       >
-        <CustomLink href="/auth/signup">작성</CustomLink>
+        <CustomLink href='/auth/signup'>작성</CustomLink>
       </Button>
     </>
   );

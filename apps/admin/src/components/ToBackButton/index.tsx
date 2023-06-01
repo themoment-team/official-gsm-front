@@ -1,6 +1,6 @@
-import { ToBackIcon } from "admin/assets";
-import React from "react";
-import { Button } from "./style";
+import { ToBackIcon } from 'admin/assets';
+import React from 'react';
+import { Button } from './style';
 
 interface ToBackButtonProps {
   onClick?: () => void;

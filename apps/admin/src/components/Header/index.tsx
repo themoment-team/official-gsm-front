@@ -1,10 +1,10 @@
-import Image from "next/image";
-import * as S from "./style";
-import * as I from "admin/assets";
-import Link from "next/link";
-import { css } from "@emotion/react";
-import React, { useState } from "react";
-import { ApproveModal } from "admin/components";
+import Image from 'next/image';
+import * as S from './style';
+import * as I from 'admin/assets';
+import Link from 'next/link';
+import { css } from '@emotion/react';
+import React, { useState } from 'react';
+import { ApproveModal } from 'admin/components';
 
 interface HeaderProps {
   hasNotification: boolean;
@@ -17,8 +17,8 @@ const Header: React.FC<HeaderProps> = ({ hasNotification, name }) => {
   return (
     <S.Header>
       <S.Nav>
-        <Link href="/">
-          <Image src="/GSMLogo.png" alt="" width="66" height="37" />
+        <Link href='/'>
+          <Image src='/GSMLogo.png' alt='' width='66' height='37' />
         </Link>
         <I.VerticalBarIcon />
         <S.ApproveRequest>

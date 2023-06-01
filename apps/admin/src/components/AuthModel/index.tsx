@@ -1,6 +1,6 @@
-import React, { DetailedHTMLProps, VideoHTMLAttributes } from "react";
-import { Video } from "./style";
-import { css } from "@emotion/react";
+import React, { DetailedHTMLProps, VideoHTMLAttributes } from 'react';
+import { Video } from './style';
+import { css } from '@emotion/react';
 
 interface AuthModelProps
   extends DetailedHTMLProps<

@@ -1,5 +1,5 @@
-import { css } from "@emotion/react";
-import * as S from "./style";
+import { css } from '@emotion/react';
+import * as S from './style';
 
 interface TextAreaProps {
   width: string;

@@ -1,8 +1,8 @@
-import Input from ".";
-import { Meta, StoryObj } from "@storybook/react";
+import Input from '.';
+import { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: "admin/Input",
+  title: 'admin/Input',
   component: Input,
   parameters: {},
 } as Meta<typeof Input>;
@@ -11,9 +11,9 @@ type Story = StoryObj<typeof Input>;
 
 export const PasswordInput: Story = {
   args: {
-    width: "21.4375rem",
-    height: "2.75rem",
-    placeholder: "비밀번호를 입력해주세요.",
+    width: '21.4375rem',
+    height: '2.75rem',
+    placeholder: '비밀번호를 입력해주세요.',
     resetBtn: true,
   },
 };
@@ -21,8 +21,8 @@ export const PasswordInput: Story = {
 export const TitleInput: Story = {
   args: {
     ...PasswordInput.args,
-    width: "36.125rem",
-    placeholder: "제목을 입력해주세요.",
+    width: '36.125rem',
+    placeholder: '제목을 입력해주세요.',
     resetBtn: false,
   },
 };

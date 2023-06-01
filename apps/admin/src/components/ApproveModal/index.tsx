@@ -1,14 +1,14 @@
-import * as S from "./style";
-import * as I from "admin/assets";
-import { ApproveItem } from "admin/components";
+import * as S from './style';
+import * as I from 'admin/assets';
+import { ApproveItem } from 'admin/components';
 
 const testData = [
-  { name: "정문정", date: "2022.05.23" },
-  { name: "강권", date: "2022.05.23" },
-  { name: "스테파니", date: "2022.05.23" },
-  { name: "정문정", date: "2022.05.23" },
-  { name: "정문정", date: "2022.05.23" },
-  { name: "정문정", date: "2022.05.23" },
+  { name: '정문정', date: '2022.05.23' },
+  { name: '강권', date: '2022.05.23' },
+  { name: '스테파니', date: '2022.05.23' },
+  { name: '정문정', date: '2022.05.23' },
+  { name: '정문정', date: '2022.05.23' },
+  { name: '정문정', date: '2022.05.23' },
 ];
 
 interface ApproveModalProps {

@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const Category = styled.div`
   height: 4.25rem;
@@ -28,5 +28,5 @@ export const LinkWrap = styled.div`
 `;
 
 export const Path = styled.div<{ isActive?: boolean }>`
-  color: ${(props) => (props.isActive ? "#FFFFFF" : "#a4a4a4")};
+  color: ${(props) => (props.isActive ? '#FFFFFF' : '#a4a4a4')};
 `;

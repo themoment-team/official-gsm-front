@@ -1,4 +1,4 @@
-import { ErrorText } from "./style";
+import { ErrorText } from './style';
 
 interface AuthErrorProps {
   children?: React.ReactNode;

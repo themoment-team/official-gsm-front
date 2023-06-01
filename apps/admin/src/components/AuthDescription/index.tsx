@@ -1,5 +1,5 @@
-import React from "react";
-import { Description } from "./style";
+import React from 'react';
+import { Description } from './style';
 
 interface AuthDescriptionProps {
   children: React.ReactNode;
