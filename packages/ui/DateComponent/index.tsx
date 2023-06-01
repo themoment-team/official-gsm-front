@@ -1,5 +1,5 @@
-import * as S from "./style";
-import formatDate from "./formatDate";
+import * as S from './style';
+import formatDate from './formatDate';
 
 interface DateProps {
   createdAt: string;

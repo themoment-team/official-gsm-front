@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const NoticeCard = styled.div`
   height: 4.375rem;

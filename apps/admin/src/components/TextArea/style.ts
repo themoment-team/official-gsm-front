@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const TextAreaBox = styled.textarea`
   border-radius: 1.25rem;

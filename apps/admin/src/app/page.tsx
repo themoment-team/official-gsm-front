@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import styled from "@emotion/styled";
-import { Category, Header, Banner } from "components";
+import styled from '@emotion/styled';
+import { Category, Header, Banner } from 'components';
 
 export default function CategoryPage() {
   return (
     <>
-      <Header hasNotification={false} name={"정문정"} />
+      <Header hasNotification={false} name={'정문정'} />
       <Banner />
       <ContentWrapper>
-        <Category category="notice" />
+        <Category category='notice' />
       </ContentWrapper>
     </>
   );

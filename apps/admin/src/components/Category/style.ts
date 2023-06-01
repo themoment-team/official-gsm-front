@@ -1,5 +1,6 @@
-import styled from "@emotion/styled";
-import Link from "next/link";
+import Link from 'next/link';
+
+import styled from '@emotion/styled';
 
 export const Category = styled.div`
   height: 4.25rem;
@@ -15,5 +16,5 @@ export const Category = styled.div`
 export const CustomLink = styled(Link)<{ isActive: boolean }>`
   font-weight: 600;
   font-size: 0.875rem;
-  color: ${({ isActive }) => (isActive ? "#FFFFFF" : "#a4a4a4")};
+  color: ${({ isActive }) => (isActive ? '#FFFFFF' : '#a4a4a4')};
 `;

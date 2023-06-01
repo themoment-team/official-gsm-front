@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const CardWrapper = styled.div`
   width: 21.8125rem;

@@ -1,9 +1,10 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const Header = styled.header`
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
