@@ -1,8 +1,10 @@
-import ApproveModal from ".";
-import { Meta, StoryObj } from "@storybook/react";
+import ApproveModal from '.';
+
+import type { Meta, StoryObj } from '@storybook/react';
+
 
 export default {
-  title: "admin/ApproveModal",
+  title: 'admin/ApproveModal',
   component: ApproveModal,
   parameters: {},
 } as Meta<typeof ApproveModal>;

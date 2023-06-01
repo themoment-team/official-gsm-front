@@ -1,9 +1,10 @@
-import { css } from "@emotion/react";
-import { Title } from "./style";
+import { css } from '@emotion/react';
+
+import { Title } from './style';
 
 interface AuthTitleProps {
   children: React.ReactNode;
-  textAlign?: "left" | "center" | "right";
+  textAlign?: 'left' | 'center' | 'right';
   marginTop?: string;
   fontSize?: string;
 }
@@ -18,11 +19,10 @@ interface AuthTitleProps {
  */
 const AuthTitle: React.FC<AuthTitleProps> = ({
   children,
-  textAlign = "left",
+  textAlign = 'left',
   marginTop,
   fontSize,
-}) => {
-  return (
+}) => (
     <Title
       css={css`
         margin-top: ${marginTop};
@@ -33,6 +33,5 @@ const AuthTitle: React.FC<AuthTitleProps> = ({
       {children}
     </Title>
   );
-};
 
 export default AuthTitle;

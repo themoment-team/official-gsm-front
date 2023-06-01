@@ -1,7 +1,7 @@
-import { css } from "@emotion/react";
-import { CustomButton } from "./style";
-import LoadingCircle from "../LoadingCircle";
-import { ButtonHTMLAttributes, DetailedHTMLProps } from "react";
+import { css } from '@emotion/react';
+import { CustomButton } from './style';
+import LoadingCircle from '../LoadingCircle';
+import { ButtonHTMLAttributes, DetailedHTMLProps } from 'react';
 
 interface ButtonProps
   extends DetailedHTMLProps<
@@ -13,12 +13,12 @@ interface ButtonProps
   bgColor?: string;
   fontColor?: string;
   hoverBgColor?: string;
-  position?: "absolute" | "relative" | "fixed" | "static" | "sticky";
+  position?: 'absolute' | 'relative' | 'fixed' | 'static' | 'sticky';
   bottom?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
-  children = "",
+  children = '',
   isLoading = false,
   width,
   bgColor,
@@ -40,7 +40,7 @@ const Button: React.FC<ButtonProps> = ({
           background: ${hoverBgColor};
         }
         :disabled {
-          background: ${isLoading && (bgColor || "#050505")};
+          background: ${isLoading && (bgColor || '#050505')};
         }
       `}
       disabled={isLoading}
