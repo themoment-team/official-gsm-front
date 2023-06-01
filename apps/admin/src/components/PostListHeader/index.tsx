@@ -25,9 +25,9 @@ const PostListHeader: React.FC<PostListHeaderProps> = ({
         <S.CategoryTitle>{kind}</S.CategoryTitle>
       )}
       {isAdmin && (
-        <S.BlaBTN>
+        <S.AddPostBTN>
           <PlusIcon />
-        </S.BlaBTN>
+        </S.AddPostBTN>
       )}
     </S.PostListHeader>
   );

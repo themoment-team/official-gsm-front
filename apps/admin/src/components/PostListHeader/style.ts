@@ -15,7 +15,7 @@ export const CategoryTitle = styled.h1`
   color: #050505;
 `;
 
-export const BlaBTN = styled.button`
+export const AddPostBTN = styled.button`
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 1.125rem;
