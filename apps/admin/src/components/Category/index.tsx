@@ -13,7 +13,12 @@ const test = [
 
 const Category: React.FC<CategoryProps> = ({ category, width }) => {
   return (
-    <S.Category width={width}>
+    <S.Category
+      css={css`
+        width: ${width};
+        border-radius: ${width ? "0.625rem" : "1.25rem"};
+      `}
+    >
       <S.MenuWrap>
         {test.map((tab) => {
           return (
