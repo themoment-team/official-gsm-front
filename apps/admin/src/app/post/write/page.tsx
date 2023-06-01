@@ -73,7 +73,7 @@ const WriteTitle = styled.h3`
   margin-bottom: 0.75rem;
 `;
 
-const FormWrap = styled.div`
+const FormWrap = styled.form`
   width: 100%;
   height: 54.5rem;
   display: flex;
