@@ -1,6 +1,5 @@
 import { CategoryType } from "admin/types";
 import * as S from "./style";
-import Link from "next/link";
 
 interface CategoryProps {
   category: CategoryType;
@@ -9,25 +8,26 @@ interface CategoryProps {
 const categoryArray = [
   { path: "/", label: "공지사항" },
   { path: "/newsletter", label: "가정통신문" },
-  { path: "/gallery", label: "행사갤러리" },
+  { path: "/gallery", label: "행사 갤러리" },
 ];
+
+const isActive = (category: CategoryType, path: string) => {
+  if (category === "notice" && path === "/") return true;
+  return `/${category}` === path;
+};
 
 const Category: React.FC<CategoryProps> = ({ category }) => {
   return (
     <S.Category>
-      <S.MenuWrap>
-        {categoryArray.map(({ path, label }) => (
-          <S.Menu key={path}>
-            <Link href={path}>
-              <S.LinkWrap>
-                <S.Path isActive={`/${category}` === path}>
-                  ∙&nbsp;&nbsp;{label}
-                </S.Path>
-              </S.LinkWrap>
-            </Link>
-          </S.Menu>
-        ))}
-      </S.MenuWrap>
+      {categoryArray.map(({ path, label }) => (
+        <S.CustomLink
+          href={path}
+          key={label}
+          isActive={isActive(category, path)}
+        >
+          ∙&nbsp;&nbsp;{label}
+        </S.CustomLink>
+      ))}
     </S.Category>
   );
 };

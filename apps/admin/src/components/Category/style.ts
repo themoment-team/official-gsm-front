@@ -1,32 +1,19 @@
 import styled from "@emotion/styled";
+import Link from "next/link";
 
 export const Category = styled.div`
   height: 4.25rem;
   width: 67.5rem;
   display: flex;
   align-items: center;
+  gap: 1.5rem;
   padding-left: 2.5rem;
   border-radius: 1.25rem;
   background: #050505;
 `;
 
-export const MenuWrap = styled.div`
-  height: 1.25rem;
-  width: 17.8125rem;
-`;
-export const Menu = styled.button`
-  height: 1.25rem;
-  width: 5.3125rem;
-  padding-right: 1.5rem;
-`;
-
-export const LinkWrap = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 5.3125rem;
-`;
-
-export const Path = styled.div<{ isActive?: boolean }>`
-  color: ${(props) => (props.isActive ? "#FFFFFF" : "#a4a4a4")};
+export const CustomLink = styled(Link)<{ isActive: boolean }>`
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: ${({ isActive }) => (isActive ? "#FFFFFF" : "#a4a4a4")};
 `;
