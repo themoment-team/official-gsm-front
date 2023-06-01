@@ -1,24 +1,26 @@
-"use client";
+'use client';
 
-import styled from "@emotion/styled";
-import { CategoryType } from "admin/types";
-import { Category, Header, Banner } from "admin/components";
-import { redirect } from "next/navigation";
+import { redirect } from 'next/navigation';
+
+import styled from '@emotion/styled';
+
+import { Category, Header, Banner } from 'admin/components';
+import type { CategoryType } from 'admin/types';
 
 interface ListPageProps {
   params: { category: CategoryType };
 }
 
-const categoryParamsArray = ["", "newsletter", "gallery"];
+const categoryParamsArray = ['', 'newsletter', 'gallery'];
 
 export default function ListPage({ params: { category } }: ListPageProps) {
   if (!categoryParamsArray.includes(category)) {
-    redirect("/");
+    redirect('/');
   }
 
   return (
     <>
-      <Header hasNotification={false} name={"정문정"} />
+      <Header hasNotification={false} name={'정문정'} />
       <Banner />
       <ContentWrapper>
         <Category category={category} />
