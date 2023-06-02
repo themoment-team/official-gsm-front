@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const CustomButton = styled.button`
   width: 21.4375rem;

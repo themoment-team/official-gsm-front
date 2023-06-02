@@ -1,13 +1,13 @@
-import LoadingCricle from ".";
-import { Meta, StoryObj } from "@storybook/react";
+import LoadingCricle from '.';
+import { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: "ui/LoadingCircle",
+  title: 'ui/LoadingCircle',
   component: LoadingCricle,
   parameters: {
-    layout: "centered",
+    layout: 'centered',
     backgrounds: {
-      default: "black",
+      default: 'black',
     },
   },
 } as Meta<typeof LoadingCricle>;
