@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react';
 
-
-import { PostCard } from "../../components";
+import { PostCard } from 'admin/components';
 
 interface PostType {
   postSeq: number;
@@ -26,20 +25,20 @@ interface PostType {
 }
 
 const PostList: React.FC<GalleryListProps> = ({ postList }) => (
-    <div style={{ marginTop: "1.1875rem" }}>
-      {postList?.map((post: PostType) => {
-        const subTitle = "postSeq => postContent 요청하기";
-        return (
-          <PostCard
-            key={post.postSeq}
-            title={post.postTitle}
-            subtitle={subTitle}
-            writer={post.postWriter}
-            createdAt={post.createdAt}
-          />
-        );
-      })}
-    </div>
-  );
+  <div style={{ marginTop: '1.1875rem' }}>
+    {postList?.map((post: PostType) => {
+      const subTitle = 'postSeq => postContent 요청하기';
+      return (
+        <PostCard
+          key={post.postSeq}
+          title={post.postTitle}
+          subtitle={subTitle}
+          writer={post.postWriter}
+          createdAt={post.createdAt}
+        />
+      );
+    })}
+  </div>
+);
 
 export default PostList;
