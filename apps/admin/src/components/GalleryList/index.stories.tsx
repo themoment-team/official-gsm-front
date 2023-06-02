@@ -15,7 +15,8 @@ const postList = [
     postTitle: "Test",
     postWriter: "Tester",
     createdAt: "2023-05-03T19:47:01.250197",
-    thumbnailUrl: null,
+    thumbnailUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSTh-LpZBuiyIbp-j7PK5mFf5AWBw9NYI6rg&usqp=CAU",
     fileIsExist: true,
   },
   {
@@ -23,7 +24,8 @@ const postList = [
     postTitle: "Test",
     postWriter: "Tester",
     createdAt: "2023-05-03T19:47:01.250197",
-    thumbnailUrl: null,
+    thumbnailUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSTh-LpZBuiyIbp-j7PK5mFf5AWBw9NYI6rg&usqp=CAU",
     fileIsExist: true,
   },
   {
@@ -31,7 +33,8 @@ const postList = [
     postTitle: "Test",
     postWriter: "Tester",
     createdAt: "2023-05-03T19:47:01.250197",
-    thumbnailUrl: null,
+    thumbnailUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSTh-LpZBuiyIbp-j7PK5mFf5AWBw9NYI6rg&usqp=CAU",
     fileIsExist: true,
   },
   {
@@ -39,7 +42,8 @@ const postList = [
     postTitle: "Test",
     postWriter: "Tester",
     createdAt: "2023-05-03T19:47:01.250197",
-    thumbnailUrl: null,
+    thumbnailUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSTh-LpZBuiyIbp-j7PK5mFf5AWBw9NYI6rg&usqp=CAU",
     fileIsExist: true,
   },
   {
@@ -47,7 +51,8 @@ const postList = [
     postTitle: "Test",
     postWriter: "Tester",
     createdAt: "2023-05-03T19:47:01.250197",
-    thumbnailUrl: null,
+    thumbnailUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSTh-LpZBuiyIbp-j7PK5mFf5AWBw9NYI6rg&usqp=CAU",
     fileIsExist: true,
   },
   {
@@ -55,7 +60,8 @@ const postList = [
     postTitle: "Test",
     postWriter: "Tester",
     createdAt: "2023-05-03T19:47:01.250197",
-    thumbnailUrl: null,
+    thumbnailUrl:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSTh-LpZBuiyIbp-j7PK5mFf5AWBw9NYI6rg&usqp=CAU",
     fileIsExist: true,
   },
 ];
