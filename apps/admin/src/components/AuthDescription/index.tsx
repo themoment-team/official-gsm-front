@@ -1,5 +1,6 @@
-import React from "react";
-import { Description } from "./style";
+import React from 'react';
+
+import { Description } from './style';
 
 interface AuthDescriptionProps {
   children: React.ReactNode;
@@ -10,8 +11,6 @@ interface AuthDescriptionProps {
  *
  * @prop children: React.ReactNode
  */
-const AuthDescription: React.FC<AuthDescriptionProps> = ({ children }) => {
-  return <Description>{children}</Description>;
-};
+const AuthDescription: React.FC<AuthDescriptionProps> = ({ children }) => <Description>{children}</Description>;
 
 export default AuthDescription;
