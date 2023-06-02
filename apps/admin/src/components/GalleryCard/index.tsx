@@ -1,7 +1,10 @@
-import * as S from "./style";
-import Image from "next/image";
-import React from "react";
-import { DateComponent } from "ui";
+import React from 'react';
+
+import Image from 'next/image';
+
+import { DateComponent } from 'ui';
+
+import * as S from './style';
 
 interface FileInfo {
   fileUrl: string;
@@ -42,5 +45,6 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     </S.CardWrapper>
   );
 };
+
 
 export default GalleryCard;

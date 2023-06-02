@@ -1,8 +1,10 @@
-import GalleryCard from ".";
-import { Meta, StoryObj } from "@storybook/react";
+import GalleryCard from '.';
+
+import type { Meta, StoryObj } from '@storybook/react';
+
 
 export default {
-  title: "admin/GalleryCard",
+  title: 'admin/GalleryCard',
   component: GalleryCard,
   parameters: {},
 } as Meta<typeof GalleryCard>;
