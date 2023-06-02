@@ -13,8 +13,7 @@ export const Category = styled.div`
   background: #050505;
 `;
 
-export const CustomLink = styled(Link)<{ isActive: boolean }>`
+export const CustomLink = styled(Link)`
   font-weight: 600;
   font-size: 0.875rem;
-  color: ${({ isActive }) => (isActive ? '#FFFFFF' : '#a4a4a4')};
 `;
