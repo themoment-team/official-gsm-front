@@ -18,5 +18,4 @@ export const Primary: Story = (args: any) => <Category {...args} />;
 
 Primary.args = {
   category: "/notice",
-  width: "1080px",
 };
