@@ -1,6 +1,8 @@
-import * as S from "./style";
 import React from "react";
+
 import { PlusIcon, SeeMoreIcon } from "../../assets";
+
+import * as S from "./style";
 
 interface PostListHeaderProps {
   category: "gallery" | "notice" | "newsletter";
@@ -18,8 +20,7 @@ const PostListHeader: React.FC<PostListHeaderProps> = ({
   category,
   seeMore,
   isAdmin,
-}) => {
-  return (
+}) => (
     <S.PostListHeader>
       {seeMore ? (
         <S.SeeMoreException>
@@ -37,6 +38,5 @@ const PostListHeader: React.FC<PostListHeaderProps> = ({
       )}
     </S.PostListHeader>
   );
-};
 
 export default PostListHeader;

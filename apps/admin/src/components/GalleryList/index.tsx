@@ -1,5 +1,7 @@
 import React from "react";
+
 import { GalleryCard } from "../../components";
+
 import * as S from "./style";
 
 interface GalleryListProps {
@@ -15,8 +17,7 @@ interface PostType {
   fileIsExist: boolean;
 }
 
-const GalleryList: React.FC<GalleryListProps> = ({ postList }) => {
-  return (
+const GalleryList: React.FC<GalleryListProps> = ({ postList }) => (
     <S.CardContainer>
       {postList?.map((post) => {
         const subTitle = "postSeq => postContent 요청하기";
@@ -37,6 +38,5 @@ const GalleryList: React.FC<GalleryListProps> = ({ postList }) => {
       })}
     </S.CardContainer>
   );
-};
 
 export default GalleryList;

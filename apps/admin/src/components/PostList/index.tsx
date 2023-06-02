@@ -1,6 +1,7 @@
 import React from "react";
+
+
 import { PostCard } from "../../components";
-import { useState } from "react";
 
 interface PostType {
   postSeq: number;
@@ -24,8 +25,7 @@ interface PostType {
   fileIsExist: boolean;
 }
 
-const PostList: React.FC<GalleryListProps> = ({ postList }) => {
-  return (
+const PostList: React.FC<GalleryListProps> = ({ postList }) => (
     <div style={{ marginTop: "1.1875rem" }}>
       {postList?.map((post: PostType) => {
         const subTitle = "postSeq => postContent 요청하기";
@@ -41,6 +41,5 @@ const PostList: React.FC<GalleryListProps> = ({ postList }) => {
       })}
     </div>
   );
-};
 
 export default PostList;
