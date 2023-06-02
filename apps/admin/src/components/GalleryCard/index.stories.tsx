@@ -18,9 +18,16 @@ export const Primary: Story = {
         fileName: "images.jpg",
       },
     ],
-    title: "2023년 교육과정 설명회(2)",
-    description: `2023년 광주소프트웨어마이스터고등학교 교육과정 설명회 실시 일시: 2023. 3.30(목) 19:00 ~`,
-    writer: "정문정",
-    createdAt: "2023-05-03T08:18:48.250197",
+    description:
+      "2023년 광주소프트웨어마이스터고등학교 교육과정 설명회 실시 일시: 2023. 3.30(목) 19:00 ~",
+    post: {
+      postTitle: "2023년 교육과정 설명회(2)",
+      postWriter: "정문정",
+      createdAt: "2023-05-03T08:18:48.250197",
+      postSeq: 1,
+      thumbnailUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSTh-LpZBuiyIbp-j7PK5mFf5AWBw9NYI6rg&usqp=CAU",
+      fileIsExist: true,
+    },
   },
 };

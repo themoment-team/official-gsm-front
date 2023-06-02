@@ -8,31 +8,36 @@ interface FileInfo {
   fileName: string;
 }
 
+interface PostType {
+  postSeq: number;
+  postTitle: string;
+  postWriter: string;
+  createdAt: string;
+  thumbnailUrl: string | null;
+  fileIsExist: boolean;
+}
+
 interface GalleryCardProps {
   fileInfo: FileInfo[];
-  title: string;
   description: string;
-  writer: string;
-  createdAt: string;
+  post: PostType;
 }
 
 const GalleryCard: React.FC<GalleryCardProps> = ({
+  post,
   fileInfo,
-  title,
   description,
-  writer,
-  createdAt,
 }) => {
   return (
     <S.CardWrapper>
       <S.IMGWrapper>
-        <Image fill src={fileInfo[0].fileUrl} alt="ContentIMG" />
+        <Image fill src={post.thumbnailUrl as string} alt="ContentIMG" />
       </S.IMGWrapper>
-      <S.Title>{title}</S.Title>
+      <S.Title>{post.postTitle}</S.Title>
       <S.Description>{description}</S.Description>
       <S.DetailWrapper>
-        <S.Writer>{writer}</S.Writer>
-        <DateComponent createdAt={createdAt} />
+        <S.Writer>{post.postWriter}</S.Writer>
+        <DateComponent createdAt={post.createdAt} />
       </S.DetailWrapper>
     </S.CardWrapper>
   );

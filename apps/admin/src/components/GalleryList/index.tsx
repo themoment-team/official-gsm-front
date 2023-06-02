@@ -28,12 +28,10 @@ const GalleryList: React.FC<GalleryListProps> = ({ postList }) => {
         ];
         return (
           <GalleryCard
-            key={post.postSeq}
+            post={post}
             fileInfo={fileInfo}
-            title={post.postTitle}
             description={subTitle}
-            writer={post.postWriter}
-            createdAt={post.createdAt}
+            key={post.postSeq}
           />
         );
       })}
