@@ -6,30 +6,40 @@ import { DateComponent } from 'ui';
 
 import * as S from './style';
 
+interface FileInfo {
+  fileUrl: string;
+  fileName: string;
+}
+
+interface PostType {
+  postSeq: number;
+  postTitle: string;
+  postWriter: string;
+  createdAt: string;
+  thumbnailUrl: string | null;
+  fileIsExist: boolean;
+}
+
 interface GalleryCardProps {
-  imgUrl: string;
-  title: string;
+  fileInfo: FileInfo[];
   description: string;
-  writer: string;
-  date: string;
+  post: PostType;
 }
 
 const GalleryCard: React.FC<GalleryCardProps> = ({
-  imgUrl,
-  title,
+  post: { thumbnailUrl, postWriter, postTitle, createdAt },
+  fileInfo,
   description,
-  writer,
-  date,
 }) => (
   <S.CardWrapper>
     <S.IMGWrapper>
-      <Image fill src={imgUrl} alt='ContentIMG' />
+      <Image fill src={thumbnailUrl ?? ''} alt='ContentIMG' />
     </S.IMGWrapper>
-    <S.Title>{title}</S.Title>
+    <S.Title>{postTitle}</S.Title>
     <S.Description>{description}</S.Description>
     <S.DetailWrapper>
-      <S.Writer>{writer}</S.Writer>
-      <DateComponent createdAt={date} />
+      <S.Writer>{postWriter}</S.Writer>
+      <DateComponent createdAt={createdAt} />
     </S.DetailWrapper>
   </S.CardWrapper>
 );

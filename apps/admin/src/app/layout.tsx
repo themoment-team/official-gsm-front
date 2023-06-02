@@ -1,6 +1,6 @@
 'use client';
 
-import GlobalStyle from 'common/styles/GlobalStyle';
+import { GlobalStyle } from 'common';
 
 export default function RootLayout({
   children,
