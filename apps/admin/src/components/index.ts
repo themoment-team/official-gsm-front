@@ -14,3 +14,4 @@ export { default as PostListHeader } from './PostListHeader';
 export { default as PostList } from './PostList';
 export { default as GalleryList } from './GalleryList';
 export { default as Banner } from './Banner';
+export { default as Category } from './Category';

@@ -1,13 +1,16 @@
 import React from 'react';
 
+import { css } from '@emotion/react';
+
 import { PlusIcon, SeeMoreIcon } from 'admin/assets';
 
 import * as S from './style';
 
 interface PostListHeaderProps {
   category: 'gallery' | 'notice' | 'newsletter';
-  seeMore: boolean;
-  isAdmin: boolean;
+  seeMore?: boolean;
+  isAdmin?: boolean;
+  marginTop?: string;
 }
 
 const Title = {
@@ -18,10 +21,15 @@ const Title = {
 
 const PostListHeader: React.FC<PostListHeaderProps> = ({
   category,
-  seeMore,
-  isAdmin,
+  seeMore = false,
+  isAdmin = true,
+  marginTop,
 }) => (
-  <S.PostListHeader>
+  <S.PostListHeader
+    css={css`
+      margin-top: ${marginTop};
+    `}
+  >
     {seeMore ? (
       <S.SeeMoreException>
         <S.CategoryTitle>{Title[category]}</S.CategoryTitle>
