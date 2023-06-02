@@ -30,7 +30,7 @@ const postList = [
     fileIsExist: true,
   },
   {
-    postSeq: 1,
+    postSeq: 2,
     postTitle: 'Test',
     postWriter: 'Tester',
     createdAt: '2023-05-03T19:47:01.250197',
@@ -38,7 +38,7 @@ const postList = [
     fileIsExist: true,
   },
   {
-    postSeq: 1,
+    postSeq: 3,
     postTitle: 'Test',
     postWriter: 'Tester',
     createdAt: '2023-05-03T19:47:01.250197',
@@ -46,7 +46,7 @@ const postList = [
     fileIsExist: true,
   },
   {
-    postSeq: 1,
+    postSeq: 4,
     postTitle: 'Test',
     postWriter: 'Tester',
     createdAt: '2023-05-03T19:47:01.250197',
@@ -66,7 +66,7 @@ const galleryList = [
     fileIsExist: true,
   },
   {
-    postSeq: 1,
+    postSeq: 2,
     postTitle: 'Test',
     postWriter: 'Tester',
     createdAt: '2023-05-03T19:47:01.250197',
@@ -75,7 +75,7 @@ const galleryList = [
     fileIsExist: true,
   },
   {
-    postSeq: 1,
+    postSeq: 3,
     postTitle: 'Test',
     postWriter: 'Tester',
     createdAt: '2023-05-03T19:47:01.250197',
@@ -84,7 +84,7 @@ const galleryList = [
     fileIsExist: true,
   },
   {
-    postSeq: 1,
+    postSeq: 4,
     postTitle: 'Test',
     postWriter: 'Tester',
     createdAt: '2023-05-03T19:47:01.250197',
@@ -93,7 +93,7 @@ const galleryList = [
     fileIsExist: true,
   },
   {
-    postSeq: 1,
+    postSeq: 5,
     postTitle: 'Test',
     postWriter: 'Tester',
     createdAt: '2023-05-03T19:47:01.250197',
@@ -102,7 +102,7 @@ const galleryList = [
     fileIsExist: true,
   },
   {
-    postSeq: 1,
+    postSeq: 6,
     postTitle: 'Test',
     postWriter: 'Tester',
     createdAt: '2023-05-03T19:47:01.250197',
