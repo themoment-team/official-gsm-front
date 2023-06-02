@@ -1,5 +1,10 @@
 import styled from "@emotion/styled";
 
+export const WritePageWrap = styled.div`
+  width: 36.125rem;
+  margin: 0 auto;
+`;
+
 export const WriteTitle = styled.h3`
   font-weight: 600;
   font-size: 1.125rem;
@@ -41,7 +46,7 @@ export const UploadTitle = styled.p`
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: #9e9e9e;
-  padding: 2.8125rem 0 1rem 0;
+  padding: 4rem 0 1rem 0;
 `;
 
 export const UploadBtn = styled.button`
@@ -52,10 +57,14 @@ export const UploadBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+export const UploadBtnTitle = styled.div`
   font-size: 0.75rem;
   color: #ffffff;
   line-height: 1.125rem;
   font-weight: 600;
+  padding-left: 0.375rem;
 `;
 
 export const BtnWrap = styled.div`

@@ -8,12 +8,7 @@ import * as S from "./style";
 export default function WritePage() {
   const UploadTitleArr = ["배너 사진", "첨부 파일"];
   return (
-    <div
-      css={css`
-        width: 36.125rem;
-        margin: 0 auto;
-      `}
-    >
+    <S.WritePageWrap>
       <S.WriteTitle>게시물 생성</S.WriteTitle>
       <S.FormWrap>
         <div>
@@ -44,13 +39,7 @@ export default function WritePage() {
                 <S.UploadTitle>여러개 업로드 하실 수 있습니다.</S.UploadTitle>
                 <S.UploadBtn>
                   <PlusIcon />
-                  <span
-                    css={css`
-                      padding-left: 0.375rem;
-                    `}
-                  >
-                    배너 사진 업로드
-                  </span>
+                  <S.UploadBtnTitle>배너 사진 업로드</S.UploadBtnTitle>
                 </S.UploadBtn>
               </S.UploadBox>
             </div>
@@ -61,6 +50,6 @@ export default function WritePage() {
         <S.CancelBtn>취소</S.CancelBtn>
         <S.CompleteBtn>완료</S.CompleteBtn>
       </S.BtnWrap>
-    </div>
+    </S.WritePageWrap>
   );
 }
