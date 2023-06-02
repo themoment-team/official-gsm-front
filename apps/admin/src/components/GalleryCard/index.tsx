@@ -1,34 +1,47 @@
-import * as S from "./style";
-import Image from "next/image";
+import React from 'react';
+
+import Image from 'next/image';
+
+import { DateComponent } from 'ui';
+
+import * as S from './style';
+
+interface FileInfo {
+  fileUrl: string;
+  fileName: string;
+}
+
+interface PostType {
+  postSeq: number;
+  postTitle: string;
+  postWriter: string;
+  createdAt: string;
+  thumbnailUrl: string | null;
+  fileIsExist: boolean;
+}
 
 interface GalleryCardProps {
-  imgUrl: string;
-  title: string;
+  fileInfo: FileInfo[];
   description: string;
-  writer: string;
-  date: string;
+  post: PostType;
 }
 
 const GalleryCard: React.FC<GalleryCardProps> = ({
-  imgUrl,
-  title,
+  post: { thumbnailUrl, postWriter, postTitle, createdAt },
+  fileInfo,
   description,
-  writer,
-  date,
-}) => {
-  return (
-    <S.CardWrapper>
-      <S.IMGWrapper>
-        <Image fill src={imgUrl} alt="ContentIMG" />
-      </S.IMGWrapper>
-      <S.Title>{title}</S.Title>
-      <S.Description>{description}</S.Description>
-      <S.DetailWrapper>
-        <S.Details>{writer}</S.Details>
-        <S.Details>{date}</S.Details>
-      </S.DetailWrapper>
-    </S.CardWrapper>
-  );
-};
+}) => (
+  <S.CardWrapper>
+    <S.IMGWrapper>
+      <Image fill src={thumbnailUrl ?? ''} alt='ContentIMG' />
+    </S.IMGWrapper>
+    <S.Title>{postTitle}</S.Title>
+    <S.Description>{description}</S.Description>
+    <S.DetailWrapper>
+      <S.Writer>{postWriter}</S.Writer>
+      <DateComponent createdAt={createdAt} />
+    </S.DetailWrapper>
+  </S.CardWrapper>
+);
 
 export default GalleryCard;

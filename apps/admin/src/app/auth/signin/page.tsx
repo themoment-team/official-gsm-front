@@ -1,23 +1,25 @@
-"use client";
+'use client';
 
-import styled from "@emotion/styled";
-import { AuthError, AuthTitle, Input } from "components";
-import Link from "next/link";
-import { useState } from "react";
-import { Button } from "ui";
+import { useState } from 'react';
+
+import Link from 'next/link';
+
+import styled from '@emotion/styled';
+import { AuthError, AuthTitle, Input } from 'components';
+import { Button } from 'ui';
 
 export default function SigninPage() {
   const [isSigninLoading, setIsSigninLoading] = useState<boolean>(false);
 
   return (
     <>
-      <AuthTitle marginTop="1.5rem" textAlign="center" fontSize="1.75rem">
+      <AuthTitle marginTop='1.5rem' textAlign='center' fontSize='1.75rem'>
         교사 로그인
       </AuthTitle>
       <Form>
         <InputBox>
-          <Input placeholder="아이디를 입력해주세요." type="text" />
-          <Input type="password" placeholder="비밀번호를 입력해주세요." />
+          <Input placeholder='아이디를 입력해주세요.' type='text' />
+          <Input type='password' placeholder='비밀번호를 입력해주세요.' />
         </InputBox>
         <AuthError>아이디 혹은 비밀번호를 다시 확인해주세요.</AuthError>
         <ButtonBox>
@@ -26,12 +28,12 @@ export default function SigninPage() {
               setIsSigninLoading(true);
             }}
             isLoading={isSigninLoading}
-            type="submit"
+            type='submit'
           >
             로그인
           </Button>
-          <Button bgColor="#DEE449" hoverBgColor="#E9EC9E" fontColor="#050505">
-            <CustomLink href="/auth/signup/intro">회원가입</CustomLink>
+          <Button bgColor='#DEE449' hoverBgColor='#E9EC9E' fontColor='#050505'>
+            <CustomLink href='/auth/signup'>회원가입</CustomLink>
           </Button>
         </ButtonBox>
       </Form>

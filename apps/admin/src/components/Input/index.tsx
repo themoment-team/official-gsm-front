@@ -1,6 +1,12 @@
-import { css } from "@emotion/react";
-import * as S from "./style";
-import { DetailedHTMLProps, InputHTMLAttributes } from "react";
+import type { DetailedHTMLProps, InputHTMLAttributes } from 'react';
+import { forwardRef } from 'react';
+
+import { css } from '@emotion/react';
+
+import { InputValueResetBtnIcon } from 'admin/assets';
+import { useForwardRef } from 'admin/hooks';
+
+import * as S from './style';
 
 interface InputProps
   extends DetailedHTMLProps<
@@ -9,25 +15,38 @@ interface InputProps
   > {
   width?: string;
   height?: string;
-  marginTop?: string;
+  resetBtn?: boolean;
 }
 
-const Input: React.FC<InputProps> = ({
-  width,
-  height,
-  marginTop,
-  ...attributes
-}) => {
-  return (
-    <S.InputBox
-      css={css`
-        width: ${width};
-        height: ${height};
-        margin-top: ${marginTop};
-      `}
-      {...attributes}
-    />
-  );
-};
+const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ width, height, resetBtn = false, ...attributes }, ref) => {
+    const inputRef = useForwardRef<HTMLInputElement>(ref);
+
+    const resetButtonClick = () => {
+      if (inputRef) {
+        inputRef.current.value = '';
+        inputRef.current.focus();
+      }
+    };
+
+    return (
+      <S.InputWrapper
+        css={css`
+          width: ${width};
+          height: ${height};
+        `}
+      >
+        <S.InputBox {...attributes} ref={inputRef} />
+        {resetBtn && (
+          <S.InputValueResetBtn onClick={() => resetButtonClick()}>
+            <InputValueResetBtnIcon />
+          </S.InputValueResetBtn>
+        )}
+      </S.InputWrapper>
+    );
+  }
+);
+
+Input.displayName = 'Input';
 
 export default Input;

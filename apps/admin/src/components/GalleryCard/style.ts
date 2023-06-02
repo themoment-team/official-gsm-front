@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const CardWrapper = styled.div`
   width: 21.8125rem;
@@ -43,7 +43,7 @@ export const DetailWrapper = styled.div`
   justify-content: space-between;
 `;
 
-export const Details = styled.p`
+export const Writer = styled.p`
   font-weight: 600;
   font-size: 0.8125rem;
   line-height: 1rem;
