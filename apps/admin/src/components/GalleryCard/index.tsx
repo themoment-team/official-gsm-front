@@ -34,7 +34,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
   return (
     <S.CardWrapper>
       <S.IMGWrapper>
-        <Image fill src={post.thumbnailUrl as string} alt="ContentIMG" />
+        <Image fill src={post.thumbnailUrl ?? ''} alt='ContentIMG' />
       </S.IMGWrapper>
       <S.Title>{post.postTitle}</S.Title>
       <S.Description>{description}</S.Description>
@@ -45,6 +45,5 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     </S.CardWrapper>
   );
 };
-
 
 export default GalleryCard;
