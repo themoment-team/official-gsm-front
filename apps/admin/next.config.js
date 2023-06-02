@@ -6,6 +6,9 @@ const nextConfig = {
   compiler: {
     emotion: true,
   },
+  images: {
+    domains: ['files.porsche.com'],
+  },
 };
 
 module.exports = nextConfig;

@@ -52,15 +52,15 @@ module.exports = {
             group: 'internal',
           },
           {
-            pattern: 'ui/**',
-            group: 'internal',
-          },
-          {
             pattern: 'api/**',
             group: 'internal',
           },
           {
             pattern: 'common/**',
+            group: 'internal',
+          },
+          {
+            pattern: 'ui',
             group: 'internal',
           },
           {
