@@ -1,7 +1,49 @@
 'use client';
 
 import styled from '@emotion/styled';
-import { Category, Header, Banner } from 'components';
+
+import {
+  Category,
+  Header,
+  Banner,
+  PostListHeader,
+  PostList,
+} from 'admin/components';
+
+const postList = [
+  {
+    postSeq: 1,
+    postTitle: 'Test',
+    postWriter: 'Tester',
+    createdAt: '2023-05-03T19:47:01.250197',
+    thumbnailUrl: null,
+    fileIsExist: true,
+  },
+  {
+    postSeq: 1,
+    postTitle: 'Test',
+    postWriter: 'Tester',
+    createdAt: '2023-05-03T19:47:01.250197',
+    thumbnailUrl: null,
+    fileIsExist: true,
+  },
+  {
+    postSeq: 1,
+    postTitle: 'Test',
+    postWriter: 'Tester',
+    createdAt: '2023-05-03T19:47:01.250197',
+    thumbnailUrl: null,
+    fileIsExist: true,
+  },
+  {
+    postSeq: 1,
+    postTitle: 'Test',
+    postWriter: 'Tester',
+    createdAt: '2023-05-03T19:47:01.250197',
+    thumbnailUrl: null,
+    fileIsExist: true,
+  },
+];
 
 export default function CategoryPage() {
   return (
@@ -10,6 +52,8 @@ export default function CategoryPage() {
       <Banner />
       <ContentWrapper>
         <Category category='notice' />
+        <PostListHeader category='notice' marginTop='3rem' />
+        <PostList postList={postList} />
       </ContentWrapper>
     </>
   );
