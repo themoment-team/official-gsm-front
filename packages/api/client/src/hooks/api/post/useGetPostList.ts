@@ -8,12 +8,12 @@ import {
 } from "client";
 
 export const useGetPostList = (
-  pageNumber: number,
-  category: PostCategoryType
+  category: PostCategoryType,
+  pageNumber: number
 ) => {
   const query = useQuery<PostListType>(
-    postQueryKeys.getPostList(pageNumber, category),
-    () => get(postUrl.postList(pageNumber, category)),
+    postQueryKeys.getPostList(category, pageNumber),
+    () => get(postUrl.postList(category, pageNumber)),
     {
       cacheTime: Infinity,
       staleTime: Infinity,

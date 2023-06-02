@@ -5,7 +5,7 @@ import { useGetPostDetail, useGetPostList } from "api/client";
 
 export default function Home() {
   // example
-  const { data: postList, isLoading } = useGetPostList(0, "NOTICE");
+  const { data: postList, isLoading } = useGetPostList("NOTICE", 0);
 
   const { data: postDetail } = useGetPostDetail(1);
 
