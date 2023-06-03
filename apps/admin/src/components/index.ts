@@ -20,3 +20,4 @@ export { default as Banner } from './Banner';
 export { default as WriteButton } from './WriteButton';
 export { default as FileButton } from './FileButton';
 export { default as WriterAndDate } from './WriterAndDate';
+export { default as Carousel } from './Carousel';
