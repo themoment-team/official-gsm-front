@@ -1,13 +1,13 @@
-import PostContent from '.';
+import NoticeContent from '.';
 import { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'admin/PostContent',
-  component: PostContent,
+  title: 'admin/NoticeContent',
+  component: NoticeContent,
   parameters: {},
-} as Meta<typeof PostContent>;
+} as Meta<typeof NoticeContent>;
 
-type Story = StoryObj<typeof PostContent>;
+type Story = StoryObj<typeof NoticeContent>;
 
 export const Primary: Story = {
   args: {

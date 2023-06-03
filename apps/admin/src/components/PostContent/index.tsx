@@ -1,60 +1,55 @@
 import * as S from './style';
-import React from 'react';
-import Image from 'next/image';
-import { css } from '@emotion/react';
-import { WriterAndDate } from 'admin/components';
+import {
+  WriteButton,
+  FileButton,
+  WriterAndDate,
+  Carousel,
+} from 'admin/components';
 
-interface PostContentProps {
+interface FileInfo {
+  fileUrl: string;
+  fileName: string;
+}
+
+interface PostType {
   postSeq: number;
   postTitle: string;
   postWriter: string;
   createdAt: string;
+  thumbnailUrl: string | null;
   fileIsExist: boolean;
-  postContent: string;
-  fileInfo: [
-    {
-      fileUrl: string;
-      fileName: string;
-      fileExtension: string;
-    }
-  ];
+}
+
+interface PostContentProps {
+  fileInfo: FileInfo[];
+  description: string;
+  post: PostType;
 }
 
 const PostContent: React.FC<PostContentProps> = ({
-  postSeq,
-  postTitle,
-  postWriter,
-  createdAt,
-  fileIsExist,
-  postContent,
+  post: { postWriter, postTitle, createdAt },
   fileInfo,
+  description,
 }) => {
   return (
-    <S.ContentWrapper>
-      <S.ImageWrapper>
-        {fileIsExist ? (
-          <Image alt='content img' src={fileInfo[0].fileUrl} fill />
-        ) : (
-          <Image
-            alt='content img'
-            src={'/blurGSMLogo.png'}
-            css={css`
-              mix-blend-mode: luminosity;
-            `}
-            width={87}
-            height={53}
-          />
-        )}
-      </S.ImageWrapper>
-      <S.TextWrapper>
-        <S.Title>{postTitle}</S.Title>
-        <WriterAndDate
-          weight={600}
-          createdAt={createdAt}
-          postWriter={postWriter}
-        />
-      </S.TextWrapper>
-    </S.ContentWrapper>
+    <S.PostContentWrapper>
+      <S.Title>{postTitle}</S.Title>
+      <WriterAndDate
+        weight={400}
+        createdAt={createdAt}
+        postWriter={postWriter}
+      />
+      <WriteButton isEdit={true} />
+      <S.Horizon />
+      <S.Content>{description}</S.Content>
+      <S.Horizon />
+      <S.FileTitle>첨부 파일</S.FileTitle>
+      <div>
+        {fileInfo.map((item) => {
+          return <FileButton fileInfo={item} />;
+        })}
+      </div>
+    </S.PostContentWrapper>
   );
 };
 

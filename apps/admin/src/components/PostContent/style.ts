@@ -1,44 +1,38 @@
 import styled from '@emotion/styled';
 
-export const ContentWrapper = styled.div`
-  width: 100vw;
+export const PostContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-`;
-
-export const ImageWrapper = styled.div`
-  width: 50rem;
-  height: 16.8125rem;
-  background: #eeeeee;
-  border-radius: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  position: relative;
-  img {
-    object-fit: cover;
-  }
-`;
-
-export const TextWrapper = styled.div`
-  width: 50rem;
-  margin-top: 1.5rem;
 `;
 
 export const Title = styled.h1`
-  font-weight: 600;
-  font-size: 1.0625rem;
-  line-height: 1.5625rem;
+  width: 650px;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 50px;
   color: #050505;
 `;
 
-export const Description = styled.p`
-  width: 50rem;
+export const Horizon = styled.div`
+  width: 650px;
+  height: 1px;
+  background: #eeeeee;
+  margin: 16px 0;
+`;
+
+export const Content = styled.p`
+  width: 650px;
   font-weight: 400;
-  font-size: 0.9375rem;
-  line-height: 1.5rem;
-  letter-spacing: 0.0096em;
-  color: #505050;
+  font-size: 14px;
+  line-height: 20px;
+  color: #212121;
+  word-break: keep-all;
+`;
+
+export const FileTitle = styled.h2`
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #050505;
+  margin-bottom: 16px;
 `;

@@ -1,5 +1,10 @@
 import styled from '@emotion/styled';
 
+export const CarouselWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 export const IMGWrapper = styled.div`
   border-radius: 10px;
 
@@ -11,7 +16,6 @@ export const IMGWrapper = styled.div`
 `;
 
 export const CarouselBar = styled.div`
-  width: 650px;
   display: flex;
   align-items: center;
   margin: 25px 0;
