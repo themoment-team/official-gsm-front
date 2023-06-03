@@ -1,6 +1,7 @@
 import * as S from './style';
 import Image from 'next/image';
 import { css } from '@emotion/react';
+import { CarouselIcon } from 'admin/assets';
 
 interface CarouselProps {
   thumbnailUrl: string | null;
@@ -18,7 +19,10 @@ const Carousel: React.FC<CarouselProps> = ({ thumbnailUrl, isGallery }) => {
       >
         <Image alt='content image' src={thumbnailUrl ?? ''} fill />
       </S.IMGWrapper>
-      <S.CarouselBar></S.CarouselBar>
+      <S.CarouselBar>
+        <CarouselIcon isTurn={false} />
+        <CarouselIcon isTurn={true} />
+      </S.CarouselBar>
     </>
   );
 };
