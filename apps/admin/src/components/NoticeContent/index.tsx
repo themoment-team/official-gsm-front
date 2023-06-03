@@ -28,11 +28,13 @@ const NoticeContent: React.FC<NoticeContentProps> = ({
 }) => {
   return (
     <NoticeWrapper>
-      <Carousel
-        thumbnailUrl={post.thumbnailUrl}
-        fileInfo={fileInfo}
-        isGallery={false}
-      />
+      {post.fileIsExist && (
+        <Carousel
+          thumbnailUrl={post.thumbnailUrl}
+          fileInfo={fileInfo}
+          isGallery={false}
+        />
+      )}
       <PostContent post={post} fileInfo={fileInfo} description={description} />
     </NoticeWrapper>
   );
