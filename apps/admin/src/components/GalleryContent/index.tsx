@@ -1,6 +1,6 @@
 import * as S from './style';
 import Image from 'next/image';
-import { WriteButton } from 'admin/components';
+import { WriteButton, FileButton } from 'admin/components';
 
 interface FileInfo {
   fileUrl: string;
@@ -39,6 +39,11 @@ const GalleryContent: React.FC<GalleryContentProps> = ({
       <S.Content>{description}</S.Content>
       <S.Horizon />
       <S.FileTitle>첨부 파일</S.FileTitle>
+      <div>
+        {fileInfo.map((item) => {
+          return <FileButton fileInfo={item} />;
+        })}
+      </div>
     </>
   );
 };

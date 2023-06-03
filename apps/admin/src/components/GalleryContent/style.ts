@@ -45,4 +45,5 @@ export const FileTitle = styled.h2`
   font-size: 14px;
   line-height: 20px;
   color: #050505;
+  margin-bottom: 16px;
 `;

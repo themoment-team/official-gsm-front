@@ -18,3 +18,4 @@ export { default as PostList } from './PostList';
 export { default as GalleryList } from './GalleryList';
 export { default as Banner } from './Banner';
 export { default as WriteButton } from './WriteButton';
+export { default as FileButton } from './FileButton';
