@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const NoticeCard = styled.div`
   height: 4.375rem;
@@ -9,6 +9,7 @@ export const NoticeCard = styled.div`
   align-items: center;
   padding-left: 1.5rem;
   padding-right: 2.6875rem;
+  cursor: pointer;
   :hover {
     background: #eeeeee;
     transition: ease-in-out 300ms;

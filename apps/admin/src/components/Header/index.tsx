@@ -1,24 +1,29 @@
-import Image from "next/image";
-import * as S from "./style";
-import * as I from "admin/assets";
-import Link from "next/link";
-import { css } from "@emotion/react";
-import React, { useState } from "react";
-import { ApproveModal } from "admin/components";
+import { useState } from 'react';
+import type { FC } from 'react';
+
+import Image from 'next/image';
+import Link from 'next/link';
+
+import { css } from '@emotion/react';
+
+import * as I from 'admin/assets';
+import { ApproveModal } from 'admin/components';
+
+import * as S from './style';
 
 interface HeaderProps {
   hasNotification: boolean;
   name: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ hasNotification, name }) => {
+const Header: FC<HeaderProps> = ({ hasNotification, name }) => {
   const [showApproveModal, setShowApproveModal] = useState<boolean>(false);
 
   return (
     <S.Header>
       <S.Nav>
-        <Link href="/">
-          <Image src="/GSMLogo.png" alt="" width="66" height="37" />
+        <Link href='/'>
+          <Image src='/GSMLogo.png' alt='' width='66' height='37' />
         </Link>
         <I.VerticalBarIcon />
         <S.ApproveRequest>

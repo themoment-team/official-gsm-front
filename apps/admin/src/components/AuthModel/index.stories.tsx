@@ -1,8 +1,10 @@
-import AuthModel from ".";
-import { Meta, StoryObj } from "@storybook/react";
+import AuthModel from '.';
+
+import type { Meta, StoryObj } from '@storybook/react';
+
 
 export default {
-  title: "admin/AuthModel",
+  title: 'admin/AuthModel',
   component: AuthModel,
   parameters: {},
 } as Meta<typeof AuthModel>;
@@ -11,19 +13,19 @@ type Story = StoryObj<typeof AuthModel>;
 
 export const School: Story = {
   args: {
-    modelUrl: "/models/school.webm",
+    modelUrl: '/models/school.webm',
   },
 };
 
 export const Pending: Story = {
   args: {
-    modelUrl: "/models/pending.webm",
+    modelUrl: '/models/pending.webm',
   },
 };
 
 export const Approve: Story = {
   args: {
-    modelUrl: "/models/approve.webm",
+    modelUrl: '/models/approve.webm',
     loop: false,
   },
 };
