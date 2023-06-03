@@ -1,5 +1,6 @@
 import * as S from './style';
 import Image from 'next/image';
+import { WriteButton } from 'admin/components';
 
 interface FileInfo {
   fileUrl: string;
@@ -31,6 +32,13 @@ const GalleryContent: React.FC<GalleryContentProps> = ({
       <S.IMGWrapper>
         <Image alt='content image' src={thumbnailUrl ?? ''} fill />
       </S.IMGWrapper>
+      <S.CarouselBar></S.CarouselBar>
+      <S.Title>{postTitle}</S.Title>
+      <WriteButton isEdit={true} />
+      <S.Horizon />
+      <S.Content>{description}</S.Content>
+      <S.Horizon />
+      <S.FileTitle>첨부 파일</S.FileTitle>
     </>
   );
 };
