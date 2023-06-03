@@ -24,8 +24,7 @@ const GalleryContent: React.FC<GalleryContentProps> = ({
   post,
   fileInfo,
   description,
-}) => {
-  return (
+}) => (
     <>
       <Carousel
         thumbnailUrl={post.thumbnailUrl}
@@ -35,6 +34,5 @@ const GalleryContent: React.FC<GalleryContentProps> = ({
       <PostContent post={post} fileInfo={fileInfo} description={description} />
     </>
   );
-};
 
 export default GalleryContent;

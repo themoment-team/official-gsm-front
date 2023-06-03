@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Image from 'next/image';
+
 import { WriterAndDate } from 'admin/components';
 
 import * as S from './style';

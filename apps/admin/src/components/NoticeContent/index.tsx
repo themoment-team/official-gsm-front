@@ -1,5 +1,6 @@
-import { PostContent, Carousel } from 'admin/components';
 import styled from '@emotion/styled';
+
+import { PostContent, Carousel } from 'admin/components';
 
 interface FileInfo {
   fileUrl: string;
@@ -25,8 +26,7 @@ const NoticeContent: React.FC<NoticeContentProps> = ({
   post,
   fileInfo,
   description,
-}) => {
-  return (
+}) => (
     <NoticeWrapper>
       {post.fileIsExist && (
         <Carousel
@@ -38,7 +38,6 @@ const NoticeContent: React.FC<NoticeContentProps> = ({
       <PostContent post={post} fileInfo={fileInfo} description={description} />
     </NoticeWrapper>
   );
-};
 
 export default NoticeContent;
 
