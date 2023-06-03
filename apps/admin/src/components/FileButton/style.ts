@@ -8,6 +8,7 @@ export const FileWrapper = styled.div`
   background: #eeeeee;
   border-radius: 20px;
   margin-bottom: 12px;
+  cursor: pointer;
 `;
 
 export const ImageName = styled.p`

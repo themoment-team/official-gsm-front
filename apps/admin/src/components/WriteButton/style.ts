@@ -7,6 +7,7 @@ export const WriteButton = styled.div`
   justify-content: center;
   background: #051b30;
   border-radius: 20px;
+  cursor: pointer;
 `;
 
 export const IMGWrapper = styled.div`
