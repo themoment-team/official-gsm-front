@@ -21,6 +21,12 @@ const Carousel: React.FC<CarouselProps> = ({ thumbnailUrl, isGallery }) => {
       </S.IMGWrapper>
       <S.CarouselBar>
         <CarouselIcon isTurn={false} />
+        <S.DotWrapper>
+          <S.Dot />
+          <S.Dot />
+          <S.Dot />
+          <S.Dot />
+        </S.DotWrapper>
         <CarouselIcon isTurn={true} />
       </S.CarouselBar>
     </>
