@@ -27,7 +27,7 @@ interface PostContentProps {
 }
 
 const PostContent: React.FC<PostContentProps> = ({
-  post: { postWriter, postTitle, createdAt },
+  post: { postWriter, postTitle, createdAt, fileIsExist },
   fileInfo,
   description,
 }) => {
@@ -43,12 +43,16 @@ const PostContent: React.FC<PostContentProps> = ({
       <S.Horizon />
       <S.Content>{description}</S.Content>
       <S.Horizon />
-      <S.FileTitle>첨부 파일</S.FileTitle>
-      <div>
-        {fileInfo.map((item) => {
-          return <FileButton fileInfo={item} />;
-        })}
-      </div>
+      {fileIsExist && (
+        <>
+          <S.FileTitle>첨부 파일</S.FileTitle>
+          <div>
+            {fileInfo.map((item) => {
+              return <FileButton fileInfo={item} />;
+            })}
+          </div>
+        </>
+      )}
     </S.PostContentWrapper>
   );
 };
