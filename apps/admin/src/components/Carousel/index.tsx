@@ -38,14 +38,18 @@ const Carousel: React.FC<CarouselProps> = ({
           width: ${isGallery ? '650' : '476'}px;
         `}
       >
-        <CarouselIcon isTurn={false} />
+        <S.CursorWrapper>
+          <CarouselIcon isTurn={false} />
+        </S.CursorWrapper>
         <S.DotWrapper>
           <S.Dot />
           <S.Dot />
           <S.Dot />
           <S.Dot />
         </S.DotWrapper>
-        <CarouselIcon isTurn={true} />
+        <S.CursorWrapper>
+          <CarouselIcon isTurn={true} />
+        </S.CursorWrapper>
       </S.CarouselBar>
     </S.CarouselWrapper>
   );
