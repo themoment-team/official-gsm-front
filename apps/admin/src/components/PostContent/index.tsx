@@ -2,7 +2,7 @@ import * as S from './style';
 import React from 'react';
 import Image from 'next/image';
 import { css } from '@emotion/react';
-import { DateComponent } from 'ui';
+import { WriterAndDate } from 'admin/components';
 
 interface PostContentProps {
   postSeq: number;
@@ -48,12 +48,11 @@ const PostContent: React.FC<PostContentProps> = ({
       </S.ImageWrapper>
       <S.TextWrapper>
         <S.Title>{postTitle}</S.Title>
-        <S.DetailWrapper>
-          <S.Details>{postWriter}</S.Details>
-          <S.Dot />
-          <DateComponent createdAt={createdAt} />
-        </S.DetailWrapper>
-        <S.Description>{postContent}</S.Description>
+        <WriterAndDate
+          weight={600}
+          createdAt={createdAt}
+          postWriter={postWriter}
+        />
       </S.TextWrapper>
     </S.ContentWrapper>
   );

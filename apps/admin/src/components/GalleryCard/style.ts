@@ -36,16 +36,3 @@ export const Description = styled.p`
   margin-bottom: 1.5rem;
   word-break: keep-all;
 `;
-
-export const DetailWrapper = styled.div`
-  width: 8.125rem;
-  display: flex;
-  justify-content: space-between;
-`;
-
-export const Writer = styled.p`
-  font-weight: 600;
-  font-size: 0.8125rem;
-  line-height: 1rem;
-  color: #828282;
-`;

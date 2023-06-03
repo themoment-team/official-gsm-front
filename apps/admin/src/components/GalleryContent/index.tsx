@@ -1,6 +1,6 @@
 import * as S from './style';
 import Image from 'next/image';
-import { WriteButton, FileButton } from 'admin/components';
+import { WriteButton, FileButton, WriterAndDate } from 'admin/components';
 
 interface FileInfo {
   fileUrl: string;
@@ -34,6 +34,11 @@ const GalleryContent: React.FC<GalleryContentProps> = ({
       </S.IMGWrapper>
       <S.CarouselBar></S.CarouselBar>
       <S.Title>{postTitle}</S.Title>
+      <WriterAndDate
+        weight={400}
+        createdAt={createdAt}
+        postWriter={postWriter}
+      />
       <WriteButton isEdit={true} />
       <S.Horizon />
       <S.Content>{description}</S.Content>

@@ -1,8 +1,7 @@
 import React from 'react';
 
 import Image from 'next/image';
-
-import { DateComponent } from 'ui';
+import { WriterAndDate } from 'admin/components';
 
 import * as S from './style';
 
@@ -37,10 +36,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     </S.IMGWrapper>
     <S.Title>{postTitle}</S.Title>
     <S.Description>{description}</S.Description>
-    <S.DetailWrapper>
-      <S.Writer>{postWriter}</S.Writer>
-      <DateComponent createdAt={createdAt} />
-    </S.DetailWrapper>
+    <WriterAndDate createdAt={createdAt} postWriter={postWriter} weight={600} />
   </S.CardWrapper>
 );
 

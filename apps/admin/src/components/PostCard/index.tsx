@@ -1,4 +1,4 @@
-import { DateComponent } from 'ui';
+import { WriterAndDate } from 'admin/components';
 
 import * as S from './style';
 
@@ -20,11 +20,7 @@ const PostCard: React.FC<PostCardProps> = ({
       <S.Title>{title}</S.Title>
       <S.SubTitle>{subtitle}</S.SubTitle>
     </S.TitleWrap>
-    <S.WriterDateWrap>
-      <S.Writer>{writer}</S.Writer>
-      <S.Dot />
-      <DateComponent createdAt={createdAt} />
-    </S.WriterDateWrap>
+    <WriterAndDate postWriter={writer} createdAt={createdAt} weight={600} />
   </S.NoticeCard>
 );
 
