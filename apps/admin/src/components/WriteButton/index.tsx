@@ -1,0 +1,25 @@
+import * as S from './style';
+import { WriteIcon, PlusIcon } from 'admin/assets';
+import React from 'react';
+import { css } from '@emotion/react';
+
+interface WriteButtonProps {
+  isEdit: boolean;
+}
+
+const WriteButton: React.FC<WriteButtonProps> = ({ isEdit }) => {
+  return (
+    <S.WriteButton
+      css={css`
+        width: ${isEdit ? '97px' : '85px'};
+      `}
+    >
+      <S.IMGWrapper>
+        {isEdit ? <WriteIcon color='#ffffff' /> : <PlusIcon color='#ffffff' />}
+      </S.IMGWrapper>
+      <S.WriteText>{isEdit ? '수정하기' : '글쓰기'}</S.WriteText>
+    </S.WriteButton>
+  );
+};
+
+export default WriteButton;
