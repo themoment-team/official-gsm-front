@@ -1,7 +1,7 @@
-import * as S from "./style";
-import { FileIcon, WriteIcon } from "../../assets";
+import * as S from './style';
+import { FileIcon, WriteIcon } from '../../assets';
 // import { ToBackButton } from "components";
-import ToBackButton from "../ToBackButton";
+import ToBackButton from '../ToBackButton';
 
 const DetailPageHeader = () => {
   return (
@@ -9,7 +9,7 @@ const DetailPageHeader = () => {
       <S.HeaderWrapper>
         <ToBackButton />
         <S.UpdateBox>
-          <WriteIcon />
+          <WriteIcon color='#050505' />
           <S.AddFileBTN>
             <FileIcon />
             <S.AddFileText>첨부 파일</S.AddFileText>

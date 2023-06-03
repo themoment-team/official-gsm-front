@@ -41,7 +41,7 @@ const PostListHeader: React.FC<PostListHeaderProps> = ({
     )}
     {isAdmin && (
       <S.AddPostBTN>
-        <PlusIcon />
+        <PlusIcon color='#050505' />
       </S.AddPostBTN>
     )}
   </S.PostListHeader>

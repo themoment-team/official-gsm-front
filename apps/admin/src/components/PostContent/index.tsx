@@ -1,8 +1,8 @@
-import * as S from "./style";
-import React from "react";
-import Image from "next/image";
-import { css } from "@emotion/react";
-import { DateComponent } from "ui";
+import * as S from './style';
+import React from 'react';
+import Image from 'next/image';
+import { css } from '@emotion/react';
+import { DateComponent } from 'ui';
 
 interface PostContentProps {
   postSeq: number;
@@ -33,11 +33,11 @@ const PostContent: React.FC<PostContentProps> = ({
     <S.ContentWrapper>
       <S.ImageWrapper>
         {fileIsExist ? (
-          <Image alt="content img" src={fileInfo[0].fileUrl} fill />
+          <Image alt='content img' src={fileInfo[0].fileUrl} fill />
         ) : (
           <Image
-            alt="content img"
-            src={"/blurGSMLogo.png"}
+            alt='content img'
+            src={'/blurGSMLogo.png'}
             css={css`
               mix-blend-mode: luminosity;
             `}
