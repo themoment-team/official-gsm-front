@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { AuthModel } from 'admin/components';
 
 export const SignInPage = styled.div`
-  height: 264px;
+  height: 16.5rem;
   padding-top: 4.375rem;
   position: relative;
   @media (max-height: 26.5rem) {
@@ -28,7 +28,7 @@ export const SignInModel = styled(AuthModel)`
 export const ModelCover = styled.div`
   width: 13.75rem;
   height: 13.75rem;
-  backdrop-filter: blur(7.5px);
+  backdrop-filter: blur(0.4688rem);
   background: rgba(14, 15, 16, 0.6);
   z-index: 1;
   position: absolute;
@@ -62,10 +62,10 @@ export const SkyBlueHighlight = styled.span`
 `;
 
 export const GoogleOAuthLink = styled.a`
-  width: 343px;
-  height: 49px;
+  width: 21.4375rem;
+  height: 3.0625rem;
   background: #fcfcfc;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   color: #212121;
   display: flex;
   justify-content: center;
