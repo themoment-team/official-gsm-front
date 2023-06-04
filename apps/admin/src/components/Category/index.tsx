@@ -1,15 +1,20 @@
+import { css } from '@emotion/react';
+
+import type { CategoryType } from 'admin/types';
+
 import * as S from './style';
 import Link from 'next/link';
 import { css } from '@emotion/react';
 
 interface CategoryProps {
-  category?: string;
   width?: string;
+  category: CategoryType;
 }
-const test = [
-  { path: '/notice', label: '공지사항' },
-  { path: '/gallery', label: '행사갤러리' },
-  { path: '/familyCorrespondence', label: '가정통신문' },
+
+const categoryArray = [
+  { path: '/', label: '공지사항' },
+  { path: '/newsletter', label: '가정통신문' },
+  { path: '/gallery', label: '행사 갤러리' },
 ];
 
 const Category: React.FC<CategoryProps> = ({ category, width }) => {
@@ -20,20 +25,19 @@ const Category: React.FC<CategoryProps> = ({ category, width }) => {
         border-radius: ${width ? '0.625rem' : '1.25rem'};
       `}
     >
-      <S.MenuWrap>
-        {test.map((tab) => (
-          <S.Menu key={tab.path}>
-            <Link href={tab.path}>
-              <S.LinkWrap>
-                <S.Path isActive={category === tab.path}>
-                  ∙&nbsp;&nbsp;{tab.label}
-                </S.Path>
-              </S.LinkWrap>
-            </Link>
-          </S.Menu>
-        ))}
-      </S.MenuWrap>
+      {categoryArray.map(({ path, label }) => (
+      <S.CustomLink
+        href={path}
+        key={label}
+        css={css`
+          color: ${isActive(category, path) ? '#FFFFFF' : '#a4a4a4'};
+        `}
+      >
+        ∙&nbsp;&nbsp;{label}
+      </S.CustomLink>
+    ))}
     </S.Category>
   );
 };
+
 export default Category;
