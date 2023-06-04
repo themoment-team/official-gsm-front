@@ -9,6 +9,7 @@ export const DetailWrapper = styled.div`
 `;
 
 export const Details = styled.p`
+  font-weight: 600;
   font-size: 0.8125rem;
   line-height: 1rem;
   color: #828282;

@@ -16,9 +16,12 @@ const DateComponent: React.FC<DateProps> = ({ createdAt, weight }) => {
 
   return (
     <S.Date
-      css={css`
-        font-weight: ${weight};
-      `}
+      css={
+        weight &&
+        css`
+          font-weight: ${weight};
+        `
+      }
       dateTime={createdAt}
     >{`${year}.${month}.${date}`}</S.Date>
   );
