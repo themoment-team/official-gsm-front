@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const PostListHeader = styled.header`
   width: 67.5rem;
@@ -16,13 +16,20 @@ export const CategoryTitle = styled.h1`
 `;
 
 export const AddPostBTN = styled.button`
-  width: 2.25rem;
-  height: 2.25rem;
-  border-radius: 1.125rem;
-  background: #dee449;
+  width: 85px;
+  height: 36px;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  padding-left: 6px;
+  background: #051b30;
+  border-radius: 20px;
+  cursor: pointer;
+`;
+
+export const AddPostText = styled.p`
+  color: #fcfcfc;
+  padding-left: 6px;
 `;
 
 export const SeeMoreException = styled.div`
