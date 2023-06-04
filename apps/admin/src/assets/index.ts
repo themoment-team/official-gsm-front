@@ -7,3 +7,4 @@ export { default as InputValueResetBtnIcon } from './svg/icon/InputValueResetBtn
 export { default as PlusIcon } from './svg/icon/PlusIcon';
 export { default as SeeMoreIcon } from './svg/icon/SeeMoreIcon';
 export { default as CarouselIcon } from './svg/icon/CarouselIcon';
+export { default as PaginationIcon } from './svg/icon/PaginationIcon';
