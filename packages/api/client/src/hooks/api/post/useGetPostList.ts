@@ -1,11 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery } from '@tanstack/react-query';
 import {
   PostCategoryType,
   PostListType,
   get,
   postQueryKeys,
   postUrl,
-} from "client";
+} from 'api/client';
 
 export const useGetPostList = (
   category: PostCategoryType,

@@ -1,4 +1,4 @@
-import { PostCategoryType } from "../types";
+import { PostCategoryType } from 'api/client';
 
 export const postUrl = {
   postList: (category: PostCategoryType, pageNumber: number) =>

@@ -4,7 +4,7 @@
     "jsx": "preserve",
     "baseUrl": "./src",
     "paths": {
-      "client": ["../../../packages/api/client"],
+      "api/*": ["../../../packages/api/*"],
       "admin/*": ["*"]
     }
   },

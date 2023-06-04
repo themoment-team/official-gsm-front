@@ -1,11 +1,11 @@
-import { PostCategoryType } from "client";
+import { PostCategoryType } from 'api/client';
 
 export const postQueryKeys = {
   getPostList: (category: PostCategoryType, pageNumber: number) => [
-    "post",
-    "list",
+    'post',
+    'list',
     category,
     pageNumber,
   ],
-  getPostDetail: (postSeq: number) => ["post", "detail", postSeq],
+  getPostDetail: (postSeq: number) => ['post', 'detail', postSeq],
 };
