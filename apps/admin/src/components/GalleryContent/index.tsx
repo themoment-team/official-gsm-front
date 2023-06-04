@@ -25,14 +25,14 @@ const GalleryContent: React.FC<GalleryContentProps> = ({
   fileInfo,
   description,
 }) => (
-    <>
-      <Carousel
-        thumbnailUrl={post.thumbnailUrl}
-        fileInfo={fileInfo}
-        isGallery={true}
-      />
-      <PostContent post={post} fileInfo={fileInfo} description={description} />
-    </>
-  );
+  <>
+    <Carousel
+      thumbnailUrl={post.thumbnailUrl}
+      fileInfo={fileInfo}
+      isGallery={true}
+    />
+    <PostContent post={post} fileInfo={fileInfo} description={description} />
+  </>
+);
 
 export default GalleryContent;

@@ -27,17 +27,17 @@ const NoticeContent: React.FC<NoticeContentProps> = ({
   fileInfo,
   description,
 }) => (
-    <NoticeWrapper>
-      {post.fileIsExist && (
-        <Carousel
-          thumbnailUrl={post.thumbnailUrl}
-          fileInfo={fileInfo}
-          isGallery={false}
-        />
-      )}
-      <PostContent post={post} fileInfo={fileInfo} description={description} />
-    </NoticeWrapper>
-  );
+  <NoticeWrapper>
+    {post.fileIsExist && (
+      <Carousel
+        thumbnailUrl={post.thumbnailUrl}
+        fileInfo={fileInfo}
+        isGallery={false}
+      />
+    )}
+    <PostContent post={post} fileInfo={fileInfo} description={description} />
+  </NoticeWrapper>
+);
 
 export default NoticeContent;
 

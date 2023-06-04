@@ -33,7 +33,7 @@ const Carousel: React.FC<CarouselProps> = ({
         height: ${isGallery ? '400' : '689'}px;
       `}
     >
-      <Image alt='content image' src={thumbnailUrl ?? ''} fill />
+      <Image unoptimized alt='content image' src={thumbnailUrl ?? ''} fill />
     </S.IMGWrapper>
     <S.CarouselBar
       css={css`

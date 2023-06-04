@@ -21,3 +21,5 @@ export { default as WriteButton } from './WriteButton';
 export { default as FileButton } from './FileButton';
 export { default as WriterAndDate } from './WriterAndDate';
 export { default as Carousel } from './Carousel';
+export { default as NoticeContent } from './NoticeContent';
+export { default as GalleryContent } from './GalleryContent';
