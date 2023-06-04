@@ -1,10 +1,11 @@
 'use client';
 
-import { QueryClientProvider } from '@tanstack/react-query';
+import React from 'react';
+
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { GlobalStyle } from 'common';
 
-import { queryClient } from 'api/common';
+import Providers from './providers';
 
 export default function RootLayout({
   children,
@@ -24,11 +25,11 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <QueryClientProvider client={queryClient}>
+        <Providers>
           <ReactQueryDevtools />
           <GlobalStyle />
           {children}
-        </QueryClientProvider>
+        </Providers>
       </body>
     </html>
   );
