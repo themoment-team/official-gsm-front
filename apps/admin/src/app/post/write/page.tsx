@@ -5,7 +5,6 @@ import { PlusIcon } from 'admin/assets';
 import * as S from './style';
 
 export default function WritePage() {
-  const UploadTitleArr = ['배너 사진', '첨부 파일'];
   return (
     <S.WritePageWrap>
       <S.WriteTitle>게시물 생성</S.WriteTitle>
@@ -30,25 +29,21 @@ export default function WritePage() {
             height='6.75rem'
           />
         </div>
-        {UploadTitleArr.map((title, id) => {
-          return (
-            <div key={id}>
-              <S.FormItemTitle>{title}</S.FormItemTitle>
-              <S.UploadBox>
-                <S.UploadTitle>여러개 업로드 하실 수 있습니다.</S.UploadTitle>
-                <S.UploadBtn>
-                  <PlusIcon />
-                  <S.UploadBtnTitle>배너 사진 업로드</S.UploadBtnTitle>
-                </S.UploadBtn>
-              </S.UploadBox>
-            </div>
-          );
-        })}
+        <div>
+          <S.FormItemTitle>첨부 파일</S.FormItemTitle>
+          <S.UploadBox>
+            <S.UploadTitle>여러개 업로드 하실 수 있습니다.</S.UploadTitle>
+            <S.UploadBtn>
+              <PlusIcon />
+              <S.UploadBtnTitle>배너 사진 업로드</S.UploadBtnTitle>
+            </S.UploadBtn>
+          </S.UploadBox>
+        </div>
+        <S.BtnWrap>
+          <S.CancelBtn>취소</S.CancelBtn>
+          <S.CompleteBtn>완료</S.CompleteBtn>
+        </S.BtnWrap>
       </S.FormWrap>
-      <S.BtnWrap>
-        <S.CancelBtn>취소</S.CancelBtn>
-        <S.CompleteBtn>완료</S.CompleteBtn>
-      </S.BtnWrap>
     </S.WritePageWrap>
   );
 }

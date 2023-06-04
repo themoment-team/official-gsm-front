@@ -1,8 +1,9 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const WritePageWrap = styled.div`
   width: 36.125rem;
   margin: 0 auto;
+  margin-top: 4.75rem;
 `;
 
 export const WriteTitle = styled.h3`
@@ -71,7 +72,7 @@ export const BtnWrap = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 3.1875rem;
+  margin-top: 1.5rem;
 `;
 
 export const CancelBtn = styled.button`
