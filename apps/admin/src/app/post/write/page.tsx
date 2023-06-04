@@ -11,7 +11,7 @@ export default function WritePage() {
       <S.FormWrap>
         <div>
           <S.FormItemTitle>카테고리</S.FormItemTitle>
-          <Category width='36.125rem' />
+          <Category width='36.125rem' category='notice' />
         </div>
         <div>
           <S.FormItemTitle>제목</S.FormItemTitle>

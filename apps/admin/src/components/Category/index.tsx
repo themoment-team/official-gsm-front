@@ -1,5 +1,3 @@
-import { css } from '@emotion/react';
-
 import type { CategoryType } from 'admin/types';
 
 import * as S from './style';
@@ -17,6 +15,11 @@ const categoryArray = [
   { path: '/gallery', label: '행사 갤러리' },
 ];
 
+const isActive = (category: CategoryType, path: string) => {
+  if (category === 'notice' && path === '/') return true;
+  return `/${category}` === path;
+};
+
 const Category: React.FC<CategoryProps> = ({ category, width }) => {
   return (
     <S.Category
@@ -26,16 +29,16 @@ const Category: React.FC<CategoryProps> = ({ category, width }) => {
       `}
     >
       {categoryArray.map(({ path, label }) => (
-      <S.CustomLink
-        href={path}
-        key={label}
-        css={css`
-          color: ${isActive(category, path) ? '#FFFFFF' : '#a4a4a4'};
-        `}
-      >
-        ∙&nbsp;&nbsp;{label}
-      </S.CustomLink>
-    ))}
+        <S.CustomLink
+          href={path}
+          key={label}
+          css={css`
+            color: ${isActive(category, path) ? '#FFFFFF' : '#a4a4a4'};
+          `}
+        >
+          ∙&nbsp;&nbsp;{label}
+        </S.CustomLink>
+      ))}
     </S.Category>
   );
 };
