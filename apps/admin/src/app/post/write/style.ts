@@ -57,7 +57,7 @@ export const UploadBtn = styled.button`
   border-radius: 1.25rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding-left: 1rem;
 `;
 
 export const UploadBtnTitle = styled.div`

@@ -32,10 +32,12 @@ export default function WritePage() {
         <div>
           <S.FormItemTitle>첨부 파일</S.FormItemTitle>
           <S.UploadBox>
-            <S.UploadTitle>여러개 업로드 하실 수 있습니다.</S.UploadTitle>
+            <S.UploadTitle>
+              첫번째 등록하신 이미지는 썸네일 역할을 합니다.
+            </S.UploadTitle>
             <S.UploadBtn>
               <PlusIcon />
-              <S.UploadBtnTitle>배너 사진 업로드</S.UploadBtnTitle>
+              <S.UploadBtnTitle>첨부 파일 업로드</S.UploadBtnTitle>
             </S.UploadBtn>
           </S.UploadBox>
         </div>
