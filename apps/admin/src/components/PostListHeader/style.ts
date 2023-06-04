@@ -16,20 +16,20 @@ export const CategoryTitle = styled.h1`
 `;
 
 export const AddPostBTN = styled.button`
-  width: 85px;
-  height: 36px;
+  width: 5.3125rem;
+  height: 2.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 6px;
+  padding-left: 0.375rem;
   background: #051b30;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   cursor: pointer;
 `;
 
 export const AddPostText = styled.p`
   color: #fcfcfc;
-  padding-left: 6px;
+  padding-left: 0.375rem;
 `;
 
 export const SeeMoreException = styled.div`

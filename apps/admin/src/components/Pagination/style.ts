@@ -6,7 +6,7 @@ export const PaginationWrapper = styled.div`
 
 export const PageNumberWrapper = styled.div`
   display: flex;
-  margin: 0 26px;
+  margin: 0 1.625rem;
 `;
 
 export const CursorPointer = styled.div`
@@ -15,10 +15,10 @@ export const CursorPointer = styled.div`
 
 export const PageNumber = styled.p`
   font-weight: 600;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   color: #050505;
-  margin: 0 12px;
+  margin: 0 0.75rem;
   cursor: pointer;
 
   ${({ isCurrent }: { isCurrent?: boolean }) => isCurrent && `color: #888888;`}
