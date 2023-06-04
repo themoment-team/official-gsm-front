@@ -20,7 +20,7 @@ const PostCard: React.FC<PostCardProps> = ({
       <S.Title>{title}</S.Title>
       <S.SubTitle>{subtitle}</S.SubTitle>
     </S.TitleWrap>
-    <WriterAndDate postWriter={writer} createdAt={createdAt} weight={600} />
+    <WriterAndDate postWriter={writer} createdAt={createdAt} />
   </S.NoticeCard>
 );
 

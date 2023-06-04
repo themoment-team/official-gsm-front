@@ -7,7 +7,7 @@ import * as S from './style';
 interface WriterAndDateProps {
   postWriter: string;
   createdAt: string;
-  weight: number;
+  weight?: number;
 }
 
 const WriterAndDate: React.FC<WriterAndDateProps> = ({

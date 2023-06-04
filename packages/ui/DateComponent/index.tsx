@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 
 interface DateProps {
   createdAt: string;
-  weight: number;
+  weight?: number;
 }
 
 const DateComponent: React.FC<DateProps> = ({ createdAt, weight }) => {

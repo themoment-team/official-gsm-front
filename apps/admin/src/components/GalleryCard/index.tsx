@@ -37,7 +37,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     </S.IMGWrapper>
     <S.Title>{postTitle}</S.Title>
     <S.Description>{description}</S.Description>
-    <WriterAndDate createdAt={createdAt} postWriter={postWriter} weight={600} />
+    <WriterAndDate createdAt={createdAt} postWriter={postWriter} />
   </S.CardWrapper>
 );
 
