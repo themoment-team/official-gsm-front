@@ -9,43 +9,52 @@ import {
   PostListHeader,
   PostList,
 } from 'admin/components';
+import { useGetPostDetail, useGetPostList } from 'api/client';
 
-const postList = [
-  {
-    postSeq: 1,
-    postTitle: 'Test',
-    postWriter: 'Tester',
-    createdAt: '2023-05-03T19:47:01.250197',
-    thumbnailUrl: null,
-    fileIsExist: true,
-  },
-  {
-    postSeq: 2,
-    postTitle: 'Test',
-    postWriter: 'Tester',
-    createdAt: '2023-05-03T19:47:01.250197',
-    thumbnailUrl: null,
-    fileIsExist: true,
-  },
-  {
-    postSeq: 3,
-    postTitle: 'Test',
-    postWriter: 'Tester',
-    createdAt: '2023-05-03T19:47:01.250197',
-    thumbnailUrl: null,
-    fileIsExist: true,
-  },
-  {
-    postSeq: 4,
-    postTitle: 'Test',
-    postWriter: 'Tester',
-    createdAt: '2023-05-03T19:47:01.250197',
-    thumbnailUrl: null,
-    fileIsExist: true,
-  },
-];
+export default function Home() {
+  // example
+  const { data: postList } = useGetPostList('NOTICE', 0);
 
-export default function CategoryPage() {
+  const { data: postDetail } = useGetPostDetail(1);
+
+  console.log(postList);
+  console.log(postDetail);
+
+  const postListExample = [
+    {
+      postSeq: 1,
+      postTitle: 'Test',
+      postWriter: 'Tester',
+      createdAt: '2023-05-03T19:47:01.250197',
+      thumbnailUrl: null,
+      fileIsExist: true,
+    },
+    {
+      postSeq: 2,
+      postTitle: 'Test',
+      postWriter: 'Tester',
+      createdAt: '2023-05-03T19:47:01.250197',
+      thumbnailUrl: null,
+      fileIsExist: true,
+    },
+    {
+      postSeq: 3,
+      postTitle: 'Test',
+      postWriter: 'Tester',
+      createdAt: '2023-05-03T19:47:01.250197',
+      thumbnailUrl: null,
+      fileIsExist: true,
+    },
+    {
+      postSeq: 4,
+      postTitle: 'Test',
+      postWriter: 'Tester',
+      createdAt: '2023-05-03T19:47:01.250197',
+      thumbnailUrl: null,
+      fileIsExist: true,
+    },
+  ];
+
   return (
     <>
       <Header hasNotification={false} name={'정문정'} />
@@ -53,7 +62,7 @@ export default function CategoryPage() {
       <ContentWrapper>
         <Category category='notice' />
         <PostListHeader category='notice' marginTop='3rem' />
-        <PostList postList={postList} />
+        <PostList postList={postListExample} />
       </ContentWrapper>
     </>
   );

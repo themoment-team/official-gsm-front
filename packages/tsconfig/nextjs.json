@@ -4,6 +4,7 @@
   "compilerOptions": {
     "jsxImportSource": "@emotion/react",
     "jsx": "preserve",
+    "noEmit": true,
     "plugins": [
       {
         "name": "next"

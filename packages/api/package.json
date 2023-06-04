@@ -1,0 +1,16 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "dependencies": {
+    "@types/node": "20.1.4",
+    "axios": "^1.4.0",
+    "eslint-config-custom": "workspace:^"
+  },
+  "devDependencies": {
+    "tsconfig": "workspace:^"
+  },
+  "peerDependencies": {
+    "@tanstack/react-query": "^4.29.7"
+  }
+}
