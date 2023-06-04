@@ -18,8 +18,8 @@ const CarouselIcon: React.FC<CarouselIconProp> = ({ isTurn }) => (
     <path
       d='M8 1L1.63683 7.81768C1.27824 8.20189 1.27824 8.79811 1.63683 9.18232L8 16'
       stroke='#9E9E9E'
-      stroke-width='2'
-      stroke-linecap='round'
+      strokeWidth='2'
+      strokeLinecap='round'
     />
   </svg>
 );
