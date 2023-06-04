@@ -1,33 +1,39 @@
-import { instance } from "./instance";
+import { clientInstance } from './instance';
 
-export const get = async (...args: Parameters<typeof instance.get>) => {
+export const get = async (...args: Parameters<typeof clientInstance.get>) => {
   try {
-    const { data } = await instance.get(...args);
+    const { data } = await clientInstance.get(...args);
     return data;
   } catch (error) {
     return error;
   }
 };
 
-export const post = async <T>(...args: Parameters<typeof instance.post>) => {
+export const post = async <T>(
+  ...args: Parameters<typeof clientInstance.post>
+) => {
   try {
-    await instance.post<T>(...args);
+    await clientInstance.post<T>(...args);
   } catch (error) {
     return error;
   }
 };
 
-export const patch = async <T>(...args: Parameters<typeof instance.patch>) => {
+export const patch = async <T>(
+  ...args: Parameters<typeof clientInstance.patch>
+) => {
   try {
-    await instance.patch<T>(...args);
+    await clientInstance.patch<T>(...args);
   } catch (error) {
     return error;
   }
 };
 
-export const del = async <T>(...args: Parameters<typeof instance.delete>) => {
+export const del = async <T>(
+  ...args: Parameters<typeof clientInstance.delete>
+) => {
   try {
-    await instance.delete<T>(...args);
+    await clientInstance.delete<T>(...args);
   } catch (error) {
     return error;
   }
