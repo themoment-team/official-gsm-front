@@ -1,13 +1,18 @@
 import { css } from '@emotion/react';
 
 interface CarouselIconProp {
-  isTurn: boolean;
+  turn: 'left' | 'right';
 }
 
-const CarouselIcon: React.FC<CarouselIconProp> = ({ isTurn }) => (
+const Turn = {
+  left: 0,
+  right: '180',
+};
+
+const CarouselIcon: React.FC<CarouselIconProp> = ({ turn }) => (
   <svg
     css={css`
-      transform: ${isTurn && 'rotate(180deg)'};
+      transform: rotate(${Turn[turn]}deg);
     `}
     width='9'
     height='17'

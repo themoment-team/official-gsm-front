@@ -41,7 +41,7 @@ const Carousel: React.FC<CarouselProps> = ({
       `}
     >
       <S.CursorWrapper>
-        <CarouselIcon isTurn={false} />
+        <CarouselIcon turn={'left'} />
       </S.CursorWrapper>
       <S.DotWrapper>
         <S.Dot />
@@ -50,7 +50,7 @@ const Carousel: React.FC<CarouselProps> = ({
         <S.Dot />
       </S.DotWrapper>
       <S.CursorWrapper>
-        <CarouselIcon isTurn={true} />
+        <CarouselIcon turn={'right'} />
       </S.CursorWrapper>
     </S.CarouselBar>
   </S.CarouselWrapper>
