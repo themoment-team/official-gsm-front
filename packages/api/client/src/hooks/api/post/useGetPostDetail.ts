@@ -1,5 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
-import { postUrl, get, PostDetailType, postQueryKeys } from 'api/client';
+
+import type { PostDetailType} from 'api/client';
+import { postUrl, get, postQueryKeys } from 'api/client';
 
 export const useGetPostDetail = (seq: number) => {
   const query = useQuery<PostDetailType>(postQueryKeys.getPostDetail(seq), () =>

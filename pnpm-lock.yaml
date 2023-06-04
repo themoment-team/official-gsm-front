@@ -168,6 +168,9 @@ importers:
       axios:
         specifier: ^1.4.0
         version: 1.4.0
+      eslint-config-custom:
+        specifier: workspace:^
+        version: link:../eslint-config-custom
     devDependencies:
       tsconfig:
         specifier: workspace:^

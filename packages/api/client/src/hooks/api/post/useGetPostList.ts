@@ -1,7 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
-import {
+
+import type {
   PostCategoryType,
-  PostListType,
+  PostListType} from 'api/client';
+import {
   get,
   postQueryKeys,
   postUrl,
