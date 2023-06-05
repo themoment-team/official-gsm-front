@@ -12,7 +12,6 @@ interface PostType {
   postTitle: string;
   postWriter: string;
   createdAt: string;
-  thumbnailUrl: string | null;
   fileIsExist: boolean;
 }
 

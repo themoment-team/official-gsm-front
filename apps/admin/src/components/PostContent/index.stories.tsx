@@ -2,7 +2,6 @@ import PostContent from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-
 export default {
   title: 'admin/PostContent',
   component: PostContent,
@@ -16,7 +15,6 @@ export const Primary: Story = {
     post: {
       postSeq: 1,
       fileIsExist: true,
-      thumbnailUrl: 'https://i.ytimg.com/vi/FBEBPnWafTk/mqdefault.jpg',
       postWriter: '최장우',
       postTitle:
         '2023년도 광주소프트웨어마이스터고등학교 교무실무사(마이스터 업무지원) 채용 재공고',

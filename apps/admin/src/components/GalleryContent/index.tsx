@@ -10,7 +10,6 @@ interface PostType {
   postTitle: string;
   postWriter: string;
   createdAt: string;
-  thumbnailUrl: string | null;
   fileIsExist: boolean;
 }
 
@@ -26,11 +25,7 @@ const GalleryContent: React.FC<GalleryContentProps> = ({
   description,
 }) => (
   <>
-    <Carousel
-      thumbnailUrl={post.thumbnailUrl}
-      fileInfo={fileInfo}
-      isGallery={true}
-    />
+    <Carousel fileInfo={fileInfo} isGallery={true} />
     <PostContent post={post} fileInfo={fileInfo} description={description} />
   </>
 );
