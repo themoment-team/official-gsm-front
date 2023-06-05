@@ -34,12 +34,17 @@ module.exports = {
         ],
         pathGroups: [
           {
-            pattern: 'react*',
+            pattern: 'react',
             group: 'external',
             position: 'before',
           },
           {
             pattern: 'next/**',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: 'react-hook-form',
             group: 'external',
             position: 'before',
           },
