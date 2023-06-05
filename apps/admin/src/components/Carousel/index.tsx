@@ -34,12 +34,18 @@ const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
   });
   () => setCurrent(newCurrnet);
 
-  const moveCurrent = () => {
+  const moveCurrent = (moveRight: boolean) => {
     let newCurrent = current;
     const index = newCurrent.indexOf(true);
     newCurrent[index % imageUrls.length] = false;
-    newCurrent[(index + 1) % imageUrls.length] = true;
-    setMove(((index + 1) % imageUrls.length) * imgWidth);
+    if (!moveRight && index === 0) {
+      newCurrent[imageUrls.length] = true;
+      setMove(imageUrls.length * imgWidth);
+      moveCurrent(false);
+    } else {
+      newCurrent[(index + (moveRight ? 1 : -1)) % imageUrls.length] = true;
+      setMove(((index + (moveRight ? 1 : -1)) % imageUrls.length) * imgWidth);
+    }
     setCurrent(newCurrent);
   };
 
@@ -75,7 +81,7 @@ const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
           margin-top: ${imgHeight + 1.5625}rem;
         `}
       >
-        <S.CursorWrapper>
+        <S.CursorWrapper onClick={() => moveCurrent(false)}>
           <CarouselIcon turn={'left'} />
         </S.CursorWrapper>
         <S.DotWrapper>
@@ -83,7 +89,7 @@ const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
             <S.Dot key={item} isCurrent={current[item]} />
           ))}
         </S.DotWrapper>
-        <S.CursorWrapper onClick={moveCurrent}>
+        <S.CursorWrapper onClick={() => moveCurrent(true)}>
           <CarouselIcon turn={'right'} />
         </S.CursorWrapper>
       </S.CarouselBar>
