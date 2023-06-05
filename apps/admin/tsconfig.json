@@ -4,6 +4,7 @@
     "jsx": "preserve",
     "baseUrl": "./src",
     "paths": {
+      "api/*": ["../../../packages/api/*"],
       "admin/*": ["*"]
     }
   },

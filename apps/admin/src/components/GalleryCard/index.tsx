@@ -28,7 +28,6 @@ interface GalleryCardProps {
 
 const GalleryCard: React.FC<GalleryCardProps> = ({
   post: { thumbnailUrl, postWriter, postTitle, createdAt },
-  fileInfo,
   description,
 }) => (
   <S.CardWrapper>

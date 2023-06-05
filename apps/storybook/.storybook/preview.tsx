@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/react';
-import GlobalStyle from 'common/styles/GlobalStyle';
+import { GlobalStyle } from 'common';
 import React from 'react';
 
 const preview: Preview = {

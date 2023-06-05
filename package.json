@@ -4,6 +4,7 @@
     "client": "pnpm --filter client",
     "admin": "pnpm --filter admin",
     "storybook": "pnpm --filter storybook",
+    "api": "pnpm --filter api",
     "common": "pnpm --filter common",
     "ui": "pnpm --filter ui",
     "tsconfig": "pnpm --filter tsconfig",
