@@ -1,32 +1,17 @@
 import React from 'react';
 
-import { PostCard } from 'admin/components';
+import styled from '@emotion/styled';
 
-interface PostType {
-  postSeq: number;
-  postTitle: string;
-  postWriter: string;
-  createdAt: string;
-  thumbnailUrl: string | null;
-  fileIsExist: boolean;
-}
+import { PostCard } from 'admin/components';
+import type { ContentType } from 'api/client';
 
 interface GalleryListProps {
-  postList: PostType[];
-}
-
-interface PostType {
-  postSeq: number;
-  postTitle: string;
-  postWriter: string;
-  createdAt: string;
-  thumbnailUrl: string | null;
-  fileIsExist: boolean;
+  postList: ContentType[];
 }
 
 const PostList: React.FC<GalleryListProps> = ({ postList }) => (
-  <div style={{ marginTop: '1.1875rem' }}>
-    {postList?.map((post: PostType) => {
+  <PostListWrapper>
+    {postList?.map((post) => {
       const subTitle = 'postSeq => postContent 요청하기';
       return (
         <PostCard
@@ -38,7 +23,11 @@ const PostList: React.FC<GalleryListProps> = ({ postList }) => (
         />
       );
     })}
-  </div>
+  </PostListWrapper>
 );
+
+const PostListWrapper = styled.div`
+  margin-top: 1.1875rem;
+`;
 
 export default PostList;
