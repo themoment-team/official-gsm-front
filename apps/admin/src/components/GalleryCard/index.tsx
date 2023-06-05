@@ -12,16 +12,26 @@ interface GalleryCardProps {
 }
 
 const GalleryCard: React.FC<GalleryCardProps> = ({
-  post: { postSeq, thumbnailUrl, postTitle, postWriter, createdAt },
+  post: {
+    postSeq,
+    thumbnailUrl,
+    postTitle,
+    contentPreview,
+    postWriter,
+    createdAt,
+  },
 }) => (
   <S.CardWrapper href={`/post/${postSeq}`}>
     <S.IMGWrapper>
       <Image fill src={thumbnailUrl ?? ''} alt='ContentIMG' />
     </S.IMGWrapper>
     <S.Title>{postTitle}</S.Title>
-    <S.Description>본문 요약</S.Description>
+    <S.Description>
+      {contentPreview.length === 60 ? `${contentPreview}...` : contentPreview}
+    </S.Description>
     <S.DetailWrapper>
       <S.Writer>{postWriter}</S.Writer>
+      <S.Dot />
       <DateComponent createdAt={createdAt} />
     </S.DetailWrapper>
   </S.CardWrapper>

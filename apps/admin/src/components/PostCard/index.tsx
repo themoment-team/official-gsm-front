@@ -8,12 +8,14 @@ interface PostCardProps {
 }
 
 const PostCard: React.FC<PostCardProps> = ({
-  post: { postSeq, postTitle, postWriter, createdAt },
+  post: { postSeq, postTitle, contentPreview, postWriter, createdAt },
 }) => (
   <S.NoticeCard href={`/post/${postSeq}`}>
     <S.TitleWrap>
       <S.Title>{postTitle}</S.Title>
-      <S.SubTitle>본문 요약</S.SubTitle>
+      <S.SubTitle>
+        {contentPreview.length === 40 ? `${contentPreview}...` : contentPreview}
+      </S.SubTitle>
     </S.TitleWrap>
     <S.WriterDateWrap>
       <S.Writer>{postWriter}</S.Writer>

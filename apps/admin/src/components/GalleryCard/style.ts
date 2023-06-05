@@ -6,6 +6,7 @@ export const CardWrapper = styled(Link)`
   width: 21.8125rem;
   height: 23.8125rem;
   cursor: pointer;
+  position: relative;
 `;
 
 export const IMGWrapper = styled.div`
@@ -36,13 +37,22 @@ export const Description = styled.p`
   letter-spacing: 0.0096em;
   color: #505050;
   margin-bottom: 1.5rem;
-  word-break: keep-all;
 `;
 
 export const DetailWrapper = styled.div`
   width: 8.125rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+`;
+
+export const Dot = styled.div`
+  height: 0.25rem;
+  width: 0.25rem;
+  border-radius: 100%;
+  background-color: rgba(130, 130, 130, 1);
 `;
 
 export const Writer = styled.p`
