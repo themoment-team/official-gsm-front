@@ -1,25 +1,14 @@
 'use client';
 
-
-import { useRouter } from 'next/navigation';
-
-import {
-  AuthTitle,
-  AuthModel,
-  ToBackButton,
-  AuthDescription,
-} from 'components';
+import { AuthTitle, AuthModel, AuthDescription } from 'components';
 import { Button } from 'ui';
 
 // TODO : react-query refetchInterval 사용하여 지속적으로 pending 여부 확인
 
 export default function PendingPage() {
-  const { replace } = useRouter();
-
   return (
     <>
-      <ToBackButton onClick={() => replace('/auth/signin')} />
-      <AuthTitle textAlign='center'>
+      <AuthTitle textAlign='center' marginTop='4rem'>
         관리자에게 요청을 보냈어요.
         <br />
         요청이 승인될 때 까지 기다려주세요.
