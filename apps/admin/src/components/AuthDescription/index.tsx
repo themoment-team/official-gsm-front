@@ -4,7 +4,6 @@ import { Description } from './style';
 
 interface AuthDescriptionProps {
   children: React.ReactNode;
-  className?: string;
 }
 
 /**
