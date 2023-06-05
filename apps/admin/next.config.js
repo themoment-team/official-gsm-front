@@ -20,6 +20,7 @@ const nextConfig = {
     domains: [
       'files.porsche.com',
       'official-gsm-dev-server-bucket.s3.ap-northeast-2.amazonaws.com',
+      'bucket.ottokeng.site',
     ],
   },
 };
