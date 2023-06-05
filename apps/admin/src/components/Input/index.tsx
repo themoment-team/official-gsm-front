@@ -45,15 +45,18 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         <S.InputBox
           {...attributes}
           ref={inputRef}
-          css={css`
-            border-color: ${isError && '#F93535'};
-            :hover {
-              border-color: ${isError && '#F93535'};
-            }
-            :focus {
-              border-color: ${isError && '#F93535'};
-            }
-          `}
+          css={
+            isError &&
+            css`
+              border-color: #f93535;
+              :hover {
+                border-color: #f93535;
+              }
+              :focus {
+                border-color: #f93535;
+              }
+            `
+          }
         />
         {resetBtn && (
           <S.InputValueResetBtn onClick={resetButtonClick} type='button'>
