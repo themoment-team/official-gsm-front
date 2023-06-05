@@ -6,7 +6,6 @@ export const CarouselWrapper = styled.div`
 `;
 
 export const IMGContainer = styled.div`
-  transition: all 0.3s;
   position: absolute;
 `;
 
@@ -17,11 +16,15 @@ export const MoveContainer = styled.div`
 
 export const IMGWrapper = styled.div`
   border-radius: 0.625rem;
+  z-index: -1;
+  opacity: 0;
   ${({ isCurrent }: { isCurrent?: boolean }) =>
-    !isCurrent &&
+    isCurrent &&
     `
-    display: none;
-    `}
+    transition: opacity 0.3s;
+    z-index: 1;
+    opacity: 1;
+  `}
 
   overflow: hidden;
   position: relative;

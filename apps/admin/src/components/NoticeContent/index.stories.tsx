@@ -2,7 +2,6 @@ import NoticeContent from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-
 export default {
   title: 'admin/NoticeContent',
   component: NoticeContent,
@@ -23,6 +22,16 @@ export const Primary: Story = {
       createdAt: '2023-05-03T19:47:01.250197',
     },
     fileInfo: [
+      {
+        fileUrl:
+          'http://bucket.ottokeng.site/743d7afd-690c-404a-b7fb-b6fe97598504.jpg',
+        fileName: 'images.jpg',
+      },
+      {
+        fileUrl:
+          'http://bucket.ottokeng.site/743d7afd-690c-404a-b7fb-b6fe97598504.jpg',
+        fileName: 'images.jpg',
+      },
       {
         fileUrl:
           'http://bucket.ottokeng.site/743d7afd-690c-404a-b7fb-b6fe97598504.jpg',

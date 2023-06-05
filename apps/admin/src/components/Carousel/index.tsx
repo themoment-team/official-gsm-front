@@ -20,25 +20,26 @@ interface CarouselProps {
 
 const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
   const [current, setCurrent] = useState<boolean[]>([true]);
+  const [move, setMove] = useState<number>(0);
   const imageUrls: string[] = [];
   const dots: number[] = [];
-  const imgWidth = isGallery ? '40.6256' : '29.75rem';
-  const imgHeight = isGallery ? '25' : '43.0625';
+  const imgWidth = isGallery ? 40.6256 : 29.75;
+  const imgHeight = isGallery ? 25 : 43.0625;
 
   let newCurrnet: boolean[] = [true];
   fileInfo.forEach((file, i) => {
     imageUrls.push(file.fileUrl);
     newCurrnet.push(false);
-    dots.push(i + 1);
+    dots.push(i);
   });
   () => setCurrent(newCurrnet);
 
   const moveCurrent = () => {
-    console.log(current);
     let newCurrent = current;
     const index = newCurrent.indexOf(true);
     newCurrent[index % imageUrls.length] = false;
     newCurrent[(index + 1) % imageUrls.length] = true;
+    setMove(((index + 1) % imageUrls.length) * imgWidth);
     setCurrent(newCurrent);
   };
 
@@ -49,7 +50,11 @@ const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
       `}
     >
       <S.IMGContainer>
-        <S.MoveContainer>
+        <S.MoveContainer
+          css={css`
+            right: ${move}rem;
+          `}
+        >
           {imageUrls.map((img, i) => (
             <S.IMGWrapper
               key={i}
@@ -67,7 +72,7 @@ const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
       <S.CarouselBar
         css={css`
           width: ${isGallery ? '40.625' : '29.75'}rem;
-          margin-top: ${Number(imgHeight) + 1.5625}rem;
+          margin-top: ${imgHeight + 1.5625}rem;
         `}
       >
         <S.CursorWrapper>
@@ -75,7 +80,7 @@ const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
         </S.CursorWrapper>
         <S.DotWrapper>
           {dots.map((item) => (
-            <S.Dot key={item} isCurrent={current[item - 1]} />
+            <S.Dot key={item} isCurrent={current[item]} />
           ))}
         </S.DotWrapper>
         <S.CursorWrapper onClick={moveCurrent}>
