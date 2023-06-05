@@ -1,6 +1,8 @@
+import Link from 'next/link';
+
 import styled from '@emotion/styled';
 
-export const NoticeCard = styled.div`
+export const NoticeCard = styled(Link)`
   height: 4.375rem;
   width: 67.5rem;
   border-radius: 1.25rem;

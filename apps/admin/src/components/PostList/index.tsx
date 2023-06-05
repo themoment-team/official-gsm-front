@@ -11,18 +11,9 @@ interface GalleryListProps {
 
 const PostList: React.FC<GalleryListProps> = ({ postList }) => (
   <PostListWrapper>
-    {postList?.map((post) => {
-      const subTitle = 'postSeq => postContent 요청하기';
-      return (
-        <PostCard
-          key={post.postSeq}
-          title={post.postTitle}
-          subtitle={subTitle}
-          writer={post.postWriter}
-          createdAt={post.createdAt}
-        />
-      );
-    })}
+    {postList?.map((post) => (
+      <PostCard key={post.postSeq} post={post} />
+    ))}
   </PostListWrapper>
 );
 

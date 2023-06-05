@@ -1,27 +1,22 @@
+import type { ContentType } from 'api/client';
 import { DateComponent } from 'ui';
 
 import * as S from './style';
 
 interface PostCardProps {
-  title: string;
-  subtitle: string;
-  writer: string;
-  createdAt: string;
+  post: ContentType;
 }
 
 const PostCard: React.FC<PostCardProps> = ({
-  title,
-  subtitle,
-  writer,
-  createdAt,
+  post: { postSeq, postTitle, postWriter, createdAt },
 }) => (
-  <S.NoticeCard>
+  <S.NoticeCard href={`/post/${postSeq}`}>
     <S.TitleWrap>
-      <S.Title>{title}</S.Title>
-      <S.SubTitle>{subtitle}</S.SubTitle>
+      <S.Title>{postTitle}</S.Title>
+      <S.SubTitle>본문 요약</S.SubTitle>
     </S.TitleWrap>
     <S.WriterDateWrap>
-      <S.Writer>{writer}</S.Writer>
+      <S.Writer>{postWriter}</S.Writer>
       <S.Dot />
       <DateComponent createdAt={createdAt} />
     </S.WriterDateWrap>
