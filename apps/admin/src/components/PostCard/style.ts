@@ -2,15 +2,14 @@ import Link from 'next/link';
 
 import styled from '@emotion/styled';
 
-export const NoticeCard = styled(Link)`
+export const PostCard = styled(Link)`
   height: 4.375rem;
   width: 67.5rem;
   border-radius: 1.25rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 1.5rem;
-  padding-right: 2.6875rem;
+  padding: 0.9375rem 2.6875rem 0.9375rem 1.5rem;
   cursor: pointer;
   :hover {
     background: #eeeeee;
@@ -18,21 +17,29 @@ export const NoticeCard = styled(Link)`
   }
 `;
 
-export const TitleWrap = styled.div``;
+export const TitleWrap = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 
 export const Title = styled.p`
-  height: 1.25rem;
-  width: 14.375rem;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.25rem;
+  color: #050505;
 `;
 
-export const SubTitle = styled.p`
+export const ContentPreview = styled.p`
+  width: 25rem;
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1rem;
-  padding-top: 0.25rem;
+  white-space: nowrap;
+  color: #424242;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const WriterDateWrap = styled.div`
