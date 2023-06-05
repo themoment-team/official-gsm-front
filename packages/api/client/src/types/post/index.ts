@@ -1,4 +1,4 @@
-export type PostCategoryType = "NOTICE" | "FAMILY_NEWSLETTER" | "EVENT_GALLERY";
+export type PostCategoryType = 'NOTICE' | 'FAMILY_NEWSLETTER' | 'EVENT_GALLERY';
 
 export interface PostDetailType {
   postTitle: string;
@@ -15,7 +15,8 @@ interface FileInfoType {
 }
 
 export interface PostListType {
-  content: ContentType[];
+  postList: ContentType[];
+  totalPages: number;
 }
 
 export interface ContentType {
