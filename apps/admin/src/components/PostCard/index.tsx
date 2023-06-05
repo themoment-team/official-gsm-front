@@ -10,19 +10,17 @@ interface PostCardProps {
 const PostCard: React.FC<PostCardProps> = ({
   post: { postSeq, postTitle, contentPreview, postWriter, createdAt },
 }) => (
-  <S.NoticeCard href={`/post/${postSeq}`}>
+  <S.PostCard href={`/post/${postSeq}`}>
     <S.TitleWrap>
       <S.Title>{postTitle}</S.Title>
-      <S.SubTitle>
-        {contentPreview.length === 40 ? `${contentPreview}...` : contentPreview}
-      </S.SubTitle>
+      <S.ContentPreview>{contentPreview}</S.ContentPreview>
     </S.TitleWrap>
     <S.WriterDateWrap>
       <S.Writer>{postWriter}</S.Writer>
       <S.Dot />
       <DateComponent createdAt={createdAt} />
     </S.WriterDateWrap>
-  </S.NoticeCard>
+  </S.PostCard>
 );
 
 export default PostCard;

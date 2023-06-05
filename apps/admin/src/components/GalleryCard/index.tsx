@@ -21,20 +21,18 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     createdAt,
   },
 }) => (
-  <S.CardWrapper href={`/post/${postSeq}`}>
+  <S.GalleryCard href={`/post/${postSeq}`}>
     <S.IMGWrapper>
       <Image fill src={thumbnailUrl ?? ''} alt='ContentIMG' />
     </S.IMGWrapper>
     <S.Title>{postTitle}</S.Title>
-    <S.Description>
-      {contentPreview.length === 60 ? `${contentPreview}...` : contentPreview}
-    </S.Description>
+    <S.ContentPreview>{contentPreview}</S.ContentPreview>
     <S.DetailWrapper>
       <S.Writer>{postWriter}</S.Writer>
       <S.Dot />
       <DateComponent createdAt={createdAt} />
     </S.DetailWrapper>
-  </S.CardWrapper>
+  </S.GalleryCard>
 );
 
 export default GalleryCard;
