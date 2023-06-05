@@ -24,6 +24,6 @@ export interface ContentType {
   postTitle: string;
   postWriter: string;
   createdAt: string;
-  thumbnailUrl: string;
+  thumbnailUrl?: string;
   contentPreview: string;
 }
