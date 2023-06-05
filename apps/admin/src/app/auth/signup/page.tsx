@@ -9,10 +9,10 @@ import { useForm } from 'react-hook-form';
 
 import styled from '@emotion/styled';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button } from 'ui';
 import { z } from 'zod';
 
 import { ToBackButton, Input, AuthTitle } from 'admin/components';
+import { Button } from 'ui';
 
 const schema = z.object({
   name: z
@@ -76,7 +76,7 @@ export default function SignupPage() {
 
 const ErrorMessage = styled.p`
   font-weight: 400;
-  font-size: 12px;
+  font-size: 0.75rem;
   margin-top: 1rem;
   color: #f93535;
 `;
