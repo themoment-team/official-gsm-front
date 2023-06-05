@@ -10,8 +10,6 @@ export { default as Input } from './Input';
 export { default as ApproveModal } from './ApproveModal';
 export { default as ApproveItem } from './ApproveModal/ApproveItem';
 export { default as AuthError } from './AuthError';
-export { default as SignupTitle } from './Signup/Title';
-export { default as SignupDescription } from './Signup/Description';
 export { default as PostList } from './PostList';
 export { default as PostListHeader } from './PostListHeader';
 export { default as GalleryList } from './GalleryList';
