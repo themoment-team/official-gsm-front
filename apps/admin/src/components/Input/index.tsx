@@ -16,10 +16,11 @@ interface InputProps
   width?: string;
   height?: string;
   resetBtn?: boolean;
+  marginTop?: string;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ width, height, resetBtn = false, ...attributes }, ref) => {
+  ({ width, height, resetBtn = false, marginTop, ...attributes }, ref) => {
     const inputRef = useForwardRef<HTMLInputElement>(ref);
 
     const resetButtonClick = () => {
@@ -34,6 +35,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         css={css`
           width: ${width};
           height: ${height};
+          margin-top: ${marginTop};
         `}
       >
         <S.InputBox {...attributes} ref={inputRef} />
