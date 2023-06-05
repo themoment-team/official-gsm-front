@@ -25,5 +25,5 @@ export interface ContentType {
   postWriter: string;
   createdAt: string;
   thumbnailUrl: string;
-  fileIsExist: boolean;
+  contentPreview: string;
 }
