@@ -17,22 +17,20 @@ export const Header = styled.header`
   font-size: 0.875rem;
 `;
 
-export const Nav = styled.nav`
+export const ApproveSection = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 3rem;
   align-items: center;
+
+  .teacher {
+    color: #505050;
+  }
 `;
 
-export const Text = styled.p`
-  color: #828282;
-  cursor: pointer;
-`;
-
-export const UserNameText = styled.p`
-  color: #505050;
-`;
-
-export const ApproveRequest = styled.div`
+export const ApproveRequest = styled.nav`
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
   position: relative;
 `;
 

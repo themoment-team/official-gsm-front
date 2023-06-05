@@ -16,37 +16,39 @@ interface HeaderProps {
   name: string;
 }
 
-const Header: FC<HeaderProps> = ({ hasNotification, name }) => {
+const Header: FC<HeaderProps> = ({ hasNotification = true, name }) => {
   const [showApproveModal, setShowApproveModal] = useState<boolean>(false);
+
+  const closeApproveModal = () => setShowApproveModal(false);
 
   return (
     <S.Header>
-      <S.Nav>
-        <Link href='/'>
-          <Image src='/GSMLogo.png' alt='' width='66' height='37' />
-        </Link>
-        <I.VerticalBarIcon />
+      <Link href='/'>
+        <Image src='/GSMLogo.png' alt='' width='66' height='37' />
+      </Link>
+
+      <S.ApproveSection>
         <S.ApproveRequest>
-          <S.Text
+          <I.NotificationIcon hasNotification={hasNotification} />
+          <p
             css={
               hasNotification &&
               css`
-                color: #050505;
+                cursor: pointer;
               `
             }
             onClick={() => setShowApproveModal(!showApproveModal)}
           >
             가입 요청
-          </S.Text>
-          {hasNotification && <S.Notification />}
-
-          {showApproveModal && (
-            <ApproveModal close={() => setShowApproveModal(false)} />
+            {hasNotification && <S.Notification />}
+          </p>
+          {hasNotification && showApproveModal && (
+            <ApproveModal close={closeApproveModal} />
           )}
         </S.ApproveRequest>
-      </S.Nav>
 
-      <S.UserNameText>{name} 선생님</S.UserNameText>
+        <p className='teacher'>{name} 선생님</p>
+      </S.ApproveSection>
     </S.Header>
   );
 };
