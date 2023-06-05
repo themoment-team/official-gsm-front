@@ -15,12 +15,16 @@ interface InputProps
   > {
   width?: string;
   height?: string;
+  isError?: boolean;
   resetBtn?: boolean;
   marginTop?: string;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ width, height, resetBtn = false, marginTop, ...attributes }, ref) => {
+  (
+    { width, height, isError, resetBtn = false, marginTop, ...attributes },
+    ref
+  ) => {
     const inputRef = useForwardRef<HTMLInputElement>(ref);
 
     const resetButtonClick = () => {
@@ -38,7 +42,19 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           margin-top: ${marginTop};
         `}
       >
-        <S.InputBox {...attributes} ref={inputRef} />
+        <S.InputBox
+          {...attributes}
+          ref={inputRef}
+          css={css`
+            border-color: ${isError && '#F93535'};
+            :hover {
+              border-color: ${isError && '#F93535'};
+            }
+            :focus {
+              border-color: ${isError && '#F93535'};
+            }
+          `}
+        />
         {resetBtn && (
           <S.InputValueResetBtn onClick={() => resetButtonClick()}>
             <InputValueResetBtnIcon />

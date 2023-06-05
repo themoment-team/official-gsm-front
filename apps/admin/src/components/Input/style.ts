@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const InputWrapper = styled.div`
+  height: 2.75rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -22,7 +23,7 @@ export const InputBox = styled.input`
   background-color: #fff;
   padding: 0 1.25rem;
   font-size: 0.75rem;
-  color: #a4a4a4;
+  color: #424242;
   transition: ease-in-out 0.3s;
   outline: none;
 
