@@ -56,7 +56,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           `}
         />
         {resetBtn && (
-          <S.InputValueResetBtn onClick={() => resetButtonClick()}>
+          <S.InputValueResetBtn onClick={resetButtonClick} type='button'>
             <InputValueResetBtnIcon />
           </S.InputValueResetBtn>
         )}
