@@ -16,7 +16,7 @@ interface HeaderProps {
   name: string;
 }
 
-const Header: FC<HeaderProps> = ({ hasNotification = true, name }) => {
+const Header: FC<HeaderProps> = ({ hasNotification, name }) => {
   const [showApproveModal, setShowApproveModal] = useState<boolean>(false);
 
   const closeApproveModal = () => setShowApproveModal(false);
