@@ -10,8 +10,8 @@ export default {
 
 type Story = StoryObj<typeof FileCard>;
 
-export const getFileBox: Story = {
+export const Primary: Story = {
   args: {
-    fileName: '파이명명ㅁ염염ㅇ',
+    fileName: 'Untitled video - Made with Clipchamp (2)',
   },
 };
