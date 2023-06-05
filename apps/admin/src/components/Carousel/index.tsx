@@ -21,8 +21,10 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
   const [current, setCurrent] = useState<boolean[]>([true]);
   const [move, setMove] = useState<number>(0);
+
   const imageUrls: string[] = [];
   const dots: number[] = [];
+  
   const imgWidth = isGallery ? 40.6256 : 29.75;
   const imgHeight = isGallery ? 25 : 43.0625;
 
@@ -53,6 +55,7 @@ const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
     <S.CarouselWrapper
       css={css`
         margin-right: ${!isGallery && '1.5'}rem;
+        width: ${imgWidth}rem;
       `}
     >
       <S.IMGContainer>

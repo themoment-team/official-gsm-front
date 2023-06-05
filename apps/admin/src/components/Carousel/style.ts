@@ -3,6 +3,8 @@ import styled from '@emotion/styled';
 export const CarouselWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
 `;
 
 export const IMGContainer = styled.div`
