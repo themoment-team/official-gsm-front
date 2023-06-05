@@ -2,9 +2,10 @@ import Link from 'next/link';
 
 import styled from '@emotion/styled';
 
-export const CardWrapper = styled(Link)`
+export const GalleryCard = styled(Link)`
+  display: block;
   width: 21.8125rem;
-  height: 23.8125rem;
+  height: 21.9375rem;
   cursor: pointer;
   position: relative;
 `;
@@ -24,19 +25,24 @@ export const IMGWrapper = styled.div`
 
 export const Title = styled.h2`
   font-weight: 700;
-  font-size: 1.125rem;
-  line-height: 1.5625rem;
-  color: #000000;
-  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #212121;
+  margin-bottom: 0.5625rem;
 `;
 
-export const Description = styled.p`
+export const ContentPreview = styled.p`
+  width: 100%;
   font-weight: 400;
-  font-size: 0.9375rem;
-  line-height: 1.5rem;
-  letter-spacing: 0.0096em;
-  color: #505050;
-  margin-bottom: 1.5rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #424242;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 `;
 
 export const DetailWrapper = styled.div`
