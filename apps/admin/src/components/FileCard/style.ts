@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const FileBoxWrap = styled.div`
+export const FileCardWrap = styled.div`
   width: 36.25rem;
   height: 2.5rem;
   background: #f5f5f5;

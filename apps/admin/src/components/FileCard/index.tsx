@@ -10,13 +10,13 @@ interface FileBoxProps {
 
 const FileCard: React.FC<FileBoxProps> = ({ fileName }) => {
   return (
-    <S.FileBoxWrap>
+    <S.FileCardWrap>
       <I.FileIcon />
       <S.Filename>{fileName}</S.Filename>
       <S.CancelIconWrap>
         <I.CancelIcon />
       </S.CancelIconWrap>
-    </S.FileBoxWrap>
+    </S.FileCardWrap>
   );
 };
 
