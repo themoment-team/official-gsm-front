@@ -6,3 +6,4 @@ export { default as PlusIcon } from './svg/icon/PlusIcon';
 export { default as SeeMoreIcon } from './svg/icon/SeeMoreIcon';
 export { default as FileIcon } from './svg/icon/FileIcon';
 export { default as CancelIcon } from './svg/icon/CancelIcon';
+export { default as GoogleIcon } from './svg/icon/GoogleIcon';
