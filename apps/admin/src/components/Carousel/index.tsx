@@ -9,8 +9,6 @@ import type { FileInfoType } from 'api/client';
 
 import * as S from './style';
 
-
-
 interface CarouselProps {
   isGallery: boolean;
   fileInfo: FileInfoType[];
@@ -83,7 +81,7 @@ const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
       </S.IMGContainer>
       <S.CarouselBar
         css={css`
-          width: ${isGallery ? '40.625' : '29.75'}rem;
+          width: ${imgWidth}rem;
           margin-top: ${imgHeight + 1.5625}rem;
         `}
       >
