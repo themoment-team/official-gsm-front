@@ -15,13 +15,28 @@ interface CarouselProps {
   fileInfo: FileInfoType[];
 }
 
+interface Image {
+  width: number;
+  height: number;
+}
+
 const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
   const [currentIndex, setCurrentIndexn] = useState<number>(0);
   const min = 0;
   const max = fileInfo.length - 1;
 
-  const imgWidth = isGallery ? 40.6256 : 29.75;
-  const imgHeight = isGallery ? 25 : 43.0625;
+  const galleryImage: Image = {
+    width: 40.6256,
+    height: 25,
+  };
+
+  const postImage: Image = {
+    width: 29.75,
+    height: 43.0625,
+  };
+
+  const imgWidth = isGallery ? galleryImage.width : postImage.width;
+  const imgHeight = isGallery ? galleryImage.height : postImage.height;
 
   const moveLeft = () => {
     setCurrentIndexn(currentIndex - 1);
