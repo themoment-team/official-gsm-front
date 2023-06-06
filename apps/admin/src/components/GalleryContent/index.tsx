@@ -8,7 +8,11 @@ const GalleryContent: React.FC<ContentPropsType> = ({
   description,
 }) => (
   <>
-    <Carousel fileInfo={fileInfo} isGallery={true} />
+    <Carousel
+      subnailUrl={post.thumbnailUrl}
+      fileInfo={fileInfo}
+      isGallery={true}
+    />
     <PostContent post={post} fileInfo={fileInfo} description={description} />
   </>
 );

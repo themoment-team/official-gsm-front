@@ -8,14 +8,12 @@ import * as S from './style';
 
 import { useState } from 'react';
 
-interface FileInfo {
-  fileUrl: string;
-  fileName: string;
-}
+import { FileInfoType } from 'api/client';
 
 interface CarouselProps {
   isGallery: boolean;
-  fileInfo: FileInfo[];
+  fileInfo: FileInfoType[];
+  thumbnailUrl: string;
 }
 
 const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
@@ -24,7 +22,7 @@ const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
 
   const imageUrls: string[] = [];
   const dots: number[] = [];
-  
+
   const imgWidth = isGallery ? 40.6256 : 29.75;
   const imgHeight = isGallery ? 25 : 43.0625;
 
