@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 export const PostContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  z-index: 1;
 `;
 
 export const Title = styled.h1`
