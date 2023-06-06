@@ -1,25 +1,8 @@
 import { PostContent, Carousel } from 'admin/components';
 
-interface FileInfo {
-  fileUrl: string;
-  fileName: string;
-}
+import { ContentPropsType } from 'api/client';
 
-interface PostType {
-  postSeq: number;
-  postTitle: string;
-  postWriter: string;
-  createdAt: string;
-  fileIsExist: boolean;
-}
-
-interface GalleryContentProps {
-  fileInfo: FileInfo[];
-  description: string;
-  post: PostType;
-}
-
-const GalleryContent: React.FC<GalleryContentProps> = ({
+const GalleryContent: React.FC<ContentPropsType> = ({
   post,
   fileInfo,
   description,

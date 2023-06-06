@@ -2,26 +2,9 @@ import { WriteButton, FileButton, WriterAndDate } from 'admin/components';
 
 import * as S from './style';
 
-interface FileInfo {
-  fileUrl: string;
-  fileName: string;
-}
+import { ContentPropsType } from 'api/client';
 
-interface PostType {
-  postSeq: number;
-  postTitle: string;
-  postWriter: string;
-  createdAt: string;
-  fileIsExist: boolean;
-}
-
-interface PostContentProps {
-  fileInfo: FileInfo[];
-  description: string;
-  post: PostType;
-}
-
-const PostContent: React.FC<PostContentProps> = ({
+const PostContent: React.FC<ContentPropsType> = ({
   post: { postWriter, postTitle, createdAt, fileIsExist },
   fileInfo,
   description,

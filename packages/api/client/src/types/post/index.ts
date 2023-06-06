@@ -1,4 +1,4 @@
-export type PostCategoryType = "NOTICE" | "FAMILY_NEWSLETTER" | "EVENT_GALLERY";
+export type PostCategoryType = 'NOTICE' | 'FAMILY_NEWSLETTER' | 'EVENT_GALLERY';
 
 export interface PostDetailType {
   postTitle: string;
@@ -25,4 +25,10 @@ export interface ContentType {
   createdAt: string;
   thumbnailUrl: string;
   fileIsExist: boolean;
+}
+
+export interface ContentPropsType {
+  fileInfo: FileInfoType[];
+  description: string;
+  post: ContentType;
 }

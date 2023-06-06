@@ -2,27 +2,9 @@ import styled from '@emotion/styled';
 
 import { PostContent, Carousel } from 'admin/components';
 
-interface FileInfo {
-  fileUrl: string;
-  fileName: string;
-}
+import { ContentPropsType } from 'api/client';
 
-interface PostType {
-  postSeq: number;
-  postTitle: string;
-  postWriter: string;
-  createdAt: string;
-  thumbnailUrl: string | null;
-  fileIsExist: boolean;
-}
-
-interface NoticeContentProps {
-  fileInfo: FileInfo[];
-  description: string;
-  post: PostType;
-}
-
-const NoticeContent: React.FC<NoticeContentProps> = ({
+const NoticeContent: React.FC<ContentPropsType> = ({
   post,
   fileInfo,
   description,

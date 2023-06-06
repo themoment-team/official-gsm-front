@@ -8,6 +8,8 @@ const props = {
     postSeq: 1,
     fileIsExist: true,
     postWriter: '최장우',
+    thumbnailUrl:
+      'https://img.segye.com/content/image/2022/10/21/20221021505918.jpg',
     postTitle:
       '2023년도 광주소프트웨어마이스터고등학교 교무실무사(마이스터 업무지원) 채용 재공고',
     createdAt: '2023-05-03T19:47:01.250197',
@@ -17,21 +19,25 @@ const props = {
       fileUrl:
         'http://bucket.ottokeng.site/743d7afd-690c-404a-b7fb-b6fe97598504.jpg',
       fileName: 'images.jpg',
+      fileExtension: 'JPG,',
     },
     {
       fileUrl:
         'https://mediahub.seoul.go.kr/wp-content/uploads/2020/03/53552dfe5d897d0a50138605f19628a6.jpg',
       fileName: 'images.jpg',
+      fileExtension: 'JPG,',
     },
     {
       fileUrl:
         'https://ichef.bbci.co.uk/news/660/cpsprodpb/DCE1/production/_104454565_mary-mcgowan_caught-in-the-act_00001294.jpg',
       fileName: 'images.jpg',
+      fileExtension: 'JPG,',
     },
     {
       fileUrl:
         'https://cdn.eyesmag.com/content/uploads/sliderImages/2020/12/03/galina-bugaevskaya-koty-vezde-cats-everywhere%20(10)-b3a54e2b-cdd7-4791-b4cb-daba71a4cbf9.jpg',
       fileName: 'images.jpg',
+      fileExtension: 'JPG,',
     },
   ],
   description: `2023년 공동교육과정 거점학교 운영 지원 사업의 일환으로 「교실온닷 스티커 공모전 」을 아래와 같이 개최하오니,
