@@ -11,6 +11,8 @@ interface AuthDescriptionProps {
  *
  * @prop children: React.ReactNode
  */
-const AuthDescription: React.FC<AuthDescriptionProps> = ({ children }) => <Description>{children}</Description>;
+const AuthDescription: React.FC<AuthDescriptionProps> = ({ children }) => (
+  <Description>{children}</Description>
+);
 
 export default AuthDescription;

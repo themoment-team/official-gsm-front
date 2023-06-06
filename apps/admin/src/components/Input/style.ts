@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const InputWrapper = styled.div`
+  height: 2.75rem;
   position: relative;
   display: flex;
   align-items: center;
@@ -14,15 +15,15 @@ export const InputValueResetBtn = styled.button`
   transition: ease-in-out 0.3s;
 `;
 
-export const InputBox = styled.input`
+export const InputBox = styled.input<{ borderRadius?: string }>`
   width: 100%;
   height: 100%;
-  border-radius: 1.25rem;
   border: 0.0625rem solid #dcdcdc;
+  border-radius: ${({ borderRadius }) => borderRadius ?? '1.25rem'};
   background-color: #fff;
   padding: 0 1.25rem;
   font-size: 0.75rem;
-  color: #a4a4a4;
+  color: #424242;
   transition: ease-in-out 0.3s;
   outline: none;
 

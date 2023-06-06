@@ -1,27 +1,26 @@
-import { WriterAndDate } from 'admin/components';
+import type { ContentType } from 'api/client';
+import { DateComponent } from 'ui';
 
 import * as S from './style';
 
 interface PostCardProps {
-  title: string;
-  subtitle: string;
-  writer: string;
-  createdAt: string;
+  post: ContentType;
 }
 
 const PostCard: React.FC<PostCardProps> = ({
-  title,
-  subtitle,
-  writer,
-  createdAt,
+  post: { postSeq, postTitle, contentPreview, postWriter, createdAt },
 }) => (
-  <S.NoticeCard>
+  <S.PostCard href={`/post/${postSeq}`}>
     <S.TitleWrap>
-      <S.Title>{title}</S.Title>
-      <S.SubTitle>{subtitle}</S.SubTitle>
+      <S.Title>{postTitle}</S.Title>
+      <S.ContentPreview>{contentPreview}</S.ContentPreview>
     </S.TitleWrap>
-    <WriterAndDate postWriter={writer} createdAt={createdAt} />
-  </S.NoticeCard>
+    <S.WriterDateWrap>
+      <S.Writer>{postWriter}</S.Writer>
+      <S.Dot />
+      <DateComponent createdAt={createdAt} />
+    </S.WriterDateWrap>
+  </S.PostCard>
 );
 
 export default PostCard;

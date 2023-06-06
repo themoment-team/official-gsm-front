@@ -15,7 +15,8 @@ export interface FileInfoType {
 }
 
 export interface PostListType {
-  content: ContentType[];
+  postList: ContentType[];
+  totalPages: number;
 }
 
 export interface ContentType {
@@ -23,8 +24,8 @@ export interface ContentType {
   postTitle: string;
   postWriter: string;
   createdAt: string;
-  thumbnailUrl: string;
-  fileIsExist: boolean;
+  thumbnailUrl?: string;
+  contentPreview: string;
 }
 
 export interface ContentPropsType {
