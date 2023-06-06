@@ -3,6 +3,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { PostCard } from 'admin/components';
+
 import type { ContentType } from 'api/client';
 
 interface GalleryListProps {

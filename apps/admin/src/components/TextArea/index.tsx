@@ -1,6 +1,9 @@
+import type { DetailedHTMLProps, InputHTMLAttributes} from "react";
+
+
 import { css } from "@emotion/react";
+
 import * as S from "./style";
-import { DetailedHTMLProps, InputHTMLAttributes, forwardRef } from "react";
 
 interface TextAreaProps
   extends DetailedHTMLProps<
