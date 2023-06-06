@@ -1,4 +1,4 @@
-import type { DetailedHTMLProps, InputHTMLAttributes} from 'react';
+import type { DetailedHTMLProps, InputHTMLAttributes } from 'react';
 import { forwardRef } from 'react';
 
 import { css } from '@emotion/react';
@@ -15,11 +15,25 @@ interface InputProps
   > {
   width?: string;
   height?: string;
+  isError?: boolean;
   resetBtn?: boolean;
+  marginTop?: string;
+  borderRadius?: string;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ width, height, resetBtn = false, ...attributes }, ref) => {
+  (
+    {
+      width,
+      height,
+      isError,
+      resetBtn = false,
+      marginTop,
+      borderRadius,
+      ...attributes
+    },
+    ref
+  ) => {
     const inputRef = useForwardRef<HTMLInputElement>(ref);
 
     const resetButtonClick = () => {
@@ -34,17 +48,28 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         css={css`
           width: ${width};
           height: ${height};
+          margin-top: ${marginTop};
         `}
       >
         <S.InputBox
+          borderRadius={borderRadius}
           {...attributes}
           ref={inputRef}
-          css={css`
-            border-radius: ${width === "36.125rem" ? "0.625rem" : "1.25rem"};
-          `}
+          css={
+            isError &&
+            css`
+              border-color: #f93535;
+              :hover {
+                border-color: #f93535;
+              }
+              :focus {
+                border-color: #f93535;
+              }
+            `
+          }
         />
         {resetBtn && (
-          <S.InputValueResetBtn onClick={() => resetButtonClick()}>
+          <S.InputValueResetBtn onClick={resetButtonClick} type='button'>
             <InputValueResetBtnIcon />
           </S.InputValueResetBtn>
         )}

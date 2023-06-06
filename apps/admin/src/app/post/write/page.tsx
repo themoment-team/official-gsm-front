@@ -1,7 +1,8 @@
 'use client';
 
-import { Input, TextArea, Category, Header } from 'admin/components';
 import { PlusIcon } from 'admin/assets';
+import { Input, TextArea, Category } from 'admin/components';
+
 import * as S from './style';
 
 export default function WritePage() {
@@ -19,6 +20,7 @@ export default function WritePage() {
             placeholder='제목을 입력해주세요.'
             width='36.125rem'
             height='2.75rem'
+            borderRadius='0.625rem'
           />
         </div>
         <div>
