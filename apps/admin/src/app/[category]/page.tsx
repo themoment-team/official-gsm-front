@@ -16,19 +16,20 @@ import type { CategoryType } from 'admin/types';
 import type { PostCategoryType } from 'api/client';
 import { useGetPostList } from 'api/client';
 
-interface ListPageProps {
-  params: { category: CategoryType };
-}
-interface categoryParamsType {
+interface CategoryParamsType {
   [key: string]: PostCategoryType;
 }
 
-const categoryParams: categoryParamsType = {
+const categoryParams: CategoryParamsType = {
   newsletter: 'FAMILY_NEWSLETTER',
   gallery: 'EVENT_GALLERY',
 };
 
 const categoryParamsArray = ['', 'newsletter', 'gallery'];
+
+interface ListPageProps {
+  params: { category: CategoryType };
+}
 
 export default function ListPage({ params: { category } }: ListPageProps) {
   if (!categoryParamsArray.includes(category)) {
