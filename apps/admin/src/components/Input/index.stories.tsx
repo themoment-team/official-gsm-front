@@ -2,7 +2,6 @@ import Input from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
-
 export default {
   title: 'admin/Input',
   component: Input,
@@ -26,5 +25,6 @@ export const TitleInput: Story = {
     width: '36.125rem',
     placeholder: '제목을 입력해주세요.',
     resetBtn: false,
+    borderRadius: '0.625rem',
   },
 };

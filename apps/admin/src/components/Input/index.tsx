@@ -18,11 +18,20 @@ interface InputProps
   isError?: boolean;
   resetBtn?: boolean;
   marginTop?: string;
+  borderRadius?: string;
 }
 
 const Input = forwardRef<HTMLInputElement, InputProps>(
   (
-    { width, height, isError, resetBtn = false, marginTop, ...attributes },
+    {
+      width,
+      height,
+      isError,
+      resetBtn = false,
+      marginTop,
+      borderRadius,
+      ...attributes
+    },
     ref
   ) => {
     const inputRef = useForwardRef<HTMLInputElement>(ref);
@@ -43,6 +52,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         `}
       >
         <S.InputBox
+          borderRadius={borderRadius}
           {...attributes}
           ref={inputRef}
           css={
