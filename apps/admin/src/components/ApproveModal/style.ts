@@ -6,7 +6,7 @@ export const ModalConatiner = styled.div`
   position: absolute;
   width: 20.625rem;
   height: 16.875rem;
-  top: 6.5em;
+  top: 6.5rem;
   left: 50%;
   transform: translate(-50%, 0%);
   background-color: #fdfdfd;
