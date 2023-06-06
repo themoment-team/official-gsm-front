@@ -3,12 +3,12 @@ import * as I from 'admin/assets';
 
 import { css } from '@emotion/react';
 
-interface FileBoxProps {
+interface FileCardProps {
   fileName?: string;
   fileLink?: string;
 }
 
-const FileCard: React.FC<FileBoxProps> = ({ fileName }) => {
+const FileCard: React.FC<FileCardProps> = ({ fileName }) => {
   return (
     <S.FileCardWrap>
       <I.FileIcon />
