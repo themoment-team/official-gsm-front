@@ -1,10 +1,11 @@
-import { css } from '@emotion/react';
-
 import type { CategoryType } from 'admin/types';
 
 import * as S from './style';
+import Link from 'next/link';
+import { css } from '@emotion/react';
 
 interface CategoryProps {
+  width?: string;
   category: CategoryType;
 }
 
@@ -19,20 +20,27 @@ const isActive = (category: CategoryType, path: string) => {
   return `/${category}` === path;
 };
 
-const Category: React.FC<CategoryProps> = ({ category }) => (
-  <S.Category>
-    {categoryArray.map(({ path, label }) => (
-      <S.CustomLink
-        href={path}
-        key={label}
-        css={css`
-          color: ${isActive(category, path) ? '#FFFFFF' : '#a4a4a4'};
-        `}
-      >
-        ∙&nbsp;&nbsp;{label}
-      </S.CustomLink>
-    ))}
-  </S.Category>
-);
+const Category: React.FC<CategoryProps> = ({ category, width }) => {
+  return (
+    <S.Category
+      css={css`
+        width: ${width};
+        border-radius: ${width ? '0.625rem' : '1.25rem'};
+      `}
+    >
+      {categoryArray.map(({ path, label }) => (
+        <S.CustomLink
+          href={path}
+          key={label}
+          css={css`
+            color: ${isActive(category, path) ? '#FFFFFF' : '#a4a4a4'};
+          `}
+        >
+          ∙&nbsp;&nbsp;{label}
+        </S.CustomLink>
+      ))}
+    </S.Category>
+  );
+};
 
 export default Category;

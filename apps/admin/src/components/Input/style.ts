@@ -17,7 +17,6 @@ export const InputValueResetBtn = styled.button`
 export const InputBox = styled.input`
   width: 100%;
   height: 100%;
-  border-radius: 1.25rem;
   border: 0.0625rem solid #dcdcdc;
   background-color: #fff;
   padding: 0 1.25rem;

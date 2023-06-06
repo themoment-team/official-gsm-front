@@ -36,7 +36,13 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           height: ${height};
         `}
       >
-        <S.InputBox {...attributes} ref={inputRef} />
+        <S.InputBox
+          {...attributes}
+          ref={inputRef}
+          css={css`
+            border-radius: ${width === "36.125rem" ? "0.625rem" : "1.25rem"};
+          `}
+        />
         {resetBtn && (
           <S.InputValueResetBtn onClick={() => resetButtonClick()}>
             <InputValueResetBtnIcon />
