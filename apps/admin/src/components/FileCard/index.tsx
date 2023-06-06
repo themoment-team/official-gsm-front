@@ -11,11 +11,13 @@ interface FileCardProps {
 const FileCard: React.FC<FileCardProps> = ({ fileName }) => {
   return (
     <S.FileCardWrap>
-      <I.FileIcon />
-      <S.Filename>{fileName}</S.Filename>
-      <S.CancelIconWrap>
+      <S.FileNameWrapper>
+        <I.FileIcon />
+        <S.Filename>{fileName}</S.Filename>
+      </S.FileNameWrapper>
+      <S.CancelButton type='button'>
         <I.CancelIcon />
-      </S.CancelIconWrap>
+      </S.CancelButton>
     </S.FileCardWrap>
   );
 };

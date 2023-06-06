@@ -6,9 +6,17 @@ export const FileCardWrap = styled.div`
   background: #f5f5f5;
   border-radius: 0.625rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   position: relative;
-  padding-left: 1.1669rem;
+  padding-left: 1rem;
+  padding-right: 0.75rem;
+`;
+
+export const FileNameWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 `;
 
 export const Filename = styled.h3`
@@ -16,10 +24,8 @@ export const Filename = styled.h3`
   font-weight: 400;
   font-size: 0.75rem;
   line-height: 1.125rem;
-  padding-left: 0.25rem;
 `;
 
-export const CancelIconWrap = styled.div`
-  position: absolute;
-  right: 0.75rem;
+export const CancelButton = styled.button`
+  height: 1rem;
 `;
