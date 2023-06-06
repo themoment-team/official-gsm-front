@@ -9,7 +9,7 @@ const NoticeContent: React.FC<ContentPropsType> = ({
   description,
 }) => (
   <NoticeWrapper>
-    {post.fileIsExist && <Carousel fileInfo={fileInfo} isGallery={false} />}
+    {fileInfo[0] && <Carousel fileInfo={fileInfo} isGallery={false} />}
     <PostContent post={post} fileInfo={fileInfo} description={description} />
   </NoticeWrapper>
 );

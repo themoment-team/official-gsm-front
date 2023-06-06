@@ -14,7 +14,7 @@ const FileButton: React.FC<FileButtonProps> = ({
 }) => (
   <S.FileWrapper>
     <S.IconWrapper>
-      <FileIcon />
+      <FileIcon color='#616161' />
     </S.IconWrapper>
     <S.ImageName>{fileName}</S.ImageName>
   </S.FileWrapper>

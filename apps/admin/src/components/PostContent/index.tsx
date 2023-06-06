@@ -3,9 +3,8 @@ import type { ContentPropsType } from 'api/client';
 
 import * as S from './style';
 
-
 const PostContent: React.FC<ContentPropsType> = ({
-  post: { postWriter, postTitle, createdAt, fileIsExist },
+  post: { postWriter, postTitle, createdAt },
   fileInfo,
   description,
 }) => (
@@ -16,7 +15,7 @@ const PostContent: React.FC<ContentPropsType> = ({
     <S.Horizon />
     <S.Content>{description}</S.Content>
     <S.Horizon />
-    {fileIsExist && (
+    {fileInfo[0] && (
       <>
         <S.FileTitle>첨부 파일</S.FileTitle>
         <div>

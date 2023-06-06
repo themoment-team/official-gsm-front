@@ -14,12 +14,12 @@ export const Primary: Story = {
   args: {
     post: {
       postSeq: 1,
-      fileIsExist: true,
       postWriter: '최장우',
       thumbnailUrl: '',
       postTitle:
         '2023년도 광주소프트웨어마이스터고등학교 교무실무사(마이스터 업무지원) 채용 재공고',
       createdAt: '2023-05-03T19:47:01.250197',
+      contentPreview: '',
     },
     fileInfo: [
       {
