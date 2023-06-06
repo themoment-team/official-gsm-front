@@ -1,14 +1,15 @@
+import { useState } from 'react';
+
 import Image from 'next/image';
 
 import { css } from '@emotion/react';
 
 import { CarouselIcon } from 'admin/assets';
+import type { FileInfoType } from 'api/client';
 
 import * as S from './style';
 
-import { useState } from 'react';
 
-import { FileInfoType } from 'api/client';
 
 interface CarouselProps {
   isGallery: boolean;

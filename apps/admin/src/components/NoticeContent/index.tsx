@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
 
 import { PostContent, Carousel } from 'admin/components';
-
-import { ContentPropsType } from 'api/client';
+import type { ContentPropsType } from 'api/client';
 
 const NoticeContent: React.FC<ContentPropsType> = ({
   post,

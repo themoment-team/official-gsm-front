@@ -1,8 +1,8 @@
 import { WriteButton, FileButton, WriterAndDate } from 'admin/components';
+import type { ContentPropsType } from 'api/client';
 
 import * as S from './style';
 
-import { ContentPropsType } from 'api/client';
 
 const PostContent: React.FC<ContentPropsType> = ({
   post: { postWriter, postTitle, createdAt, fileIsExist },

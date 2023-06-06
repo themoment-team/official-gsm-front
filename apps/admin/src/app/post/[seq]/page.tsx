@@ -1,6 +1,7 @@
 'use client';
 
 import styled from '@emotion/styled';
+
 import { GalleryContent, Header } from 'admin/components';
 
 const props = {

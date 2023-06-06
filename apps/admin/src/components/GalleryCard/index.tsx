@@ -3,10 +3,10 @@ import React from 'react';
 import Image from 'next/image';
 
 import { WriterAndDate } from 'admin/components';
+import type { ContentPropsType } from 'api/client';
 
 import * as S from './style';
 
-import { ContentPropsType } from 'api/client';
 
 const GalleryCard: React.FC<ContentPropsType> = ({
   post: { thumbnailUrl, postWriter, postTitle, createdAt },

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { css } from '@emotion/react';
 
-import { PlusIcon, SeeMoreIcon } from 'admin/assets';
+import { PlusIcon } from 'admin/assets';
 
 import * as S from './style';
 
