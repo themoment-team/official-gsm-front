@@ -1,4 +1,5 @@
 import type { ContentType } from 'api/client';
+
 import { DateComponent } from 'ui';
 
 import * as S from './style';

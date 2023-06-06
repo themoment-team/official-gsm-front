@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { GalleryCard } from 'admin/components';
+
 import type { ContentType } from 'api/client';
 
 import * as S from './style';
