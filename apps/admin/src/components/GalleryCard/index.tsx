@@ -6,27 +6,9 @@ import { WriterAndDate } from 'admin/components';
 
 import * as S from './style';
 
-interface FileInfo {
-  fileUrl: string;
-  fileName: string;
-}
+import { ContentPropsType } from 'api/client';
 
-interface PostType {
-  postSeq: number;
-  postTitle: string;
-  postWriter: string;
-  createdAt: string;
-  thumbnailUrl: string | null;
-  fileIsExist: boolean;
-}
-
-interface GalleryCardProps {
-  fileInfo: FileInfo[];
-  description: string;
-  post: PostType;
-}
-
-const GalleryCard: React.FC<GalleryCardProps> = ({
+const GalleryCard: React.FC<ContentPropsType> = ({
   post: { thumbnailUrl, postWriter, postTitle, createdAt },
   description,
 }) => (
