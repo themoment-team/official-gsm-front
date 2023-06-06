@@ -5,3 +5,4 @@ export { default as PlusIcon } from './svg/icon/PlusIcon';
 export { default as SeeMoreIcon } from './svg/icon/SeeMoreIcon';
 export { default as InputValueResetBtnIcon } from './svg/icon/InputValueResetBtnIcon';
 export { default as NotificationIcon } from './svg/icon/NotificationIcon';
+export { default as GoogleIcon } from './svg/icon/GoogleIcon';
