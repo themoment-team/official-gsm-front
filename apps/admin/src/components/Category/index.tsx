@@ -1,8 +1,9 @@
+
+import { css } from '@emotion/react';
+
 import type { CategoryType } from 'admin/types';
 
 import * as S from './style';
-import Link from 'next/link';
-import { css } from '@emotion/react';
 
 interface CategoryProps {
   width?: string;
@@ -20,8 +21,7 @@ const isActive = (category: CategoryType, path: string) => {
   return `/${category}` === path;
 };
 
-const Category: React.FC<CategoryProps> = ({ category, width }) => {
-  return (
+const Category: React.FC<CategoryProps> = ({ category, width }) => (
     <S.Category
       css={css`
         width: ${width};
@@ -41,6 +41,5 @@ const Category: React.FC<CategoryProps> = ({ category, width }) => {
       ))}
     </S.Category>
   );
-};
 
 export default Category;
