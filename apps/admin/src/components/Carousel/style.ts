@@ -49,13 +49,6 @@ export const Dot = styled.div`
   margin: 0 0.1875rem;
 
   transition: all 0.3s;
-
-  ${({ isCurrent }: { isCurrent?: boolean }) =>
-    isCurrent &&
-    `
-    width: 1rem;
-    background: #B2E449;
-    `}
 `;
 
 export const CursorWrapper = styled.div`
