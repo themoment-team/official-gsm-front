@@ -14,9 +14,9 @@ interface PostListHeaderProps {
 }
 
 const Title = {
-  gallery: '👇지금 우리 학교는',
   notice: '📢 공지사항',
   newsletter: '📄 가정통신문',
+  gallery: '행사 갤러리',
 };
 
 const PostListHeader: React.FC<PostListHeaderProps> = ({

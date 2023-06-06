@@ -17,7 +17,7 @@ const nextConfig = {
     // },
   ],
   images: {
-    domains: ['files.porsche.com'],
+    domains: ['bucket.ottokeng.site'],
   },
 };
 

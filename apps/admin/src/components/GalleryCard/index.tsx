@@ -2,45 +2,37 @@ import React from 'react';
 
 import Image from 'next/image';
 
+import type { ContentType } from 'api/client';
 import { DateComponent } from 'ui';
 
 import * as S from './style';
 
-interface FileInfo {
-  fileUrl: string;
-  fileName: string;
-}
-
-interface PostType {
-  postSeq: number;
-  postTitle: string;
-  postWriter: string;
-  createdAt: string;
-  thumbnailUrl: string | null;
-  fileIsExist: boolean;
-}
-
 interface GalleryCardProps {
-  fileInfo: FileInfo[];
-  description: string;
-  post: PostType;
+  post: ContentType;
 }
 
 const GalleryCard: React.FC<GalleryCardProps> = ({
-  post: { thumbnailUrl, postWriter, postTitle, createdAt },
-  description,
+  post: {
+    postSeq,
+    thumbnailUrl,
+    postTitle,
+    contentPreview,
+    postWriter,
+    createdAt,
+  },
 }) => (
-  <S.CardWrapper>
+  <S.GalleryCard href={`/post/${postSeq}`}>
     <S.IMGWrapper>
       <Image fill src={thumbnailUrl ?? ''} alt='ContentIMG' />
     </S.IMGWrapper>
     <S.Title>{postTitle}</S.Title>
-    <S.Description>{description}</S.Description>
+    <S.ContentPreview>{contentPreview}</S.ContentPreview>
     <S.DetailWrapper>
       <S.Writer>{postWriter}</S.Writer>
+      <S.Dot />
       <DateComponent createdAt={createdAt} />
     </S.DetailWrapper>
-  </S.CardWrapper>
+  </S.GalleryCard>
 );
 
 export default GalleryCard;
