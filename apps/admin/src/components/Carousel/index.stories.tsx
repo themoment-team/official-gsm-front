@@ -12,8 +12,6 @@ type Story = StoryObj<typeof Carousel>;
 
 export const Primary: Story = {
   args: {
-    thumbnailUrl:
-      'https://img.segye.com/content/image/2022/10/21/20221021505918.jpg',
     fileInfo: [
       {
         fileUrl:

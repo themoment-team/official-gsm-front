@@ -13,7 +13,6 @@ import { FileInfoType } from 'api/client';
 interface CarouselProps {
   isGallery: boolean;
   fileInfo: FileInfoType[];
-  thumbnailUrl: string;
 }
 
 const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
