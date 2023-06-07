@@ -8,7 +8,7 @@ export interface PostDetailType {
   fileInfo: FileInfoType[];
 }
 
-interface FileInfoType {
+export interface FileInfoType {
   fileUrl: string;
   fileName: string;
   fileExtension: string;
