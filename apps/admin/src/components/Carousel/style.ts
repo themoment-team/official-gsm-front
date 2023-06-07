@@ -4,6 +4,9 @@ export const CarouselWrapper = styled.div`
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+`;
+
+export const IMGOuterWrapper = styled.div`
   position: relative;
 `;
 

@@ -54,35 +54,46 @@ const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
         width: ${imgWidth}rem;
       `}
     >
-      <S.IMGContainer>
-        <S.MoveContainer
-          css={css`
-            right: ${currentIndex * imgWidth}rem;
-          `}
-        >
-          {fileInfo.map((file, i) => (
-            <S.IMGWrapper
-              key={file.fileName + i}
-              css={css`
-                width: ${imgWidth}rem;
-                height: ${imgHeight}rem;
-                ${currentIndex === i &&
-                css`
-                  transition: opacity 0.3s;
-                  z-index: 1;
-                  opacity: 1;
+      <S.IMGOuterWrapper
+        css={css`
+          width: ${imgWidth}rem;
+          height: ${imgHeight}rem;
+        `}
+      >
+        <S.IMGContainer>
+          <S.MoveContainer
+            css={css`
+              right: ${currentIndex * imgWidth}rem;
+            `}
+          >
+            {fileInfo.map((file, i) => (
+              <S.IMGWrapper
+                key={file.fileName + i}
+                css={css`
+                  width: ${imgWidth}rem;
+                  height: ${imgHeight}rem;
+                  ${currentIndex === i &&
+                  css`
+                    transition: opacity 0.3s;
+                    z-index: 1;
+                    opacity: 1;
+                  `}
                 `}
-              `}
-            >
-              <Image unoptimized alt='content image' src={file.fileUrl} fill />
-            </S.IMGWrapper>
-          ))}
-        </S.MoveContainer>
-      </S.IMGContainer>
+              >
+                <Image
+                  unoptimized
+                  alt='content image'
+                  src={file.fileUrl}
+                  fill
+                />
+              </S.IMGWrapper>
+            ))}
+          </S.MoveContainer>
+        </S.IMGContainer>
+      </S.IMGOuterWrapper>
       <S.CarouselBar
         css={css`
           width: ${imgWidth}rem;
-          margin-top: ${imgHeight + 1.5625}rem;
         `}
       >
         <S.CursorWrapper onClick={moveLeft}>
