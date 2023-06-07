@@ -1,5 +1,3 @@
-import { css } from '@emotion/react';
-
 import { DateComponent } from 'ui';
 
 import * as S from './style';
