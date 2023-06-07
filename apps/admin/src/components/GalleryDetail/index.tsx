@@ -1,6 +1,6 @@
 import { CommonDetail, Carousel } from 'admin/components';
 
-import type { ContentPropsType } from 'api/client';
+import type { ContentPropsType } from 'admin/types';
 
 const GalleryDetail: React.FC<ContentPropsType> = ({
   post,

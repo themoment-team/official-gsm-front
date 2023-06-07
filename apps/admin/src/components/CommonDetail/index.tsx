@@ -1,6 +1,6 @@
 import { FileButton, WriterAndDate, EditButton } from 'admin/components';
 
-import type { ContentPropsType } from 'api/client';
+import type { ContentPropsType } from 'admin/types';
 
 import * as S from './style';
 

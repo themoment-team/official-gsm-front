@@ -27,9 +27,3 @@ export interface ContentType {
   thumbnailUrl?: string;
   contentPreview: string;
 }
-
-export interface ContentPropsType {
-  fileInfo: FileInfoType[];
-  description: string;
-  post: ContentType;
-}
