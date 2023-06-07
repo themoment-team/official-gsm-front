@@ -1,13 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 
-import type {
-  PostCategoryType,
-  PostListType} from 'api/client';
-import {
-  get,
-  postQueryKeys,
-  postUrl,
-} from 'api/client';
+import type { PostCategoryType, PostListType } from 'api/client';
+import { get, postQueryKeys, postUrl } from 'api/client';
 
 export const useGetPostList = (
   category: PostCategoryType,
@@ -19,6 +13,7 @@ export const useGetPostList = (
     {
       cacheTime: Infinity,
       staleTime: Infinity,
+      keepPreviousData: true,
     }
   );
 
