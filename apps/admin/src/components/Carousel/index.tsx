@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { css } from '@emotion/react';
 
-import { CarouselIcon } from 'admin/assets';
+import { ChevronIcon } from 'admin/assets';
 import type { FileInfoType } from 'api/client';
 
 import * as S from './style';
@@ -86,7 +86,7 @@ const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
         `}
       >
         <S.CursorWrapper onClick={moveLeft}>
-          <CarouselIcon turn={'left'} />
+          <ChevronIcon turn={'left'} />
         </S.CursorWrapper>
         <S.DotWrapper>
           {fileInfo.map((file, i) => (
@@ -103,7 +103,7 @@ const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
           ))}
         </S.DotWrapper>
         <S.CursorWrapper onClick={moveRight}>
-          <CarouselIcon turn={'right'} />
+          <ChevronIcon turn={'right'} />
         </S.CursorWrapper>
       </S.CarouselBar>
     </S.CarouselWrapper>

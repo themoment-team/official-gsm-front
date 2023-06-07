@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-interface CarouselIconProp {
+interface ChevronIconProp {
   turn: 'left' | 'right';
 }
 
@@ -9,7 +9,7 @@ const Turn = {
   right: '180',
 };
 
-const CarouselIcon: React.FC<CarouselIconProp> = ({ turn }) => (
+const ChevronIcon: React.FC<ChevronIconProp> = ({ turn }) => (
   <svg
     css={css`
       transform: rotate(${Turn[turn]}deg);
@@ -29,4 +29,4 @@ const CarouselIcon: React.FC<CarouselIconProp> = ({ turn }) => (
   </svg>
 );
 
-export default CarouselIcon;
+export default ChevronIcon;

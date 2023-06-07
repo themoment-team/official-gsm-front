@@ -5,7 +5,7 @@ export { default as ModalCloseIcon } from './svg/icon/ModalCloseIcon';
 export { default as InputValueResetBtnIcon } from './svg/icon/InputValueResetBtnIcon';
 export { default as PlusIcon } from './svg/icon/PlusIcon';
 export { default as SeeMoreIcon } from './svg/icon/SeeMoreIcon';
-export { default as CarouselIcon } from './svg/icon/CarouselIcon';
+export { default as ChevronIcon } from './svg/icon/ChevronIcon';
 export { default as PaginationIcon } from './svg/icon/PaginationIcon';
 export { default as NotificationIcon } from './svg/icon/NotificationIcon';
 export { default as FileIcon } from './svg/icon/FileIcon';
