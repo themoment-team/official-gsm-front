@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
 
 export const WriterAndDateWrapper = styled.div`
-  width: 7.875rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 0.5625rem;
 `;
 
 export const WriterText = styled.p`
