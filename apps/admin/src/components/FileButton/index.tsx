@@ -9,15 +9,11 @@ interface FileButtonProps {
   };
 }
 
-const FileButton: React.FC<FileButtonProps> = ({
-  fileInfo: { fileUrl, fileName },
-}) => (
-  <S.FileWrapper>
-    <S.IconWrapper>
-      <FileIcon color='#616161' />
-    </S.IconWrapper>
+const FileButton: React.FC<FileButtonProps> = ({ fileInfo: { fileName } }) => (
+  <S.FileButton>
+    <FileIcon color='#616161' />
     <S.ImageName>{fileName}</S.ImageName>
-  </S.FileWrapper>
+  </S.FileButton>
 );
 
 export default FileButton;
