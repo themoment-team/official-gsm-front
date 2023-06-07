@@ -1,4 +1,5 @@
-import { WriteButton, FileButton, WriterAndDate } from 'admin/components';
+import { FileButton, WriterAndDate, EditButton } from 'admin/components';
+
 import type { ContentPropsType } from 'api/client';
 
 import * as S from './style';
@@ -11,7 +12,7 @@ const PostContent: React.FC<ContentPropsType> = ({
   <S.PostContentWrapper>
     <S.Title>{postTitle}</S.Title>
     <WriterAndDate createdAt={createdAt} postWriter={postWriter} />
-    <WriteButton isEdit={true} />
+    <EditButton href='/post/edit' />
     <S.Horizon />
     <S.Content>{description}</S.Content>
     <S.Horizon />

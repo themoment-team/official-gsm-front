@@ -1,7 +1,6 @@
 'use client';
 
-import { PlusIcon } from 'admin/assets';
-import { Input, TextArea, Category } from 'admin/components';
+import { Input, TextArea, Category, UploadButton } from 'admin/components';
 
 import * as S from './style';
 
@@ -37,10 +36,7 @@ export default function WritePage() {
             <S.UploadTitle>
               첫번째 등록하신 이미지는 썸네일 역할을 합니다.
             </S.UploadTitle>
-            <S.UploadBtn>
-              <PlusIcon />
-              <S.UploadBtnTitle>첨부 파일 업로드</S.UploadBtnTitle>
-            </S.UploadBtn>
+            <UploadButton />
           </S.UploadBox>
         </div>
         <S.BtnWrap>

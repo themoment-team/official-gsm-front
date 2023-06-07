@@ -2,7 +2,7 @@ import React from 'react';
 
 import { css } from '@emotion/react';
 
-import { PlusIcon } from 'admin/assets';
+import { WriteButton } from 'admin/components';
 
 import * as S from './style';
 
@@ -29,12 +29,7 @@ const PostListHeader: React.FC<PostListHeaderProps> = ({
     `}
   >
     <S.CategoryTitle>{Title[category]}</S.CategoryTitle>
-    {isAdmin && (
-      <S.AddPostBTN>
-        <PlusIcon color='#FCFCFC' />
-        <S.AddPostText>글쓰기</S.AddPostText>
-      </S.AddPostBTN>
-    )}
+    {isAdmin && <WriteButton href='/post/write' />}
   </S.PostListHeader>
 );
 

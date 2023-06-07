@@ -1,4 +1,5 @@
 import { PostContent, Carousel } from 'admin/components';
+
 import type { ContentPropsType } from 'api/client';
 
 const GalleryContent: React.FC<ContentPropsType> = ({
