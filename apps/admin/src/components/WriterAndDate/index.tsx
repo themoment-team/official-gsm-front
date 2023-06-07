@@ -1,7 +1,8 @@
+import { css } from '@emotion/react';
+
 import { DateComponent } from 'ui';
 
 import * as S from './style';
-import { css } from '@emotion/react';
 
 interface WriterAndDateProps {
   postWriter: string;
