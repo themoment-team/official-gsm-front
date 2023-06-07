@@ -4,12 +4,12 @@ import type { ContentPropsType } from 'api/client';
 
 import * as S from './style';
 
-const PostContent: React.FC<ContentPropsType> = ({
+const CommonDetail: React.FC<ContentPropsType> = ({
   post: { postWriter, postTitle, createdAt },
   fileInfo,
   description,
 }) => (
-  <S.PostContentWrapper>
+  <S.CommonDetailWrapper>
     <S.Title>{postTitle}</S.Title>
     <WriterAndDate createdAt={createdAt} postWriter={postWriter} />
     <EditButton href='/post/edit' />
@@ -26,7 +26,7 @@ const PostContent: React.FC<ContentPropsType> = ({
         </div>
       </>
     )}
-  </S.PostContentWrapper>
+  </S.CommonDetailWrapper>
 );
 
-export default PostContent;
+export default CommonDetail;

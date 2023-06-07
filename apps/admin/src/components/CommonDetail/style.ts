@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const PostContentWrapper = styled.div`
+export const CommonDetailWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;

@@ -2,7 +2,7 @@
 
 import styled from '@emotion/styled';
 
-import { GalleryContent, Header } from 'admin/components';
+import { GalleryDetail, Header } from 'admin/components';
 
 const props = {
   post: {
@@ -65,7 +65,7 @@ export default function DetailPage() {
   return (
     <DetailPageWrapper>
       <Header hasNotification={false} name={'정문정'} />
-      <GalleryContent
+      <GalleryDetail
         post={props.post}
         fileInfo={props.fileInfo}
         description={props.description}

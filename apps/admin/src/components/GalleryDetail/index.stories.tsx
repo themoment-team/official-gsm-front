@@ -1,14 +1,14 @@
-import GalleryContent from '.';
+import GalleryDetail from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'admin/GalleryContent',
-  component: GalleryContent,
+  title: 'admin/GalleryDetail',
+  component: GalleryDetail,
   parameters: {},
-} as Meta<typeof GalleryContent>;
+} as Meta<typeof GalleryDetail>;
 
-type Story = StoryObj<typeof GalleryContent>;
+type Story = StoryObj<typeof GalleryDetail>;
 
 export const Primary: Story = {
   args: {

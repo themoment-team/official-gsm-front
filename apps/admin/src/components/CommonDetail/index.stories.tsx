@@ -1,21 +1,22 @@
-import NoticeContent from '.';
+import CommonDetail from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'admin/NoticeContent',
-  component: NoticeContent,
+  title: 'admin/CommonDetail',
+  component: CommonDetail,
   parameters: {},
-} as Meta<typeof NoticeContent>;
+} as Meta<typeof CommonDetail>;
 
-type Story = StoryObj<typeof NoticeContent>;
+type Story = StoryObj<typeof CommonDetail>;
 
 export const Primary: Story = {
   args: {
     post: {
       postSeq: 1,
       postWriter: '최장우',
-      thumbnailUrl: '',
+      thumbnailUrl:
+        'https://img.segye.com/content/image/2022/10/21/20221021505918.jpg',
       postTitle:
         '2023년도 광주소프트웨어마이스터고등학교 교무실무사(마이스터 업무지원) 채용 재공고',
       createdAt: '2023-05-03T19:47:01.250197',
