@@ -16,4 +16,4 @@ export { default as GalleryList } from './GalleryList';
 export { default as Category } from './Category';
 export { default as FileCard } from './FileCard';
 export { default as Banner } from './Banner';
-
+export { default as PaginationController } from './PaginationController';
