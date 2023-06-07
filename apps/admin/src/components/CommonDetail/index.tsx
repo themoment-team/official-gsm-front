@@ -1,5 +1,4 @@
 import { FileButton, WriterAndDate, EditButton } from 'admin/components';
-
 import type { DetailPropsType } from 'admin/types';
 
 import * as S from './style';
@@ -23,11 +22,11 @@ const CommonDetail: React.FC<DetailPropsType> = ({
     {fileInfo[0] && (
       <>
         <S.FileTitle>첨부 파일</S.FileTitle>
-        <div>
+        <S.FileList>
           {fileInfo.map((item, i) => (
             <FileButton key={i} fileInfo={item} />
           ))}
-        </div>
+        </S.FileList>
       </>
     )}
   </S.CommonDetailWrapper>

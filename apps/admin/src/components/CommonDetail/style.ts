@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export const CommonDetailWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-bottom: 5rem;
 `;
 
 export const Title = styled.h1`
@@ -35,4 +36,10 @@ export const FileTitle = styled.h2`
   line-height: 1.25rem;
   color: #050505;
   margin-bottom: 1rem;
+`;
+
+export const FileList = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 `;
