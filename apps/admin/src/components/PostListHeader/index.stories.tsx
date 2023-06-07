@@ -1,10 +1,9 @@
-import PostListHeader from ".";
+import PostListHeader from '.';
 
-import type { Meta, StoryObj } from "@storybook/react";
-
+import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: "admin/PostListHeader",
+  title: 'admin/PostListHeader',
   component: PostListHeader,
   parameters: {},
 } as Meta<typeof PostListHeader>;
@@ -13,24 +12,21 @@ type Story = StoryObj<typeof PostListHeader>;
 
 export const Gallery: Story = {
   args: {
-    category: "gallery",
-    seeMore: true,
+    category: 'gallery',
     isAdmin: true,
   },
 };
 
 export const Notice: Story = {
   args: {
-    category: "notice",
-    seeMore: false,
+    category: 'notice',
     isAdmin: true,
   },
 };
 
 export const FamilyCorrespondence: Story = {
   args: {
-    category: "newsletter",
-    seeMore: false,
+    category: 'newsletter',
     isAdmin: true,
   },
 };

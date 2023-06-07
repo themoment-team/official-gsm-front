@@ -18,8 +18,12 @@ export const IMGWrapper = styled.div`
   margin-bottom: 1rem;
   overflow: hidden;
   position: relative;
+  transition: filter ease-in-out 0.3s;
   img {
     object-fit: cover;
+  }
+  :hover {
+    filter: brightness(60%);
   }
 `;
 
@@ -45,25 +49,14 @@ export const ContentPreview = styled.p`
   -webkit-box-orient: vertical;
 `;
 
-export const DetailWrapper = styled.div`
-  width: 8.125rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+export const WiterAndDateWrapper = styled.div`
   position: absolute;
   bottom: 0;
 `;
 
-export const Dot = styled.div`
-  height: 0.25rem;
-  width: 0.25rem;
-  border-radius: 100%;
-  background-color: rgba(130, 130, 130, 1);
-`;
-
 export const Writer = styled.p`
-  font-weight: 600;
-  font-size: 0.8125rem;
+  font-weight: 400;
+  font-size: 0.875rem;
   line-height: 1rem;
-  color: #828282;
+  color: #9e9e9e;
 `;
