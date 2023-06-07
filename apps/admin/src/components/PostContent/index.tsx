@@ -10,7 +10,7 @@ const PostContent: React.FC<ContentPropsType> = ({
 }) => (
   <S.PostContentWrapper>
     <S.Title>{postTitle}</S.Title>
-    <WriterAndDate weight={400} createdAt={createdAt} postWriter={postWriter} />
+    <WriterAndDate createdAt={createdAt} postWriter={postWriter} />
     <WriteButton isEdit={true} />
     <S.Horizon />
     <S.Content>{description}</S.Content>

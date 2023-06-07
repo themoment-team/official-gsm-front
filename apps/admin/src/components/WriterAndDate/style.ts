@@ -9,15 +9,15 @@ export const DetailWrapper = styled.div`
 `;
 
 export const Details = styled.p`
-  font-weight: 600;
-  font-size: 0.8125rem;
+  font-weight: 400;
+  font-size: 0.875rem;
   line-height: 1rem;
-  color: #828282;
+  color: #9e9e9e;
 `;
 
 export const Dot = styled.div`
   width: 0.25rem;
   height: 0.25rem;
   border-radius: 0.125rem;
-  background: #828282;
+  background: #9e9e9e;
 `;
