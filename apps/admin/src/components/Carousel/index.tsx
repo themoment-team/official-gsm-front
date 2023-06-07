@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { css } from '@emotion/react';
 
 import { ChevronIcon } from 'admin/assets';
+
 import type { FileInfoType } from 'api/client';
 
 import * as S from './style';
@@ -50,8 +51,7 @@ const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
   return (
     <S.CarouselWrapper
       css={css`
-        margin-right: ${!isGallery && '1.5'}rem;
-        width: ${imgWidth}rem;
+        margin-right: ${isGallery && 0};
       `}
     >
       <S.IMGOuterWrapper
