@@ -11,7 +11,11 @@ const CommonDetail: React.FC<ContentPropsType> = ({
 }) => (
   <S.CommonDetailWrapper>
     <S.Title>{postTitle}</S.Title>
-    <WriterAndDate createdAt={createdAt} postWriter={postWriter} />
+    <WriterAndDate
+      margin='0.75rem 0'
+      createdAt={createdAt}
+      postWriter={postWriter}
+    />
     <EditButton href='/post/edit' />
     <S.Horizon />
     <S.Content>{description}</S.Content>

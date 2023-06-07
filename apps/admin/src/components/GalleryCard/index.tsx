@@ -5,8 +5,6 @@ import Image from 'next/image';
 import { WriterAndDate } from 'admin/components';
 import type { ContentType } from 'api/client';
 
-import { DateComponent } from 'ui';
-
 import * as S from './style';
 
 interface GalleryCardProps {
@@ -29,11 +27,11 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     </S.IMGWrapper>
     <S.Title>{postTitle}</S.Title>
     <S.ContentPreview>{contentPreview}</S.ContentPreview>
-    <S.DetailWrapper>
-      <S.Writer>{postWriter}</S.Writer>
-      <S.Dot />
-      <DateComponent createdAt={createdAt} />
-    </S.DetailWrapper>
+    <WriterAndDate
+      createdAt={createdAt}
+      postWriter={postWriter}
+      margin='1.5rem 0 0 0'
+    />
   </S.GalleryCard>
 );
 

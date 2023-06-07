@@ -1,6 +1,6 @@
 import type { ContentType } from 'api/client';
 
-import { DateComponent } from 'ui';
+import { WriterAndDate } from 'admin/components';
 
 import * as S from './style';
 
@@ -16,11 +16,7 @@ const PostCard: React.FC<PostCardProps> = ({
       <S.Title>{postTitle}</S.Title>
       <S.ContentPreview>{contentPreview}</S.ContentPreview>
     </S.TitleWrap>
-    <S.WriterDateWrap>
-      <S.Writer>{postWriter}</S.Writer>
-      <S.Dot />
-      <DateComponent createdAt={createdAt} />
-    </S.WriterDateWrap>
+    <WriterAndDate postWriter={postWriter} createdAt={createdAt} />
   </S.PostCard>
 );
 
