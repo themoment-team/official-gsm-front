@@ -15,7 +15,7 @@ interface CarouselProps {
   fileInfo: FileInfoType[];
 }
 
-interface Image {
+interface ImageSize {
   width: number;
   height: number;
 }
@@ -25,12 +25,12 @@ const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
   const min = 0;
   const max = fileInfo.length - 1;
 
-  const galleryImage: Image = {
+  const galleryImage: ImageSize = {
     width: 40.6256,
     height: 25,
   };
 
-  const postImage: Image = {
+  const postImage: ImageSize = {
     width: 29.75,
     height: 43.0625,
   };
