@@ -27,11 +27,13 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     </S.IMGWrapper>
     <S.Title>{postTitle}</S.Title>
     <S.ContentPreview>{contentPreview}</S.ContentPreview>
-    <WriterAndDate
-      createdAt={createdAt}
-      postWriter={postWriter}
-      margin='1.5rem 0 0 0'
-    />
+    <S.WiterAndDateWrapper>
+      <WriterAndDate
+        createdAt={createdAt}
+        postWriter={postWriter}
+        margin='1.5rem 0 0 0'
+      />
+    </S.WiterAndDateWrapper>
   </S.GalleryCard>
 );
 
