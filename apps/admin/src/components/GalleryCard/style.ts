@@ -18,8 +18,12 @@ export const IMGWrapper = styled.div`
   margin-bottom: 1rem;
   overflow: hidden;
   position: relative;
+  transition: filter ease-in-out 0.3s;
   img {
     object-fit: cover;
+  }
+  :hover {
+    filter: brightness(60%);
   }
 `;
 
@@ -51,8 +55,8 @@ export const WiterAndDateWrapper = styled.div`
 `;
 
 export const Writer = styled.p`
-  font-weight: 600;
-  font-size: 0.8125rem;
+  font-weight: 400;
+  font-size: 0.875rem;
   line-height: 1rem;
-  color: #828282;
+  color: #9e9e9e;
 `;
