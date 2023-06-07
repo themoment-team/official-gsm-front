@@ -24,5 +24,4 @@ export { default as WriterAndDate } from './WriterAndDate';
 export { default as Carousel } from './Carousel';
 export { default as NoticeContent } from './NoticeContent';
 export { default as GalleryContent } from './GalleryContent';
-export { default as Pagination } from './Pagination';
 export { default as FileCard } from './FileCard';
