@@ -21,7 +21,7 @@ interface Image {
 }
 
 const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
-  const [currentIndex, setCurrentIndexn] = useState<number>(0);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
   const min = 0;
   const max = fileInfo.length - 1;
 
@@ -39,13 +39,13 @@ const Carousel: React.FC<CarouselProps> = ({ isGallery, fileInfo }) => {
   const imgHeight = isGallery ? galleryImage.height : postImage.height;
 
   const moveLeft = () => {
-    setCurrentIndexn(currentIndex - 1);
-    if (currentIndex === min) setCurrentIndexn(max);
+    setCurrentIndex(currentIndex - 1);
+    if (currentIndex === min) setCurrentIndex(max);
   };
 
   const moveRight = () => {
-    setCurrentIndexn(currentIndex + 1);
-    if (currentIndex === max) setCurrentIndexn(min);
+    setCurrentIndex(currentIndex + 1);
+    if (currentIndex === max) setCurrentIndex(min);
   };
 
   return (
