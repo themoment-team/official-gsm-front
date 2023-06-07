@@ -1,13 +1,13 @@
 import styled from '@emotion/styled';
 
-export const DetailWrapper = styled.div`
+export const WriterAndDateWrapper = styled.div`
   width: 7.875rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
-export const Details = styled.p`
+export const WriterText = styled.p`
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1rem;

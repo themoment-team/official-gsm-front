@@ -14,15 +14,15 @@ const WriterAndDate: React.FC<WriterAndDateProps> = ({
   createdAt,
   margin,
 }) => (
-  <S.DetailWrapper
+  <S.WriterAndDateWrapper
     css={css`
       margin: ${margin};
     `}
   >
-    <S.Details>{postWriter}</S.Details>
+    <S.WriterText>{postWriter}</S.WriterText>
     <S.Dot />
     <DateComponent createdAt={createdAt} />
-  </S.DetailWrapper>
+  </S.WriterAndDateWrapper>
 );
 
 export default WriterAndDate;
