@@ -1,9 +1,9 @@
 import styled from '@emotion/styled';
 
 import { CommonDetail, Carousel } from 'admin/components';
-import type { ContentPropsType } from 'admin/types';
+import type { DetailPropsType } from 'admin/types';
 
-const PostDetail: React.FC<ContentPropsType> = ({
+const PostDetail: React.FC<DetailPropsType> = ({
   post,
   fileInfo,
   description,

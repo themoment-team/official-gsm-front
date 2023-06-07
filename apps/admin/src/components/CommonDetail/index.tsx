@@ -1,10 +1,10 @@
 import { FileButton, WriterAndDate, EditButton } from 'admin/components';
 
-import type { ContentPropsType } from 'admin/types';
+import type { DetailPropsType } from 'admin/types';
 
 import * as S from './style';
 
-const CommonDetail: React.FC<ContentPropsType> = ({
+const CommonDetail: React.FC<DetailPropsType> = ({
   post: { postWriter, postTitle, createdAt },
   fileInfo,
   description,

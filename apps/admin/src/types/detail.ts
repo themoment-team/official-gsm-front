@@ -1,6 +1,6 @@
 import { ContentType, FileInfoType } from 'api/client';
 
-export interface ContentPropsType {
+export interface DetailPropsType {
   fileInfo: FileInfoType[];
   description: string;
   post: ContentType;
