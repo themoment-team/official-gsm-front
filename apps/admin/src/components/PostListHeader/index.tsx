@@ -2,13 +2,12 @@ import React from 'react';
 
 import { css } from '@emotion/react';
 
-import { PlusIcon, SeeMoreIcon } from 'admin/assets';
+import { WriteButton } from 'admin/components';
 
 import * as S from './style';
 
 interface PostListHeaderProps {
   category: 'gallery' | 'notice' | 'newsletter';
-  seeMore?: boolean;
   isAdmin?: boolean;
   marginTop?: string;
 }
@@ -21,7 +20,6 @@ const Title = {
 
 const PostListHeader: React.FC<PostListHeaderProps> = ({
   category,
-  seeMore = false,
   isAdmin = true,
   marginTop,
 }) => (
@@ -30,20 +28,8 @@ const PostListHeader: React.FC<PostListHeaderProps> = ({
       margin-top: ${marginTop};
     `}
   >
-    {seeMore ? (
-      <S.SeeMoreException>
-        <S.CategoryTitle>{Title[category]}</S.CategoryTitle>
-        <S.SeeMoreText>더보기</S.SeeMoreText>
-        <SeeMoreIcon />
-      </S.SeeMoreException>
-    ) : (
-      <S.CategoryTitle>{Title[category]}</S.CategoryTitle>
-    )}
-    {isAdmin && (
-      <S.AddPostBTN>
-        <PlusIcon />
-      </S.AddPostBTN>
-    )}
+    <S.CategoryTitle>{Title[category]}</S.CategoryTitle>
+    {isAdmin && <WriteButton href='/post/write' />}
   </S.PostListHeader>
 );
 

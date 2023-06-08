@@ -49,20 +49,9 @@ export const ContentPreview = styled.p`
   -webkit-box-orient: vertical;
 `;
 
-export const DetailWrapper = styled.div`
-  width: 8.125rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+export const WiterAndDateWrapper = styled.div`
   position: absolute;
   bottom: 0;
-`;
-
-export const Dot = styled.div`
-  height: 0.25rem;
-  width: 0.25rem;
-  border-radius: 100%;
-  background-color: #9e9e9e;
 `;
 
 export const Writer = styled.p`

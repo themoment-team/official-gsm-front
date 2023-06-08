@@ -2,9 +2,9 @@ import React from 'react';
 
 import Image from 'next/image';
 
-import type { ContentType } from 'api/client';
+import { WriterAndDate } from 'admin/components';
 
-import { DateComponent } from 'ui';
+import type { ContentType } from 'api/client';
 
 import * as S from './style';
 
@@ -28,11 +28,13 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     </S.IMGWrapper>
     <S.Title>{postTitle}</S.Title>
     <S.ContentPreview>{contentPreview}</S.ContentPreview>
-    <S.DetailWrapper>
-      <S.Writer>{postWriter}</S.Writer>
-      <S.Dot />
-      <DateComponent createdAt={createdAt} />
-    </S.DetailWrapper>
+    <S.WiterAndDateWrapper>
+      <WriterAndDate
+        createdAt={createdAt}
+        postWriter={postWriter}
+        margin='1.5rem 0 0 0'
+      />
+    </S.WiterAndDateWrapper>
   </S.GalleryCard>
 );
 
