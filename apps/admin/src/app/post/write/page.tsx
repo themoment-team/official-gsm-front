@@ -3,15 +3,12 @@
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 
-import styled from '@emotion/styled';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
-import { PlusIcon } from 'admin/assets';
 import { Input, TextArea, Category, UploadButton } from 'admin/components';
 
-import * as S from './style';
-import { useState } from 'react';
+import * as S from 'admin/styles/page/write';
 
 const schema = z.object({
   title: z
