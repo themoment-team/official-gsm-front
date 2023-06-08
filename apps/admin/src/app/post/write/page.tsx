@@ -95,7 +95,6 @@ export default function WritePage() {
         <S.BtnWrap>
           <S.CancelBtn>취소</S.CancelBtn>
           <S.CompleteBtn>완료</S.CompleteBtn>
-          <button onClick={() => console.log(FormData)}>dddd</button>
         </S.BtnWrap>
       </S.FormWrap>
     </S.WritePageWrap>
