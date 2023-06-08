@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 export const CarouselWrapper = styled.div`
-  width: 40.6256rem;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
@@ -38,6 +37,7 @@ export const CarouselBar = styled.div`
   align-items: center;
   margin: 1.5625rem 0;
   justify-content: center;
+  position: relative;
 `;
 
 export const DotWrapper = styled.div`

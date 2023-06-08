@@ -37,6 +37,7 @@ const Carousel: React.FC<CarouselControllerProps> = ({
     <S.CarouselWrapper
       css={css`
         margin: ${isGallery && 0};
+        width: ${isGallery && '40.6256rem'};
       `}
     >
       {isGallery ? (
