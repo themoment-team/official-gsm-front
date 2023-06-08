@@ -16,7 +16,7 @@ const PostCarousel: React.FC<CarouselProps> = ({ currentIndex, fileInfo }) => (
     css={css`
       width: 29.75rem;
       height: 43.0625;
-      margin-right: 1.5rem;
+      /* margin-right: 1.5rem; */
     `}
   >
     <S.IMGContainer>
