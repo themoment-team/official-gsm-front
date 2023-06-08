@@ -3,7 +3,7 @@ import Post from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'admin/Post',
+  title: 'admin/Carousel/Post',
   component: Post,
   parameters: {},
 } as Meta<typeof Post>;
