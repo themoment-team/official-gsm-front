@@ -28,11 +28,11 @@ export default function Home() {
         <Category category='notice' />
         <PostListHeader category='notice' marginTop='3rem' />
         <PostList postList={data?.postList ?? []} />
-        {data?.totalPages && data.totalPages > 1 && (
+        {(data?.totalPages ?? 0) > 1 && (
           <PaginationController
-            totalPages={data?.totalPages ?? 0}
             pageNumber={pageNumber}
             setPageNumber={setPageNumber}
+            totalPages={data?.totalPages ?? 0}
           />
         )}
       </ContentWrapper>
