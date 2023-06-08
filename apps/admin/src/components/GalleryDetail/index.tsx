@@ -1,5 +1,5 @@
 import { CommonDetail } from 'admin/components';
-import { GalleryCarousel } from 'admin/components/Carousel';
+import { GalleryCarousel } from 'admin/components';
 import type { DetailPropsType } from 'admin/types';
 
 const GalleryDetail: React.FC<DetailPropsType> = ({
