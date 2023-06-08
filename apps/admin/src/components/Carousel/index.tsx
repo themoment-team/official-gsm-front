@@ -2,23 +2,19 @@ import { useState } from 'react';
 
 import { css } from '@emotion/react';
 
-import { ChevronIcon } from 'admin/assets';
-
 import type { FileInfoType } from 'api/client';
 
-import GalleryCarousel from './GalleryCarousel';
-import PostCarousel from './PostCarousel';
+import CarouselController from './CarouselController';
+import GalleryCarousel from './Gallery';
+import PostCarousel from './Post';
 import * as S from './style';
 
-interface CarouselControllerProps {
+interface CarouselProps {
   isGallery: boolean;
   fileInfo: FileInfoType[];
 }
 
-const Carousel: React.FC<CarouselControllerProps> = ({
-  fileInfo,
-  isGallery,
-}) => {
+const Carousel: React.FC<CarouselProps> = ({ fileInfo, isGallery }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const min = 0;
   const max = fileInfo.length - 1;
@@ -45,28 +41,12 @@ const Carousel: React.FC<CarouselControllerProps> = ({
       ) : (
         <PostCarousel fileInfo={fileInfo} currentIndex={currentIndex} />
       )}
-      <S.CarouselBar>
-        <S.CursorWrapper onClick={moveLeft}>
-          <ChevronIcon turn={'left'} />
-        </S.CursorWrapper>
-        <S.DotWrapper>
-          {fileInfo.map((file, i) => (
-            <S.Dot
-              key={file.fileName}
-              css={
-                currentIndex === i &&
-                css`
-                  width: 1rem;
-                  background: #b2e449;
-                `
-              }
-            />
-          ))}
-        </S.DotWrapper>
-        <S.CursorWrapper onClick={moveRight}>
-          <ChevronIcon turn={'right'} />
-        </S.CursorWrapper>
-      </S.CarouselBar>
+      <CarouselController
+        currentIndex={currentIndex}
+        moveLeft={moveLeft}
+        moveRight={moveRight}
+        fileInfo={fileInfo}
+      />
     </S.CarouselWrapper>
   );
 };

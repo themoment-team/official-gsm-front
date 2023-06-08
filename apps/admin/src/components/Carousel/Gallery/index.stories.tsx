@@ -1,14 +1,14 @@
-import GalleryCarousel from '.';
+import Gallery from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'admin/GalleryCarousel',
-  component: GalleryCarousel,
+  title: 'admin/Gallery',
+  component: Gallery,
   parameters: {},
-} as Meta<typeof GalleryCarousel>;
+} as Meta<typeof Gallery>;
 
-type Story = StoryObj<typeof GalleryCarousel>;
+type Story = StoryObj<typeof Gallery>;
 
 const fileInfo = [
   {

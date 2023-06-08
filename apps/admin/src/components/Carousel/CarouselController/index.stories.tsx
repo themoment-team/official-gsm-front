@@ -37,16 +37,9 @@ const fileInfo = [
   },
 ];
 
-export const GalleryCarousel: Story = {
+export const GalleryCarouselController: Story = {
   args: {
     fileInfo: fileInfo,
-    isGallery: true,
-  },
-};
-
-export const PostCarousel: Story = {
-  args: {
-    fileInfo: fileInfo,
-    isGallery: false,
+    currentIndex: 0,
   },
 };

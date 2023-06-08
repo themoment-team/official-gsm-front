@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { css } from '@emotion/react';
 
-import * as S from 'admin/components/CarouselController/style';
+import * as S from 'admin/components/Carousel/style';
 
 import type { FileInfoType } from 'api/client';
 
@@ -11,28 +11,28 @@ interface CarouselProps {
   fileInfo: FileInfoType[];
 }
 
-const PostCarousel: React.FC<CarouselProps> = ({ currentIndex, fileInfo }) => (
+const Gallery: React.FC<CarouselProps> = ({ currentIndex, fileInfo }) => (
   <S.IMGOuterWrapper
     css={css`
-      width: 29.75rem;
-      height: 43.0625rem;
+      width: 40.6256rem;
+      height: 25rem;
     `}
   >
     <S.IMGContainer>
       <S.MoveContainer
         css={css`
-          right: ${currentIndex * 29.75}rem;
+          right: ${currentIndex * 40.6256}rem;
         `}
       >
         {fileInfo.map((file, i) => (
           <S.IMGWrapper
             key={file.fileName + i}
             css={css`
-              width: 29.75rem;
-              height: 43.0625rem;
+              width: 40.6256rem;
+              height: 25rem;
               ${currentIndex === i &&
               css`
-                transition: opacity 0.3s !important;
+                transition: opacity 0.3s;
                 z-index: 1;
                 opacity: 1;
               `}
@@ -46,4 +46,4 @@ const PostCarousel: React.FC<CarouselProps> = ({ currentIndex, fileInfo }) => (
   </S.IMGOuterWrapper>
 );
 
-export default PostCarousel;
+export default Gallery;

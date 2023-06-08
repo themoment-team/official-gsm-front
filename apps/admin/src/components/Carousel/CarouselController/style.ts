@@ -1,37 +1,5 @@
 import styled from '@emotion/styled';
 
-export const CarouselWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  overflow-x: hidden;
-  margin-right: 1.5rem;
-`;
-
-export const IMGOuterWrapper = styled.div`
-  position: relative;
-`;
-
-export const IMGContainer = styled.div`
-  position: absolute;
-`;
-
-export const MoveContainer = styled.div`
-  display: flex;
-  position: relative;
-`;
-
-export const IMGWrapper = styled.div`
-  border-radius: 0.625rem;
-  z-index: -1;
-  opacity: 0;
-
-  overflow: hidden;
-  position: relative;
-  img {
-    object-fit: cover;
-  }
-`;
-
 export const CarouselBar = styled.div`
   display: flex;
   align-items: center;

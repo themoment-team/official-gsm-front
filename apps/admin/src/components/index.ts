@@ -21,7 +21,7 @@ export { default as EditButton } from './PostButton/Edit';
 export { default as UploadButton } from './PostButton/Upload';
 export { default as FileButton } from './FileButton';
 export { default as WriterAndDate } from './WriterAndDate';
-export { default as CarouselController } from './CarouselController';
+export { default as Carousel } from './Carousel';
 export { default as PostDetail } from './PostDetail';
 export { default as GalleryDetail } from './GalleryDetail';
 export { default as FileCard } from './FileCard';
