@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 import { css } from '@emotion/react';
 
-import type { FileInfoType } from 'api/client';
+import * as S from 'admin/components/CarouselController/style';
 
-import * as S from './style';
+import type { FileInfoType } from 'api/client';
 
 interface CarouselProps {
   currentIndex: number;

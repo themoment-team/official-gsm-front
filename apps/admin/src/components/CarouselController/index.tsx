@@ -6,8 +6,8 @@ import { ChevronIcon } from 'admin/assets';
 
 import type { FileInfoType } from 'api/client';
 
+import GalleryCarousel from './GalleryCarousel';
 import PostCarousel from './PostCarousel';
-import GalleryCarousel from './PostCarousel';
 import * as S from './style';
 
 interface CarouselControllerProps {
