@@ -3,7 +3,7 @@ import Gallery from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'admin/Gallery',
+  title: 'admin/Carousel/Gallery',
   component: Gallery,
   parameters: {},
 } as Meta<typeof Gallery>;
