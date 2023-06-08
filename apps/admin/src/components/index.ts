@@ -16,6 +16,7 @@ export { default as PostList } from './PostList';
 export { default as PostListHeader } from './PostListHeader';
 export { default as GalleryList } from './GalleryList';
 export { default as Banner } from './Banner';
+export { default as PaginationController } from './PaginationController';
 export { default as WriteButton } from './PostButton/Write';
 export { default as EditButton } from './PostButton/Edit';
 export { default as UploadButton } from './PostButton/Upload';

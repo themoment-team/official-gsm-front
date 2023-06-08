@@ -20,6 +20,7 @@ const PostList: React.FC<GalleryListProps> = ({ postList }) => (
 
 const PostListWrapper = styled.div`
   margin-top: 1.1875rem;
+  height: 26.25rem;
 `;
 
 export default PostList;

@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+
 import styled from '@emotion/styled';
 
 import {
@@ -8,13 +10,15 @@ import {
   Banner,
   PostListHeader,
   PostList,
+  PaginationController,
 } from 'admin/components';
 
 import { useGetPostList } from 'api/client';
 
 export default function Home() {
-  // example
-  const { data } = useGetPostList('NOTICE', 0);
+  const [pageNumber, setPageNumber] = useState<number>(0);
+
+  const { data } = useGetPostList('NOTICE', pageNumber);
 
   return (
     <>
@@ -24,6 +28,13 @@ export default function Home() {
         <Category category='notice' />
         <PostListHeader category='notice' marginTop='3rem' />
         <PostList postList={data?.postList ?? []} />
+        {(data?.totalPages ?? 0) > 1 && (
+          <PaginationController
+            pageNumber={pageNumber}
+            setPageNumber={setPageNumber}
+            totalPages={data?.totalPages ?? 0}
+          />
+        )}
       </ContentWrapper>
     </>
   );

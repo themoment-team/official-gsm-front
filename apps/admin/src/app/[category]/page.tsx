@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+
 import { redirect } from 'next/navigation';
 
 import styled from '@emotion/styled';
@@ -11,6 +13,7 @@ import {
   PostList,
   PostListHeader,
   GalleryList,
+  PaginationController,
 } from 'admin/components';
 import type { CategoryType } from 'admin/types';
 
@@ -37,7 +40,9 @@ export default function ListPage({ params: { category } }: ListPageProps) {
     redirect('/');
   }
 
-  const { data } = useGetPostList(categoryParams[category], 0);
+  const [pageNumber, setPageNumber] = useState<number>(0);
+
+  const { data } = useGetPostList(categoryParams[category], pageNumber);
 
   return (
     <>
@@ -50,6 +55,13 @@ export default function ListPage({ params: { category } }: ListPageProps) {
           <GalleryList postList={data?.postList ?? []} />
         ) : (
           <PostList postList={data?.postList ?? []} />
+        )}
+        {(data?.totalPages ?? 0) > 1 && (
+          <PaginationController
+            pageNumber={pageNumber}
+            setPageNumber={setPageNumber}
+            totalPages={data?.totalPages ?? 0}
+          />
         )}
       </ContentWrapper>
     </>
