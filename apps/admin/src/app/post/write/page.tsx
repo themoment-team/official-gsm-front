@@ -26,23 +26,12 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 export default function WritePage() {
-  const [title, setTitle] = useState<string>('');
-  const [content, setContent] = useState<string>('');
-
-  const FormData = {
-    title,
-    content,
-  };
-
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    setTitle(data.title);
-    setContent(data.content);
-  };
+  const onSubmit: SubmitHandler<FormValues> = (data) => {};
 
   return (
     <S.WritePageWrap>
