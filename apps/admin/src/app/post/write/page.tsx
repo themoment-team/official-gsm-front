@@ -10,7 +10,6 @@ import { z } from 'zod';
 import { PlusIcon } from 'admin/assets';
 import { Input, TextArea, Category } from 'admin/components';
 
-
 import * as S from './style';
 import { useState } from 'react';
 
@@ -88,7 +87,7 @@ export default function WritePage() {
               첫번째 등록하신 이미지는 썸네일 역할을 합니다.
             </S.UploadTitle>
             <S.UploadBtn type='button'>
-              <PlusIcon />
+              <PlusIcon color={'#FCFCFC'} />
               <S.UploadBtnTitle>첨부 파일 업로드</S.UploadBtnTitle>
             </S.UploadBtn>
           </S.UploadBox>
