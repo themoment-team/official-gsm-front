@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 
 import type { FileInfoType } from 'api/client';
 
-import CarouselController from './CarouselController';
+import Controller from './Controller';
 import GalleryCarousel from './Gallery';
 import PostCarousel from './Post';
 import * as S from './style';
@@ -41,7 +41,7 @@ const Carousel: React.FC<CarouselProps> = ({ fileInfo, isGallery }) => {
       ) : (
         <PostCarousel fileInfo={fileInfo} currentIndex={currentIndex} />
       )}
-      <CarouselController
+      <Controller
         currentIndex={currentIndex}
         moveLeft={moveLeft}
         moveRight={moveRight}

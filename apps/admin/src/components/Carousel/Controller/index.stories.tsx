@@ -1,14 +1,14 @@
-import CarouselController from '.';
+import Controller from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'admin/CarouselController',
-  component: CarouselController,
+  title: 'admin/Controller',
+  component: Controller,
   parameters: {},
-} as Meta<typeof CarouselController>;
+} as Meta<typeof Controller>;
 
-type Story = StoryObj<typeof CarouselController>;
+type Story = StoryObj<typeof Controller>;
 
 const fileInfo = [
   {
@@ -37,7 +37,7 @@ const fileInfo = [
   },
 ];
 
-export const GalleryCarouselController: Story = {
+export const Primary: Story = {
   args: {
     fileInfo: fileInfo,
     currentIndex: 0,
