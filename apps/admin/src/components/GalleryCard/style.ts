@@ -8,6 +8,11 @@ export const GalleryCard = styled(Link)`
   height: 21.9375rem;
   cursor: pointer;
   position: relative;
+  :hover {
+    img {
+      filter: brightness(60%);
+    }
+  }
 `;
 
 export const IMGWrapper = styled.div`
@@ -18,12 +23,9 @@ export const IMGWrapper = styled.div`
   margin-bottom: 1rem;
   overflow: hidden;
   position: relative;
-  transition: filter ease-in-out 0.3s;
   img {
     object-fit: cover;
-  }
-  :hover {
-    filter: brightness(60%);
+    transition: filter ease-in-out 0.3s;
   }
 `;
 
