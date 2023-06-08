@@ -2,6 +2,8 @@ import React from 'react';
 
 import { css } from '@emotion/react';
 
+import { PaginationIcon } from 'admin/assets';
+
 import * as S from './style';
 
 interface PageNationControllerProps {
@@ -21,7 +23,7 @@ const PaginationController: React.FC<PageNationControllerProps> = ({
       type='button'
       disabled={pageNumber === 0}
     >
-      이전
+      <PaginationIcon turn='left' />
     </S.PaginationButton>
     <S.PageNumberWrapper>
       {[...Array(totalPages)].map((_, index) => (
@@ -45,7 +47,7 @@ const PaginationController: React.FC<PageNationControllerProps> = ({
       type='button'
       disabled={pageNumber === totalPages - 1}
     >
-      다음
+      <PaginationIcon turn='right' />
     </S.PaginationButton>
   </S.PaginationController>
 );

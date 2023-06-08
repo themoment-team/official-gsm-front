@@ -1,10 +1,12 @@
 import styled from '@emotion/styled';
 
 export const PaginationController = styled.div`
+  width: fit-content;
   display: flex;
   gap: 2.5rem;
   align-items: center;
   margin-top: 2rem;
+  margin-bottom: 5rem;
 `;
 
 export const PaginationButton = styled.button``;
