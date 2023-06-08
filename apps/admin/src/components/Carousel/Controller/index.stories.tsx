@@ -3,7 +3,7 @@ import Controller from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'admin/Controller',
+  title: 'admin/Carousel/Controller',
   component: Controller,
   parameters: {},
 } as Meta<typeof Controller>;
