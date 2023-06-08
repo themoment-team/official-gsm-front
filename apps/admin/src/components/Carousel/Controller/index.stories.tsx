@@ -41,5 +41,6 @@ export const Primary: Story = {
   args: {
     fileInfo: fileInfo,
     currentIndex: 0,
+    setCurrentIndex: () => 0,
   },
 };
