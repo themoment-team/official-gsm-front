@@ -18,7 +18,7 @@ const GalleryCarousel: React.FC<CarouselProps> = ({
   <S.IMGOuterWrapper
     css={css`
       width: 40.6256rem;
-      height: 25;
+      height: 25rem;
     `}
   >
     <S.IMGContainer>

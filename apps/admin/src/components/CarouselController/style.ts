@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const CarouselWrapper = styled.div`
+  width: 40.6256rem;
   display: flex;
   flex-direction: column;
   overflow-x: hidden;

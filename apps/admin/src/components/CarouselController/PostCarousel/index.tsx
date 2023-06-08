@@ -15,8 +15,7 @@ const PostCarousel: React.FC<CarouselProps> = ({ currentIndex, fileInfo }) => (
   <S.IMGOuterWrapper
     css={css`
       width: 29.75rem;
-      height: 43.0625;
-      /* margin-right: 1.5rem; */
+      height: 43.0625rem;
     `}
   >
     <S.IMGContainer>
@@ -33,7 +32,7 @@ const PostCarousel: React.FC<CarouselProps> = ({ currentIndex, fileInfo }) => (
               height: 43.0625rem;
               ${currentIndex === i &&
               css`
-                transition: opacity 0.3s;
+                transition: opacity 0.3s !important;
                 z-index: 1;
                 opacity: 1;
               `}

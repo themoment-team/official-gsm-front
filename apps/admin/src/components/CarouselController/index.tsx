@@ -34,7 +34,11 @@ const Carousel: React.FC<CarouselControllerProps> = ({
   };
 
   return (
-    <S.CarouselWrapper>
+    <S.CarouselWrapper
+      css={css`
+        margin: ${isGallery && 0};
+      `}
+    >
       {isGallery ? (
         <GalleryCarousel fileInfo={fileInfo} currentIndex={currentIndex} />
       ) : (
