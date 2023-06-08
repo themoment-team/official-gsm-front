@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
-import { CommonDetail } from 'admin/components';
-import { PostCarousel } from 'admin/components';
+import { CommonDetail, PostCarousel } from 'admin/components';
 import type { DetailPropsType } from 'admin/types';
 
 const PostDetail: React.FC<DetailPropsType> = ({
