@@ -2,11 +2,10 @@ import styled from '@emotion/styled';
 
 export const TextAreaWrapper = styled.div``;
 
-export const TextAreaBox = styled.textarea<{ borderRadius: string }>`
+export const TextAreaBox = styled.textarea`
   width: 100%;
   height: 100%;
   border: 0.0625rem solid #dcdcdc;
-  border-radius: ${({ borderRadius }) => borderRadius};
   outline: none;
   background-color: #fff;
   padding: 0.875rem 1.25rem 0.875rem 1.25rem;

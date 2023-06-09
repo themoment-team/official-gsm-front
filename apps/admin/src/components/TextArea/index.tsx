@@ -30,19 +30,21 @@ const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
         <S.TextAreaBox
           {...attributes}
           ref={ref}
-          borderRadius={borderRadius as string}
-          css={
-            isError &&
+          css={css`
+            border-radius: ${borderRadius};
+            ${isError &&
             css`
+              color: #f93535;
               border-color: #f93535;
               :hover {
                 border-color: #f93535;
               }
               :focus {
                 border-color: #f93535;
+                color: #f93535;
               }
-            `
-          }
+            `}
+          `}
         />
       </S.TextAreaWrapper>
     );
