@@ -14,6 +14,8 @@ import {
 } from 'admin/components';
 import * as S from 'admin/styles/page/write';
 
+import { Button } from 'ui';
+
 const schema = z.object({
   title: z
     .string()
@@ -86,7 +88,7 @@ export default function WritePage() {
           </div>
           <S.BtnWrap>
             <S.CancelBtn>취소</S.CancelBtn>
-            <S.CompleteBtn>완료</S.CompleteBtn>
+            <Button width='22.5625rem'>완료</Button>
           </S.BtnWrap>
         </S.FormWrap>
       </S.WritePageWrap>
