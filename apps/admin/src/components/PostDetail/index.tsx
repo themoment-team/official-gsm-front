@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { CommonDetail, Carousel } from 'admin/components';
+import { CommonDetail, PostCarousel } from 'admin/components';
 import type { DetailPropsType } from 'admin/types';
 
 const PostDetail: React.FC<DetailPropsType> = ({
@@ -9,7 +9,7 @@ const PostDetail: React.FC<DetailPropsType> = ({
   description,
 }) => (
   <NoticeWrapper>
-    {fileInfo[0] && <Carousel fileInfo={fileInfo} isGallery={false} />}
+    {fileInfo[0] && <PostCarousel fileInfo={fileInfo} />}
     <CommonDetail post={post} fileInfo={fileInfo} description={description} />
   </NoticeWrapper>
 );

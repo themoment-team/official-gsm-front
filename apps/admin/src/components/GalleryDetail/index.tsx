@@ -1,4 +1,5 @@
-import { CommonDetail, Carousel } from 'admin/components';
+import { CommonDetail } from 'admin/components';
+import { GalleryCarousel } from 'admin/components';
 import type { DetailPropsType } from 'admin/types';
 
 const GalleryDetail: React.FC<DetailPropsType> = ({
@@ -7,7 +8,7 @@ const GalleryDetail: React.FC<DetailPropsType> = ({
   description,
 }) => (
   <>
-    <Carousel fileInfo={fileInfo} isGallery={true} />
+    <GalleryCarousel fileInfo={fileInfo} />
     <CommonDetail post={post} fileInfo={fileInfo} description={description} />
   </>
 );
