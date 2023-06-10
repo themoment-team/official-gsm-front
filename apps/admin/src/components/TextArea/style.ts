@@ -3,8 +3,6 @@ import styled from '@emotion/styled';
 export const TextAreaWrapper = styled.div``;
 
 export const TextAreaBox = styled.textarea`
-  width: 100%;
-  height: 100%;
   border: 0.0625rem solid #dcdcdc;
   outline: none;
   background-color: #fff;
