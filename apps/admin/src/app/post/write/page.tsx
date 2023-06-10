@@ -1,13 +1,11 @@
 'use client';
 
+import { zodResolver } from '@hookform/resolvers/zod';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
-
-import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
 import { Input, TextArea, Category, UploadButton } from 'admin/components';
-
 import * as S from 'admin/styles/page/write';
 
 const schema = z.object({
@@ -28,7 +26,7 @@ export default function WritePage() {
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
-  const onSubmit: SubmitHandler<FormValues> = (data) => {};
+  const onSubmit: SubmitHandler<FormValues> = () => {};
 
   return (
     <S.WritePageWrap>
