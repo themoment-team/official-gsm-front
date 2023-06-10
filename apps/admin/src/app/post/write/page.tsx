@@ -5,7 +5,13 @@ import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { Input, TextArea, Category, UploadButton } from 'admin/components';
+import {
+  Input,
+  TextArea,
+  Category,
+  UploadButton,
+  Header,
+} from 'admin/components';
 import * as S from 'admin/styles/page/write';
 
 const schema = z.object({
@@ -26,58 +32,64 @@ export default function WritePage() {
     handleSubmit,
     formState: { errors },
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
-  const onSubmit: SubmitHandler<FormValues> = () => {};
+
+  const onSubmit: SubmitHandler<FormValues> = (data) => {
+    console.log(data);
+  };
 
   return (
-    <S.WritePageWrap>
-      <S.WriteTitle>게시물 생성</S.WriteTitle>
-      <S.FormWrap onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <S.FormItemTitle>카테고리</S.FormItemTitle>
-          <Category width='36.125rem' category='notice' />
-        </div>
-        <div>
-          <S.FormItemTitle>제목</S.FormItemTitle>
-          <Input
-            placeholder='제목을 입력해주세요.'
-            width='36.125rem'
-            height='2.75rem'
-            borderRadius='0.625rem'
-            isError={errors.title ? true : false}
-            {...register('title')}
-          />
-          {errors.title && (
-            <S.ErrorMessage>{`* ${errors.title.message}`}</S.ErrorMessage>
-          )}
-        </div>
-        <div>
-          <S.FormItemTitle>내용</S.FormItemTitle>
-          <TextArea
-            placeholder='내용을 입력해주세요.'
-            width='36.125rem'
-            height='6.75rem'
-            isError={errors.content ? true : false}
-            borderRadius='0.625rem'
-            {...register('content')}
-          />
-          {errors.content && (
-            <S.ErrorMessage>{`* ${errors.content.message}`}</S.ErrorMessage>
-          )}
-        </div>
-        <div>
-          <S.FormItemTitle>첨부 파일</S.FormItemTitle>
-          <S.UploadBox>
-            <S.UploadTitle>
-              첫번째 등록하신 이미지는 썸네일 역할을 합니다.
-            </S.UploadTitle>
-            <UploadButton />
-          </S.UploadBox>
-        </div>
-        <S.BtnWrap>
-          <S.CancelBtn>취소</S.CancelBtn>
-          <S.CompleteBtn>완료</S.CompleteBtn>
-        </S.BtnWrap>
-      </S.FormWrap>
-    </S.WritePageWrap>
+    <>
+      <Header hasNotification={false} name={'정문정'} />
+      <S.WritePageWrap>
+        <S.WriteTitle>게시물 생성</S.WriteTitle>
+        <S.FormWrap onSubmit={handleSubmit(onSubmit)}>
+          <div>
+            <S.FormItemTitle>카테고리</S.FormItemTitle>
+            <Category width='36.125rem' category='notice' />
+          </div>
+          <div>
+            <S.FormItemTitle>제목</S.FormItemTitle>
+            <Input
+              placeholder='제목을 입력해주세요.'
+              width='36.125rem'
+              height='2.75rem'
+              borderRadius='0.625rem'
+              isError={errors.title ? true : false}
+              {...register('title')}
+            />
+            {errors.title && (
+              <S.ErrorMessage>{`* ${errors.title.message}`}</S.ErrorMessage>
+            )}
+          </div>
+          <div>
+            <S.FormItemTitle>내용</S.FormItemTitle>
+            <TextArea
+              placeholder='내용을 입력해주세요.'
+              width='36.125rem'
+              height='6.75rem'
+              isError={errors.content ? true : false}
+              borderRadius='0.625rem'
+              {...register('content')}
+            />
+            {errors.content && (
+              <S.ErrorMessage>{`* ${errors.content.message}`}</S.ErrorMessage>
+            )}
+          </div>
+          <div>
+            <S.FormItemTitle>첨부 파일</S.FormItemTitle>
+            <S.UploadBox>
+              <S.UploadTitle>
+                첫번째 등록하신 이미지는 썸네일 역할을 합니다.
+              </S.UploadTitle>
+              <UploadButton />
+            </S.UploadBox>
+          </div>
+          <S.BtnWrap>
+            <S.CancelBtn>취소</S.CancelBtn>
+            <S.CompleteBtn>완료</S.CompleteBtn>
+          </S.BtnWrap>
+        </S.FormWrap>
+      </S.WritePageWrap>
+    </>
   );
 }
