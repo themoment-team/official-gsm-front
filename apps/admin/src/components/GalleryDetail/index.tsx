@@ -1,16 +1,14 @@
 import { CommonDetail } from 'admin/components';
 import { GalleryCarousel } from 'admin/components';
 
-import type { PostDetailType } from 'api/client';
-
 interface GalleryDetailProps {
-  data: PostDetailType;
+  postSeq: number;
 }
 
-const GalleryDetail: React.FC<GalleryDetailProps> = ({ data }) => (
+const GalleryDetail: React.FC<GalleryDetailProps> = ({ postSeq }) => (
   <>
-    <GalleryCarousel fileInfo={data.fileInfo} />
-    <CommonDetail data={data} />
+    <GalleryCarousel postSeq={postSeq} />
+    <CommonDetail postSeq={postSeq} />
   </>
 );
 

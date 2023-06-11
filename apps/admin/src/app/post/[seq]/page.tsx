@@ -17,16 +17,18 @@ export default function DetailPage({ params: { seq } }: DetailPageProps) {
     redirect('/');
   }
 
-  const { data } = useGetPostDetail(Number(seq));
+  const postSeq = Number(seq);
+
+  const { data } = useGetPostDetail(postSeq);
 
   return (
     <DetailPageWrapper>
       <Header hasNotification={false} name={'정문정'} />
       {data &&
         (data.category === 'EVENT_GALLERY' ? (
-          <GalleryDetail data={data} />
+          <GalleryDetail postSeq={postSeq} />
         ) : (
-          <PostDetail data={data} />
+          <PostDetail postSeq={postSeq} />
         ))}
     </DetailPageWrapper>
   );

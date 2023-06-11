@@ -4,23 +4,25 @@ import { css } from '@emotion/react';
 
 import { ChevronIcon } from 'admin/assets';
 
-import type { FileInfoType } from 'api/client';
+import { useGetPostDetail } from 'api/client';
 
 import * as S from './style';
 
 interface CarouselControllerProps {
   currentIndex: number;
   setCurrentIndex: Dispatch<SetStateAction<number>>;
-  fileInfo: FileInfoType[];
+  postSeq: number;
 }
 
 const CarouselController: React.FC<CarouselControllerProps> = ({
   currentIndex,
   setCurrentIndex,
-  fileInfo,
+  postSeq,
 }) => {
+  const { data } = useGetPostDetail(postSeq);
+
   const min = 0;
-  const max = (fileInfo.length ?? 0) - 1;
+  const max = (data?.fileInfo.length ?? 0) - 1;
 
   const moveLeft = () => {
     setCurrentIndex(currentIndex - 1);
@@ -38,7 +40,7 @@ const CarouselController: React.FC<CarouselControllerProps> = ({
         <ChevronIcon turn={'left'} />
       </S.CursorWrapper>
       <S.DotWrapper>
-        {fileInfo.map((file, i) => (
+        {data?.fileInfo.map((file, i) => (
           <S.Dot
             key={file.fileName}
             css={
