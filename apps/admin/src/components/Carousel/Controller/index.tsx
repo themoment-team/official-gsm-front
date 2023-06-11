@@ -11,7 +11,7 @@ import * as S from './style';
 interface ControllerProps {
   currentIndex: number;
   setCurrentIndex: Dispatch<SetStateAction<number>>;
-  fileInfo: FileInfoType[];
+  fileInfo?: FileInfoType[];
 }
 
 const Controller: React.FC<ControllerProps> = ({
@@ -20,7 +20,7 @@ const Controller: React.FC<ControllerProps> = ({
   fileInfo,
 }) => {
   const min = 0;
-  const max = fileInfo.length - 1;
+  const max = (fileInfo?.length ?? 0) - 1;
 
   const moveLeft = () => {
     setCurrentIndex(currentIndex - 1);
@@ -38,7 +38,7 @@ const Controller: React.FC<ControllerProps> = ({
         <ChevronIcon turn={'left'} />
       </S.CursorWrapper>
       <S.DotWrapper>
-        {fileInfo.map((file, i) => (
+        {fileInfo?.map((file, i) => (
           <S.Dot
             key={file.fileName}
             css={

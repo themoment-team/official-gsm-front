@@ -1,10 +1,10 @@
 'use client';
 
+import { redirect } from 'next/navigation';
+
 import styled from '@emotion/styled';
 
 import { GalleryDetail, PostDetail, Header } from 'admin/components';
-
-import { redirect } from 'next/navigation';
 
 import { useGetPostDetail } from 'api/client';
 
@@ -20,28 +20,29 @@ export default function DetailPage({ params: { seq } }: DetailPageProps) {
   const { data } = useGetPostDetail(Number(seq));
 
   const post = {
-    data.postTitle,
-    data.postWriter,
-    data.postContent,
-    data.category,
-    data.createdAt
-  }
+    postTitle: data?.postTitle,
+    postWriter: data?.postWriter,
+    postContent: data?.postContent,
+    category: data?.category,
+    createdAt: data?.createdAt,
+  };
 
   return (
     <DetailPageWrapper>
       <Header hasNotification={false} name={'정문정'} />
-      {
-        data?.category === 'EVENT_GALLERY' ?
-          <GalleryDetail
-            post={post}
-            fileInfo={data?.fileInfo}
-            description={data?.postContent}
-          />
-        : <PostDetail post={post}
-        fileInfo={data?.fileInfo}
-        description={data?.postContent}>
-        </PostDetail>
-      }
+      {data?.category === 'EVENT_GALLERY' ? (
+        <GalleryDetail
+          post={post}
+          fileInfo={data?.fileInfo}
+          description={data?.postContent}
+        />
+      ) : (
+        <PostDetail
+          post={post}
+          fileInfo={data?.fileInfo}
+          description={data?.postContent}
+        />
+      )}
     </DetailPageWrapper>
   );
 }
