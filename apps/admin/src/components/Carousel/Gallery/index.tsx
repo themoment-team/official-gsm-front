@@ -10,7 +10,7 @@ import * as S from 'admin/components/Carousel/style';
 import type { FileInfoType } from 'api/client';
 
 interface GalleryCarouselProps {
-  fileInfo?: FileInfoType[];
+  fileInfo: FileInfoType[];
 }
 
 const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ fileInfo }) => {
@@ -30,7 +30,7 @@ const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ fileInfo }) => {
               right: ${currentIndex * 40.6256}rem;
             `}
           >
-            {fileInfo?.map((file, i) => (
+            {fileInfo.map((file, i) => (
               <S.IMGWrapper
                 key={file.fileName + i}
                 css={css`

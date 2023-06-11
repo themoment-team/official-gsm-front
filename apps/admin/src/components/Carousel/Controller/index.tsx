@@ -11,7 +11,7 @@ import * as S from './style';
 interface CarouselControllerProps {
   currentIndex: number;
   setCurrentIndex: Dispatch<SetStateAction<number>>;
-  fileInfo?: FileInfoType[];
+  fileInfo: FileInfoType[];
 }
 
 const CarouselController: React.FC<CarouselControllerProps> = ({
@@ -20,7 +20,7 @@ const CarouselController: React.FC<CarouselControllerProps> = ({
   fileInfo,
 }) => {
   const min = 0;
-  const max = (fileInfo?.length ?? 0) - 1;
+  const max = (fileInfo.length ?? 0) - 1;
 
   const moveLeft = () => {
     setCurrentIndex(currentIndex - 1);
@@ -38,7 +38,7 @@ const CarouselController: React.FC<CarouselControllerProps> = ({
         <ChevronIcon turn={'left'} />
       </S.CursorWrapper>
       <S.DotWrapper>
-        {fileInfo?.map((file, i) => (
+        {fileInfo.map((file, i) => (
           <S.Dot
             key={file.fileName}
             css={

@@ -10,7 +10,7 @@ import * as S from 'admin/components/Carousel/style';
 import type { FileInfoType } from 'api/client';
 
 interface PostCarouselProps {
-  fileInfo?: FileInfoType[];
+  fileInfo: FileInfoType[];
 }
 
 const PostCarousel: React.FC<PostCarouselProps> = ({ fileInfo }) => {
@@ -30,7 +30,7 @@ const PostCarousel: React.FC<PostCarouselProps> = ({ fileInfo }) => {
               right: ${currentIndex * 29.75}rem;
             `}
           >
-            {fileInfo?.map((file, i) => (
+            {fileInfo.map((file, i) => (
               <S.IMGWrapper
                 key={file.fileName + i}
                 css={css`

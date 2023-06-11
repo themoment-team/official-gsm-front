@@ -10,7 +10,7 @@ interface PostDetailProps {
 
 const PostDetail: React.FC<PostDetailProps> = ({ data }) => (
   <NoticeWrapper>
-    {data?.fileInfo?.length !== 0 && <PostCarousel fileInfo={data?.fileInfo} />}
+    {data?.fileInfo[0] && <PostCarousel fileInfo={data.fileInfo} />}
     <CommonDetail data={data} />
   </NoticeWrapper>
 );
