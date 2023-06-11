@@ -22,11 +22,12 @@ export default function DetailPage({ params: { seq } }: DetailPageProps) {
   return (
     <DetailPageWrapper>
       <Header hasNotification={false} name={'정문정'} />
-      {data?.category === 'EVENT_GALLERY' ? (
-        <GalleryDetail data={data} />
-      ) : (
-        <PostDetail data={data} />
-      )}
+      {data &&
+        (data.category === 'EVENT_GALLERY' ? (
+          <GalleryDetail data={data} />
+        ) : (
+          <PostDetail data={data} />
+        ))}
     </DetailPageWrapper>
   );
 }
