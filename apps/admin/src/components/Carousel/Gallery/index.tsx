@@ -4,16 +4,16 @@ import Image from 'next/image';
 
 import { css } from '@emotion/react';
 
-import Controller from 'admin/components/Carousel/Controller';
+import { CarouselController } from 'admin/components';
 import * as S from 'admin/components/Carousel/style';
 
 import type { FileInfoType } from 'api/client';
 
-interface CarouselProps {
+interface GalleryCarouselProps {
   fileInfo: FileInfoType[];
 }
 
-const Gallery: React.FC<CarouselProps> = ({ fileInfo }) => {
+const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ fileInfo }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   return (
@@ -55,7 +55,7 @@ const Gallery: React.FC<CarouselProps> = ({ fileInfo }) => {
           </S.MoveContainer>
         </S.IMGContainer>
       </S.IMGOuterWrapper>
-      <Controller
+      <CarouselController
         setCurrentIndex={setCurrentIndex}
         currentIndex={currentIndex}
         fileInfo={fileInfo}
@@ -64,4 +64,4 @@ const Gallery: React.FC<CarouselProps> = ({ fileInfo }) => {
   );
 };
 
-export default Gallery;
+export default GalleryCarousel;
