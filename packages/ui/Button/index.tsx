@@ -15,7 +15,6 @@ interface ButtonProps
   hoverBgColor?: string;
   position?: 'absolute' | 'relative' | 'fixed' | 'static' | 'sticky';
   bottom?: string;
-  border?: string;
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -27,7 +26,6 @@ const Button: React.FC<ButtonProps> = ({
   hoverBgColor,
   position,
   bottom,
-
   ...attributes
 }) => {
   return (
