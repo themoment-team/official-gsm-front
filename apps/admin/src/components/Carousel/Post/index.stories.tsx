@@ -1,14 +1,14 @@
-import Post from '.';
+import PostCarousel from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
   title: 'admin/Carousel/Post',
-  component: Post,
+  component: PostCarousel,
   parameters: {},
-} as Meta<typeof Post>;
+} as Meta<typeof PostCarousel>;
 
-type Story = StoryObj<typeof Post>;
+type Story = StoryObj<typeof PostCarousel>;
 
 const fileInfo = [
   {

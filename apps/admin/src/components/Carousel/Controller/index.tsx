@@ -8,13 +8,13 @@ import type { FileInfoType } from 'api/client';
 
 import * as S from './style';
 
-interface ControllerProps {
+interface CarouselControllerProps {
   currentIndex: number;
   setCurrentIndex: Dispatch<SetStateAction<number>>;
   fileInfo?: FileInfoType[];
 }
 
-const Controller: React.FC<ControllerProps> = ({
+const CarouselController: React.FC<CarouselControllerProps> = ({
   currentIndex,
   setCurrentIndex,
   fileInfo,
@@ -58,4 +58,4 @@ const Controller: React.FC<ControllerProps> = ({
   );
 };
 
-export default Controller;
+export default CarouselController;

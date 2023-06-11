@@ -58,12 +58,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           css={
             isError &&
             css`
+              color: #f93535;
               border-color: #f93535;
               :hover {
                 border-color: #f93535;
               }
               :focus {
                 border-color: #f93535;
+                color: #f93535;
               }
             `
           }
