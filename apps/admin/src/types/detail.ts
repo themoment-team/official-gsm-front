@@ -4,10 +4,10 @@ export interface DetailPropsType {
   fileInfo?: FileInfoType[];
   description?: string;
   post: {
-    postTitle?: string;
-    postWriter?: string;
-    postContent?: string;
-    createdAt?: string;
-    category?: PostCategoryType;
+    postTitle: string;
+    postWriter: string;
+    postContent: string;
+    createdAt: string;
+    category: PostCategoryType;
   };
 }

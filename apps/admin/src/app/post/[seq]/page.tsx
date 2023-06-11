@@ -24,11 +24,11 @@ export default function DetailPage({ params: { seq } }: DetailPageProps) {
   }
 
   const post = {
-    postTitle: data?.postTitle,
-    postWriter: data?.postWriter,
-    postContent: data?.postContent,
-    category: data?.category,
-    createdAt: data?.createdAt,
+    postTitle: data.postTitle,
+    postWriter: data.postWriter,
+    postContent: data.postContent,
+    category: data.category,
+    createdAt: data.createdAt,
   };
 
   return (
@@ -37,14 +37,14 @@ export default function DetailPage({ params: { seq } }: DetailPageProps) {
       {data?.category === 'EVENT_GALLERY' ? (
         <GalleryDetail
           post={post}
-          fileInfo={data?.fileInfo}
-          description={data?.postContent}
+          fileInfo={data.fileInfo}
+          description={data.postContent}
         />
       ) : (
         <PostDetail
           post={post}
-          fileInfo={data?.fileInfo}
-          description={data?.postContent}
+          fileInfo={data.fileInfo}
+          description={data.postContent}
         />
       )}
     </DetailPageWrapper>
