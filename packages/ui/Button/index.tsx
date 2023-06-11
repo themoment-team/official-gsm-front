@@ -27,7 +27,6 @@ const Button: React.FC<ButtonProps> = ({
   hoverBgColor,
   position,
   bottom,
-  border,
 
   ...attributes
 }) => {
@@ -39,7 +38,6 @@ const Button: React.FC<ButtonProps> = ({
         color: ${fontColor};
         position: ${position};
         bottom: ${bottom};
-        border: ${border};
         :hover {
           background: ${hoverBgColor};
         }
