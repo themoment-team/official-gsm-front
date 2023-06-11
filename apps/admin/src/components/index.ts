@@ -25,5 +25,5 @@ export { default as WriterAndDate } from './WriterAndDate';
 export { default as PostDetail } from './PostDetail';
 export { default as GalleryDetail } from './GalleryDetail';
 export { default as FileCard } from './FileCard';
-export { default as GalleryCarousel } from './Carousel/GalleryCarousel';
-export { default as PostCarousel } from './Carousel/PostCarousel';
+export { default as GalleryCarousel } from './Carousel/Gallery';
+export { default as PostCarousel } from './Carousel/Post';
