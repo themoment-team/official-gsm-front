@@ -19,6 +19,10 @@ export default function DetailPage({ params: { seq } }: DetailPageProps) {
 
   const { data } = useGetPostDetail(Number(seq));
 
+  if (!data) {
+    redirect('/');
+  }
+
   const post = {
     postTitle: data?.postTitle,
     postWriter: data?.postWriter,
