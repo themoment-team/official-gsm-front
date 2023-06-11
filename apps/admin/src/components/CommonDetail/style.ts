@@ -4,6 +4,7 @@ export const CommonDetailWrapper = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 5rem;
+  white-space: pre-wrap;
 `;
 
 export const Title = styled.h1`
