@@ -5,7 +5,7 @@ import type { PostDetailType } from 'api/client';
 import * as S from './style';
 
 interface CommonDetailProps {
-  data: PostDetailType;
+  data?: PostDetailType;
 }
 
 const CommonDetail: React.FC<CommonDetailProps> = ({

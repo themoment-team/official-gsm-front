@@ -5,7 +5,7 @@ import { CommonDetail, PostCarousel } from 'admin/components';
 import type { PostDetailType } from 'api/client';
 
 interface PostDetailProps {
-  data: PostDetailType;
+  data?: PostDetailType;
 }
 
 const PostDetail: React.FC<PostDetailProps> = ({ data }) => (
