@@ -19,29 +19,13 @@ export default function DetailPage({ params: { seq } }: DetailPageProps) {
 
   const { data } = useGetPostDetail(Number(seq));
 
-  const post = {
-    postTitle: data?.postTitle ?? '',
-    postWriter: data?.postWriter ?? '',
-    postContent: data?.postContent ?? '',
-    category: data?.category ?? 'NOTICE',
-    createdAt: data?.createdAt ?? '',
-  };
-
   return (
     <DetailPageWrapper>
       <Header hasNotification={false} name={'정문정'} />
       {data?.category === 'EVENT_GALLERY' ? (
-        <GalleryDetail
-          post={post}
-          fileInfo={data?.fileInfo ?? []}
-          description={data?.postContent ?? ''}
-        />
+        <GalleryDetail data={data} />
       ) : (
-        <PostDetail
-          post={post}
-          fileInfo={data?.fileInfo}
-          description={data?.postContent ?? ''}
-        />
+        <PostDetail data={data} />
       )}
     </DetailPageWrapper>
   );

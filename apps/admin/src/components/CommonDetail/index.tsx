@@ -1,12 +1,20 @@
 import { FileButton, WriterAndDate, EditButton } from 'admin/components';
-import type { DetailPropsType } from 'admin/types';
+
+import type { PostDetailType } from 'api/client';
 
 import * as S from './style';
 
-const CommonDetail: React.FC<DetailPropsType> = ({
-  post: { postWriter, postTitle, createdAt },
-  fileInfo,
-  description,
+interface CommonDetailProps {
+  data: PostDetailType;
+}
+
+const CommonDetail: React.FC<CommonDetailProps> = ({
+  data: { postTitle, createdAt, postWriter, fileInfo } = {
+    postTitle: '',
+    createdAt: '',
+    postWriter: '',
+    fileInfo: [],
+  },
 }) => (
   <S.CommonDetailWrapper>
     <S.Title>{postTitle}</S.Title>
@@ -17,7 +25,7 @@ const CommonDetail: React.FC<DetailPropsType> = ({
     />
     <EditButton href='/post/edit' />
     <S.Horizon />
-    <S.Content>{description}</S.Content>
+    <S.Content>{createdAt}</S.Content>
     <S.Horizon />
     {fileInfo?.length !== 0 && (
       <>

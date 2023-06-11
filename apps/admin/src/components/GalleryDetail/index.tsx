@@ -1,15 +1,16 @@
 import { CommonDetail } from 'admin/components';
 import { GalleryCarousel } from 'admin/components';
-import type { DetailPropsType } from 'admin/types';
 
-const GalleryDetail: React.FC<DetailPropsType> = ({
-  post,
-  fileInfo,
-  description,
-}) => (
+import type { PostDetailType } from 'api/client';
+
+interface GalleryDetailProps {
+  data: PostDetailType;
+}
+
+const GalleryDetail: React.FC<GalleryDetailProps> = ({ data }) => (
   <>
-    <GalleryCarousel fileInfo={fileInfo} />
-    <CommonDetail post={post} fileInfo={fileInfo} description={description} />
+    <GalleryCarousel fileInfo={data.fileInfo} />
+    <CommonDetail data={data} />
   </>
 );
 

@@ -1,16 +1,17 @@
 import styled from '@emotion/styled';
 
 import { CommonDetail, PostCarousel } from 'admin/components';
-import type { DetailPropsType } from 'admin/types';
 
-const PostDetail: React.FC<DetailPropsType> = ({
-  post,
-  fileInfo,
-  description,
-}) => (
+import type { PostDetailType } from 'api/client';
+
+interface PostDetailProps {
+  data: PostDetailType;
+}
+
+const PostDetail: React.FC<PostDetailProps> = ({ data }) => (
   <NoticeWrapper>
-    {fileInfo?.length !== 0 && <PostCarousel fileInfo={fileInfo} />}
-    <CommonDetail post={post} fileInfo={fileInfo} description={description} />
+    {data?.fileInfo?.length !== 0 && <PostCarousel fileInfo={data?.fileInfo} />}
+    <CommonDetail data={data} />
   </NoticeWrapper>
 );
 
