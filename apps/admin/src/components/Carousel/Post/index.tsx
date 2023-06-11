@@ -9,7 +9,7 @@ import * as S from 'admin/components/Carousel/style';
 
 import type { FileInfoType } from 'api/client';
 
-interface CarouselProps {
+interface PostCarouselProps {
   fileInfo?: FileInfoType[];
 }
 
