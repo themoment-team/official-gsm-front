@@ -27,3 +27,4 @@ export { default as GalleryDetail } from './GalleryDetail';
 export { default as FileCard } from './FileCard';
 export { default as GalleryCarousel } from './Carousel/Gallery';
 export { default as PostCarousel } from './Carousel/Post';
+export { default as CarouselController } from './Carousel/Controller';

@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { css } from '@emotion/react';
 
-import CarouselController from 'admin/components/Carousel/Controller';
+import { CarouselController } from 'admin/components';
 import * as S from 'admin/components/Carousel/style';
 
 import type { FileInfoType } from 'api/client';
