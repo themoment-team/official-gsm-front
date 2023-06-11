@@ -34,7 +34,7 @@ export default function DetailPage({ params: { seq } }: DetailPageProps) {
   return (
     <DetailPageWrapper>
       <Header hasNotification={false} name={'정문정'} />
-      {data?.category === 'EVENT_GALLERY' ? (
+      {data.category === 'EVENT_GALLERY' ? (
         <GalleryDetail
           post={post}
           fileInfo={data.fileInfo}
