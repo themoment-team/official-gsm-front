@@ -19,11 +19,11 @@ const CommonDetail: React.FC<DetailPropsType> = ({
     <S.Horizon />
     <S.Content>{description}</S.Content>
     <S.Horizon />
-    {fileInfo[0] && (
+    {fileInfo?.length !== 0 && (
       <>
         <S.FileTitle>첨부 파일</S.FileTitle>
         <S.FileList>
-          {fileInfo.map((item, i) => (
+          {fileInfo?.map((item, i) => (
             <FileButton key={i} fileInfo={item} />
           ))}
         </S.FileList>

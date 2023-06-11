@@ -9,7 +9,7 @@ const PostDetail: React.FC<DetailPropsType> = ({
   description,
 }) => (
   <NoticeWrapper>
-    {fileInfo && <PostCarousel fileInfo={fileInfo} />}
+    {fileInfo?.length !== 0 && <PostCarousel fileInfo={fileInfo} />}
     <CommonDetail post={post} fileInfo={fileInfo} description={description} />
   </NoticeWrapper>
 );

@@ -19,32 +19,28 @@ export default function DetailPage({ params: { seq } }: DetailPageProps) {
 
   const { data } = useGetPostDetail(Number(seq));
 
-  if (!data) {
-    redirect('/');
-  }
-
   const post = {
-    postTitle: data.postTitle,
-    postWriter: data.postWriter,
-    postContent: data.postContent,
-    category: data.category,
-    createdAt: data.createdAt,
+    postTitle: data?.postTitle ?? '',
+    postWriter: data?.postWriter ?? '',
+    postContent: data?.postContent ?? '',
+    category: data?.category ?? 'NOTICE',
+    createdAt: data?.createdAt ?? '',
   };
 
   return (
     <DetailPageWrapper>
       <Header hasNotification={false} name={'정문정'} />
-      {data.category === 'EVENT_GALLERY' ? (
+      {data?.category === 'EVENT_GALLERY' ? (
         <GalleryDetail
           post={post}
-          fileInfo={data.fileInfo}
-          description={data.postContent}
+          fileInfo={data?.fileInfo ?? []}
+          description={data?.postContent ?? ''}
         />
       ) : (
         <PostDetail
           post={post}
-          fileInfo={data.fileInfo}
-          description={data.postContent}
+          fileInfo={data?.fileInfo}
+          description={data?.postContent ?? ''}
         />
       )}
     </DetailPageWrapper>
