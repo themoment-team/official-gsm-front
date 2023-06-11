@@ -3,7 +3,7 @@ import CarouselController from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'admin/Carousel/CarouselController',
+  title: 'admin/Carousel/Carousel',
   component: CarouselController,
   parameters: {},
 } as Meta<typeof CarouselController>;
