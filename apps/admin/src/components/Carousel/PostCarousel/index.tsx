@@ -4,16 +4,16 @@ import Image from 'next/image';
 
 import { css } from '@emotion/react';
 
-import Controller from 'admin/components/Carousel/Controller';
+import CarouselController from 'admin/components/Carousel/CarouselController';
 import * as S from 'admin/components/Carousel/style';
 
 import type { FileInfoType } from 'api/client';
 
-interface CarouselProps {
+interface PostCarouselProps {
   fileInfo: FileInfoType[];
 }
 
-const Post: React.FC<CarouselProps> = ({ fileInfo }) => {
+const PostCarousel: React.FC<PostCarouselProps> = ({ fileInfo }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   return (
@@ -55,7 +55,7 @@ const Post: React.FC<CarouselProps> = ({ fileInfo }) => {
           </S.MoveContainer>
         </S.IMGContainer>
       </S.IMGOuterWrapper>
-      <Controller
+      <CarouselController
         setCurrentIndex={setCurrentIndex}
         currentIndex={currentIndex}
         fileInfo={fileInfo}
@@ -64,4 +64,4 @@ const Post: React.FC<CarouselProps> = ({ fileInfo }) => {
   );
 };
 
-export default Post;
+export default PostCarousel;
