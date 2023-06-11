@@ -104,3 +104,10 @@ export const CompleteBtn = styled.button`
   align-items: center;
   margin-left: 0.5rem;
 `;
+
+export const ErrorMessage = styled.p`
+  font-weight: 400;
+  font-size: 0.75rem;
+  margin-top: 1rem;
+  color: #f93535;
+`;
