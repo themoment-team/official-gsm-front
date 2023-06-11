@@ -1,7 +1,13 @@
-import type { ContentType, FileInfoType } from 'api/client';
+import type { FileInfoType, PostCategoryType } from 'api/client';
 
 export interface DetailPropsType {
   fileInfo: FileInfoType[];
   description: string;
-  post: ContentType;
+  post: {
+    postTitle: string;
+    postWriter: string;
+    postContent: string;
+    createdAt: string;
+    category: PostCategoryType;
+  };
 }
