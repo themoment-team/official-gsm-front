@@ -4,7 +4,8 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "admin/*": ["../admin/src/*"]
+      "admin/*": ["../admin/src/*"],
+      "client/*": ["../client/src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
