@@ -13,7 +13,8 @@ const Point: React.FC<PointProps> = ({ size, position, color }) => (
     css={css`
       width: ${size};
       height: ${size};
-      ${position === 'top' ? 'top: 0' : 'bottom: 0'}
+      background-color: ${color};
+      ${position === 'top' ? 'top: 0' : 'bottom: 10px'}
     `}
   />
 );
