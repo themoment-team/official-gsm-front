@@ -13,7 +13,7 @@ type Story = StoryObj<typeof Point>;
 export const Green: Story = {
   args: {
     color: 'green',
-    size: '12px',
+    size: '0.75rem',
     position: 'top',
   },
 };

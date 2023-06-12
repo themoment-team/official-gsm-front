@@ -22,7 +22,11 @@ interface TitleProps {
 const Title: React.FC<TitleProps> = ({
   children,
   font: { className = 'title', color = '#212121' },
-  point: { pointPosition = 'top', pointSize = '18px', pointColor = '#B2E449;' },
+  point: {
+    pointPosition = 'top',
+    pointSize = '1.125rem',
+    pointColor = '#B2E449;',
+  },
 }) => (
   <S.TitleContainer>
     <h1

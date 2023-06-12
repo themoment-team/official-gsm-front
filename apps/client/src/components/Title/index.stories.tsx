@@ -16,7 +16,7 @@ export const Section1: Story = {
     point: {
       pointColor: '#B2E449;',
       pointPosition: 'bottom',
-      pointSize: '13px',
+      pointSize: '0.813rem',
     },
     font: { className: 'h1', color: '#003365' },
   },
@@ -25,7 +25,11 @@ export const Section1: Story = {
 export const Section3: Story = {
   args: {
     children: <>학교가 추구하는 교육 방향</>,
-    point: { pointColor: '#7ACDF4', pointPosition: 'top', pointSize: '18px' },
+    point: {
+      pointColor: '#7ACDF4',
+      pointPosition: 'top',
+      pointSize: '1.125rem',
+    },
     font: { className: 'h1' },
   },
 };
@@ -33,7 +37,11 @@ export const Section3: Story = {
 export const Section4: Story = {
   args: {
     children: <>소프트웨어 인재 양성을 위한 교육 과정</>,
-    point: { pointColor: '#B2E449;', pointPosition: 'top', pointSize: '18px' },
+    point: {
+      pointColor: '#B2E449;',
+      pointPosition: 'top',
+      pointSize: '1.125rem',
+    },
     font: { className: 'h1' },
   },
 };
@@ -46,7 +54,11 @@ export const Section5: Story = {
         글로벌 소프트웨어 학과 소개
       </>
     ),
-    point: { pointColor: '#7ACDF4', pointPosition: 'top', pointSize: '18px' },
+    point: {
+      pointColor: '#7ACDF4',
+      pointPosition: 'top',
+      pointSize: '1.125rem',
+    },
     font: { className: 'h1' },
   },
 };
@@ -54,7 +66,11 @@ export const Section5: Story = {
 export const Section6: Story = {
   args: {
     children: <>꿈 끼 업(UP) 고(GO) 특색사업</>,
-    point: { pointColor: '#B2E449;', pointPosition: 'top', pointSize: '18px' },
+    point: {
+      pointColor: '#B2E449;',
+      pointPosition: 'top',
+      pointSize: '1.125rem',
+    },
     font: { className: 'h1' },
   },
 };
@@ -62,7 +78,11 @@ export const Section6: Story = {
 export const Section7: Story = {
   args: {
     children: <>GSM이 원하는 학교상</>,
-    point: { pointColor: '#7ACDF4', pointPosition: 'top', pointSize: '18px' },
+    point: {
+      pointColor: '#7ACDF4',
+      pointPosition: 'top',
+      pointSize: '1.125rem',
+    },
     font: { className: 'h1' },
   },
 };
@@ -70,7 +90,11 @@ export const Section7: Story = {
 export const Section8: Story = {
   args: {
     children: <>GSM과 함께하는 MOU 기업</>,
-    point: { pointColor: '#B2E449;', pointPosition: 'top', pointSize: '18px' },
+    point: {
+      pointColor: '#B2E449;',
+      pointPosition: 'top',
+      pointSize: '1.125rem',
+    },
     font: { className: 'h1' },
   },
 };
@@ -78,7 +102,11 @@ export const Section8: Story = {
 export const SemiTitle: Story = {
   args: {
     children: <>우리 학교 갤러리</>,
-    point: { pointColor: '#B2E449;', pointPosition: 'top', pointSize: '15px' },
+    point: {
+      pointColor: '#B2E449;',
+      pointPosition: 'top',
+      pointSize: '0.938rem',
+    },
     font: { className: 'title' },
   },
 };
@@ -89,7 +117,7 @@ export const BorderTitle: Story = {
     point: {
       pointColor: '#B2E449;',
       pointPosition: 'bottom',
-      pointSize: '13px',
+      pointSize: '0.813rem',
     },
     font: { className: 'border' },
   },

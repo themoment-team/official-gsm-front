@@ -14,7 +14,7 @@ const Point: React.FC<PointProps> = ({ size, position, color }) => (
       width: ${size};
       height: ${size};
       background-color: ${color};
-      ${position === 'top' ? 'top: 0' : 'bottom: 10px'}
+      ${position === 'top' ? 'top: 0' : 'bottom: 0.625rem'}
     `}
   />
 );
@@ -24,5 +24,5 @@ export default Point;
 const PointStyle = styled.div`
   border-radius: 50%;
   position: absolute;
-  right: -30px;
+  right: -1.875rem;
 `;
