@@ -11,10 +11,10 @@ const nextConfig = {
       source: '/api/client/:path*',
       destination: `${process.env.CLIENT_API_URL}/api/:path*`,
     },
-    // {
-    //   source: "/api/admin/:path*",
-    //   destination: `${process.env.ADMIN_API_URL}/api/:path*`,
-    // },
+    {
+      source: '/api/admin/:path*',
+      destination: `${process.env.ADMIN_API_URL}/:path*`,
+    },
   ],
   images: {
     domains: ['bucket.ottokeng.site'],

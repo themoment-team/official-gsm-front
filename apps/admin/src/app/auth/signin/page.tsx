@@ -19,7 +19,7 @@ export default function SignInPage() {
           <S.SkyBlueHighlight>학교 전용 구글 아이디</S.SkyBlueHighlight>로
           로그인해주세요.
         </S.Description>
-        <S.GoogleOAuthLink href='https://www.google.com'>
+        <S.GoogleOAuthLink href='/api/admin/oauth2/authorization/google'>
           <GoogleIcon />
           Google 로그인
         </S.GoogleOAuthLink>
