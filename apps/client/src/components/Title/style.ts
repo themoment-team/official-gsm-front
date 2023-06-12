@@ -3,13 +3,6 @@ import styled from '@emotion/styled';
 export const TitleContainer = styled.div`
   position: relative;
   display: inline-block;
-  .green {
-    background-color: #b2e449;
-  }
-
-  .blue {
-    background-color: #7acdf4;
-  }
 
   .border {
     line-height: 74px;
