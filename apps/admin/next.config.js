@@ -16,6 +16,13 @@ const nextConfig = {
       destination: `${process.env.ADMIN_API_URL}/:path*`,
     },
   ],
+  redirects: async () => [
+    {
+      source: '/api/signin',
+      destination: process.env.ADMIN_SIGNIN_URL,
+      permanent: true,
+    },
+  ],
   images: {
     domains: ['bucket.ottokeng.site'],
   },
