@@ -25,9 +25,3 @@ export const TitleContainer = styled.div`
     font-weight: 700;
   }
 `;
-
-export const Point = styled.div`
-  border-radius: 50%;
-  position: absolute;
-  right: -30px;
-`;

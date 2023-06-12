@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { css } from '@emotion/react';
+import { Point } from 'client/components';
 
 import * as S from './style';
 
@@ -23,14 +23,7 @@ const Title: React.FC<TitleProps> = ({
 }) => (
   <S.TitleContainer>
     <h1 className={className}>{children}</h1>
-    <S.Point
-      className={pointColor}
-      css={css`
-        width: ${pointSize};
-        height: ${pointSize};
-        ${pointPosition === 'top' ? 'top : 0' : 'bottom : 0'}
-      `}
-    />
+    <Point position={pointPosition} size={pointSize} color={pointColor} />
   </S.TitleContainer>
 );
 
