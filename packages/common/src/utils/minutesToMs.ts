@@ -1,5 +1,3 @@
-const minutesToMs = (min: number) => {
-  return min * 60 * 1000;
-};
+const minutesToMs = (min: number) => min * 60 * 100
 
 export default minutesToMs;
