@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 import { Title } from 'client/components';
-import { theme } from 'client/styles';
 import type { PointColorType } from 'client/types/Title';
 interface NewsTitleProps {
   children: React.ReactNode;
@@ -23,7 +22,7 @@ export const NewsTitleStyle = styled.h1`
   font-size: 1.75rem;
   line-height: 2.563rem;
   font-weight: 600;
-  color: ${theme.color.gray['090']};
+  color: ${({ theme }) => theme.color.gray['090']};
 `;
 
 export default NewsTitle;
