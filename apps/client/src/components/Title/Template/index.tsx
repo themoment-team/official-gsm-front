@@ -6,7 +6,7 @@ import type { PointColorType } from 'client/types/title';
 
 import * as S from './style';
 
-interface TitleProps {
+interface TitleTemplateProps {
   children: React.ReactNode;
 
   point: {
@@ -16,7 +16,7 @@ interface TitleProps {
   };
 }
 
-const TitleTemplate: React.FC<TitleProps> = ({
+const TitleTemplate: React.FC<TitleTemplateProps> = ({
   children,
   point: { pointPosition, pointSize, pointColor },
 }) => {
