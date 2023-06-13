@@ -1,12 +1,18 @@
 import styled from '@emotion/styled';
 
-export const NewsletterCardWrapper = styled.div`
+interface ColorProps {
+  date: string;
+  dateCircle: string;
+  wrapper: string;
+}
+
+export const NewsletterCardWrapper = styled.div<{ colors: ColorProps }>`
   display: flex;
   padding: 32px;
   gap: 32px;
   width: 397px;
   height: 180px;
-  background: rgba(122, 205, 244, 0.1);
+  background: ${({ colors }) => colors.wrapper};
   border-radius: 20px;
   cursor: pointer;
 `;
@@ -18,10 +24,10 @@ export const DateWrapper = styled.div`
   justify-content: space-between;
 `;
 
-export const DateCircle = styled.div`
+export const DateCircle = styled.div<{ colors: ColorProps }>`
   width: 60px;
   height: 60px;
-  background: #7acdf4;
+  background: ${({ colors }) => colors.dateCircle};
   opacity: 0.8;
   border-radius: 50%;
   display: flex;
@@ -29,12 +35,12 @@ export const DateCircle = styled.div`
   justify-content: center;
 `;
 
-export const DateText = styled.h1`
+export const DateText = styled.h1<{ colors: ColorProps }>`
   font-weight: 600;
   font-size: 28px;
   line-height: 41px;
   text-align: center;
-  color: #3c8aaf;
+  color: ${({ colors }) => colors.date};
 `;
 
 export const YearMonth = styled.p`
