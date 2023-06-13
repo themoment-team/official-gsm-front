@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { Title } from 'client/components';
+import { TitleTemplate } from 'client/components';
 import type { PointColorType } from 'client/types/title';
 interface NewsTitleProps {
   children: React.ReactNode;
@@ -13,9 +13,9 @@ const NewsTitle: React.FC<NewsTitleProps> = ({
   pointColor,
   className,
 }) => (
-  <Title point={{ pointColor, pointSize: '0.938rem', pointPosition: 'top' }}>
+  <TitleTemplate point={{ pointColor, pointSize: '0.938rem', pointPosition: 'top' }}>
     <NewsTitleStyle className={className}>{children}</NewsTitleStyle>
-  </Title>
+  </TitleTemplate>
 );
 
 export const NewsTitleStyle = styled.h1`

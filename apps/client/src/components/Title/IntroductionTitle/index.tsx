@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-import { Title } from 'client/components';
+import { TitleTemplate } from 'client/components';
 import type { PointColorType, PointPositionType } from 'client/types/title';
 
 interface IntroductionTitleProps {
@@ -18,11 +18,11 @@ const IntroductionTitle: React.FC<IntroductionTitleProps> = ({
   pointPosition = 'top',
   pointSize = '1.125rem',
 }) => (
-  <Title point={{ pointColor, pointSize, pointPosition }}>
+  <TitleTemplate point={{ pointColor, pointSize, pointPosition }}>
     <IntroductionTitleStyle className={className}>
       {children}
     </IntroductionTitleStyle>
-  </Title>
+  </TitleTemplate>
 );
 
 export default IntroductionTitle;

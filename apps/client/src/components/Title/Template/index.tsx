@@ -16,7 +16,7 @@ interface TitleProps {
   };
 }
 
-const Title: React.FC<TitleProps> = ({
+const TitleTemplate: React.FC<TitleProps> = ({
   children,
   point: { pointPosition, pointSize, pointColor },
 }) => {
@@ -37,4 +37,4 @@ const Title: React.FC<TitleProps> = ({
   );
 };
 
-export default Title;
+export default TitleTemplate;
