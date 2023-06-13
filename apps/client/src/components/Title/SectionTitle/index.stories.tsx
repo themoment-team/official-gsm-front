@@ -5,7 +5,7 @@ import SectionTitle from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'client/SectionTitle',
+  title: 'client/Title/SectionTitle',
   component: SectionTitle,
   parameters: {},
 } as Meta<typeof SectionTitle>;

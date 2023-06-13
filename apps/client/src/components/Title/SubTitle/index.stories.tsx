@@ -3,7 +3,7 @@ import SubTitle from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'client/SubTitle',
+  title: 'client/Title/SubTitle',
   component: SubTitle,
   parameters: {},
 } as Meta<typeof SubTitle>;
