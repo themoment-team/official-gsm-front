@@ -9,8 +9,8 @@ import { Button } from 'ui';
 export default function Home() {
   return (
     <>
-      <Button css={exampleCss}>button</Button>
-      <ExampleStyled>styled</ExampleStyled>
+      <Button>button</Button>
+      <ExampleStyled css={exampleCss}>styled</ExampleStyled>
     </>
   );
 }
@@ -21,5 +21,4 @@ const exampleCss = (theme: Theme) => css`
 
 const ExampleStyled = styled.div`
   ${({ theme }) => theme.typo.h1}
-  background-color: ${({ theme }) => theme.color.primary.lime};
 `;
