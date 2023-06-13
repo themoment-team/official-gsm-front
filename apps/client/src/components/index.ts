@@ -1,3 +1,3 @@
-export { default as Title } from './Title';
-export { default as NewsTitle } from './NewsTitle';
-export { default as IntroductionTitle } from './IntroductionTitle';
+export { default as Title } from './Title/Template';
+export { default as NewsTitle } from './Title/NewsTitle';
+export { default as IntroductionTitle } from './Title/IntroductionTitle';
