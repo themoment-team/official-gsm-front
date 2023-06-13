@@ -2,9 +2,10 @@ import styled from '@emotion/styled';
 
 import { Title } from 'client/components';
 import { theme } from 'client/styles';
+import type { PointColorType } from 'client/types/Title';
 interface NewsTitleProps {
   children: React.ReactNode;
-  pointColor: string;
+  pointColor: PointColorType;
   className?: string;
 }
 

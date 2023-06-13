@@ -2,6 +2,9 @@ import React from 'react';
 
 import { css } from '@emotion/react';
 
+import { theme } from 'client/styles';
+import type { PointColorType } from 'client/types/Title';
+
 import * as S from './style';
 
 interface TitleProps {
@@ -10,7 +13,7 @@ interface TitleProps {
   point: {
     pointSize: string;
     pointPosition: 'top' | 'bottom';
-    pointColor: string;
+    pointColor: PointColorType;
   };
 }
 
@@ -24,7 +27,7 @@ const Title: React.FC<TitleProps> = ({
       css={css`
         width: ${pointSize};
         height: ${pointSize};
-        background-color: ${pointColor};
+        background-color: ${theme.color.primary[pointColor]};
         right: ${pointPosition === 'top' ? '-1.875rem' : '-1rem'};
         ${pointPosition === 'top' ? 'top: 0' : 'bottom: 0.625rem'}
       `}
