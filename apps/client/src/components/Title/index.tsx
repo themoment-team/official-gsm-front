@@ -25,6 +25,7 @@ const Title: React.FC<TitleProps> = ({
         width: ${pointSize};
         height: ${pointSize};
         background-color: ${pointColor};
+        right: ${pointPosition === 'top' ? '-1.875rem' : '-1rem'};
         ${pointPosition === 'top' ? 'top: 0' : 'bottom: 0.625rem'}
       `}
     />

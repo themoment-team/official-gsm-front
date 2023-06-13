@@ -8,5 +8,4 @@ export const TitleContainer = styled.div`
 export const PointStyle = styled.div`
   border-radius: 50%;
   position: absolute;
-  right: -1.875rem;
 `;

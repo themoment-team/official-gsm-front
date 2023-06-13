@@ -16,6 +16,7 @@ export const Section1: Story = {
     pointColor: '#7ACDF4',
     className: 'navy',
     pointPosition: 'bottom',
+    pointSize: '10px',
   },
 };
 
