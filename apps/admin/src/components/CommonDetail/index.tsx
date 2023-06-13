@@ -23,7 +23,7 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
           />
           <EditButton href='/post/edit' />
           <S.Horizon />
-          <S.Content>{data.createdAt}</S.Content>
+          <S.Content>{data.postContent}</S.Content>
           <S.Horizon />
           {data.fileInfo.length !== 0 && (
             <>
