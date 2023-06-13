@@ -1,5 +1,7 @@
 import formatDate from 'ui/DateComponent/formatDate';
 
+import { theme } from 'client/styles';
+
 import type { ContentType } from 'api/client';
 
 import * as S from './style';
@@ -14,14 +16,14 @@ const NewsletterCard: React.FC<NewsletterCardProps> = ({
   color,
 }) => {
   const blue = {
-    date: '#3C8AAF',
-    dateCircle: '#7ACDF4',
+    date: theme.color.sub.blue,
+    dateCircle: theme.color.primary.sky,
     wrapper: 'rgba(122, 205, 244, 0.1);',
   };
 
   const green = {
     date: '#73962B',
-    dateCircle: '#B2E449',
+    dateCircle: theme.color.primary.lime,
     wrapper: 'rgba(178, 228, 73, 0.1);',
   };
 
