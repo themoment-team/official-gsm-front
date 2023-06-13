@@ -4,6 +4,6 @@ export const approveQueryKeys = {
 };
 
 export const authQueryKeys = {
-  patchUserName: () => ['auth', 'username'],
+  patchUsername: () => ['auth', 'username'],
   getUserInfo: () => ['auth', 'userinfo'],
 };
