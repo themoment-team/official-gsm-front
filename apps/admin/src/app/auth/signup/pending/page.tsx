@@ -1,6 +1,6 @@
 'use client';
 
-import { AuthTitle, AuthModel, AuthDescription } from 'components';
+import { AuthTitle, AuthModel, AuthDescription } from 'admin/components';
 
 import { Button } from 'ui';
 
