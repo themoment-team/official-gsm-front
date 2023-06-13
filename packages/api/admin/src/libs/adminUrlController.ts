@@ -4,5 +4,6 @@ export const approveUrl = {
 } as const;
 
 export const authUrl = {
-  username: () => `/auth/username`,
+  userName: () => `/auth/username`,
+  userInfo: () => `/auth/userinfo`,
 };
