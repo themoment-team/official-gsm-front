@@ -27,6 +27,8 @@ const NewsletterCard: React.FC<NewsletterCardProps> = ({
     wrapper: 'rgba(178, 228, 73, 0.1);',
   };
 
+  const colors = color === 'blue' ? blue : green;
+
   const createdAtDate = new Date(createdAt);
 
   const year = createdAtDate.getFullYear();
@@ -34,12 +36,10 @@ const NewsletterCard: React.FC<NewsletterCardProps> = ({
   const date = formatDate(createdAtDate.getDate());
 
   return (
-    <S.NewsletterCardWrapper colors={color === 'blue' ? blue : green}>
+    <S.NewsletterCardWrapper colors={colors}>
       <S.DateWrapper>
-        <S.DateCircle colors={color === 'blue' ? blue : green}>
-          <S.DateText colors={color === 'blue' ? blue : green}>
-            {date}
-          </S.DateText>
+        <S.DateCircle colors={colors}>
+          <S.DateText colors={colors}>{date}</S.DateText>
         </S.DateCircle>
         <S.YearMonth>{`${year}.${month}`}</S.YearMonth>
       </S.DateWrapper>
