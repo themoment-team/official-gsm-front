@@ -1,6 +1,6 @@
-import formatDate from 'ui/DateComponent/formatDate';
+import { useTheme } from '@emotion/react';
 
-import { theme } from 'client/styles';
+import formatDate from 'ui/DateComponent/formatDate';
 
 import type { ContentType } from 'api/client';
 
@@ -15,6 +15,7 @@ const NewsletterCard: React.FC<NewsletterCardProps> = ({
   post: { postTitle, createdAt, contentPreview },
   color,
 }) => {
+  const theme = useTheme();
   const blue = {
     date: theme.color.sub.blue,
     dateCircle: theme.color.primary.sky,
