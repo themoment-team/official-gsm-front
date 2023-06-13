@@ -53,6 +53,11 @@ module.exports = {
             group: 'external',
           },
           {
+            pattern: 'client/**',
+            group: 'internal',
+            position: 'before',
+          },
+          {
             pattern: 'admin/**',
             group: 'internal',
             position: 'before',

@@ -14,6 +14,5 @@ export const Primary: Story = {
   args: {
     totalPages: 5,
     pageNumber: 0,
-    setPageNumber: () => {},
   },
 };
