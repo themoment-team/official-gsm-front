@@ -8,6 +8,7 @@ export const NewsletterCardWrapper = styled.div`
   height: 180px;
   background: rgba(122, 205, 244, 0.1);
   border-radius: 20px;
+  cursor: pointer;
 `;
 
 export const DateWrapper = styled.div`
