@@ -9,6 +9,7 @@ interface IntroductionTitleProps {
   pointColor: string;
   className?: string;
   pointPosition?: PointPositionType;
+  pointSize?: string;
 }
 
 const IntroductionTitle: React.FC<IntroductionTitleProps> = ({
@@ -16,8 +17,9 @@ const IntroductionTitle: React.FC<IntroductionTitleProps> = ({
   pointColor,
   className,
   pointPosition = 'top',
+  pointSize = '1.125rem',
 }) => (
-  <Title point={{ pointColor, pointSize: '1.125rem', pointPosition }}>
+  <Title point={{ pointColor, pointSize, pointPosition }}>
     <IntroductionTitleStyle className={className}>
       {children}
     </IntroductionTitleStyle>
@@ -27,6 +29,7 @@ const IntroductionTitle: React.FC<IntroductionTitleProps> = ({
 export default IntroductionTitle;
 
 export const IntroductionTitleStyle = styled.h1`
+  color: #212121;
   font-size: 3rem;
   line-height: 4.438rem;
   font-weight: 700;
