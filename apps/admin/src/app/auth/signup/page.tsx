@@ -11,7 +11,7 @@ import { z } from 'zod';
 
 import { ToBackButton, Input, AuthTitle } from 'admin/components';
 
-import { usePatchUsername } from 'api/admin';
+import { useGetUserInfo, usePatchUsername } from 'api/admin';
 
 import { Button } from 'ui';
 
@@ -29,6 +29,7 @@ export default function SignupPage() {
   const { replace } = useRouter();
 
   const { mutate, isSuccess, isLoading } = usePatchUsername();
+  const { data: userInfo } = useGetUserInfo();
 
   const {
     register,
@@ -39,6 +40,8 @@ export default function SignupPage() {
   const onSubmit: SubmitHandler<FormType> = ({ name }) => {
     mutate(name);
   };
+
+  userInfo?.userName && replace('/auth/signup/pending');
 
   isSuccess && replace('/auth/signup/pending');
 
