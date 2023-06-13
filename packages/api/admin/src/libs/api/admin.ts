@@ -5,7 +5,7 @@ export const get = async (...args: Parameters<typeof adminInstance.get>) => {
     const { data } = await adminInstance.get(...args);
     return data;
   } catch (error) {
-    return error;
+    throw error;
   }
 };
 
@@ -15,7 +15,7 @@ export const post = async <T>(
   try {
     await adminInstance.post<T>(...args);
   } catch (error) {
-    return error;
+    throw error;
   }
 };
 
@@ -25,7 +25,7 @@ export const patch = async <T>(
   try {
     await adminInstance.patch<T>(...args);
   } catch (error) {
-    return error;
+    throw error;
   }
 };
 
@@ -35,6 +35,6 @@ export const del = async <T>(
   try {
     await adminInstance.delete<T>(...args);
   } catch (error) {
-    return error;
+    throw error;
   }
 };
