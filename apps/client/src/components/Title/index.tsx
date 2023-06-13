@@ -2,42 +2,32 @@ import React from 'react';
 
 import { css } from '@emotion/react';
 
-import { Point } from 'client/components';
-
 import * as S from './style';
 
 interface TitleProps {
   children: React.ReactNode;
-  font: {
-    className?: string;
-    color?: string;
-  };
+
   point: {
-    pointSize?: string;
-    pointPosition?: 'top' | 'bottom';
-    pointColor?: string;
+    pointSize: string;
+    pointPosition: 'top' | 'bottom';
+    pointColor: string;
   };
 }
 
 const Title: React.FC<TitleProps> = ({
   children,
-  font: { className = 'title', color = '#212121' },
-  point: {
-    pointPosition = 'top',
-    pointSize = '1.125rem',
-    pointColor = '#B2E449;',
-  },
+  point: { pointPosition, pointSize, pointColor },
 }) => (
   <S.TitleContainer>
-    <h1
+    {children}
+    <S.PointStyle
       css={css`
-        color: ${color};
+        width: ${pointSize};
+        height: ${pointSize};
+        background-color: ${pointColor};
+        ${pointPosition === 'top' ? 'top: 0' : 'bottom: 0.625rem'}
       `}
-      className={className}
-    >
-      {children}
-    </h1>
-    <Point position={pointPosition} size={pointSize} color={pointColor} />
+    />
   </S.TitleContainer>
 );
 
