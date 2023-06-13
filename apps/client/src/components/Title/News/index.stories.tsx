@@ -5,7 +5,7 @@ import NewsTitle from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'client/NewsTitle',
+  title: 'client/Title/NewsTitle',
   component: NewsTitle,
   parameters: {},
 } as Meta<typeof NewsTitle>;

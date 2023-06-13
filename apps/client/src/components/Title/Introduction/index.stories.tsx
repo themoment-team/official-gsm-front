@@ -1,10 +1,11 @@
 import { theme } from 'client/styles';
+
 import IntroductionTitle from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'client/IntroductionTitle',
+  title: 'client/Title/IntroductionTitle',
   component: IntroductionTitle,
   parameters: {},
 } as Meta<typeof IntroductionTitle>;
