@@ -52,15 +52,15 @@ export const DateCircle = styled.div`
 export const DateText = styled.h1`
   text-align: center;
   font-weight: 600;
-  font-size: ${({ theme: { typo } }) => typo.title.fontSize};
-  line-height: ${({ theme: { typo } }) => typo.title.lineHeight};
+  font-size: ${({ theme: { typo } }) => typo.title};
+  line-height: ${({ theme: { typo } }) => typo.title};
 `;
 
 export const YearMonth = styled.p`
   text-align: center;
   font-weight: 400;
-  font-size: ${({ theme: { typo } }) => typo.body2.fontSize};
-  line-height: ${({ theme: { typo } }) => typo.body2.lineHeight};
+  font-size: ${({ theme: { typo } }) => typo.body2};
+  line-height: ${({ theme: { typo } }) => typo.body2};
   color: ${({ theme: { color } }) => color.sub.blue};
 `;
 
@@ -73,14 +73,14 @@ export const TextWrapper = styled.div`
 
 export const Title = styled.h4`
   font-weight: 600;
-  font-size: ${({ theme: { typo } }) => typo.h4.fontSize};
-  line-height: ${({ theme: { typo } }) => typo.h4.lineHeight};
+  font-size: ${({ theme: { typo } }) => typo.h4};
+  line-height: ${({ theme: { typo } }) => typo.h4};
   color: ${({ theme: { color } }) => color.gray['090']};
 `;
 
 export const Preview = styled.h4`
   font-weight: 400;
-  font-size: ${({ theme: { typo } }) => typo.body1.fontSize};
-  line-height: ${({ theme: { typo } }) => typo.body1.fontSize};
+  font-size: ${({ theme: { typo } }) => typo.body1};
+  line-height: ${({ theme: { typo } }) => typo.body1};
   color: ${({ theme: { color } }) => color.gray['080']};
 `;
