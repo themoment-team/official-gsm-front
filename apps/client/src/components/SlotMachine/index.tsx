@@ -1,24 +1,48 @@
 import React from 'react';
 
 import { css } from '@emotion/react';
-
+import UnderscoreIcon from 'client/assets/svg/icon/Underscore';
 import * as S from './style';
 
 interface SlotMachineProps {}
-
 const SlotMachine: React.FC<SlotMachineProps> = () => (
-  <S.SlotMachine>
-    뭐든지 [
-    <S.Animation>
-      <li>🎨</li>
-      <li>🌸</li>
-      <li>🌺</li>
-      <li>🌼</li>
-      <li>🌹</li>
-      <li>🌈</li>
-    </S.Animation>
-    ] 할 수 있어
-  </S.SlotMachine>
+  <div
+    css={css`
+      background-color: palegoldenrod;
+      height: 1000px;
+    `}
+  >
+    <S.SlotMachineAnimation>
+      <span>뭐든지</span>
+      <S.ListWrap>
+        [
+        <S.Wrap className='wrap'>
+          <S.List className='rolling'>
+            <S.Item>
+              <span className='imoji'>🎨</span>
+            </S.Item>
+            <S.Item>
+              <span className='imoji'>💻</span>
+            </S.Item>
+            <S.Item>
+              <span className='imoji'>🎮</span>
+            </S.Item>
+            <S.Item>
+              <span className='imoji'>🛠️</span>
+            </S.Item>
+            <S.Item>
+              <span className='imoji'>📱</span>
+            </S.Item>
+          </S.List>
+        </S.Wrap>
+        ]
+      </S.ListWrap>
+      <S.Icon>
+        <UnderscoreIcon />
+      </S.Icon>
+      <span>할 수 있어</span>
+    </S.SlotMachineAnimation>
+  </div>
 );
 
 export default SlotMachine;
