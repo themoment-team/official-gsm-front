@@ -11,7 +11,7 @@ import { z } from 'zod';
 
 import { ToBackButton, Input, AuthTitle } from 'admin/components';
 
-import { useGetUserInfo, usePatchUsername } from 'api/admin';
+import { useGetUserInfo, usePatchUserName } from 'api/admin';
 
 import { Button } from 'ui';
 
@@ -28,7 +28,7 @@ type FormType = z.infer<typeof schema>;
 export default function SignupPage() {
   const { replace } = useRouter();
 
-  const { mutate, isSuccess, isLoading } = usePatchUsername();
+  const { mutate, isSuccess, isLoading } = usePatchUserName();
   const { data: userInfo } = useGetUserInfo();
 
   const {
