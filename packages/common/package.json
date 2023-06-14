@@ -4,7 +4,6 @@
   "license": "MIT",
   "main": "./index.ts",
   "dependencies": {
-    "@emotion/react": "^11.10.6",
     "emotion-reset": "^3.0.1",
     "tsconfig": "workspace:^",
     "typescript": "5.0.4"
