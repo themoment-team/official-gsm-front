@@ -1,0 +1,28 @@
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
+
+interface SectionTitleProps {
+  children: React.ReactNode;
+  textAlign?: 'center' | 'left' | 'right';
+}
+
+const SectionTitle: React.FC<SectionTitleProps> = ({
+  children,
+  textAlign = 'center',
+}) => (
+  <SectionTitleContainer
+    css={css`
+      text-align: ${textAlign};
+    `}
+  >
+    {children}
+  </SectionTitleContainer>
+);
+
+export default SectionTitle;
+
+const SectionTitleContainer = styled.div`
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.75rem;
+`;
