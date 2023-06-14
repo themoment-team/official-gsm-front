@@ -1,18 +1,33 @@
 import styled from '@emotion/styled';
 
-interface ColorProps {
-  date: string;
-  dateCircle: string;
-  wrapper: string;
-}
+export const ExampleDiv = styled.div`
+  &:nth-child(odd) {
+    background: rgba(122, 205, 244, 0.1);
+    div div {
+      background-color: ${({ theme: { color } }) => color.primary.sky};
+    }
+    h1 {
+      color: ${({ theme: { color } }) => color.sub.blue};
+    }
+  }
 
-export const NewsletterCardWrapper = styled.div<{ colors: ColorProps }>`
+  &:nth-child(even) {
+    background: rgba(178, 228, 73, 0.1);
+    div div {
+      background-color: ${({ theme: { color } }) => color.primary.lime};
+    }
+    h1 {
+      color: #73962b;
+    }
+  }
+`;
+
+export const NewsletterCardWrapper = styled.div`
   display: flex;
   padding: 2rem;
   gap: 2rem;
   width: 24.8125rem;
   height: 11.25rem;
-  background: ${({ colors }) => colors.wrapper};
   border-radius: 1.25rem;
   cursor: pointer;
 `;
@@ -24,10 +39,9 @@ export const DateWrapper = styled.div`
   justify-content: space-between;
 `;
 
-export const DateCircle = styled.div<{ colors: ColorProps }>`
+export const DateCircle = styled.div`
   width: 3.75rem;
   height: 3.75rem;
-  background: ${({ colors }) => colors.dateCircle};
   opacity: 0.8;
   border-radius: 50%;
   display: flex;
@@ -35,19 +49,18 @@ export const DateCircle = styled.div<{ colors: ColorProps }>`
   justify-content: center;
 `;
 
-export const DateText = styled.h1<{ colors: ColorProps }>`
+export const DateText = styled.h1`
   text-align: center;
   font-weight: 600;
   font-size: ${({ theme: { typo } }) => typo.title.fontSize};
   line-height: ${({ theme: { typo } }) => typo.title.lineHeight};
-  color: ${({ colors }) => colors.date};
 `;
 
 export const YearMonth = styled.p`
   text-align: center;
   font-weight: 400;
   font-size: ${({ theme: { typo } }) => typo.body2.fontSize};
-  line-height: ${({ theme: { typo } }) => typo.body2.fontSize};
+  line-height: ${({ theme: { typo } }) => typo.body2.lineHeight};
   color: ${({ theme: { color } }) => color.sub.blue};
 `;
 
@@ -61,7 +74,7 @@ export const TextWrapper = styled.div`
 export const Title = styled.h4`
   font-weight: 600;
   font-size: ${({ theme: { typo } }) => typo.h4.fontSize};
-  line-height: ${({ theme: { typo } }) => typo.h4.fontSize};
+  line-height: ${({ theme: { typo } }) => typo.h4.lineHeight};
   color: ${({ theme: { color } }) => color.gray['090']};
 `;
 
