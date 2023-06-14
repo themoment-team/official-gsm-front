@@ -9,7 +9,7 @@ const SlotMachine: React.FC<SlotMachineProps> = () => (
   <div
     css={css`
       background-color: palegoldenrod;
-      height: 1000px;
+      height: 62.5rem;
     `}
   >
     <S.SlotMachineAnimation>

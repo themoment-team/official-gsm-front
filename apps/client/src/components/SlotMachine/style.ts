@@ -14,30 +14,30 @@ const rotate1 = keyframes`
 `;
 
 export const SlotMachineAnimation = styled.div`
-  width: 983px;
-  height: 148px;
+  width: 61.4375rem;
+  height: 9.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-style: normal;
   font-weight: 700;
-  font-size: 99.802px;
+  font-size: 6.2376rem;
   color: #ffffff;
 `;
 
 export const ListWrap = styled.div`
-  width: 224px;
+  width: 14rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0px 40px;
+  margin: 0rem 2.5rem;
   position: relative;
-  bottom: 8px;
+  bottom: 0.5rem;
 `;
 
 export const Wrap = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
   text-align: center;
   position: relative;
   display: flex;
@@ -47,8 +47,8 @@ export const Wrap = styled.div`
 `;
 
 export const List = styled.ul`
-  width: 50px;
-  height: 50px;
+  width: 3.125rem;
+  height: 3.125rem;
   text-align: center;
   position: absolute;
   top: 0;
@@ -67,8 +67,8 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-  width: 100px;
-  height: 500px;
+  width: 6.25rem;
+  height: 31.25rem;
   text-align: center;
   position: absolute;
   left: 0;
@@ -78,29 +78,29 @@ export const Item = styled.li`
 
   .imoji {
     display: block;
-    font-size: 100px;
-    line-height: 100px;
+    font-size: 6.25rem;
+    line-height: 6.25rem;
   }
 
   &:nth-child(1) {
-    transform: rotateX(0) translateZ(75px);
+    transform: rotateX(0) translateZ(4.6875rem);
   }
   &:nth-child(2) {
-    transform: rotateX(72deg) translateZ(75px);
+    transform: rotateX(72deg) translateZ(4.6875rem);
   }
   &:nth-child(3) {
-    transform: rotateX(144deg) translateZ(75px);
+    transform: rotateX(144deg) translateZ(4.6875rem);
   }
   &:nth-child(4) {
-    transform: rotateX(216deg) translateZ(75px);
+    transform: rotateX(216deg) translateZ(4.6875rem);
   }
   &:nth-child(5) {
-    transform: rotateX(288deg) translateZ(75px);
+    transform: rotateX(288deg) translateZ(4.6875rem);
   }
 `;
 
 export const Icon = styled.div`
   position: absolute;
-  top: 130px;
-  left: 340px;
+  top: 8.125rem;
+  left: 21.25rem;
 `;
