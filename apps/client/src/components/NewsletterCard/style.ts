@@ -1,9 +1,12 @@
 import styled from '@emotion/styled';
 
 export const ExampleDiv = styled.div`
+  display: flex;
   &:nth-child(odd) {
-    background: rgba(122, 205, 244, 0.1);
-    div div {
+    .newsletterCardWrapper {
+      background: rgba(122, 205, 244, 0.1);
+    }
+    .dateCircle {
       background-color: ${({ theme: { color } }) => color.primary.sky};
     }
     h1 {
