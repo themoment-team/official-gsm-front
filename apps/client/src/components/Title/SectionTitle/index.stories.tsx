@@ -1,4 +1,4 @@
-import { SubTitle } from 'client/components';
+import { IntroductionTitle, SubTitle } from 'client/components';
 
 import SectionTitle from '.';
 
@@ -12,37 +12,82 @@ export default {
 
 type Story = StoryObj<typeof SectionTitle>;
 
-export const Primary: Story = {
+export const Section3: Story = {
   args: {
-    textAlign: 'center',
     children: (
       <>
-        <SubTitle>창의 융합력을 갖춘 글로벌 소프트웨어 마이스터 육성</SubTitle>
+        <IntroductionTitle pointColor='sky'>
+          학교가 추구하는 교육 방향
+        </IntroductionTitle>
         <SubTitle>창의 융합력을 갖춘 글로벌 소프트웨어 마이스터 육성</SubTitle>
       </>
     ),
   },
 };
 
-export const Left: Story = {
+export const Section4: Story = {
+  args: {
+    children: (
+      <>
+        <IntroductionTitle pointColor='lime'>
+          소프트웨어 인재 양성을 위한 교육 과정
+        </IntroductionTitle>
+        <SubTitle>스스로 삶의 힘을 키우고 상생의정신을 함양하는 학교</SubTitle>
+      </>
+    ),
+  },
+};
+
+export const Section5: Story = {
   args: {
     textAlign: 'left',
     children: (
       <>
-        <SubTitle>창의 융합력을 갖춘 글로벌 소프트웨어 마이스터 육성</SubTitle>
-        <SubTitle>창의 융합력을 갖춘 글로벌 소프트웨어 마이스터 육성</SubTitle>
+        <IntroductionTitle pointColor='sky'>
+          창의 융합력을 갖춘 <br />
+          글로벌 소프트웨어 학과 소개
+        </IntroductionTitle>
+        <SubTitle>체계적인 교육과정을 제공하는 소프트웨어 학과</SubTitle>
       </>
     ),
   },
 };
 
-export const Right: Story = {
+export const Section6: Story = {
   args: {
-    textAlign: 'right',
     children: (
       <>
-        <SubTitle>창의 융합력을 갖춘 글로벌 소프트웨어 마이스터 육성</SubTitle>
-        <SubTitle>창의 융합력을 갖춘 글로벌 소프트웨어 마이스터 육성</SubTitle>
+        <IntroductionTitle pointColor='lime'>
+          꿈 끼 업(UP) 고(GO) 특색사업
+        </IntroductionTitle>
+        <SubTitle>꿈˙끼˙업(UP)˙고(GO)</SubTitle>
+      </>
+    ),
+  },
+};
+
+export const Section7: Story = {
+  args: {
+    textAlign: 'left',
+    children: (
+      <>
+        <IntroductionTitle pointColor='sky'>
+          GSM이 원하는 학교상
+        </IntroductionTitle>
+        <SubTitle>소프트웨어 시대를 이끌어 나갈 인재</SubTitle>
+      </>
+    ),
+  },
+};
+
+export const Section8: Story = {
+  args: {
+    children: (
+      <>
+        <IntroductionTitle pointColor='lime'>
+          GSM과 함께하는 MOU 기업
+        </IntroductionTitle>
+        <SubTitle>꿈˙끼˙업(UP)˙고(GO)</SubTitle>
       </>
     ),
   },
