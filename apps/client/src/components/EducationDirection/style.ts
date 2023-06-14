@@ -1,34 +1,29 @@
 import styled from '@emotion/styled';
 
 export const EducationDirectionStyle = styled.div`
-  /* white */
-
-  background: #ffffff;
-  /* elevation_blue */
-
-  box-shadow: 0px 4px 40px rgba(175, 198, 209, 0.2);
-  border-radius: 30px;
-  height: 306px;
-  width: 388px;
-  padding: 32px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 1.25rem;
+  width: 24.25rem;
+  height: 19.125rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0rem 0.25rem 2.5rem rgba(175, 198, 209, 0.2);
+  border-radius: 1.875rem;
 `;
 
 export const Title = styled.h3`
   font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
-  color: #212121;
+  ${({ theme }) => theme.typo.h3};
+
+  color: ${({ theme }) => theme.color.gray['090']};
 `;
 
 export const SubTitle = styled.li`
-  line-height: 24px;
-  font-style: normal;
   font-weight: 400;
-  font-size: 16px;
-  color: #212121;
+
+  ${({ theme }) => theme.typo.body1};
+  color: ${({ theme }) => theme.color.gray['090']};
   list-style: initial;
   list-style-position: inside;
 `;

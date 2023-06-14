@@ -1,18 +1,18 @@
 import styled from '@emotion/styled';
 
 export const Layout = styled.div`
-  width: 100vw;
-  height: 865px;
-  background: ${({ theme }) => theme.color.background};
-  padding: 180px 340px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 80px;
+  gap: 5rem;
+  width: 100vw;
+  height: 54.0625rem;
+  padding: 11.25rem 21.25rem;
+  background-color: ${({ theme }) => theme.color.background};
 `;
 
 export const EducationDirectionLayout = styled.div`
   display: flex;
-  gap: 38px;
+  gap: 2.375rem;
 `;
