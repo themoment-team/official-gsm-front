@@ -3,10 +3,13 @@ import styled from '@emotion/styled';
 
 interface SectionTitleProps {
   children: React.ReactNode;
-  textAlign: 'center' | 'left' | 'right';
+  textAlign?: 'center' | 'left' | 'right';
 }
 
-const SectionTitle: React.FC<SectionTitleProps> = ({ children, textAlign }) => (
+const SectionTitle: React.FC<SectionTitleProps> = ({
+  children,
+  textAlign = 'center',
+}) => (
   <SectionTitleContainer
     css={css`
       text-align: ${textAlign};
@@ -19,7 +22,7 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ children, textAlign }) => (
 export default SectionTitle;
 
 const SectionTitleContainer = styled.div`
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   gap: 0.75rem;
 `;
