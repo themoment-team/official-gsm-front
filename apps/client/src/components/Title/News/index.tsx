@@ -13,7 +13,9 @@ const NewsTitle: React.FC<NewsTitleProps> = ({
   pointColor,
   className,
 }) => (
-  <TitleTemplate point={{ pointColor, pointSize: '0.938rem', pointPosition: 'top' }}>
+  <TitleTemplate
+    point={{ pointColor, pointSize: '0.938rem', pointPosition: 'top' }}
+  >
     <NewsTitleStyle className={className}>{children}</NewsTitleStyle>
   </TitleTemplate>
 );
