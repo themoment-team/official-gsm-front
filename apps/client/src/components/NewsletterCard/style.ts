@@ -36,19 +36,19 @@ export const DateCircle = styled.div<{ colors: ColorProps }>`
 `;
 
 export const DateText = styled.h1<{ colors: ColorProps }>`
+  text-align: center;
   font-weight: 600;
   font-size: ${({ theme: { typo } }) => typo.title.fontSize};
   line-height: ${({ theme: { typo } }) => typo.title.lineHeight};
-  text-align: center;
   color: ${({ colors }) => colors.date};
 `;
 
 export const YearMonth = styled.p`
+  text-align: center;
   font-weight: 400;
   font-size: ${({ theme: { typo } }) => typo.body2.fontSize};
   line-height: ${({ theme: { typo } }) => typo.body2.fontSize};
-  text-align: center;
-  color: #3c8aaf;
+  color: ${({ theme: { color } }) => color.sub.blue};
 `;
 
 export const TextWrapper = styled.div`
@@ -62,12 +62,12 @@ export const Title = styled.h4`
   font-weight: 600;
   font-size: ${({ theme: { typo } }) => typo.h4.fontSize};
   line-height: ${({ theme: { typo } }) => typo.h4.fontSize};
-  color: #212121;
+  color: ${({ theme: { color } }) => color.gray['090']};
 `;
 
 export const Preview = styled.h4`
   font-weight: 400;
   font-size: ${({ theme: { typo } }) => typo.body1.fontSize};
   line-height: ${({ theme: { typo } }) => typo.body1.fontSize};
-  color: #424242;
+  color: ${({ theme: { color } }) => color.gray['080']};
 `;
