@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 
 import styled from '@emotion/styled';
 
-import { AuthTitle, AuthModel, ToBackButton } from 'components';
+import { AuthTitle, AuthModel, ToBackButton } from 'admin/components';
 
 import { Button } from 'ui';
 

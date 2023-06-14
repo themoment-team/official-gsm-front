@@ -36,7 +36,8 @@ export default function WritePage() {
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log(data);
+    // eslint-disable-next-line no-console
+    console.info(data);
   };
 
   return (

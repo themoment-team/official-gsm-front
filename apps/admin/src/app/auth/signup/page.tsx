@@ -36,9 +36,8 @@ export default function SignupPage() {
     formState: { errors },
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
+  const onSubmit: SubmitHandler<FormValues> = () => {
     setIsLoading(true);
-    console.log(data);
     setTimeout(() => setIsLoading(false), 1000);
     replace('/auth/signup/pending');
   };
