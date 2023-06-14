@@ -11,7 +11,6 @@ const SubTitle: React.FC<SubTitleProps> = ({ children }) => (
 export default SubTitle;
 
 export const SubTitleStyle = styled.div`
-  font-size: 1.5rem;
-  line-height: 2.25rem;
-  color: #616161;
+  ${({ theme }) => theme.typo.h3};
+  color: ${({ theme }) => theme.color.gray['070']};
 `;
