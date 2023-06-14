@@ -41,9 +41,9 @@ export default function SignupPage() {
     mutate(name);
   };
 
-  userInfo?.userName && replace('/auth/signup/pending');
-
-  isSuccess && replace('/auth/signup/pending');
+  if (userInfo?.userName || isSuccess) {
+    replace('/auth/signup/pending');
+  }
 
   return (
     <>
