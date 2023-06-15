@@ -111,3 +111,17 @@ export const ErrorMessage = styled.p`
   margin-top: 1rem;
   color: #f93535;
 `;
+
+export const FileTitleWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+export const FileCardBox = styled.div`
+  margin-top: 22px;
+`;
+
+export const FileCardWrapper = styled.div`
+  margin-bottom: 20px;
+`;
