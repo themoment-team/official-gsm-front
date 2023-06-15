@@ -48,7 +48,7 @@ export const Wrap = styled.div`
 `;
 
 export const List = styled.ul`
-  height: 50px;
+  height: 3.125rem;
   text-align: center;
   position: absolute;
   top: 0;
