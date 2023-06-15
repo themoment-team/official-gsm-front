@@ -1,18 +1,18 @@
 import styled from '@emotion/styled';
 
 export const LinkToHelloGSMWrapper = styled.div`
-  width: 1238px;
-  height: 129px;
+  width: 77.375;
+  height: 8.0625rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: linear-gradient(90deg, #35d391 0%, #6cabe4 48.96%, #c0fbff 100%);
-  border-radius: 20px;
+  border-radius: 1.25rem;
 `;
 
 export const TextWrapper = styled.div`
-  height: 73px;
+  height: 4.5625rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -28,7 +28,7 @@ export const AdmissionText = styled.h3`
 
 export const HashTagWrapper = styled.div`
   display: flex;
-  gap: 16px;
+  gap: 1rem;
 `;
 
 export const HashTag = styled.h4`
