@@ -1,9 +1,7 @@
 import { adminInstance } from './instance';
 
-export const get = async (...args: Parameters<typeof adminInstance.get>) => {
-  const { data } = await adminInstance.get(...args);
-  return data;
-};
+export const get = async (...args: Parameters<typeof adminInstance.get>) =>
+  await adminInstance.get(...args);
 
 export const post = async <T>(...args: Parameters<typeof adminInstance.post>) =>
   await adminInstance.post<T>(...args);
