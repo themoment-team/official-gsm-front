@@ -5,7 +5,7 @@ export const get = async (...args: Parameters<typeof clientInstance.get>) => {
     const { data } = await clientInstance.get(...args);
     return data;
   } catch (error) {
-    return error;
+    throw error;
   }
 };
 
@@ -15,7 +15,7 @@ export const post = async <T>(
   try {
     await clientInstance.post<T>(...args);
   } catch (error) {
-    return error;
+    throw error;
   }
 };
 
@@ -25,7 +25,7 @@ export const patch = async <T>(
   try {
     await clientInstance.patch<T>(...args);
   } catch (error) {
-    return error;
+    throw error;
   }
 };
 
@@ -35,6 +35,6 @@ export const del = async <T>(
   try {
     await clientInstance.delete<T>(...args);
   } catch (error) {
-    return error;
+    throw error;
   }
 };
