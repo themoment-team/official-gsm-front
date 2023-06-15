@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { SubmitHandler } from 'react-hook-form';
@@ -13,6 +13,7 @@ import {
   Category,
   UploadButton,
   Header,
+  FileCard,
 } from 'admin/components';
 import * as S from 'admin/styles/page/write';
 
@@ -31,6 +32,8 @@ const schema = z.object({
 type FormValues = z.infer<typeof schema>;
 
 export default function WritePage() {
+  const [files, setFiles] = useState<File[]>([]);
+
   const {
     register,
     handleSubmit,
@@ -39,7 +42,21 @@ export default function WritePage() {
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     // eslint-disable-next-line no-console
-    console.info(data);
+
+    // console.log(files);
+
+    const contents = {
+      title: data.title,
+      content: data.content,
+      files: files,
+
+      // file:
+    };
+    console.log(contents);
+  };
+
+  const postFile = () => {
+    setFiles([...files, ...Array.from(fileInput.current?.files as FileList)]);
   };
 
   const fileInput = useRef<HTMLInputElement>(null);
@@ -48,10 +65,25 @@ export default function WritePage() {
     fileInput.current?.click();
   };
 
-  const handleChange = () => {
-    if (fileInput && fileInput.current) {
-    }
-  };
+  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   // if (fileInput && fileInput.current) {
+  //   //   const file = fileInput.current.files as FileList | Blob;
+  //   //   const reader = new FileReader();
+
+  //   //   reader.onload = (event) => {
+  //   //     const imageUrl = event.target as FileReader;
+  //   //     console.log('sex', imageUrl);
+  //   //   };
+  //   //   reader.readAsDataURL(file);
+  //   // }
+  //   if (!e.target.files) return;
+  //   const file = e.target.files[0];
+  //   if (file) {
+  //     const image = window.URL.createObjectURL(file);
+  //     console.log(file);
+  //     console.log(image);
+  //   }
+  // };
 
   return (
     <>
@@ -92,23 +124,51 @@ export default function WritePage() {
             )}
           </div>
           <div>
-            <S.FormItemTitle>첨부 파일</S.FormItemTitle>
-            <S.UploadBox>
-              <S.UploadTitle>
-                첫번째 등록하신 이미지는 썸네일 역할을 합니다.
-              </S.UploadTitle>
-              <UploadButton onClick={handleClick} />
-              <input
-                type='file'
-                ref={fileInput}
-                style={{ display: 'none' }}
-                onChange={handleChange}
-              />
-            </S.UploadBox>
+            {files[0] ? (
+              <div>
+                <S.FileTitleWrapper>
+                  <S.FormItemTitle>첨부 파일</S.FormItemTitle>
+                  <UploadButton onClick={handleClick} />
+                  <input
+                    type='file'
+                    onChange={postFile}
+                    ref={fileInput}
+                    style={{ display: 'none' }}
+                    multiple
+                  />
+                </S.FileTitleWrapper>
+                <S.FileCardBox>
+                  {files.map((file) => (
+                    <S.FileCardWrapper key={file.name}>
+                      <FileCard fileName={file.name} />
+                    </S.FileCardWrapper>
+                  ))}
+                </S.FileCardBox>
+              </div>
+            ) : (
+              <>
+                <S.FormItemTitle>첨부 파일</S.FormItemTitle>
+                <S.UploadBox>
+                  <S.UploadTitle>
+                    첫번째 등록하신 이미지는 썸네일 역할을 합니다.
+                  </S.UploadTitle>
+                  <UploadButton onClick={handleClick} />
+                  <input
+                    type='file'
+                    onChange={postFile}
+                    ref={fileInput}
+                    style={{ display: 'none' }}
+                    multiple
+                  />
+                </S.UploadBox>
+              </>
+            )}
           </div>
           <S.BtnWrap>
             <S.CancelBtn>취소</S.CancelBtn>
-            <Button width='22.5625rem'>완료</Button>
+            <Button width='22.5625rem' type='submit'>
+              완료
+            </Button>
           </S.BtnWrap>
         </S.FormWrap>
       </S.WritePageWrap>
