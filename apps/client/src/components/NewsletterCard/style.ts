@@ -74,7 +74,6 @@ export const TextWrapper = styled.div`
   h4 {
     overflow: hidden;
     display: -webkit-box;
-    text-overflow: ellipsis;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
