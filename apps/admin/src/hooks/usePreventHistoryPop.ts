@@ -7,8 +7,6 @@ export const usePreventHistoryPop = () => {
 
   useEffect(() => {
     history.pushState(null, '', location.href);
-    window.addEventListener('popstate', preventHistoryPop);
-
-    return () => window.removeEventListener('popstate', preventHistoryPop);
+    window.onpopstate = () => setTimeout(preventHistoryPop, 0);
   }, []);
 };
