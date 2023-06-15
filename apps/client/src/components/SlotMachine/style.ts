@@ -1,24 +1,23 @@
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
-
+// 회전하는 횟수를 지정합니다 (360deg -> 1회전)
+// 최종 아이템에 도달하면 속도가 느려집니다
 const rotate1 = keyframes`
   0%{
     transform: rotateX(0deg);
   }
   90% {
-    transform: rotateX(-1740deg);
+    transform: rotateX(-2100deg);
   }
   100% {
-    transform: rotateX(-1800deg);
+    transform: rotateX(-2160deg);
   }
 `;
 
 export const SlotMachineAnimation = styled.div`
   width: 61.4375rem;
-  height: 9.25rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: start;
   font-style: normal;
   font-weight: 700;
   font-size: 6.2376rem;
@@ -35,26 +34,27 @@ export const ListWrap = styled.div`
   bottom: 0.5rem;
 `;
 
+export const ListIconWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const Wrap = styled.div`
   width: 6.25rem;
   height: 6.25rem;
   text-align: center;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
 `;
 
 export const List = styled.ul`
-  width: 3.125rem;
-  height: 3.125rem;
+  height: 50px;
   text-align: center;
   position: absolute;
   top: 0;
   left: 0;
   margin: 0;
-  animation-duration: 2s;
+  animation-duration: 20s;
   animation-timing-function: linear;
   transform-style: preserve-3d;
   transform-origin: 50% 100%;
@@ -68,39 +68,38 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   width: 6.25rem;
-  height: 31.25rem;
+  height: 100px;
   text-align: center;
   position: absolute;
   left: 0;
   top: 0;
   list-style: none;
   transform-origin: 50% 50%;
+  background-color: palegoldenrod;
 
   .imoji {
     display: block;
     font-size: 6.25rem;
     line-height: 6.25rem;
   }
+  // 아이템 개수가 5개 이므로 108deg 씩 더합니다
+  // z 속성은 아이템간의 간격을 결정한다고 보시면 됩니다
 
-  &:nth-child(1) {
-    transform: rotateX(0) translateZ(4.6875rem);
+  &:nth-of-type(1) {
+    transform: rotateX(0) translateZ(130px);
   }
-  &:nth-child(2) {
-    transform: rotateX(72deg) translateZ(4.6875rem);
+  &:nth-of-type(2) {
+    transform: rotateX(108deg) translateZ(130px);
   }
-  &:nth-child(3) {
-    transform: rotateX(144deg) translateZ(4.6875rem);
+  &:nth-of-type(3) {
+    transform: rotateX(216deg) translateZ(130px);
   }
-  &:nth-child(4) {
-    transform: rotateX(216deg) translateZ(4.6875rem);
+  &:nth-of-type(4) {
+    transform: rotateX(324deg) translateZ(130px);
   }
-  &:nth-child(5) {
-    transform: rotateX(288deg) translateZ(4.6875rem);
+  &:nth-of-type(5) {
+    transform: rotateX(432deg) translateZ(130px);
   }
 `;
 
-export const Icon = styled.div`
-  position: absolute;
-  top: 8.125rem;
-  left: 21.25rem;
-`;
+export const Icon = styled.div``;

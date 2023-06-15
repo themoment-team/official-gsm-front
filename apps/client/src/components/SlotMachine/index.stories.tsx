@@ -2,7 +2,7 @@ import SlotMachine from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'admin/SlotMachine',
+  title: 'client/SlotMachine',
   component: SlotMachine,
   parameters: {},
 } as Meta<typeof SlotMachine>;
@@ -10,5 +10,7 @@ export default {
 type Story = StoryObj<typeof SlotMachine>;
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    pointColor: 'lime',
+  },
 };
