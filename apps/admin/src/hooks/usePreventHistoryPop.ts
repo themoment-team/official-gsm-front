@@ -1,10 +1,14 @@
 import { useEffect } from 'react';
 
 export const usePreventHistoryPop = () => {
+  const preventHistoryPop = () => {
+    history.pushState(null, '', location.href);
+  };
+
   useEffect(() => {
     history.pushState(null, '', location.href);
-    window.onpopstate = function () {
-      history.go(1);
-    };
+    window.addEventListener('popstate', preventHistoryPop);
+
+    return () => window.removeEventListener('popstate', preventHistoryPop);
   }, []);
 };
