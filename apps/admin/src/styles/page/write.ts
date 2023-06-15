@@ -119,9 +119,9 @@ export const FileTitleWrapper = styled.div`
 `;
 
 export const FileCardBox = styled.div`
-  margin-top: 22px;
+  margin-top: 1.375rem;
 `;
 
 export const FileCardWrapper = styled.div`
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem;
 `;
