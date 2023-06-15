@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const LinkToHelloGSMWrapper = styled.div`
-  width: 77.375;
+  width: 77.375rem;
   height: 8.0625rem;
   display: flex;
   flex-direction: column;
