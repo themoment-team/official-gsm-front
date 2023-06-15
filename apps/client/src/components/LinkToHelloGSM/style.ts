@@ -20,9 +20,9 @@ export const TextWrapper = styled.div`
 `;
 
 export const AdmissionText = styled.h3`
-  font-weight: 700;
   ${({ theme: { typo } }) => typo.h3}
   color: ${({ theme: { color } }) => color.white};
+  font-weight: 700;
 `;
 
 export const HashTagWrapper = styled.div`
@@ -31,7 +31,7 @@ export const HashTagWrapper = styled.div`
 `;
 
 export const HashTag = styled.h4`
-  font-weight: 400;
   ${({ theme: { typo } }) => typo.h4}
   color: ${({ theme: { color } }) => color.white};
+  font-weight: 400;
 `;
