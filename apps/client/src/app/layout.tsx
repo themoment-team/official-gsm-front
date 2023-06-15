@@ -4,9 +4,7 @@ import React from 'react';
 
 import { ThemeProvider } from '@emotion/react';
 
-import { GlobalStyle } from 'common';
-
-import { theme } from 'client/styles';
+import { GlobalStyle, theme } from 'common';
 
 export default function RootLayout({
   children,
