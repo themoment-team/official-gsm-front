@@ -1,5 +1,7 @@
 'use client';
 
+import { useRef } from 'react';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
@@ -38,6 +40,17 @@ export default function WritePage() {
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     // eslint-disable-next-line no-console
     console.info(data);
+  };
+
+  const fileInput = useRef<HTMLInputElement>(null);
+
+  const handleClick = () => {
+    fileInput.current?.click();
+  };
+
+  const handleChange = () => {
+    if (fileInput && fileInput.current) {
+    }
   };
 
   return (
@@ -84,7 +97,13 @@ export default function WritePage() {
               <S.UploadTitle>
                 첫번째 등록하신 이미지는 썸네일 역할을 합니다.
               </S.UploadTitle>
-              <UploadButton />
+              <UploadButton onClick={handleClick} />
+              <input
+                type='file'
+                ref={fileInput}
+                style={{ display: 'none' }}
+                onChange={handleChange}
+              />
             </S.UploadBox>
           </div>
           <S.BtnWrap>
