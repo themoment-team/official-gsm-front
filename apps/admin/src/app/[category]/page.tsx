@@ -15,34 +15,30 @@ import {
   GalleryList,
   PaginationController,
 } from 'admin/components';
-import type { CategoryType } from 'admin/types';
 
-import type { PostCategoryType } from 'api/client';
 import { useGetPostList } from 'api/client';
 
-interface CategoryParamsType {
-  [key: string]: PostCategoryType;
-}
+const categoryParamsArray = ['', 'newsletter', 'gallery'] as const;
 
-const categoryParams: CategoryParamsType = {
+const categoryQueryString = {
   newsletter: 'FAMILY_NEWSLETTER',
   gallery: 'EVENT_GALLERY',
 } as const;
 
-const categoryParamsArray = ['', 'newsletter', 'gallery'] as const;
+type CategoryParamsType = keyof typeof categoryQueryString;
 
 interface ListPageProps {
-  params: { category: CategoryType };
+  params: { category: CategoryParamsType };
 }
 
 export default function ListPage({ params: { category } }: ListPageProps) {
+  const [pageNumber, setPageNumber] = useState<number>(0);
+
+  const { data } = useGetPostList(categoryQueryString[category], pageNumber);
+
   if (!categoryParamsArray.includes(category)) {
     redirect('/');
   }
-
-  const [pageNumber, setPageNumber] = useState<number>(0);
-
-  const { data } = useGetPostList(categoryParams[category], pageNumber);
 
   return (
     <>
