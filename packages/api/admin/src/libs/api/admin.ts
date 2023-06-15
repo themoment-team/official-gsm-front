@@ -1,15 +1,15 @@
 import { adminInstance } from './instance';
 
-export const get = async (...args: Parameters<typeof adminInstance.get>) =>
-  await adminInstance.get(...args);
+export const get = async <T>(...args: Parameters<typeof adminInstance.get>) =>
+  await adminInstance.get<T, T>(...args);
 
 export const post = async <T>(...args: Parameters<typeof adminInstance.post>) =>
-  await adminInstance.post<T>(...args);
+  await adminInstance.post<T, T>(...args);
 
 export const patch = async <T>(
   ...args: Parameters<typeof adminInstance.patch>
-) => await adminInstance.patch<T>(...args);
+) => await adminInstance.patch<T, T>(...args);
 
 export const del = async <T>(
   ...args: Parameters<typeof adminInstance.delete>
-) => await adminInstance.delete<T>(...args);
+) => await adminInstance.delete<T, T>(...args);
