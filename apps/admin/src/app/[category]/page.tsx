@@ -27,9 +27,9 @@ interface CategoryParamsType {
 const categoryParams: CategoryParamsType = {
   newsletter: 'FAMILY_NEWSLETTER',
   gallery: 'EVENT_GALLERY',
-};
+} as const;
 
-const categoryParamsArray = ['', 'newsletter', 'gallery'];
+const categoryParamsArray = ['', 'newsletter', 'gallery'] as const;
 
 interface ListPageProps {
   params: { category: CategoryType };
