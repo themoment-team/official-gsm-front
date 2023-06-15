@@ -10,7 +10,7 @@ export default {
 
 type Story = StoryObj<typeof NewsletterCard>;
 
-export const Blue: Story = {
+export const Primary: Story = {
   args: {
     post: {
       postSeq: 0,
