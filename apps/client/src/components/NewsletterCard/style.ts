@@ -15,8 +15,10 @@ export const ExampleDiv = styled.div`
   }
 
   &:nth-child(even) {
-    background: rgba(178, 228, 73, 0.1);
-    div div {
+    .newsletterCardWrapper {
+      background: rgba(178, 228, 73, 0.1);
+    }
+    .dateCircle {
       background-color: ${({ theme: { color } }) => color.primary.lime};
     }
     h1 {
@@ -53,16 +55,16 @@ export const DateCircle = styled.div`
 `;
 
 export const DateText = styled.h1`
+  ${({ theme: { typo } }) => typo.title};
   text-align: center;
   font-weight: 600;
-  ${({ theme: { typo } }) => typo.title};
 `;
 
 export const YearMonth = styled.p`
-  text-align: center;
-  font-weight: 400;
   ${({ theme: { typo } }) => typo.body2};
   color: ${({ theme: { color } }) => color.sub.blue};
+  text-align: center;
+  font-weight: 400;
 `;
 
 export const TextWrapper = styled.div`
@@ -80,13 +82,13 @@ export const TextWrapper = styled.div`
 `;
 
 export const Title = styled.h4`
-  font-weight: 600;
   ${({ theme: { typo } }) => typo.h4}
   color: ${({ theme: { color } }) => color.gray['090']};
+  font-weight: 600;
 `;
 
 export const Preview = styled.h4`
-  font-weight: 400;
   ${({ theme: { typo } }) => typo.body1}
   color: ${({ theme: { color } }) => color.gray['080']};
+  font-weight: 400;
 `;
