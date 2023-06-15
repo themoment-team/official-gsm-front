@@ -14,9 +14,9 @@ export const SeeMoreWrapper = styled.div`
 `;
 
 export const SeeMoreText = styled.h5`
-  font-weight: 400;
   ${({ theme: { typo } }) => typo.h5}
   color: ${({ theme: { color } }) => color.gray['070']};
+  font-weight: 400;
 `;
 
 export const ChevronIconWrapper = styled.div`
