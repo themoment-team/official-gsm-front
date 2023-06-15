@@ -10,6 +10,7 @@ import type { SubmitHandler } from 'react-hook-form';
 import { z } from 'zod';
 
 import { ToBackButton, Input, AuthTitle } from 'admin/components';
+import { usePreventHistoryPop } from 'admin/hooks';
 
 import { useGetUserInfo, usePatchUserName } from 'api/admin';
 
@@ -44,6 +45,8 @@ export default function SignupPage() {
   if (userInfo?.userName || isSuccess) {
     replace('/auth/signup/pending');
   }
+
+  usePreventHistoryPop();
 
   return (
     <>
