@@ -70,6 +70,14 @@ export const TextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  h4 {
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
 `;
 
 export const Title = styled.h4`
