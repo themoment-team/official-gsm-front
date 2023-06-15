@@ -1,6 +1,12 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  plugins: ['react', '@typescript-eslint', 'autofix', 'unused-imports'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'autofix',
+    'unused-imports',
+    'sort-exports',
+  ],
   rules: {
     'arrow-body-style': ['error', 'as-needed'],
     'react/self-closing-comp': ['error', { component: true, html: true }],
@@ -96,6 +102,7 @@ module.exports = {
     ],
     'no-console': 'error',
     'unused-imports/no-unused-imports-ts': ['error'],
+    'sort-exports/sort-exports': ['error'],
   },
   extends: [
     'eslint:recommended',
