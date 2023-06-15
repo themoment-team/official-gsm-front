@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { css, useTheme } from '@emotion/react';
-import UnderscoreIcon from 'client/assets/svg/icon/Underscore';
+import * as I from 'assets';
 import type { PointColorType } from 'client/types/title';
 import * as S from './style';
 
@@ -46,7 +46,7 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ pointColor }) => {
             ]
           </S.ListWrap>
           <div>
-            <UnderscoreIcon />
+            <I.Underscore />
           </div>
         </S.ListIconWrap>
         <span>
