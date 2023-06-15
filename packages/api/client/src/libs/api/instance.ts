@@ -10,5 +10,5 @@ clientInstance.interceptors.response.use((response) => {
     return response.data;
   }
 
-  return Promise.reject(response);
+  return Promise.reject(response.data);
 });
