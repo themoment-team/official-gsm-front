@@ -3,32 +3,32 @@ import styled from '@emotion/styled';
 export const Layout = styled.div`
   position: relative;
   width: 100vw;
-  height: 856px;
+  height: 53.5rem;
   background: #051b30;
-  padding: 140px 0;
+  padding: 8.75rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 120px;
+  gap: 7.5rem;
 `;
 
 export const Point = styled.span`
   color: ${({ theme }) => theme.color.primary.lime};
 `;
 
-export const BlurTitle = styled.h3`
+export const SubTitle = styled.h3`
   font-weight: 700;
-  font-size: 40px;
-  line-height: 48px;
+  font-size: 2.5rem;
+  line-height: 3rem;
   color: #ffffff;
   opacity: 0.4;
   text-align: center;
 `;
 
 export const MainTitle = styled.h1`
-  font-size: 60px;
-  line-height: 72px;
+  font-size: 3.75rem;
+  line-height: 4.5rem;
   font-weight: 700;
   color: #ffffff;
   text-align: center;
