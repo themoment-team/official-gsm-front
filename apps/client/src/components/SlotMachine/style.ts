@@ -31,7 +31,6 @@ export const ListWrap = styled.div`
   align-items: center;
   margin: 0rem 2.5rem;
   position: relative;
-  bottom: 0.5rem;
 `;
 
 export const ListIconWrap = styled.div`
@@ -45,6 +44,7 @@ export const Wrap = styled.div`
   height: 6.25rem;
   text-align: center;
   position: relative;
+  overflow: hidden;
 `;
 
 export const List = styled.ul`
@@ -54,7 +54,7 @@ export const List = styled.ul`
   top: 0;
   left: 0;
   margin: 0;
-  animation-duration: 20s;
+  animation-duration: 2s;
   animation-timing-function: linear;
   transform-style: preserve-3d;
   transform-origin: 50% 100%;
@@ -75,7 +75,6 @@ export const Item = styled.li`
   top: 0;
   list-style: none;
   transform-origin: 50% 50%;
-  background-color: palegoldenrod;
 
   .imoji {
     display: block;
@@ -86,20 +85,18 @@ export const Item = styled.li`
   // z 속성은 아이템간의 간격을 결정한다고 보시면 됩니다
 
   &:nth-of-type(1) {
-    transform: rotateX(0) translateZ(130px);
+    transform: rotateX(0) translateZ(160px);
   }
   &:nth-of-type(2) {
-    transform: rotateX(108deg) translateZ(130px);
+    transform: rotateX(108deg) translateZ(160px);
   }
   &:nth-of-type(3) {
-    transform: rotateX(216deg) translateZ(130px);
+    transform: rotateX(216deg) translateZ(160px);
   }
   &:nth-of-type(4) {
-    transform: rotateX(324deg) translateZ(130px);
+    transform: rotateX(324deg) translateZ(160px);
   }
   &:nth-of-type(5) {
-    transform: rotateX(432deg) translateZ(130px);
+    transform: rotateX(432deg) translateZ(160px);
   }
 `;
-
-export const Icon = styled.div``;

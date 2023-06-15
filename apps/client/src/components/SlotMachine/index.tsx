@@ -45,9 +45,9 @@ const SlotMachine: React.FC<SlotMachineProps> = ({ pointColor }) => {
             </S.Wrap>
             ]
           </S.ListWrap>
-          <S.Icon>
+          <div>
             <UnderscoreIcon />
-          </S.Icon>
+          </div>
         </S.ListIconWrap>
         <span>
           할 수 있어
