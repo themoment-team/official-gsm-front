@@ -11,6 +11,7 @@ export const Layout = styled.div`
   align-items: center;
   justify-content: center;
   gap: 7.5rem;
+  text-align: center;
 `;
 
 export const Point = styled.span`
@@ -21,15 +22,13 @@ export const SubTitle = styled.h3`
   font-weight: 700;
   font-size: 2.5rem;
   line-height: 3rem;
-  color: #ffffff;
+  color: ${({ theme }) => theme.color.white};
   opacity: 0.4;
-  text-align: center;
 `;
 
 export const MainTitle = styled.h1`
   font-size: 3.75rem;
   line-height: 4.5rem;
   font-weight: 700;
-  color: #ffffff;
-  text-align: center;
+  color: ${({ theme }) => theme.color.white};
 `;
