@@ -9,4 +9,3 @@ export const PointStyle = styled.div`
   border-radius: 50%;
   position: absolute;
 `;
- 
