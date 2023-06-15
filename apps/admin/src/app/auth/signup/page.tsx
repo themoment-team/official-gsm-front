@@ -1,7 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-
 import { useRouter } from 'next/navigation';
 
 import styled from '@emotion/styled';
@@ -12,6 +10,9 @@ import type { SubmitHandler } from 'react-hook-form';
 import { z } from 'zod';
 
 import { ToBackButton, Input, AuthTitle } from 'admin/components';
+import { usePreventHistoryPop } from 'admin/hooks';
+
+import { useGetUserInfo, usePatchUserName } from 'api/admin';
 
 import { Button } from 'ui';
 
@@ -23,25 +24,29 @@ const schema = z.object({
     .regex(/^[가-힣]+$/, { message: '성함은 한글로만 입력해주세요.' }),
 });
 
-type FormValues = z.infer<typeof schema>;
+type FormType = z.infer<typeof schema>;
 
 export default function SignupPage() {
-  const [isLoading, setIsLoading] = useState(false);
-
   const { replace } = useRouter();
+
+  const { mutate, isSuccess, isLoading } = usePatchUserName();
+  const { data: userInfo } = useGetUserInfo();
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<FormValues>({ resolver: zodResolver(schema) });
+  } = useForm<FormType>({ resolver: zodResolver(schema) });
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    setIsLoading(true);
-    console.log(data);
-    setTimeout(() => setIsLoading(false), 1000);
-    replace('/auth/signup/pending');
+  const onSubmit: SubmitHandler<FormType> = ({ name }) => {
+    mutate(name);
   };
+
+  if (userInfo?.userName || isSuccess) {
+    replace('/auth/signup/pending');
+  }
+
+  usePreventHistoryPop();
 
   return (
     <>
