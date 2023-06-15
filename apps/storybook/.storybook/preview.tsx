@@ -1,5 +1,6 @@
 import type { Preview } from '@storybook/react';
 import { ThemeProvider } from '@emotion/react';
+
 import { GlobalStyle, theme } from 'common';
 import React from 'react';
 
