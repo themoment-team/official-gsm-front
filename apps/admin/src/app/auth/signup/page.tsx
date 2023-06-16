@@ -53,7 +53,7 @@ export default function SignupPage() {
   useEffect(() => {
     // eslint-disable-next-line no-console
     setInterval(() => console.log(userInfo), 1000);
-  }, []);
+  }, [userInfo]);
 
   return (
     <>
