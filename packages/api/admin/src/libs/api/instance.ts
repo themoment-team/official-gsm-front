@@ -13,6 +13,9 @@ adminInstance.interceptors.response.use(
       return response.data;
     }
 
+    // eslint-disable-next-line no-console
+    console.log(response.data);
+
     return Promise.reject(response.data);
   },
   async (error) => {
@@ -20,6 +23,8 @@ adminInstance.interceptors.response.use(
       try {
         await get(authUrl.refresh());
         const { data } = await adminInstance.request(error.config);
+        // eslint-disable-next-line no-console
+        console.log(data);
         return data;
       } catch (e) {
         return Promise.reject(e);
