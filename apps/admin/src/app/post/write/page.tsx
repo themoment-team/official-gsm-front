@@ -34,6 +34,10 @@ type FormValues = z.infer<typeof schema>;
 export default function WritePage() {
   const [files, setFiles] = useState<File[]>([]);
 
+  const handleCancel = (fileName: string) => {
+    setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
+  };
+
   const {
     register,
     handleSubmit,
@@ -43,13 +47,11 @@ export default function WritePage() {
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     // eslint-disable-next-line no-console
 
-    // console.log(files);
-
     const contents = {
       title: data.title,
       content: data.content,
       files: files,
-
+      // 나중에 통신코드 작성
       // file:
     };
     console.log(contents);
@@ -64,26 +66,6 @@ export default function WritePage() {
   const handleClick = () => {
     fileInput.current?.click();
   };
-
-  // const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   // if (fileInput && fileInput.current) {
-  //   //   const file = fileInput.current.files as FileList | Blob;
-  //   //   const reader = new FileReader();
-
-  //   //   reader.onload = (event) => {
-  //   //     const imageUrl = event.target as FileReader;
-  //   //     console.log('sex', imageUrl);
-  //   //   };
-  //   //   reader.readAsDataURL(file);
-  //   // }
-  //   if (!e.target.files) return;
-  //   const file = e.target.files[0];
-  //   if (file) {
-  //     const image = window.URL.createObjectURL(file);
-  //     console.log(file);
-  //     console.log(image);
-  //   }
-  // };
 
   return (
     <>
@@ -140,7 +122,7 @@ export default function WritePage() {
                 <S.FileCardBox>
                   {files.map((file) => (
                     <S.FileCardWrapper key={file.name}>
-                      <FileCard fileName={file.name} />
+                      <FileCard fileName={file.name} onCancel={handleCancel} />
                     </S.FileCardWrapper>
                   ))}
                 </S.FileCardBox>
