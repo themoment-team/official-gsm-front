@@ -25,7 +25,7 @@ adminInstance.interceptors.response.use(
         const res = await adminInstance.get(error.config);
         // eslint-disable-next-line no-console
         console.log(res);
-        return res;
+        // return res;
       } catch (e) {
         return Promise.reject(e);
       }
