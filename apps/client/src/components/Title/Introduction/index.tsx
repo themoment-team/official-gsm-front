@@ -35,6 +35,7 @@ export const IntroductionTitleStyle = styled.h1`
 
   &.navy {
     color: ${({ theme }) => theme.color.primary.navy};
+    font-size: 3.2976rem;
   }
 
   &.border {
@@ -43,6 +44,5 @@ export const IntroductionTitleStyle = styled.h1`
     color: #ffffff;
     font-weight: 700;
     font-size: 3.75rem;
-    line-height: 4.625rem;
   }
 `;

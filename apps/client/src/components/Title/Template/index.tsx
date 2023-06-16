@@ -29,8 +29,8 @@ const TitleTemplate: React.FC<TitleTemplateProps> = ({
           width: ${pointSize};
           height: ${pointSize};
           background-color: ${theme.color.primary[pointColor]};
-          right: ${pointPosition === 'top' ? '-1.875rem' : '-1rem'};
-          ${pointPosition === 'top' ? 'top: 0' : 'bottom: 0.625rem'};
+          right: -5%;
+          ${pointPosition === 'top' ? 'top: 0' : 'bottom: 15%'};
         `}
       />
     </S.TitleContainer>
