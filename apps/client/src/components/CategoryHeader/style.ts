@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
 export const CategoryHeaderWrapper = styled.div`
-  width: 1240px;
-  height: 41px;
+  width: 77.5rem;
+  height: 2.5625rem;
   display: flex;
   justify-content: space-between;
 `;
@@ -20,5 +20,5 @@ export const SeeMoreText = styled.h5`
 `;
 
 export const ChevronIconWrapper = styled.div`
-  margin: 0 9px;
+  margin: 0 0.5625rem;
 `;
