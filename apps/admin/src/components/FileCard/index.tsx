@@ -4,7 +4,7 @@ import * as S from './style';
 
 interface FileCardProps {
   fileName?: string;
-  onCancel?: any;
+  onCancel: any;
 }
 
 const FileCard: React.FC<FileCardProps> = ({ fileName, onCancel }) => (
@@ -13,7 +13,10 @@ const FileCard: React.FC<FileCardProps> = ({ fileName, onCancel }) => (
       <I.FileIcon />
       <S.Filename>{fileName}</S.Filename>
     </S.FileNameWrapper>
-    <S.CancelButton type='button' onClick={() => onCancel(fileName)}>
+    <S.CancelButton
+      type='button'
+      onClick={() => fileName && onCancel(fileName)}
+    >
       <I.CancelIcon />
     </S.CancelButton>
   </S.FileCardWrap>

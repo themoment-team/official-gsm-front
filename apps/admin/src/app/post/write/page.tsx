@@ -3,7 +3,6 @@
 import { useRef, useState } from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -40,22 +39,22 @@ export default function WritePage() {
 
   const {
     register,
-    handleSubmit,
+
     formState: { errors },
   } = useForm<FormValues>({ resolver: zodResolver(schema) });
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    // eslint-disable-next-line no-console
+  // const onSubmit: SubmitHandler<FormValues> = (data) => {
+  //   // eslint-disable-next-line no-console
 
-    const contents = {
-      title: data.title,
-      content: data.content,
-      files: files,
-      // 나중에 통신코드 작성
-      // file:
-    };
-    console.log(contents);
-  };
+  //   const contents = {
+  //     title: data.title,
+  //     content: data.content,
+  //     files: files,
+  //     // 나중에 통신코드 작성
+  //     // file:
+  //   };
+  //   console.log(contents);
+  // };
 
   const postFile = () => {
     setFiles([...files, ...Array.from(fileInput.current?.files as FileList)]);
@@ -72,7 +71,7 @@ export default function WritePage() {
       <Header hasNotification={false} name={'정문정'} />
       <S.WritePageWrap>
         <S.WriteTitle>게시물 생성</S.WriteTitle>
-        <S.FormWrap onSubmit={handleSubmit(onSubmit)}>
+        <S.FormWrap /*onSubmit={handleSubmit(onSubmit)} */>
           <div>
             <S.FormItemTitle>카테고리</S.FormItemTitle>
             <Category width='36.125rem' category='notice' />
