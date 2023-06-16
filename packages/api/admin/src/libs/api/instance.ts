@@ -13,19 +13,13 @@ adminInstance.interceptors.response.use(
       return response.data;
     }
 
-    // eslint-disable-next-line no-console
-    console.log(response.data);
-
     return Promise.reject(response.data);
   },
   async (error) => {
     if (error.response.status === 401) {
       try {
         await get(authUrl.refresh());
-        const res = await adminInstance.get(error.config);
-        // eslint-disable-next-line no-console
-        console.log(res);
-        // return res;
+        await adminInstance(error.config);
       } catch (e) {
         return Promise.reject(e);
       }
