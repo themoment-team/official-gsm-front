@@ -17,14 +17,12 @@ adminInstance.interceptors.response.use(
   },
   async (error) => {
     if (error.response.status === 401) {
-      try {
-        await get(authUrl.refresh());
+      await get(authUrl.refresh());
 
-        return adminInstance(error.config);
-      } catch (e) {
-        return Promise.reject(e);
-      }
+      return adminInstance(error.config);
     }
+
+    location.replace('/auth/signin');
 
     return Promise.reject(error);
   }
