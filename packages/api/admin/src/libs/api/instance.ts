@@ -22,10 +22,10 @@ adminInstance.interceptors.response.use(
     if (error.response.status === 401) {
       try {
         await get(authUrl.refresh());
-        const { data } = await adminInstance.request(error.config);
+        const res = await adminInstance.request(error.config);
         // eslint-disable-next-line no-console
-        console.log(data);
-        return data;
+        console.log(res);
+        return res;
       } catch (e) {
         return Promise.reject(e);
       }
