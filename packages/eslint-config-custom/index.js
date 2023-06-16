@@ -110,4 +110,12 @@ module.exports = {
     'next/core-web-vitals',
     'prettier',
   ],
+  overrides: [
+    {
+      files: ['**/style.ts', '**/*.stories.tsx', '**/styles/page/*.ts'],
+      rules: {
+        'sort-exports/sort-exports': ['off'],
+      },
+    },
+  ],
 };
