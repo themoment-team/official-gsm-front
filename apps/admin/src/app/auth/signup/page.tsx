@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect } from 'react';
+
 import { useRouter } from 'next/navigation';
 
 import styled from '@emotion/styled';
@@ -48,6 +50,11 @@ export default function SignupPage() {
 
   usePreventHistoryPop();
 
+  useEffect(() => {
+    // eslint-disable-next-line no-console
+    setInterval(() => console.log(userInfo), 1000);
+  }, []);
+
   return (
     <>
       <ToBackButton onClick={() => replace('/auth/signin')} />
@@ -73,7 +80,7 @@ export default function SignupPage() {
           bottom='1.5rem'
           isLoading={isLoading}
         >
-          {userInfo?.userName ?? '확인'}
+          확인
         </Button>
       </form>
     </>
