@@ -19,7 +19,8 @@ adminInstance.interceptors.response.use(
     if (error.response.status === 401) {
       try {
         await get(authUrl.refresh());
-        await adminInstance(error.config);
+
+        return adminInstance(error.config);
       } catch (e) {
         return Promise.reject(e);
       }
