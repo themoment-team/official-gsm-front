@@ -6,7 +6,6 @@ import * as S from './style';
 
 interface NewsletterCardProps {
   post: ContentType;
-  color: 'blue' | 'green';
 }
 
 const NewsletterCard: React.FC<NewsletterCardProps> = ({
