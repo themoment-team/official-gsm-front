@@ -1,7 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
-
 import { useRouter } from 'next/navigation';
 
 import styled from '@emotion/styled';
@@ -49,11 +47,6 @@ export default function SignupPage() {
   }
 
   usePreventHistoryPop();
-
-  useEffect(() => {
-    // eslint-disable-next-line no-console
-    setInterval(() => console.log(userInfo), 1000);
-  }, [userInfo]);
 
   return (
     <>
