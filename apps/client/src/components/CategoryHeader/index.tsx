@@ -1,10 +1,20 @@
 import { ChevronIcon } from 'client/assets';
+import { NewsTitle } from 'client/components';
 
 import * as S from './style';
 
-const CategoryHeader = () => (
+interface CategoryHeaderProps {
+  category: 'FAMILY_NEWSLETTER' | 'EVENT_GALLERY';
+}
+
+const categorys = {
+  FAMILY_NEWSLETTER: '가정통신문',
+  EVENT_GALLERY: '우리 학교 갤러리',
+};
+
+const CategoryHeader: React.FC<CategoryHeaderProps> = ({ category }) => (
   <S.CategoryHeaderWrapper>
-    <>Title/News가 들어갈 자리</>
+    <NewsTitle pointColor='lime'>{categorys[category]}</NewsTitle>
     <S.SeeMoreWrapper>
       <S.SeeMoreText>더보기</S.SeeMoreText>
       <S.ChevronIconWrapper>

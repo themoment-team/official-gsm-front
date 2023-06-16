@@ -3,13 +3,21 @@ import CategoryHeader from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'client/Title/CategoryHeader',
+  title: 'client/CategoryHeader',
   component: CategoryHeader,
   parameters: {},
 } as Meta<typeof CategoryHeader>;
 
 type Story = StoryObj<typeof CategoryHeader>;
 
-export const Section1: Story = {
-  args: {},
+export const FAMILY_NEWSLETTER: Story = {
+  args: {
+    category: 'FAMILY_NEWSLETTER',
+  },
+};
+
+export const EVENT_GALLERY: Story = {
+  args: {
+    category: 'EVENT_GALLERY',
+  },
 };

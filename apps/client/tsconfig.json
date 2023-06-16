@@ -4,7 +4,8 @@
     "baseUrl": "./src",
     "jsx": "preserve",
     "paths": {
-      "client/*": ["*"]
+      "client/*": ["*"],
+      "api/*": ["../../../packages/api/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
