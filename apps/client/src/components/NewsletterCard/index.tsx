@@ -1,4 +1,4 @@
-import formatDate from 'ui/DateComponent/formatDate';
+import { formatDate } from 'common';
 
 import type { ContentType } from 'api/client';
 
