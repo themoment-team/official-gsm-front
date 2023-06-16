@@ -73,7 +73,7 @@ export default function SignupPage() {
           bottom='1.5rem'
           isLoading={isLoading}
         >
-          확인
+          {userInfo?.userName ?? '확인'}
         </Button>
       </form>
     </>
