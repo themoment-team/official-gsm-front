@@ -13,13 +13,13 @@ interface DetailPageProps {
 }
 
 export default function DetailPage({ params: { seq } }: DetailPageProps) {
-  if (Number.isNaN(seq)) {
-    redirect('/');
-  }
-
   const postSeq = Number(seq);
 
-  const { data } = useGetPostDetail(postSeq);
+  const { data, isError } = useGetPostDetail(postSeq);
+
+  if (isError) {
+    redirect('/');
+  }
 
   return (
     <DetailPageWrapper>
