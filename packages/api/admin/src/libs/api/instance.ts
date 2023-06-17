@@ -22,7 +22,7 @@ adminInstance.interceptors.response.use(
       return adminInstance(error.config);
     }
 
-    location.replace('/auth/signin');
+    // location.replace('/auth/signin');
 
     return Promise.reject(error);
   }
