@@ -6,16 +6,13 @@ import { get, postQueryKeys, postUrl } from 'api/client';
 export const useGetPostList = (
   category: PostCategoryType,
   pageNumber: number
-) => {
-  const query = useQuery<PostListType>(
+) =>
+  useQuery(
     postQueryKeys.getPostList(category, pageNumber),
-    () => get(postUrl.postList(category, pageNumber)),
+    () => get<PostListType>(postUrl.postList(category, pageNumber)),
     {
       cacheTime: Infinity,
       staleTime: Infinity,
       keepPreviousData: true,
     }
   );
-
-  return query;
-};
