@@ -16,8 +16,8 @@ export default function PendingPage() {
   const { replace } = useRouter();
   const { data } = useGetUserInfo({ refetchInterval: secondsToMs(5) });
 
-  if (data?.role !== 'ADMIN') {
-    replace('/');
+  if (data?.role === 'ADMIN') {
+    replace('/auth/signup/approve');
   }
 
   return (
