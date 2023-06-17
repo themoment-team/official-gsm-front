@@ -1,6 +1,8 @@
+import Link from 'next/link';
+
 import styled from '@emotion/styled';
 
-export const LinkToHelloGSMWrapper = styled.div`
+export const LinkToHelloGSMWrapper = styled(Link)`
   width: 77.375rem;
   height: 8.0625rem;
   display: flex;
