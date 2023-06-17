@@ -11,7 +11,5 @@ export default {
 type Story = StoryObj<typeof LinkToHelloGSM>;
 
 export const Primary: Story = {
-  args: {
-    children: <>창의 융합력을 갖춘 글로벌 소프트웨어 마이스터 육성</>,
-  },
+  args: {},
 };
