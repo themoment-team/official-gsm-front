@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
@@ -65,6 +65,20 @@ export default function WritePage() {
   const handleClick = () => {
     fileInput.current?.click();
   };
+
+  const preventClose = (e: BeforeUnloadEvent) => {
+    e.preventDefault();
+  };
+
+  useEffect(() => {
+    (() => {
+      window.addEventListener('beforeunload', preventClose);
+    })();
+
+    return () => {
+      window.removeEventListener('beforeunload', preventClose);
+    };
+  }, []);
 
   return (
     <>
