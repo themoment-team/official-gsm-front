@@ -10,8 +10,6 @@ import { useGetUserInfo } from 'api/admin';
 
 import { Button } from 'ui';
 
-// TODO : react-query refetchInterval 사용하여 지속적으로 pending 여부 확인
-
 export default function PendingPage() {
   const { replace } = useRouter();
   const { data } = useGetUserInfo({ refetchInterval: secondsToMs(5) });
