@@ -9,7 +9,7 @@ export default function SignInWarningPage() {
   return (
     <S.SignInPage
       css={css`
-        padding-top: 109px;
+        padding-top: 6.8125rem;
       `}
     >
       <S.ModelWrapper>
@@ -17,7 +17,7 @@ export default function SignInWarningPage() {
       </S.ModelWrapper>
       <S.SignInContent
         css={css`
-          height: 109px;
+          height: 6.8125rem;
         `}
       >
         <S.Description>
