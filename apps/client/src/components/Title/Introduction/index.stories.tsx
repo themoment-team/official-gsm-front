@@ -16,7 +16,17 @@ export const Section1: Story = {
     pointColor: 'lime',
     className: 'navy',
     pointPosition: 'bottom',
-    pointSize: '10px',
+    pointSize: '11px',
+  },
+};
+
+export const BorderTitle: Story = {
+  args: {
+    children: <>상상과 실력으로</>,
+    pointColor: 'lime',
+    className: 'border',
+    pointPosition: 'bottom',
+    pointSize: '13px',
   },
 };
 
@@ -72,13 +82,5 @@ export const SemiTitle: Story = {
   args: {
     children: <>우리 학교 갤러리</>,
     pointColor: 'lime',
-  },
-};
-
-export const BorderTitle: Story = {
-  args: {
-    children: <>상상과 실력으로</>,
-    pointColor: 'lime',
-    className: 'border',
   },
 };

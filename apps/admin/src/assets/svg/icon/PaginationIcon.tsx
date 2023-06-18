@@ -7,7 +7,7 @@ interface PaginationIconProp {
 const Turn = {
   left: 0,
   right: '180',
-};
+} as const;
 
 const PaginationIcon: React.FC<PaginationIconProp> = ({ turn }) => (
   <svg
