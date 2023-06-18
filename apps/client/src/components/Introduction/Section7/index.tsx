@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import * as S from './style';
 import {
   IntroductionTitle,
@@ -63,32 +64,69 @@ const IdealTalentItem: IdealTalentType[] = [
     ],
   },
 ];
+const Section7 = () => {
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
 
-const Section7 = () => (
-  <S.Layout>
-    <S.UpperBox>
-      <S.Box>
-        <SectionTitle textAlign='left'>
-          <IntroductionTitle pointColor='sky'>
-            GSM이 원하는 학교상
-          </IntroductionTitle>
-          <SubTitle>소프트웨어 시대를 이끌어 나갈 인재</SubTitle>
-        </SectionTitle>
+  const handleNextSlide = () => {
+    setCurrentSlide((prevSlide) => (prevSlide + 1) % IdealTalentItem.length);
+  };
 
-        <S.IconWrap>
-          <I.LeftArrowIcon />
-          <I.RightArrowIcon />
-        </S.IconWrap>
-        <S.IdealTalentLayout>
-          {IdealTalentItem.map((item, index) => (
-            <S.IdealTalent>
-              <IdealTalent key={index} {...item} />
-            </S.IdealTalent>
-          ))}
-        </S.IdealTalentLayout>
-      </S.Box>
-    </S.UpperBox>
-  </S.Layout>
-);
+  const handlePrevSlide = () => {
+    setCurrentSlide((prevSlide) =>
+      prevSlide === 0 ? IdealTalentItem.length - 1 : prevSlide - 1
+    );
+  };
+
+  return (
+    <S.Layout>
+      <S.UpperBox>
+        <S.Box>
+          <SectionTitle textAlign='left'>
+            <IntroductionTitle pointColor='sky'>
+              GSM이 원하는 학교상
+            </IntroductionTitle>
+            <SubTitle>소프트웨어 시대를 이끌어 나갈 인재</SubTitle>
+          </SectionTitle>
+
+          <S.IconWrap>
+            <div
+              onClick={handlePrevSlide}
+              css={css`
+                cursor: pointer;
+              `}
+            >
+              <I.LeftArrowIcon />
+            </div>
+            <div
+              onClick={handleNextSlide}
+              css={css`
+                cursor: pointer;
+              `}
+            >
+              <I.RightArrowIcon />
+            </div>
+          </S.IconWrap>
+          <S.IdealTalentLayout>
+            {IdealTalentItem.map((item, index) => (
+              <div
+                key={index}
+                css={css`
+                  transform: translateX(${(index - currentSlide) * 460}px);
+                  transition: transform 0.3s ease-in-out; // 슬라이드 애니메이션에 트랜지션을 추가합니다.
+                  background-color: pink;
+                  width: 0px;
+                `}
+              >
+                <S.IdealTalent>
+                  <IdealTalent {...item} />
+                </S.IdealTalent>
+              </div>
+            ))}
+          </S.IdealTalentLayout>
+        </S.Box>
+      </S.UpperBox>
+    </S.Layout>
+  );
+};
 
 export default Section7;

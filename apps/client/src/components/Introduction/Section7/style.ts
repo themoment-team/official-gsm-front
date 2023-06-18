@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 export const Box = styled.div`
   height: 417px;
   width: 1900px;
-  background-color: plum;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -19,7 +18,6 @@ export const Layout = styled.div`
 export const IconWrap = styled.div`
   width: 53px;
   display: flex;
-  background-color: pink;
   height: 10px;
   gap: 33px;
   margin: 0 0 0 auto;
@@ -29,9 +27,7 @@ export const IconWrap = styled.div`
 export const IdealTalentLayout = styled.div`
   display: flex;
   height: 218px;
-  background-color: palegoldenrod;
-
-  gap: 19px;
+  overflow: hidden;
 `;
 
 export const UpperBox = styled.div`
@@ -48,7 +44,6 @@ export const IdealTalent = styled.div`
   flex-direction: column;
   align-items: flex-start;
   padding: 32px 40px;
-  gap: 24px;
 
   width: 445px;
   height: 218px;
