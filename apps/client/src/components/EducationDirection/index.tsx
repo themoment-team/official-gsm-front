@@ -11,9 +11,8 @@ const EducationDirection: React.FC<EducationDirectionType> = ({
     {icon}
     <S.Title>{title}</S.Title>
     <ul>
-      {subTitle.map((v) => (
-        <S.SubTitle key={v}>{v}</S.SubTitle>
-      ))}
+      <S.SubTitle>{subTitle[0]}</S.SubTitle>
+      <S.SubTitle>{subTitle[1]}</S.SubTitle>
     </ul>
   </S.EducationDirectionStyle>
 );
