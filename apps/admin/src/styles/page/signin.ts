@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 import { AuthModel } from 'admin/components';
 
 export const SignInPage = styled.div`
-  height: 16.5rem;
-  padding-top: 4.375rem;
+  height: 264px;
+  padding-top: 70px;
   position: relative;
-  @media (max-height: 26.5rem) {
-    margin: 5rem 0;
+  @media (max-height: 424px) {
+    margin: 80px 0;
   }
 `;
 
@@ -26,9 +26,9 @@ export const SignInModel = styled(AuthModel)`
 `;
 
 export const ModelCover = styled.div`
-  width: 13.75rem;
-  height: 13.75rem;
-  backdrop-filter: blur(0.4688rem);
+  width: 220px;
+  height: 220px;
+  backdrop-filter: blur(7.5008px);
   background: rgba(14, 15, 16, 0.6);
   z-index: 1;
   position: absolute;
@@ -47,8 +47,8 @@ export const SignInContent = styled.div`
 
 export const Description = styled.p`
   font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 2rem;
+  font-size: 24px;
+  line-height: 32px;
   text-align: center;
   color: #ffffff;
 `;
@@ -62,16 +62,16 @@ export const SkyBlueHighlight = styled.span`
 `;
 
 export const GoogleOAuthLink = styled.a`
-  width: 21.4375rem;
-  height: 3.0625rem;
+  width: 343px;
+  height: 49px;
   background: #fcfcfc;
-  border-radius: 1.25rem;
+  border-radius: 20px;
   color: #212121;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5625rem;
+  gap: 9px;
   font-weight: 700;
-  font-size: 0.9375rem;
+  font-size: 15px;
   cursor: pointer;
 `;
