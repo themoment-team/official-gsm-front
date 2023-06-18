@@ -1,9 +1,9 @@
 'use client';
 
-import { GoogleIcon, WarningIcon } from 'admin/assets';
-import * as S from 'admin/styles/page/signin';
-
 import { css } from '@emotion/react';
+
+import { WarningIcon, GoogleIcon } from 'admin/assets';
+import * as S from 'admin/styles/page/signin';
 
 export default function SignInWarningPage() {
   return (
