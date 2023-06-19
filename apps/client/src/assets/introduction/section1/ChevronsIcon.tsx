@@ -9,12 +9,12 @@ const ChevronsIcon = () => (
     <path
       d='M7.00085 13L12.0009 18L17.0009 13'
       stroke='#424242'
-      stroke-linecap='round'
+      strokeLinecap='round'
     />
     <path
       d='M7.00085 7L12.0009 12L17.0009 7'
       stroke='#424242'
-      stroke-linecap='round'
+      strokeLinecap='round'
     />
   </svg>
 );
