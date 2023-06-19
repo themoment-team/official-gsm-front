@@ -6,17 +6,20 @@ const rotate1 = keyframes`
   0%{
     transform: rotateX(0deg);
   }
-  90% {
-    transform: rotateX(-2100deg);
+  90%{
+    transform: rotateX(-2170deg);
+  }
+  92%{
+    transform: rotateX(-2168deg);
   }
   94%{
-    transform: rotateX(-2500deg);
+    transform: rotateX(-2166deg);
   }
-  95% {
-    transform: rotateX(-2400deg);
+  96%{
+    transform: rotateX(-2164deg);
   }
-  95% {
-    transform: rotateX(-2300deg);
+  98%{
+    transform: rotateX(-2162deg);
   }
   100%{
     transform: rotateX(-2160deg);
@@ -63,7 +66,7 @@ export const List = styled.ul`
   top: 0;
   left: 0;
   margin: 0;
-  animation-duration: 5s;
+  animation-duration: 2s;
   animation-timing-function: linear;
   transform-style: preserve-3d;
   transform-origin: 50% 100%;
@@ -94,18 +97,18 @@ export const Item = styled.li`
   // z 속성은 아이템간의 간격을 결정한다고 보시면 됩니다
 
   &:nth-of-type(1) {
-    transform: rotateX(0) translateZ(160px);
+    transform: rotateX(0) translateZ(220px);
   }
   &:nth-of-type(2) {
-    transform: rotateX(108deg) translateZ(160px);
+    transform: rotateX(108deg) translateZ(220px);
   }
   &:nth-of-type(3) {
-    transform: rotateX(216deg) translateZ(160px);
+    transform: rotateX(216deg) translateZ(220px);
   }
   &:nth-of-type(4) {
-    transform: rotateX(324deg) translateZ(160px);
+    transform: rotateX(324deg) translateZ(220px);
   }
   &:nth-of-type(5) {
-    transform: rotateX(432deg) translateZ(160px);
+    transform: rotateX(432deg) translateZ(220px);
   }
 `;
