@@ -1,5 +1,4 @@
-const RightArrowIcon = () => {
-  return (
+const RightArrowIcon = () => (
     <svg
       width='14'
       height='22'
@@ -15,6 +14,5 @@ const RightArrowIcon = () => {
       />
     </svg>
   );
-};
 
 export default RightArrowIcon;

@@ -1,7 +1,8 @@
-import * as S from './style';
+
 import type { IdealTalentType } from 'client/types/idealtalent';
-import { css } from '@emotion/react';
-const IdealTalent: React.FC<IdealTalentType> = ({ icon, title, subTitle }) => (
+
+import * as S from './style';
+const IdealTalent: React.FC<IdealTalentType> = ({  title, subTitle }) => (
   <S.IdealTalent>
     <S.Title>{title}</S.Title>
     <S.Line />

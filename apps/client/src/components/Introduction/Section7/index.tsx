@@ -1,14 +1,19 @@
 import { useState } from 'react';
-import * as S from './style';
+
+import { css } from '@emotion/react';
+
 import {
   IntroductionTitle,
   SectionTitle,
   SubTitle,
   IdealTalent,
 } from 'client/components';
-import { css } from '@emotion/react';
-import * as I from 'assets';
 import type { IdealTalentType } from 'client/types/idealtalent';
+
+import * as I from 'assets';
+
+
+import * as S from './style';
 
 const IdealTalentItem: IdealTalentType[] = [
   {
