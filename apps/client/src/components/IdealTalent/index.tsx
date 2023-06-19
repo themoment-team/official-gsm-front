@@ -5,19 +5,11 @@ const IdealTalent: React.FC<IdealTalentType> = ({ icon, title, subTitle }) => (
   <S.IdealTalent>
     <S.Title>{title}</S.Title>
     <S.Line />
-    <ul
-      css={css`
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 381px;
-        height: 62px;
-      `}
-    >
+    <S.SubTitleWrap>
       {subTitle.map((index) => (
         <S.SubTitle key={index}>{index}</S.SubTitle>
       ))}
-    </ul>
+    </S.SubTitleWrap>
   </S.IdealTalent>
 );
 

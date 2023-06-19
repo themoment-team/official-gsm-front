@@ -15,8 +15,14 @@ const IdealTalentItem: IdealTalentType[] = [
     icon: <></>,
     title: (
       <>
-        <div>#교직원상</div>
-        <div className='.emoji'>🏫</div>
+        <div
+          css={css`
+            color: #003365;
+          `}
+        >
+          #교직원상
+        </div>
+        <div className='emoji'>🏫</div>
       </>
     ),
     subTitle: [
@@ -28,8 +34,14 @@ const IdealTalentItem: IdealTalentType[] = [
     icon: <></>,
     title: (
       <>
-        <div>#학생상</div>
-        <div className='.emoji'>🧑🏻‍🎓</div>
+        <div
+          css={css`
+            color: #7acdf4;
+          `}
+        >
+          #학생상
+        </div>
+        <div className='emoji'>🧑🏻‍🎓</div>
       </>
     ),
     subTitle: [
@@ -41,21 +53,14 @@ const IdealTalentItem: IdealTalentType[] = [
     icon: <></>,
     title: (
       <>
-        <div>#학부모상</div>
-        <div className='.emoji'>👩🏻‍🏫</div>
-      </>
-    ),
-    subTitle: [
-      '자녀의 성장을 보며 적극적인 지지를 보내는 부모님',
-      '개방적 사고로 이해하고 기다려 줄 수 있는 학부모',
-    ],
-  },
-  {
-    icon: <></>,
-    title: (
-      <>
-        <div>#교사상</div>
-        <div className='.emoji'>👩🏻‍🏫</div>
+        <div
+          css={css`
+            color: #003365;
+          `}
+        >
+          #교사상
+        </div>
+        <div className='emoji'>👩🏻‍🏫</div>
       </>
     ),
     subTitle: [
@@ -63,8 +68,26 @@ const IdealTalentItem: IdealTalentType[] = [
       '자발적인 참여로 협업하고 협력하는 교사',
     ],
   },
+  {
+    icon: <></>,
+    title: (
+      <>
+        <div
+          css={css`
+            color: #7acdf4;
+          `}
+        >
+          #학부모상
+        </div>
+        <div className='emoji'>👩🏻‍🏫</div>
+      </>
+    ),
+    subTitle: [
+      '자녀의 성장을 보며 적극적인 지지를 보내는 부모님',
+      '개방적 사고로 이해하고 기다려 줄 수 있는 학부모',
+    ],
+  },
 ];
-
 const Section7 = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
 
@@ -82,46 +105,38 @@ const Section7 = () => {
     <S.Layout>
       <S.UpperBox>
         <S.Box>
-          <SectionTitle textAlign='left'>
-            <IntroductionTitle pointColor='sky'>
-              GSM이 원하는 학교상
-            </IntroductionTitle>
-            <SubTitle>소프트웨어 시대를 이끌어 나갈 인재</SubTitle>
-          </SectionTitle>
-
-          <S.IconWrap>
-            <div
-              onClick={handlePrevSlide}
-              css={css`
-                cursor: pointer;
-              `}
-            >
-              <I.LeftArrowIcon />
-            </div>
-            <div
-              onClick={handleNextSlide}
-              css={css`
-                cursor: pointer;
-              `}
-            >
-              <I.RightArrowIcon />
-            </div>
-          </S.IconWrap>
-          <S.IdealTalentLayout
-            css={css`
-              transform: translateX(${-currentSlide * 445}px);
-              transition: transform 0.3s ease-in-out;
-            `}
-          >
-            {IdealTalentItem.map((item, index) => (
-              <S.IdealTalent key={index}>
-                <IdealTalent {...item} />
-              </S.IdealTalent>
-            ))}
-            <S.IdealTalent>
-              <IdealTalent {...IdealTalentItem[0]} />
-            </S.IdealTalent>
-          </S.IdealTalentLayout>
+          <div>
+            <SectionTitle textAlign='left'>
+              <IntroductionTitle pointColor='sky'>
+                GSM이 원하는 학교상
+              </IntroductionTitle>
+              <SubTitle>소프트웨어 시대를 이끌어 나갈 인재</SubTitle>
+            </SectionTitle>
+          </div>
+          <div>
+            <S.IconWrap>
+              <div onClick={handlePrevSlide}>
+                <I.LeftArrowIcon />
+              </div>
+              <div onClick={handleNextSlide}>
+                <I.RightArrowIcon />
+              </div>
+            </S.IconWrap>
+            <S.IdealTalentLayout>
+              {IdealTalentItem.map((item, index) => (
+                <S.Slide
+                  key={index}
+                  css={css`
+                    transform: translateX(${(index - currentSlide) * 485}px);
+                  `}
+                >
+                  <S.IdealTalent>
+                    <IdealTalent {...item} />
+                  </S.IdealTalent>
+                </S.Slide>
+              ))}
+            </S.IdealTalentLayout>
+          </div>
         </S.Box>
       </S.UpperBox>
     </S.Layout>

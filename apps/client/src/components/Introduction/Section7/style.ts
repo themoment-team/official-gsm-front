@@ -1,60 +1,62 @@
 import styled from '@emotion/styled';
 
 export const Box = styled.div`
-  height: 417px;
-  width: 1900px;
+  height: 26.0625rem;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  left: 340px;
-  top: 180px;
+  left: 21.25rem;
+  top: 11.25rem;
 `;
+
 export const Layout = styled.div`
   width: 100vw;
-  height: 770px;
+  height: 48.125rem;
   background-color: #003365;
+  color: ${({ theme }) => theme.color.primary.navy};
 `;
+
 export const IconWrap = styled.div`
-  width: 53px;
+  width: 3.3125rem;
   display: flex;
-  height: 10px;
-  gap: 33px;
+  height: 3.125rem;
+  gap: 2.0625rem;
   margin: 0 0 0 auto;
   position: relative;
-  right: 200px;
+  right: 71.875rem;
+  svg {
+    cursor: pointer;
+  }
 `;
+
 export const IdealTalentLayout = styled.div`
   display: flex;
-  height: 218px;
+  height: 13.625rem;
+  overflow: hidden;
+`;
+
+export const Slide = styled.div`
+  transition: transform 0.3s ease-in-out;
+  width: 0rem;
 `;
 
 export const UpperBox = styled.div`
-  height: 482px;
+  height: 30.125rem;
   width: 100vw;
-  left: 0px;
-  top: 0px;
-  background-color: #f5f9fb;
-  border-radius: 0px 0px 0px 200px;
+  left: 0rem;
+  top: 0rem;
+  background-color: ${({ theme }) => theme.color.background};
+  border-radius: 0rem 0rem 0rem 12.5rem;
 `;
 
 export const IdealTalent = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 32px 40px;
+  padding: 2rem 2.5rem;
+  width: 27.8125rem;
+  height: 13.625rem;
+  background-color: ${({ theme }) => theme.color.white};
 
-  width: 445px;
-  height: 218px;
-
-  /* white */
-  margin-right: 100px;
-
-  background: #ffffff;
-  /* elevation_black */
-
-  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.06);
-  border-radius: 30px;
-
-  /* Inside auto layout */
+  box-shadow: 0rem 0.25rem 2.5rem rgba(0, 0, 0, 0.06);
+  border-radius: 1.875rem;
 `;
