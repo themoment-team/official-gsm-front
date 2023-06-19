@@ -13,7 +13,6 @@ export const Section1PageTitleWrap = styled.div`
   width: 30.0625rem;
   height: 26.0625rem;
   position: relative;
-
   margin-top: 10.125rem;
 `;
 
@@ -21,8 +20,7 @@ export const SchoolTitle = styled.h1`
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 1.8125rem;
-
-  margin-top: 20px;
+  margin-top: 1.25rem;
 `;
 
 export const CircleTemplate = styled.div`
