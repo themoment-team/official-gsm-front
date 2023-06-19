@@ -3,23 +3,19 @@
 import { useState } from 'react';
 
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
 import styled from '@emotion/styled';
 
-import { AuthTitle, AuthModel, ToBackButton } from 'admin/components';
+import { AuthTitle, AuthModel } from 'admin/components';
 
 import { Button } from 'ui';
 
 export default function IntroPage() {
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const { back } = useRouter();
-
   return (
     <>
-      <ToBackButton onClick={back} />
-      <AuthTitle textAlign='center' marginTop='5rem'>
+      <AuthTitle textAlign='center' marginTop='6.5rem'>
         승인이 완료되었습니다.
       </AuthTitle>
       <AuthModel modelUrl='/models/approve.webm' loop={false} marginTop='0' />
