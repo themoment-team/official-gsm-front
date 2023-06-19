@@ -64,6 +64,7 @@ const IdealTalentItem: IdealTalentType[] = [
     ],
   },
 ];
+
 const Section7 = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
 
@@ -106,22 +107,20 @@ const Section7 = () => {
               <I.RightArrowIcon />
             </div>
           </S.IconWrap>
-          <S.IdealTalentLayout>
+          <S.IdealTalentLayout
+            css={css`
+              transform: translateX(${-currentSlide * 445}px);
+              transition: transform 0.3s ease-in-out;
+            `}
+          >
             {IdealTalentItem.map((item, index) => (
-              <div
-                key={index}
-                css={css`
-                  transform: translateX(${(index - currentSlide) * 460}px);
-                  transition: transform 0.3s ease-in-out; // 슬라이드 애니메이션에 트랜지션을 추가합니다.
-                  background-color: pink;
-                  width: 0px;
-                `}
-              >
-                <S.IdealTalent>
-                  <IdealTalent {...item} />
-                </S.IdealTalent>
-              </div>
+              <S.IdealTalent key={index}>
+                <IdealTalent {...item} />
+              </S.IdealTalent>
             ))}
+            <S.IdealTalent>
+              <IdealTalent {...IdealTalentItem[0]} />
+            </S.IdealTalent>
           </S.IdealTalentLayout>
         </S.Box>
       </S.UpperBox>

@@ -27,7 +27,6 @@ export const IconWrap = styled.div`
 export const IdealTalentLayout = styled.div`
   display: flex;
   height: 218px;
-  overflow: hidden;
 `;
 
 export const UpperBox = styled.div`
@@ -49,6 +48,7 @@ export const IdealTalent = styled.div`
   height: 218px;
 
   /* white */
+  margin-right: 100px;
 
   background: #ffffff;
   /* elevation_black */
