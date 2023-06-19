@@ -2,6 +2,8 @@
 
 import { useRef, useState, useEffect } from 'react';
 
+import { css } from '@emotion/react';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
@@ -128,7 +130,9 @@ export default function WritePage() {
                     type='file'
                     onChange={postFile}
                     ref={fileInput}
-                    style={{ display: 'none' }}
+                    css={css`
+                      display: none;
+                    `}
                     multiple
                   />
                 </S.FileTitleWrapper>
@@ -152,7 +156,9 @@ export default function WritePage() {
                     type='file'
                     onChange={postFile}
                     ref={fileInput}
-                    style={{ display: 'none' }}
+                    css={css`
+                      display: none;
+                    `}
                     multiple
                   />
                 </S.UploadBox>
