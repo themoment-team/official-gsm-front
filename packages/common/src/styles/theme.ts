@@ -26,12 +26,12 @@ const color = {
   white: '#FFFFFF',
   black: '#000000',
   background: '#F5F9FB',
-};
+} as const;
 
 const elevation = {
   blue: 'rgba(175, 198, 209, 0.2)',
   black: 'rgba(0, 0, 0, 0.06)',
-};
+} as const;
 
 const typo = {
   h1: {
@@ -74,10 +74,10 @@ const typo = {
     fontSize: '0.625rem',
     lineHeight: '0.9375rem',
   },
-};
+} as const;
 
 export const theme = {
   color,
   elevation,
   typo,
-};
+} as const;

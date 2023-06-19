@@ -7,7 +7,7 @@ interface ChevronIconProp {
 const Turn = {
   left: 0,
   right: '180',
-};
+} as const;
 
 const ChevronIcon: React.FC<ChevronIconProp> = ({ turn }) => (
   <svg
