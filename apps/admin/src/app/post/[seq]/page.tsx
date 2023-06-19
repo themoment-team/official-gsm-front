@@ -64,7 +64,7 @@ const props = {
 export default function DetailPage() {
   return (
     <DetailPageWrapper>
-      <Header hasNotification={false} name={'정문정'} />
+      <Header />
       <GalleryDetail
         post={props.post}
         fileInfo={props.fileInfo}
