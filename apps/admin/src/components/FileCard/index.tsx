@@ -4,7 +4,7 @@ import * as S from './style';
 
 interface FileCardProps {
   fileName: string;
-  onCancel: () => void;
+  onCancel: (fileName: string) => void;
 }
 
 const FileCard: React.FC<FileCardProps> = ({ fileName, onCancel }) => (
