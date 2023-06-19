@@ -7,6 +7,7 @@ import styled from '@emotion/styled';
 import { GalleryDetail, PostDetail, Header } from 'admin/components';
 
 import { useGetPostDetail } from 'api/client';
+import { minutesToMs } from 'common';
 
 interface DetailPageProps {
   params: { seq: string };
@@ -15,7 +16,10 @@ interface DetailPageProps {
 export default function DetailPage({ params: { seq } }: DetailPageProps) {
   const postSeq = Number(seq);
 
-  const { data, isError } = useGetPostDetail(postSeq);
+  const { data, isError } = useGetPostDetail(postSeq, {
+    cacheTime: minutesToMs(30),
+    staleTime: minutesToMs(3),
+  });
 
   if (isError) {
     redirect('/');

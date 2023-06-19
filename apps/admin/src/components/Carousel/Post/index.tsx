@@ -8,6 +8,7 @@ import { CarouselController } from 'admin/components';
 import * as S from 'admin/components/Carousel/style';
 
 import { useGetPostDetail } from 'api/client';
+import { minutesToMs } from 'common';
 
 interface PostCarouselProps {
   postSeq: number;
@@ -16,7 +17,10 @@ interface PostCarouselProps {
 const PostCarousel: React.FC<PostCarouselProps> = ({ postSeq }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  const { data } = useGetPostDetail(postSeq);
+  const { data } = useGetPostDetail(postSeq, {
+    cacheTime: minutesToMs(30),
+    staleTime: minutesToMs(3),
+  });
 
   return (
     <S.PostCarouselWrapper>
