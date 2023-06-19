@@ -1,8 +1,4 @@
-import React from 'react';
-
-interface UnderscoreIconProps {}
-
-const UnderscoreIcon: React.FC<UnderscoreIconProps> = () => (
+const UnderscoreIcon = () => (
   <svg
     width='204'
     height='49'

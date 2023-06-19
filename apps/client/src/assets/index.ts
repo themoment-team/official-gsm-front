@@ -1,1 +1,1 @@
-export { default as Underscore } from './svg/icon/Underscore';
+export { default as UnderscoreIcon } from './svg/icon/UnderscoreIcon';
