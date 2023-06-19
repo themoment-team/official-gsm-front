@@ -40,7 +40,7 @@ export const IntroductionTitleStyle = styled.h1`
 
   &.firstTitle {
     -webkit-text-stroke: 0.063rem ${({ theme }) => theme.color.primary.navy}; /* 웹킷 기반 브라우저 (Chrome, Safari) */
-    color: #ffffff;
+    color: transparent;
     font-family: sans-serif;
     font-weight: 700;
     font-size: 3.8581rem;
