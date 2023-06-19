@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+
 import { minutesToMs } from 'common';
 
 import { CommonDetail, PostCarousel } from 'admin/components';

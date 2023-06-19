@@ -4,10 +4,11 @@ import { redirect } from 'next/navigation';
 
 import styled from '@emotion/styled';
 
+import { minutesToMs } from 'common';
+
 import { GalleryDetail, PostDetail, Header } from 'admin/components';
 
 import { useGetPostDetail } from 'api/client';
-import { minutesToMs } from 'common';
 
 interface DetailPageProps {
   params: { seq: string };

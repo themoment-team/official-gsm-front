@@ -2,12 +2,13 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { css } from '@emotion/react';
 
+import { minutesToMs } from 'common';
+
 import { ChevronIcon } from 'admin/assets';
 
 import { useGetPostDetail } from 'api/client';
 
 import * as S from './style';
-import { minutesToMs } from 'common';
 
 interface CarouselControllerProps {
   currentIndex: number;

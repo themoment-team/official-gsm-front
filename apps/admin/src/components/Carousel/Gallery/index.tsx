@@ -4,11 +4,12 @@ import Image from 'next/image';
 
 import { css } from '@emotion/react';
 
+import { minutesToMs } from 'common';
+
 import { CarouselController } from 'admin/components';
 import * as S from 'admin/components/Carousel/style';
 
 import { useGetPostDetail } from 'api/client';
-import { minutesToMs } from 'common';
 
 interface GalleryCarouselProps {
   postSeq: number;

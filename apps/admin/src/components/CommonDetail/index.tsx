@@ -1,9 +1,10 @@
+import { minutesToMs } from 'common';
+
 import { FileButton, WriterAndDate, EditButton } from 'admin/components';
 
 import { useGetPostDetail } from 'api/client';
 
 import * as S from './style';
-import { minutesToMs } from 'common';
 
 interface CommonDetailProps {
   postSeq: number;
