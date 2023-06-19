@@ -3,7 +3,7 @@ import * as I from 'admin/assets';
 import * as S from './style';
 
 interface FileCardProps {
-  fileName?: string;
+  fileName: string;
   onCancel: any;
 }
 
