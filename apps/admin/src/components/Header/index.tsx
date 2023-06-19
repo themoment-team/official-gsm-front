@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { FC } from 'react';
 
 import Image from 'next/image';
@@ -9,17 +9,22 @@ import { css } from '@emotion/react';
 import * as I from 'admin/assets';
 import { ApproveModal } from 'admin/components';
 
+import { useGetUnapproveList, useGetUserInfo } from 'api/admin';
+
 import * as S from './style';
 
-interface HeaderProps {
-  hasNotification: boolean;
-  name: string;
-}
-
-const Header: FC<HeaderProps> = ({ hasNotification, name }) => {
+const Header: FC = () => {
   const [showApproveModal, setShowApproveModal] = useState<boolean>(false);
+  const [hasNotification, setHasNotification] = useState<boolean>(false);
+
+  const { data: unapproveList } = useGetUnapproveList();
+  const { data: userInfo } = useGetUserInfo();
 
   const closeApproveModal = () => setShowApproveModal(false);
+
+  useEffect(() => {
+    setHasNotification(!!unapproveList?.length);
+  }, [unapproveList]);
 
   return (
     <S.Header>
@@ -47,7 +52,7 @@ const Header: FC<HeaderProps> = ({ hasNotification, name }) => {
           )}
         </S.ApproveRequest>
 
-        <p className='teacher'>{name} 선생님</p>
+        <p className='teacher'>{userInfo?.userName} 선생님</p>
       </S.ApproveSection>
     </S.Header>
   );
