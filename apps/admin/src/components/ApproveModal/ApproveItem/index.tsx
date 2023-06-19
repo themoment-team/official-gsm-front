@@ -1,22 +1,55 @@
 import * as I from 'admin/assets';
 
-import * as S from './style';
+import {
+  usePatchApprove,
+  type UnapproveListType,
+  useDeleteApprove,
+} from 'api/admin';
 
-interface ApproveItemProps {
-  name: string;
-  date: string;
+import * as S from './style';
+interface ApproveItemProps extends UnapproveListType {
+  onApprove: () => void;
 }
 
-const ApproveItem: React.FC<ApproveItemProps> = ({ name, date }) => (
+const ApproveItem: React.FC<ApproveItemProps> = ({
+  userName,
+  userSeq,
+  onApprove,
+  requestedAt,
+}) => {
+  const { mutate: patchMutate } = usePatchApprove();
+  const { mutate: deleteMutate } = useDeleteApprove();
+
+  const patchApprove = () => {
+    patchMutate(userSeq, {
+      onSuccess: () => {
+        onApprove();
+      },
+    });
+  };
+
+  const deleteApprove = () => {
+    deleteMutate(userSeq, {
+      onSuccess: () => {
+        onApprove();
+      },
+    });
+  };
+
+  return (
     <S.ApproveItem>
-      <p className='teacher'>{name} 선생님</p>
-      <p className='date'>{date}</p>
+      <p className='teacher'>{userName} 선생님</p>
+      <p className='date'>{requestedAt}</p>
       <S.Approve>
-        <button className='approve'>승인</button>
+        <button className='approve' onClick={patchApprove}>
+          승인
+        </button>
         <I.VerticalBarIcon />
-        <button className='refuse'>거절</button>
+        <button className='refuse' onClick={deleteApprove}>
+          거절
+        </button>
       </S.Approve>
     </S.ApproveItem>
   );
-
+};
 export default ApproveItem;
