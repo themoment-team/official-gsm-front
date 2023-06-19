@@ -12,7 +12,6 @@ import type { IdealTalentType } from 'client/types/idealtalent';
 
 import * as I from 'assets';
 
-
 import * as S from './style';
 
 const IdealTalentItem: IdealTalentType[] = [
