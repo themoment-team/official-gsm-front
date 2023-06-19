@@ -13,12 +13,11 @@ interface TextAreaProps
   width?: string;
   height?: string;
   isError?: boolean;
-  marginTop?: string;
   borderRadius?: string;
 }
 
 const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
-  ({ width, height, isError, marginTop, borderRadius, ...attributes }, ref) => (
+  ({ width, height, isError, borderRadius, ...attributes }, ref) => (
     <S.TextAreaBox
       {...attributes}
       ref={ref}

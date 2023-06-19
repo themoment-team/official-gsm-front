@@ -8,4 +8,4 @@ export const postQueryKeys = {
     pageNumber,
   ],
   getPostDetail: (postSeq: number) => ['post', 'detail', postSeq],
-};
+} as const;
