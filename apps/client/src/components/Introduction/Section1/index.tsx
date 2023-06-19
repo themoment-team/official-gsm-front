@@ -25,9 +25,9 @@ const Section1 = () => {
   return (
     <S.Section1Page>
       <S.Section1PageTitleWrap>
-        <S.Circle />
-        <S.Circle2 />
-        <S.Circle3 />
+        <S.GradationCircle />
+        <S.GradationCircle2 />
+        <S.GradationCircle3 />
         <S.IntroductionTitleWrap>
           {introduceTitle.map((index) => (
             <IntroductionTitle

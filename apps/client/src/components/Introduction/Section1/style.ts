@@ -21,6 +21,8 @@ export const SchoolTitle = styled.h1`
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 1.8125rem;
+
+  margin-top: 20px;
 `;
 
 export const CircleTemplate = styled.div`
@@ -29,15 +31,14 @@ export const CircleTemplate = styled.div`
   z-index: 0;
 `;
 
-export const Circle = styled(CircleTemplate)`
+export const GradationCircle = styled(CircleTemplate)`
   left: 2.875rem;
   width: 13.9375rem;
   height: 13.9375rem;
-
   background: #fcffab;
 `;
 
-export const Circle2 = styled(CircleTemplate)`
+export const GradationCircle2 = styled(CircleTemplate)`
   width: 13.8125rem;
   height: 13.8125rem;
   background-color: #a8e3ff;
@@ -47,7 +48,7 @@ export const Circle2 = styled(CircleTemplate)`
   z-index: -1;
 `;
 
-export const Circle3 = styled(CircleTemplate)`
+export const GradationCircle3 = styled(CircleTemplate)`
   width: 19.0625rem;
   height: 19.0625rem;
   background-color: #6bb6ff96;
@@ -72,7 +73,7 @@ export const ScrollContentsWrap = styled.div`
 `;
 
 export const ScrollTitle = styled.div`
-  color: #424242;
+  color: ${({ theme }) => theme.color.gray['080']};
   font-weight: 300;
   font-size: 1rem;
   line-height: 1.1875rem;
