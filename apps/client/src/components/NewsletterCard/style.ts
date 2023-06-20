@@ -54,7 +54,7 @@ export const DateCircle = styled.div`
   justify-content: center;
 `;
 
-export const DateText = styled.h1`
+export const DateText = styled.em`
   ${({ theme: { typo } }) => typo.title};
   text-align: center;
   font-weight: 600;
