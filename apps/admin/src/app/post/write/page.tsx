@@ -2,9 +2,8 @@
 
 import { useRef, useState, useEffect } from 'react';
 
-import { css } from '@emotion/react';
-
 import { zodResolver } from '@hookform/resolvers/zod';
+import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -12,7 +11,7 @@ import {
   Input,
   TextArea,
   Category,
-  UploadButton,
+  FileUploadLabel,
   Header,
   FileCard,
 } from 'admin/components';
@@ -30,10 +29,11 @@ const schema = z.object({
     .max(5000, { message: '내용은 5000글자 이하로 입력해주세요.' }),
 });
 
-type FormValues = z.infer<typeof schema>;
+type FormType = z.infer<typeof schema>;
 
 export default function WritePage() {
   const [files, setFiles] = useState<File[]>([]);
+  const fileInput = useRef<HTMLInputElement>(null);
 
   const handleCancel = (fileName: string) => {
     setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
@@ -41,35 +41,34 @@ export default function WritePage() {
 
   const {
     register,
-
+    handleSubmit,
     formState: { errors },
-  } = useForm<FormValues>({ resolver: zodResolver(schema) });
+  } = useForm<FormType>({ resolver: zodResolver(schema) });
 
-  // const onSubmit: SubmitHandler<FormValues> = (data) => {
-  //   // eslint-disable-next-line no-console
+  const onSubmit: SubmitHandler<FormType> = (data) => {
+    const contents = {
+      title: data.title,
+      content: data.content,
+      files: files,
+      // 나중에 통신코드 작성
+      // file:
+    };
 
-  //   const contents = {
-  //     title: data.title,
-  //     content: data.content,
-  //     files: files,
-  //     // 나중에 통신코드 작성
-  //     // file:
-  //   };
-  //   console.log(contents);
-  // };
-
-  const postFile = () => {
-    setFiles([...files, ...Array.from(fileInput.current?.files as FileList)]);
+    // eslint-disable-next-line no-console
+    console.log(contents);
   };
 
-  const fileInput = useRef<HTMLInputElement>(null);
-
-  const handleClick = () => {
-    fileInput.current?.click();
+  const postFile = () => {
+    setFiles((files) =>
+      fileInput.current?.files && fileInput.current?.files[0]
+        ? [...files, fileInput.current.files[0]]
+        : files
+    );
   };
 
   const preventClose = (e: BeforeUnloadEvent) => {
     e.preventDefault();
+    e.returnValue = '';
   };
 
   useEffect(() => {
@@ -87,7 +86,7 @@ export default function WritePage() {
       <Header hasNotification={false} name={'정문정'} />
       <S.WritePageWrap>
         <S.WriteTitle>게시물 생성</S.WriteTitle>
-        <S.FormWrap /*onSubmit={handleSubmit(onSubmit)} */>
+        <S.FormWrap onSubmit={handleSubmit(onSubmit)}>
           <div>
             <S.FormItemTitle>카테고리</S.FormItemTitle>
             <Category width='36.125rem' category='notice' />
@@ -121,18 +120,17 @@ export default function WritePage() {
             )}
           </div>
           <div>
-            {files[0] ? (
+            {files.length > 0 ? (
               <div>
                 <S.FileTitleWrapper>
                   <S.FormItemTitle>첨부 파일</S.FormItemTitle>
-                  <UploadButton onClick={handleClick} />
+                  <FileUploadLabel htmlFor='fileUpload' />
                   <input
                     type='file'
+                    id='fileUpload'
                     onChange={postFile}
                     ref={fileInput}
-                    css={css`
-                      display: none;
-                    `}
+                    hidden
                     multiple
                   />
                 </S.FileTitleWrapper>
@@ -151,14 +149,13 @@ export default function WritePage() {
                   <S.UploadTitle>
                     첫번째 등록하신 이미지는 썸네일 역할을 합니다.
                   </S.UploadTitle>
-                  <UploadButton onClick={handleClick} />
+                  <FileUploadLabel htmlFor='fileUpload' />
                   <input
                     type='file'
+                    id='fileUpload'
                     onChange={postFile}
                     ref={fileInput}
-                    css={css`
-                      display: none;
-                    `}
+                    hidden
                     multiple
                   />
                 </S.UploadBox>
