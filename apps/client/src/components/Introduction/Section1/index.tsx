@@ -8,17 +8,17 @@ const Section1 = () => {
     {
       pointsize: '0.8263rem',
       className: 'firstTitle',
-      child: '상상과 실력으로',
+      title: '상상과 실력으로',
     },
     {
       pointsize: '0.7063rem',
       className: 'secondTitle',
-      child: 'AI 시대를 선도할',
+      title: 'AI 시대를 선도할',
     },
     {
       pointsize: '0.75rem',
       className: 'thirdTitle',
-      child: 'SW 마이스터',
+      title: 'SW 마이스터',
     },
   ];
 
@@ -31,13 +31,13 @@ const Section1 = () => {
         <S.IntroductionTitleWrap>
           {introduceTitle.map((index) => (
             <IntroductionTitle
-              key={index.child}
+              key={index.title}
               pointPosition='bottom'
               pointColor='lime'
               pointSize={index.pointsize}
               className={index.className}
             >
-              {index.child}
+              {index.title}
             </IntroductionTitle>
           ))}
         </S.IntroductionTitleWrap>
