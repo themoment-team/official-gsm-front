@@ -22,9 +22,7 @@ export default function SignInWarningPage() {
         `}
       >
         <S.Description>학교 이메일로만 로그인 가능합니다.</S.Description>
-        <GoogleLoginButton>
-          <>다시 로그인</>
-        </GoogleLoginButton>
+        <GoogleLoginButton>다시 로그인</GoogleLoginButton>
       </S.SignInContent>
     </S.SignInPage>
   );

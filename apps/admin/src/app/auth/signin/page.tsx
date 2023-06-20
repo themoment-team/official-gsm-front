@@ -19,9 +19,7 @@ export default function SignInPage() {
           <S.SkyBlueHighlight>학교 전용 구글 아이디</S.SkyBlueHighlight>로
           로그인해주세요.
         </S.Description>
-        <GoogleLoginButton>
-          <>Google 로그인</>
-        </GoogleLoginButton>
+        <GoogleLoginButton>Google 로그인</GoogleLoginButton>
       </S.SignInContent>
     </S.SignInPage>
   );
