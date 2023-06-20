@@ -2,6 +2,8 @@ import type { Preview } from '@storybook/react';
 import { ThemeProvider } from '@emotion/react';
 import { GlobalStyle, theme } from 'common';
 import React from 'react';
+import Providers from './providers';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 const preview: Preview = {
   parameters: {
@@ -28,8 +30,11 @@ const preview: Preview = {
   decorators: [
     (Story) => (
       <ThemeProvider theme={theme}>
-        <GlobalStyle />
-        <Story />
+        <Providers>
+          <ReactQueryDevtools />
+          <GlobalStyle />
+          <Story />
+        </Providers>
       </ThemeProvider>
     ),
   ],
