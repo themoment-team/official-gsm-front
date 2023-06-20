@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Label = styled.label`
+  width: fit-content;
   height: 2.25rem;
   padding: 0.5rem 0.75rem 0.5rem 1.125rem;
   display: flex;
