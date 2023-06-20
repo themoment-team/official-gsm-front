@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
 
-import { minutesToMs } from 'common';
-
 import { CommonDetail, PostCarousel } from 'admin/components';
 
 import { useGetPostDetail } from 'api/client';
@@ -11,10 +9,7 @@ interface PostDetailProps {
 }
 
 const PostDetail: React.FC<PostDetailProps> = ({ postSeq }) => {
-  const { data } = useGetPostDetail(postSeq, {
-    cacheTime: minutesToMs(30),
-    staleTime: minutesToMs(3),
-  });
+  const { data } = useGetPostDetail(postSeq);
 
   return (
     <NoticeWrapper>

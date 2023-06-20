@@ -2,8 +2,6 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { css } from '@emotion/react';
 
-import { minutesToMs } from 'common';
-
 import { ChevronIcon } from 'admin/assets';
 
 import { useGetPostDetail } from 'api/client';
@@ -21,10 +19,7 @@ const CarouselController: React.FC<CarouselControllerProps> = ({
   setCurrentIndex,
   postSeq,
 }) => {
-  const { data } = useGetPostDetail(postSeq, {
-    cacheTime: minutesToMs(30),
-    staleTime: minutesToMs(3),
-  });
+  const { data } = useGetPostDetail(postSeq);
 
   const min = 0;
   const max = (data?.fileInfo.length ?? 0) - 1;

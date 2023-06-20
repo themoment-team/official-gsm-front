@@ -4,8 +4,6 @@ import Image from 'next/image';
 
 import { css } from '@emotion/react';
 
-import { minutesToMs } from 'common';
-
 import { CarouselController } from 'admin/components';
 import * as S from 'admin/components/Carousel/style';
 
@@ -18,10 +16,7 @@ interface GalleryCarouselProps {
 const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ postSeq }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  const { data } = useGetPostDetail(postSeq, {
-    cacheTime: minutesToMs(30),
-    staleTime: minutesToMs(3),
-  });
+  const { data } = useGetPostDetail(postSeq);
 
   return (
     <S.GalleryCarouselWrapper>

@@ -1,5 +1,3 @@
-import { minutesToMs } from 'common';
-
 import { FileButton, WriterAndDate, EditButton } from 'admin/components';
 
 import { useGetPostDetail } from 'api/client';
@@ -11,10 +9,7 @@ interface CommonDetailProps {
 }
 
 const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
-  const { data } = useGetPostDetail(postSeq, {
-    cacheTime: minutesToMs(30),
-    staleTime: minutesToMs(3),
-  });
+  const { data } = useGetPostDetail(postSeq);
 
   return (
     <>
