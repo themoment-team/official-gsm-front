@@ -68,6 +68,16 @@ export const ScrollContentsWrap = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  animation: motion 0.7s linear 0s infinite alternate;
+
+  @keyframes motion {
+    0% {
+      transform: translateY(0.625rem);
+    } /* 처음 위치 */
+    100% {
+      transform: translateY(0);
+    } /* 마지막 위치 */
+  }
 `;
 
 export const ScrollTitle = styled.p`
