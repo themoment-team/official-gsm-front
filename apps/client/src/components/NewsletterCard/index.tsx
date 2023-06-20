@@ -18,18 +18,18 @@ const NewsletterCard: React.FC<NewsletterCardProps> = ({
   const date = formatDate(createdAtDate.getDate());
 
   return (
-    <S.NewsletterCardWrapper className='newsletterCardWrapper'>
-      <S.DateWrapper>
-        <S.DateCircle className='dateCircle'>
-          <S.DateText>{date}</S.DateText>
-        </S.DateCircle>
-        <S.YearMonth>{`${year}.${month}`}</S.YearMonth>
-      </S.DateWrapper>
-      <S.TextWrapper>
-        <S.Title>{postTitle}</S.Title>
-        <S.Preview>{contentPreview}</S.Preview>
-      </S.TextWrapper>
-    </S.NewsletterCardWrapper>
+    <S.ExampleDiv>
+      <S.NewsletterCardWrapper className='newsletterCardWrapper'>
+        <S.DateWrapper>
+          <S.DateCircle className='dateCircle'>{date}</S.DateCircle>
+          <S.YearMonth>{`${year}.${month}`}</S.YearMonth>
+        </S.DateWrapper>
+        <S.TextWrapper>
+          <S.Title>{postTitle}</S.Title>
+          <S.Preview>{contentPreview}</S.Preview>
+        </S.TextWrapper>
+      </S.NewsletterCardWrapper>
+    </S.ExampleDiv>
   );
 };
 

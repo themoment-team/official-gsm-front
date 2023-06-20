@@ -9,8 +9,9 @@ export const ExampleDiv = styled.div`
     .dateCircle {
       background-color: ${({ theme: { color } }) => color.primary.sky};
     }
-    h1 {
+    .dateCircle:first-child {
       color: ${({ theme: { color } }) => color.sub.blue};
+      opacity: 1;
     }
   }
 
@@ -21,8 +22,9 @@ export const ExampleDiv = styled.div`
     .dateCircle {
       background-color: ${({ theme: { color } }) => color.primary.lime};
     }
-    h1 {
+    .dateCircle:first-child {
       color: #73962b;
+      opacity: 1;
     }
   }
 `;
@@ -52,9 +54,7 @@ export const DateCircle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
 
-export const DateText = styled.em`
   ${({ theme: { typo } }) => typo.title};
   text-align: center;
   font-weight: 600;
