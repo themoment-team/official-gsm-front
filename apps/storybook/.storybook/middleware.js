@@ -1,6 +1,7 @@
-import { createProxyMiddleware } from 'http-proxy-middleware';
+require('dotenv').config();
+const { createProxyMiddleware } = require('http-proxy-middleware');
 
-export function expressMiddleware(router) {
+module.exports = function storybookMiddleware(router) {
   router.use(
     '/api/client',
     createProxyMiddleware({
@@ -8,8 +9,7 @@ export function expressMiddleware(router) {
       changeOrigin: true,
       pathRewrite: {
         client: '',
-        admin: '',
       },
     })
   );
-}
+};
