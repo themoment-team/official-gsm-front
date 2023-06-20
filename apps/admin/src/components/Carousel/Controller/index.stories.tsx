@@ -12,7 +12,7 @@ type Story = StoryObj<typeof CarouselController>;
 
 export const Primary: Story = {
   args: {
-    postSeq: 0,
+    postSeq: 1,
     currentIndex: 0,
     setCurrentIndex: () => 0,
   },

@@ -12,6 +12,6 @@ type Story = StoryObj<typeof GalleryDetail>;
 
 export const Primary: Story = {
   args: {
-    postSeq: 0,
+    postSeq: 1,
   },
 };
