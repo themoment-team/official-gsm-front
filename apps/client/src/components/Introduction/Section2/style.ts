@@ -1,16 +1,26 @@
 import styled from '@emotion/styled';
 
-export const Layout = styled.div`
+export const Test = styled.div`
   width: 100vw;
-  height: 53.5rem;
+  height: 60.5rem;
   background: #051b30;
   padding: 8.75rem 0;
+  overflow: scroll;
+  display: flex;
+  align-items: center;
+`;
+
+export const Layout = styled.div`
+  width: 100vw;
+
+  background: #051b30;
+  overflow: scroll;
 `;
 
 export const TitleSection = styled.div`
-  height: 100%;
-  overflow-y: scroll;
+  height: 300px;
   text-align: center;
+  padding-top: 200px;
 `;
 
 export const Point = styled.span`

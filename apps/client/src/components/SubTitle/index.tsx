@@ -1,9 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react';
 
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 const SubTitle = ({ arrContent }: any) => {
-  const [isCentered, setIsCentered] = useState(false);
+  const [isCentered, setIsCentered] = useState<any>(null);
   const observer = useRef<any>();
   const subtitleRef = useRef<any>();
 
@@ -12,29 +13,39 @@ const SubTitle = ({ arrContent }: any) => {
       (entries) => {
         entries.forEach((element) => {
           console.log(element);
-          if (
-            element.intersectionRatio >= 0.2 &&
-            element.intersectionRatio <= 0.6
-          ) {
+          if (element.isIntersecting) {
             setIsCentered(true);
-          } else {
+          } else if (!element.isIntersecting) {
             setIsCentered(false);
           }
         });
       },
-      { threshold: [0.2, 0.6] }
+      { threshold: 1 }
     );
 
     const node = subtitleRef.current;
+    // node가 존재하면 observe 호출
     if (node) observer.current.observe(node);
 
     return () => {
+      // 컴포넌트가 언마운트되면 observer 해제
       if (node) observer.current.unobserve(node);
     };
   }, []);
 
   return (
-    <SubTitleStyle ref={subtitleRef} isCentered={isCentered}>
+    <SubTitleStyle
+      ref={subtitleRef}
+      isCentered={isCentered}
+      css={
+        isCentered &&
+        css`
+          font-size: 3.75rem;
+          line-height: 4.5rem;
+          font-weight: 700;
+        `
+      }
+    >
       {arrContent}
     </SubTitleStyle>
   );
@@ -47,11 +58,10 @@ const SubTitleStyle = styled.h3<{ isCentered: boolean }>`
   font-size: 2.5rem;
   line-height: 3rem;
   color: ${({ theme }) => theme.color.white};
-  opacity: 0.4;
+  opacity: ${({ isCentered }) => (isCentered ? 1 : 0.3)};
 
-  transition: all 0.5s;
-  transform: ${({ isCentered }) =>
-    isCentered && 'scale(2)'}; // 교차 영역이 존재할 때에만 스케일 변경
+  transition: all 3s;
+
   margin-bottom: 120px;
 
   &:nth-of-type(1) {
