@@ -23,7 +23,7 @@ export const IconWrap = styled.div`
   gap: 2.0625rem;
   margin: 0 0 0 auto;
   position: relative;
-  right: 59.375rem;
+  right: 38.375rem;
   svg {
     cursor: pointer;
   }
