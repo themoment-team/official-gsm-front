@@ -70,7 +70,7 @@ export const ScrollContentsWrap = styled.div`
   align-items: center;
 `;
 
-export const ScrollTitle = styled.div`
+export const ScrollTitle = styled.p`
   color: ${({ theme }) => theme.color.gray['080']};
   font-weight: 300;
   font-size: 1rem;
