@@ -18,7 +18,7 @@ export const Layout = styled.div`
 `;
 
 export const TitleSection = styled.div`
-  height: 300px;
+  height: 600px;
   text-align: center;
   padding-top: 200px;
 `;

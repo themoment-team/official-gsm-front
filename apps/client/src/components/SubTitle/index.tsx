@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
 
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
 const SubTitle = ({ arrContent }: any) => {
@@ -20,7 +19,7 @@ const SubTitle = ({ arrContent }: any) => {
           }
         });
       },
-      { threshold: 1 }
+      { threshold: 0.5 }
     );
 
     const node = subtitleRef.current;
@@ -34,18 +33,7 @@ const SubTitle = ({ arrContent }: any) => {
   }, []);
 
   return (
-    <SubTitleStyle
-      ref={subtitleRef}
-      isCentered={isCentered}
-      css={
-        isCentered &&
-        css`
-          font-size: 3.75rem;
-          line-height: 4.5rem;
-          font-weight: 700;
-        `
-      }
-    >
+    <SubTitleStyle ref={subtitleRef} isCentered={isCentered}>
       {arrContent}
     </SubTitleStyle>
   );
@@ -60,8 +48,8 @@ const SubTitleStyle = styled.h3<{ isCentered: boolean }>`
   color: ${({ theme }) => theme.color.white};
   opacity: ${({ isCentered }) => (isCentered ? 1 : 0.3)};
 
-  transition: all 3s;
-
+  transition: all 1s;
+  transform: ${({ isCentered }) => (isCentered ? 'scale(1.8)' : 'scale(1)')};
   margin-bottom: 120px;
 
   &:nth-of-type(1) {
