@@ -22,7 +22,9 @@ adminInstance.interceptors.response.use(
       return adminInstance(error.config);
     }
 
-    location.replace('/auth/signin');
+    {
+      process.env.NODE_ENV === 'production' && location.replace('/auth/signin');
+    }
 
     return Promise.reject(error);
   }
