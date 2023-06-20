@@ -4,23 +4,16 @@ import { redirect } from 'next/navigation';
 
 import styled from '@emotion/styled';
 
-import { minutesToMs } from 'common';
-
 import { GalleryDetail, PostDetail, Header } from 'admin/components';
 
 import { useGetPostDetail } from 'api/client';
 
 interface DetailPageProps {
-  params: { seq: string };
+  params: { postSeq: number };
 }
 
-export default function DetailPage({ params: { seq } }: DetailPageProps) {
-  const postSeq = Number(seq);
-
-  const { data, isError } = useGetPostDetail(postSeq, {
-    cacheTime: minutesToMs(30),
-    staleTime: minutesToMs(3),
-  });
+export default function DetailPage({ params: { postSeq } }: DetailPageProps) {
+  const { data, isError } = useGetPostDetail(postSeq);
 
   if (isError) {
     redirect('/');
@@ -29,12 +22,11 @@ export default function DetailPage({ params: { seq } }: DetailPageProps) {
   return (
     <DetailPageWrapper>
       <Header hasNotification={false} name={'정문정'} />
-      {data &&
-        (data.category === 'EVENT_GALLERY' ? (
-          <GalleryDetail postSeq={postSeq} />
-        ) : (
-          <PostDetail postSeq={postSeq} />
-        ))}
+      {data?.category === 'EVENT_GALLERY' ? (
+        <GalleryDetail postSeq={postSeq} />
+      ) : (
+        <PostDetail postSeq={postSeq} />
+      )}
     </DetailPageWrapper>
   );
 }
