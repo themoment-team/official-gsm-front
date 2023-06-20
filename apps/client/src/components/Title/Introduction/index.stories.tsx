@@ -14,7 +14,7 @@ export const Section1: Story = {
   args: {
     children: <>AI 시대를 선도할</>,
     pointColor: 'lime',
-    className: 'navy',
+    className: 'secondTitle',
     pointPosition: 'bottom',
     pointSize: '11px',
   },
@@ -24,7 +24,7 @@ export const BorderTitle: Story = {
   args: {
     children: <>상상과 실력으로</>,
     pointColor: 'lime',
-    className: 'border',
+    className: 'firstTitle',
     pointPosition: 'bottom',
     pointSize: '13px',
   },
