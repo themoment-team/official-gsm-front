@@ -3,13 +3,13 @@ import { GoogleIcon } from 'admin/assets';
 import { GoogleOAuthLink } from './style';
 
 interface GoogleLoginButtonProps {
-  text: string;
+  children: JSX.Element;
 }
 
-const GoogleLoginButton: React.FC<GoogleLoginButtonProps> = ({ text }) => (
+const GoogleLoginButton: React.FC<GoogleLoginButtonProps> = ({ children }) => (
   <GoogleOAuthLink href='/api/signin'>
     <GoogleIcon />
-    {text}
+    {children}
   </GoogleOAuthLink>
 );
 

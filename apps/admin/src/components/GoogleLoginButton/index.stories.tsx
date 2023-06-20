@@ -12,12 +12,12 @@ type Story = StoryObj<typeof GoogleLoginButton>;
 
 export const Signin: Story = {
   args: {
-    text: 'Google 로그인',
+    children: <>Google 로그인</>,
   },
 };
 
 export const SigninWarring: Story = {
   args: {
-    text: '다시 로그인',
+    children: <>다시 로그인</>,
   },
 };
