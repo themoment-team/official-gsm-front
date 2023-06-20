@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { css } from '@emotion/react';
 
+import { RightArrowIcon, LeftArrowIcon } from 'client/assets';
 import {
   IntroductionTitle,
   SectionTitle,
@@ -9,8 +10,6 @@ import {
   IdealTalent,
 } from 'client/components';
 import type { IdealTalentType } from 'client/types/idealtalent';
-
-import * as I from 'assets';
 
 import * as S from './style';
 
@@ -120,10 +119,10 @@ const Section7 = () => {
           <div>
             <S.IconWrap>
               <div onClick={handlePrevSlide}>
-                <I.LeftArrowIcon />
+                <LeftArrowIcon />
               </div>
               <div onClick={handleNextSlide}>
-                <I.RightArrowIcon />
+                <RightArrowIcon />
               </div>
             </S.IconWrap>
             <S.IdealTalentLayout>
@@ -131,7 +130,7 @@ const Section7 = () => {
                 <S.Slide
                   key={index}
                   css={css`
-                    transform: translateX(${(index - currentSlide) * 485}px);
+                    transform: translateX(${(index - currentSlide) * 500}px);
                   `}
                 >
                   <S.IdealTalent>

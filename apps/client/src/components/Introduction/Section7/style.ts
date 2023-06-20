@@ -20,7 +20,6 @@ export const Layout = styled.div`
 export const IconWrap = styled.div`
   width: 3.3125rem;
   display: flex;
-  height: 3.125rem;
   gap: 2.0625rem;
   margin: 0 0 0 auto;
   position: relative;
@@ -32,14 +31,16 @@ export const IconWrap = styled.div`
 
 export const IdealTalentLayout = styled.div`
   display: flex;
-  height: 258px;
+  height: 21.125rem;
   overflow: hidden;
+  align-items: center;
+  position: relative;
+  right: 1.875rem;
 `;
 
 export const Slide = styled.div`
   transition: transform 0.3s ease-in-out;
   width: 0rem;
-  height: 100px;
 `;
 
 export const UpperBox = styled.div`
@@ -58,4 +59,5 @@ export const IdealTalent = styled.div`
   background-color: ${({ theme }) => theme.color.white};
   box-shadow: 0rem 0.25rem 2.5rem rgba(0, 0, 0, 0.06);
   border-radius: 1.875rem;
+  margin-left: 1.875rem;
 `;
