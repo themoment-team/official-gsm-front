@@ -15,6 +15,7 @@ export { default as GalleryCard } from './GalleryCard';
 export { default as GalleryCarousel } from './Carousel/Gallery';
 export { default as GalleryDetail } from './GalleryDetail';
 export { default as GalleryList } from './GalleryList';
+export { default as GoogleLoginButton } from './GoogleLoginButton';
 export { default as Header } from './Header';
 export { default as Input } from './Input';
 export { default as PaginationController } from './PaginationController';

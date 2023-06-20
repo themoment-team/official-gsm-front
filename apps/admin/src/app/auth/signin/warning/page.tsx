@@ -2,7 +2,8 @@
 
 import { css } from '@emotion/react';
 
-import { WarningIcon, GoogleIcon } from 'admin/assets';
+import { WarningIcon } from 'admin/assets';
+import { GoogleLoginButton } from 'admin/components';
 import * as S from 'admin/styles/page/signin';
 
 export default function SignInWarningPage() {
@@ -23,10 +24,7 @@ export default function SignInWarningPage() {
         <S.Description>
           학교에서 배정 받은 이메일만 로그인 가능합니다.
         </S.Description>
-        <S.GoogleOAuthLink href='/api/signin'>
-          <GoogleIcon />
-          다시 로그인
-        </S.GoogleOAuthLink>
+        <GoogleLoginButton text='다시 로그인' />
       </S.SignInContent>
     </S.SignInPage>
   );
