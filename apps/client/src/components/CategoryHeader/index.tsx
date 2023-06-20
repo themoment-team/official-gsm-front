@@ -7,14 +7,14 @@ interface CategoryHeaderProps {
   category: 'FAMILY_NEWSLETTER' | 'EVENT_GALLERY';
 }
 
-const categorys = {
+const categories = {
   FAMILY_NEWSLETTER: '가정통신문',
   EVENT_GALLERY: '우리 학교 갤러리',
-};
+} as const;
 
 const CategoryHeader: React.FC<CategoryHeaderProps> = ({ category }) => (
   <S.CategoryHeaderWrapper>
-    <NewsTitle pointColor='lime'>{categorys[category]}</NewsTitle>
+    <NewsTitle pointColor='lime'>{categories[category]}</NewsTitle>
     <S.SeeMoreWrapper>
       <S.SeeMoreText>더보기</S.SeeMoreText>
       <S.ChevronIconWrapper>
