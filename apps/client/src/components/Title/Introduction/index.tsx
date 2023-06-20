@@ -33,11 +33,6 @@ export const IntroductionTitleStyle = styled.h1`
   font-weight: 700;
   color: ${({ theme }) => theme.color.gray['090']};
 
-  &.navy {
-    color: ${({ theme }) => theme.color.primary.navy};
-    font-size: 3.2976rem;
-  }
-
   &.firstTitle {
     -webkit-text-stroke: 0.063rem ${({ theme }) => theme.color.primary.navy}; /* 웹킷 기반 브라우저 (Chrome, Safari) */
     color: transparent;
