@@ -21,9 +21,7 @@ export default function SignInWarningPage() {
           height: 6.8125rem;
         `}
       >
-        <S.Description>
-          학교에서 배정 받은 이메일만 로그인 가능합니다.
-        </S.Description>
+        <S.Description>학교 이메일로만 로그인 가능합니다.</S.Description>
         <GoogleLoginButton text='다시 로그인' />
       </S.SignInContent>
     </S.SignInPage>
