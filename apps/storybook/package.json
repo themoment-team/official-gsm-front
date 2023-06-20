@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "common": "workspace:^",
+    "dotenv": "^16.3.1",
     "http-proxy-middleware": "^2.0.6",
     "tsconfig": "workspace:^",
     "typescript": "5.0.4"
