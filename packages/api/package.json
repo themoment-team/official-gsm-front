@@ -10,8 +10,5 @@
   },
   "devDependencies": {
     "tsconfig": "workspace:^"
-  },
-  "peerDependencies": {
-    "@tanstack/react-query": "^4.29.7"
   }
 }
