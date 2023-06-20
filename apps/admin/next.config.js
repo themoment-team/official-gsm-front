@@ -13,7 +13,7 @@ const nextConfig = {
     },
     {
       source: '/api/admin/:path*',
-      destination: `${process.env.ADMIN_API_URL}/:path*`,
+      destination: `${process.env.ADMIN_API_URL}/api/:path*`,
     },
   ],
   redirects: async () => [

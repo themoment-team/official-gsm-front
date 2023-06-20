@@ -1,6 +1,6 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  plugins: ['react', '@typescript-eslint', 'unused-imports'],
+  plugins: ['react', '@typescript-eslint', 'unused-imports', 'sort-exports'],
   rules: {
     'arrow-body-style': ['error', 'as-needed'],
     'react/self-closing-comp': ['error', { component: true, html: true }],
@@ -90,11 +90,20 @@ module.exports = {
     'unused-imports/no-unused-imports-ts': ['error'],
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
+    'sort-exports/sort-exports': ['error'],
   },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'next/core-web-vitals',
     'prettier',
+  ],
+  overrides: [
+    {
+      files: ['**/style.ts', '**/*.stories.tsx', '**/styles/page/*.ts'],
+      rules: {
+        'sort-exports/sort-exports': ['off'],
+      },
+    },
   ],
 };
