@@ -1,5 +1,6 @@
 import { GoogleIcon } from 'admin/assets';
-import { GoogleOAuthLink } from 'admin/styles/page/signin';
+
+import { GoogleOAuthLink } from './style';
 
 interface GoogleLoginButtonProps {
   text: string;
