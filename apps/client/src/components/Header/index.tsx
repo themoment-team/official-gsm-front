@@ -25,9 +25,11 @@ const Header: React.FC<HeaderProps> = ({ segment, isBackgroundWhite }) => {
   return (
     <S.Header>
       <S.HeaderInner>
-        <Link href='/'>
-          {isBackgroundWhite ? <GSMColorLogo /> : <GSMWhiteLogo />}
-        </Link>
+        <h1>
+          <S.LogoLink href='/'>
+            {isBackgroundWhite ? <GSMColorLogo /> : <GSMWhiteLogo />}
+          </S.LogoLink>
+        </h1>
         <S.GlobalNav
           css={css`
             color: ${isBackgroundWhite

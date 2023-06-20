@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Link from 'next/link';
 
 export const Header = styled.header`
   width: 100%;
@@ -14,6 +15,10 @@ export const HeaderInner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+export const LogoLink = styled(Link)`
+  display: block;
 `;
 
 export const GlobalNav = styled.nav`
