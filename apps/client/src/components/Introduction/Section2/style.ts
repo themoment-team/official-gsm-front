@@ -1,16 +1,15 @@
 import styled from '@emotion/styled';
 
 export const Layout = styled.div`
-  position: relative;
   width: 100vw;
   height: 53.5rem;
   background: #051b30;
   padding: 8.75rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 7.5rem;
+`;
+
+export const TitleSection = styled.div`
+  height: 100%;
+  overflow-y: scroll;
   text-align: center;
 `;
 
@@ -24,6 +23,7 @@ export const SubTitle = styled.h3`
   line-height: 3rem;
   color: ${({ theme }) => theme.color.white};
   opacity: 0.4;
+  margin-bottom: 6.5rem;
 `;
 
 export const MainTitle = styled.h1`
