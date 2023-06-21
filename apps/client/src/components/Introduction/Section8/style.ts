@@ -22,7 +22,6 @@ const secondary = keyframes`
 export const Layout = styled.div`
   height: 891px;
   width: 100vw;
-  background-color: palegoldenrod;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,14 +46,13 @@ export const Img = styled.div``;
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  height: 100vh;
   width: 100vw;
   overflow: hidden;
   flex-direction: column;
   .scroll-parent {
     position: relative;
     width: 100vw;
-    height: 20rem;
+    height: 100px;
     padding: 2rem 0;
     overflow-x: hidden;
   }
@@ -67,18 +65,29 @@ export const Container = styled.div`
     top: 0%;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 
   .scroll-element img {
-    width: 15%;
   }
 
-  .primary {
-    animation: ${primary} 15s linear infinite;
+  .primary.first {
+    animation: ${primary} 28s linear infinite;
+  }
+  .primary.second {
+    animation: ${primary} 27s linear infinite;
+  }
+  .primary.third {
+    animation: ${primary} 26s linear infinite;
   }
 
-  .secondary {
-    animation: ${secondary} 15s linear infinite;
+  .secondary.first {
+    animation: ${secondary} 28s linear infinite;
+  }
+  .secondary.second {
+    animation: ${secondary} 27s linear infinite;
+  }
+  .secondary.third {
+    animation: ${secondary} 26s linear infinite;
   }
 `;
