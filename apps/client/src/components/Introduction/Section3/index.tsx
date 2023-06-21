@@ -1,3 +1,4 @@
+import * as I from 'client/assets';
 import {
   IntroductionTitle,
   SectionTitle,
@@ -5,8 +6,6 @@ import {
   EducationDirection,
 } from 'client/components';
 import type { EducationDirectionType } from 'client/types/introduce';
-
-import * as I from 'assets';
 
 import * as S from './style';
 
