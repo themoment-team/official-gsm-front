@@ -25,7 +25,7 @@ export const FirstTitle = styled(Title)`
   font-family: initial;
   font-size: 3.8578rem;
 
-  span {
+  div {
     position: relative;
     bottom: 0.625rem;
   }
@@ -41,7 +41,7 @@ export const ThirdTitle = styled(Title)`
   font-size: 3.5019rem;
 `;
 
-export const Point = styled.span`
+export const Point = styled.div`
   width: 0.7063rem;
   height: 0.7063rem;
   border-radius: 100%;
