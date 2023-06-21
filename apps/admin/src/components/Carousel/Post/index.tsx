@@ -7,14 +7,16 @@ import { css } from '@emotion/react';
 import { CarouselController } from 'admin/components';
 import * as S from 'admin/components/Carousel/style';
 
-import type { FileInfoType } from 'api/client';
+import { useGetPostDetail } from 'api/client';
 
 interface PostCarouselProps {
-  fileInfo: FileInfoType[];
+  postSeq: number;
 }
 
-const PostCarousel: React.FC<PostCarouselProps> = ({ fileInfo }) => {
+const PostCarousel: React.FC<PostCarouselProps> = ({ postSeq }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  const { data } = useGetPostDetail(postSeq);
 
   return (
     <S.PostCarouselWrapper>
@@ -30,7 +32,7 @@ const PostCarousel: React.FC<PostCarouselProps> = ({ fileInfo }) => {
               right: ${currentIndex * 29.75}rem;
             `}
           >
-            {fileInfo.map((file, i) => (
+            {data?.fileInfo.map((file, i) => (
               <S.IMGWrapper
                 key={file.fileName + i}
                 css={css`
@@ -58,7 +60,7 @@ const PostCarousel: React.FC<PostCarouselProps> = ({ fileInfo }) => {
       <CarouselController
         setCurrentIndex={setCurrentIndex}
         currentIndex={currentIndex}
-        fileInfo={fileInfo}
+        postSeq={postSeq}
       />
     </S.PostCarouselWrapper>
   );
