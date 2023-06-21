@@ -29,15 +29,15 @@ const Section1 = () => {
         <S.GradationCircle2 />
         <S.GradationCircle3 />
         <S.IntroductionTitleWrap>
-          {introduceTitle.map((index) => (
+          {introduceTitle.map((value) => (
             <IntroductionTitle
-              key={index.title}
+              key={value.title}
               pointPosition='bottom'
               pointColor='lime'
-              pointSize={index.pointsize}
-              className={index.className}
+              pointSize={value.pointsize}
+              className={value.className}
             >
-              {index.title}
+              {value.title}
             </IntroductionTitle>
           ))}
         </S.IntroductionTitleWrap>
