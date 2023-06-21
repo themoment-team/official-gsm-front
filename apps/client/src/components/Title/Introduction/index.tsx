@@ -32,23 +32,4 @@ export const IntroductionTitleStyle = styled.h1`
   line-height: 4.438rem;
   font-weight: 700;
   color: ${({ theme }) => theme.color.gray['090']};
-
-  &.firstTitle {
-    -webkit-text-stroke: 0.063rem ${({ theme }) => theme.color.primary.navy}; /* 웹킷 기반 브라우저 (Chrome, Safari) */
-    color: transparent;
-    font-family: sans-serif;
-    font-weight: 700;
-    font-size: 3.8581rem;
-  }
-
-  &.secondTitle {
-    font-size: 3.2975rem;
-    color: ${({ theme }) => theme.color.primary.navy};
-    margin-left: 6.875rem;
-  }
-
-  &.thirdTitle {
-    font-size: 3.5019rem;
-    color: ${({ theme }) => theme.color.primary.navy};
-  }
 `;
