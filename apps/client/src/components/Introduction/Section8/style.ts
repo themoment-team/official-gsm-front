@@ -43,33 +43,31 @@ export const LogoImgWrap = styled.div`
 export const LogoLoop = styled.div``;
 export const LogoBox = styled.div``;
 export const Img = styled.div``;
+export const ScrollWrap = styled.div`
+  position: relative;
+  width: 100vw;
+  height: 100px;
+  padding: 2rem 0;
+  overflow-x: hidden;
+`;
+export const Scroll = styled.div`
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+`;
 export const Container = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100vw;
+  height: 332px;
   overflow: hidden;
   flex-direction: column;
-  .scroll-parent {
-    position: relative;
-    width: 100vw;
-    height: 100px;
-    padding: 2rem 0;
-    overflow-x: hidden;
-  }
-
-  .scroll-element {
-    width: inherit;
-    height: inherit;
-    position: absolute;
-    left: 0%;
-    top: 0%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-
-  .scroll-element img {
-  }
 
   .primary.first {
     animation: ${primary} 28s linear infinite;
