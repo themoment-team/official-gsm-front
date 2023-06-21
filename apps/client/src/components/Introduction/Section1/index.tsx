@@ -1,5 +1,5 @@
-import { MouseIcon, ChevronsIcon } from 'assets';
-import { IntroductionTitle } from 'components';
+import { MouseIcon, ChevronsIcon } from 'client/assets';
+import { IntroductionTitle } from 'client/components';
 
 import * as S from './style';
 
