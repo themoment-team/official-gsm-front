@@ -1,4 +1,4 @@
-const ChevronsIcon = () => (
+const DownChevronsIcon = () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='24'
@@ -19,4 +19,4 @@ const ChevronsIcon = () => (
   </svg>
 );
 
-export default ChevronsIcon;
+export default DownChevronsIcon;
