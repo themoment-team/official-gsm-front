@@ -15,7 +15,6 @@ import * as S from './style';
 
 const IdealTalentItem: IdealTalentType[] = [
   {
-    icon: <></>,
     title: (
       <>
         <div
@@ -34,7 +33,6 @@ const IdealTalentItem: IdealTalentType[] = [
     ],
   },
   {
-    icon: <></>,
     title: (
       <>
         <div
@@ -53,7 +51,6 @@ const IdealTalentItem: IdealTalentType[] = [
     ],
   },
   {
-    icon: <></>,
     title: (
       <>
         <div
@@ -72,7 +69,6 @@ const IdealTalentItem: IdealTalentType[] = [
     ],
   },
   {
-    icon: <></>,
     title: (
       <>
         <div
@@ -118,12 +114,12 @@ const Section7 = () => {
           </div>
           <div>
             <S.IconWrap>
-              <div onClick={handlePrevSlide}>
+              <button onClick={handlePrevSlide} type='button'>
                 <LeftArrowIcon />
-              </div>
-              <div onClick={handleNextSlide}>
+              </button>
+              <button onClick={handleNextSlide} type='button'>
                 <RightArrowIcon />
-              </div>
+              </button>
             </S.IconWrap>
             <S.IdealTalentLayout>
               {IdealTalentItem.map((item, index) => (

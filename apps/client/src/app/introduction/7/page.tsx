@@ -2,7 +2,7 @@
 
 import { Section7 } from 'client/components';
 
-export default function Section3Page() {
+export default function Section7Page() {
   return (
     <>
       <Section7 />
