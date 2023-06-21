@@ -1,4 +1,23 @@
 import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react';
+
+const primary = keyframes`
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%;
+  }
+`;
+
+const secondary = keyframes`
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+`;
 
 export const Layout = styled.div`
   height: 891px;
@@ -8,59 +27,6 @@ export const Layout = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  .wrap {
-    display: flex;
-    overflow: hidden;
-  }
-  .wrap .rolling-list ul {
-    display: flex;
-  }
-  .wrap .rolling-list ul li {
-    width: 589px;
-    height: 276px;
-    box-sizing: border-box;
-    border-radius: 20px;
-    margin: 0 16px;
-    padding: 46px 31px;
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-  }
-  .wrap .rolling-list ul li:nth-child(1) {
-    background-color: #f8e1e3;
-  }
-  .wrap .rolling-list ul li:nth-child(2) {
-    background-color: #ffeab5;
-  }
-  .wrap .rolling-list ul li:nth-child(3) {
-    background-color: #d3e7dc;
-  }
-  .wrap .rolling-list ul li:nth-child(4) {
-    background-color: #a6c1e8;
-  }
-  .wrap .rolling-list ul li:nth-child(even) {
-    margin-top: 80px;
-  }
-  .wrap .rolling-list ul li .image-wrap {
-    padding-right: 32px;
-    width: 156px;
-    flex-shrink: 0;
-  }
-  .wrap .rolling-list ul li .image-wrap > img {
-    width: 100%;
-  }
-  .wrap .rolling-list ul li .desc {
-    font-family: 'BMJUA';
-  }
-  .wrap .rolling-list ul li .desc strong {
-    display: block;
-    font-size: 24px;
-    margin-bottom: 24px;
-  }
-  .wrap .rolling-list ul li .desc span {
-    font-size: 18px;
-    line-height: 1.2;
-  }
 `;
 
 export const SectionWrap = styled.div`
@@ -78,3 +44,41 @@ export const LogoImgWrap = styled.div`
 export const LogoLoop = styled.div``;
 export const LogoBox = styled.div``;
 export const Img = styled.div``;
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  flex-direction: column;
+  .scroll-parent {
+    position: relative;
+    width: 100vw;
+    height: 20rem;
+    padding: 2rem 0;
+    overflow-x: hidden;
+  }
+
+  .scroll-element {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .scroll-element img {
+    width: 15%;
+  }
+
+  .primary {
+    animation: ${primary} 15s linear infinite;
+  }
+
+  .secondary {
+    animation: ${secondary} 15s linear infinite;
+  }
+`;
