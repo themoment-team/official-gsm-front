@@ -22,9 +22,8 @@ const IdealTalentItem: IdealTalentType[] = [
             color: #003365;
           `}
         >
-          #교직원상
+          #교직원상 🏫
         </div>
-        <div className='emoji'>🏫</div>
       </>
     ),
     subTitle: [
@@ -40,9 +39,8 @@ const IdealTalentItem: IdealTalentType[] = [
             color: #7acdf4;
           `}
         >
-          #학생상
+          #학생상 🧑🏻‍🎓
         </div>
-        <div className='emoji'>🧑🏻‍🎓</div>
       </>
     ),
     subTitle: [
@@ -58,9 +56,8 @@ const IdealTalentItem: IdealTalentType[] = [
             color: #003365;
           `}
         >
-          #교사상
+          #교사상 👩🏻‍🏫
         </div>
-        <div className='emoji'>👩🏻‍🏫</div>
       </>
     ),
     subTitle: [
@@ -76,9 +73,8 @@ const IdealTalentItem: IdealTalentType[] = [
             color: #7acdf4;
           `}
         >
-          #학부모상
+          #학부모상 ‍👨‍👩‍👧
         </div>
-        <div className='emoji'>👩🏻‍🏫</div>
       </>
     ),
     subTitle: [
