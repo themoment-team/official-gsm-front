@@ -12,9 +12,6 @@ export const Title = styled.div`
   font-weight: 600;
   ${({ theme }) => theme.typo.h3};
   color: ${({ theme }) => theme.color.gray['090']};
-  .emoji {
-    padding-left: 0.1875rem;
-  }
 `;
 
 export const Line = styled.div`
