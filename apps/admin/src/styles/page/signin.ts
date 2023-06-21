@@ -60,3 +60,21 @@ export const LimeHighlight = styled.span`
 export const SkyBlueHighlight = styled.span`
   color: #7acdf4;
 `;
+
+export const SignInWarning = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  @media (max-height: 26.5rem) {
+    margin: 6.5625rem 0;
+  }
+`;
+
+export const WarningContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
+`;
