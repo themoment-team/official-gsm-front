@@ -9,9 +9,12 @@ export default function Home() {
   const windowScrollHeight = useGetWindowScrollHeight();
   const windowWidth = useGetWindowWidth();
 
-  const promotionVideoHeight = (windowWidth / 100) * 56.25 - 64;
+  const headerHeightPx = 64;
+  const promotionVideoHeightPx = (windowWidth / 100) * 56.25;
 
-  const isBackgroundWhite = windowScrollHeight > promotionVideoHeight;
+  const videoOverlayPx = promotionVideoHeightPx - headerHeightPx;
+
+  const isBackgroundWhite = windowScrollHeight > videoOverlayPx;
 
   return (
     <>
