@@ -75,8 +75,8 @@ const Section8 = () => {
             ))}
           </S.Scroll>
         </S.ScrollWrap>
-        <S.ScrollWrap>
-          <S.Scroll className='scroll-element primary second'>
+        <S.ScrollWrap2>
+          <S.Scroll2 className='scroll-element primary second'>
             {images2.map((src, index) => (
               <Image
                 key={index}
@@ -86,8 +86,8 @@ const Section8 = () => {
                 height={50}
               />
             ))}
-          </S.Scroll>
-          <S.Scroll className='scroll-element secondary second'>
+          </S.Scroll2>
+          <S.Scroll2 className='scroll-element secondary second'>
             {images2.map((src, index) => (
               <Image
                 key={index}
@@ -97,8 +97,8 @@ const Section8 = () => {
                 height={50}
               />
             ))}
-          </S.Scroll>
-        </S.ScrollWrap>
+          </S.Scroll2>
+        </S.ScrollWrap2>
         <S.ScrollWrap>
           <S.Scroll className='scroll-element primary third'>
             {images3.map((src, index) => (
