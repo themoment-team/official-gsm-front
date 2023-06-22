@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react';
 
+/**
+ * viewport의 width 값을 가져옵니다.
+ * @returns windowWidth: number(단위 px)
+ */
 export default function useGetWindowWidth() {
   const [windowWidth, setWindowWidth] = useState<number>(0);
 
