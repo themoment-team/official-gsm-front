@@ -37,7 +37,7 @@ const Slide = () => {
     '/img/Untitled10.png',
   ];
   return (
-    <div>
+    <S.Container>
       <S.ScrollWrap>
         <S.Scroll className='scroll-element primary first'>
           {images.map((src, index) => (
@@ -74,7 +74,7 @@ const Slide = () => {
           ))}
         </S.Scroll>
       </S.ScrollWrap>
-    </div>
+    </S.Container>
   );
 };
 

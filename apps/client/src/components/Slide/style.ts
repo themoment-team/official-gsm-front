@@ -74,10 +74,11 @@ export const ScrollWrap2 = styled.div`
   padding: 2rem 0;
   overflow-x: hidden;
   .primary.second {
-    animation: ${secondaryRight} 90s linear infinite;
+    animation: ${secondaryRight} 10s linear infinite;
   }
   .secondary.second {
-    animation: ${primaryRight} 90s linear infinite;
+    animation: ${primaryRight} 10s linear infinite;
+    padding-left: 230px;
   }
 `;
 export const Scroll2 = styled.div`
@@ -117,18 +118,20 @@ export const Container = styled.div`
   flex-direction: column;
 
   .primary.first {
-    animation: ${primary} 80s linear infinite;
+    animation: ${primary} 10s linear infinite;
   }
 
   .primary.third {
-    animation: ${primary} 85s linear infinite;
+    animation: ${primary} 15s linear infinite;
   }
 
   .secondary.first {
-    animation: ${secondary} 80s linear infinite;
+    animation: ${secondary} 10s linear infinite;
+    padding-left: 30px;
   }
 
   .secondary.third {
-    animation: ${secondary} 85s linear infinite;
+    animation: ${secondary} 15s linear infinite;
+    padding-left: 390px;
   }
 `;

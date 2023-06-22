@@ -12,9 +12,7 @@ const Section8 = () => (
         <SubTitle>꿈˙끼˙업(UP)˙고(GO)</SubTitle>
       </SectionTitle>
     </S.SectionWrap>
-    <S.Container>
-      <Slide />
-    </S.Container>
+    <Slide />
   </S.Layout>
 );
 
