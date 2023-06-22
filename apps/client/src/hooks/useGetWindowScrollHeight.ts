@@ -1,0 +1,30 @@
+import { useEffect, useState } from 'react';
+
+export default function useGetWindowScrollHeight() {
+  const [windowScrollHeight, setWindowScrollHeight] = useState<number>(0);
+
+  let throttling = false;
+
+  function onScroll() {
+    if (throttling) return;
+
+    throttling = true;
+
+    setTimeout(() => {
+      setWindowScrollHeight(window.scrollY);
+      throttling = false;
+    }, 200);
+  }
+
+  useEffect(() => {
+    setWindowScrollHeight(window.scrollY);
+    window.addEventListener('scroll', onScroll);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return windowScrollHeight;
+}
