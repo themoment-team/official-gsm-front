@@ -25,6 +25,7 @@ export const LogoLink = styled(Link)`
 export const GlobalNav = styled.nav`
   display: flex;
   gap: 3rem;
+  transition: color 0.5s;
   a {
     ${({ theme }) => theme.typo.body1};
   }
