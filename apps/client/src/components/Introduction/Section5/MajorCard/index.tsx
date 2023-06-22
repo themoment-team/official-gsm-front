@@ -29,7 +29,23 @@ const MajorCard = ({ major }: { major: MajorType }) => {
       ),
       title: '소프트웨어 개발과',
       hashTag: ['운영체제', 'C', 'C++', 'JAVA', '모바일'],
-      keyword: [<></>],
+      keyword: [
+        <>
+          소프트웨어
+          <br />
+          개발 회사
+        </>,
+        <>
+          인트라넷
+          <br />
+          관련분야
+        </>,
+        <>
+          모바일
+          <br />
+          프로그래밍 분야
+        </>,
+      ],
       color: 'sky',
     },
     IOT: {
@@ -41,7 +57,7 @@ const MajorCard = ({ major }: { major: MajorType }) => {
         </>
       ),
       title: '스마트 IOT과',
-      hashTag: [''],
+      hashTag: ['응용기기', '정보통신기기', '산업체', '멀티미디어'],
       keyword: [<></>],
       color: 'lime',
     },
