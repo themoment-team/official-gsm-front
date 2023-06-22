@@ -1,5 +1,5 @@
-import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
+import styled from '@emotion/styled';
 
 const primary = keyframes`
   from {
@@ -36,6 +36,22 @@ const secondaryRight = keyframes`
   }
 `;
 
+export const Layout = styled.div`
+  height: 891px;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
+export const SectionWrap = styled.div`
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const LogoImgWrap = styled.div`
   height: 331.99969482421875px;
   width: 2926px;
@@ -58,10 +74,10 @@ export const ScrollWrap2 = styled.div`
   padding: 2rem 0;
   overflow-x: hidden;
   .primary.second {
-    animation: ${secondaryRight} 60s linear infinite;
+    animation: ${secondaryRight} 90s linear infinite;
   }
   .secondary.second {
-    animation: ${primaryRight} 60s linear infinite;
+    animation: ${primaryRight} 90s linear infinite;
   }
 `;
 export const Scroll2 = styled.div`
@@ -71,7 +87,11 @@ export const Scroll2 = styled.div`
   top: 0%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  gap: 30px;
+  img {
+    height: auto !important;
+    position: relative !important;
+  }
 `;
 export const Scroll = styled.div`
   width: inherit;
@@ -81,7 +101,11 @@ export const Scroll = styled.div`
   top: 0%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  gap: 30px;
+  img {
+    height: auto !important;
+    position: relative !important;
+  }
 `;
 export const Container = styled.div`
   display: flex;
@@ -93,18 +117,18 @@ export const Container = styled.div`
   flex-direction: column;
 
   .primary.first {
-    animation: ${primary} 50s linear infinite;
+    animation: ${primary} 80s linear infinite;
   }
 
   .primary.third {
-    animation: ${primary} 55s linear infinite;
+    animation: ${primary} 85s linear infinite;
   }
 
   .secondary.first {
-    animation: ${secondary} 50s linear infinite;
+    animation: ${secondary} 80s linear infinite;
   }
 
   .secondary.third {
-    animation: ${secondary} 55s linear infinite;
+    animation: ${secondary} 85s linear infinite;
   }
 `;
