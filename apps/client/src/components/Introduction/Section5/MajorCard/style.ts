@@ -11,16 +11,8 @@ export const CardLayout = styled.div`
   flex-direction: column;
 `;
 
-export const ImageSection = styled.div`
-  height: 250px;
-  background-color: yellow;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
-`;
-
 export const ContentSection = styled.div`
   padding: 32px 32px 40px;
-
   flex: 1;
 `;
 
@@ -50,13 +42,13 @@ export const Content = styled.div`
   margin-bottom: 20px;
 `;
 
-export const TagSection = styled.div`
+export const HashTagSection = styled.div`
   display: flex;
   gap: 10px;
   height: 41px;
 `;
 
-export const Tag = styled.div`
+export const HashTag = styled.div`
   padding: 6px 12px;
   font-size: 20px;
   height: 100%;
@@ -66,8 +58,6 @@ export const Tag = styled.div`
 
   /* primary_sky */
 
-  color: #7acdf4;
-  background: rgba(122, 205, 244, 0.1);
   border-radius: 100px;
   font-weight: 600;
 `;

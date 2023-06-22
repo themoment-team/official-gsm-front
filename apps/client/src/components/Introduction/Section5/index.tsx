@@ -8,21 +8,20 @@ import {
   SubTitle,
   MajorCard,
 } from 'client/components';
+import type { MajorType } from 'client/types/introduce';
 
 import * as S from './style';
 
-type MajorType = 'SW' | 'IOT' | 'AI';
-
 interface MajorArrayType {
-  Major: MajorType;
+  major: MajorType;
   name: string;
 }
 
 const Section5 = () => {
-  const MajorArray: MajorArrayType[] = [
-    { Major: 'SW', name: '소프트웨어 개발과' },
-    { Major: 'IOT', name: '스마트 IOT(Internet of Things)' },
-    { Major: 'AI', name: '인공 지능(AI)과' },
+  const majorArray: MajorArrayType[] = [
+    { major: 'SW', name: '소프트웨어 개발과' },
+    { major: 'IOT', name: '스마트 IOT(Internet of Things)' },
+    { major: 'AI', name: '인공 지능(AI)과' },
   ];
   const [selectedMajor, setSelectedMajor] = useState<MajorType>('SW');
   return (
@@ -37,12 +36,12 @@ const Section5 = () => {
         </SectionTitle>
         <S.MajorSelect>
           <S.DotContainer>
-            {MajorArray.map(({ Major }) => (
+            {majorArray.map(({ major }) => (
               <S.SelectDot
-                onClick={() => setSelectedMajor(Major)}
-                key={Major}
+                onClick={() => setSelectedMajor(major)}
+                key={major}
                 css={css`
-                  border: ${selectedMajor === Major
+                  border: ${selectedMajor === major
                     ? '8px solid #003365'
                     : '4px solid #cdd5e2'};
                 `}
@@ -51,12 +50,12 @@ const Section5 = () => {
             <S.Line />
           </S.DotContainer>
           <S.Major>
-            {MajorArray.map(({ Major, name }) => (
+            {majorArray.map(({ major, name }) => (
               <p
-                onClick={() => setSelectedMajor(Major)}
-                key={Major}
+                onClick={() => setSelectedMajor(major)}
+                key={major}
                 css={css`
-                  color: ${selectedMajor === Major ? '#003365 ' : '#cdd5e2'};
+                  color: ${selectedMajor === major ? '#003365 ' : '#cdd5e2'};
                 `}
               >
                 {name}
@@ -65,7 +64,7 @@ const Section5 = () => {
           </S.Major>
         </S.MajorSelect>
       </div>
-      <MajorCard />
+      <MajorCard major={selectedMajor} />
     </S.Layout>
   );
 };
