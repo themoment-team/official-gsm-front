@@ -7,7 +7,8 @@ export const Header = styled.header`
   display: flex;
   justify-content: center;
   position: sticky;
-  z-index: 1;
+  top: 0;
+  z-index: 5;
 `;
 
 export const HeaderInner = styled.div`
