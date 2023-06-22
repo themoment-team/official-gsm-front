@@ -28,7 +28,7 @@ const MajorCard = ({ major }: { major: MajorType }) => {
         </>
       ),
       title: '소프트웨어 개발과',
-      hashTag: ['운영체제', 'C', 'C++', 'JAVA', '모바일'],
+      hashTag: ['운영체제', 'C', 'C++', 'JAVA', '네트워크', '모바일'],
       keyword: [
         <>
           소프트웨어
@@ -57,8 +57,21 @@ const MajorCard = ({ major }: { major: MajorType }) => {
         </>
       ),
       title: '스마트 IOT과',
-      hashTag: ['응용기기', '정보통신기기', '산업체', '멀티미디어'],
-      keyword: [<></>],
+      hashTag: ['리눅스', '라즈베리파이', '아두이노', '하드웨어'],
+      keyword: [
+        <>
+          모바일
+          <br />
+          운용기기
+        </>,
+        <>
+          정보통신기기 <br/> 
+          연구분야
+        </>,
+        <>
+          멀티미디어
+        </>,
+      ],
       color: 'lime',
     },
     AI: {
@@ -74,8 +87,20 @@ const MajorCard = ({ major }: { major: MajorType }) => {
         </>
       ),
       title: '인공 지능(AI)과',
-      hashTag: [''],
-      keyword: [<></>],
+      hashTag: ['빅데이터', '사물인터넷', '머신러닝', '딥러닝'],
+      keyword: [
+        <>
+          인공지능
+          <br />
+          플랫폼 설계
+        </>,
+        <>
+          IT 융합
+          <br />
+          전문가
+        </>,
+        <>미래 산업 기술</>,
+      ],
       color: 'navy',
     },
   };
