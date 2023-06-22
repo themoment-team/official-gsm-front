@@ -2,25 +2,29 @@ import { useState } from 'react';
 
 import { css } from '@emotion/react';
 
-import { SectionTitle, IntroductionTitle, SubTitle } from 'client/components';
+import {
+  SectionTitle,
+  IntroductionTitle,
+  SubTitle,
+  MajorCard,
+} from 'client/components';
 
 import * as S from './style';
 
-type DepartmentType = 'SW' | 'IOT' | 'AI';
+type MajorType = 'SW' | 'IOT' | 'AI';
 
-interface DepartmentArrayType {
-  department: DepartmentType;
+interface MajorArrayType {
+  Major: MajorType;
   name: string;
 }
 
 const Section5 = () => {
-  const departmentArray: DepartmentArrayType[] = [
-    { department: 'SW', name: '소프트웨어 개발과' },
-    { department: 'IOT', name: '스마트 IOT(Internet of Things)' },
-    { department: 'AI', name: '인공 지능(AI)과' },
+  const MajorArray: MajorArrayType[] = [
+    { Major: 'SW', name: '소프트웨어 개발과' },
+    { Major: 'IOT', name: '스마트 IOT(Internet of Things)' },
+    { Major: 'AI', name: '인공 지능(AI)과' },
   ];
-  const [selectedDepartment, setSelectedDepartment] =
-    useState<DepartmentType>('SW');
+  const [selectedMajor, setSelectedMajor] = useState<MajorType>('SW');
   return (
     <S.Layout>
       <div>
@@ -31,14 +35,14 @@ const Section5 = () => {
           </IntroductionTitle>
           <SubTitle>체계적인 교육과정을 제공하는 소프트웨어 학과</SubTitle>
         </SectionTitle>
-        <S.DepartmentSelect>
+        <S.MajorSelect>
           <S.DotContainer>
-            {departmentArray.map(({ department }) => (
+            {MajorArray.map(({ Major }) => (
               <S.SelectDot
-                onClick={() => setSelectedDepartment(department)}
-                key={department}
+                onClick={() => setSelectedMajor(Major)}
+                key={Major}
                 css={css`
-                  border: ${selectedDepartment === department
+                  border: ${selectedMajor === Major
                     ? '8px solid #003365'
                     : '4px solid #cdd5e2'};
                 `}
@@ -46,24 +50,22 @@ const Section5 = () => {
             ))}
             <S.Line />
           </S.DotContainer>
-          <S.Department>
-            {departmentArray.map(({ department, name }) => (
+          <S.Major>
+            {MajorArray.map(({ Major, name }) => (
               <p
-                onClick={() => setSelectedDepartment(department)}
-                key={department}
+                onClick={() => setSelectedMajor(Major)}
+                key={Major}
                 css={css`
-                  color: ${selectedDepartment === department
-                    ? '#003365 '
-                    : '#cdd5e2'};
+                  color: ${selectedMajor === Major ? '#003365 ' : '#cdd5e2'};
                 `}
               >
                 {name}
               </p>
             ))}
-          </S.Department>
-        </S.DepartmentSelect>
+          </S.Major>
+        </S.MajorSelect>
       </div>
-      <S.DepartmentCard />
+      <MajorCard />
     </S.Layout>
   );
 };

@@ -7,9 +7,10 @@ export const Layout = styled.div`
   gap: 10px;
   height: 1138px;
   background: #f5f9fb;
+  justify-content: space-between;
 `;
 
-export const DepartmentSelect = styled.div`
+export const MajorSelect = styled.div`
   margin-top: 54px;
   display: flex;
   gap: 12px;
@@ -69,7 +70,7 @@ export const SelectDotTest = styled.div`
   cursor: pointer;
 `;
 
-export const Department = styled.div`
+export const Major = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -77,15 +78,4 @@ export const Department = styled.div`
   p {
     cursor: pointer;
   }
-`;
-
-export const DepartmentCard = styled.div`
-  width: 630px;
-  height: 100%;
-  background-color: red;
-
-  /* white */
-
-  /* background: #ffffff; */
-  border-radius: 30px;
 `;

@@ -1,5 +1,6 @@
 export { default as EducationDirection } from './EducationDirection';
 export { default as IntroductionTitle } from './Title/Introduction';
+export { default as MajorCard } from './Introduction/Section5/MajorCard';
 export { default as NewsTitle } from './Title/News';
 export { default as NewsletterCard } from './NewsletterCard';
 export { default as Section1 } from './Introduction/Section1';
