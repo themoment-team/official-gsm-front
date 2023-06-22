@@ -15,34 +15,14 @@ import * as S from './style';
 
 const IdealTalentItem: IdealTalentType[] = [
   {
-    title: (
-      <>
-        <div
-          css={css`
-            color: #003365;
-          `}
-        >
-          #교직원상 🏫
-        </div>
-      </>
-    ),
+    title: <div>#교직원상 🏫</div>,
     subTitle: [
       '교육활동을 적극적으로 지원하고 함께하는 교직원',
       '학생들의 성장을 도우며 복돋아주는 교직원',
     ],
   },
   {
-    title: (
-      <>
-        <div
-          css={css`
-            color: #7acdf4;
-          `}
-        >
-          #학생상 🧑🏻‍🎓
-        </div>
-      </>
-    ),
+    title: <div>#학생상 🧑🏻‍🎓</div>,
     subTitle: [
       '자기 주도성을 지니고 배움과 성장에 적극적인 학생',
       '도전을 즐기고 유연한 사고로 소통, 배려하는 학생',

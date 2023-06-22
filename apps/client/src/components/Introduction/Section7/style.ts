@@ -60,4 +60,7 @@ export const IdealTalent = styled.div`
   box-shadow: 0rem 0.25rem 2.5rem rgba(0, 0, 0, 0.06);
   border-radius: 1.875rem;
   margin-left: 1.875rem;
+  :nth-of-type(1) {
+    background-color: pink;
+  }
 `;
