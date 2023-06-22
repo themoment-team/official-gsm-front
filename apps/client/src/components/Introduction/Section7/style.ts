@@ -38,11 +38,6 @@ export const IdealTalentLayout = styled.div`
   right: 1.875rem;
 `;
 
-export const Slide = styled.div`
-  transition: transform 0.3s ease-in-out;
-  width: 0rem;
-`;
-
 export const UpperBox = styled.div`
   height: 30.125rem;
   width: 100vw;
@@ -50,6 +45,23 @@ export const UpperBox = styled.div`
   top: 0rem;
   background-color: ${({ theme }) => theme.color.background};
   border-radius: 0rem 0rem 0rem 12.5rem;
+`;
+
+export const Slide = styled.div`
+  transition: transform 0.3s ease-in-out;
+  width: 0rem;
+  :nth-of-type(1) {
+    color: ${({ theme }) => theme.color.primary.navy};
+  }
+  :nth-of-type(2) {
+    color: ${({ theme }) => theme.color.primary.sky};
+  }
+  :nth-of-type(3) {
+    color: ${({ theme }) => theme.color.primary.navy};
+  }
+  :nth-of-type(4) {
+    color: ${({ theme }) => theme.color.primary.sky};
+  }
 `;
 
 export const IdealTalent = styled.div`
@@ -60,7 +72,4 @@ export const IdealTalent = styled.div`
   box-shadow: 0rem 0.25rem 2.5rem rgba(0, 0, 0, 0.06);
   border-radius: 1.875rem;
   margin-left: 1.875rem;
-  :nth-of-type(1) {
-    background-color: pink;
-  }
 `;

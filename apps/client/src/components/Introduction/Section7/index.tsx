@@ -29,34 +29,14 @@ const IdealTalentItem: IdealTalentType[] = [
     ],
   },
   {
-    title: (
-      <>
-        <div
-          css={css`
-            color: #003365;
-          `}
-        >
-          #교사상 👩🏻‍🏫
-        </div>
-      </>
-    ),
+    title: <div>#교사상 👩🏻‍🏫</div>,
     subTitle: [
       '전문성을 갖고 가르치는 맛과 멋과 흥을 지닌 교사',
       '자발적인 참여로 협업하고 협력하는 교사',
     ],
   },
   {
-    title: (
-      <>
-        <div
-          css={css`
-            color: #7acdf4;
-          `}
-        >
-          #학부모상 ‍👨‍👩‍👧
-        </div>
-      </>
-    ),
+    title: <div>#학부모상 ‍👨‍👩‍👧</div>,
     subTitle: [
       '자녀의 성장을 보며 적극적인 지지를 보내는 부모님',
       '개방적 사고로 이해하고 기다려 줄 수 있는 학부모',

@@ -11,7 +11,6 @@ export const Title = styled.div`
   align-items: center;
   font-weight: 600;
   ${({ theme }) => theme.typo.h3};
-  color: ${({ theme }) => theme.color.gray['090']};
 `;
 
 export const Line = styled.div`
