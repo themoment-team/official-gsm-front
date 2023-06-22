@@ -64,4 +64,5 @@ export const Dot = styled.div`
   height: 8px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
 `;
