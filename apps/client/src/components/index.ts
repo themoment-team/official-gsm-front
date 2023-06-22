@@ -5,7 +5,7 @@ export { default as NewsletterCard } from './NewsletterCard';
 export { default as Section1 } from './Introduction/Section1';
 export { default as Section2 } from './Introduction/Section2';
 export { default as Section3 } from './Introduction/Section3';
-export { default as Section5 } from './Introduction/Section5';
+export { default as Section5 } from './Introduction/sSection5';
 export { default as SectionTitle } from './Title/SectionTitle';
 export { default as SubTitle } from './Title/SubTitle';
 export { default as TitleTemplate } from './Title/Template';

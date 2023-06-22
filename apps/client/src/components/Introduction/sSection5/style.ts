@@ -3,8 +3,6 @@ import styled from '@emotion/styled';
 export const Layout = styled.div`
   width: 100vw;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   padding: 180px 340px;
   gap: 10px;
   height: 1138px;
@@ -75,4 +73,19 @@ export const Department = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  p {
+    cursor: pointer;
+  }
+`;
+
+export const DepartmentCard = styled.div`
+  width: 630px;
+  height: 100%;
+  background-color: red;
+
+  /* white */
+
+  /* background: #ffffff; */
+  border-radius: 30px;
 `;
