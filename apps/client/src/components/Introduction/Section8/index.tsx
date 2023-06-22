@@ -8,12 +8,10 @@ const Section8 = () => {
     '/img/Untitled.png',
     '/img/Untitled1.png',
     '/img/Untitled2.png',
-    '/img/Untitled3.png',
     '/img/Untitled4.png',
     '/img/Untitled.png',
     '/img/Untitled1.png',
     '/img/Untitled2.png',
-    '/img/Untitled3.png',
     '/img/Untitled4.png',
   ];
   const images2 = [
@@ -31,12 +29,12 @@ const Section8 = () => {
   const images3 = [
     '/img/Untitled11.png',
     '/img/Untitled12.png',
-    '/img/Untitled9.png',
+    '/img/Untitled3.png',
     '/img/Untitled13.png',
     '/img/Untitled10.png',
     '/img/Untitled11.png',
     '/img/Untitled12.png',
-    '/img/Untitled9.png',
+    '/img/Untitled3.png',
     '/img/Untitled13.png',
     '/img/Untitled10.png',
   ];
@@ -58,7 +56,7 @@ const Section8 = () => {
                 key={index}
                 src={src}
                 alt={`image-${index}`}
-                width={200}
+                width={180}
                 height={50}
               />
             ))}
@@ -69,7 +67,7 @@ const Section8 = () => {
                 key={index}
                 src={src}
                 alt={`image-${index}`}
-                width={200}
+                width={180}
                 height={50}
               />
             ))}
