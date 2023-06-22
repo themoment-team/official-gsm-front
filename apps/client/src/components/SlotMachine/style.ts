@@ -45,10 +45,15 @@ export const ListWrap = styled.div`
   position: relative;
 `;
 
+export const Point = styled.span`
+  color: ${({ theme }) => theme.color.primary.lime};
+`;
+
 export const ListIconWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 3.125rem;
 `;
 
 export const Wrap = styled.div`
@@ -80,7 +85,7 @@ export const List = styled.ul`
 
 export const Item = styled.li`
   width: 6.25rem;
-  height: 100px;
+  height: 6.25rem;
   text-align: center;
   position: absolute;
   left: 0;
@@ -88,11 +93,6 @@ export const Item = styled.li`
   list-style: none;
   transform-origin: 50% 50%;
 
-  .imoji {
-    display: block;
-    font-size: 6.25rem;
-    line-height: 6.25rem;
-  }
   // 아이템 개수가 5개 이므로 108deg 씩 더합니다
   // z 속성은 아이템간의 간격을 결정한다고 보시면 됩니다
 
