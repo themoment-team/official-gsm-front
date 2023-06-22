@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import { css, useTheme } from '@emotion/react';
 
-import { GSMColorLogo, GSMWhiteLogo } from 'client/assets';
+import { GSMLogo } from 'client/assets';
 
 import * as S from './style';
 
@@ -27,7 +27,7 @@ const Header: React.FC<HeaderProps> = ({ segment, isBackgroundWhite }) => {
       <S.HeaderInner>
         <h1>
           <S.LogoLink href='/'>
-            {isBackgroundWhite ? <GSMColorLogo /> : <GSMWhiteLogo />}
+            <GSMLogo isBackgroundWhite={isBackgroundWhite} />
           </S.LogoLink>
         </h1>
         <S.GlobalNav
