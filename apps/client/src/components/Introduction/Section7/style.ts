@@ -50,16 +50,10 @@ export const UpperBox = styled.div`
 export const Slide = styled.div`
   transition: transform 0.3s ease-in-out;
   width: 0rem;
-  :nth-of-type(1) {
+  :nth-of-type(odd) {
     color: ${({ theme }) => theme.color.primary.navy};
   }
-  :nth-of-type(2) {
-    color: ${({ theme }) => theme.color.primary.sky};
-  }
-  :nth-of-type(3) {
-    color: ${({ theme }) => theme.color.primary.navy};
-  }
-  :nth-of-type(4) {
+  :nth-of-type(even) {
     color: ${({ theme }) => theme.color.primary.sky};
   }
 `;
