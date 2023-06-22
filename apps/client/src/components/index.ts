@@ -7,5 +7,6 @@ export { default as Section8 } from './Introduction/Section8';
 
 export { default as SectionTitle } from './Title/SectionTitle';
 
+export { default as Slide } from './Slide';
 export { default as SubTitle } from './Title/SubTitle';
 export { default as TitleTemplate } from './Title/Template';
