@@ -1,7 +1,9 @@
 export { default as EducationDirection } from './EducationDirection';
+export { default as Header } from './Header';
 export { default as IntroductionTitle } from './Title/Introduction';
 export { default as NewsTitle } from './Title/News';
 export { default as NewsletterCard } from './NewsletterCard';
+export { default as PromotionVideo } from './PromotionVideo';
 export { default as Section1 } from './Introduction/Section1';
 export { default as Section2 } from './Introduction/Section2';
 export { default as Section3 } from './Introduction/Section3';
