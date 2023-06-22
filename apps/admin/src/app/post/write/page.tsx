@@ -2,6 +2,8 @@
 
 import { useRef, useState, useEffect } from 'react';
 
+import { css } from '@emotion/react';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
@@ -33,6 +35,7 @@ type FormType = z.infer<typeof schema>;
 
 export default function WritePage() {
   const [files, setFiles] = useState<File[]>([]);
+  const [input, setInput] = useState<string>('');
   const fileInput = useRef<HTMLInputElement>(null);
 
   const handleCancel = (fileName: string) => {
@@ -57,11 +60,13 @@ export default function WritePage() {
     // eslint-disable-next-line no-console
     console.log(contents);
   };
-
   const postFile = () => {
-    setFiles((files) =>
-      fileInput.current?.files && fileInput.current?.files[0]
-        ? [...files, fileInput.current.files[0]]
+    setFiles(
+      fileInput.current?.files?.[0] && fileInput.current?.files.length
+        ? [...files, ...fileInput.current.files].filter(
+            (element, index, arr) =>
+              index === arr.findIndex((files) => files.name === element.name)
+          )
         : files
     );
   };
@@ -93,14 +98,40 @@ export default function WritePage() {
           </div>
           <div>
             <S.FormItemTitle>제목</S.FormItemTitle>
-            <Input
-              placeholder='제목을 입력해주세요.'
-              width='36.125rem'
-              height='2.75rem'
-              borderRadius='0.625rem'
-              isError={errors.title ? true : false}
-              {...register('title')}
-            />
+            <div
+              css={css`
+                position: relative;
+                display: flex;
+                align-items: center;
+              `}
+            >
+              <Input
+                placeholder='제목을 입력해주세요.'
+                width='36.125rem'
+                height='2.75rem'
+                borderRadius='0.625rem'
+                isError={errors.title ? true : false}
+                {...register('title')}
+                onChange={(e) => setInput(e.target.value)}
+                maxLength={60}
+              />
+              <span
+                css={css`
+                  font-weight: 400;
+                  font-size: 12px;
+                  line-height: 18px;
+                  position: absolute;
+                  right: 16px;
+                `}
+              >
+                {input.length}/60
+              </span>
+            </div>
+            {input.length > 60 ? (
+              <S.ErrorMessage>글자수를 초과하였습니다.</S.ErrorMessage>
+            ) : (
+              ''
+            )}
             {errors.title && (
               <S.ErrorMessage>{`* ${errors.title.message}`}</S.ErrorMessage>
             )}
