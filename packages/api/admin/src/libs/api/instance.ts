@@ -24,6 +24,8 @@ adminInstance.interceptors.response.use(
   async (error) => {
     if (error.response.status === 401) {
       if (isRefreshing) {
+        await waitRefreshEnd();
+
         return adminInstance(error.config);
       }
 
@@ -41,3 +43,12 @@ adminInstance.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
+const waitRefreshEnd = () =>
+  new Promise<void>((resolve) => {
+    if (isRefreshing === false) {
+      resolve();
+    } else {
+      setTimeout(() => waitRefreshEnd(), 100);
+    }
+  });
