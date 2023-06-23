@@ -33,7 +33,7 @@ export const SlotMachineAnimation = styled.div`
   font-style: normal;
   font-weight: 700;
   font-size: 6.2376rem;
-  color: #ffffff;
+  color: ${({ theme }) => theme.color.white};
   position: fixed;
   top: 21.625rem;
   left: 50%;
