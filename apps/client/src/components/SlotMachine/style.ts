@@ -6,6 +6,24 @@ const rotate1 = keyframes`
   0%{
     transform: rotateX(0deg);
   }
+  30%{
+    transform: rotateX(-1000deg);
+  }
+  40%{
+    transform: rotateX(-1400deg);
+  }
+  50%{
+    transform: rotateX(-1800deg);
+  }
+  60%{
+    transform: rotateX(-2000deg);
+  }
+  70%{
+    transform: rotateX(-2100deg);
+  }
+  80%{
+    transform: rotateX(-2160deg);
+  }
   90%{
     transform: rotateX(-2170deg);
   }
@@ -71,7 +89,7 @@ export const List = styled.ul`
   top: 0;
   left: 0;
   margin: 0;
-  animation-duration: 2s;
+  animation-duration: 4s;
   animation-timing-function: linear;
   transform-style: preserve-3d;
   transform-origin: 50% 100%;
