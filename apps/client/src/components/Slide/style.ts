@@ -78,7 +78,6 @@ export const ScrollWrap2 = styled.div`
   }
   .secondary.second {
     animation: ${primaryRight} 10s linear infinite;
-    padding-left: 230px;
   }
 `;
 export const Scroll2 = styled.div`
@@ -89,9 +88,11 @@ export const Scroll2 = styled.div`
   display: flex;
   align-items: center;
   gap: 30px;
+  overflow: hidden;
   img {
     height: auto !important;
     position: relative !important;
+    margin: 0px 20px;
   }
 `;
 export const Scroll = styled.div`
@@ -102,10 +103,11 @@ export const Scroll = styled.div`
   top: 0%;
   display: flex;
   align-items: center;
-  gap: 30px;
+  overflow: hidden;
   img {
     height: auto !important;
     position: relative !important;
+    margin: 0px 32px;
   }
 `;
 export const Container = styled.div`
@@ -127,11 +129,9 @@ export const Container = styled.div`
 
   .secondary.first {
     animation: ${secondary} 10s linear infinite;
-    padding-left: 30px;
   }
 
   .secondary.third {
     animation: ${secondary} 15s linear infinite;
-    padding-left: 390px;
   }
 `;
