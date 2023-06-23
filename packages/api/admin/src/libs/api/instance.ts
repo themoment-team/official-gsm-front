@@ -11,7 +11,7 @@ let isRefreshing = false;
 
 adminInstance.interceptors.response.use(
   (response) => {
-    if (response.headers['set-cookie']?.includes('refresh_token')) {
+    if (response.headers['set-cookie']?.includes('access_token')) {
       isRefreshing = false;
     }
 
