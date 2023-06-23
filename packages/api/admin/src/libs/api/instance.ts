@@ -9,6 +9,18 @@ export const adminInstance = axios.create({
 
 let isRefreshing = false;
 
+/**
+ * refresh 요청 도중 refresh 요청 방지 - 같은 refreshToken으로 요청이 되어 발생하는 에러 방지
+ */
+const waitRefreshEnd = () =>
+  new Promise<void>((resolve) => {
+    if (isRefreshing === false) {
+      resolve();
+    } else {
+      setTimeout(() => waitRefreshEnd(), 100);
+    }
+  });
+
 adminInstance.interceptors.response.use(
   (response) => {
     if ((response.config.url = authUrl.refresh())) {
@@ -43,12 +55,3 @@ adminInstance.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-
-const waitRefreshEnd = () =>
-  new Promise<void>((resolve) => {
-    if (isRefreshing === false) {
-      resolve();
-    } else {
-      setTimeout(() => waitRefreshEnd(), 100);
-    }
-  });
