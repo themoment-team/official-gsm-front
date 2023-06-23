@@ -11,10 +11,7 @@ let isRefreshing = false;
 
 adminInstance.interceptors.response.use(
   (response) => {
-    // eslint-disable-next-line no-console
-    console.log(response);
-
-    if (response.headers['set-cookie']?.includes('access_token')) {
+    if ((response.config.url = authUrl.refresh())) {
       isRefreshing = false;
     }
 
