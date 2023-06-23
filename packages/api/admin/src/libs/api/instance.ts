@@ -7,8 +7,14 @@ export const adminInstance = axios.create({
   withCredentials: true,
 });
 
+let isRefreshing = false;
+
 adminInstance.interceptors.response.use(
   (response) => {
+    if (response.headers['set-cookie']?.includes('refresh_token')) {
+      isRefreshing = false;
+    }
+
     if (response.status >= 200 && response.status <= 300) {
       return response.data;
     }
@@ -17,6 +23,12 @@ adminInstance.interceptors.response.use(
   },
   async (error) => {
     if (error.response.status === 401) {
+      if (isRefreshing) {
+        return adminInstance(error.config);
+      }
+
+      isRefreshing = true;
+
       await get(authUrl.refresh());
 
       return adminInstance(error.config);
