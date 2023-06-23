@@ -1,70 +1,48 @@
 import styled from '@emotion/styled';
 
 export const CardLayout = styled.div`
-  width: 630px;
-  height: 100%;
-
-  /* white */
-  background: #ffffff;
-  border-radius: 30px;
   display: flex;
   flex-direction: column;
+  width: 39.375rem;
+  height: 100%;
+  background-color: ${({ theme }) => theme.color.white};
+  border-radius: 1.875rem;
 `;
 
 export const ContentSection = styled.div`
-  padding: 32px 32px 40px;
+  padding: 2rem 2rem 2.5rem;
   flex: 1;
 `;
 
 export const Title = styled.h3`
-  font-size: 34px;
-  line-height: 50px;
-  /* identical to box height, or 147% */
-
-  text-align: center;
-
-  /* primary_navy */
-
-  color: #003365;
-  text-align: left;
+  ${({ theme }) => theme.typo.h2};
+  color: ${({ theme }) => theme.color.primary.navy};
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 `;
 
 export const Content = styled.div`
-  font-size: 20px;
-  line-height: 29px;
-  /* or 145% */
-
-  /* gray090 */
-
-  color: #212121;
-  margin-bottom: 20px;
+  ${({ theme }) => theme.typo.h4};
+  color: ${({ theme }) => theme.color.gray['090']};
+  margin-bottom: 1.25rem;
 `;
 
 export const HashTagSection = styled.div`
   display: flex;
-  gap: 10px;
-  height: 41px;
+  gap: 0.625rem;
+  height: 2.5625rem;
 `;
 
 export const HashTag = styled.div`
-  padding: 6px 12px;
-  font-size: 20px;
-  height: 100%;
-  line-height: 30px;
-
-  /* identical to box height, or 145% */
-
-  /* primary_sky */
-
-  border-radius: 100px;
+  ${({ theme }) => theme.typo.h4};
+  padding: 0.375rem 0.75rem;
+  border-radius: 6.25rem;
   font-weight: 600;
 `;
 
 export const Line = styled.div`
-  border: 0.5px solid #e0e0e0;
-  margin: 40px 0;
+  border: 0.0313rem solid #e7e7e7;
+  margin: 2.5rem 0;
 `;
 
 export const KeywordSection = styled.div`
@@ -73,17 +51,16 @@ export const KeywordSection = styled.div`
 `;
 
 export const Keyword = styled.div`
-  text-align: center;
+  ${({ theme }) => theme.typo.h5};
   display: flex;
   justify-content: center;
   align-items: center;
-  line-height: 27px;
-  width: 170px;
-  height: 170px;
+  text-align: center;
+  width: 10.625rem;
+  height: 10.625rem;
   border-radius: 50%;
   font-weight: 600;
-  font-size: 18px;
-  color: #003365;
-  background: #ffffff;
-  border: 1px solid rgba(0, 51, 101, 0.6);
+  color: ${({ theme }) => theme.color.primary.navy};
+  background-color: ${({ theme }) => theme.color.white};
+  border: 0.0625rem solid rgba(0, 51, 101, 0.6);
 `;

@@ -46,27 +46,9 @@ export const Line = styled.div`
 export const SelectDot = styled.div`
   width: 32px;
   height: 32px;
-
   background: #ffffff;
   border: 8px solid #003365;
   border-radius: 50%;
-  cursor: pointer;
-`;
-
-export const SelectDotTest = styled.div`
-  width: 32px;
-  height: 32px;
-  left: 340px;
-  top: 495px;
-
-  /* white */
-
-  background: #ffffff;
-  /* subGray */
-
-  border: 4px solid #cdd5e2;
-  border-radius: 50%;
-
   cursor: pointer;
 `;
 

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { css } from '@emotion/react';
+import { css, useTheme } from '@emotion/react';
 
 import {
   SectionTitle,
@@ -24,6 +24,8 @@ const Section5 = () => {
     { major: 'AI', name: '인공 지능(AI)과' },
   ];
   const [selectedMajor, setSelectedMajor] = useState<MajorType>('SW');
+  const theme = useTheme();
+
   return (
     <S.Layout>
       <div>
@@ -42,8 +44,9 @@ const Section5 = () => {
                 key={major}
                 css={css`
                   border: ${selectedMajor === major
-                    ? '8px solid #003365'
-                    : '4px solid #cdd5e2'};
+                    ? `0.5rem solid ${theme.color.primary.navy}`
+                    : `0.25rem solid ${theme.color.sub.gray}`};
+                  transition: border 0.5s;
                 `}
               />
             ))}
@@ -55,7 +58,10 @@ const Section5 = () => {
                 onClick={() => setSelectedMajor(major)}
                 key={major}
                 css={css`
-                  color: ${selectedMajor === major ? '#003365 ' : '#cdd5e2'};
+                  color: ${selectedMajor === major
+                    ? theme.color.primary.navy
+                    : theme.color.sub.gray};
+                  transition: color 0.5s;
                 `}
               >
                 {name}

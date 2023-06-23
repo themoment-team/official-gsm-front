@@ -65,12 +65,10 @@ const MajorCard = ({ major }: { major: MajorType }) => {
           운용기기
         </>,
         <>
-          정보통신기기 <br/> 
+          정보통신기기 <br />
           연구분야
         </>,
-        <>
-          멀티미디어
-        </>,
+        <>멀티미디어</>,
       ],
       color: 'lime',
     },
