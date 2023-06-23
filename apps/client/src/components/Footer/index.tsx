@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { FooterGSMLogo } from 'client/assets';
 
 import * as S from './style';
@@ -7,6 +9,17 @@ const Footer = () => (
     <S.FooterContent>
       <FooterGSMLogo />
       <S.FooterTextWrapper>
+        <S.SiteInfo>
+          <S.Copyright>
+            ©2023 Copyright 광주소프트웨어마이스터고등학교 ALL RIGHTS RESERVED.
+          </S.Copyright>
+          <S.LinkWrapper>
+            <Link href='#'>개인정보처리방침</Link>
+            <Link href='#'>영상정보처리기기운영·관리방침</Link>
+            <Link href='#'>저작권신고 및 보호규정</Link>
+            <Link href='#'>찾아오시는 길</Link>
+          </S.LinkWrapper>
+        </S.SiteInfo>
         <S.SchoolInfo>
           우) 62423 광주광역시 광산구 상무대로 312
           <br />
