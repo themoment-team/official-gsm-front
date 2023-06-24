@@ -20,15 +20,11 @@ export const FooterTextWrapper = styled.div`
   flex-direction: column;
   align-items: end;
   gap: 4.0625rem;
-  color: ${({ theme }) => theme.color.white};
-  a {
-    ${({ theme }) => theme.typo.h5}
-    font-weight: 700;
-  }
 `;
 
 export const SiteInfo = styled.div`
   display: flex;
+  color: ${({ theme }) => theme.color.white};
   flex-direction: column;
   align-items: end;
   gap: 0.5rem;
@@ -42,6 +38,10 @@ export const Copyright = styled.p`
 export const LinkWrapper = styled.div`
   display: flex;
   gap: 1.5rem;
+  a {
+    ${({ theme }) => theme.typo.h5}
+    font-weight: 700;
+  }
 `;
 
 export const SchoolInfo = styled.p`
