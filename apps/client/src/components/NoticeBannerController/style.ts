@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const NoiceBannerWrapper = styled.div`
-  width: 1240px;
+  width: 77.5rem;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -22,14 +22,14 @@ export const DotsContainer = styled.div`
 
 export const Dots = styled.div`
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
   position: absolute;
-  top: 199px;
+  top: 12.4375rem;
 `;
 
 export const Dot = styled.div`
-  width: 8px;
-  height: 8px;
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
   transition: ease-in-out 0.3s;

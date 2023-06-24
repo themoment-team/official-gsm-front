@@ -46,7 +46,7 @@ const NoticeBannerController: React.FC<NoticeBannerControllerType> = ({
     <S.NoiceBannerWrapper>
       <S.SlideContainer
         css={css`
-          right: calc(${currentIndex * 100}vw + ${currentIndex * 1238}px);
+          right: calc(${currentIndex * 100}vw + ${currentIndex * 77.375}rem);
         `}
       >
         {postList.map((post) => (

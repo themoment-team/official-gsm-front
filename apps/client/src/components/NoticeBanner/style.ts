@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 import Image from 'next/image';
 
 export const Banner = styled.div`
-  width: 1240px;
-  height: 239px;
-  border-radius: 20px;
-  padding: 32px;
+  width: 77.5rem;
+  height: 14.9375rem;
+  border-radius: 1.25rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,16 +17,16 @@ export const Banner = styled.div`
 
 export const DonutImage = styled(Image)`
   position: absolute;
-  width: 206.42px;
-  height: 239px;
-  right: 28.58px;
-  top: 0px;
+  width: 12.9012rem;
+  height: 14.9375rem;
+  right: 1.7862rem;
+  top: 0rem;
 `;
 
 export const TextBox = styled.div`
-  width: 550px;
-  height: 121px;
-  margin-right: 624px;
+  width: 34.375rem;
+  height: 7.5625rem;
+  margin-right: 39rem;
 
   h4,
   p {
@@ -43,13 +43,13 @@ export const Text = styled.h5`
 `;
 
 export const Title = styled.p`
-  margin-top: 16px;
+  margin-top: 1rem;
   font-weight: 700;
   ${({ theme: { typo } }) => typo.title};
 `;
 
 export const Preview = styled.h4`
-  margin-top: 8px;
+  margin-top: 0.5rem;
   font-weight: 400;
   ${({ theme: { typo } }) => typo.h4};
 `;
