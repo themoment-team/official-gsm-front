@@ -13,7 +13,7 @@ const ApproveModal: React.FC<ApproveModalProps> = ({ close }) => {
   const { data: unApproveList, refetch } = useGetUnapproveList();
 
   return (
-    <S.ModalConatiner>
+    <S.ModalConatiner onClick={(e) => e.stopPropagation()}>
       <S.ModalHeader>
         🤝 가입 요청
         <div onClick={close}>

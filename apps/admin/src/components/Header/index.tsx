@@ -23,7 +23,7 @@ const Header: FC = () => {
   const closeApproveModal = () => setShowApproveModal(false);
 
   useEffect(() => {
-    setHasNotification(!!unapproveList?.length);
+    setHasNotification(true);
   }, [unapproveList]);
 
   return (
@@ -33,17 +33,17 @@ const Header: FC = () => {
       </Link>
 
       <S.ApproveSection>
-        <S.ApproveRequest>
+        <S.ApproveRequest
+          onClick={() => setShowApproveModal(!showApproveModal)}
+          css={css`
+            cursor: ${hasNotification ? 'pointer' : 'auto'};
+          `}
+        >
           <I.NotificationIcon hasNotification={hasNotification} />
-          <button
-            css={css`
-              cursor: ${hasNotification ? 'pointer' : 'auto'};
-            `}
-            onClick={() => setShowApproveModal(!showApproveModal)}
-          >
+          <p>
             가입 요청
             {hasNotification && <S.Notification />}
-          </button>
+          </p>
           {hasNotification && showApproveModal && (
             <ApproveModal close={closeApproveModal} />
           )}
