@@ -35,18 +35,15 @@ const Header: FC = () => {
       <S.ApproveSection>
         <S.ApproveRequest>
           <I.NotificationIcon hasNotification={hasNotification} />
-          <p
-            css={
-              hasNotification &&
-              css`
-                cursor: pointer;
-              `
-            }
+          <button
+            css={css`
+              cursor: ${hasNotification ? 'pointer' : 'auto'};
+            `}
             onClick={() => setShowApproveModal(!showApproveModal)}
           >
             가입 요청
             {hasNotification && <S.Notification />}
-          </p>
+          </button>
           {hasNotification && showApproveModal && (
             <ApproveModal close={closeApproveModal} />
           )}
