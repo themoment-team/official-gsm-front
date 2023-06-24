@@ -11,7 +11,7 @@ export const NoiceBannerWrapper = styled.div`
 export const SlideContainer = styled.div`
   display: flex;
   position: relative;
-  transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.7s;
   gap: 100vw;
 `;
 
@@ -32,6 +32,6 @@ export const Dot = styled.div`
   height: 0.5rem;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.2);
-  transition: ease-in-out 0.3s;
+  transition: ease-in-out 0.7s;
   cursor: pointer;
 `;
