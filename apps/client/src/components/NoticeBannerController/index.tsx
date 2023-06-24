@@ -21,15 +21,15 @@ const NoticeBannerController: React.FC<NoticeBannerControllerType> = ({
 
   return (
     <S.NoiceBannerWrapper>
-      <S.MoveContainer
+      <S.SlideContainer
         css={css`
-          right: calc(${currentIndex * 100}vw + ${currentIndex * 1240}px);
+          right: calc(${currentIndex * 100}vw + ${currentIndex * 1238}px);
         `}
       >
         {postList.map((post) => (
           <NoticeBanner key={post.postSeq} post={post} />
         ))}
-      </S.MoveContainer>
+      </S.SlideContainer>
       <S.DotsContainer>
         <S.Dots>
           {postList.map((_, i) => (

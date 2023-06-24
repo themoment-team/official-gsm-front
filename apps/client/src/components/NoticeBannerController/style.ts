@@ -8,7 +8,7 @@ export const NoiceBannerWrapper = styled.div`
   overflow-x: hidden;
 `;
 
-export const MoveContainer = styled.div`
+export const SlideContainer = styled.div`
   display: flex;
   position: relative;
   transition: ease-in-out 0.3s;
