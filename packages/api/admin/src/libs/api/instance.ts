@@ -23,7 +23,7 @@ const waitRefreshEnd = () =>
 
 adminInstance.interceptors.response.use(
   (response) => {
-    if ((response.config.url = authUrl.refresh())) {
+    if (response.config.url === authUrl.refresh()) {
       isRefreshing = false;
     }
 
