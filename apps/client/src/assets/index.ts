@@ -5,7 +5,7 @@ export { default as FutureIcon } from './introduction/section3/FutureIcon';
 export { default as GSMLogo } from './svg/GSMLogo';
 export { default as GlobeIcon } from './introduction/section4/png/GlobeIcon.png';
 export { default as ImaginationIcon } from './introduction/section3/ImaginationIcon';
-export { default as MounTainIcon } from './introduction/section4/png/MounTainIcon.png';
+export { default as MountainIcon } from './introduction/section4/png/MountainIcon.png';
 export { default as MouseIcon } from './introduction/section1/MouseIcon';
 export { default as PieChartIcon } from './introduction/section4/png/PieChartIcon.png';
 export { default as RocketIcon } from './introduction/section4/png/RocketIcon.png';

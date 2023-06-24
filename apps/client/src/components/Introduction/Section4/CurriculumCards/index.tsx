@@ -17,7 +17,7 @@ const CurriculumCards = () => {
         right: '2.1875rem',
       },
       img: {
-        src: I.MounTainIcon,
+        src: I.MountainIcon,
         width: 234,
         height: 220,
       },
