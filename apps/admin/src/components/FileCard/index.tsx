@@ -13,10 +13,7 @@ const FileCard: React.FC<FileCardProps> = ({ fileName, onCancel }) => (
       <I.FileIcon />
       <S.Filename>{fileName}</S.Filename>
     </S.FileNameWrapper>
-    <S.CancelButton
-      type='button'
-      onClick={() => fileName && onCancel(fileName)}
-    >
+    <S.CancelButton type='button' onClick={() => onCancel(fileName)}>
       <I.CancelIcon />
     </S.CancelButton>
   </S.FileCardWrap>
