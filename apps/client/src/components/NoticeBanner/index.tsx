@@ -1,4 +1,4 @@
-import { Donut } from 'client/assets';
+import Image from 'next/image';
 
 import type { ContentType } from 'api/client';
 
@@ -12,7 +12,9 @@ const NoticeBanner: React.FC<NoticeBannerProps> = ({
   post: { postTitle, contentPreview },
 }) => (
   <S.Banner>
-    <S.DonutImage src={Donut} alt='donut' />
+    <S.DonutImageWrapper>
+      <Image src='png/notice/Donut.png' alt='donut' fill />
+    </S.DonutImageWrapper>
     <S.TextBox>
       <S.Text>공지사항 📢</S.Text>
       <S.Title>{postTitle}</S.Title>

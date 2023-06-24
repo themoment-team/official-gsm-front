@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import styled from '@emotion/styled';
 
 export const Banner = styled.div`
@@ -16,7 +14,7 @@ export const Banner = styled.div`
   color: ${({ theme: { color } }) => color.white};
 `;
 
-export const DonutImage = styled(Image)`
+export const DonutImageWrapper = styled.div`
   position: absolute;
   width: 12.9012rem;
   height: 14.9375rem;
