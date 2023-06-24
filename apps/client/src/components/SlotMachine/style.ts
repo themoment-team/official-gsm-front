@@ -71,7 +71,7 @@ export const ListIconWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3.125rem;
+  gap: 2.5rem;
 `;
 
 export const Wrap = styled.div`
@@ -89,7 +89,7 @@ export const List = styled.ul`
   top: 0;
   left: 0;
   margin: 0;
-  animation-duration: 4s;
+  animation-duration: 6s;
   animation-timing-function: linear;
   transform-style: preserve-3d;
   transform-origin: 50% 100%;
