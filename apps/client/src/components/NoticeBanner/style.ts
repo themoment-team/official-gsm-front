@@ -1,5 +1,6 @@
-import styled from '@emotion/styled';
 import Image from 'next/image';
+
+import styled from '@emotion/styled';
 
 export const Banner = styled.div`
   width: 77.5rem;
