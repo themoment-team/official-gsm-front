@@ -57,9 +57,7 @@ export const LogoImgWrap = styled.div`
   width: 2926px;
   background-color: plum;
 `;
-export const LogoLoop = styled.div``;
-export const LogoBox = styled.div``;
-export const Img = styled.div``;
+
 export const ScrollWrap = styled.div`
   position: relative;
   width: 100vw;
@@ -67,6 +65,7 @@ export const ScrollWrap = styled.div`
   padding: 2rem 0;
   overflow-x: hidden;
 `;
+
 export const ScrollWrap2 = styled.div`
   position: relative;
   width: 100vw;
@@ -74,40 +73,42 @@ export const ScrollWrap2 = styled.div`
   padding: 2rem 0;
   overflow-x: hidden;
   .primary.second {
-    animation: ${secondaryRight} 10s linear infinite;
+    animation: ${secondaryRight} 20s linear infinite;
   }
   .secondary.second {
-    animation: ${primaryRight} 10s linear infinite;
+    animation: ${primaryRight} 20s linear infinite;
   }
 `;
 export const Scroll2 = styled.div`
-  width: inherit;
+  width: 100vw;
   height: inherit;
   position: absolute;
   top: 0%;
   display: flex;
   align-items: center;
-  gap: 30px;
   overflow: hidden;
+  background-color: #ffffff;
   img {
     height: auto !important;
     position: relative !important;
-    margin: 0px 20px;
+    margin-right: 43px;
   }
 `;
+
 export const Scroll = styled.div`
-  width: inherit;
   height: inherit;
+  width: 115vw;
   position: absolute;
   left: 0%;
   top: 0%;
   display: flex;
   align-items: center;
   overflow: hidden;
+  background-color: #ffffff;
   img {
     height: auto !important;
     position: relative !important;
-    margin: 0px 32px;
+    margin-right: 50px;
   }
 `;
 export const Container = styled.div`
@@ -120,18 +121,18 @@ export const Container = styled.div`
   flex-direction: column;
 
   .primary.first {
-    animation: ${primary} 10s linear infinite;
+    animation: ${primary} 20s linear infinite;
   }
 
   .primary.third {
-    animation: ${primary} 15s linear infinite;
+    animation: ${primary} 25s linear infinite;
   }
 
   .secondary.first {
-    animation: ${secondary} 10s linear infinite;
+    animation: ${secondary} 20s linear infinite;
   }
 
   .secondary.third {
-    animation: ${secondary} 15s linear infinite;
+    animation: ${secondary} 25s linear infinite;
   }
 `;
