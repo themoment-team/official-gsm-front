@@ -8,7 +8,7 @@ export function GlobalStyle() {
         ${emotionReset}
 
         body {
-          overscroll-behavior: none;
+          overscroll-behavior-y: none;
         }
 
         body,
