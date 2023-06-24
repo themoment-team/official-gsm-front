@@ -2,7 +2,7 @@
 
 import styled from '@emotion/styled';
 
-import { Header, PromotionVideo, SlotMachine } from 'client/components';
+import { Header, PromotionVideo, Footer, SlotMachine } from 'client/components';
 import { useGetWindowScrollHeight, useGetWindowWidth } from 'client/hooks';
 
 export default function Home() {
@@ -22,12 +22,13 @@ export default function Home() {
       <PromotionVideo />
       <SlotMachine />
       <Content />
+      <Footer />
     </>
   );
 }
 
 const Content = styled.div`
-  height: 10000px;
+  height: 2000px;
   position: relative;
   background-color: white;
   z-index: 1;
