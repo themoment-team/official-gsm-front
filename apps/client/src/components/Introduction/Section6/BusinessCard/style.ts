@@ -1,21 +1,4 @@
-import styled from '@emotion/styled';
-
-export const Layout = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 11.25rem 21.25rem;
-  gap: 6.6875rem;
-  height: 68.6875rem;
-`;
-
-export const BusinessLayout = styled.div`
-  display: flex;
-  flex: 1;
-  width: 100%;
-  justify-content: space-between;
-`;
+import styled from "@emotion/styled";
 
 export const Business = styled.div`
   display: flex;
