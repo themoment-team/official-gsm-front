@@ -108,7 +108,12 @@ const MajorCard = ({ major }: { major: MajorType }) => {
 
   return (
     <S.CardLayout>
-      <Image src={`/major/${major}.png`} width={630} height={250} alt='' />
+      <Image
+        src={`/images/about/section5/${major}.png`}
+        width={630}
+        height={250}
+        alt=''
+      />
 
       <S.ContentSection>
         <S.Title>{selectedMajor.title}</S.Title>
