@@ -3,10 +3,10 @@ export { default as DownChevronsIcon } from './introduction/section1/DownChevron
 export { default as DreamIcon } from './introduction/section3/DreamIcon';
 export { default as FutureIcon } from './introduction/section3/FutureIcon';
 export { default as GSMLogo } from './svg/GSMLogo';
-export { default as GlobeIcon } from './introduction/section4/png/Globe.png';
+export { default as GlobeIcon } from './introduction/section4/png/GlobeIcon.png';
 export { default as ImaginationIcon } from './introduction/section3/ImaginationIcon';
-export { default as MounTainIcon } from './introduction/section4/png/MounTain.png';
+export { default as MounTainIcon } from './introduction/section4/png/MounTainIcon.png';
 export { default as MouseIcon } from './introduction/section1/MouseIcon';
-export { default as PieChartIcon } from './introduction/section4/png/PieChart.png';
-export { default as RocketIcon } from './introduction/section4/png/Rocket.png';
+export { default as PieChartIcon } from './introduction/section4/png/PieChartIcon.png';
+export { default as RocketIcon } from './introduction/section4/png/RocketIcon.png';
 export { default as UnderscoreIcon } from './svg/icon/UnderscoreIcon';
