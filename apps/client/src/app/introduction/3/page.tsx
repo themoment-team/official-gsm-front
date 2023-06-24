@@ -2,10 +2,6 @@
 
 import { Section3 } from 'client/components';
 
-export default function Section3Page() {
-  return (
-    <>
-      <Section3 />
-    </>
-  );
-}
+export const Section3Page = () => <Section3 />;
+
+export default Section3Page;
