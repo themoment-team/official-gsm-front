@@ -2,7 +2,7 @@
 
 import styled from '@emotion/styled';
 
-import { Header, PromotionVideo, Footer } from 'client/components';
+import { Header, PromotionVideo, Footer, SlotMachine } from 'client/components';
 import { useGetWindowScrollHeight, useGetWindowWidth } from 'client/hooks';
 
 export default function Home() {
@@ -20,6 +20,7 @@ export default function Home() {
     <>
       <Header segment='' isBackgroundWhite={isBackgroundWhite} />
       <PromotionVideo />
+      <SlotMachine />
       <Content />
       <Footer />
     </>
