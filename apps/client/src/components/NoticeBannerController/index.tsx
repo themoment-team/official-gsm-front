@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { css } from '@emotion/react';
 import { useTheme } from '@emotion/react';
@@ -18,6 +18,29 @@ const NoticeBannerController: React.FC<NoticeBannerControllerType> = ({
 }) => {
   const theme = useTheme();
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [isRecentClick, setIsRecentClick] = useState<boolean>(false);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (!isRecentClick) {
+        setCurrentIndex(
+          currentIndex === postList.length - 1 ? 0 : currentIndex + 1
+        );
+      }
+    }, 2000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [currentIndex, isRecentClick, postList.length]);
+
+  const handleDotClick = (index: number) => {
+    setCurrentIndex(index);
+    setIsRecentClick(true);
+    setTimeout(() => {
+      setIsRecentClick(false);
+    }, 2000);
+  };
 
   return (
     <S.NoiceBannerWrapper>
@@ -35,7 +58,7 @@ const NoticeBannerController: React.FC<NoticeBannerControllerType> = ({
           {postList.map((_, i) => (
             <S.Dot
               key={i}
-              onClick={() => setCurrentIndex(i)}
+              onClick={() => handleDotClick(i)}
               css={
                 currentIndex === i &&
                 css`
