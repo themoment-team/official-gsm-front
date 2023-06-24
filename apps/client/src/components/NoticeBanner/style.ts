@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import Image from 'next/image';
 
-export const NoticeBanner = styled.div`
+export const Banner = styled.div`
   width: 1240px;
   height: 239px;
   border-radius: 20px;
@@ -37,32 +37,19 @@ export const TextBox = styled.div`
   }
 `;
 
-export const NoticeText = styled.h5`
+export const Text = styled.h5`
   font-weight: 600;
   ${({ theme: { typo } }) => typo.h5};
 `;
 
-export const NoticeTitle = styled.p`
+export const Title = styled.p`
   margin-top: 16px;
   font-weight: 700;
   ${({ theme: { typo } }) => typo.title};
 `;
 
-export const NoticePreview = styled.h4`
+export const Preview = styled.h4`
   margin-top: 8px;
   font-weight: 400;
   ${({ theme: { typo } }) => typo.h4};
-`;
-
-export const Dots = styled.div`
-  display: flex;
-  gap: 8px;
-`;
-
-export const Dot = styled.div`
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
 `;

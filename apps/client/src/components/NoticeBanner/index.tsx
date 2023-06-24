@@ -11,21 +11,14 @@ interface NoticeBannerProps {
 const NoticeBanner: React.FC<NoticeBannerProps> = ({
   post: { postTitle, contentPreview },
 }) => (
-  <S.NoticeBanner>
+  <S.Banner>
     <S.DonutImage src={Donut} alt='donut' />
     <S.TextBox>
-      <S.NoticeText>공지사항 📢</S.NoticeText>
-      <S.NoticeTitle>{postTitle}</S.NoticeTitle>
-      <S.NoticePreview>{contentPreview}</S.NoticePreview>
+      <S.Text>공지사항 📢</S.Text>
+      <S.Title>{postTitle}</S.Title>
+      <S.Preview>{contentPreview}</S.Preview>
     </S.TextBox>
-    <S.Dots>
-      <S.Dot />
-      <S.Dot />
-      <S.Dot />
-      <S.Dot />
-      <S.Dot />
-    </S.Dots>
-  </S.NoticeBanner>
+  </S.Banner>
 );
 
 export default NoticeBanner;
