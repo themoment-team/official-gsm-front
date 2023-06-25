@@ -3,72 +3,72 @@ import Image from 'next/image';
 import * as S from './style';
 const Slide = () => {
   const images = [
-    '/img/Untitled.png',
-    '/img/Untitled1.png',
-    '/img/Untitled2.png',
-    '/img/Untitled4.png',
-    '/img/Untitled.png',
-    '/img/Untitled1.png',
-    '/img/Untitled2.png',
-    '/img/Untitled4.png',
+    '/png/imgs/introduction/section8/MOU.png',
+    '/png/imgs/introduction/section8/MOU1.png',
+    '/png/imgs/introduction/section8/MOU2.png',
+    '/png/imgs/introduction/section8/MOU4.png',
+    '/png/imgs/introduction/section8/MOU.png',
+    '/png/imgs/introduction/section8/MOU1.png',
+    '/png/imgs/introduction/section8/MOU2.png',
+    '/png/imgs/introduction/section8/MOU4.png',
   ];
   const images2 = [
-    '/img/Untitled5.png',
-    '/img/Untitled6.png',
-    '/img/Untitled7.png',
-    '/img/Untitled8.png',
-    '/img/Untitled9.png',
-    '/img/Untitled5.png',
-    '/img/Untitled6.png',
-    '/img/Untitled7.png',
-    '/img/Untitled8.png',
-    '/img/Untitled9.png',
+    '/png/imgs/introduction/section8/MOU5.png',
+    '/png/imgs/introduction/section8/MOU6.png',
+    '/png/imgs/introduction/section8/MOU7.png',
+    '/png/imgs/introduction/section8/MOU8.png',
+    '/png/imgs/introduction/section8/MOU9.png',
+    '/png/imgs/introduction/section8/MOU5.png',
+    '/png/imgs/introduction/section8/MOU6.png',
+    '/png/imgs/introduction/section8/MOU7.png',
+    '/png/imgs/introduction/section8/MOU8.png',
+    '/png/imgs/introduction/section8/MOU9.png',
   ];
   const images3 = [
-    '/img/Untitled11.png',
-    '/img/Untitled12.png',
-    '/img/Untitled3.png',
-    '/img/Untitled13.png',
-    '/img/Untitled10.png',
-    '/img/Untitled11.png',
-    '/img/Untitled12.png',
-    '/img/Untitled3.png',
-    '/img/Untitled13.png',
-    '/img/Untitled10.png',
+    '/png/imgs/introduction/section8/MOU11.png',
+    '/png/imgs/introduction/section8/MOU12.png',
+    '/png/imgs/introduction/section8/MOU3.png',
+    '/png/imgs/introduction/section8/MOU13.png',
+    '/png/imgs/introduction/section8/MOU10.png',
+    '/png/imgs/introduction/section8/MOU11.png',
+    '/png/imgs/introduction/section8/MOU12.png',
+    '/png/imgs/introduction/section8/MOU3.png',
+    '/png/imgs/introduction/section8/MOU13.png',
+    '/png/imgs/introduction/section8/MOU10.png',
   ];
   return (
     <S.Container>
       <S.ScrollWrap>
-        <S.Scroll className='scroll-element primary first'>
+        <S.Scroll className='primary first'>
           {images.map((src, index) => (
             <Image key={index} src={src} alt={`image-${index}`} fill />
           ))}
         </S.Scroll>
-        <S.Scroll className='scroll-element secondary first'>
+        <S.Scroll className='secondary first'>
           {images.map((src, index) => (
             <Image key={index} src={src} alt={`image-${index}`} fill />
           ))}
         </S.Scroll>
       </S.ScrollWrap>
       <S.ScrollWrap2>
-        <S.Scroll2 className='scroll-element primary second'>
+        <S.Scroll2 className='primary second'>
           {images2.map((src, index) => (
             <Image key={index} src={src} alt={`image-${index}`} fill />
           ))}
         </S.Scroll2>
-        <S.Scroll2 className='scroll-element secondary second'>
+        <S.Scroll2 className='secondary second'>
           {images2.map((src, index) => (
             <Image key={index} src={src} alt={`image-${index}`} fill />
           ))}
         </S.Scroll2>
       </S.ScrollWrap2>
       <S.ScrollWrap>
-        <S.Scroll className='scroll-element primary third'>
+        <S.Scroll className='primary third'>
           {images3.map((src, index) => (
             <Image key={index} src={src} alt={`image-${index}`} fill />
           ))}
         </S.Scroll>
-        <S.Scroll className='scroll-element secondary third'>
+        <S.Scroll className='secondary third'>
           {images3.map((src, index) => (
             <Image key={index} src={src} alt={`image-${index}`} fill />
           ))}
