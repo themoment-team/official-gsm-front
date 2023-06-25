@@ -24,7 +24,7 @@ const ApproveModal: React.FC<ApproveModalProps> = ({ close }) => {
         {unApproveList?.map((approveItem) => (
           <ApproveItem
             key={approveItem.userId}
-            onApprove={refetch}
+            refetch={refetch}
             {...approveItem}
           />
         ))}

@@ -8,13 +8,13 @@ import {
 
 import * as S from './style';
 interface ApproveItemProps extends UnapproveListType {
-  onApprove: () => void;
+  refetch: () => void;
 }
 
 const ApproveItem: React.FC<ApproveItemProps> = ({
   userName,
   userSeq,
-  onApprove,
+  refetch,
   requestedAt,
 }) => {
   const { mutate: patchMutate } = usePatchApprove();
@@ -23,7 +23,7 @@ const ApproveItem: React.FC<ApproveItemProps> = ({
   const patchApprove = () => {
     patchMutate(userSeq, {
       onSuccess: () => {
-        onApprove();
+        refetch();
       },
     });
   };
@@ -31,7 +31,7 @@ const ApproveItem: React.FC<ApproveItemProps> = ({
   const deleteApprove = () => {
     deleteMutate(userSeq, {
       onSuccess: () => {
-        onApprove();
+        refetch();
       },
     });
   };
