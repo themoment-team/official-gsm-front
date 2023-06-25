@@ -4,7 +4,7 @@ export { default as IntroductionTitle } from './Title/Introduction';
 export { default as NewsTitle } from './Title/News';
 export { default as NewsletterCard } from './NewsletterCard';
 export { default as NoticeBanner } from './NoticeBanner/Banner';
-export { default as NoticeBannerController } from './NoticeBanner/Controller';
+export { default as NoticeBannerController } from './NoticeBanner';
 export { default as PromotionVideo } from './PromotionVideo';
 export { default as Section1 } from './Introduction/Section1';
 export { default as Section2 } from './Introduction/Section2';

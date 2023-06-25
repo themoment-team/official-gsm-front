@@ -1,38 +1,25 @@
-import { useState, useEffect } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 
-import { css } from '@emotion/react';
-import { useTheme } from '@emotion/react';
-
-import { NoticeBanner } from 'client/components';
+import { css, useTheme } from '@emotion/react';
 
 import type { ContentType } from 'api/client';
 
 import * as S from './style';
 
-interface NoticeBannerControllerType {
+interface NoticeBannerControllerProps {
   postList: ContentType[];
+  currentIndex: number;
+  setCurrentIndex: Dispatch<SetStateAction<number>>;
+  setIsRecentClick: Dispatch<SetStateAction<boolean>>;
 }
 
-const NoticeBannerController: React.FC<NoticeBannerControllerType> = ({
+const NoticeBannerController: React.FC<NoticeBannerControllerProps> = ({
   postList,
+  currentIndex,
+  setCurrentIndex,
+  setIsRecentClick,
 }) => {
   const theme = useTheme();
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [isRecentClick, setIsRecentClick] = useState<boolean>(false);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      if (!isRecentClick) {
-        setCurrentIndex(
-          currentIndex === postList.length - 1 ? 0 : currentIndex + 1
-        );
-      }
-    }, 2000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [currentIndex, isRecentClick, postList.length]);
 
   const handleDotClick = (index: number) => {
     setCurrentIndex(index);
@@ -43,33 +30,22 @@ const NoticeBannerController: React.FC<NoticeBannerControllerType> = ({
   };
 
   return (
-    <S.NoiceBannerWrapper>
-      <S.SlideContainer
-        css={css`
-          right: calc(${currentIndex * 100}vw + ${currentIndex * 77.375}rem);
-        `}
-      >
-        {postList.map((post) => (
-          <NoticeBanner key={post.postSeq} post={post} />
+    <S.DotsContainer>
+      <S.Dots>
+        {postList.map((_, i) => (
+          <S.Dot
+            key={i}
+            onClick={() => handleDotClick(i)}
+            css={
+              currentIndex === i &&
+              css`
+                background: ${theme.color.white};
+              `
+            }
+          />
         ))}
-      </S.SlideContainer>
-      <S.DotsContainer>
-        <S.Dots>
-          {postList.map((_, i) => (
-            <S.Dot
-              key={i}
-              onClick={() => handleDotClick(i)}
-              css={
-                currentIndex === i &&
-                css`
-                  background: ${theme.color.white};
-                `
-              }
-            />
-          ))}
-        </S.Dots>
-      </S.DotsContainer>
-    </S.NoiceBannerWrapper>
+      </S.Dots>
+    </S.DotsContainer>
   );
 };
 

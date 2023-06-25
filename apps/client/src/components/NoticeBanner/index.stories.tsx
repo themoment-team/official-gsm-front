@@ -1,13 +1,13 @@
-import NoticeBannerController from '.';
+import NoticeBanner from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'client/Notice/NoticeBannerController',
-  component: NoticeBannerController,
-} as Meta<typeof NoticeBannerController>;
+  title: 'client/Notice/NoticeBanner',
+  component: NoticeBanner,
+} as Meta<typeof NoticeBanner>;
 
-type Story = StoryObj<typeof NoticeBannerController>;
+type Story = StoryObj<typeof NoticeBanner>;
 
 const postList = [
   {
@@ -48,10 +48,5 @@ const postList = [
 ];
 
 export const Primary: Story = {
-  args: {
-    postList: postList,
-    currentIndex: 0,
-    setCurrentIndex: () => 0,
-    setIsRecentClick: () => false,
-  },
+  args: { postList: postList },
 };

@@ -4,11 +4,11 @@ import type { ContentType } from 'api/client';
 
 import * as S from './style';
 
-interface NoticeBannerProps {
+interface BannerProps {
   post: ContentType;
 }
 
-const NoticeBanner: React.FC<NoticeBannerProps> = ({
+const Banner: React.FC<BannerProps> = ({
   post: { postTitle, contentPreview },
 }) => (
   <S.Banner>
@@ -23,4 +23,4 @@ const NoticeBanner: React.FC<NoticeBannerProps> = ({
   </S.Banner>
 );
 
-export default NoticeBanner;
+export default Banner;

@@ -1,13 +1,13 @@
-import NoticeBanner from '.';
+import Banner from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'client/NoticeBanner',
-  component: NoticeBanner,
-} as Meta<typeof NoticeBanner>;
+  title: 'client/Notice/Banner',
+  component: Banner,
+} as Meta<typeof Banner>;
 
-type Story = StoryObj<typeof NoticeBanner>;
+type Story = StoryObj<typeof Banner>;
 
 export const Primary: Story = {
   args: {
