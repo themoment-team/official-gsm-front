@@ -42,7 +42,7 @@ export default function ListPage({ params: { category } }: ListPageProps) {
 
   return (
     <>
-      <Header hasNotification={false} name={'정문정'} />
+      <Header />
       <Banner />
       <ContentWrapper>
         <Category category={category} />

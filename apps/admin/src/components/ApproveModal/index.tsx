@@ -1,23 +1,19 @@
 import * as I from 'admin/assets';
 import { ApproveItem } from 'admin/components';
 
-import * as S from './style';
+import { useGetUnapproveList } from 'api/admin';
 
-const testData = [
-  { name: '정문정', date: '2022.05.23' },
-  { name: '강권', date: '2022.05.23' },
-  { name: '스테파니', date: '2022.05.23' },
-  { name: '정문정', date: '2022.05.23' },
-  { name: '정문정', date: '2022.05.23' },
-  { name: '정문정', date: '2022.05.23' },
-];
+import * as S from './style';
 
 interface ApproveModalProps {
   close: () => void;
 }
 
-const ApproveModal: React.FC<ApproveModalProps> = ({ close }) => (
-    <S.ModalConatiner>
+const ApproveModal: React.FC<ApproveModalProps> = ({ close }) => {
+  const { data: unApproveList, refetch } = useGetUnapproveList();
+
+  return (
+    <S.ModalConatiner onClick={(e) => e.stopPropagation()}>
       <S.ModalHeader>
         🤝 가입 요청
         <div onClick={close}>
@@ -25,11 +21,16 @@ const ApproveModal: React.FC<ApproveModalProps> = ({ close }) => (
         </div>
       </S.ModalHeader>
       <S.ModalContent>
-        {testData.map(({ name, date }, i) => (
-          <ApproveItem name={name} date={date} key={i} />
+        {unApproveList?.map((approveItem) => (
+          <ApproveItem
+            key={approveItem.userId}
+            refetch={refetch}
+            {...approveItem}
+          />
         ))}
       </S.ModalContent>
     </S.ModalConatiner>
   );
+};
 
 export default ApproveModal;

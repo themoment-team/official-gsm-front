@@ -1,14 +1,14 @@
-import Header from '.';
+import Footer from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'admin/Header',
-  component: Header,
+  title: 'client/Footer',
+  component: Footer,
   parameters: {},
-} as Meta<typeof Header>;
+} as Meta<typeof Footer>;
 
-type Story = StoryObj<typeof Header>;
+type Story = StoryObj<typeof Footer>;
 
 export const Primary: Story = {
   args: {},

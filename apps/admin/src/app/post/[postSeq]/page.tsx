@@ -21,7 +21,7 @@ export default function DetailPage({ params: { postSeq } }: DetailPageProps) {
 
   return (
     <DetailPageWrapper>
-      <Header hasNotification={false} name={'정문정'} />
+      <Header />
       {data?.category === 'EVENT_GALLERY' ? (
         <GalleryDetail postSeq={postSeq} />
       ) : (
