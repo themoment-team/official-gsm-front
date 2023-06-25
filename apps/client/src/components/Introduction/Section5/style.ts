@@ -3,23 +3,23 @@ import styled from '@emotion/styled';
 export const Layout = styled.div`
   width: 100vw;
   display: flex;
-  padding: 180px 340px;
-  gap: 10px;
-  height: 1138px;
+  padding: 11.25rem 21.25rem;
+  gap: 0.625rem;
+  height: 71.125rem;
   background: #f5f9fb;
   justify-content: space-between;
 `;
 
 export const MajorSelect = styled.div`
-  margin-top: 54px;
+  margin-top: 3.375rem;
   display: flex;
-  gap: 12px;
-  width: 392px;
-  height: 176px;
+  gap: 0.75rem;
+  width: 24.5rem;
+  height: 11rem;
 
   font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
+  font-size: 1.5rem;
+  line-height: 1.8125rem;
 `;
 
 export const DotContainer = styled.div`
@@ -33,10 +33,10 @@ export const DotContainer = styled.div`
 
 export const Line = styled.div`
   position: absolute;
-  width: 0px;
+  width: 0rem;
   height: 100%;
-  border: 2px solid #cdd5e2;
-  top: 0px;
+  border: 0.125rem solid #cdd5e2;
+  top: 0rem;
   left: 50%;
   margin: 0;
   z-index: -1;
@@ -44,10 +44,10 @@ export const Line = styled.div`
 `;
 
 export const SelectDot = styled.div`
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   background: #ffffff;
-  border: 8px solid #003365;
+  border: 0.5rem solid #003365;
   border-radius: 50%;
   cursor: pointer;
 `;
