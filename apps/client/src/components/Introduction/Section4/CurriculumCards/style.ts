@@ -6,19 +6,15 @@ export const SectionCardWrapper = styled.div`
   gap: 1.875rem;
 `;
 
-export const CardTemplate = styled.div<{ isSmall: boolean; bgColor: string }>`
-  width: ${({ isSmall }) => (isSmall ? '30.9375rem' : '44.6875rem')};
+export const CardTemplate = styled.div<>`
   height: 21.6875rem;
   border-radius: 1.875rem;
   position: relative;
   padding: 3rem 0 0 3rem;
-  background-color: ${({ bgColor }) => bgColor};
 `;
 
-export const CardImg = styled.div<{ top: string; right: string }>`
+export const CardImg = styled.div`
   position: absolute;
-  top: ${({ top }) => top};
-  right: ${({ right }) => right};
 
   img {
     object-fit: cover;

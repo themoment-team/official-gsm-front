@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+import { css } from '@emotion/react';
+
 import * as S from './style';
 
 const CurriculumCards = () => {
@@ -75,8 +77,11 @@ const CurriculumCards = () => {
       {CurriculumCard.map((index, id) => (
         <S.CardTemplate
           key={id}
-          isSmall={index.isSmall}
-          bgColor={index.bgColor}
+          // isSmall={index.isSmall}
+          // bgColor={index.bgColor}
+          css={css`
+            width: ${index.isSmall ? '30.9375rem' : '44.6875rem'};
+          `}
         >
           <S.CardTitle color={index.color}>
             {index.title}
@@ -84,14 +89,16 @@ const CurriculumCards = () => {
             <span>{index.subTitle}</span>
           </S.CardTitle>
           <S.CardImg
-            top={index.cardPosition.top}
-            right={index.cardPosition.right}
+            css={css`
+              top: ${index.cardPosition.top};
+              right: ${index.cardPosition.right};
+            `}
           >
             <Image
               src={`/images/about/section4/${index.img.src}.png`}
               width={index.img.width}
               height={index.img.height}
-              alt='dd'
+              alt='교육과정 이미지'
             />
           </S.CardImg>
         </S.CardTemplate>
