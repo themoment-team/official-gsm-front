@@ -1,4 +1,4 @@
-export { default as EducationDirection } from './EducationDirection';
+export { default as EducationDirection } from './Introduction/Section3/EducationDirection';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
 export { default as IntroductionTitle } from './Title/Introduction';

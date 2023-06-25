@@ -13,17 +13,15 @@ export const EducationDirectionStyle = styled.div`
 `;
 
 export const Title = styled.h3`
-  font-weight: 600;
   ${({ theme }) => theme.typo.h3};
-
   color: ${({ theme }) => theme.color.gray['090']};
+  font-weight: 600;
 `;
 
 export const SubTitle = styled.li`
-  font-weight: 400;
-
   ${({ theme }) => theme.typo.body1};
   color: ${({ theme }) => theme.color.gray['090']};
+  font-weight: 400;
   list-style: initial;
   list-style-position: inside;
 `;
