@@ -11,7 +11,6 @@ export { default as Section3 } from './Introduction/Section3';
 export { default as Section8 } from './Introduction/Section8';
 export { default as SectionTitle } from './Title/SectionTitle';
 export { default as Slide } from './Slide';
-export { default as SectionTitle } from './Title/SectionTitle';
 export { default as SlotMachine } from './SlotMachine';
 export { default as SubTitle } from './Title/SubTitle';
 export { default as TitleTemplate } from './Title/Template';
