@@ -1,7 +1,5 @@
 import Image from 'next/image';
 
-import * as I from 'client/assets';
-
 import * as S from './style';
 
 const CurriculumCards = () => {
@@ -17,7 +15,7 @@ const CurriculumCards = () => {
         right: '2.1875rem',
       },
       img: {
-        src: I.MountainIcon,
+        src: 'MountainIcon',
         width: 234,
         height: 220,
       },
@@ -33,7 +31,7 @@ const CurriculumCards = () => {
         right: '2.1875rem',
       },
       img: {
-        src: I.PieChartIcon,
+        src: 'PieChartIcon',
         width: 290,
         height: 260,
       },
@@ -49,7 +47,7 @@ const CurriculumCards = () => {
         right: '4.1875rem',
       },
       img: {
-        src: I.GlobeIcon,
+        src: 'GlobeIcon',
         width: 360,
         height: 252,
       },
@@ -65,7 +63,7 @@ const CurriculumCards = () => {
         right: '0',
       },
       img: {
-        src: I.RocketIcon,
+        src: 'RocketIcon',
         width: 240,
         height: 220,
       },
@@ -90,7 +88,7 @@ const CurriculumCards = () => {
             right={index.cardPosition.right}
           >
             <Image
-              src={index.img.src}
+              src={`/images/about/section4/${index.img.src}.png`}
               width={index.img.width}
               height={index.img.height}
               alt='dd'
