@@ -23,7 +23,7 @@ const Header: FC = () => {
   const closeApproveModal = () => setShowApproveModal(false);
 
   useEffect(() => {
-    setHasNotification(true);
+    setHasNotification(!!unapproveList?.length);
   }, [unapproveList]);
 
   return (
@@ -40,10 +40,8 @@ const Header: FC = () => {
           `}
         >
           <I.NotificationIcon hasNotification={hasNotification} />
-          <p>
-            가입 요청
-            {hasNotification && <S.Notification />}
-          </p>
+          가입 요청
+          {hasNotification && <S.Notification />}
           {hasNotification && showApproveModal && (
             <ApproveModal close={closeApproveModal} />
           )}
