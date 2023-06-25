@@ -62,7 +62,7 @@ export default function WritePage() {
   };
   const postFile = () => {
     setFiles(
-      fileInput.current?.files?.[0] && fileInput.current?.files.length
+      fileInput.current?.files?.length
         ? [...files, ...fileInput.current.files].filter(
             (element, index, arr) =>
               index === arr.findIndex((files) => files.name === element.name)
