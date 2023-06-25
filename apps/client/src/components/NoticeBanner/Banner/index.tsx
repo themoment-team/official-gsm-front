@@ -13,7 +13,7 @@ const NoticeBanner: React.FC<NoticeBannerProps> = ({
 }) => (
   <S.Banner>
     <S.DonutImageWrapper>
-      <Image src='png/notice/Donut.png' alt='donut' fill />
+      <Image src='images/notice/Donut.png' alt='donut' fill />
     </S.DonutImageWrapper>
     <S.TextBox>
       <S.Text>공지사항 📢</S.Text>
