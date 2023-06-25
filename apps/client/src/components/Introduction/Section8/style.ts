@@ -1,8 +1,7 @@
 import styled from '@emotion/styled';
-import { keyframes } from '@emotion/react';
 
 export const Layout = styled.div`
-  height: 891px;
+  height: 55.6875rem;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -18,17 +17,6 @@ export const SectionWrap = styled.div`
 `;
 
 export const LogoImgWrap = styled.div`
-  height: 331.99969482421875px;
-  width: 2926px;
-  background-color: plum;
-`;
-
-export const Container = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  height: 332px;
-  overflow: hidden;
-  flex-direction: column;
+  height: 20.75rem;
+  width: 182.875rem;
 `;
