@@ -35,7 +35,6 @@ type FormType = z.infer<typeof schema>;
 
 export default function WritePage() {
   const [files, setFiles] = useState<File[]>([]);
-  const [input, setInput] = useState<string>('');
   const fileInput = useRef<HTMLInputElement>(null);
 
   const handleCancel = (fileName: string) => {
@@ -45,6 +44,7 @@ export default function WritePage() {
   const {
     register,
     handleSubmit,
+    watch,
     formState: { errors },
   } = useForm<FormType>({ resolver: zodResolver(schema) });
 
@@ -60,6 +60,7 @@ export default function WritePage() {
     // eslint-disable-next-line no-console
     console.log(contents);
   };
+
   const postFile = () => {
     setFiles(
       fileInput.current?.files?.length
@@ -112,7 +113,7 @@ export default function WritePage() {
                 borderRadius='0.625rem'
                 isError={errors.title ? true : false}
                 {...register('title')}
-                onChange={(e) => setInput(e.target.value)}
+                // onChange={(e) => setInput(e.target.value)}
                 maxLength={60}
               />
               <span
@@ -124,10 +125,10 @@ export default function WritePage() {
                   right: 16px;
                 `}
               >
-                {input.length}/60
+                {watch('title')?.length ?? 0}/60
               </span>
             </div>
-            {input.length > 60 ? (
+            {watch('title')?.length > 60 ? (
               <S.ErrorMessage>글자수를 초과하였습니다.</S.ErrorMessage>
             ) : (
               ''
