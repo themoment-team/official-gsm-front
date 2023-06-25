@@ -37,44 +37,44 @@ const Slide = () => {
     '/png/imgs/introduction/section8/MOU10.png',
   ];
   return (
-    <S.Container>
-      <S.ScrollWrap>
-        <S.Scroll className='primary first'>
+    <S.SlideContainer>
+      <S.SlideWrap>
+        <S.Slide className='primary first'>
           {images.map((src, index) => (
             <Image key={index} src={src} alt={`image-${index}`} fill />
           ))}
-        </S.Scroll>
-        <S.Scroll className='secondary first'>
+        </S.Slide>
+        <S.Slide className='secondary first'>
           {images.map((src, index) => (
             <Image key={index} src={src} alt={`image-${index}`} fill />
           ))}
-        </S.Scroll>
-      </S.ScrollWrap>
-      <S.ScrollWrap2>
-        <S.Scroll2 className='primary second'>
+        </S.Slide>
+      </S.SlideWrap>
+      <S.SlideWrap>
+        <S.Slide2 className='primary second'>
           {images2.map((src, index) => (
             <Image key={index} src={src} alt={`image-${index}`} fill />
           ))}
-        </S.Scroll2>
-        <S.Scroll2 className='secondary second'>
+        </S.Slide2>
+        <S.Slide2 className='secondary second'>
           {images2.map((src, index) => (
             <Image key={index} src={src} alt={`image-${index}`} fill />
           ))}
-        </S.Scroll2>
-      </S.ScrollWrap2>
-      <S.ScrollWrap>
-        <S.Scroll className='primary third'>
+        </S.Slide2>
+      </S.SlideWrap>
+      <S.SlideWrap>
+        <S.Slide className='primary third'>
           {images3.map((src, index) => (
             <Image key={index} src={src} alt={`image-${index}`} fill />
           ))}
-        </S.Scroll>
-        <S.Scroll className='secondary third'>
+        </S.Slide>
+        <S.Slide className='secondary third'>
           {images3.map((src, index) => (
             <Image key={index} src={src} alt={`image-${index}`} fill />
           ))}
-        </S.Scroll>
-      </S.ScrollWrap>
-    </S.Container>
+        </S.Slide>
+      </S.SlideWrap>
+    </S.SlideContainer>
   );
 };
 

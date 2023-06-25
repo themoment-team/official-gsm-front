@@ -15,8 +15,3 @@ export const SectionWrap = styled.div`
   align-items: center;
   justify-content: center;
 `;
-
-export const LogoImgWrap = styled.div`
-  height: 20.75rem;
-  width: 182.875rem;
-`;
