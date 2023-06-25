@@ -1,7 +1,7 @@
 export { default as ChevronIcon } from './svg/icon/ChevronIcon';
 export { default as DownChevronsIcon } from './introduction/section1/DownChevronsIcon';
 export { default as DreamIcon } from './introduction/section3/DreamIcon';
-export { default as FooterGSMLogo } from './FooterGSMLogo';
+export { default as FooterGSMLogo } from './svg/FooterGSMLogo';
 export { default as FutureIcon } from './introduction/section3/FutureIcon';
 export { default as GSMLogo } from './svg/GSMLogo';
 export { default as ImaginationIcon } from './introduction/section3/ImaginationIcon';
