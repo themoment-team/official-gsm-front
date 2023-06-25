@@ -6,7 +6,7 @@ export const SectionCardWrapper = styled.div`
   gap: 1.875rem;
 `;
 
-export const CardTemplate = styled.div<>`
+export const CardTemplate = styled.div`
   height: 21.6875rem;
   border-radius: 1.875rem;
   position: relative;
@@ -21,15 +21,9 @@ export const CardImg = styled.div`
   }
 `;
 
-export const CardTitle = styled.h1<{ color: string }>`
+export const CardTitle = styled.h1`
   font-weight: 700;
   font-size: 1.75rem;
   line-height: 2.5625rem;
-  color: ${({ color }) => color};
   position: relative;
-
-  span {
-    color: ${({ color }) => color};
-    opacity: 60%;
-  }
 `;

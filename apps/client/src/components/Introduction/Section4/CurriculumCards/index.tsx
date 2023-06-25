@@ -81,9 +81,19 @@ const CurriculumCards = () => {
           // bgColor={index.bgColor}
           css={css`
             width: ${index.isSmall ? '30.9375rem' : '44.6875rem'};
+            background-color: ${index.bgColor};
           `}
         >
-          <S.CardTitle color={index.color}>
+          <S.CardTitle
+            css={css`
+              color: ${index.color};
+
+              span {
+                color: ${index.color};
+                opacity: 60%;
+              }
+            `}
+          >
             {index.title}
             <br />
             <span>{index.subTitle}</span>
