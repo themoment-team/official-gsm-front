@@ -10,26 +10,6 @@ export default {
 
 type Story = StoryObj<typeof IntroductionTitle>;
 
-export const Section1: Story = {
-  args: {
-    children: <>AI 시대를 선도할</>,
-    pointColor: 'lime',
-    className: 'navy',
-    pointPosition: 'bottom',
-    pointSize: '11px',
-  },
-};
-
-export const BorderTitle: Story = {
-  args: {
-    children: <>상상과 실력으로</>,
-    pointColor: 'lime',
-    className: 'border',
-    pointPosition: 'bottom',
-    pointSize: '13px',
-  },
-};
-
 export const Section3: Story = {
   args: {
     children: <>학교가 추구하는 교육 방향</>,
