@@ -1,4 +1,4 @@
-import { IntroductionTitle, SubTitle } from 'client/components';
+import { IntroductionTitle, SubTitle, SectionTitle } from 'client/components';
 
 import CurriculumCards from './CurriculumCards';
 import * as S from './style';
@@ -6,7 +6,7 @@ import * as S from './style';
 const Section4 = () => (
   <S.SectionWrapper>
     <S.SectionContentWraper>
-      <S.SectionTitleWrap>
+      <SectionTitle>
         <IntroductionTitle
           pointColor='lime'
           pointSize='1.125rem'
@@ -15,7 +15,7 @@ const Section4 = () => (
           소프트웨어 인재 양성을 위한 교육 과정
         </IntroductionTitle>
         <SubTitle>스스로 삶의 힘을 키우고 상생의정신을 함양하는 학교</SubTitle>
-      </S.SectionTitleWrap>
+      </SectionTitle>
       <CurriculumCards />
     </S.SectionContentWraper>
   </S.SectionWrapper>

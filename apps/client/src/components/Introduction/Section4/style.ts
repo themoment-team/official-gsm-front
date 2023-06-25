@@ -16,10 +16,3 @@ export const SectionContentWraper = styled.div`
   align-items: center;
   justify-content: space-between;
 `;
-
-export const SectionTitleWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-`;
