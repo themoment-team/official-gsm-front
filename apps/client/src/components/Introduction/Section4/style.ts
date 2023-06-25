@@ -23,10 +23,3 @@ export const SectionTitleWrap = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-
-export const SectionSubTitle = styled.h3`
-  font-weight: 400;
-  font-size: 1.5rem;
-  line-height: 2.25rem;
-  color: #616161;
-`;
