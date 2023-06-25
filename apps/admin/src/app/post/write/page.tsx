@@ -42,7 +42,7 @@ export default function WritePage() {
 
   return (
     <>
-      <Header hasNotification={false} name={'정문정'} />
+      <Header />
       <S.WritePageWrap>
         <S.WriteTitle>게시물 생성</S.WriteTitle>
         <S.FormWrap onSubmit={handleSubmit(onSubmit)}>
