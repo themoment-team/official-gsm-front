@@ -35,6 +35,7 @@ const Slide = () => {
     '/imgs/about/section8/MOU3.png',
     '/imgs/about/section8/MOU13.png',
     '/imgs/about/section8/MOU10.png',
+    '/imgs/about/section8/MOU3.png',
   ];
   return (
     <S.SlideContainer>

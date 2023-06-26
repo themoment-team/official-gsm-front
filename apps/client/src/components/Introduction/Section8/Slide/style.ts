@@ -1,35 +1,53 @@
 import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
-const primary = keyframes`
+const primaryFirst = keyframes`
   from {
     left: 0%;
   }
   to {
-    left: -100%;
+    left: -115%;
   }
 `;
 
-const secondary = keyframes`
+const secondaryFirst = keyframes`
   from {
-    left: 100%;
+    left: 115%;
   }
   to {
     left: 0%;
   }
 `;
 
-const primaryRight = keyframes`
+const primaryThird = keyframes`
+  from {
+    left: 0%;
+  }
+  to {
+    left: -150%;
+  }
+`;
+
+const secondaryThird = keyframes`
+  from {
+    left: 150%;
+  }
+  to {
+    left: 0%;
+  }
+`;
+
+const primarySecond = keyframes`
   from {
     right: 0%;
   }
   to {
-    right: -100%;
+    right: -110%;
   }
 `;
-const secondaryRight = keyframes`
+const secondarySecond = keyframes`
   from {
-    right: 100%;
+    right: 110%;
   }
   to {
     right: 0%;
@@ -46,27 +64,29 @@ export const SlideContainer = styled.div`
   flex-direction: column;
 
   .primary.first {
-    animation: ${primary} 20s linear infinite;
-  }
-
-  .primary.third {
-    animation: ${primary} 25s linear infinite;
+    animation: ${primaryFirst} 20s linear infinite;
+    width: 115vw;
   }
 
   .secondary.first {
-    animation: ${secondary} 20s linear infinite;
+    width: 115vw;
+    animation: ${secondaryFirst} 20s linear infinite;
+  }
+
+  .primary.third {
+    animation: ${primaryThird} 25s linear infinite;
   }
 
   .secondary.third {
-    animation: ${secondary} 25s linear infinite;
+    animation: ${secondaryThird} 25s linear infinite;
   }
 
   .primary.second {
-    animation: ${secondaryRight} 20s linear infinite;
+    animation: ${secondarySecond} 20s linear infinite;
   }
 
   .secondary.second {
-    animation: ${primaryRight} 20s linear infinite;
+    animation: ${primarySecond} 20s linear infinite;
   }
 `;
 
@@ -101,7 +121,6 @@ export const Slide2 = styled.div`
   top: 0%;
   display: flex;
   align-items: center;
-  overflow: hidden;
   background-color: ${({ theme }) => theme.color.white};
   img {
     height: auto !important;
@@ -112,13 +131,11 @@ export const Slide2 = styled.div`
 
 export const Slide = styled.div`
   height: inherit;
-  width: 115vw;
   position: absolute;
   left: 0%;
   top: 0%;
   display: flex;
   align-items: center;
-  overflow: hidden;
   background-color: ${({ theme }) => theme.color.white};
   img {
     height: auto !important;

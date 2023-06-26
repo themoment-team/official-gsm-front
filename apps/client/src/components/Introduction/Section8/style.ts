@@ -8,10 +8,3 @@ export const Layout = styled.div`
   align-items: center;
   justify-content: space-evenly;
 `;
-
-export const SectionWrap = styled.div`
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
