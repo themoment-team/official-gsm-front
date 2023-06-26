@@ -9,9 +9,9 @@ interface ToBackButtonProps {
 }
 
 const ToBackButton: React.FC<ToBackButtonProps> = ({ onClick }) => (
-    <Button onClick={onClick}>
-      <ToBackIcon />
-    </Button>
-  );
+  <Button onClick={onClick}>
+    <ToBackIcon />
+  </Button>
+);
 
 export default ToBackButton;

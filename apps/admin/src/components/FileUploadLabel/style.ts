@@ -1,8 +1,6 @@
-import Link from 'next/link';
-
 import styled from '@emotion/styled';
 
-export const CustomLink = styled(Link)`
+export const Label = styled.label`
   width: fit-content;
   height: 2.25rem;
   padding: 0.5rem 0.75rem 0.5rem 1.125rem;
@@ -11,6 +9,7 @@ export const CustomLink = styled(Link)`
   gap: 0.375rem;
   background: #050505;
   border-radius: 1.25rem;
+  cursor: pointer;
 `;
 
 export const Text = styled.p`

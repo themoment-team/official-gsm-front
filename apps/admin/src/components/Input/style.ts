@@ -21,7 +21,7 @@ export const InputBox = styled.input<{ borderRadius?: string }>`
   border: 0.0625rem solid #dcdcdc;
   border-radius: ${({ borderRadius }) => borderRadius ?? '1.25rem'};
   background-color: #fff;
-  padding: 0 1.25rem;
+  padding: 0 3.125rem 0 1.25rem;
   font-size: 0.75rem;
   color: #424242;
   transition: ease-in-out 0.3s;
