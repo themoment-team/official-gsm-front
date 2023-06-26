@@ -1,8 +1,10 @@
+export { default as IdealTalent } from './IdealTalent';
+export { default as NewsTitle } from './Title/News';
+export { default as Section7 } from './Introduction/Section7';
 export { default as EducationDirection } from './EducationDirection';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
 export { default as IntroductionTitle } from './Title/Introduction';
-export { default as NewsTitle } from './Title/News';
 export { default as NewsletterCard } from './NewsletterCard';
 export { default as PromotionVideo } from './PromotionVideo';
 export { default as Section1 } from './Introduction/Section1';
