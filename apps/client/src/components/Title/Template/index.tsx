@@ -2,21 +2,21 @@ import React from 'react';
 
 import { css, useTheme } from '@emotion/react';
 
-import type { PointColorType } from 'client/types/title';
+import type { PointColorType, PointPositionType } from 'client/types';
 
 import * as S from './style';
 
-interface TitleTemplateProps {
+interface TitleProps {
   children: React.ReactNode;
 
   point: {
     pointSize: string;
-    pointPosition: 'top' | 'bottom';
+    pointPosition: PointPositionType;
     pointColor: PointColorType;
   };
 }
 
-const TitleTemplate: React.FC<TitleTemplateProps> = ({
+const TitleTemplate: React.FC<TitleProps> = ({
   children,
   point: { pointPosition, pointSize, pointColor },
 }) => {
@@ -29,7 +29,7 @@ const TitleTemplate: React.FC<TitleTemplateProps> = ({
           width: ${pointSize};
           height: ${pointSize};
           background-color: ${theme.color.primary[pointColor]};
-          right: -5%;
+          right: -1.25rem;
           ${pointPosition === 'top' ? 'top: 0' : 'bottom: 15%'};
         `}
       />

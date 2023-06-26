@@ -7,14 +7,16 @@ import { css } from '@emotion/react';
 import { CarouselController } from 'admin/components';
 import * as S from 'admin/components/Carousel/style';
 
-import type { FileInfoType } from 'api/client';
+import { useGetPostDetail } from 'api/client';
 
 interface GalleryCarouselProps {
-  fileInfo: FileInfoType[];
+  postSeq: number;
 }
 
-const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ fileInfo }) => {
+const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ postSeq }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  const { data } = useGetPostDetail(postSeq);
 
   return (
     <S.GalleryCarouselWrapper>
@@ -30,7 +32,7 @@ const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ fileInfo }) => {
               right: ${currentIndex * 40.6256}rem;
             `}
           >
-            {fileInfo.map((file, i) => (
+            {data?.fileInfo.map((file, i) => (
               <S.IMGWrapper
                 key={file.fileName + i}
                 css={css`
@@ -44,12 +46,7 @@ const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ fileInfo }) => {
                   `}
                 `}
               >
-                <Image
-                  unoptimized
-                  alt='content image'
-                  src={file.fileUrl}
-                  fill
-                />
+                <Image alt='content image' src={file.fileUrl} fill />
               </S.IMGWrapper>
             ))}
           </S.MoveContainer>
@@ -58,7 +55,7 @@ const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ fileInfo }) => {
       <CarouselController
         setCurrentIndex={setCurrentIndex}
         currentIndex={currentIndex}
-        fileInfo={fileInfo}
+        postSeq={postSeq}
       />
     </S.GalleryCarouselWrapper>
   );

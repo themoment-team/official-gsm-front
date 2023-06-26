@@ -1,6 +1,6 @@
 'use client';
 
-import { GoogleIcon } from 'admin/assets';
+import { GoogleLoginButton } from 'admin/components';
 import * as S from 'admin/styles/page/signin';
 
 export default function SignInPage() {
@@ -19,10 +19,7 @@ export default function SignInPage() {
           <S.SkyBlueHighlight>학교 전용 구글 아이디</S.SkyBlueHighlight>로
           로그인해주세요.
         </S.Description>
-        <S.GoogleOAuthLink href='/api/signin'>
-          <GoogleIcon />
-          Google 로그인
-        </S.GoogleOAuthLink>
+        <GoogleLoginButton>Google 로그인</GoogleLoginButton>
       </S.SignInContent>
     </S.SignInPage>
   );

@@ -5,12 +5,10 @@
   "dependencies": {
     "@types/node": "20.1.4",
     "axios": "^1.4.0",
+    "common": "workspace:^",
     "eslint-config-custom": "workspace:^"
   },
   "devDependencies": {
     "tsconfig": "workspace:^"
-  },
-  "peerDependencies": {
-    "@tanstack/react-query": "^4.29.7"
   }
 }

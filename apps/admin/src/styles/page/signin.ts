@@ -61,17 +61,20 @@ export const SkyBlueHighlight = styled.span`
   color: #7acdf4;
 `;
 
-export const GoogleOAuthLink = styled.a`
-  width: 21.4375rem;
-  height: 3.0625rem;
-  background: #fcfcfc;
-  border-radius: 1.25rem;
-  color: #212121;
+export const SignInWarning = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0.5625rem;
-  font-weight: 700;
-  font-size: 0.9375rem;
-  cursor: pointer;
+  gap: 2rem;
+  @media (max-height: 26.5rem) {
+    margin: 6.5625rem 0;
+  }
+`;
+
+export const WarningContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.5rem;
 `;

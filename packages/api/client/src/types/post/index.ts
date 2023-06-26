@@ -20,6 +20,7 @@ export interface PostDetailType {
   postWriter: string;
   postContent: string;
   createdAt: string;
+  category: PostCategoryType;
   fileInfo: FileInfoType[];
 }
 
