@@ -17,12 +17,13 @@ interface MajorArrayType {
   name: string;
 }
 
+const majorArray: MajorArrayType[] = [
+  { major: 'SW', name: '소프트웨어 개발과' },
+  { major: 'IOT', name: '스마트 IOT(Internet of Things)' },
+  { major: 'AI', name: '인공 지능(AI)과' },
+];
+
 const Section5 = () => {
-  const majorArray: MajorArrayType[] = [
-    { major: 'SW', name: '소프트웨어 개발과' },
-    { major: 'IOT', name: '스마트 IOT(Internet of Things)' },
-    { major: 'AI', name: '인공 지능(AI)과' },
-  ];
   const [selectedMajor, setSelectedMajor] = useState<MajorType>('SW');
   const theme = useTheme();
 
