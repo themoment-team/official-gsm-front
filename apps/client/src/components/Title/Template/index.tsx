@@ -2,7 +2,7 @@ import React from 'react';
 
 import { css, useTheme } from '@emotion/react';
 
-import type { PointColorType } from 'client/types/title';
+import type { PointColorType } from 'client/types';
 
 import * as S from './style';
 
