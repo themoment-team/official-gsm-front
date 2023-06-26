@@ -3,11 +3,11 @@ import Link from 'next/link';
 import styled from '@emotion/styled';
 
 export const GalleryCard = styled(Link)`
-  width: 292px;
-  height: 303px;
+  width: 18.25rem;
+  height: 18.9375rem;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 1rem;
   cursor: pointer;
   position: relative;
   :hover {
@@ -18,9 +18,9 @@ export const GalleryCard = styled(Link)`
 `;
 
 export const IMGWrapper = styled.div`
-  width: 292px;
-  height: 180px;
-  border-radius: 20px;
+  width: 18.25rem;
+  height: 11.25rem;
+  border-radius: 1.25rem;
   overflow: hidden;
   position: relative;
   img {
@@ -32,7 +32,7 @@ export const IMGWrapper = styled.div`
 export const TextBox = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 0.25rem;
   .text {
     overflow: hidden;
     text-overflow: ellipsis;
