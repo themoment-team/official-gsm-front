@@ -13,7 +13,6 @@ const CurriculumCards = () => {
       title: 'AI 시대를 선도할',
       subTitle: 'GSM 교육과정 운영',
       cardPosition: {
-        top: '7.9375rem',
         right: '2.1875rem',
       },
       img: {
@@ -29,7 +28,6 @@ const CurriculumCards = () => {
       title: '직업군에 최적화된',
       subTitle: '취업역량 강화',
       cardPosition: {
-        top: '5.4375rem',
         right: '2.1875rem',
       },
       img: {
@@ -45,7 +43,6 @@ const CurriculumCards = () => {
       title: '산업수요 변화에 맞춘',
       subTitle: '현장실무능력 향상',
       cardPosition: {
-        top: '5.9375rem',
         right: '4.1875rem',
       },
       img: {
@@ -61,7 +58,6 @@ const CurriculumCards = () => {
       title: '자율성과 자기 주도성으로',
       subTitle: '학습 능력 신장',
       cardPosition: {
-        top: '7.9375rem',
         right: '0',
       },
       img: {
@@ -100,7 +96,7 @@ const CurriculumCards = () => {
           </S.CardTitle>
           <S.CardImg
             css={css`
-              top: ${index.cardPosition.top};
+              bottom: 0;
               right: ${index.cardPosition.right};
             `}
           >
