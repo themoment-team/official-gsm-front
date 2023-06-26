@@ -18,7 +18,7 @@ const Banner: React.FC<BannerProps> = ({
       <S.Preview>{contentPreview}</S.Preview>
     </S.TextBox>
     <S.DonutImageWrapper>
-      <Image src='images/notice/Donut.png' alt='donut' fill />
+      <Image src='/images/notice/Donut.png' alt='donut' fill />
     </S.DonutImageWrapper>
   </S.Banner>
 );
