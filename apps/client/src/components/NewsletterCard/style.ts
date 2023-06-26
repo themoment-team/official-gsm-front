@@ -1,34 +1,5 @@
 import styled from '@emotion/styled';
 
-export const ExampleDiv = styled.div`
-  display: flex;
-  &:nth-child(odd) {
-    .newsletterCardWrapper {
-      background: rgba(122, 205, 244, 0.1);
-    }
-    .dateCircle {
-      background-color: ${({ theme: { color } }) => color.primary.sky};
-    }
-    .dateCircle:first-child {
-      color: ${({ theme: { color } }) => color.sub.blue};
-      opacity: 1;
-    }
-  }
-
-  &:nth-child(even) {
-    .newsletterCardWrapper {
-      background: rgba(178, 228, 73, 0.1);
-    }
-    .dateCircle {
-      background-color: ${({ theme: { color } }) => color.primary.lime};
-    }
-    .dateCircle:first-child {
-      color: #73962b;
-      opacity: 1;
-    }
-  }
-`;
-
 export const NewsletterCardWrapper = styled.div`
   display: flex;
   padding: 2rem;
