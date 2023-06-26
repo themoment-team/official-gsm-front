@@ -54,4 +54,9 @@ export const Primary: Story = {
     setCurrentIndex: () => 0,
     setIsRecentClick: () => false,
   },
+  parameters: {
+    backgrounds: {
+      default: 'dark',
+    },
+  },
 };
