@@ -1,6 +1,4 @@
-export type PointColorType = 'navy' | 'sky' | 'lime';
-
-export type PointPositionType = 'top' | 'bottom';
+import type { PointColorType, PointPositionType } from './point';
 
 export interface TitleProps {
   children: React.ReactNode;
@@ -9,6 +7,6 @@ export interface TitleProps {
   point: {
     pointSize?: string;
     pointPosition?: PointPositionType;
-    pointColor?: string;
+    pointColor?: PointColorType;
   };
 }
