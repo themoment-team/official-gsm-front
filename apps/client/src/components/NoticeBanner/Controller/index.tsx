@@ -10,23 +10,17 @@ interface NoticeBannerControllerProps {
   postList: ContentType[];
   currentIndex: number;
   setCurrentIndex: Dispatch<SetStateAction<number>>;
-  setIsRecentClick: Dispatch<SetStateAction<boolean>>;
 }
 
 const NoticeBannerController: React.FC<NoticeBannerControllerProps> = ({
   postList,
   currentIndex,
   setCurrentIndex,
-  setIsRecentClick,
 }) => {
   const theme = useTheme();
 
   const handleDotClick = (index: number) => {
     setCurrentIndex(index);
-    setIsRecentClick(true);
-    setTimeout(() => {
-      setIsRecentClick(false);
-    }, 2000);
   };
 
   return (

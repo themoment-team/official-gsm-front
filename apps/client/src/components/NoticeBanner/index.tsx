@@ -14,21 +14,18 @@ interface NoticeBannerType {
 
 const NoticeBanner: React.FC<NoticeBannerType> = ({ postList }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
-  const [isRecentClick, setIsRecentClick] = useState<boolean>(false);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      if (!isRecentClick) {
         setCurrentIndex(
           currentIndex === postList.length - 1 ? 0 : currentIndex + 1
         );
-      }
     }, 2000);
 
     return () => {
       clearInterval(intervalId);
     };
-  }, [currentIndex, isRecentClick, postList.length]);
+  }, [currentIndex, postList.length]);
 
   return (
     <S.NoiceBannerWrapper>
@@ -45,7 +42,6 @@ const NoticeBanner: React.FC<NoticeBannerType> = ({ postList }) => {
         postList={postList}
         currentIndex={currentIndex}
         setCurrentIndex={setCurrentIndex}
-        setIsRecentClick={setIsRecentClick}
       />
     </S.NoiceBannerWrapper>
   );
