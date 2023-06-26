@@ -1,4 +1,4 @@
-import type { IdealTalentType } from 'client/types/idealtalent';
+import type { IdealTalentType } from 'client/types';
 
 import * as S from './style';
 const IdealTalent: React.FC<IdealTalentType> = ({ title, subTitle }) => (
