@@ -71,7 +71,7 @@ export const TextWrapper = styled.div`
   height: 7.25rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 0.625rem;
 
   h4 {
     overflow: hidden;
@@ -85,6 +85,7 @@ export const Title = styled.h4`
   ${({ theme: { typo } }) => typo.h4}
   color: ${({ theme: { color } }) => color.gray['090']};
   font-weight: 600;
+  height: 3.625rem;
 `;
 
 export const Preview = styled.h4`
