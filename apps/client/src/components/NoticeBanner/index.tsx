@@ -16,14 +16,14 @@ const NoticeBanner: React.FC<NoticeBannerType> = ({ postList }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   useEffect(() => {
-    const intervalId = setInterval(() => {
-        setCurrentIndex(
-          currentIndex === postList.length - 1 ? 0 : currentIndex + 1
-        );
+    const timeoutId = setTimeout(() => {
+      setCurrentIndex(
+        currentIndex === postList.length - 1 ? 0 : currentIndex + 1
+      );
     }, 2000);
 
     return () => {
-      clearInterval(intervalId);
+      clearTimeout(timeoutId);
     };
   }, [currentIndex, postList.length]);
 
