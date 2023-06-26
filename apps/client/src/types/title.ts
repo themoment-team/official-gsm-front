@@ -1,12 +1,11 @@
 import type { PointColorType, PointPositionType } from './point';
 
-export interface TitleProps {
+export interface TitleType {
   children: React.ReactNode;
-  className: string;
 
   point: {
-    pointSize?: string;
-    pointPosition?: PointPositionType;
-    pointColor?: PointColorType;
+    pointSize: string;
+    pointPosition: PointPositionType;
+    pointColor: PointColorType;
   };
 }

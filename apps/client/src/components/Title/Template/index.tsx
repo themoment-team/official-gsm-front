@@ -2,21 +2,11 @@ import React from 'react';
 
 import { css, useTheme } from '@emotion/react';
 
-import type { PointColorType } from 'client/types';
+import type { TitleType } from 'client/types';
 
 import * as S from './style';
 
-interface TitleTemplateProps {
-  children: React.ReactNode;
-
-  point: {
-    pointSize: string;
-    pointPosition: 'top' | 'bottom';
-    pointColor: PointColorType;
-  };
-}
-
-const TitleTemplate: React.FC<TitleTemplateProps> = ({
+const TitleTemplate: React.FC<TitleType> = ({
   children,
   point: { pointPosition, pointSize, pointColor },
 }) => {

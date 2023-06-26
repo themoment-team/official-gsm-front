@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 import { TitleTemplate } from 'client/components';
-import type { PointColorType, PointPositionType } from 'client/types/point';
+import type { PointColorType, PointPositionType } from 'client/types';
 
 interface IntroductionTitleProps {
   children: React.ReactNode;
