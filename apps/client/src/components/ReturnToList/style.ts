@@ -24,14 +24,6 @@ export const ReturnToListWrapper = styled(Link)`
   }
 `;
 
-export const ChevronWrapper = styled.div`
-  width: 1.25rem;
-  height: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
 export const ReturnText = styled.p`
   font-weight: 600;
   ${({ theme }) => theme.typo.body1}
