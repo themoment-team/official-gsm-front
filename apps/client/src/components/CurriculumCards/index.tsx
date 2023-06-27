@@ -2,13 +2,15 @@ import Image from 'next/image';
 
 import { css } from '@emotion/react';
 
+import { theme } from 'common';
+
 import * as S from './style';
 
 const CurriculumArray = [
   {
     isSmall: true,
-    bgColor: '#0033651A',
-    color: '#003365',
+    bgColor: `${theme.color.primary.navy}1A`,
+    color: `${theme.color.primary.navy}`,
     title: 'AI 시대를 선도할',
     subTitle: 'GSM 교육과정 운영',
     cardPosition: {
@@ -22,8 +24,8 @@ const CurriculumArray = [
   },
   {
     isSmall: false,
-    bgColor: '#F8FADB',
-    color: '#C8CE2B',
+    bgColor: `${theme.color.sub.yellow}`,
+    color: `${theme.color.sub.lime}`,
     title: '직업군에 최적화된',
     subTitle: '취업역량 강화',
     cardPosition: {
@@ -37,8 +39,8 @@ const CurriculumArray = [
   },
   {
     isSmall: false,
-    bgColor: '#7ACDF433',
-    color: '#7ACDF4',
+    bgColor: `${theme.color.primary.sky}33`,
+    color: `${theme.color.primary.sky}`,
     title: '산업수요 변화에 맞춘',
     subTitle: '현장실무능력 향상',
     cardPosition: {
@@ -52,8 +54,8 @@ const CurriculumArray = [
   },
   {
     isSmall: true,
-    bgColor: '#FF98771A',
-    color: '#FF9877',
+    bgColor: `${theme.color.sub.orange}1A`,
+    color: `${theme.color.sub.orange}`,
     title: '자율성과 자기 주도성으로',
     subTitle: '학습 능력 신장',
     cardPosition: {
