@@ -11,6 +11,17 @@ export const ReturnToListWrapper = styled(Link)`
   border-radius: 0.75rem;
   background: ${({ theme }) => theme.color.white};
   border: 0.0938rem solid ${({ theme }) => theme.color.primary.navy};
+  transition: ease-in-out 0.2s;
+
+  &:hover {
+    background: ${({ theme }) => theme.color.primary.navy};
+    p {
+      color: ${({ theme }) => theme.color.white};
+    }
+    path {
+      stroke: ${({ theme }) => theme.color.white};
+    }
+  }
 `;
 
 export const ChevronWrapper = styled.div`
