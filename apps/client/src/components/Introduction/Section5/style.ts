@@ -3,15 +3,15 @@ import styled from '@emotion/styled';
 export const Layout = styled.div`
   width: 100vw;
   display: flex;
-  gap: 100px;
-  height: 1138px;
+  gap: 6.25rem;
+  height: 71.125rem;
   background: #f5f9fb;
   align-items: center;
   justify-content: center;
 `;
 
 export const MajorSection = styled.div`
-  height: 778px;
+  height: 48.625rem;
 `;
 
 export const MajorSelect = styled.div`
