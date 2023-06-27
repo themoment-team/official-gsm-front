@@ -10,6 +10,7 @@ import {
   LinkToHelloGSM,
   MainPageNewsletterList,
   NoticeBanner,
+  GalleryList,
 } from 'client/components';
 import { useGetWindowScrollHeight, useGetWindowWidth } from 'client/hooks';
 
@@ -33,6 +34,7 @@ export default function Home() {
         <NoticeBanner />
         <MainPageNewsletterList />
         <LinkToHelloGSM />
+        <GalleryList />
       </Content>
       <Footer />
     </>
