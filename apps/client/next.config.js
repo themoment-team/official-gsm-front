@@ -6,6 +6,9 @@ const nextConfig = {
   compiler: {
     emotion: true,
   },
+  images: {
+    domains: ['bucket.ottokeng.site'],
+  },
   rewrites: async () => [
     {
       source: '/api/client/:path*',
