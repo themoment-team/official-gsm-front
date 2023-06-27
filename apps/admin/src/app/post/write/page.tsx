@@ -19,7 +19,6 @@ import {
 import * as S from 'admin/styles/page/write';
 
 import { usePostPostData } from 'api/admin';
-import type { PostDataType } from 'api/admin';
 
 import { Button } from 'ui';
 
@@ -70,14 +69,18 @@ export default function WritePage() {
     };
     // eslint-disable-next-line no-console
 
-    const postData: PostDataType = {
-      content,
-      file: files,
-    };
+    // const postData: PostDataType = {
+    //   content,
+    //   // file: files,
+    // };
 
     const postFormData = new FormData();
 
-    mutate(postData);
+    postFormData.append('content.postTitle', content.postTitle);
+    postFormData.append('content.postContent', content.postContent);
+    postFormData.append('content.category', content.category);
+
+    mutate(postFormData);
   };
 
   const postFile = () => {
