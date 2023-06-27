@@ -6,6 +6,7 @@ export const NoiceBannerWrapper = styled.div`
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  margin-top: 6.25rem;
 `;
 
 export const SlideContainer = styled.div`
