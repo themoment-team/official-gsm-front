@@ -1,2 +1,2 @@
 export * from './useGetUserInfo';
-export * from './usePatchUsername';
+export * from './usePatchUserName';

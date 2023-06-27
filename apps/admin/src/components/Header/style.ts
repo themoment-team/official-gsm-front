@@ -28,7 +28,7 @@ export const ApproveSection = styled.div`
   }
 `;
 
-export const ApproveRequest = styled.div`
+export const ApproveRequest = styled.button`
   display: flex;
   align-items: center;
   gap: 0.4rem;

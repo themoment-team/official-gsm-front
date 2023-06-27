@@ -1,4 +1,4 @@
-import type { EducationDirectionType } from 'client/types/introduce';
+import type { EducationDirectionType } from 'client/types';
 
 import * as S from './style';
 

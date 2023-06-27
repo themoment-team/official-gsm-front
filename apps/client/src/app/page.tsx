@@ -1,24 +1,36 @@
 'use client';
 
-import type { Theme } from '@emotion/react';
-import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import { Button } from 'ui';
+import { Header, PromotionVideo, Footer, SlotMachine } from 'client/components';
+import { useGetWindowScrollHeight, useGetWindowWidth } from 'client/hooks';
 
 export default function Home() {
+  const windowScrollHeight = useGetWindowScrollHeight();
+  const windowWidth = useGetWindowWidth();
+
+  const headerHeightPx = 64;
+  const promotionVideoHeightPx = (windowWidth / 100) * 56.25;
+
+  const videoOverlayPx = promotionVideoHeightPx - headerHeightPx;
+
+  const isBackgroundWhite = windowScrollHeight > videoOverlayPx;
+
   return (
     <>
-      <Button>button</Button>
-      <ExampleStyled css={exampleCss}>styled</ExampleStyled>
+      <Header segment='' isBackgroundWhite={isBackgroundWhite} />
+      <PromotionVideo />
+      <SlotMachine />
+      <Content />
+      <Footer />
     </>
   );
 }
 
-const exampleCss = (theme: Theme) => css`
-  background-color: ${theme.color.primary.sky};
-`;
-
-const ExampleStyled = styled.div`
-  ${({ theme }) => theme.typo.h1}
+const Content = styled.div`
+  height: 2000px;
+  position: relative;
+  background-color: white;
+  z-index: 1;
+  margin-top: calc(56.25vw - 4rem);
 `;

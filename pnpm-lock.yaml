@@ -234,6 +234,9 @@ importers:
       '@types/react':
         specifier: 18.0.38
         version: 18.0.38
+      common:
+        specifier: workspace:^
+        version: link:../common
       typescript:
         specifier: 5.0.4
         version: 5.0.4
