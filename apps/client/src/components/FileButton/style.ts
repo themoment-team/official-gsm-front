@@ -14,7 +14,6 @@ export const FileButton = styled(Link)`
 
 export const FileNameText = styled.p`
   font-weight: 400;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  ${({ theme }) => theme.typo.body2}
   color: ${({ theme }) => theme.color.gray['080']};
 `;
