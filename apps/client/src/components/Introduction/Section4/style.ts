@@ -8,7 +8,7 @@ export const SectionWrapper = styled.div`
   align-items: center;
 `;
 
-export const SectionContentWraper = styled.div`
+export const SectionContentWrapper = styled.div`
   width: 77.5rem;
   height: 57.4375rem;
   display: flex;

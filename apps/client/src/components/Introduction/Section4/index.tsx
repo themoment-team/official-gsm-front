@@ -9,7 +9,7 @@ import * as S from './style';
 
 const Section4 = () => (
   <S.SectionWrapper>
-    <S.SectionContentWraper>
+    <S.SectionContentWrapper>
       <SectionTitle>
         <IntroductionTitle
           pointColor='lime'
@@ -21,7 +21,7 @@ const Section4 = () => (
         <SubTitle>스스로 삶의 힘을 키우고 상생의정신을 함양하는 학교</SubTitle>
       </SectionTitle>
       <CurriculumCards />
-    </S.SectionContentWraper>
+    </S.SectionContentWrapper>
   </S.SectionWrapper>
 );
 
