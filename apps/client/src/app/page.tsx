@@ -8,7 +8,7 @@ import {
   Footer,
   SlotMachine,
   LinkToHelloGSM,
-  MainPageNewsletter,
+  MainPageNewsletterList,
 } from 'client/components';
 import { useGetWindowScrollHeight, useGetWindowWidth } from 'client/hooks';
 
@@ -29,7 +29,7 @@ export default function Home() {
       <PromotionVideo />
       <SlotMachine />
       <Content>
-        <MainPageNewsletter />
+        <MainPageNewsletterList />
         <LinkToHelloGSM />
       </Content>
       <Footer />

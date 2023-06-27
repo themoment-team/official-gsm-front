@@ -5,7 +5,7 @@ export { default as Header } from './Header';
 export { default as IdealTalent } from './IdealTalent';
 export { default as IntroductionTitle } from './Title/Introduction';
 export { default as LinkToHelloGSM } from './LinkToHelloGSM';
-export { default as MainPageNewsletter } from './MainPage/Newsletter';
+export { default as MainPageNewsletterList } from './MainPage/NewsletterList';
 export { default as NewsTitle } from './Title/News';
 export { default as NewsletterCard } from './NewsletterCard';
 export { default as PromotionVideo } from './PromotionVideo';

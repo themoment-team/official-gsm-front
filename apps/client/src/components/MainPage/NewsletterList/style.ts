@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const MainpageNewsletter = styled.div`
+export const MainpageNewsletterList = styled.div`
   margin-top: 3.75rem;
   display: flex;
   flex-direction: column;

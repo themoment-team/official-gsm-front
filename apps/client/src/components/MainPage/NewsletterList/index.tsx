@@ -4,11 +4,11 @@ import { useGetPostList } from 'api/client';
 
 import * as S from './style';
 
-const MainpageNewsletter = () => {
+const MainpageNewsletterList = () => {
   const { data } = useGetPostList('FAMILY_NEWSLETTER', 0);
 
   return (
-    <S.MainpageNewsletter>
+    <S.MainpageNewsletterList>
       <CategoryHeader category={'FAMILY_NEWSLETTER'} />
       <S.NewsletterList>
         {data?.postList?.map(
@@ -16,8 +16,8 @@ const MainpageNewsletter = () => {
             index < 3 && <NewsletterCard key={data.postSeq} post={data} />
         )}
       </S.NewsletterList>
-    </S.MainpageNewsletter>
+    </S.MainpageNewsletterList>
   );
 };
 
-export default MainpageNewsletter;
+export default MainpageNewsletterList;
