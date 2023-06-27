@@ -6,6 +6,7 @@ export { default as IntroductionTitle } from './Title/Introduction';
 export { default as MajorCard } from './Introduction/Section5/MajorCard';
 export { default as NewsTitle } from './Title/News';
 export { default as NewsletterCard } from './NewsletterCard';
+export { default as NoticeBanner } from './NoticeBanner';
 export { default as PromotionVideo } from './PromotionVideo';
 export { default as Section1 } from './Introduction/Section1';
 export { default as Section2 } from './Introduction/Section2';
