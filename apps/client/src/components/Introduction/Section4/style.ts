@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const SectionWrapper = styled.div`
   width: 100%;
-  height: 1279px;
+  height: 79.9375rem;
   display: flex;
   justify-content: center;
   align-items: center;
