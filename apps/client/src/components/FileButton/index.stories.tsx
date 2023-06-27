@@ -19,3 +19,14 @@ export const Primary: Story = {
     },
   },
 };
+
+export const Secondary: Story = {
+  args: {
+    file: {
+      fileUrl: 'https://static-cse.canva.com/blob/649373/createbanners.jpg',
+      fileName:
+        '[2022 서식] 특성화고장학금 지원신청서fdsafdsafdsafsadfsdaffdas.pdf',
+      fileExtension: 'JPG',
+    },
+  },
+};
