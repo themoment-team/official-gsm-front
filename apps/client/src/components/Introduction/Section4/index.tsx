@@ -1,6 +1,10 @@
-import { IntroductionTitle, SubTitle, SectionTitle } from 'client/components';
+import {
+  IntroductionTitle,
+  SubTitle,
+  SectionTitle,
+  CurriculumCards,
+} from 'client/components';
 
-import CurriculumCards from './CurriculumCards';
 import * as S from './style';
 
 const Section4 = () => (

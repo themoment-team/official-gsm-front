@@ -1,3 +1,4 @@
+export { default as CurriculumCards } from './CurriculumCards';
 export { default as EducationDirection } from './EducationDirection';
 export { default as Header } from './Header';
 export { default as IntroductionTitle } from './Title/Introduction';
