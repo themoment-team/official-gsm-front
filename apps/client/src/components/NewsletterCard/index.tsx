@@ -18,7 +18,7 @@ const NewsletterCard: React.FC<NewsletterCardProps> = ({
   const date = formatDate(createdAtDate.getDate());
 
   return (
-    <S.NewsletterCardWrapper className='newsletterCardWrapper'>
+    <S.NewsletterCardWrapper>
       <S.DateWrapper>
         <S.DateCircle className='dateCircle'>{date}</S.DateCircle>
         <S.YearMonth>{`${year}.${month}`}</S.YearMonth>
