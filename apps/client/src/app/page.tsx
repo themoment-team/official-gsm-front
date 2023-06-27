@@ -2,7 +2,16 @@
 
 import styled from '@emotion/styled';
 
-import { Header, PromotionVideo, Footer, SlotMachine } from 'client/components';
+import {
+  Header,
+  PromotionVideo,
+  Footer,
+  SlotMachine,
+  LinkToHelloGSM,
+  MainPageNewsletterList,
+  NoticeBanner,
+  GalleryList,
+} from 'client/components';
 import { useGetWindowScrollHeight, useGetWindowWidth } from 'client/hooks';
 
 export default function Home() {
@@ -21,16 +30,24 @@ export default function Home() {
       <Header segment='' isBackgroundWhite={isBackgroundWhite} />
       <PromotionVideo />
       <SlotMachine />
-      <Content />
+      <Content>
+        <NoticeBanner />
+        <MainPageNewsletterList />
+        <LinkToHelloGSM />
+        <GalleryList />
+      </Content>
       <Footer />
     </>
   );
 }
 
 const Content = styled.div`
-  height: 2000px;
   position: relative;
-  background-color: white;
+  background-color: ${({ theme }) => theme.color.white};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   z-index: 1;
   margin-top: calc(56.25vw - 4rem);
+  padding: 6.25rem 0 12.5rem;
 `;

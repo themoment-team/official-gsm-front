@@ -87,6 +87,9 @@ importers:
       '@types/react-dom':
         specifier: 18.2.4
         version: 18.2.4
+      api:
+        specifier: workspace:^
+        version: link:../../packages/api
       common:
         specifier: workspace:^
         version: link:../../packages/common
