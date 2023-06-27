@@ -6,6 +6,12 @@ export const Layout = styled.div`
   height: 53.5rem;
   background: #051b30;
   padding: 8.75rem 0;
+  overflow: scroll;
+`;
+
+export const TitleSection = styled.div`
+  height: 1200px;
+  overflow: scroll;
   display: flex;
   flex-direction: column;
   align-items: center;
