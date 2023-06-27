@@ -9,7 +9,7 @@ import {
   SubTitle,
   IdealTalent,
 } from 'client/components';
-import type { IdealTalentType } from 'client/types/idealtalent';
+import type { IdealTalentType } from 'client/types';
 
 import * as S from './style';
 
