@@ -26,8 +26,8 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     <S.IMGWrapper>
       <Image fill src={thumbnailUrl ?? ''} alt='ContentIMG' />
     </S.IMGWrapper>
-    <S.Title>{postTitle}</S.Title>
-    <S.ContentPreview>{contentPreview}</S.ContentPreview>
+    <S.Title className='text'>{postTitle}</S.Title>
+    <S.ContentPreview className='text'>{contentPreview}</S.ContentPreview>
     <S.WiterAndDateWrapper>
       <WriterAndDate
         createdAt={createdAt}
