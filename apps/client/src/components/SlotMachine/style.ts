@@ -6,6 +6,24 @@ const rotate1 = keyframes`
   0%{
     transform: rotateX(0deg);
   }
+  30%{
+    transform: rotateX(-1000deg);
+  }
+  40%{
+    transform: rotateX(-1400deg);
+  }
+  50%{
+    transform: rotateX(-1800deg);
+  }
+  60%{
+    transform: rotateX(-2000deg);
+  }
+  70%{
+    transform: rotateX(-2100deg);
+  }
+  80%{
+    transform: rotateX(-2160deg);
+  }
   90%{
     transform: rotateX(-2170deg);
   }
@@ -33,7 +51,11 @@ export const SlotMachineAnimation = styled.div`
   font-style: normal;
   font-weight: 700;
   font-size: 6.2376rem;
-  color: #ffffff;
+  color: ${({ theme }) => theme.color.white};
+  position: fixed;
+  top: 21.625rem;
+  left: 50%;
+  transform: translateX(-50%);
 `;
 
 export const ListWrap = styled.div`
@@ -53,7 +75,7 @@ export const ListIconWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3.125rem;
+  gap: 2.5rem;
 `;
 
 export const Wrap = styled.div`
@@ -71,7 +93,7 @@ export const List = styled.ul`
   top: 0;
   left: 0;
   margin: 0;
-  animation-duration: 2s;
+  animation-duration: 6s;
   animation-timing-function: linear;
   transform-style: preserve-3d;
   transform-origin: 50% 100%;
