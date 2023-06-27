@@ -1,5 +1,5 @@
-export { default as CurriculumCards } from './CurriculumCards';
 export { default as CategoryHeader } from './CategoryHeader';
+export { default as CurriculumCards } from './Introduction/Section4/CurriculumCards';
 export { default as EducationDirection } from './EducationDirection';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
