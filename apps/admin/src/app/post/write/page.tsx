@@ -12,14 +12,18 @@ import { z } from 'zod';
 import {
   Input,
   TextArea,
-  Category,
   FileUploadLabel,
   Header,
   FileCard,
 } from 'admin/components';
 import * as S from 'admin/styles/page/write';
 
+import { usePostPostData } from 'api/admin';
+import type { PostDataType } from 'api/admin';
+
 import { Button } from 'ui';
+
+export type CategoryType = 'NOTICE' | 'FAMILY_NEWSLETTER' | 'EVENT_GALLERY';
 
 const schema = z.object({
   title: z
@@ -33,7 +37,14 @@ const schema = z.object({
 
 type FormType = z.infer<typeof schema>;
 
+const categoryArray = [
+  { id: 'NOTICE', label: '공지사항' },
+  { id: 'FAMILY_NEWSLETTER', label: '가정통신문' },
+  { id: 'EVENT_GALLERY', label: '행사 갤러리' },
+] as const;
+
 export default function WritePage() {
+  const [category, setCategory] = useState<CategoryType>('NOTICE');
   const [files, setFiles] = useState<File[]>([]);
   const fileInput = useRef<HTMLInputElement>(null);
 
@@ -48,17 +59,22 @@ export default function WritePage() {
     formState: { errors },
   } = useForm<FormType>({ resolver: zodResolver(schema) });
 
+  const { mutate } = usePostPostData();
+
   const onSubmit: SubmitHandler<FormType> = (data) => {
-    const contents = {
-      title: data.title,
-      content: data.content,
-      files: files,
-      // 나중에 통신코드 작성
-      // file:
+    const content = {
+      postTitle: data.title,
+      postContent: data.content,
+      category: category,
+      fileInfo: files,
+    };
+    // eslint-disable-next-line no-console
+
+    const postData: PostDataType = {
+      content,
     };
 
-    // eslint-disable-next-line no-console
-    console.log(contents);
+    mutate(postData);
   };
 
   const postFile = () => {
@@ -70,6 +86,10 @@ export default function WritePage() {
           )
         : files
     );
+  };
+
+  const isActive = (id: CategoryType) => {
+    if (id === category) return true;
   };
 
   const preventClose = (e: BeforeUnloadEvent) => {
@@ -95,7 +115,19 @@ export default function WritePage() {
         <S.FormWrap onSubmit={handleSubmit(onSubmit)}>
           <div>
             <S.FormItemTitle>카테고리</S.FormItemTitle>
-            <Category width='36.125rem' category='notice' />
+            <S.Category>
+              {categoryArray.map(({ id, label }) => (
+                <S.CategoryLabel
+                  onClick={() => setCategory(id)}
+                  key={label}
+                  css={css`
+                    color: ${isActive(id) ? '#FFFFFF' : '#a4a4a4'};
+                  `}
+                >
+                  ∙&nbsp;&nbsp;{label}
+                </S.CategoryLabel>
+              ))}
+            </S.Category>
           </div>
           <div>
             <S.FormItemTitle>제목</S.FormItemTitle>

@@ -7,3 +7,7 @@ export const authQueryKeys = {
   patchUserName: () => ['auth', 'userName'],
   getUserInfo: () => ['auth', 'userInfo'],
 } as const;
+
+export const postQueryKeys = {
+  postPostData: () => ['post', 'data'],
+} as const;
