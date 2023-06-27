@@ -52,7 +52,6 @@ export const Primary: Story = {
     postList: postList,
     currentIndex: 0,
     setCurrentIndex: () => 0,
-    setIsRecentClick: () => false,
   },
   parameters: {
     backgrounds: {
