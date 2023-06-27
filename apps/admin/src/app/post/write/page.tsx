@@ -72,7 +72,10 @@ export default function WritePage() {
 
     const postData: PostDataType = {
       content,
+      file: files,
     };
+
+    const postFormData = new FormData();
 
     mutate(postData);
   };

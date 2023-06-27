@@ -5,5 +5,7 @@ import type { PostDataType } from 'api/admin/src/types/post';
 
 export const usePostPostData = () =>
   useMutation(postQueryKeys.postPostData(), (postData: PostDataType) =>
-    post(postBoardUrl.BoardInfo(), postData)
+    post(postBoardUrl.BoardInfo(), postData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    })
   );
