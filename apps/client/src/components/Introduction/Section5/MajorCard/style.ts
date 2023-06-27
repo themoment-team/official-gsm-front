@@ -4,7 +4,7 @@ export const CardLayout = styled.div`
   display: flex;
   flex-direction: column;
   width: 39.375rem;
-  height: 100%;
+  height: 778px;
   background-color: ${({ theme }) => theme.color.white};
   border-radius: 1.875rem;
 `;

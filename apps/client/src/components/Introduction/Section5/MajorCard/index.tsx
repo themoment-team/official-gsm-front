@@ -2,8 +2,7 @@ import Image from 'next/image';
 
 import { css, useTheme } from '@emotion/react';
 
-import type { MajorType } from 'client/types/introduce';
-import type { PointColorType } from 'client/types/title';
+import type { PointColorType, MajorType } from 'client/types';
 
 import * as S from './style';
 

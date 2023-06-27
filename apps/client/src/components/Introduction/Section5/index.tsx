@@ -8,7 +8,7 @@ import {
   SubTitle,
   MajorCard,
 } from 'client/components';
-import type { MajorType } from 'client/types/introduce';
+import type { MajorType } from 'client/types';
 
 import * as S from './style';
 
@@ -29,7 +29,7 @@ const Section5 = () => {
 
   return (
     <S.Layout>
-      <div>
+      <S.MajorSection>
         <SectionTitle textAlign='left'>
           <IntroductionTitle pointColor='sky'>
             창의 융합력을 갖춘 <br />
@@ -70,7 +70,7 @@ const Section5 = () => {
             ))}
           </S.Major>
         </S.MajorSelect>
-      </div>
+      </S.MajorSection>
       <MajorCard major={selectedMajor} />
     </S.Layout>
   );
