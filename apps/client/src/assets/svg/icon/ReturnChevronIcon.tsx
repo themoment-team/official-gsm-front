@@ -9,9 +9,9 @@ const ReturnChevronIcon = () => (
     <path
       d='M12.5 4.1665L6.66667 9.99984L12.5 15.8332'
       stroke='#003365'
-      stroke-width='1.5'
-      stroke-linecap='round'
-      stroke-linejoin='round'
+      strokeWidth='1.5'
+      strokeLinecap='round'
+      strokeLinejoin='round'
     />
   </svg>
 );
