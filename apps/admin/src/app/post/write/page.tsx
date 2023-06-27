@@ -75,7 +75,10 @@ export default function WritePage() {
 
     const postFormData = new FormData();
 
-    postFormData.append('content', JSON.stringify(content));
+    postFormData.append(
+      'content',
+      new Blob([JSON.stringify(content)], { type: 'application/json' })
+    );
 
     // postFormData.append('content.postTitle', content.postTitle);
     // postFormData.append('content.postContent', content.postContent);
