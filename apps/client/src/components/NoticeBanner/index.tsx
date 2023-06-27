@@ -25,7 +25,7 @@ const NoticeBanner: React.FC = () => {
   }, [currentIndex, data?.postList?.length]);
 
   return (
-    <S.NoiceBannerWrapper>
+    <S.NoticeBannerWrapper>
       <S.SlideContainer
         css={css`
           right: calc(${currentIndex * 100}vw + ${currentIndex * 77.375}rem);
@@ -40,7 +40,7 @@ const NoticeBanner: React.FC = () => {
         currentIndex={currentIndex}
         setCurrentIndex={setCurrentIndex}
       />
-    </S.NoiceBannerWrapper>
+    </S.NoticeBannerWrapper>
   );
 };
 

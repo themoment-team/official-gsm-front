@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const NoiceBannerWrapper = styled.div`
+export const NoticeBannerWrapper = styled.div`
   width: 77.5rem;
   position: relative;
   display: flex;
