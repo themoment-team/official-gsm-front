@@ -1,6 +1,8 @@
 export { default as CategoryHeader } from './CategoryHeader';
 export { default as EducationDirection } from './EducationDirection';
 export { default as Footer } from './Footer';
+export { default as GalleryCard } from './GalleryCard';
+export { default as GalleryList } from './MainPage/GalleryList';
 export { default as Header } from './Header';
 export { default as IdealTalent } from './IdealTalent';
 export { default as IntroductionTitle } from './Title/Introduction';

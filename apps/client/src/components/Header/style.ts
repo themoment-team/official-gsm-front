@@ -10,6 +10,7 @@ export const Header = styled.header`
   position: sticky;
   top: 0;
   z-index: 5;
+  transition: background 0.3s;
 `;
 
 export const HeaderInner = styled.div`
@@ -26,7 +27,7 @@ export const LogoLink = styled(Link)`
 export const GlobalNav = styled.nav`
   display: flex;
   gap: 3rem;
-  transition: color 0.5s;
+  transition: color 0.3s;
   a {
     ${({ theme }) => theme.typo.body1};
   }
