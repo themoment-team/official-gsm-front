@@ -6,7 +6,25 @@ import { theme } from 'common';
 
 import * as S from './style';
 
-const CurriculumArray = [
+export interface CardType {
+  isSmall: boolean;
+  bgColor: string;
+  color: string;
+  title: string;
+  subTitle: string;
+
+  cardPosition: {
+    right: string;
+  };
+
+  img: {
+    src: string;
+    width: number;
+    height: number;
+  };
+}
+
+const CurriculumArray: CardType[] = [
   {
     isSmall: true,
     bgColor: `${theme.color.primary.navy}1A`,

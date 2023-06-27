@@ -5,7 +5,6 @@ export { default as FooterGSMLogo } from './svg/FooterGSMLogo';
 export { default as FutureIcon } from './introduction/section3/FutureIcon';
 export { default as GSMLogo } from './svg/GSMLogo';
 export { default as ImaginationIcon } from './introduction/section3/ImaginationIcon';
-export { default as MouseIcon } from './introduction/section1/MouseIcon';
 export { default as LeftArrowIcon } from './introduction/section7/LeftArrowIcon';
 export { default as MouseIcon } from './introduction/section1/MouseIcon';
 export { default as RightArrowIcon } from './introduction/section7/RightArrowIcon';
