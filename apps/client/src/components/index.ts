@@ -1,8 +1,11 @@
+export { default as CategoryHeader } from './CategoryHeader';
 export { default as EducationDirection } from './EducationDirection';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
 export { default as IdealTalent } from './IdealTalent';
 export { default as IntroductionTitle } from './Title/Introduction';
+export { default as LinkToHelloGSM } from './LinkToHelloGSM';
+export { default as MainPageNewsletterList } from './MainPage/NewsletterList';
 export { default as MajorCard } from './Introduction/Section5/MajorCard';
 export { default as NewsTitle } from './Title/News';
 export { default as NewsletterCard } from './NewsletterCard';
