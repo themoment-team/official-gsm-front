@@ -27,6 +27,7 @@ export const FormItemTitle = styled.p`
   font-size: 0.75rem;
   line-height: 1.125rem;
   color: #9e9e9e;
+  margin-bottom: 0.5rem;
 `;
 
 export const UploadBox = styled.div`
