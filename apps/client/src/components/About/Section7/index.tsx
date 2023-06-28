@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 
 import { RightArrowIcon, LeftArrowIcon } from 'client/assets';
 import {
-  IntroductionTitle,
+  AboutTitle,
   SectionTitle,
   SubTitle,
   IdealTalent,
@@ -62,9 +62,7 @@ const Section7 = () => {
         <S.Box>
           <div>
             <SectionTitle textAlign='left'>
-              <IntroductionTitle pointColor='sky'>
-                GSM이 원하는 학교상
-              </IntroductionTitle>
+              <AboutTitle pointColor='sky'>GSM이 원하는 학교상</AboutTitle>
               <SubTitle>소프트웨어 시대를 이끌어 나갈 인재</SubTitle>
             </SectionTitle>
           </div>

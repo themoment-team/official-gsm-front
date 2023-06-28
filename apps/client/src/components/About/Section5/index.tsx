@@ -4,7 +4,7 @@ import { css, useTheme } from '@emotion/react';
 
 import {
   SectionTitle,
-  IntroductionTitle,
+  AboutTitle,
   SubTitle,
   MajorCard,
 } from 'client/components';
@@ -31,10 +31,10 @@ const Section5 = () => {
     <S.Layout>
       <S.MajorSection>
         <SectionTitle textAlign='left'>
-          <IntroductionTitle pointColor='sky'>
+          <AboutTitle pointColor='sky'>
             창의 융합력을 갖춘 <br />
             글로벌 소프트웨어 학과 소개
-          </IntroductionTitle>
+          </AboutTitle>
           <SubTitle>체계적인 교육과정을 제공하는 소프트웨어 학과</SubTitle>
         </SectionTitle>
         <S.MajorSelect>
