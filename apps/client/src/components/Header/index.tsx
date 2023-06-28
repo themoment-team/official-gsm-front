@@ -23,7 +23,14 @@ const Header: React.FC<HeaderProps> = ({ segment, isBackgroundWhite }) => {
     `;
 
   return (
-    <S.Header>
+    <S.Header
+      css={
+        isBackgroundWhite &&
+        css`
+          background: ${theme.color.white};
+        `
+      }
+    >
       <S.HeaderInner>
         <h1>
           <S.LogoLink href='/'>

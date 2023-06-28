@@ -7,5 +7,6 @@ export { default as GSMLogo } from './svg/GSMLogo';
 export { default as ImaginationIcon } from './introduction/section3/ImaginationIcon';
 export { default as LeftArrowIcon } from './introduction/section7/LeftArrowIcon';
 export { default as MouseIcon } from './introduction/section1/MouseIcon';
+export { default as ReturnChevronIcon } from './svg/icon/ReturnChevronIcon';
 export { default as RightArrowIcon } from './introduction/section7/RightArrowIcon';
 export { default as UnderscoreIcon } from './svg/icon/UnderscoreIcon';

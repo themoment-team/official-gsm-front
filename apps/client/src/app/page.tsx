@@ -9,6 +9,8 @@ import {
   SlotMachine,
   LinkToHelloGSM,
   MainPageNewsletterList,
+  NoticeBanner,
+  GalleryList,
 } from 'client/components';
 import { useGetWindowScrollHeight, useGetWindowWidth } from 'client/hooks';
 
@@ -29,8 +31,10 @@ export default function Home() {
       <PromotionVideo />
       <SlotMachine />
       <Content>
+        <NoticeBanner />
         <MainPageNewsletterList />
         <LinkToHelloGSM />
+        <GalleryList />
       </Content>
       <Footer />
     </>
@@ -45,4 +49,5 @@ const Content = styled.div`
   align-items: center;
   z-index: 1;
   margin-top: calc(56.25vw - 4rem);
+  padding: 6.25rem 0 12.5rem;
 `;
