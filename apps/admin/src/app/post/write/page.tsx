@@ -17,14 +17,14 @@ import {
   FileUploadLabel,
   Header,
   FileCard,
+  FormCategory,
 } from 'admin/components';
 import * as S from 'admin/styles/page/write';
 
 import { usePostPostData } from 'api/admin';
+import type { PostCategoryType } from 'api/client';
 
 import { Button } from 'ui';
-
-export type CategoryType = 'NOTICE' | 'FAMILY_NEWSLETTER' | 'EVENT_GALLERY';
 
 const schema = z.object({
   title: z
@@ -38,20 +38,19 @@ const schema = z.object({
 
 type FormType = z.infer<typeof schema>;
 
-const categoryArray = [
-  { id: 'NOTICE', label: '공지사항' },
-  { id: 'FAMILY_NEWSLETTER', label: '가정통신문' },
-  { id: 'EVENT_GALLERY', label: '행사 갤러리' },
-] as const;
-
 const categoryPath = {
   NOTICE: '/',
   FAMILY_NEWSLETTER: '/newsletter',
   EVENT_GALLERY: '/gallery',
 } as const;
 
+const preventClose = (e: BeforeUnloadEvent) => {
+  e.preventDefault();
+  e.returnValue = '';
+};
+
 export default function WritePage() {
-  const [category, setCategory] = useState<CategoryType>('NOTICE');
+  const [category, setCategory] = useState<PostCategoryType>('NOTICE');
   const [files, setFiles] = useState<File[]>([]);
   const fileInput = useRef<HTMLInputElement>(null);
 
@@ -102,15 +101,6 @@ export default function WritePage() {
     );
   };
 
-  const isActive = (id: CategoryType) => {
-    if (id === category) return true;
-  };
-
-  const preventClose = (e: BeforeUnloadEvent) => {
-    e.preventDefault();
-    e.returnValue = '';
-  };
-
   useEffect(() => {
     (() => {
       window.addEventListener('beforeunload', preventClose);
@@ -129,19 +119,7 @@ export default function WritePage() {
         <S.FormWrap onSubmit={handleSubmit(onSubmit)}>
           <div>
             <S.FormItemTitle>카테고리</S.FormItemTitle>
-            <S.Category>
-              {categoryArray.map(({ id, label }) => (
-                <S.CategoryLabel
-                  onClick={() => setCategory(id)}
-                  key={label}
-                  css={css`
-                    color: ${isActive(id) ? '#FFFFFF' : '#a4a4a4'};
-                  `}
-                >
-                  ∙&nbsp;&nbsp;{label}
-                </S.CategoryLabel>
-              ))}
-            </S.Category>
+            <FormCategory category={category} setCategory={setCategory} />
           </div>
           <div>
             <S.FormItemTitle>제목</S.FormItemTitle>
