@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react';
-import { useRef } from 'react';
 
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
@@ -11,16 +10,15 @@ interface ContentProps {
 }
 
 const Content = ({ children, index, scrollHeight }: ContentProps) => {
-  const testRef = useRef(null);
   const isCentered =
-    (index + 1) * 200 >= scrollHeight && index * 200 <= scrollHeight;
+    scrollHeight >= index * 200 && scrollHeight <= (index + 1) * 200;
+
   return (
     <ContentStyle
-      ref={testRef}
       css={css`
         font-size: ${isCentered ? '3.75rem' : '2.5rem'};
         opacity: ${isCentered ? '1' : '0.4'};
-        line-height: ${isCentered ? '71.6px' : '47.73px'};
+        line-height: ${isCentered ? '4.475rem' : '2.9831rem'};
       `}
     >
       {children}
