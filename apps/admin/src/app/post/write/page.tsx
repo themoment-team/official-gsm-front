@@ -2,6 +2,8 @@
 
 import { useRef, useState, useEffect } from 'react';
 
+import { useRouter } from 'next/navigation';
+
 import { css } from '@emotion/react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -42,10 +44,18 @@ const categoryArray = [
   { id: 'EVENT_GALLERY', label: '행사 갤러리' },
 ] as const;
 
+const categoryPath = {
+  NOTICE: '/',
+  FAMILY_NEWSLETTER: '/newsletter',
+  EVENT_GALLERY: '/gallery',
+} as const;
+
 export default function WritePage() {
   const [category, setCategory] = useState<CategoryType>('NOTICE');
   const [files, setFiles] = useState<File[]>([]);
   const fileInput = useRef<HTMLInputElement>(null);
+
+  const { replace } = useRouter();
 
   const handleCancel = (fileName: string) => {
     setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
@@ -58,7 +68,7 @@ export default function WritePage() {
     formState: { errors },
   } = useForm<FormType>({ resolver: zodResolver(schema) });
 
-  const { mutate } = usePostPostData();
+  const { mutate, isSuccess } = usePostPostData();
 
   const onSubmit: SubmitHandler<FormType> = (data) => {
     const content = {
@@ -66,26 +76,20 @@ export default function WritePage() {
       postContent: data.content,
       category: category,
     };
-    // eslint-disable-next-line no-console
 
-    // const postData: PostDataType = {
-    //   content,
-    //   // file: files,
-    // };
+    const formData = new FormData();
 
-    const postFormData = new FormData();
-
-    postFormData.append(
+    formData.append(
       'content',
       new Blob([JSON.stringify(content)], { type: 'application/json' })
     );
 
-    // postFormData.append('content.postTitle', content.postTitle);
-    // postFormData.append('content.postContent', content.postContent);
-    // postFormData.append('content.category', content.category);
+    files.forEach((file) => formData.append('file', file));
 
-    mutate(postFormData);
+    mutate(formData);
   };
+
+  if (isSuccess) replace(categoryPath[category]);
 
   const postFile = () => {
     setFiles(
