@@ -13,13 +13,6 @@ export interface FileInfoType {
   fileExtension: string;
 }
 
-export interface PostBoardInfo {
-  postTitle: string;
-  postContent: string;
-  fileInfo: FileInfoType[];
-  category: PostCategoryType;
-}
-
 export type PostCategoryType = 'NOTICE' | 'FAMILY_NEWSLETTER' | 'EVENT_GALLERY';
 
 export interface PostDetailType {
