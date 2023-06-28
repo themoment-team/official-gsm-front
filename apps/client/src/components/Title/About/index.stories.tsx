@@ -1,14 +1,14 @@
-import IntroductionTitle from '.';
+import AboutTitle from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'client/Title/IntroductionTitle',
-  component: IntroductionTitle,
+  title: 'client/Title/AboutTitle',
+  component: AboutTitle,
   parameters: {},
-} as Meta<typeof IntroductionTitle>;
+} as Meta<typeof AboutTitle>;
 
-type Story = StoryObj<typeof IntroductionTitle>;
+type Story = StoryObj<typeof AboutTitle>;
 
 export const Section3: Story = {
   args: {

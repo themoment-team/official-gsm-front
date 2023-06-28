@@ -1,6 +1,6 @@
 import * as I from 'client/assets';
 import {
-  IntroductionTitle,
+  AboutTitle,
   SectionTitle,
   SubTitle,
   EducationDirection,
@@ -53,9 +53,7 @@ const Section3 = () => {
   return (
     <S.Layout>
       <SectionTitle>
-        <IntroductionTitle pointColor='sky'>
-          학교가 추구하는 교육 방향
-        </IntroductionTitle>
+        <AboutTitle pointColor='sky'>학교가 추구하는 교육 방향</AboutTitle>
         <SubTitle>창의 융합력을 갖춘 글로벌 소프트웨어 마이스터 육성</SubTitle>
       </SectionTitle>
       <S.EducationDirectionLayout>

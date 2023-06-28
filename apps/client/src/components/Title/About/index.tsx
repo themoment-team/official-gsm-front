@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import { TitleTemplate } from 'client/components';
 import type { PointColorType, PointPositionType } from 'client/types/title';
 
-interface IntroductionTitleProps {
+interface AboutTitleProps {
   children: React.ReactNode;
   pointColor: PointColorType;
   className?: string;
@@ -11,7 +11,7 @@ interface IntroductionTitleProps {
   pointSize?: string;
 }
 
-const IntroductionTitle: React.FC<IntroductionTitleProps> = ({
+const AboutTitle: React.FC<AboutTitleProps> = ({
   children,
   pointColor,
   className,
@@ -19,15 +19,13 @@ const IntroductionTitle: React.FC<IntroductionTitleProps> = ({
   pointSize = '1.125rem',
 }) => (
   <TitleTemplate point={{ pointColor, pointSize, pointPosition }}>
-    <IntroductionTitleStyle className={className}>
-      {children}
-    </IntroductionTitleStyle>
+    <AboutTitleStyle className={className}>{children}</AboutTitleStyle>
   </TitleTemplate>
 );
 
-export default IntroductionTitle;
+export default AboutTitle;
 
-export const IntroductionTitleStyle = styled.h1`
+export const AboutTitleStyle = styled.h1`
   font-size: 3rem;
   line-height: 4.438rem;
   font-weight: 700;
