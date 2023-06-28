@@ -46,12 +46,7 @@ const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ postSeq }) => {
                   `}
                 `}
               >
-                <Image
-                  unoptimized
-                  alt='content image'
-                  src={file.fileUrl}
-                  fill
-                />
+                <Image alt='content image' src={file.fileUrl} fill />
               </S.IMGWrapper>
             ))}
           </S.MoveContainer>

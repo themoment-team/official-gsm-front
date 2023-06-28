@@ -1,12 +1,11 @@
 import styled from '@emotion/styled';
 
 import { TitleTemplate } from 'client/components';
-import type { PointColorType, PointPositionType } from 'client/types/title';
+import type { PointColorType, PointPositionType } from 'client/types';
 
 interface AboutTitleProps {
   children: React.ReactNode;
   pointColor: PointColorType;
-  className?: string;
   pointPosition?: PointPositionType;
   pointSize?: string;
 }
@@ -14,12 +13,11 @@ interface AboutTitleProps {
 const AboutTitle: React.FC<AboutTitleProps> = ({
   children,
   pointColor,
-  className,
   pointPosition = 'top',
   pointSize = '1.125rem',
 }) => (
   <TitleTemplate point={{ pointColor, pointSize, pointPosition }}>
-    <AboutTitleStyle className={className}>{children}</AboutTitleStyle>
+    <AboutTitleStyle>{children}</AboutTitleStyle>
   </TitleTemplate>
 );
 

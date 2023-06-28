@@ -1,34 +1,5 @@
 import styled from '@emotion/styled';
 
-export const ExampleDiv = styled.div`
-  display: flex;
-  &:nth-child(odd) {
-    .newsletterCardWrapper {
-      background: rgba(122, 205, 244, 0.1);
-    }
-    .dateCircle {
-      background-color: ${({ theme: { color } }) => color.primary.sky};
-    }
-    .dateCircle:first-child {
-      color: ${({ theme: { color } }) => color.sub.blue};
-      opacity: 1;
-    }
-  }
-
-  &:nth-child(even) {
-    .newsletterCardWrapper {
-      background: rgba(178, 228, 73, 0.1);
-    }
-    .dateCircle {
-      background-color: ${({ theme: { color } }) => color.primary.lime};
-    }
-    .dateCircle:first-child {
-      color: #73962b;
-      opacity: 1;
-    }
-  }
-`;
-
 export const NewsletterCardWrapper = styled.div`
   display: flex;
   padding: 2rem;
@@ -71,7 +42,7 @@ export const TextWrapper = styled.div`
   height: 7.25rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 0.625rem;
 
   h4 {
     overflow: hidden;
@@ -85,6 +56,7 @@ export const Title = styled.h4`
   ${({ theme: { typo } }) => typo.h4}
   color: ${({ theme: { color } }) => color.gray['090']};
   font-weight: 600;
+  height: 3.625rem;
 `;
 
 export const Preview = styled.h4`
