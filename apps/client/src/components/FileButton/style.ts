@@ -10,6 +10,12 @@ export const FileButton = styled(Link)`
   gap: 0.25rem;
   border-radius: 6.25rem;
   background-color: ${({ theme }) => theme.color.gray['030']};
+
+  &:hover {
+    p {
+      text-decoration: underline;
+    }
+  }
 `;
 
 export const FileNameText = styled.p`
