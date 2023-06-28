@@ -79,7 +79,10 @@ export default function WritePage() {
 
     const formData = new FormData();
 
-    formData.append('content', JSON.stringify(content));
+    formData.append(
+      'content',
+      new Blob([JSON.stringify(content)], { type: 'application/json' })
+    );
 
     files.forEach((file) => formData.append('file', file));
 
