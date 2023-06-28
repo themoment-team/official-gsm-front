@@ -1,1 +1,1 @@
-export * from './usePostPostData';
+export * from './usePostWritePost';
