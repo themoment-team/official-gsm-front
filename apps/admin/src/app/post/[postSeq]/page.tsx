@@ -36,4 +36,5 @@ const DetailPageWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 5rem;
+  padding-bottom: 5rem;
 `;

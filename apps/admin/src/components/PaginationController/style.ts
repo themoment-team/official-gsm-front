@@ -6,7 +6,6 @@ export const PaginationController = styled.div`
   gap: 2.5rem;
   align-items: center;
   margin-top: 2rem;
-  margin-bottom: 3.5rem;
 `;
 
 export const PaginationButton = styled.button`
