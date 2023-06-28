@@ -14,6 +14,7 @@ export { default as NewsTitle } from './Title/News';
 export { default as NewsletterCard } from './NewsletterCard';
 export { default as NoticeBanner } from './NoticeBanner';
 export { default as PromotionVideo } from './PromotionVideo';
+export { default as ReturnToList } from './ReturnToList';
 export { default as Section1 } from './Introduction/Section1';
 export { default as Section2 } from './Introduction/Section2';
 export { default as Section3 } from './Introduction/Section3';
