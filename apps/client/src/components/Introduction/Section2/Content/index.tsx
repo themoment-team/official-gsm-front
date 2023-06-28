@@ -17,8 +17,8 @@ const Content = ({ children, index, scrollHeight }: ContentProps) => {
     <ContentStyle
       css={css`
         font-size: ${isCentered ? '3.75rem' : '2.5rem'};
-        opacity: ${isCentered ? '1' : '0.4'};
         line-height: ${isCentered ? '4.475rem' : '2.9831rem'};
+        opacity: ${isCentered ? '1' : '0.4'};
       `}
     >
       {children}
@@ -29,8 +29,7 @@ const Content = ({ children, index, scrollHeight }: ContentProps) => {
 export default Content;
 
 const ContentStyle = styled.h3`
-  font-weight: 700;
-  font-size: 2.5rem;
-  transition: all 0.7s;
   color: ${({ theme }) => theme.color.white};
+  font-weight: 700;
+  transition: all 0.7s;
 `;
