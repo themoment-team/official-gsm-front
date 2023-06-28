@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 
@@ -21,7 +21,7 @@ import {
 } from 'admin/components';
 import * as S from 'admin/styles/page/write';
 
-import { usePostPostData } from 'api/admin';
+import { usePostWritePost } from 'api/admin';
 import type { PostCategoryType } from 'api/client';
 
 import { Button } from 'ui';
@@ -56,10 +56,6 @@ export default function WritePage() {
 
   const { replace } = useRouter();
 
-  const handleCancel = (fileName: string) => {
-    setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
-  };
-
   const {
     register,
     handleSubmit,
@@ -67,7 +63,21 @@ export default function WritePage() {
     formState: { errors },
   } = useForm<FormType>({ resolver: zodResolver(schema) });
 
-  const { mutate, isSuccess } = usePostPostData();
+  const { mutate, isSuccess } = usePostWritePost();
+
+  useEffect(() => {
+    (() => {
+      window.addEventListener('beforeunload', preventClose);
+    })();
+
+    return () => {
+      window.removeEventListener('beforeunload', preventClose);
+    };
+  }, []);
+
+  const handleCancel = (fileName: string) => {
+    setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
+  };
 
   const onSubmit: SubmitHandler<FormType> = (data) => {
     const content = {
@@ -100,16 +110,6 @@ export default function WritePage() {
         : files
     );
   };
-
-  useEffect(() => {
-    (() => {
-      window.addEventListener('beforeunload', preventClose);
-    })();
-
-    return () => {
-      window.removeEventListener('beforeunload', preventClose);
-    };
-  }, []);
 
   return (
     <>
