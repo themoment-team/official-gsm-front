@@ -3,7 +3,7 @@ import CircleDecoration from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'client/Introduction/Section1/Decoration',
+  title: 'client/About/Section1/Decoration',
   component: CircleDecoration,
   parameters: {},
 } as Meta<typeof CircleDecoration>;
