@@ -1,6 +1,7 @@
 'use client';
 
 import {
+  Footer,
   Header,
   Section1,
   Section2,
@@ -18,6 +19,7 @@ export default function AboutPage() {
       <Section3 />
       <Section5 />
       <Section7 />
+      <Footer />
     </>
   );
 }
