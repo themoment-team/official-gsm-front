@@ -108,7 +108,7 @@ export const CompleteBtn = styled.button`
 export const ErrorMessage = styled.p`
   font-weight: 400;
   font-size: 0.75rem;
-  margin-top: 1rem;
+  margin-top: 0.25rem;
   color: #f93535;
 `;
 
