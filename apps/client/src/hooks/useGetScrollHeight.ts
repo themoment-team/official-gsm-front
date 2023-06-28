@@ -2,11 +2,11 @@ import type { RefObject } from 'react';
 import { useEffect, useState } from 'react';
 
 const useGetScrollHeight = (ref: RefObject<HTMLElement>) => {
-  const [scrollY, setScrollY] = useState<number | undefined>(0);
+  const [scrollTop, setScrollTop] = useState<number | undefined>(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(ref?.current?.scrollTop);
+      setScrollTop(ref?.current?.scrollTop);
     };
 
     ref?.current?.addEventListener('scroll', handleScroll);
@@ -17,7 +17,7 @@ const useGetScrollHeight = (ref: RefObject<HTMLElement>) => {
     };
   }, [ref]);
 
-  return scrollY;
+  return scrollTop;
 };
 
 export default useGetScrollHeight;
