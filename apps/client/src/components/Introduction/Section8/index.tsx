@@ -1,5 +1,9 @@
-import { IntroductionTitle, SectionTitle, SubTitle } from 'client/components';
-import { Slide } from 'client/components';
+import {
+  IntroductionTitle,
+  SectionTitle,
+  SubTitle,
+  Slide,
+} from 'client/components';
 
 import * as S from './style';
 const Section8 = () => (
