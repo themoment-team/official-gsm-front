@@ -10,8 +10,22 @@ interface ContentProps {
 }
 
 const Content = ({ children, index, scrollHeight }: ContentProps) => {
+  const sectionHeight = {
+    contentSectionHeightPx: 1300,
+    scrollSectionHeightPx: 600,
+  };
+
+  const scrollSetting = {
+    scrollMax:
+      sectionHeight.contentSectionHeightPx -
+      sectionHeight.scrollSectionHeightPx,
+    scrollItem: 4,
+  };
+
+  const centerAverage = scrollSetting.scrollMax / scrollSetting.scrollItem;
   const isCentered =
-    scrollHeight >= index * 200 && scrollHeight <= (index + 1) * 200;
+    scrollHeight >= index * centerAverage &&
+    scrollHeight <= (index + 1) * centerAverage;
 
   return (
     <ContentStyle

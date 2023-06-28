@@ -11,7 +11,6 @@ export const Layout = styled.div`
 `;
 
 export const ScrollSection = styled.div`
-  height: 37.5rem;
   overflow-y: scroll;
   scrollbar-width: none;
 
@@ -22,7 +21,6 @@ export const ScrollSection = styled.div`
 `;
 
 export const ContentSection = styled.div`
-  height: 81.25rem;
   display: flex;
   flex-direction: column;
   align-items: center;

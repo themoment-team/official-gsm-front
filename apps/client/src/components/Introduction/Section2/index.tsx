@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
 import { useRef } from 'react';
 
+import { css } from '@emotion/react';
+
 import { useGetScrollHeight } from 'client/hooks';
 
 import Content from './Content';
@@ -27,13 +29,27 @@ const ContentItem: ReactNode[] = [
 ];
 
 const Section2 = () => {
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const scrollHeight = useGetScrollHeight(scrollRef);
+
+  const sectionHeight = {
+    contentSectionHeightPx: 1300,
+    scrollSectionHeightPx: 600,
+  };
 
   return (
     <S.Layout>
-      <S.ScrollSection ref={scrollRef}>
-        <S.ContentSection>
+      <S.ScrollSection
+        ref={scrollRef}
+        css={css`
+          height: ${sectionHeight.scrollSectionHeightPx / 16}rem;
+        `}
+      >
+        <S.ContentSection
+          css={css`
+            height: ${sectionHeight.contentSectionHeightPx / 16}rem;
+          `}
+        >
           {ContentItem.map((subTitle, i) => (
             <Content key={i} index={i} scrollHeight={scrollHeight ?? 0}>
               {subTitle}
