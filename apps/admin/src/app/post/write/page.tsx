@@ -152,10 +152,8 @@ export default function WritePage() {
                 {watch('title')?.length ?? 0}/60
               </span>
             </div>
-            {watch('title')?.length > 60 ? (
+            {watch('title')?.length >= 60 && (
               <S.ErrorMessage>글자수를 초과하였습니다.</S.ErrorMessage>
-            ) : (
-              ''
             )}
             {errors.title && (
               <S.ErrorMessage>{`* ${errors.title.message}`}</S.ErrorMessage>
