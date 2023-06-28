@@ -27,19 +27,20 @@ const ContentItem: ReactNode[] = [
 ];
 
 const Section2 = () => {
-  const layoutRef = useRef(null);
-
-  const scrollHeight = useGetScrollHeight(layoutRef);
+  const scrollRef = useRef(null);
+  const scrollHeight = useGetScrollHeight(scrollRef);
 
   return (
-    <S.Layout ref={layoutRef}>
-      <S.ContentSection>
-        {ContentItem.map((subTitle, i) => (
-          <Content key={i} index={i} scrollHeight={scrollHeight ?? 0}>
-            {subTitle}
-          </Content>
-        ))}
-      </S.ContentSection>
+    <S.Layout>
+      <S.ScrollSection ref={scrollRef}>
+        <S.ContentSection>
+          {ContentItem.map((subTitle, i) => (
+            <Content key={i} index={i} scrollHeight={scrollHeight ?? 0}>
+              {subTitle}
+            </Content>
+          ))}
+        </S.ContentSection>
+      </S.ScrollSection>
     </S.Layout>
   );
 };
