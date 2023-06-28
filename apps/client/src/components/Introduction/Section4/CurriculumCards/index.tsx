@@ -89,40 +89,38 @@ const CurriculumArray: CardType[] = [
 
 const CurriculumCards = () => (
   <S.SectionCardWrapper>
-    {CurriculumArray.map((index, id) => (
+    {CurriculumArray.map((card, cardIndex) => (
       <S.CardTemplate
-        key={id}
-        // isSmall={index.isSmall}
-        // bgColor={index.bgColor}
+        key={cardIndex}
         css={css`
-          width: ${index.isSmall ? '30.9375rem' : '44.6875rem'};
-          background-color: ${index.bgColor};
+          width: ${card.isSmall ? '30.9375rem' : '44.6875rem'};
+          background-color: ${card.bgColor};
         `}
       >
         <S.CardTitle
           css={css`
-            color: ${index.color};
+            color: ${card.color};
 
             span {
-              color: ${index.color};
+              color: ${card.color};
               opacity: 60%;
             }
           `}
         >
-          {index.title}
+          {card.title}
           <br />
-          <span>{index.subTitle}</span>
+          <span>{card.subTitle}</span>
         </S.CardTitle>
         <S.CardImg
           css={css`
             bottom: 0;
-            right: ${index.cardPosition.right};
+            right: ${card.cardPosition.right};
           `}
         >
           <Image
-            src={`/images/about/section4/${index.img.src}.png`}
-            width={index.img.width}
-            height={index.img.height}
+            src={`/images/about/section4/${card.img.src}.png`}
+            width={card.img.width}
+            height={card.img.height}
             alt='교육과정 이미지'
           />
         </S.CardImg>
