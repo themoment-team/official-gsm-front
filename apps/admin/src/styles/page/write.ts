@@ -11,7 +11,7 @@ export const WriteTitle = styled.h3`
   font-size: 1.125rem;
   line-height: 1.6875rem;
   color: #212121;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
 `;
 
 export const FormWrap = styled.form`
