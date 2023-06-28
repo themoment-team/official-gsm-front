@@ -2,6 +2,8 @@
 
 import { useRef, useState, useEffect } from 'react';
 
+import { useRouter } from 'next/navigation';
+
 import { css } from '@emotion/react';
 
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -36,6 +38,8 @@ type FormType = z.infer<typeof schema>;
 export default function WritePage() {
   const [files, setFiles] = useState<File[]>([]);
   const fileInput = useRef<HTMLInputElement>(null);
+
+  const { back } = useRouter();
 
   const handleCancel = (fileName: string) => {
     setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
@@ -195,7 +199,7 @@ export default function WritePage() {
             )}
           </div>
           <S.BtnWrap>
-            <S.CancelBtn>취소</S.CancelBtn>
+            <S.CancelBtn onClick={back}>취소</S.CancelBtn>
             <Button width='22.5625rem' type='submit'>
               완료
             </Button>
