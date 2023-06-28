@@ -9,6 +9,6 @@ export const authUrl = {
   refresh: () => `/auth/token/refresh`,
 } as const;
 
-export const postBoardUrl = {
-  BoardInfo: () => `/api/post`,
+export const postUrl = {
+  writePost: () => `/post`,
 } as const;
