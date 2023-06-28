@@ -54,7 +54,7 @@ export default function WritePage() {
   const [files, setFiles] = useState<File[]>([]);
   const fileInput = useRef<HTMLInputElement>(null);
 
-  const { replace } = useRouter();
+  const { replace, back } = useRouter();
 
   const {
     register,
@@ -219,7 +219,7 @@ export default function WritePage() {
             )}
           </div>
           <S.BtnWrap>
-            <S.CancelBtn>취소</S.CancelBtn>
+            <S.CancelBtn onClick={back}>취소</S.CancelBtn>
             <Button width='22.5625rem' type='submit'>
               완료
             </Button>
