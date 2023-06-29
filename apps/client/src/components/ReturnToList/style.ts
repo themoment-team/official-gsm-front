@@ -1,5 +1,6 @@
-import styled from '@emotion/styled';
 import Link from 'next/link';
+
+import styled from '@emotion/styled';
 
 export const ReturnToListWrapper = styled(Link)`
   width: 10.1875rem;
