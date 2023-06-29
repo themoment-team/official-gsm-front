@@ -2,10 +2,10 @@ import styled from '@emotion/styled';
 
 export const DetailWrapper = styled.div`
   display: flex;
-  padding: 60px;
+  padding: 3.75rem;
   flex-direction: column;
-  gap: 40px;
-  border-radius: 20px;
+  gap: 2.5rem;
+  border-radius: 1.25rem;
   background: ${({ theme }) => theme.color.white};
 `;
 
