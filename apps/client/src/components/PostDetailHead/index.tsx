@@ -10,7 +10,6 @@ interface PostDetailHeadProps {
 
 const PostDetailProps: React.FC<PostDetailHeadProps> = ({ postSeq }) => {
   const { data } = useGetPostDetail(postSeq);
-
   return (
     <>
       {data && (
@@ -26,5 +25,4 @@ const PostDetailProps: React.FC<PostDetailHeadProps> = ({ postSeq }) => {
     </>
   );
 };
-
 export default PostDetailProps;
