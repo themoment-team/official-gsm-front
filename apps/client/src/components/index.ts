@@ -1,6 +1,5 @@
 export { default as CategoryHeader } from './CategoryHeader';
 export { default as EducationDirection } from './EducationDirection';
-export { default as FileButton } from './FileButton';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
 export { default as IdealTalent } from './IdealTalent';
