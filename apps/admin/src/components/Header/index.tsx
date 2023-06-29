@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { css } from '@emotion/react';
 
 import * as I from 'admin/assets';
-import { ApproveModal } from 'admin/components';
+import { ApproveModal, LogoutModal } from 'admin/components';
 
 import { useGetUnapproveList, useGetUserInfo } from 'api/admin';
 
@@ -15,12 +15,14 @@ import * as S from './style';
 
 const Header: FC = () => {
   const [showApproveModal, setShowApproveModal] = useState<boolean>(false);
+  const [showLogoutModal, setShowLogoutModal] = useState<boolean>(false);
   const [hasNotification, setHasNotification] = useState<boolean>(false);
 
   const { data: unapproveList } = useGetUnapproveList();
   const { data: userInfo } = useGetUserInfo();
 
   const closeApproveModal = () => setShowApproveModal(false);
+  const closeLogoutModal = () => setShowLogoutModal(false);
 
   useEffect(() => {
     setHasNotification(!!unapproveList?.length);
@@ -47,7 +49,14 @@ const Header: FC = () => {
           )}
         </S.ApproveRequest>
 
-        <p className='teacher'>{userInfo?.userName} 선생님</p>
+        <S.LogoutSection>
+          <S.LogoutButton onClick={() => setShowLogoutModal(!showLogoutModal)}>
+            {userInfo?.userName} 선생님
+          </S.LogoutButton>
+          {showLogoutModal && (
+            <LogoutModal close={closeLogoutModal} name={userInfo?.userName} />
+          )}
+        </S.LogoutSection>
       </S.ApproveSection>
     </S.Header>
   );

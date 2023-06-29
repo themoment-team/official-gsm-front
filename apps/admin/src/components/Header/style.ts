@@ -22,10 +22,6 @@ export const ApproveSection = styled.div`
   display: flex;
   gap: 3rem;
   align-items: center;
-
-  .teacher {
-    color: #505050;
-  }
 `;
 
 export const ApproveRequest = styled.button`
@@ -43,4 +39,12 @@ export const Notification = styled.div`
   height: 0.25rem;
   background-color: #f93535;
   border-radius: 50%;
+`;
+
+export const LogoutButton = styled.button`
+  color: #505050;
+`;
+
+export const LogoutSection = styled.div`
+  position: relative;
 `;
