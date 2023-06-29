@@ -1,3 +1,5 @@
+import type { ImgHTMLAttributes } from 'react';
+
 import Image from 'next/image';
 
 import { css } from '@emotion/react';
@@ -5,6 +7,11 @@ import { css } from '@emotion/react';
 import { theme } from 'common';
 
 import * as S from './style';
+
+interface ImageType extends ImgHTMLAttributes<HTMLImageElement> {
+  width?: number;
+  height?: number;
+}
 
 export interface CardType {
   isSmall: boolean;
@@ -17,11 +24,7 @@ export interface CardType {
     right: string;
   };
 
-  img: {
-    src: string;
-    width: number;
-    height: number;
-  };
+  img: ImageType;
 }
 
 const CurriculumArray: CardType[] = [
