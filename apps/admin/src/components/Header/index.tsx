@@ -22,7 +22,6 @@ const Header: FC = () => {
   const { data: userInfo } = useGetUserInfo();
 
   const closeApproveModal = () => setShowApproveModal(false);
-  const closeLogoutModal = () => setShowLogoutModal(false);
 
   useEffect(() => {
     setHasNotification(!!unapproveList?.length);
