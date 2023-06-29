@@ -9,4 +9,4 @@ export default {
 
 type Story = StoryObj<typeof PostDetailHead>;
 
-export const Primary: Story = { args: { postSeq: 0 } };
+export const Primary: Story = { args: { postSeq: 1 } };
