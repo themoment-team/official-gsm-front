@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 
@@ -14,12 +14,15 @@ import { z } from 'zod';
 import {
   Input,
   TextArea,
-  Category,
   FileUploadLabel,
   Header,
   FileCard,
+  FormCategory,
 } from 'admin/components';
 import * as S from 'admin/styles/page/write';
+
+import { usePostWritePost } from 'api/admin';
+import type { PostCategoryType } from 'api/client';
 
 import { Button } from 'ui';
 
@@ -35,15 +38,23 @@ const schema = z.object({
 
 type FormType = z.infer<typeof schema>;
 
+const categoryPath = {
+  NOTICE: '/',
+  FAMILY_NEWSLETTER: '/newsletter',
+  EVENT_GALLERY: '/gallery',
+} as const;
+
+const preventClose = (e: BeforeUnloadEvent) => {
+  e.preventDefault();
+  e.returnValue = '';
+};
+
 export default function WritePage() {
+  const [category, setCategory] = useState<PostCategoryType>('NOTICE');
   const [files, setFiles] = useState<File[]>([]);
   const fileInput = useRef<HTMLInputElement>(null);
 
-  const { back } = useRouter();
-
-  const handleCancel = (fileName: string) => {
-    setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
-  };
+  const { replace, back } = useRouter();
 
   const {
     register,
@@ -52,18 +63,42 @@ export default function WritePage() {
     formState: { errors },
   } = useForm<FormType>({ resolver: zodResolver(schema) });
 
+  const { mutate, isSuccess } = usePostWritePost();
+
+  useEffect(() => {
+    (() => {
+      window.addEventListener('beforeunload', preventClose);
+    })();
+
+    return () => {
+      window.removeEventListener('beforeunload', preventClose);
+    };
+  }, []);
+
+  const handleCancel = (fileName: string) => {
+    setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
+  };
+
   const onSubmit: SubmitHandler<FormType> = (data) => {
-    const contents = {
-      title: data.title,
-      content: data.content,
-      files: files,
-      // 나중에 통신코드 작성
-      // file:
+    const content = {
+      postTitle: data.title,
+      postContent: data.content,
+      category: category,
     };
 
-    // eslint-disable-next-line no-console
-    console.log(contents);
+    const formData = new FormData();
+
+    formData.append(
+      'content',
+      new Blob([JSON.stringify(content)], { type: 'application/json' })
+    );
+
+    files.forEach((file) => formData.append('file', file));
+
+    mutate(formData);
   };
+
+  if (isSuccess) replace(categoryPath[category]);
 
   const postFile = () => {
     setFiles(
@@ -76,21 +111,6 @@ export default function WritePage() {
     );
   };
 
-  const preventClose = (e: BeforeUnloadEvent) => {
-    e.preventDefault();
-    e.returnValue = '';
-  };
-
-  useEffect(() => {
-    (() => {
-      window.addEventListener('beforeunload', preventClose);
-    })();
-
-    return () => {
-      window.removeEventListener('beforeunload', preventClose);
-    };
-  }, []);
-
   return (
     <>
       <Header />
@@ -99,7 +119,7 @@ export default function WritePage() {
         <S.FormWrap onSubmit={handleSubmit(onSubmit)}>
           <div>
             <S.FormItemTitle>카테고리</S.FormItemTitle>
-            <Category width='36.125rem' category='notice' />
+            <FormCategory category={category} setCategory={setCategory} />
           </div>
           <div>
             <S.FormItemTitle>제목</S.FormItemTitle>
@@ -132,10 +152,8 @@ export default function WritePage() {
                 {watch('title')?.length ?? 0}/60
               </span>
             </div>
-            {watch('title')?.length > 60 ? (
+            {watch('title')?.length >= 60 && (
               <S.ErrorMessage>글자수를 초과하였습니다.</S.ErrorMessage>
-            ) : (
-              ''
             )}
             {errors.title && (
               <S.ErrorMessage>{`* ${errors.title.message}`}</S.ErrorMessage>
