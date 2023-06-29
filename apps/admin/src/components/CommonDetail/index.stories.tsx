@@ -12,6 +12,6 @@ type Story = StoryObj<typeof CommonDetail>;
 
 export const Primary: Story = {
   args: {
-    postSeq: 1,
+    postSeq: 6,
   },
 };
