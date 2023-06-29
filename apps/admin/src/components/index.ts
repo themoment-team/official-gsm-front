@@ -28,4 +28,3 @@ export { default as PostListHeader } from './PostListHeader';
 export { default as TextArea } from './TextArea';
 export { default as ToBackButton } from './ToBackButton';
 export { default as WriteButton } from './PostButton/Write';
-export { default as WriterAndDate } from './WriterAndDate';
