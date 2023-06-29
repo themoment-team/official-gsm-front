@@ -68,7 +68,7 @@ const CurriculumArray: CardType[] = [
       right: '4.1875rem',
     },
     img: {
-      src: 'GlobeIcon',
+      src: 'GlobalIcon',
       width: 360,
       height: 252,
     },
