@@ -1,8 +1,12 @@
-import { FileIcon } from 'client/assets';
-
-import type { FileInfoType } from 'api/client';
+import { FileIcon } from 'ui/assets';
 
 import * as S from './style';
+
+export interface FileInfoType {
+  fileUrl: string;
+  fileName: string;
+  fileExtension: string;
+}
 
 interface FileButtonProps {
   file: FileInfoType;

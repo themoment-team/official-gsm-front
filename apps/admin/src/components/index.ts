@@ -9,7 +9,6 @@ export { default as CarouselController } from './Carousel/Controller';
 export { default as Category } from './Category';
 export { default as CommonDetail } from './CommonDetail';
 export { default as EditButton } from './PostButton/Edit';
-export { default as FileButton } from './FileButton';
 export { default as FileCard } from './FileCard';
 export { default as FileUploadLabel } from './FileUploadLabel';
 export { default as GalleryCard } from './GalleryCard';
