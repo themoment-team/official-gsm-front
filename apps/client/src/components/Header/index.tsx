@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({ segment, isBackgroundWhite }) => {
           <Link css={selectStyle('about')} href='/about'>
             학교소개
           </Link>
-          <Link href='https://hellogsm.kr'>입학</Link>
+          <a href='https://hellogsm.kr'>입학</a>
         </S.GlobalNav>
       </S.HeaderInner>
     </S.Header>
