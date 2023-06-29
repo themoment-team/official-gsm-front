@@ -29,16 +29,54 @@ export const FirstTitle = styled(Title)`
     position: relative;
     bottom: 0.625rem;
   }
+  position: relative;
+  animation: leftFadeInOut 1.5s ease-in-out forwards;
+  opacity: 0;
+  @keyframes leftFadeInOut {
+    0% {
+      left: -100px;
+    }
+    100% {
+      opacity: 1;
+      left: 0;
+    }
+  }
 `;
 
 export const SecondTitle = styled(Title)`
   text-align: right;
   font-size: 3.2975rem;
   justify-content: end;
+  position: relative;
+  animation: rightFadeInOut 1.5s ease-in-out forwards;
+  animation-delay: 1s;
+  opacity: 0;
+  @keyframes rightFadeInOut {
+    0% {
+      right: -100px;
+    }
+    100% {
+      opacity: 1;
+      right: 0;
+    }
+  }
 `;
 
 export const ThirdTitle = styled(Title)`
   font-size: 3.5019rem;
+  position: relative;
+  animation: leftFadeInOut 1.5s ease-in-out forwards;
+  animation-delay: 2s;
+  opacity: 0;
+  @keyframes leftFadeInOut {
+    0% {
+      left: -100px;
+    }
+    100% {
+      opacity: 1;
+      left: 0;
+    }
+  }
 `;
 
 export const Point = styled.div`
@@ -53,4 +91,16 @@ export const EnglishSchoolName = styled.p`
   font-weight: 400;
   font-size: 1.5rem;
   line-height: 1.8125rem;
+  position: relative;
+  animation: FadeInOut 1.5s ease-in-out forwards;
+  animation-delay: 3s;
+  opacity: 0;
+  @keyframes FadeInOut {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
 `;

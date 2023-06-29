@@ -20,10 +20,3 @@ export const ScrollContentsWrap = styled.div`
     } /* 마지막 위치 */
   }
 `;
-
-export const ScrollTitle = styled.p`
-  color: ${({ theme }) => theme.color.gray['080']};
-  font-weight: 300;
-  font-size: 1rem;
-  line-height: 1.1875rem;
-`;
