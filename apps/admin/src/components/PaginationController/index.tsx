@@ -23,7 +23,7 @@ const PaginationController: React.FC<PageNationControllerProps> = ({
       type='button'
       disabled={pageNumber === 0}
     >
-      <PaginationIcon turn='left' />
+      <PaginationIcon turn='left' disabled={pageNumber === 0} />
     </S.PaginationButton>
     <S.PageNumberWrapper>
       {[...Array(totalPages)].map((_, index) => (
@@ -47,7 +47,7 @@ const PaginationController: React.FC<PageNationControllerProps> = ({
       type='button'
       disabled={pageNumber === totalPages - 1}
     >
-      <PaginationIcon turn='right' />
+      <PaginationIcon turn='right' disabled={pageNumber === totalPages - 1} />
     </S.PaginationButton>
   </S.PaginationController>
 );
