@@ -9,7 +9,7 @@ const useGetScrollHeight = (ref: RefObject<HTMLElement>) => {
       setScrollTop(ref?.current?.scrollTop);
     };
 
-    ref?.current?.addEventListener('scroll', handleScroll);
+    ref?.current?.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
