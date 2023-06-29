@@ -17,8 +17,6 @@ export const useGetPostList = (
     postQueryKeys.getPostList(category, pageNumber),
     () => get<PostListType>(postUrl.postList(category, pageNumber)),
     {
-      cacheTime: Infinity,
-      staleTime: Infinity,
       keepPreviousData: true,
     }
   );
