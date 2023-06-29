@@ -109,8 +109,8 @@ export const Item = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
-  height: 100px;
+  width: 6.25rem;
+  height: 6.25rem;
   text-align: center;
   position: absolute;
   left: 0;
