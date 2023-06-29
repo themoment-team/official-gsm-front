@@ -5,7 +5,8 @@
     "jsx": "preserve",
     "paths": {
       "client/*": ["*"],
-      "api/*": ["../../../packages/api/*"]
+      "api/*": ["../../../packages/api/*"],
+      "ui/*": ["../../../packages/ui/src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
