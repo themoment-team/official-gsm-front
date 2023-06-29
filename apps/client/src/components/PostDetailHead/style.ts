@@ -16,7 +16,7 @@ export const CategoryText = styled.p`
 `;
 
 export const Title = styled.h1`
-  font-family: Pretendard;
+  width: 50rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
   ${({ theme }) => theme.typo.title}
