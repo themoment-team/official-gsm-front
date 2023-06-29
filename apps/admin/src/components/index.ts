@@ -12,6 +12,7 @@ export { default as EditButton } from './PostButton/Edit';
 export { default as FileButton } from './FileButton';
 export { default as FileCard } from './FileCard';
 export { default as FileUploadLabel } from './FileUploadLabel';
+export { default as FormCategory } from './FormCategory';
 export { default as GalleryCard } from './GalleryCard';
 export { default as GalleryCarousel } from './Carousel/Gallery';
 export { default as GalleryDetail } from './GalleryDetail';
