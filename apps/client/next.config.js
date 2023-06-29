@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   transpilePackages: ['ui', 'common'],
+  output: 'standalone',
   compiler: {
     emotion: true,
   },
