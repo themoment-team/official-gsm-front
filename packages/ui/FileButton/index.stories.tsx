@@ -3,7 +3,7 @@ import FileButton from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'client/FileButton',
+  title: 'ui/FileButton',
   component: FileButton,
   parameters: {},
 } as Meta<typeof FileButton>;

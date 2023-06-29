@@ -1,4 +1,4 @@
-import { FileIcon } from 'ui/assets';
+import { FileIcon } from '../assets';
 
 import * as S from './style';
 
