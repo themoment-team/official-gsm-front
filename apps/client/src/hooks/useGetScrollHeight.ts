@@ -3,18 +3,27 @@ import { useEffect, useState } from 'react';
 
 const useGetScrollHeight = (ref: RefObject<HTMLElement>) => {
   const [scrollTop, setScrollTop] = useState<number | undefined>(0);
+  let throttling = false;
+
+  const handleScroll = () => {
+    if (throttling) return;
+
+    throttling = true;
+
+    setTimeout(() => {
+      setScrollTop(ref?.current?.scrollTop);
+      throttling = false;
+    }, 300);
+  };
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrollTop(ref?.current?.scrollTop);
-    };
-
     ref?.current?.addEventListener('scroll', handleScroll, { passive: true });
 
     return () => {
       // eslint-disable-next-line react-hooks/exhaustive-deps
       ref?.current?.removeEventListener('scroll', handleScroll);
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref]);
 
   return scrollTop;

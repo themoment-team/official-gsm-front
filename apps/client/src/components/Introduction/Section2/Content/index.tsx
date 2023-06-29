@@ -45,5 +45,5 @@ export default Content;
 const ContentStyle = styled.h3`
   color: ${({ theme }) => theme.color.white};
   font-weight: 700;
-  transition: all 0.7s;
+  transition: all 0.5s;
 `;
