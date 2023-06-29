@@ -4,11 +4,11 @@ import { WriterAndDate } from 'ui';
 
 import * as S from './style';
 
-interface PostDetailProps {
+interface PostDetailHeadProps {
   postSeq: number;
 }
 
-const PostDetail: React.FC<PostDetailProps> = ({ postSeq }) => {
+const PostDetailProps: React.FC<PostDetailHeadProps> = ({ postSeq }) => {
   const { data } = useGetPostDetail(postSeq);
 
   return (
@@ -21,11 +21,10 @@ const PostDetail: React.FC<PostDetailProps> = ({ postSeq }) => {
             postWriter={data.postWriter}
             createdAt={data.createdAt}
           />
-          <S.Line />
         </S.DetailWrapper>
       )}
     </>
   );
 };
 
-export default PostDetail;
+export default PostDetailProps;

@@ -21,27 +21,3 @@ export const Title = styled.h1`
   ${({ theme }) => theme.typo.title}
   color: ${({ theme }) => theme.color.black};
 `;
-
-export const Line = styled.div`
-  width: 800px;
-  height: 1px;
-  background: ${({ theme }) => theme.color.gray['050']};
-`;
-
-export const ImageWrapper = styled.div`
-  width: 800px;
-  height: 486px;
-  overflow: hidden;
-  position: relative;
-  img {
-    object-fit: cover;
-  }
-`;
-
-export const Content = styled.p`
-  width: 50rem;
-  font-weight: 400;
-  ${({ theme }) => theme.typo.body1}
-  word-break: keep-all;
-  color: ${({ theme }) => theme.color.gray['090']};
-`;
