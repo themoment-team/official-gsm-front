@@ -3,6 +3,8 @@ import { useRef } from 'react';
 
 import { css } from '@emotion/react';
 
+import { pxToRem } from 'common';
+
 import { useGetScrollHeight } from 'client/hooks';
 
 import Content from './Content';
@@ -42,12 +44,12 @@ const Section2 = () => {
       <S.ScrollSection
         ref={scrollRef}
         css={css`
-          height: ${sectionHeight.scrollSectionHeightPx / 16}rem;
+          height: ${pxToRem(sectionHeight.scrollSectionHeightPx)}rem;
         `}
       >
         <S.ContentSection
           css={css`
-            height: ${sectionHeight.contentSectionHeightPx / 16}rem;
+            height: ${pxToRem(sectionHeight.contentSectionHeightPx)}rem;
           `}
         >
           {ContentItem.map((subTitle, i) => (
