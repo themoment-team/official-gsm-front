@@ -106,8 +106,11 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
-  width: 6.25rem;
-  height: 6.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
   text-align: center;
   position: absolute;
   left: 0;
