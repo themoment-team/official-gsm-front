@@ -53,9 +53,7 @@ const Header: FC = () => {
           <S.LogoutButton onClick={() => setShowLogoutModal(!showLogoutModal)}>
             {userInfo?.userName} 선생님
           </S.LogoutButton>
-          {showLogoutModal && (
-            <LogoutModal close={closeLogoutModal} name={userInfo?.userName} />
-          )}
+          {showLogoutModal && <LogoutModal name={userInfo?.userName ?? ''} />}
         </S.LogoutSection>
       </S.ApproveSection>
     </S.Header>
