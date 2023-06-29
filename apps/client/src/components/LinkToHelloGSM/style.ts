@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import styled from '@emotion/styled';
 
-export const LinkToHelloGSMWrapper = styled(Link)`
+export const LinkToHelloGSMWrapper = styled.a`
   width: 77.375rem;
   height: 8.0625rem;
   display: flex;
