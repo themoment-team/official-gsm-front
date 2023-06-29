@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 
 interface PaginationIconProp {
   turn: 'left' | 'right';
+  disabled: boolean;
 }
 
 const Turn = {
@@ -9,7 +10,7 @@ const Turn = {
   right: '180',
 } as const;
 
-const PaginationIcon: React.FC<PaginationIconProp> = ({ turn }) => (
+const PaginationIcon: React.FC<PaginationIconProp> = ({ turn, disabled }) => (
   <svg
     css={css`
       transform: rotate(${Turn[turn]}deg);
@@ -22,7 +23,7 @@ const PaginationIcon: React.FC<PaginationIconProp> = ({ turn }) => (
   >
     <path
       d='M9 1.5L1.77817 8.27046C1.35676 8.66554 1.35676 9.33446 1.77817 9.72954L9 16.5'
-      stroke='#050505'
+      stroke={disabled ? '#9E9E9E' : '#050505'}
       strokeWidth='2'
       strokeLinecap='round'
     />
