@@ -1,10 +1,10 @@
 import styled from '@emotion/styled';
 
 export const ModalWrapper = styled.div`
-  width: 290px;
-  height: 191px;
+  width: 18.125rem;
+  height: 11.9375rem;
   background: #fff;
-  padding: 24px 56px;
+  padding: 1.5rem 3.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,33 +13,33 @@ export const ModalWrapper = styled.div`
 export const DeletePostText = styled.h5`
   color: #000;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 27px;
+  font-size: 1.125rem;
+  line-height: 1.6875rem;
 `;
 
 export const ReQuestionText = styled.p`
   color: #9e9e9e;
-  font-size: 14px;
-  line-height: 20px;
-  margin-top: 8px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-top: 0.5rem;
 `;
 
 export const ButtonForm = styled.form`
   display: flex;
-  gap: 8px;
-  margin-top: 56px;
+  gap: 0.5rem;
+  margin-top: 3.5rem;
 `;
 
 export const Button = styled.button`
   display: flex;
-  width: 85px;
-  height: 32px;
+  width: 5.3125rem;
+  height: 2rem;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   cursor: pointer;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   font-weight: 600;
 `;
 

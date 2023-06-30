@@ -17,7 +17,7 @@ const DeleteModal = () => {
       <dialog
         ref={dialog}
         css={css`
-          border-radius: 10px;
+          border-radius: 0.625rem;
           border: 0;
           ::backdrop {
             background: rgba(5, 5, 5, 0.4);
