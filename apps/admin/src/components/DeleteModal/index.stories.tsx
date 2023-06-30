@@ -12,9 +12,4 @@ type Story = StoryObj<typeof DeleteModal>;
 
 export const Primary: Story = {
   args: {},
-  parameters: {
-    backgrounds: {
-      default: 'dark',
-    },
-  },
 };

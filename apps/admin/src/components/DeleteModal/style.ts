@@ -8,7 +8,6 @@ export const ModalWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 10px;
 `;
 
 export const DeletePostText = styled.h5`
@@ -25,7 +24,7 @@ export const ReQuestionText = styled.p`
   margin-top: 8px;
 `;
 
-export const ButtonBox = styled.div`
+export const ButtonForm = styled.form`
   display: flex;
   gap: 8px;
   margin-top: 56px;
