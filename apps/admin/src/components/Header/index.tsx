@@ -20,7 +20,6 @@ const Header: FC = () => {
 
   const { data: unapproveList } = useGetUnapproveList();
   const { data: userInfo } = useGetUserInfo();
-
   const closeApproveModal = () => setShowApproveModal(false);
 
   useEffect(() => {
