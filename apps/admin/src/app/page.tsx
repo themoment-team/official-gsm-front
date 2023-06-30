@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import styled from '@emotion/styled';
 
@@ -16,7 +16,14 @@ import {
 import { useGetPostList } from 'api/client';
 
 export default function Home() {
-  const [pageNumber, setPageNumber] = useState<number>(0);
+  const { replace } = useRouter();
+  const searchParams = useSearchParams();
+
+  const pageNumber = Number(searchParams.get('pageNumber') || '0');
+
+  if (Number.isNaN(pageNumber)) {
+    replace('/');
+  }
 
   const { data } = useGetPostList('NOTICE', pageNumber);
 
@@ -31,7 +38,6 @@ export default function Home() {
         {(data?.totalPages ?? 0) > 1 && (
           <PaginationController
             pageNumber={pageNumber}
-            setPageNumber={setPageNumber}
             totalPages={data?.totalPages ?? 0}
           />
         )}
