@@ -3,5 +3,3 @@ export interface EducationDirectionType {
   title: React.ReactNode;
   subTitle: string[];
 }
-
-export type MajorType = 'SW' | 'IOT' | 'AI';
