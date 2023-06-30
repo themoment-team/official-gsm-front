@@ -11,7 +11,7 @@ export const WriteTitle = styled.h3`
   font-size: 1.125rem;
   line-height: 1.6875rem;
   color: #212121;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1.5rem;
 `;
 
 export const FormWrap = styled.form`
@@ -27,6 +27,7 @@ export const FormItemTitle = styled.p`
   font-size: 0.75rem;
   line-height: 1.125rem;
   color: #9e9e9e;
+  margin-bottom: 0.5rem;
 `;
 
 export const UploadBox = styled.div`
@@ -108,7 +109,7 @@ export const CompleteBtn = styled.button`
 export const ErrorMessage = styled.p`
   font-weight: 400;
   font-size: 0.75rem;
-  margin-top: 1rem;
+  margin-top: 0.25rem;
   color: #f93535;
 `;
 

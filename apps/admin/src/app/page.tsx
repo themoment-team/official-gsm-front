@@ -45,4 +45,5 @@ const ContentWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   margin-top: 2.5rem;
+  padding-bottom: 5rem;
 `;
