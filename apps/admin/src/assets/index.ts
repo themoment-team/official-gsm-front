@@ -1,6 +1,5 @@
 export { default as CancelIcon } from './svg/icon/CancelIcon';
 export { default as ChevronIcon } from './svg/icon/ChevronIcon';
-export { default as FileIcon } from './svg/icon/FileIcon';
 export { default as GoogleIcon } from './svg/icon/GoogleIcon';
 export { default as InputValueResetBtnIcon } from './svg/icon/InputValueResetBtnIcon';
 export { default as ModalCloseIcon } from './svg/icon/ModalCloseIcon';

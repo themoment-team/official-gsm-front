@@ -1,8 +1,8 @@
-import { FileButton, EditButton } from 'admin/components';
+import { EditButton } from 'admin/components';
 
 import { useGetPostDetail } from 'api/client';
 
-import { WriterAndDate } from 'ui';
+import { WriterAndDate, FileButton } from 'ui';
 
 import * as S from './style';
 
@@ -32,7 +32,7 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
               <S.FileTitle>첨부 파일</S.FileTitle>
               <S.FileList>
                 {data.fileInfo.map((item, i) => (
-                  <FileButton key={i} fileInfo={item} />
+                  <FileButton key={i} file={item} />
                 ))}
               </S.FileList>
             </>

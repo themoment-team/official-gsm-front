@@ -6,7 +6,8 @@
     "paths": {
       "admin/*": ["../admin/src/*"],
       "client/*": ["../client/src/*"],
-      "api/*": ["../../packages/api/*"]
+      "api/*": ["../../packages/api/*"],
+      "ui/*": ["../../packages/ui/src/*"]
     }
   },
   "include": ["**/*.ts", "**/*.tsx"],
