@@ -1,8 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-
-import { redirect } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import styled from '@emotion/styled';
 
@@ -32,12 +30,22 @@ interface ListPageProps {
 }
 
 export default function ListPage({ params: { category } }: ListPageProps) {
-  const [pageNumber, setPageNumber] = useState<number>(0);
+  const { replace } = useRouter();
+  const searchParams = useSearchParams();
 
-  const { data } = useGetPostList(categoryQueryString[category], pageNumber);
+  const pageNumber = Number(searchParams.get('pageNumber') ?? '1');
+
+  const { data } = useGetPostList(
+    categoryQueryString[category],
+    pageNumber - 1
+  );
 
   if (!categoryParamsArray.includes(category)) {
-    redirect('/');
+    replace('/');
+  }
+
+  if (Number.isNaN(pageNumber) || pageNumber < 1) {
+    replace(`/${category}`);
   }
 
   return (
@@ -55,7 +63,6 @@ export default function ListPage({ params: { category } }: ListPageProps) {
         {(data?.totalPages ?? 0) > 1 && (
           <PaginationController
             pageNumber={pageNumber}
-            setPageNumber={setPageNumber}
             totalPages={data?.totalPages ?? 0}
           />
         )}

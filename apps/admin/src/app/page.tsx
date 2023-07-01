@@ -19,13 +19,13 @@ export default function Home() {
   const { replace } = useRouter();
   const searchParams = useSearchParams();
 
-  const pageNumber = Number(searchParams.get('pageNumber') || '0');
+  const pageNumber = Number(searchParams.get('pageNumber') ?? '1');
 
-  if (Number.isNaN(pageNumber)) {
+  const { data } = useGetPostList('NOTICE', pageNumber - 1);
+
+  if (Number.isNaN(pageNumber) || pageNumber < 1) {
     replace('/');
   }
-
-  const { data } = useGetPostList('NOTICE', pageNumber);
 
   return (
     <>
