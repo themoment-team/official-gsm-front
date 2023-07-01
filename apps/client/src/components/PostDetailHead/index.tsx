@@ -8,13 +8,19 @@ interface PostDetailHeadProps {
   postSeq: number;
 }
 
+const categories = {
+  NOTICE: '📢 공지사항',
+  FAMILY_NEWSLETTER: '📃 가정통신문',
+  EVENT_GALLERY: '📷 행사 갤러리',
+};
+
 const PostDetailProps: React.FC<PostDetailHeadProps> = ({ postSeq }) => {
   const { data } = useGetPostDetail(postSeq);
   return (
     <>
       {data && (
         <S.DetailWrapper>
-          <S.CategoryText>📢 공지사항</S.CategoryText>
+          <S.CategoryText>{categories[data.category]}</S.CategoryText>
           <S.Title>{data.postTitle}</S.Title>
           <WriterAndDate
             postWriter={data.postWriter}
