@@ -17,8 +17,12 @@ const PaginationController: React.FC<PageNationControllerProps> = ({
   pageNumber,
   totalPages,
 }) => {
-  const { push } = useRouter();
+  /**
+   * return - `/`, `/newsletter`, `/gallery`
+   */
   const pathname = usePathname();
+
+  const { push } = useRouter();
 
   const previousPage = `${pathname}?pageNumber=${pageNumber - 1}`;
   const nextPage = `${pathname}?pageNumber=${pageNumber + 1}`;
@@ -33,21 +37,25 @@ const PaginationController: React.FC<PageNationControllerProps> = ({
         <PaginationIcon turn='left' disabled={pageNumber === 0} />
       </S.PaginationButton>
       <S.PageNumberWrapper>
-        {[...Array(totalPages)].map((_, index) => (
-          <S.PageNumberButton
-            key={index}
-            type='button'
-            css={
-              pageNumber === index &&
-              css`
-                color: #050505;
-              `
-            }
-            onClick={() => push(`${pathname}?pageNumber=${index}`)}
-          >
-            {index + 1}
-          </S.PageNumberButton>
-        ))}
+        {[...Array(totalPages)].map((_, index) => {
+          const showPageNumber = index + 1;
+
+          return (
+            <S.PageNumberButton
+              key={index}
+              type='button'
+              css={
+                pageNumber === showPageNumber &&
+                css`
+                  color: #050505;
+                `
+              }
+              onClick={() => push(`${pathname}?pageNumber=${showPageNumber}`)}
+            >
+              {showPageNumber}
+            </S.PageNumberButton>
+          );
+        })}
       </S.PageNumberWrapper>
       <S.PaginationButton
         onClick={() => push(nextPage)}
