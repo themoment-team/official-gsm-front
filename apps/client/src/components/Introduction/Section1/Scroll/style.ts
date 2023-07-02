@@ -1,9 +1,5 @@
 import styled from '@emotion/styled';
 
-interface MouseButtonProps {
-  isClicked: boolean;
-}
-
 export const ScrollContentsWrap = styled.div`
   display: flex;
   flex-direction: column;
