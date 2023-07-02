@@ -13,28 +13,22 @@ export const LinkToHelloGSMWrapper = styled(Link)`
   margin: 7.75rem 0;
   z-index: 1;
   position: relative;
+  background-size: 400% 400%;
   background: linear-gradient(90deg, #35d391 0%, #6cabe4 48.96%, #c0fbff 100%);
-  &:after {
-    background: linear-gradient(
-      90deg,
-      #c0fbff 0%,
-      #6cabe4 48.96%,
-      #35d391 100%
-    );
-    position: absolute;
-    content: '';
-    width: 0;
-    right: 0;
-    height: inherit;
-    z-index: -1;
-    border-radius: 1.25rem;
-    box-shadow: inset 0.125rem 0.125rem 0.125rem 0rem rgba(255, 255, 255, 0.5),
-      4px 4px 5px 0px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease-in-out;
+  background-size: 200% 200%;
+  &:hover {
+    animation: gradient 5s ease infinite;
   }
-  &:hover:after {
-    left: 0;
-    width: inherit;
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 `;
 
