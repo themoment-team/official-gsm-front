@@ -5,9 +5,7 @@ import { useEffect, useState } from 'react';
  * @returns windowScrollHeight: number(단위 px)
  */
 export default function useGetWindowScrollHeight() {
-  const [windowScrollHeight, setWindowScrollHeight] = useState<number>(
-    window.scrollY
-  );
+  const [windowScrollHeight, setWindowScrollHeight] = useState<number>(0);
 
   let throttling = false;
 
