@@ -8,3 +8,7 @@ export const authUrl = {
   userInfo: () => `/auth/userinfo`,
   refresh: () => `/auth/token/refresh`,
 } as const;
+
+export const postUrl = {
+  writePost: () => `/post`,
+} as const;

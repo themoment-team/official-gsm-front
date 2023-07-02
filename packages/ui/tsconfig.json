@@ -1,5 +1,12 @@
 {
   "extends": "tsconfig/react-components.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": "./src",
+    "paths": {
+      "ui/*": ["./*"]
+    }
+  },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
