@@ -33,12 +33,10 @@ export default function ListPage({ params: { category } }: ListPageProps) {
   const { replace } = useRouter();
   const searchParams = useSearchParams();
 
+  /** 1 ~ totalPages */
   const pageNumber = Number(searchParams.get('pageNumber') ?? '1');
 
-  const { data } = useGetPostList(
-    categoryQueryString[category],
-    pageNumber - 1
-  );
+  const { data } = useGetPostList(categoryQueryString[category], pageNumber);
 
   if (!categoryParamsArray.includes(category)) {
     replace('/');

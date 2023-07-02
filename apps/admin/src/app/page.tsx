@@ -21,7 +21,7 @@ export default function Home() {
 
   const pageNumber = Number(searchParams.get('pageNumber') ?? '1');
 
-  const { data } = useGetPostList('NOTICE', pageNumber - 1);
+  const { data } = useGetPostList('NOTICE', pageNumber);
 
   if (Number.isNaN(pageNumber) || pageNumber < 1) {
     replace('/');
