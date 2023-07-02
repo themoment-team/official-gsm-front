@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
  * @returns windowWidth: number(단위 px)
  */
 export default function useGetWindowWidth() {
-  const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [windowWidth, setWindowWidth] = useState<number>(window.innerWidth);
 
   let throttling = false;
 
@@ -21,7 +21,6 @@ export default function useGetWindowWidth() {
   }
 
   useEffect(() => {
-    setWindowWidth(window.innerWidth);
     window.addEventListener('resize', onResize);
 
     return () => {

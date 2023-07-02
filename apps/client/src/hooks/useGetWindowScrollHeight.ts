@@ -5,7 +5,9 @@ import { useEffect, useState } from 'react';
  * @returns windowScrollHeight: number(단위 px)
  */
 export default function useGetWindowScrollHeight() {
-  const [windowScrollHeight, setWindowScrollHeight] = useState<number>(0);
+  const [windowScrollHeight, setWindowScrollHeight] = useState<number>(
+    window.scrollY
+  );
 
   let throttling = false;
 
@@ -21,7 +23,6 @@ export default function useGetWindowScrollHeight() {
   }
 
   useEffect(() => {
-    setWindowScrollHeight(window.scrollY);
     window.addEventListener('scroll', onScroll);
 
     return () => {
