@@ -1,21 +1,27 @@
-import styled from '@emotion/styled';
+import { useState } from 'react';
 
-import CircleDecoration from './CircleDecoration';
-import Scroll from './Scroll';
-import Title from './Title';
+import { useRouter } from 'next/router';
 
-const Section1 = () => (
-  <SectionWrapper>
-    <CircleDecoration />
-    <Title />
-    <Scroll />
-  </SectionWrapper>
-);
+import { MouseIcon } from 'client/assets';
 
-export const SectionWrapper = styled.div`
-  width: 100%;
-  height: 54.375rem;
-  position: relative;
-`;
+import * as S from './style';
 
-export default Section1;
+const Scroll = (): JSX.Element => {
+  const router = useRouter();
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleClick = (): void => {
+    setIsClicked(true);
+    router.push('#scroll-target', undefined, { scroll: true });
+  };
+
+  return (
+    <S.ScrollContentsWrap id='scroll-target'>
+      <S.MouseButton onClick={handleClick} isClicked={isClicked}>
+        <MouseIcon />
+      </S.MouseButton>
+    </S.ScrollContentsWrap>
+  );
+};
+
+export default Scroll;

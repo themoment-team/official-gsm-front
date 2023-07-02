@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+export const MouseButton = styled.button``;
+
 interface MouseButtonProps {
   isClicked: boolean;
 }
@@ -24,7 +26,10 @@ export const ScrollContentsWrap = styled.div`
     } /* 마지막 위치 */
   }
 `;
-export const MouseButton = styled.button<MouseButtonProps>`
-  background-color: ${(props) => (props.isClicked ? 'pink' : 'black')};
+
+export const SectionWrapper = styled.div<MouseButtonProps>`
+  width: 100%;
+  height: 200vh;
+  position: relative;
   transform: ${(props) => (props.isClicked ? 'translateY(100px)' : 'black')};
 `;
