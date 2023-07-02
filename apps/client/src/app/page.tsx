@@ -14,11 +14,13 @@ import {
 } from 'client/components';
 import { useGetWindowScrollHeight, useGetWindowWidth } from 'client/hooks';
 
+const headerHeightPx = 64;
+
 export default function Home() {
   const windowScrollHeight = useGetWindowScrollHeight();
   const windowWidth = useGetWindowWidth();
 
-  const headerHeightPx = 64;
+  /** 가로 : 세로 = 16 : 9 = 100 : 56.25 (56.25%) */
   const promotionVideoHeightPx = (windowWidth / 100) * 56.25;
 
   const videoOverlayPx = promotionVideoHeightPx - headerHeightPx;
