@@ -2,13 +2,12 @@ import React from 'react';
 
 import { usePathname, useRouter } from 'next/navigation';
 
-import { css } from '@emotion/react';
-
 import { PaginationIcon } from 'admin/assets';
 
 import * as S from './style';
 
 interface PageNationControllerProps {
+  /** 1 ~ totalpages */
   pageNumber: number;
   totalPages: number;
 }
@@ -32,9 +31,9 @@ const PaginationController: React.FC<PageNationControllerProps> = ({
       <S.PaginationButton
         onClick={() => push(previousPage)}
         type='button'
-        disabled={pageNumber === 0}
+        disabled={pageNumber === 1}
       >
-        <PaginationIcon turn='left' disabled={pageNumber === 0} />
+        <PaginationIcon turn='left' disabled={pageNumber === 1} />
       </S.PaginationButton>
       <S.PageNumberWrapper>
         {[...Array(totalPages)].map((_, index) => {
@@ -42,14 +41,9 @@ const PaginationController: React.FC<PageNationControllerProps> = ({
 
           return (
             <S.PageNumberButton
-              key={index}
+              key={showPageNumber}
               type='button'
-              css={
-                pageNumber === showPageNumber &&
-                css`
-                  color: #050505;
-                `
-              }
+              selected={pageNumber === showPageNumber}
               onClick={() => push(`${pathname}?pageNumber=${showPageNumber}`)}
             >
               {showPageNumber}
@@ -60,9 +54,9 @@ const PaginationController: React.FC<PageNationControllerProps> = ({
       <S.PaginationButton
         onClick={() => push(nextPage)}
         type='button'
-        disabled={pageNumber === totalPages - 1}
+        disabled={pageNumber === totalPages}
       >
-        <PaginationIcon turn='right' disabled={pageNumber === totalPages - 1} />
+        <PaginationIcon turn='right' disabled={pageNumber === totalPages} />
       </S.PaginationButton>
     </S.PaginationController>
   );
