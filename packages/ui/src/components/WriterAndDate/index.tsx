@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import { DateComponent } from 'ui';
+import DateComponent from '../DateComponent';
 
 import * as S from './style';
 
