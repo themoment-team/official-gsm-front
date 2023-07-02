@@ -11,7 +11,7 @@ export const ScrollContentsWrap = styled.div`
   align-items: center;
   animation: motion 0.7s linear 0s infinite alternate;
   position: absolute;
-  top: 37.625rem;
+  top: 50.125rem;
   left: 50%;
   transform: translateX(-50%);
 
