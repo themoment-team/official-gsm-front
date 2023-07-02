@@ -21,10 +21,14 @@ import {
 } from 'admin/components';
 import * as S from 'admin/styles/page/write';
 
-import { usePostWritePost } from 'api/admin';
+import { usePatchPost } from 'api/admin';
 import type { PostCategoryType } from 'api/client';
 
 import { Button } from 'ui';
+
+interface EditPageProps {
+  params: { postSeq: number };
+}
 
 const schema = z.object({
   title: z
@@ -49,7 +53,7 @@ const preventClose = (e: BeforeUnloadEvent) => {
   e.returnValue = '';
 };
 
-export default function WritePage() {
+export default function EditPage({ params: { postSeq } }: EditPageProps) {
   const [category, setCategory] = useState<PostCategoryType>('NOTICE');
   const [files, setFiles] = useState<File[]>([]);
   const fileInput = useRef<HTMLInputElement>(null);
@@ -63,7 +67,7 @@ export default function WritePage() {
     formState: { errors },
   } = useForm<FormType>({ resolver: zodResolver(schema) });
 
-  const { mutate, isSuccess } = usePostWritePost();
+  const { mutate, isSuccess } = usePatchPost(postSeq);
 
   useEffect(() => {
     (() => {
@@ -115,7 +119,7 @@ export default function WritePage() {
     <>
       <Header />
       <S.WritePageWrap>
-        <S.WriteTitle>게시물 생성</S.WriteTitle>
+        <S.WriteTitle>게시물 수정</S.WriteTitle>
         <S.FormWrap onSubmit={handleSubmit(onSubmit)}>
           <div>
             <S.FormItemTitle>카테고리</S.FormItemTitle>

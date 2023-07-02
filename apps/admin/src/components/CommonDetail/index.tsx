@@ -23,7 +23,7 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
             createdAt={data.createdAt}
             postWriter={data.postWriter}
           />
-          <EditButton href='/post/edit' />
+          <EditButton href={`/post/edit/${postSeq}`} />
           <S.Horizon />
           <S.Content>{data.postContent}</S.Content>
           <S.Horizon />

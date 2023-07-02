@@ -11,4 +11,5 @@ export const authUrl = {
 
 export const postUrl = {
   writePost: () => `/post`,
+  patchPost: (postSeq: number) => `/post/${postSeq}}`,
 } as const;
