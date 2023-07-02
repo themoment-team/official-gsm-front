@@ -11,7 +11,7 @@ export const ScrollContentsWrap = styled.div`
   align-items: center;
   animation: motion 0.7s linear 0s infinite alternate;
   position: absolute;
-  top: 602px;
+  top: 37.625rem;
   left: 50%;
   transform: translateX(-50%);
 
@@ -23,8 +23,4 @@ export const ScrollContentsWrap = styled.div`
       transform: translateY(0);
     } /* 마지막 위치 */
   }
-`;
-export const MouseButton = styled.button<MouseButtonProps>`
-  background-color: ${(props) => (props.isClicked ? 'pink' : 'black')};
-  transform: ${(props) => (props.isClicked ? 'translateY(100px)' : 'black')};
 `;

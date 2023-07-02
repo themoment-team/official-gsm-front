@@ -1,27 +1,16 @@
-import { useState } from 'react';
+import React from 'react';
 
-import { useRouter } from 'next/router';
-
-import { MouseIcon } from 'client/assets';
-
+import CircleDecoration from './CircleDecoration';
+import Scroll from './Scroll';
+import Title from './Title';
 import * as S from './style';
 
-const Scroll = (): JSX.Element => {
-  const router = useRouter();
-  const [isClicked, setIsClicked] = useState(false);
+const Section1 = () => (
+  <S.SectionWrapper>
+    <CircleDecoration />
+    <Title />
+    <Scroll />
+  </S.SectionWrapper>
+);
 
-  const handleClick = (): void => {
-    setIsClicked(true);
-    router.push('#scroll-target', undefined, { scroll: true });
-  };
-
-  return (
-    <S.ScrollContentsWrap id='scroll-target'>
-      <S.MouseButton onClick={handleClick} isClicked={isClicked}>
-        <MouseIcon />
-      </S.MouseButton>
-    </S.ScrollContentsWrap>
-  );
-};
-
-export default Scroll;
+export default Section1;
