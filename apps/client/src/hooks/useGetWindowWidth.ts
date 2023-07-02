@@ -21,6 +21,8 @@ export default function useGetWindowWidth() {
   }
 
   useEffect(() => {
+    setWindowWidth(window.innerWidth);
+
     window.addEventListener('resize', onResize);
 
     return () => {
