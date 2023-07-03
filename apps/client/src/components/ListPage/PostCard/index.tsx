@@ -1,10 +1,24 @@
+import { WriterAndDate } from 'ui';
+
 import * as S from './style';
 
-const ListPagePostCard: React.FC = () => (
+interface ListPagePostCardProps {
+  postIndex: number;
+  postTitle: string;
+  postWriter: string;
+  postDate: string;
+}
+
+const ListPagePostCard: React.FC<ListPagePostCardProps> = ({
+  postIndex,
+  postTitle,
+  postWriter,
+  postDate,
+}) => (
   <S.PostCard>
-    <p>#1</p>
-    <p>제목입니다 테스트용도</p>
-    <p>최장우 . 2023.05.03</p>
+    <S.PostIndex>#{postIndex}</S.PostIndex>
+    <S.PostTitle>{postTitle}</S.PostTitle>
+    <WriterAndDate postWriter={postWriter} createdAt={postDate} />
   </S.PostCard>
 );
 
