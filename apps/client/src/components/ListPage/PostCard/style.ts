@@ -15,10 +15,20 @@ export const PostCard = styled.button`
   }
 `;
 
+export const IndexAndTitle = styled.div`
+  display: flex;
+  gap: ;
+`;
+
 export const PostIndex = styled.p`
   color: ${({ theme }) => theme.color.gray['070']};
 `;
 
 export const PostTitle = styled.p`
+  width: 43rem;
+  text-align: left;
   color: ${({ theme }) => theme.color.gray['090']};
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 `;
