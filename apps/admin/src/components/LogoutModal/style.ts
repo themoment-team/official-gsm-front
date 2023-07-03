@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export const ModalContainer = styled.div`
   position: absolute;
   top: 2rem;
+  left: -50%;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;

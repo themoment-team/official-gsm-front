@@ -48,7 +48,12 @@ const Header: FC = () => {
         </S.ApproveRequest>
 
         <S.LogoutSection>
-          <S.LogoutButton onClick={() => setShowLogoutModal(!showLogoutModal)}>
+          <S.LogoutButton
+            onClick={() => setShowLogoutModal(!showLogoutModal)}
+            css={css`
+              color: ${showLogoutModal ? '#9e9e9e' : '#616161'};
+            `}
+          >
             {userInfo?.userName} 선생님
           </S.LogoutButton>
           {showLogoutModal && <LogoutModal name={userInfo?.userName ?? ''} />}
