@@ -19,8 +19,8 @@ export const PageNumberWrapper = styled.div`
   gap: 1.5rem;
 `;
 
-export const PageNumberButton = styled.button`
-  color: #888888;
+export const PageNumberButton = styled.button<{ selected: boolean }>`
+  color: ${({ selected }) => (selected ? '#050505' : '#888888')};
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 600;

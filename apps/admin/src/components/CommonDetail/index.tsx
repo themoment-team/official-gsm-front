@@ -1,8 +1,8 @@
-import { WriterAndDate, EditButton } from 'admin/components';
+import { EditButton } from 'admin/components';
 
 import { useGetPostDetail } from 'api/client';
 
-import { FileButton } from 'ui';
+import { WriterAndDate, FileButton } from 'ui';
 
 import * as S from './style';
 

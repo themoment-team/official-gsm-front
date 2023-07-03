@@ -6,7 +6,7 @@ import { get, postQueryKeys, postUrl } from 'api/client';
 /**
  *
  * @param category - 'NOTICE' | 'FAMILY_NEWSLETTER' | 'EVENT_GALLERY'
- * @param pageNumber - 0 부터 시작
+ * @param pageNumber - 1 부터 시작
  * @returns useQuery()
  */
 export const useGetPostList = (

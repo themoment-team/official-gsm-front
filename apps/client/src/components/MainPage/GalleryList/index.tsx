@@ -6,7 +6,7 @@ import { useGetPostList } from 'api/client';
 import * as S from './style';
 
 const GalleryList = () => {
-  const { data } = useGetPostList('EVENT_GALLERY', 0);
+  const { data } = useGetPostList('EVENT_GALLERY', 1);
 
   return (
     <S.GalleryListWrapper>
