@@ -1,55 +1,69 @@
 import React from 'react';
 
-import { css } from '@emotion/react';
+import { usePathname, useRouter } from 'next/navigation';
 
 import { PaginationIcon } from 'admin/assets';
 
 import * as S from './style';
 
 interface PageNationControllerProps {
+  /** 1 ~ totalpages */
   pageNumber: number;
-  setPageNumber: React.Dispatch<React.SetStateAction<number>>;
   totalPages: number;
 }
 
 const PaginationController: React.FC<PageNationControllerProps> = ({
   pageNumber,
-  setPageNumber,
   totalPages,
-}) => (
-  <S.PaginationController>
-    <S.PaginationButton
-      onClick={() => setPageNumber((value) => value - 1)}
-      type='button'
-      disabled={pageNumber === 0}
-    >
-      <PaginationIcon turn='left' disabled={pageNumber === 0} />
-    </S.PaginationButton>
-    <S.PageNumberWrapper>
-      {[...Array(totalPages)].map((_, index) => (
-        <S.PageNumberButton
-          key={index}
-          type='button'
-          css={
-            pageNumber === index &&
-            css`
-              color: #050505;
-            `
-          }
-          onClick={() => setPageNumber(index)}
-        >
-          {index + 1}
-        </S.PageNumberButton>
-      ))}
-    </S.PageNumberWrapper>
-    <S.PaginationButton
-      onClick={() => setPageNumber((value) => value + 1)}
-      type='button'
-      disabled={pageNumber === totalPages - 1}
-    >
-      <PaginationIcon turn='right' disabled={pageNumber === totalPages - 1} />
-    </S.PaginationButton>
-  </S.PaginationController>
-);
+}) => {
+  /**
+   * return - `/`, `/newsletter`, `/gallery`
+   */
+  const pathname = usePathname();
+
+  const { push } = useRouter();
+
+  const updatePageNumber = (pageNumber: number) => {
+    const params = new URLSearchParams();
+    params.set('pageNumber', String(pageNumber));
+
+    return push(`${pathname}?${params.toString()}`);
+  };
+
+  return (
+    <S.PaginationController>
+      <S.PaginationButton
+        onClick={() => updatePageNumber(pageNumber - 1)}
+        type='button'
+        disabled={pageNumber === 1}
+      >
+        <PaginationIcon turn='left' disabled={pageNumber === 1} />
+      </S.PaginationButton>
+      <S.PageNumberWrapper>
+        {[...Array(totalPages)].map((_, index) => {
+          const showPageNumber = index + 1;
+
+          return (
+            <S.PageNumberButton
+              key={showPageNumber}
+              type='button'
+              selected={pageNumber === showPageNumber}
+              onClick={() => updatePageNumber(showPageNumber)}
+            >
+              {showPageNumber}
+            </S.PageNumberButton>
+          );
+        })}
+      </S.PageNumberWrapper>
+      <S.PaginationButton
+        onClick={() => updatePageNumber(pageNumber + 1)}
+        type='button'
+        disabled={pageNumber === totalPages}
+      >
+        <PaginationIcon turn='right' disabled={pageNumber === totalPages} />
+      </S.PaginationButton>
+    </S.PaginationController>
+  );
+};
 
 export default PaginationController;
