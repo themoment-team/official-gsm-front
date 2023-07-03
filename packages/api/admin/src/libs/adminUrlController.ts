@@ -11,5 +11,5 @@ export const authUrl = {
 
 export const postUrl = {
   writePost: () => `/post`,
-  delPost: (postSeq: number) => `/post/${postSeq}`,
+  deletePost: (postSeq: number) => `/post/${postSeq}`,
 } as const;

@@ -4,6 +4,7 @@ import { css } from '@emotion/react';
 
 import { EditButton, DeletePostButton, DeleteModal } from 'admin/components';
 
+import { useDeletePost } from 'api/admin';
 import { useGetPostDetail } from 'api/client';
 
 import { WriterAndDate, FileButton } from 'ui';
@@ -20,7 +21,7 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
   const dialog = useRef<HTMLDialogElement>(null);
 
   const deletePost = () => {
-    alert('');
+    useDeletePost(postSeq);
   };
 
   return (
