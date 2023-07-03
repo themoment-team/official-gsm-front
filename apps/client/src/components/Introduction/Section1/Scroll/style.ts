@@ -7,7 +7,7 @@ export const ScrollContentsWrap = styled.div`
   align-items: center;
   animation: motion 0.7s linear 0s infinite alternate;
   position: absolute;
-  top: 50.125rem;
+  bottom: 2.625rem;
   left: 50%;
   transform: translateX(-50%);
 
@@ -19,4 +19,11 @@ export const ScrollContentsWrap = styled.div`
       transform: translateY(0);
     } /* 마지막 위치 */
   }
+`;
+
+export const ScrollTitle = styled.p`
+  color: ${({ theme }) => theme.color.gray['080']};
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.1875rem;
 `;

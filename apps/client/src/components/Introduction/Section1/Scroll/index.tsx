@@ -1,12 +1,12 @@
-import React from 'react';
-
-import { MouseIcon } from 'client/assets';
+import { DownChevronsIcon, MouseIcon } from 'client/assets';
 
 import * as S from './style';
 
-const Scroll = (): JSX.Element => (
+const Scroll = () => (
   <S.ScrollContentsWrap>
+    <S.ScrollTitle>scroll</S.ScrollTitle>
     <MouseIcon />
+    <DownChevronsIcon />
   </S.ScrollContentsWrap>
 );
 
