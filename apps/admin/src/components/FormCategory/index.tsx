@@ -1,5 +1,6 @@
-import type { Dispatch, SetStateAction } from 'react';
 import React from 'react';
+
+import { usePathname, useRouter } from 'next/navigation';
 
 import { css } from '@emotion/react';
 
@@ -15,24 +16,30 @@ const categoryArray = [
 
 interface FormCategoryProps {
   category: PostCategoryType;
-  setCategory: Dispatch<SetStateAction<PostCategoryType>>;
 }
 
-const FormCategory: React.FC<FormCategoryProps> = ({
-  category,
-  setCategory,
-}) => {
+const FormCategory: React.FC<FormCategoryProps> = ({ category }) => {
   const acticeStyle = (categoryQueryString: PostCategoryType) =>
     css`
       color: ${categoryQueryString === category ? '#ffffff' : '#a4a4a4'};
     `;
+
+  const pathname = usePathname();
+  const { replace } = useRouter();
+
+  const updateCategory = (category: PostCategoryType) => {
+    const params = new URLSearchParams();
+    params.set('category', String(category));
+
+    return replace(`${pathname}?${params.toString()}`);
+  };
 
   return (
     <S.Category>
       {categoryArray.map(({ categoryQueryString, label }) => (
         <S.CategoryLabel
           key={categoryQueryString}
-          onClick={() => setCategory(categoryQueryString)}
+          onClick={() => updateCategory(categoryQueryString)}
           css={acticeStyle(categoryQueryString)}
         >
           ∙&nbsp;&nbsp;{label}
