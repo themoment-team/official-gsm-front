@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 import styled from '@emotion/styled';
 
@@ -27,14 +27,17 @@ type CategoryParamsType = keyof typeof categoryQueryString;
 
 interface ListPageProps {
   params: { category: CategoryParamsType };
+  searchParams: { pageNumber: string };
 }
 
-export default function ListPage({ params: { category } }: ListPageProps) {
+export default function ListPage({
+  params: { category },
+  searchParams,
+}: ListPageProps) {
   const { replace } = useRouter();
-  const searchParams = useSearchParams();
 
   /** 1 ~ totalPages */
-  const pageNumber = Number(searchParams.get('pageNumber') ?? '1');
+  const pageNumber = Number(searchParams.pageNumber ?? 1);
 
   const { data } = useGetPostList(categoryQueryString[category], pageNumber);
 

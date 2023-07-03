@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 import styled from '@emotion/styled';
 
@@ -15,11 +15,17 @@ import {
 
 import { useGetPostList } from 'api/client';
 
-export default function Home() {
-  const { replace } = useRouter();
-  const searchParams = useSearchParams();
+interface HomeProps {
+  searchParams: {
+    pageNumber: string;
+  };
+}
 
-  const pageNumber = Number(searchParams.get('pageNumber') ?? '1');
+export default function Home({ searchParams }: HomeProps) {
+  const { replace } = useRouter();
+
+  /** 1 ~ totalPages */
+  const pageNumber = Number(searchParams.pageNumber ?? 1);
 
   const { data } = useGetPostList('NOTICE', pageNumber);
 
