@@ -4,7 +4,6 @@ import * as S from './style';
 
 const DeleteModal = () => (
   <>
-    <button>모달 열기 클릭하세요</button>
     <dialog
       css={css`
         border-radius: 0.625rem;
