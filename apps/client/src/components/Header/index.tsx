@@ -10,10 +10,13 @@ type SegmentType = '' | 'about';
 
 interface HeaderProps {
   segment: SegmentType;
-  isBackgroundWhite: boolean;
+  isBackgroundWhite?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ segment, isBackgroundWhite }) => {
+const Header: React.FC<HeaderProps> = ({
+  segment,
+  isBackgroundWhite = true,
+}) => {
   const theme = useTheme();
 
   const selectStyle = (href: SegmentType) =>
