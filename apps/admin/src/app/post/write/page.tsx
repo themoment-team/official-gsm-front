@@ -49,8 +49,15 @@ const preventClose = (e: BeforeUnloadEvent) => {
   e.returnValue = '';
 };
 
-export default function WritePage() {
-  const [category, setCategory] = useState<PostCategoryType>('NOTICE');
+interface WritePageProps {
+  searchParams: {
+    category: PostCategoryType;
+  };
+}
+
+export default function WritePage({
+  searchParams: { category },
+}: WritePageProps) {
   const [files, setFiles] = useState<File[]>([]);
   const fileInput = useRef<HTMLInputElement>(null);
 
@@ -64,6 +71,10 @@ export default function WritePage() {
   } = useForm<FormType>({ resolver: zodResolver(schema) });
 
   const { mutate, isSuccess } = usePostWritePost();
+
+  if (!category) {
+    replace('/post/write?category=NOTICE');
+  }
 
   useEffect(() => {
     (() => {
@@ -119,7 +130,7 @@ export default function WritePage() {
         <S.FormWrap onSubmit={handleSubmit(onSubmit)}>
           <div>
             <S.FormItemTitle>카테고리</S.FormItemTitle>
-            <FormCategory category={category} setCategory={setCategory} />
+            <FormCategory category={category} />
           </div>
           <div>
             <S.FormItemTitle>제목</S.FormItemTitle>
