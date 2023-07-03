@@ -12,18 +12,18 @@ type Story = StoryObj<typeof ListPageTitle>;
 
 export const Notice: Story = {
   args: {
-    children: '📢 공지사항',
+    category: 'notice',
   },
 };
 
 export const Newsletter: Story = {
   args: {
-    children: '📃 가정통신문',
+    category: 'newsletter',
   },
 };
 
 export const Gallery: Story = {
   args: {
-    children: '📷 행사 갤러리',
+    category: 'gallery',
   },
 };
