@@ -1,8 +1,10 @@
+import { formatDate } from 'common';
+
 import { WriterAndDate } from 'ui';
 
 import * as S from './style';
 
-interface ListPagePostCardProps {
+export interface ListPagePostCardProps {
   postIndex: number;
   postTitle: string;
   postWriter: string;
@@ -16,8 +18,10 @@ const ListPagePostCard: React.FC<ListPagePostCardProps> = ({
   postDate,
 }) => (
   <S.PostCard>
-    <S.PostIndex>#{postIndex}</S.PostIndex>
-    <S.PostTitle>{postTitle}</S.PostTitle>
+    <S.IndexAndTitle>
+      <S.PostIndex>#{formatDate(postIndex)}</S.PostIndex>
+      <S.PostTitle>{postTitle}</S.PostTitle>
+    </S.IndexAndTitle>
     <WriterAndDate postWriter={postWriter} createdAt={postDate} />
   </S.PostCard>
 );

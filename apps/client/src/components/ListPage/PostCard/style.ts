@@ -16,8 +16,10 @@ export const PostCard = styled.button`
 `;
 
 export const IndexAndTitle = styled.div`
+  width: 46.875rem;
   display: flex;
-  gap: ;
+  justify-content: space-between;
+  align-items: center;
 `;
 
 export const PostIndex = styled.p`
