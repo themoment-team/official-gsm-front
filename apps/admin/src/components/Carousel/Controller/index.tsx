@@ -23,8 +23,12 @@ const CarouselController: React.FC<CarouselControllerProps> = ({
 }) => {
   const { data } = useGetPostDetail(postSeq);
 
+  const imageFiles = data?.fileInfo.filter((file) =>
+    extentions.includes(file.fileExtension)
+  );
+
   const min = 0;
-  const max = (data?.fileInfo.length ?? 0) - 1;
+  const max = (imageFiles?.length ?? 0) - 1;
 
   const moveLeft = () => {
     setCurrentIndex(currentIndex - 1);
@@ -42,21 +46,18 @@ const CarouselController: React.FC<CarouselControllerProps> = ({
         <ChevronIcon turn={'left'} />
       </S.MoveButton>
       <S.DotWrapper>
-        {data?.fileInfo.map(
-          (file, i) =>
-            extentions.includes(file.fileExtension) && (
-              <S.Dot
-                key={file.fileName}
-                css={
-                  currentIndex === i &&
-                  css`
-                    width: 1rem;
-                    background: #b2e449;
-                  `
-                }
-              />
-            )
-        )}
+        {imageFiles?.map((file, i) => (
+          <S.Dot
+            key={file.fileName}
+            css={
+              currentIndex === i &&
+              css`
+                width: 1rem;
+                background: #b2e449;
+              `
+            }
+          />
+        ))}
       </S.DotWrapper>
       <S.MoveButton onClick={moveRight}>
         <ChevronIcon turn={'right'} />

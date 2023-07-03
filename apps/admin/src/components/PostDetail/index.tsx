@@ -8,12 +8,18 @@ interface PostDetailProps {
   postSeq: number;
 }
 
+const extentions = ['JPG', 'PNG', 'HEIC', 'JPEG', 'WEBP'];
+
 const PostDetail: React.FC<PostDetailProps> = ({ postSeq }) => {
   const { data } = useGetPostDetail(postSeq);
 
+  const imageFiles = data?.fileInfo.filter((file) =>
+    extentions.includes(file.fileExtension)
+  );
+
   return (
     <NoticeWrapper>
-      {data?.fileInfo[0] && <PostCarousel postSeq={postSeq} />}
+      {imageFiles?.length !== 0 && <PostCarousel postSeq={postSeq} />}
       <CommonDetail postSeq={postSeq} />
     </NoticeWrapper>
   );

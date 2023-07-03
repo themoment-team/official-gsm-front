@@ -20,6 +20,10 @@ const PostCarousel: React.FC<PostCarouselProps> = ({ postSeq }) => {
 
   const { data } = useGetPostDetail(postSeq);
 
+  const imageFiles = data?.fileInfo.filter((file) =>
+    extentions.includes(file.fileExtension)
+  );
+
   return (
     <S.PostCarouselWrapper>
       <S.IMGOuterWrapper
@@ -34,26 +38,23 @@ const PostCarousel: React.FC<PostCarouselProps> = ({ postSeq }) => {
               right: ${currentIndex * 29.75}rem;
             `}
           >
-            {data?.fileInfo.map(
-              (file, i) =>
-                extentions.includes(file.fileExtension) && (
-                  <S.IMGWrapper
-                    key={file.fileName + i}
-                    css={css`
-                      width: 29.75rem;
-                      height: 43.0625rem;
-                      ${currentIndex === i &&
-                      css`
-                        transition: opacity 0.3s;
-                        z-index: 1;
-                        opacity: 1;
-                      `}
-                    `}
-                  >
-                    <Image alt='content image' src={file.fileUrl} fill />
-                  </S.IMGWrapper>
-                )
-            )}
+            {imageFiles?.map((file, i) => (
+              <S.IMGWrapper
+                key={file.fileName + i}
+                css={css`
+                  width: 29.75rem;
+                  height: 43.0625rem;
+                  ${currentIndex === i &&
+                  css`
+                    transition: opacity 0.3s;
+                    z-index: 1;
+                    opacity: 1;
+                  `}
+                `}
+              >
+                <Image alt='content image' src={file.fileUrl} fill />
+              </S.IMGWrapper>
+            ))}
           </S.MoveContainer>
         </S.IMGContainer>
       </S.IMGOuterWrapper>
