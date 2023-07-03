@@ -12,6 +12,8 @@ import { useGetUnapproveList, useGetUserInfo } from 'api/admin';
 
 import * as S from './style';
 
+type ModalType = 'Approve' | 'Logout';
+
 const Header: React.FC = () => {
   const [hasNotification, setHasNotification] = useState<boolean>(false);
 
@@ -21,11 +23,18 @@ const Header: React.FC = () => {
 
   const { data: unapproveList } = useGetUnapproveList();
   const { data: userInfo } = useGetUserInfo();
-  const closeApproveModal = () => setShowModal(false);
 
   useEffect(() => {
-    setHasNotification(!!unapproveList?.length);
+    setHasNotification(true);
   }, [unapproveList]);
+
+  const handleShowModal = (modalType: ModalType) => {
+    if (showModal === modalType) {
+      setShowModal(false);
+    } else {
+      setShowModal(modalType);
+    }
+  };
 
   return (
     <S.Header>
@@ -35,7 +44,7 @@ const Header: React.FC = () => {
 
       <S.ApproveSection>
         <S.ApproveRequest
-          onClick={() => setShowModal('Approve')}
+          onClick={() => handleShowModal('Approve')}
           css={css`
             cursor: ${hasNotification ? 'pointer' : 'auto'};
           `}
@@ -44,13 +53,13 @@ const Header: React.FC = () => {
           가입 요청
           {hasNotification && <S.Notification />}
           {hasNotification && showModal === 'Approve' && (
-            <ApproveModal close={closeApproveModal} />
+            <ApproveModal close={() => setShowModal(false)} />
           )}
         </S.ApproveRequest>
 
         <S.LogoutSection>
           <S.LogoutButton
-            onClick={() => setShowModal('Logout')}
+            onClick={() => handleShowModal('Logout')}
             css={css`
               color: ${showModal === 'Logout' ? '#9e9e9e' : '#616161'};
             `}
