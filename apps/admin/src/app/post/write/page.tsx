@@ -44,6 +44,8 @@ const categoryPath = {
   EVENT_GALLERY: '/gallery',
 } as const;
 
+const categoryQueryStrings = Object.keys(categoryPath);
+
 const preventClose = (e: BeforeUnloadEvent) => {
   e.preventDefault();
   e.returnValue = '';
@@ -72,7 +74,7 @@ export default function WritePage({
 
   const { mutate, isSuccess } = usePostWritePost();
 
-  if (!category) {
+  if (!category || !categoryQueryStrings.includes(category)) {
     replace('/post/write?category=NOTICE');
   }
 
