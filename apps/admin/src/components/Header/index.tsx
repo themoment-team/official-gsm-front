@@ -25,7 +25,7 @@ const Header: React.FC = () => {
   const { data: userInfo } = useGetUserInfo();
 
   useEffect(() => {
-    setHasNotification(true);
+    setHasNotification(!!unapproveList?.length);
   }, [unapproveList]);
 
   const handleShowModal = (modalType: ModalType) => {
