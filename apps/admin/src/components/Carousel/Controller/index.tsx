@@ -14,6 +14,8 @@ interface CarouselControllerProps {
   postSeq: number;
 }
 
+const extentions = ['JPG', 'PNG', 'HEIC', 'JPEG', 'WEBP'];
+
 const CarouselController: React.FC<CarouselControllerProps> = ({
   currentIndex,
   setCurrentIndex,
@@ -40,18 +42,21 @@ const CarouselController: React.FC<CarouselControllerProps> = ({
         <ChevronIcon turn={'left'} />
       </S.MoveButton>
       <S.DotWrapper>
-        {data?.fileInfo.map((file, i) => (
-          <S.Dot
-            key={file.fileName}
-            css={
-              currentIndex === i &&
-              css`
-                width: 1rem;
-                background: #b2e449;
-              `
-            }
-          />
-        ))}
+        {data?.fileInfo.map(
+          (file, i) =>
+            extentions.includes(file.fileExtension) && (
+              <S.Dot
+                key={file.fileName}
+                css={
+                  currentIndex === i &&
+                  css`
+                    width: 1rem;
+                    background: #b2e449;
+                  `
+                }
+              />
+            )
+        )}
       </S.DotWrapper>
       <S.MoveButton onClick={moveRight}>
         <ChevronIcon turn={'right'} />
