@@ -3,7 +3,7 @@ import CategoryLink from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'client/ListPage/Category/CategoryLink',
+  title: 'client/ListPage/Category/Link',
   component: CategoryLink,
 } as Meta<typeof CategoryLink>;
 
