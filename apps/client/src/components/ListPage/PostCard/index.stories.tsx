@@ -1,5 +1,6 @@
-import ListPagePostCard, { ListPagePostCardProps } from '.';
+import ListPagePostCard from '.';
 
+import type { ListPagePostCardProps } from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
