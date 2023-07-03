@@ -11,12 +11,11 @@ export const ImgWrapper = styled.div`
   position: relative;
   width: 21.25rem;
   height: 21.25rem;
-  border-radius: 50%;
-  background-color: #f8f8f8;
   margin-bottom: 2.5rem;
 
   img {
     border-radius: 50%;
+    object-fit: cover;
   }
 `;
 
@@ -36,6 +35,6 @@ export const Title = styled.h2`
 
 export const SubTitle = styled.p`
   ${({ theme }) => theme.typo.h3};
-  font-weight: 600;
   color: ${({ theme }) => theme.color.gray['090']};
+  font-weight: 600;
 `;
