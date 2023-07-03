@@ -4,8 +4,8 @@ import * as S from './style';
 
 const DeletePostButton: React.FC<
   React.ButtonHTMLAttributes<HTMLButtonElement>
-> = () => (
-  <S.PostDeleteButton>
+> = ({ ...attributes }) => (
+  <S.PostDeleteButton {...attributes}>
     <TrashIcon />
     <S.DeleteText>삭제하기</S.DeleteText>
   </S.PostDeleteButton>
