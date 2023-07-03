@@ -9,14 +9,15 @@ interface ApproveModalProps {
 }
 
 const LogoutModal: React.FC<ApproveModalProps> = ({ name }) => {
-  const { mutate } = useDeleteLogout();
+  const { mutate, isSuccess } = useDeleteLogout();
 
   const handleLogout = () => {
     mutate();
-    if (process.env.NODE_ENV === 'production') {
-      redirect('/auth/signin');
-    }
   };
+
+  if (isSuccess) {
+    redirect('/auth/signin');
+  }
 
   return (
     <S.ModalContainer>
