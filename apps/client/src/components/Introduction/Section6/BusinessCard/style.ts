@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const Business = styled.div`
   display: flex;
@@ -8,11 +8,16 @@ export const Business = styled.div`
 `;
 
 export const ImgWrapper = styled.div`
+  position: relative;
   width: 21.25rem;
   height: 21.25rem;
   border-radius: 50%;
   background-color: #f8f8f8;
   margin-bottom: 2.5rem;
+
+  img {
+    border-radius: 50%;
+  }
 `;
 
 export const Title = styled.h2`

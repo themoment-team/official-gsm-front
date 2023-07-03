@@ -1,14 +1,23 @@
+import Image from 'next/image';
+
 import { css, useTheme } from '@emotion/react';
 
-import type { BusinessCardItemType } from 'client/types/introduce';
+import type { BusinessCardItemType } from 'client/types';
 
 import * as S from './style';
 
-const BusinessCard = ({ title, subTitle, color }: BusinessCardItemType) => {
+const BusinessCard = ({
+  title,
+  subTitle,
+  color,
+  img,
+}: BusinessCardItemType) => {
   const theme = useTheme();
   return (
     <S.Business>
-      <S.ImgWrapper />
+      <S.ImgWrapper>
+        <Image src={`/images/about/section6/${img}`} alt={img} fill />
+      </S.ImgWrapper>
       <S.Title
         css={css`
           color: ${theme.color.primary[color]};

@@ -5,16 +5,14 @@ export const Layout = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 11.25rem 21.25rem;
+  width: 100vw;
+  height: 68.75rem;
   gap: 6.6875rem;
-  height: 68.6875rem;
 `;
 
 export const BusinessLayout = styled.div`
   display: flex;
-  flex: 1;
-  width: 100%;
-  justify-content: space-between;
+  gap: 6.875rem;
 `;
 
 export const Business = styled.div`
