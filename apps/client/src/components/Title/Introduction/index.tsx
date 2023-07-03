@@ -1,12 +1,11 @@
 import styled from '@emotion/styled';
 
 import { TitleTemplate } from 'client/components';
-import type { PointColorType, PointPositionType } from 'client/types/title';
+import type { PointColorType, PointPositionType } from 'client/types';
 
 interface IntroductionTitleProps {
   children: React.ReactNode;
   pointColor: PointColorType;
-  className?: string;
   pointPosition?: PointPositionType;
   pointSize?: string;
 }
@@ -14,14 +13,11 @@ interface IntroductionTitleProps {
 const IntroductionTitle: React.FC<IntroductionTitleProps> = ({
   children,
   pointColor,
-  className,
   pointPosition = 'top',
   pointSize = '1.125rem',
 }) => (
   <TitleTemplate point={{ pointColor, pointSize, pointPosition }}>
-    <IntroductionTitleStyle className={className}>
-      {children}
-    </IntroductionTitleStyle>
+    <IntroductionTitleStyle>{children}</IntroductionTitleStyle>
   </TitleTemplate>
 );
 

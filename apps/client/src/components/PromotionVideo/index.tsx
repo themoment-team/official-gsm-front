@@ -1,7 +1,10 @@
-import { Video } from './style';
+import * as S from './style';
 
 const PromotionVideo = () => (
-  <Video src='/video/promotion.webm' autoPlay loop muted />
+  <S.VidoeWrapper>
+    <S.Video src='/video/promotion.webm' autoPlay loop muted />
+    <S.VideoCover />
+  </S.VidoeWrapper>
 );
 
 export default PromotionVideo;

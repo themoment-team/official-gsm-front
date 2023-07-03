@@ -6,13 +6,14 @@ export const ModalConatiner = styled.div`
   position: absolute;
   width: 20.625rem;
   height: 16.875rem;
-  top: 6.5rem;
+  top: 4.5rem;
   left: 50%;
   transform: translate(-50%, 0%);
   background-color: #fdfdfd;
   box-shadow: 0 0.25rem 1.875rem rgba(0, 0, 0, 0.11);
   border-radius: 1.25rem;
-  padding: 1.625rem 1rem 0.5rem 1rem;
+  padding: 1.25rem;
+  cursor: auto;
 `;
 
 export const ModalHeader = styled.div`

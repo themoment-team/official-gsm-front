@@ -21,7 +21,7 @@ export default function DetailPage({ params: { postSeq } }: DetailPageProps) {
 
   return (
     <DetailPageWrapper>
-      <Header hasNotification={false} name={'정문정'} />
+      <Header />
       {data?.category === 'EVENT_GALLERY' ? (
         <GalleryDetail postSeq={postSeq} />
       ) : (
@@ -35,4 +35,6 @@ const DetailPageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 5rem;
+  padding-bottom: 5rem;
 `;

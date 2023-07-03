@@ -9,7 +9,8 @@ export const PostCard = styled(Link)`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.9375rem 2.6875rem 0.9375rem 1.5rem;
+  padding: 0.9375rem 1.5rem;
+  background: #ffffff;
   cursor: pointer;
   :hover {
     background: #eeeeee;

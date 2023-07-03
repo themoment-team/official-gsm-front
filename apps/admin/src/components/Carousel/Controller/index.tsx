@@ -36,9 +36,9 @@ const CarouselController: React.FC<CarouselControllerProps> = ({
 
   return (
     <S.CarouselBar>
-      <S.CursorWrapper onClick={moveLeft}>
+      <S.MoveButton onClick={moveLeft}>
         <ChevronIcon turn={'left'} />
-      </S.CursorWrapper>
+      </S.MoveButton>
       <S.DotWrapper>
         {data?.fileInfo.map((file, i) => (
           <S.Dot
@@ -53,9 +53,9 @@ const CarouselController: React.FC<CarouselControllerProps> = ({
           />
         ))}
       </S.DotWrapper>
-      <S.CursorWrapper onClick={moveRight}>
+      <S.MoveButton onClick={moveRight}>
         <ChevronIcon turn={'right'} />
-      </S.CursorWrapper>
+      </S.MoveButton>
     </S.CarouselBar>
   );
 };

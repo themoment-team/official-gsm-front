@@ -1,23 +1,20 @@
-import React from 'react';
-
-import { css } from '@emotion/react';
+import { useState, useEffect } from 'react';
 
 import { UnderscoreIcon } from 'client/assets';
-import type { PointColorType } from 'client/types/title';
 
 import * as S from './style';
 
-interface SlotMachineProps {
-  pointColor: PointColorType;
-}
+const Items = ['🎨', '💻', '🎮', '🛠️', '📱'];
 
-const SlotMachine: React.FC<SlotMachineProps> = () => (
-  <div
-    css={css`
-      background-color: plum;
-      height: 15.5rem;
-    `}
-  >
+const SlotMachine = () => {
+  const [shuffledItems, setShuffledItems] = useState(Items);
+
+  useEffect(() => {
+    const shuffled = [...Items].sort(() => Math.random() - 0.5);
+    setShuffledItems(shuffled);
+  }, []);
+
+  return (
     <S.SlotMachineAnimation>
       <span>뭐든지</span>
       <S.ListIconWrap>
@@ -25,11 +22,9 @@ const SlotMachine: React.FC<SlotMachineProps> = () => (
           {'['}
           <S.Wrap className='wrap'>
             <S.List className='rolling'>
-              <S.Item>🎨</S.Item>
-              <S.Item>💻 </S.Item>
-              <S.Item>🎮</S.Item>
-              <S.Item>🛠️</S.Item>
-              <S.Item>📱</S.Item>
+              {shuffledItems.map((item) => (
+                <S.Item key={item}>{item}</S.Item>
+              ))}
             </S.List>
           </S.Wrap>
           {']'}
@@ -41,7 +36,7 @@ const SlotMachine: React.FC<SlotMachineProps> = () => (
         <S.Point>.</S.Point>
       </span>
     </S.SlotMachineAnimation>
-  </div>
-);
+  );
+};
 
 export default SlotMachine;

@@ -13,6 +13,13 @@ export const GalleryCard = styled(Link)`
       filter: brightness(60%);
     }
   }
+  .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
 `;
 
 export const IMGWrapper = styled.div`
@@ -35,6 +42,7 @@ export const Title = styled.h2`
   line-height: 1.5rem;
   color: #212121;
   margin-bottom: 0.5625rem;
+  -webkit-line-clamp: 1;
 `;
 
 export const ContentPreview = styled.p`
@@ -43,12 +51,7 @@ export const ContentPreview = styled.p`
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: #424242;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-break: break-all;
-  display: -webkit-box;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
 `;
 
 export const WiterAndDateWrapper = styled.div`

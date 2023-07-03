@@ -1,8 +1,6 @@
-import Link from 'next/link';
-
 import styled from '@emotion/styled';
 
-export const LinkToHelloGSMWrapper = styled(Link)`
+export const LinkToHelloGSMWrapper = styled.a`
   width: 77.375rem;
   height: 8.0625rem;
   display: flex;
@@ -11,6 +9,7 @@ export const LinkToHelloGSMWrapper = styled(Link)`
   justify-content: center;
   background: linear-gradient(90deg, #35d391 0%, #6cabe4 48.96%, #c0fbff 100%);
   border-radius: 1.25rem;
+  margin: 7.75rem 0;
 `;
 
 export const TextWrapper = styled.div`
