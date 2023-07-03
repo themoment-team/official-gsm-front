@@ -27,10 +27,9 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
   const { replace } = useRouter();
 
   const { data } = useGetPostDetail(postSeq);
+  const category = data?.category;
 
   const dialog = useRef<HTMLDialogElement>(null);
-
-  const category = data?.category;
 
   const deletePost = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
