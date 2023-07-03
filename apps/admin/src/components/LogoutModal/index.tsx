@@ -18,6 +18,8 @@ const LogoutModal: React.FC<ApproveModalProps> = ({ name }) => {
     }
   };
 
+  console.log(name);
+
   return (
     <S.ModalContainer>
       <S.Teacher>{name}선생님</S.Teacher>
