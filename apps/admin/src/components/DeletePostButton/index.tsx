@@ -2,12 +2,10 @@ import { TrashIcon } from 'admin/assets';
 
 import * as S from './style';
 
-interface DeletePostButtonProps {
-  onClick: () => void;
-}
-
-const DeletePostButton: React.FC<DeletePostButtonProps> = ({ onClick }) => (
-  <S.PostDeleteButton onClick={onClick}>
+const DeletePostButton: React.FC<
+  React.ButtonHTMLAttributes<HTMLButtonElement>
+> = () => (
+  <S.PostDeleteButton>
     <TrashIcon />
     <S.DeleteText>삭제하기</S.DeleteText>
   </S.PostDeleteButton>
