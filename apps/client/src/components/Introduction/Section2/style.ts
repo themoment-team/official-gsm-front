@@ -27,7 +27,6 @@ export const ContentSection = styled.div`
   justify-content: center;
   gap: 7.5rem;
   text-align: center;
-  background: #051b30;
 `;
 
 export const Point = styled.span`
