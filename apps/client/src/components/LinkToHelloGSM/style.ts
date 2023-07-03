@@ -13,7 +13,6 @@ export const LinkToHelloGSMWrapper = styled(Link)`
   margin: 7.75rem 0;
   z-index: 1;
   position: relative;
-  background-size: 400% 400%;
   background: linear-gradient(90deg, #35d391 0%, #6cabe4 48.96%, #c0fbff 100%);
   background-size: 200% 200%;
   &:hover {
