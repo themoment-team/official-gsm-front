@@ -4,6 +4,8 @@ import Image from 'next/image';
 
 import { css } from '@emotion/react';
 
+import { filterImages } from 'common';
+
 import { CarouselController } from 'admin/components';
 import * as S from 'admin/components/Carousel/style';
 
@@ -13,16 +15,12 @@ interface GalleryCarouselProps {
   postSeq: number;
 }
 
-const extentions = ['JPG', 'PNG', 'HEIC', 'JPEG', 'WEBP'];
-
 const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ postSeq }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const { data } = useGetPostDetail(postSeq);
 
-  const imageFiles = data?.fileInfo.filter((file) =>
-    extentions.includes(file.fileExtension)
-  );
+  const imageFiles = filterImages(data?.fileInfo);
 
   return (
     <S.GalleryCarouselWrapper>

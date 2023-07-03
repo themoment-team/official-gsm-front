@@ -2,6 +2,8 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { css } from '@emotion/react';
 
+import { filterImages } from 'common';
+
 import { ChevronIcon } from 'admin/assets';
 
 import { useGetPostDetail } from 'api/client';
@@ -14,8 +16,6 @@ interface CarouselControllerProps {
   postSeq: number;
 }
 
-const extentions = ['JPG', 'PNG', 'HEIC', 'JPEG', 'WEBP'];
-
 const CarouselController: React.FC<CarouselControllerProps> = ({
   currentIndex,
   setCurrentIndex,
@@ -23,9 +23,7 @@ const CarouselController: React.FC<CarouselControllerProps> = ({
 }) => {
   const { data } = useGetPostDetail(postSeq);
 
-  const imageFiles = data?.fileInfo.filter((file) =>
-    extentions.includes(file.fileExtension)
-  );
+  const imageFiles = filterImages(data?.fileInfo);
 
   const min = 0;
   const max = (imageFiles?.length ?? 0) - 1;
