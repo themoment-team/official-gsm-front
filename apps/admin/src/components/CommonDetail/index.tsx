@@ -1,4 +1,4 @@
-import { EditButton } from 'admin/components';
+import { EditButton, DeletePostButton } from 'admin/components';
 
 import { useGetPostDetail } from 'api/client';
 
@@ -13,6 +13,10 @@ interface CommonDetailProps {
 const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
   const { data } = useGetPostDetail(postSeq);
 
+  const DeletePost = () => {
+    alert('');
+  };
+
   return (
     <>
       {data && (
@@ -23,7 +27,10 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
             createdAt={data.createdAt}
             postWriter={data.postWriter}
           />
-          <EditButton href='/post/edit' />
+          <S.ButtonWrapper>
+            <EditButton href='/post/edit' />
+            <DeletePostButton onClick={DeletePost} />
+          </S.ButtonWrapper>
           <S.Horizon />
           <S.Content>{data.postContent}</S.Content>
           <S.Horizon />
