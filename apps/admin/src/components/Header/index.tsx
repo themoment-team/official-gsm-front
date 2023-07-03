@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import type { FC } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -13,14 +12,16 @@ import { useGetUnapproveList, useGetUserInfo } from 'api/admin';
 
 import * as S from './style';
 
-const Header: FC = () => {
-  const [showApproveModal, setShowApproveModal] = useState<boolean>(false);
-  const [showLogoutModal, setShowLogoutModal] = useState<boolean>(false);
+const Header: React.FC = () => {
   const [hasNotification, setHasNotification] = useState<boolean>(false);
+
+  const [showModal, setShowModal] = useState<'Approve' | 'Logout' | false>(
+    false
+  );
 
   const { data: unapproveList } = useGetUnapproveList();
   const { data: userInfo } = useGetUserInfo();
-  const closeApproveModal = () => setShowApproveModal(false);
+  const closeApproveModal = () => setShowModal(false);
 
   useEffect(() => {
     setHasNotification(!!unapproveList?.length);
@@ -34,7 +35,7 @@ const Header: FC = () => {
 
       <S.ApproveSection>
         <S.ApproveRequest
-          onClick={() => setShowApproveModal(!showApproveModal)}
+          onClick={() => setShowModal('Approve')}
           css={css`
             cursor: ${hasNotification ? 'pointer' : 'auto'};
           `}
@@ -42,21 +43,23 @@ const Header: FC = () => {
           <I.NotificationIcon hasNotification={hasNotification} />
           가입 요청
           {hasNotification && <S.Notification />}
-          {hasNotification && showApproveModal && (
+          {hasNotification && showModal === 'Approve' && (
             <ApproveModal close={closeApproveModal} />
           )}
         </S.ApproveRequest>
 
         <S.LogoutSection>
           <S.LogoutButton
-            onClick={() => setShowLogoutModal(!showLogoutModal)}
+            onClick={() => setShowModal('Logout')}
             css={css`
-              color: ${showLogoutModal ? '#9e9e9e' : '#616161'};
+              color: ${showModal === 'Logout' ? '#9e9e9e' : '#616161'};
             `}
           >
             {userInfo?.userName} 선생님
           </S.LogoutButton>
-          {showLogoutModal && <LogoutModal name={userInfo?.userName ?? ''} />}
+          {showModal === 'Logout' && (
+            <LogoutModal name={userInfo?.userName ?? ''} />
+          )}
         </S.LogoutSection>
       </S.ApproveSection>
     </S.Header>
