@@ -1,4 +1,8 @@
-import { EditButton, DeletePostButton } from 'admin/components';
+import { useRef } from 'react';
+
+import { css } from '@emotion/react';
+
+import { EditButton, DeletePostButton, DeleteModal } from 'admin/components';
 
 import { useGetPostDetail } from 'api/client';
 
@@ -13,7 +17,9 @@ interface CommonDetailProps {
 const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
   const { data } = useGetPostDetail(postSeq);
 
-  const DeletePost = () => {
+  const dialog = useRef<HTMLDialogElement>(null);
+
+  const deletePost = () => {
     alert('');
   };
 
@@ -29,7 +35,7 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
           />
           <S.ButtonWrapper>
             <EditButton href='/post/edit' />
-            <DeletePostButton onClick={DeletePost} />
+            <DeletePostButton onClick={() => dialog.current?.showModal()} />
           </S.ButtonWrapper>
           <S.Horizon />
           <S.Content>{data.postContent}</S.Content>
@@ -44,6 +50,18 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
               </S.FileList>
             </>
           )}
+          <dialog
+            css={css`
+              border-radius: 0.625rem;
+              border: 0;
+              ::backdrop {
+                background: rgba(5, 5, 5, 0.4);
+              }
+            `}
+            ref={dialog}
+          >
+            <DeleteModal onClick={deletePost} />
+          </dialog>
         </S.CommonDetailWrapper>
       )}
     </>
