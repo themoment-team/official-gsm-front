@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
-import { sectionHeight } from 'client/components/Introduction/Section2/sectionHeight';
+import { sectionHeight } from 'client/components/About/Section2/sectionHeight';
 
 interface ContentProps {
   children: ReactNode;
