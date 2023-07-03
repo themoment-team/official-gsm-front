@@ -23,13 +23,17 @@ const PaginationController: React.FC<PageNationControllerProps> = ({
 
   const { push } = useRouter();
 
-  const previousPage = `${pathname}?pageNumber=${pageNumber - 1}`;
-  const nextPage = `${pathname}?pageNumber=${pageNumber + 1}`;
+  const updatePageNumber = (pageNumber: number) => {
+    const params = new URLSearchParams();
+    params.set('pageNumber', String(pageNumber));
+
+    return push(`${pathname}?${params.toString()}`);
+  };
 
   return (
     <S.PaginationController>
       <S.PaginationButton
-        onClick={() => push(previousPage)}
+        onClick={() => updatePageNumber(pageNumber - 1)}
         type='button'
         disabled={pageNumber === 1}
       >
@@ -44,7 +48,7 @@ const PaginationController: React.FC<PageNationControllerProps> = ({
               key={showPageNumber}
               type='button'
               selected={pageNumber === showPageNumber}
-              onClick={() => push(`${pathname}?pageNumber=${showPageNumber}`)}
+              onClick={() => updatePageNumber(showPageNumber)}
             >
               {showPageNumber}
             </S.PageNumberButton>
@@ -52,7 +56,7 @@ const PaginationController: React.FC<PageNationControllerProps> = ({
         })}
       </S.PageNumberWrapper>
       <S.PaginationButton
-        onClick={() => push(nextPage)}
+        onClick={() => updatePageNumber(pageNumber + 1)}
         type='button'
         disabled={pageNumber === totalPages}
       >
