@@ -1,5 +1,3 @@
-import { formatDate } from 'common';
-
 import { WriterAndDate } from 'ui';
 
 import * as S from './style';
@@ -19,7 +17,7 @@ const ListPagePostCard: React.FC<ListPagePostCardProps> = ({
 }) => (
   <S.PostCard>
     <S.IndexAndTitle>
-      <S.PostIndex>#{formatDate(postIndex)}</S.PostIndex>
+      <S.PostIndex>#{postIndex}</S.PostIndex>
       <S.PostTitle>{postTitle}</S.PostTitle>
     </S.IndexAndTitle>
     <WriterAndDate postWriter={postWriter} createdAt={postDate} />
