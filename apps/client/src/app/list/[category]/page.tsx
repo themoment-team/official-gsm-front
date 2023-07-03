@@ -1,6 +1,13 @@
 'use client';
 
-import { ListPageCategory } from 'client/components';
+import styled from '@emotion/styled';
+
+import {
+  Footer,
+  Header,
+  ListPageCategory,
+  ListPageTitle,
+} from 'client/components';
 import type { CategoryParamsType } from 'client/types';
 
 interface ListPageProps {
@@ -8,5 +15,20 @@ interface ListPageProps {
 }
 
 export default function ListPage({ params: { category } }: ListPageProps) {
-  return <ListPageCategory categoryParam={category} />;
+  return (
+    <>
+      <Header segment={''} />
+      <Content>
+        <ListPageCategory categoryParam={category} />
+        <ListPageTitle category={category} />
+      </Content>
+      <Footer />
+    </>
+  );
 }
+
+const Content = styled.div`
+  width: 77.5rem;
+  margin: 0 auto;
+  padding: 5rem 0 7.5rem;
+`;
