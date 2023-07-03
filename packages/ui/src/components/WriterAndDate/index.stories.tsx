@@ -3,15 +3,10 @@ import WriterAndDate from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'admin/WriterAndDate',
+  title: 'ui/WriterAndDate',
   component: WriterAndDate,
   argTypes: {
     onClick: { action: 'clicked' },
-  },
-  parameters: {
-    backgrounds: {
-      default: 'dark',
-    },
   },
 } as Meta<typeof WriterAndDate>;
 

@@ -24,6 +24,6 @@ export const Dot = styled.div`
   transition: all 0.3s;
 `;
 
-export const CursorWrapper = styled.div`
+export const MoveButton = styled.button`
   cursor: pointer;
 `;
