@@ -6,9 +6,10 @@ import { WriteButton } from 'admin/components';
 
 import * as S from './style';
 
+type CategoryParamsType = 'notice' | 'newsletter' | 'gallery';
+
 interface PostListHeaderProps {
-  category: 'gallery' | 'notice' | 'newsletter';
-  isAdmin?: boolean;
+  category: CategoryParamsType;
   marginTop?: string;
 }
 
@@ -18,9 +19,17 @@ const Title = {
   gallery: '행사 갤러리',
 } as const;
 
+const categoryQueryString = {
+  notice: 'NOTICE',
+  newsletter: 'FAMILY_NEWSLETTER',
+  gallery: 'EVENT_GALLERY',
+} as const;
+
+const writePageHref = (category: CategoryParamsType) =>
+  `/post/write?category=${categoryQueryString[category]}`;
+
 const PostListHeader: React.FC<PostListHeaderProps> = ({
   category,
-  isAdmin = true,
   marginTop,
 }) => (
   <S.PostListHeader
@@ -29,7 +38,7 @@ const PostListHeader: React.FC<PostListHeaderProps> = ({
     `}
   >
     <S.CategoryTitle>{Title[category]}</S.CategoryTitle>
-    {isAdmin && <WriteButton href='/post/write' />}
+    <WriteButton href={writePageHref(category)} />
   </S.PostListHeader>
 );
 

@@ -13,20 +13,17 @@ type Story = StoryObj<typeof PostListHeader>;
 export const Gallery: Story = {
   args: {
     category: 'gallery',
-    isAdmin: true,
   },
 };
 
 export const Notice: Story = {
   args: {
     category: 'notice',
-    isAdmin: true,
   },
 };
 
 export const FamilyCorrespondence: Story = {
   args: {
     category: 'newsletter',
-    isAdmin: true,
   },
 };
