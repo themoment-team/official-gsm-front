@@ -5,7 +5,7 @@ import { useGetPostList } from 'api/client';
 import * as S from './style';
 
 const MainpageNewsletterList = () => {
-  const { data } = useGetPostList('FAMILY_NEWSLETTER', 0);
+  const { data } = useGetPostList('FAMILY_NEWSLETTER', 1);
 
   return (
     <S.MainpageNewsletterList>

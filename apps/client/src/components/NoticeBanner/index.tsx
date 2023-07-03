@@ -9,7 +9,7 @@ import NoticeBannerController from './Controller';
 import * as S from './style';
 
 const NoticeBanner: React.FC = () => {
-  const { data } = useGetPostList('NOTICE', 0);
+  const { data } = useGetPostList('NOTICE', 1);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   useEffect(() => {
