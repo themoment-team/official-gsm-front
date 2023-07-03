@@ -3,6 +3,8 @@ import type { ReactNode } from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
+import { sectionHeight } from 'client/components/Introduction/Section2/sectionHeight';
+
 interface ContentProps {
   children: ReactNode;
   index: number;
@@ -10,11 +12,6 @@ interface ContentProps {
 }
 
 const Content = ({ children, index, scrollHeight }: ContentProps) => {
-  const sectionHeight = {
-    contentSectionHeightPx: 1300,
-    scrollSectionHeightPx: 600,
-  };
-
   const scrollSetting = {
     scrollMax:
       sectionHeight.contentSectionHeightPx -

@@ -1,5 +1,9 @@
 import styled from '@emotion/styled';
 
+import { pxToRem } from 'common';
+
+import { sectionHeight } from './sectionHeight';
+
 export const Layout = styled.div`
   position: relative;
   width: 100vw;
@@ -11,6 +15,7 @@ export const Layout = styled.div`
 `;
 
 export const ScrollSection = styled.div`
+  height: ${pxToRem(sectionHeight.scrollSectionHeightPx)}rem;
   overflow-y: scroll;
   scrollbar-width: none;
 
@@ -21,6 +26,7 @@ export const ScrollSection = styled.div`
 `;
 
 export const ContentSection = styled.div`
+  height: ${pxToRem(sectionHeight.contentSectionHeightPx)}rem;
   display: flex;
   flex-direction: column;
   align-items: center;
