@@ -41,13 +41,13 @@ export const Notification = styled.div`
   border-radius: 50%;
 `;
 
+export const LogoutSection = styled.div`
+  position: relative;
+`;
+
 export const LogoutButton = styled.button`
   color: #505050;
   font-weight: 700;
   font-size: 0.875rem;
   line-height: 1.25rem;
-`;
-
-export const LogoutSection = styled.div`
-  position: relative;
 `;
