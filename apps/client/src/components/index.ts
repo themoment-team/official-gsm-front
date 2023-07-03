@@ -1,4 +1,5 @@
 export { default as CategoryHeader } from './CategoryHeader';
+export { default as CurriculumCards } from './Introduction/Section4/CurriculumCards';
 export { default as EducationDirection } from './EducationDirection';
 export { default as Footer } from './Footer';
 export { default as GalleryCard } from './GalleryCard';
@@ -19,6 +20,7 @@ export { default as ReturnToList } from './ReturnToList';
 export { default as Section1 } from './Introduction/Section1';
 export { default as Section2 } from './Introduction/Section2';
 export { default as Section3 } from './Introduction/Section3';
+export { default as Section4 } from './Introduction/Section4';
 export { default as Section5 } from './Introduction/Section5';
 export { default as Section7 } from './Introduction/Section7';
 export { default as Section8 } from './Introduction/Section8';
