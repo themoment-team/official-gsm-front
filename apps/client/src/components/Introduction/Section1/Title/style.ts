@@ -34,7 +34,7 @@ export const FirstTitle = styled(Title)`
   opacity: 0;
   @keyframes leftFadeInOut {
     0% {
-      left: -100px;
+      left: -6.25rem;
     }
     100% {
       opacity: 1;
@@ -53,7 +53,7 @@ export const SecondTitle = styled(Title)`
   opacity: 0;
   @keyframes rightFadeInOut {
     0% {
-      right: -100px;
+      right: -6.25rem;
     }
     100% {
       opacity: 1;
@@ -70,7 +70,7 @@ export const ThirdTitle = styled(Title)`
   opacity: 0;
   @keyframes leftFadeInOut {
     0% {
-      left: -100px;
+      left: -6.25rem;
     }
     100% {
       opacity: 1;
