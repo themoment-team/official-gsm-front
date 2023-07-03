@@ -106,6 +106,9 @@ export const List = styled.ul`
 `;
 
 export const Item = styled.li`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 6.25rem;
   height: 6.25rem;
   text-align: center;

@@ -1,7 +1,6 @@
-import { WriterAndDate } from 'admin/components';
-
 import type { ContentType } from 'api/client';
 
+import { WriterAndDate } from 'ui';
 
 import * as S from './style';
 

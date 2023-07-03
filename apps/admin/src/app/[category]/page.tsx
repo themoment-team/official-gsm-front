@@ -1,8 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 import styled from '@emotion/styled';
 
@@ -29,15 +27,26 @@ type CategoryParamsType = keyof typeof categoryQueryString;
 
 interface ListPageProps {
   params: { category: CategoryParamsType };
+  searchParams: { pageNumber: string };
 }
 
-export default function ListPage({ params: { category } }: ListPageProps) {
-  const [pageNumber, setPageNumber] = useState<number>(0);
+export default function ListPage({
+  params: { category },
+  searchParams,
+}: ListPageProps) {
+  const { replace } = useRouter();
+
+  /** 1 ~ totalPages */
+  const pageNumber = Number(searchParams.pageNumber ?? 1);
 
   const { data } = useGetPostList(categoryQueryString[category], pageNumber);
 
   if (!categoryParamsArray.includes(category)) {
-    redirect('/');
+    replace('/');
+  }
+
+  if (Number.isNaN(pageNumber) || pageNumber < 1) {
+    replace(`/${category}`);
   }
 
   return (
@@ -55,7 +64,6 @@ export default function ListPage({ params: { category } }: ListPageProps) {
         {(data?.totalPages ?? 0) > 1 && (
           <PaginationController
             pageNumber={pageNumber}
-            setPageNumber={setPageNumber}
             totalPages={data?.totalPages ?? 0}
           />
         )}
@@ -69,6 +77,7 @@ const ContentWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   margin-top: 2.5rem;
+  padding-bottom: 5rem;
 `;
 
 // it's not working in client component

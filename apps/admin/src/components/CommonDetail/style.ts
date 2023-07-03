@@ -13,6 +13,7 @@ export const Title = styled.h1`
   font-size: 2.125rem;
   line-height: 3.125rem;
   color: #050505;
+  word-break: break-all;
 `;
 
 export const Horizon = styled.div`
@@ -28,7 +29,7 @@ export const Content = styled.p`
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: #212121;
-  word-break: keep-all;
+  word-break: break-all;
 `;
 
 export const FileTitle = styled.h2`

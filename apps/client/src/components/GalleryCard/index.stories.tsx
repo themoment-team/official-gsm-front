@@ -24,3 +24,17 @@ export const Primary: Story = {
     },
   },
 };
+
+export const Secondary: Story = {
+  args: {
+    post: {
+      postTitle: '2023년 중학생 대상 학교 방문 체험 프로그램',
+      postWriter: '정문정',
+      createdAt: '2023-05-03T08:18:48.250197',
+      postSeq: 1,
+      thumbnailUrl:
+        'https://static-cse.canva.com/blob/649373/createbanners.jpg',
+      contentPreview: '',
+    },
+  },
+};

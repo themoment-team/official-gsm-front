@@ -50,6 +50,7 @@ export const Title = styled.h5`
 `;
 
 export const ContentPreview = styled.p`
+  height: 2.5rem;
   font-weight: 400;
   -webkit-line-clamp: 2;
   ${({ theme }) => theme.typo.body2}
