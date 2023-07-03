@@ -12,8 +12,8 @@ export const ModalContainer = styled.div`
   width: 8.4375rem;
   padding: 1.25rem 0rem 0.875rem 0rem;
   background-color: #fcfcfc;
-  border-radius: 20px;
-  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.11);
+  border-radius: 1.25rem;
+  box-shadow: 0rem 0rem 1.875rem 0rem rgba(0, 0, 0, 0.11);
 `;
 
 export const Teacher = styled.p`
