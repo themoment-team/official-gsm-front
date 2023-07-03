@@ -111,7 +111,8 @@ export default function WritePage() {
     );
   };
 
-  const canSubmit = category === 'EVENT_GALLERY' && files.length === 0;
+  const isGallery = category === 'EVENT_GALLERY';
+  const canSubmit = isGallery && files.length === 0;
 
   return (
     <>
@@ -201,7 +202,7 @@ export default function WritePage() {
             ) : (
               <>
                 <S.FormItemTitle>
-                  첨부 파일 {category === 'EVENT_GALLERY' && '(필수)'}
+                  첨부 파일 {isGallery && '(필수)'}
                 </S.FormItemTitle>
                 <S.UploadBox>
                   <S.UploadTitle>
