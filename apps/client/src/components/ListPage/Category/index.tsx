@@ -1,4 +1,4 @@
-import type { CategoryParamsType } from 'client/types';
+import type { CategoryType } from 'types';
 
 import CategoryLink from './CategoryLink';
 import * as S from './style';
@@ -10,7 +10,7 @@ const categoryList = [
 ] as const;
 
 interface ListPageCategoryProps {
-  categoryParam: CategoryParamsType;
+  categoryParam: CategoryType;
 }
 
 const ListPageCategory: React.FC<ListPageCategoryProps> = ({

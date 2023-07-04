@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
-import type { ContentType } from 'api/client';
-
 import { DateComponent } from 'ui';
+
+import type { ContentType } from 'types';
 
 import * as S from './style';
 
