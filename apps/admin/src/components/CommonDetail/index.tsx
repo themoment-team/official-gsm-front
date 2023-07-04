@@ -1,6 +1,6 @@
 import { useRef } from 'react';
 
-// import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 import { css } from '@emotion/react';
 
@@ -17,17 +17,17 @@ interface CommonDetailProps {
   postSeq: number;
 }
 
-// const categorys = {
-//   NOTICE: '',
-//   FAMILY_NEWSLETTER: 'newsletter',
-//   EVENT_GALLERY: 'gallery',
-// } as const;
+const categorys = {
+  NOTICE: '',
+  FAMILY_NEWSLETTER: 'newsletter',
+  EVENT_GALLERY: 'gallery',
+} as const;
 
 const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
-  // const { replace } = useRouter();
+  const { replace } = useRouter();
 
   const { data } = useGetPostDetail(postSeq);
-  // const category = data?.category;
+  const category = data?.category;
 
   const dialog = useRef<HTMLDialogElement>(null);
 
@@ -35,7 +35,7 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
 
   const deletePost = () => {
     mutation.mutate();
-    // if (category) replace(`/${categoryks[category]}`);
+    if (category) replace(`/${categorys[category]}`);
     alert('게시글이 삭제되었습니다');
   };
 
