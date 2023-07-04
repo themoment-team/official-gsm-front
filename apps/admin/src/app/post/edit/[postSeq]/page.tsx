@@ -114,7 +114,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
       postTitle: data.title,
       postContent: data.content,
       category: category,
-      deletFileUrl: deletFileUrl,
+      deletFileUrl: deletFileUrl ? deletFileUrl : 'test',
     };
 
     const formData = new FormData();
