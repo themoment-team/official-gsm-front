@@ -59,7 +59,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
   const [files, setFiles] = useState<File[]>([]);
   const [prevFiles, setPrevFiles] = useState<FileInfoType[]>();
   const fileInput = useRef<HTMLInputElement>(null);
-  const [deletFileUrl, setDeletFileUrl] = useState<string[]>([]);
+  const [deletFileUrl, setDeletFileUrl] = useState<string[]>(['']);
 
   const { replace, back } = useRouter();
   const { mutate, isSuccess } = usePatchPost(postSeq);
