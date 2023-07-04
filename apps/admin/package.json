@@ -17,6 +17,7 @@
     "eslint": "8.40.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.44.3",
+    "types": "workspace:^",
     "typescript": "5.0.4",
     "ui": "workspace:^",
     "zod": "^3.21.4"
