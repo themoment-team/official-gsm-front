@@ -16,13 +16,14 @@ import {
   TextArea,
   FileUploadLabel,
   Header,
-  FileCard,
   FormCategory,
+  FileCard,
 } from 'admin/components';
 import * as S from 'admin/styles/page/write';
 
 import { usePatchPost } from 'api/admin';
-import type { PostCategoryType } from 'api/client';
+import type { FileInfoType } from 'api/client';
+import { useGetPostDetail, type PostCategoryType } from 'api/client';
 
 import { Button } from 'ui';
 
@@ -56,18 +57,27 @@ const preventClose = (e: BeforeUnloadEvent) => {
 export default function EditPage({ params: { postSeq } }: EditPageProps) {
   const [category, setCategory] = useState<PostCategoryType>('NOTICE');
   const [files, setFiles] = useState<File[]>([]);
+  const [prevFiles, setPrevFiles] = useState<FileInfoType[]>();
   const fileInput = useRef<HTMLInputElement>(null);
+  const [deletFileUrl, setDeletFileUrl] = useState<string[]>([]);
 
   const { replace, back } = useRouter();
+  const { mutate, isSuccess } = usePatchPost(postSeq);
+  const { data } = useGetPostDetail(postSeq);
 
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
-  } = useForm<FormType>({ resolver: zodResolver(schema) });
-
-  const { mutate, isSuccess } = usePatchPost(postSeq);
+  } = useForm<FormType>({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      title: data?.postTitle,
+      content: data?.postContent,
+    },
+  });
 
   useEffect(() => {
     (() => {
@@ -79,8 +89,24 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
     };
   }, []);
 
-  const handleCancel = (fileName: string) => {
+  useEffect(() => {
+    reset({
+      title: data?.postTitle,
+      content: data?.postContent,
+    });
+  }, [data?.postContent, data?.postTitle, reset]);
+
+  useEffect(() => {
+    setCategory(data?.category ?? 'NOTICE');
+    setPrevFiles(data?.fileInfo);
+  }, [data]);
+
+  const handleCancel = (fileName: string, fileUrl?: string) => {
     setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
+    setPrevFiles((prevFiles) =>
+      prevFiles?.filter((file) => file.fileName !== fileName)
+    );
+    fileUrl && setDeletFileUrl((prevArray) => [...prevArray, fileUrl]);
   };
 
   const onSubmit: SubmitHandler<FormType> = (data) => {
@@ -178,7 +204,8 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
             )}
           </div>
           <div>
-            {files.length > 0 ? (
+            {(prevFiles && prevFiles.length > 0) ||
+            (files && files.length > 0) ? (
               <div>
                 <S.FileTitleWrapper>
                   <S.FormItemTitle>첨부 파일</S.FormItemTitle>
@@ -193,7 +220,16 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
                   />
                 </S.FileTitleWrapper>
                 <S.FileCardBox>
-                  {files.map((file) => (
+                  {prevFiles?.map((file) => (
+                    <S.FileCardWrapper key={file.fileUrl}>
+                      <FileCard
+                        onCancel={handleCancel}
+                        fileName={file.fileName}
+                        fileUrl={file.fileUrl}
+                      />
+                    </S.FileCardWrapper>
+                  ))}
+                  {files?.map((file) => (
                     <S.FileCardWrapper key={file.name}>
                       <FileCard fileName={file.name} onCancel={handleCancel} />
                     </S.FileCardWrapper>
