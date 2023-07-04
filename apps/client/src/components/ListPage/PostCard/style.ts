@@ -7,7 +7,7 @@ export const PostCard = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid ${({ theme }) => theme.color.gray['040']};
+  border-bottom: 0.0625rem solid ${({ theme }) => theme.color.gray['040']};
   background-color: ${({ theme }) => theme.color.white};
   transition: background-color 0.3s;
   :hover {
