@@ -1,7 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 
-import type { PostCategoryType, PostListType } from 'api/client';
 import { get, postQueryKeys, postUrl } from 'api/client';
+
+import type { CategoryQueryStringType, PostListType } from 'types';
 
 /**
  *
@@ -10,7 +11,7 @@ import { get, postQueryKeys, postUrl } from 'api/client';
  * @returns useQuery()
  */
 export const useGetPostList = (
-  category: PostCategoryType,
+  category: CategoryQueryStringType,
   pageNumber: number
 ) =>
   useQuery(
