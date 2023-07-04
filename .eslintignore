@@ -1,7 +1,6 @@
 **/.next
 **/node_modules
 **/style.ts
-**/*.stories.tsx
 
 # axios http method function
 packages/api/admin/src/libs/api/admin.ts
