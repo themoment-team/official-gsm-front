@@ -114,6 +114,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
       postTitle: data.title,
       postContent: data.content,
       category: category,
+      deletFileUrl: deletFileUrl,
     };
 
     const formData = new FormData();
@@ -126,6 +127,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
     files.forEach((file) => formData.append('file', file));
 
     mutate(formData);
+    console.log(content);
   };
 
   if (isSuccess) replace(categoryPath[category]);
