@@ -31,9 +31,10 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
 
   const dialog = useRef<HTMLDialogElement>(null);
 
+  const mutation = useDeletePost(postSeq);
+
   const deletePost = () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useDeletePost(postSeq);
+    mutation.mutate();
     if (category) replace(`/${categorys[category]}`);
     alert('게시글이 삭제되었습니다');
   };
