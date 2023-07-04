@@ -22,6 +22,7 @@ export { default as Section2 } from './About/Section2';
 export { default as Section3 } from './About/Section3';
 export { default as Section4 } from './About/Section4';
 export { default as Section5 } from './About/Section5';
+export { default as Section6 } from './About/Section6';
 export { default as Section7 } from './About/Section7';
 export { default as Section8 } from './About/Section8';
 export { default as SectionTitle } from './Title/SectionTitle';

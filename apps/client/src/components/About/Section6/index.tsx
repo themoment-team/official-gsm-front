@@ -1,4 +1,4 @@
-import { SubTitle, IntroductionTitle, SectionTitle } from 'client/components';
+import { SubTitle, AboutTitle, SectionTitle } from 'client/components';
 import type { BusinessCardItemType } from 'client/types';
 
 import BusinessCard from './BusinessCard';
@@ -29,9 +29,7 @@ const Section6 = () => {
   return (
     <S.Layout>
       <SectionTitle>
-        <IntroductionTitle pointColor='lime'>
-          꿈 끼 업(UP) 고(GO) 특색사업
-        </IntroductionTitle>
+        <AboutTitle pointColor='lime'>꿈 끼 업(UP) 고(GO) 특색사업</AboutTitle>
         <SubTitle>꿈˙끼˙업(UP)˙고(GO)</SubTitle>
       </SectionTitle>
       <S.BusinessLayout>

@@ -5,7 +5,7 @@ import {
   SubTitle,
   EducationDirection,
 } from 'client/components';
-import type { EducationDirectionType } from 'client/types/introduce';
+import type { EducationDirectionType } from 'client/types';
 
 import * as S from './style';
 
