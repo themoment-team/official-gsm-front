@@ -6,7 +6,7 @@ import { css } from '@emotion/react';
 
 import { EditButton, DeletePostButton, DeleteModal } from 'admin/components';
 
-import { useDeletePost } from 'api/admin';
+import { DeletePost } from 'api/admin';
 import { useGetPostDetail } from 'api/client';
 
 import { WriterAndDate, FileButton } from 'ui';
@@ -32,8 +32,7 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
   const dialog = useRef<HTMLDialogElement>(null);
 
   const deletePost = () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
-    useDeletePost(postSeq);
+    DeletePost(postSeq);
     if (category) replace(`/${categorys[category]}`);
     alert('게시글이 삭제되었습니다');
   };
