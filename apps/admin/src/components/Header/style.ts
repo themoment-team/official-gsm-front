@@ -10,22 +10,15 @@ export const Header = styled.header`
   justify-content: space-between;
   height: 5rem;
   width: 100vw;
-  background-color: rgba(255, 255, 255, 0.9);
   border-bottom: 0.0625rem solid #eeeeee;
   backdrop-filter: blur(0.625rem);
   padding: 0 4.8vw;
-  font-weight: 600;
-  font-size: 0.875rem;
 `;
 
 export const ApproveSection = styled.div`
   display: flex;
   gap: 3rem;
   align-items: center;
-
-  .teacher {
-    color: #505050;
-  }
 `;
 
 export const ApproveRequest = styled.button`
@@ -33,6 +26,9 @@ export const ApproveRequest = styled.button`
   align-items: center;
   gap: 0.4rem;
   position: relative;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 `;
 
 export const Notification = styled.div`
@@ -43,4 +39,15 @@ export const Notification = styled.div`
   height: 0.25rem;
   background-color: #f93535;
   border-radius: 50%;
+`;
+
+export const LogoutSection = styled.div`
+  position: relative;
+`;
+
+export const LogoutButton = styled.button`
+  color: #505050;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 `;

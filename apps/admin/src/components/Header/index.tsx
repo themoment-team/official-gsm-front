@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import type { FC } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -7,24 +6,35 @@ import Link from 'next/link';
 import { css } from '@emotion/react';
 
 import * as I from 'admin/assets';
-import { ApproveModal } from 'admin/components';
+import { ApproveModal, LogoutModal } from 'admin/components';
 
 import { useGetUnapproveList, useGetUserInfo } from 'api/admin';
 
 import * as S from './style';
 
-const Header: FC = () => {
-  const [showApproveModal, setShowApproveModal] = useState<boolean>(false);
+type ModalType = 'Approve' | 'Logout';
+
+const Header: React.FC = () => {
   const [hasNotification, setHasNotification] = useState<boolean>(false);
+
+  const [showModal, setShowModal] = useState<'Approve' | 'Logout' | false>(
+    false
+  );
 
   const { data: unapproveList } = useGetUnapproveList();
   const { data: userInfo } = useGetUserInfo();
 
-  const closeApproveModal = () => setShowApproveModal(false);
-
   useEffect(() => {
     setHasNotification(!!unapproveList?.length);
   }, [unapproveList]);
+
+  const handleShowModal = (modalType: ModalType) => {
+    if (showModal === modalType) {
+      setShowModal(false);
+    } else {
+      setShowModal(modalType);
+    }
+  };
 
   return (
     <S.Header>
@@ -34,7 +44,7 @@ const Header: FC = () => {
 
       <S.ApproveSection>
         <S.ApproveRequest
-          onClick={() => setShowApproveModal(!showApproveModal)}
+          onClick={() => handleShowModal('Approve')}
           css={css`
             cursor: ${hasNotification ? 'pointer' : 'auto'};
           `}
@@ -42,12 +52,24 @@ const Header: FC = () => {
           <I.NotificationIcon hasNotification={hasNotification} />
           가입 요청
           {hasNotification && <S.Notification />}
-          {hasNotification && showApproveModal && (
-            <ApproveModal close={closeApproveModal} />
+          {hasNotification && showModal === 'Approve' && (
+            <ApproveModal close={() => setShowModal(false)} />
           )}
         </S.ApproveRequest>
 
-        <p className='teacher'>{userInfo?.userName} 선생님</p>
+        <S.LogoutSection>
+          <S.LogoutButton
+            onClick={() => handleShowModal('Logout')}
+            css={css`
+              color: ${showModal === 'Logout' ? '#9e9e9e' : '#616161'};
+            `}
+          >
+            {userInfo?.userName} 선생님
+          </S.LogoutButton>
+          {showModal === 'Logout' && (
+            <LogoutModal name={userInfo?.userName ?? ''} />
+          )}
+        </S.LogoutSection>
       </S.ApproveSection>
     </S.Header>
   );

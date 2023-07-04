@@ -6,7 +6,7 @@ import { GSMLogo } from 'client/assets';
 
 import * as S from './style';
 
-type SegmentType = '' | 'about';
+type SegmentType = '' | 'about' | 'list';
 
 interface HeaderProps {
   segment: SegmentType;
@@ -48,6 +48,9 @@ const Header: React.FC<HeaderProps> = ({
           `}
         >
           <Link css={selectStyle('')} href='/'>
+            홈
+          </Link>
+          <Link css={selectStyle('list')} href='/list/notice'>
             학교소식
           </Link>
           <Link css={selectStyle('about')} href='/about'>
