@@ -59,7 +59,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
   const [files, setFiles] = useState<File[]>([]);
   const [prevFiles, setPrevFiles] = useState<FileInfoType[]>();
   const fileInput = useRef<HTMLInputElement>(null);
-  const [deletFileUrl, setDeletFileUrl] = useState<string[]>(['']);
+  const [deleteFileUrl, setDeleteFileUrl] = useState<string[]>([]);
 
   const { replace, back } = useRouter();
   const { mutate, isSuccess } = usePatchPost(postSeq);
@@ -106,7 +106,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
     setPrevFiles((prevFiles) =>
       prevFiles?.filter((file) => file.fileName !== fileName)
     );
-    fileUrl && setDeletFileUrl((prevArray) => [...prevArray, fileUrl]);
+    fileUrl && setDeleteFileUrl((prevArray) => [...prevArray, fileUrl]);
   };
 
   const onSubmit: SubmitHandler<FormType> = (data) => {
@@ -114,7 +114,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
       postTitle: data.title,
       postContent: data.content,
       category: category,
-      deletFileUrl: deletFileUrl ? deletFileUrl : 'test',
+      deleteFileUrl: deleteFileUrl,
     };
 
     const formData = new FormData();
