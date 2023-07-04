@@ -1,12 +1,12 @@
 import { useRef } from 'react';
 
-// import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 
 import { css } from '@emotion/react';
 
 import { EditButton, DeletePostButton, DeleteModal } from 'admin/components';
 
-import { DeletePost } from 'api/admin';
+// import { useDeletePost } from 'api/admin';
 import { useGetPostDetail } from 'api/client';
 
 import { WriterAndDate, FileButton } from 'ui';
@@ -17,23 +17,24 @@ interface CommonDetailProps {
   postSeq: number;
 }
 
-// const categorys = {
-//   NOTICE: '',
-//   FAMILY_NEWSLETTER: 'newsletter',
-//   EVENT_GALLERY: 'gallery',
-// } as const;
+const categorys = {
+  NOTICE: '',
+  FAMILY_NEWSLETTER: 'newsletter',
+  EVENT_GALLERY: 'gallery',
+} as const;
 
 const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
-  // const { replace } = useRouter();
+  const { replace } = useRouter();
 
   const { data } = useGetPostDetail(postSeq);
-  // const category = data?.category;
+  const category = data?.category;
 
   const dialog = useRef<HTMLDialogElement>(null);
 
   const deletePost = () => {
-    DeletePost(postSeq);
-    // if (category) replace(`/${categorys[category]}`);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    // useDeletePost(postSeq);
+    if (category) replace(`/${categorys[category]}`);
     alert('게시글이 삭제되었습니다');
   };
 
