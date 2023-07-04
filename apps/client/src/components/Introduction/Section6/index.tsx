@@ -35,8 +35,8 @@ const Section6 = () => {
         <SubTitle>꿈˙끼˙업(UP)˙고(GO)</SubTitle>
       </SectionTitle>
       <S.BusinessLayout>
-        {BusinessCardItem.map((v, index) => (
-          <BusinessCard {...v} key={index} />
+        {BusinessCardItem.map((item, index) => (
+          <BusinessCard {...item} key={index} />
         ))}
       </S.BusinessLayout>
     </S.Layout>
