@@ -1,6 +1,6 @@
 'use client';
 
-import { ListPageCategory } from 'client/components';
+import { Header, ListPageCategory } from 'client/components';
 import type { CategoryParamsType } from 'client/types';
 
 interface ListPageProps {
@@ -8,5 +8,10 @@ interface ListPageProps {
 }
 
 export default function ListPage({ params: { category } }: ListPageProps) {
-  return <ListPageCategory categoryParam={category} />;
+  return (
+    <>
+      <Header segment={'list'} />
+      <ListPageCategory categoryParam={category} />
+    </>
+  );
 }

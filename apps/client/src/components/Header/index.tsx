@@ -6,14 +6,17 @@ import { GSMLogo } from 'client/assets';
 
 import * as S from './style';
 
-type SegmentType = '' | 'about';
+type SegmentType = '' | 'about' | 'list';
 
 interface HeaderProps {
   segment: SegmentType;
-  isBackgroundWhite: boolean;
+  isBackgroundWhite?: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ segment, isBackgroundWhite }) => {
+const Header: React.FC<HeaderProps> = ({
+  segment,
+  isBackgroundWhite = true,
+}) => {
   const theme = useTheme();
 
   const selectStyle = (href: SegmentType) =>
@@ -45,6 +48,9 @@ const Header: React.FC<HeaderProps> = ({ segment, isBackgroundWhite }) => {
           `}
         >
           <Link css={selectStyle('')} href='/'>
+            홈
+          </Link>
+          <Link css={selectStyle('list')} href='/list/notice'>
             학교소식
           </Link>
           <Link css={selectStyle('about')} href='/about'>
