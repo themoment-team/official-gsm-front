@@ -23,10 +23,6 @@ const categorys = {
   EVENT_GALLERY: 'gallery',
 } as const;
 
-const DeleteTest = (props: any) => {
-  useDeletePost(props.postSeq);
-};
-
 const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
   const { replace } = useRouter();
 
@@ -36,7 +32,8 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
   const dialog = useRef<HTMLDialogElement>(null);
 
   const deletePost = () => {
-    DeleteTest(postSeq);
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    useDeletePost(postSeq);
     if (category) replace(`/${categorys[category]}`);
     alert('게시글이 삭제되었습니다');
   };
