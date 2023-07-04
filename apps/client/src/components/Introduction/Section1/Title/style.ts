@@ -1,4 +1,34 @@
 import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react';
+
+const leftFadeInOut = keyframes`
+  0% {
+    left: -6.25rem;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+  `;
+
+const rightFadeInOut = keyframes`
+  0% {
+    right: -6.25rem;
+  }
+  100% {
+    opacity: 1;
+    right: 0;
+  }
+`;
+
+const FadeInOut = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
 
 export const TitleWrapper = styled.div`
   display: inline-flex;
@@ -10,13 +40,14 @@ export const TitleWrapper = styled.div`
   transform: translateX(-50%);
 `;
 
-const Title = styled.p`
+const Title = styled.div`
   font-weight: 700;
   color: ${({ theme }) => theme.color.primary.navy};
   position: relative;
   display: flex;
   gap: 0.625rem;
   align-items: flex-end;
+  opacity: 0;
 `;
 
 export const FirstTitle = styled(Title)`
@@ -24,59 +55,21 @@ export const FirstTitle = styled(Title)`
   color: transparent;
   font-family: initial;
   font-size: 3.8578rem;
-
-  div {
-    position: relative;
-    bottom: 0.625rem;
-  }
-  position: relative;
-  animation: leftFadeInOut 1.5s ease-in-out forwards;
-  opacity: 0;
-  @keyframes leftFadeInOut {
-    0% {
-      left: -6.25rem;
-    }
-    100% {
-      opacity: 1;
-      left: 0;
-    }
-  }
+  animation: ${leftFadeInOut} 1.5s ease-in-out forwards;
 `;
 
 export const SecondTitle = styled(Title)`
   text-align: right;
   font-size: 3.2975rem;
   justify-content: end;
-  position: relative;
-  animation: rightFadeInOut 1.5s ease-in-out forwards;
+  animation: ${rightFadeInOut} 1.5s ease-in-out forwards;
   animation-delay: 1s;
-  opacity: 0;
-  @keyframes rightFadeInOut {
-    0% {
-      right: -6.25rem;
-    }
-    100% {
-      opacity: 1;
-      right: 0;
-    }
-  }
 `;
 
 export const ThirdTitle = styled(Title)`
   font-size: 3.5019rem;
-  position: relative;
-  animation: leftFadeInOut 1.5s ease-in-out forwards;
+  animation: ${leftFadeInOut} 1.5s ease-in-out forwards;
   animation-delay: 2s;
-  opacity: 0;
-  @keyframes leftFadeInOut {
-    0% {
-      left: -6.25rem;
-    }
-    100% {
-      opacity: 1;
-      left: 0;
-    }
-  }
 `;
 
 export const Point = styled.div`
@@ -92,15 +85,7 @@ export const EnglishSchoolName = styled.p`
   font-size: 1.5rem;
   line-height: 1.8125rem;
   position: relative;
-  animation: FadeInOut 1.5s ease-in-out forwards;
+  animation: ${FadeInOut} 1.5s ease-in-out forwards;
   animation-delay: 3s;
   opacity: 0;
-  @keyframes FadeInOut {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
 `;
