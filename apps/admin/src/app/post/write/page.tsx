@@ -14,10 +14,9 @@ import { z } from 'zod';
 import {
   Input,
   TextArea,
-  FileUploadLabel,
   Header,
-  FileCard,
   FormCategory,
+  FileDrop,
 } from 'admin/components';
 import * as S from 'admin/styles/page/write';
 
@@ -187,47 +186,7 @@ export default function WritePage({
             )}
           </div>
           <div>
-            {files.length > 0 ? (
-              <div>
-                <S.FileTitleWrapper>
-                  <S.FormItemTitle>첨부 파일</S.FormItemTitle>
-                  <FileUploadLabel htmlFor='fileUpload' />
-                  <input
-                    type='file'
-                    id='fileUpload'
-                    onChange={postFile}
-                    ref={fileInput}
-                    hidden
-                    multiple
-                  />
-                </S.FileTitleWrapper>
-                <S.FileCardBox>
-                  {files.map((file) => (
-                    <S.FileCardWrapper key={file.name}>
-                      <FileCard fileName={file.name} onCancel={handleCancel} />
-                    </S.FileCardWrapper>
-                  ))}
-                </S.FileCardBox>
-              </div>
-            ) : (
-              <>
-                <S.FormItemTitle>첨부 파일</S.FormItemTitle>
-                <S.UploadBox>
-                  <S.UploadTitle>
-                    첫번째 등록하신 이미지는 썸네일 역할을 합니다.
-                  </S.UploadTitle>
-                  <FileUploadLabel htmlFor='fileUpload' />
-                  <input
-                    type='file'
-                    id='fileUpload'
-                    onChange={postFile}
-                    ref={fileInput}
-                    hidden
-                    multiple
-                  />
-                </S.UploadBox>
-              </>
-            )}
+            <FileDrop />
           </div>
           <S.BtnWrap>
             <S.CancelBtn onClick={back}>취소</S.CancelBtn>

@@ -11,6 +11,7 @@ export { default as CommonDetail } from './CommonDetail';
 export { default as DeletePostButton } from './DeletePostButton';
 export { default as EditButton } from './PostButton/Edit';
 export { default as FileCard } from './FileCard';
+export { default as FileDrop } from './FileDrop';
 export { default as FileUploadLabel } from './FileUploadLabel';
 export { default as FormCategory } from './FormCategory';
 export { default as GalleryCard } from './GalleryCard';
@@ -29,4 +30,5 @@ export { default as PostList } from './PostList';
 export { default as PostListHeader } from './PostListHeader';
 export { default as TextArea } from './TextArea';
 export { default as ToBackButton } from './ToBackButton';
+
 export { default as WriteButton } from './PostButton/Write';

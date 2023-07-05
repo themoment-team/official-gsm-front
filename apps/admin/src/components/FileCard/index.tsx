@@ -6,16 +6,16 @@ import * as S from './style';
 
 interface FileCardProps {
   fileName: string;
-  onCancel: (fileName: string) => void;
+  onClick?: () => void;
 }
 
-const FileCard: React.FC<FileCardProps> = ({ fileName, onCancel }) => (
+const FileCard: React.FC<FileCardProps> = ({ fileName, onClick }) => (
   <S.FileCardWrap>
     <S.FileNameWrapper>
       <FileIcon />
       <S.Filename>{fileName}</S.Filename>
     </S.FileNameWrapper>
-    <S.CancelButton type='button' onClick={() => onCancel(fileName)}>
+    <S.CancelButton type='button' onClick={onClick}>
       <I.CancelIcon />
     </S.CancelButton>
   </S.FileCardWrap>
