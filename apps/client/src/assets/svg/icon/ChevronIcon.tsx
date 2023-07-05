@@ -11,9 +11,9 @@ const ChevronIcon = () => (
         id='Vector'
         d='M9 5.5L16 12.5L9 19.5'
         stroke='#616161'
-        stroke-width='1.5'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='1.5'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </g>
   </svg>
