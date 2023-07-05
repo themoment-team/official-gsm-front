@@ -24,6 +24,8 @@ const categoryQueryString = {
   gallery: 'EVENT_GALLERY',
 } as const;
 
+const PAGE_SIZE = 6;
+
 type CategoryParamsType = keyof typeof categoryQueryString;
 
 interface ListPageProps {
@@ -40,7 +42,11 @@ export default function ListPage({
   /** 1 ~ totalPages */
   const pageNumber = Number(searchParams.pageNumber ?? 1);
 
-  const { data } = useGetPostList(categoryQueryString[category], pageNumber);
+  const { data } = useGetPostList(
+    categoryQueryString[category],
+    pageNumber,
+    PAGE_SIZE
+  );
 
   if (!categoryParamsArray.includes(category)) {
     replace('/');
