@@ -142,6 +142,9 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
     );
   };
 
+  const isGallery = category === 'EVENT_GALLERY';
+  const gallerySubmitDisabled = isGallery && files.length === 0;
+
   return (
     <>
       <Header />
@@ -153,7 +156,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
             <FormCategory category={category} setCategory={setCategory} />
           </div>
           <div>
-            <S.FormItemTitle>제목</S.FormItemTitle>
+            <S.FormItemTitle>제목 (필수)</S.FormItemTitle>
             <div
               css={css`
                 position: relative;
@@ -239,7 +242,9 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
               </div>
             ) : (
               <>
-                <S.FormItemTitle>첨부 파일</S.FormItemTitle>
+                <S.FormItemTitle>
+                  첨부 파일 {isGallery && '(필수)'}
+                </S.FormItemTitle>
                 <S.UploadBox>
                   <S.UploadTitle>
                     첫번째 등록하신 이미지는 썸네일 역할을 합니다.
@@ -259,7 +264,11 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
           </div>
           <S.BtnWrap>
             <S.CancelBtn onClick={back}>취소</S.CancelBtn>
-            <Button width='22.5625rem' type='submit'>
+            <Button
+              width='22.5625rem'
+              type='submit'
+              disabled={gallerySubmitDisabled}
+            >
               완료
             </Button>
           </S.BtnWrap>
