@@ -2,6 +2,8 @@ import React from 'react';
 
 import { css } from '@emotion/react';
 
+import { categoryQueryString } from 'common';
+
 import { WriteButton } from 'admin/components';
 
 import * as S from './style';
@@ -16,13 +18,7 @@ interface PostListHeaderProps {
 const Title = {
   notice: '📢 공지사항',
   newsletter: '📄 가정통신문',
-  gallery: '행사 갤러리',
-} as const;
-
-const categoryQueryString = {
-  notice: 'NOTICE',
-  newsletter: 'FAMILY_NEWSLETTER',
-  gallery: 'EVENT_GALLERY',
+  gallery: '📷 행사 갤러리',
 } as const;
 
 const writePageHref = (category: CategoryParamsType) =>
