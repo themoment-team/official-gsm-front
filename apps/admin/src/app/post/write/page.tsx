@@ -112,7 +112,7 @@ export default function WritePage() {
   };
 
   const isGallery = category === 'EVENT_GALLERY';
-  const canSubmit = isGallery && files.length === 0;
+  const gallerySubmitDisabled = isGallery && files.length === 0;
 
   return (
     <>
@@ -223,7 +223,11 @@ export default function WritePage() {
           </div>
           <S.BtnWrap>
             <S.CancelBtn onClick={back}>취소</S.CancelBtn>
-            <Button width='22.5625rem' type='submit' disabled={canSubmit}>
+            <Button
+              width='22.5625rem'
+              type='submit'
+              disabled={gallerySubmitDisabled}
+            >
               완료
             </Button>
           </S.BtnWrap>
