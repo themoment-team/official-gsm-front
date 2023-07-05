@@ -96,6 +96,8 @@ export default function WritePage() {
     files.forEach((file) => formData.append('file', file));
 
     mutate(formData);
+
+    console.log(content);
   };
 
   if (isSuccess) replace(categoryPath[category]);
