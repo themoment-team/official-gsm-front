@@ -26,6 +26,7 @@ const Button: React.FC<ButtonProps> = ({
   hoverBgColor,
   position,
   bottom,
+  disabled,
   ...attributes
 }) => {
   return (
@@ -43,7 +44,7 @@ const Button: React.FC<ButtonProps> = ({
           background: ${isLoading && (bgColor || '#050505')};
         }
       `}
-      disabled={isLoading}
+      disabled={disabled || isLoading}
       {...attributes}
     >
       {isLoading ? <LoadingCircle bgColor={bgColor} /> : children}
