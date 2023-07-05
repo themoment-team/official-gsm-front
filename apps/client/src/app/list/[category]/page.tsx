@@ -1,10 +1,11 @@
 'use client';
 
 import { Header, ListPageCategory } from 'client/components';
-import type { CategoryParamsType } from 'client/types';
+
+import type { CategoryType } from 'types';
 
 interface ListPageProps {
-  params: { category: CategoryParamsType };
+  params: { category: CategoryType };
 }
 
 export default function ListPage({ params: { category } }: ListPageProps) {

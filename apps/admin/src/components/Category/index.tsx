@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import type { CategoryType } from 'admin/types';
+import type { CategoryType } from 'types';
 
 import * as S from './style';
 

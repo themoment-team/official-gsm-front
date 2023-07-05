@@ -8,7 +8,8 @@
     "common": "pnpm --filter common",
     "ui": "pnpm --filter ui",
     "tsconfig": "pnpm --filter tsconfig",
-    "eslint-config-custom": "pnpm --filter eslint-config-custom"
+    "eslint-config-custom": "pnpm --filter eslint-config-custom",
+    "types": "pnpm --filter types"
   },
   "private": true,
   "license": "MIT",
@@ -18,6 +19,7 @@
     "@emotion/styled": "^11.10.6",
     "@tanstack/react-query": "^4.29.7",
     "@tanstack/react-query-devtools": "^4.29.7",
+    "@types/react": "^18.2.0",
     "next": "13.4.2",
     "react": "^18.2.0"
   }

@@ -22,9 +22,10 @@ import {
 import * as S from 'admin/styles/page/write';
 
 import { usePostWritePost } from 'api/admin';
-import type { PostCategoryType } from 'api/client';
 
 import { Button } from 'ui';
+
+import type { CategoryQueryStringType } from 'types';
 
 const schema = z.object({
   title: z
@@ -53,7 +54,7 @@ const preventClose = (e: BeforeUnloadEvent) => {
 
 interface WritePageProps {
   searchParams: {
-    category: PostCategoryType;
+    category: CategoryQueryStringType;
   };
 }
 

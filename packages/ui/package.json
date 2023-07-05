@@ -4,7 +4,6 @@
   "private": true,
   "license": "MIT",
   "dependencies": {
-    "@types/react": "18.0.38",
     "common": "workspace:^",
     "typescript": "5.0.4"
   },
