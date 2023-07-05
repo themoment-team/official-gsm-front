@@ -1,20 +1,29 @@
 import styled from '@emotion/styled';
 
+export const Layout = styled.div`
+  overflow: hidden;
+  width: 100vw;
+  height: 48.125rem;
+  background-color: ${({ theme }) => theme.color.primary.navy};
+`;
+
+export const UpperBox = styled.div`
+  height: 30.125rem;
+  width: 100vw;
+  left: 0rem;
+  top: 0rem;
+  background-color: ${({ theme }) => theme.color.background};
+  border-radius: 0rem 0rem 0rem 12.5rem;
+`;
+
 export const Box = styled.div`
   height: 26.0625rem;
-  width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
   left: 21.25rem;
   top: 11.25rem;
-`;
-
-export const Layout = styled.div`
-  width: 100vw;
-  height: 48.125rem;
-  background-color: ${({ theme }) => theme.color.primary.navy};
 `;
 
 export const IconWrap = styled.div`
@@ -36,15 +45,6 @@ export const IdealTalentLayout = styled.div`
   align-items: center;
   position: relative;
   right: 1.875rem;
-`;
-
-export const UpperBox = styled.div`
-  height: 30.125rem;
-  width: 100vw;
-  left: 0rem;
-  top: 0rem;
-  background-color: ${({ theme }) => theme.color.background};
-  border-radius: 0rem 0rem 0rem 12.5rem;
 `;
 
 export const Slide = styled.div`
