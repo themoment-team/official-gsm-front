@@ -2,6 +2,8 @@
 
 import styled from '@emotion/styled';
 
+import { categoryQueryString } from 'common';
+
 import {
   Footer,
   Header,
@@ -12,24 +14,14 @@ import {
 
 import { useGetPostList } from 'api/client';
 
-import type { CategoryQueryStringType, CategoryType } from 'types';
-
-interface PostListQueryStringType {
-  [key: string]: CategoryQueryStringType;
-}
-
-const postListQueryString: PostListQueryStringType = {
-  notice: 'NOTICE',
-  newsletter: 'FAMILY_NEWSLETTER',
-  gallery: 'EVENT_GALLERY',
-} as const;
+import type { CategoryType } from 'types';
 
 interface ListPageProps {
   params: { category: CategoryType };
 }
 
 export default function ListPage({ params: { category } }: ListPageProps) {
-  const { data } = useGetPostList(postListQueryString[category], 1);
+  const { data } = useGetPostList(categoryQueryString[category], 1);
 
   return (
     <>
