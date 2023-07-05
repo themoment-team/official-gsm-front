@@ -8,9 +8,12 @@ import Banner from './Banner';
 import NoticeBannerController from './Controller';
 import * as S from './style';
 
+const PAGE_SIZE = 6;
+
 const NoticeBanner: React.FC = () => {
-  const { data } = useGetPostList('NOTICE', 1);
   const [currentIndex, setCurrentIndex] = useState<number>(0);
+
+  const { data } = useGetPostList('NOTICE', 1, PAGE_SIZE);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {

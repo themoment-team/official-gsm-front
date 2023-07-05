@@ -2,7 +2,6 @@
 
 import styled from '@emotion/styled';
 
-
 import {
   Footer,
   Header,
@@ -15,14 +14,29 @@ import { useGetPostList } from 'api/client';
 
 import { categoryQueryString } from 'common';
 
+import { PaginationController } from 'ui';
+
 import type { CategoryType } from 'types';
 
 interface ListPageProps {
   params: { category: CategoryType };
+  searchParams: { pageNumber: string };
 }
 
-export default function ListPage({ params: { category } }: ListPageProps) {
-  const { data } = useGetPostList(categoryQueryString[category], 1);
+const PAGE_SIZE = 11;
+
+export default function ListPage({
+  params: { category },
+  searchParams,
+}: ListPageProps) {
+  /** 1 ~ totalPages */
+  const pageNumber = Number(searchParams.pageNumber ?? 1);
+
+  const { data } = useGetPostList(
+    categoryQueryString[category],
+    pageNumber,
+    PAGE_SIZE
+  );
 
   return (
     <>
@@ -37,6 +51,10 @@ export default function ListPage({ params: { category } }: ListPageProps) {
             post={post}
           />
         ))}
+        <PaginationController
+          pageNumber={pageNumber}
+          totalPages={data?.totalPages ?? 0}
+        />
       </Content>
       <Footer />
     </>
