@@ -47,7 +47,10 @@ export default function ListPage({
         {data?.postList?.map((post, index) => (
           <ListPagePostCard
             key={post.postSeq}
-            postIndex={index + 1}
+            postIndex={
+              data.totalPages * PAGE_SIZE -
+              (index + 1 + PAGE_SIZE * (pageNumber - 1))
+            }
             post={post}
           />
         ))}
