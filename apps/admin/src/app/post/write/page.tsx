@@ -73,7 +73,7 @@ export default function WritePage({
     formState: { errors },
   } = useForm<FormType>({ resolver: zodResolver(schema) });
 
-  const { mutate, isSuccess } = usePostWritePost();
+  const { mutate, isSuccess, isLoading } = usePostWritePost();
 
   if (!category || !categoryQueryStrings.includes(category)) {
     replace('/post/write?category=NOTICE');
@@ -241,6 +241,7 @@ export default function WritePage({
               width='22.5625rem'
               type='submit'
               disabled={gallerySubmitDisabled}
+              isLoading={isLoading}
             >
               완료
             </Button>

@@ -2,8 +2,11 @@
 
 import React from 'react';
 
+import { ThemeProvider } from '@emotion/react';
+
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { GlobalStyle } from 'common';
+
+import { GlobalStyle, theme } from 'common';
 
 import Providers from './providers';
 
@@ -25,11 +28,13 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Providers>
-          <ReactQueryDevtools />
-          <GlobalStyle />
-          {children}
-        </Providers>
+        <ThemeProvider theme={theme}>
+          <Providers>
+            <ReactQueryDevtools />
+            <GlobalStyle />
+            {children}
+          </Providers>
+        </ThemeProvider>
       </body>
     </html>
   );
