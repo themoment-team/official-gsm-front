@@ -3,17 +3,16 @@
 import type { ChangeEvent } from 'react';
 import React, { useCallback, useRef, useState, useEffect } from 'react';
 
-import FileCard from '../FileCard';
-import FileUploadLabel from '../FileUploadLabel';
+import { FileCard, FileUploadLabel } from 'admin/components';
 
 import * as S from './style';
+
 interface IFileTypes {
   id: number;
   object: File;
 }
 
 const FileDrop = () => {
-  const [isDragging, setIsDragging] = useState<boolean>(false);
   const [files, setFiles] = useState<IFileTypes[]>([]);
 
   const dragRef = useRef<HTMLLabelElement | null>(null);
@@ -60,17 +59,11 @@ const FileDrop = () => {
   const handleDragOut = useCallback((e: DragEvent): void => {
     e.preventDefault();
     e.stopPropagation();
-
-    setIsDragging(false);
   }, []);
 
   const handleDragOver = useCallback((e: DragEvent): void => {
     e.preventDefault();
     e.stopPropagation();
-
-    if (e.dataTransfer!.files) {
-      setIsDragging(true);
-    }
   }, []);
 
   const handleDrop = useCallback(
@@ -79,7 +72,6 @@ const FileDrop = () => {
       e.stopPropagation();
 
       onChangeFiles(e);
-      setIsDragging(false);
     },
     [onChangeFiles]
   );
@@ -110,42 +102,52 @@ const FileDrop = () => {
 
   return (
     <div>
-      <S.UploadBox className='DragDrop'>
-        <input
-          type='file'
-          id='fileUpload'
-          style={{ display: 'none' }}
-          multiple={true}
-          onChange={onChangeFiles}
-        />
-        <S.UploadTitle>
-          첫번째 등록하신 이미지는 썸네일 역할을 합니다.
-        </S.UploadTitle>
-        <FileUploadLabel
-          className={isDragging ? 'DragDrop-File-Dragging' : 'DragDrop-File'}
-          htmlFor='fileUpload'
-          ref={dragRef}
-        />
-
-        <div className='DragDrop-Files'>
-          {files.length > 0 &&
-            files.map((file: IFileTypes) => {
+      {files.length > 0 ? (
+        <>
+          <S.FileTitleWrapper>
+            <S.FormItemTitle>첨부 파일</S.FormItemTitle>
+            <FileUploadLabel htmlFor='fileUpload' ref={dragRef} />
+            <input
+              type='file'
+              id='fileUpload'
+              style={{ display: 'none' }}
+              multiple={true}
+              onChange={onChangeFiles}
+            />
+          </S.FileTitleWrapper>
+          <S.FileCardBox>
+            {files.map((file: IFileTypes) => {
               const {
                 id,
                 object: { name },
               } = file;
 
               return (
-                <S.FileCardBox key={name}>
+                <S.FileCardWrapper key={name}>
                   <FileCard
                     fileName={name}
                     onClick={() => handleFilterFile(id)}
                   />
-                </S.FileCardBox>
+                </S.FileCardWrapper>
               );
             })}
-        </div>
-      </S.UploadBox>
+          </S.FileCardBox>
+        </>
+      ) : (
+        <S.UploadBox>
+          <input
+            type='file'
+            id='fileUpload'
+            style={{ display: 'none' }}
+            multiple={true}
+            onChange={onChangeFiles}
+          />
+          <S.UploadTitle>
+            첫번째 등록하신 이미지는 썸네일 역할을 합니다.
+          </S.UploadTitle>
+          <FileUploadLabel htmlFor='fileUpload' ref={dragRef} />
+        </S.UploadBox>
+      )}
     </div>
   );
 };
