@@ -40,7 +40,7 @@ export default function ListPage({
 
   return (
     <>
-      <Header segment={''} />
+      <Header segment={'list'} />
       <Content>
         <ListPageCategory categoryParam={category} />
         <ListPageTitle category={category} />
