@@ -2,7 +2,6 @@
 
 import styled from '@emotion/styled';
 
-import { categoryQueryString } from 'common';
 
 import {
   Footer,
@@ -13,6 +12,8 @@ import {
 } from 'client/components';
 
 import { useGetPostList } from 'api/client';
+
+import { categoryQueryString } from 'common';
 
 import type { CategoryType } from 'types';
 
