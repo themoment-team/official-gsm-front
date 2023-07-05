@@ -1,6 +1,6 @@
 import React from 'react';
 
-import type { CategoryParamsType } from 'client/types';
+import type { CategoryType } from 'types';
 
 import { ListPageH2 } from './style';
 
@@ -11,7 +11,7 @@ const categoryTitle = {
 };
 
 interface ListPageTitleProps {
-  category: CategoryParamsType;
+  category: CategoryType;
 }
 
 const ListPageTitle: React.FC<ListPageTitleProps> = ({ category }) => (
