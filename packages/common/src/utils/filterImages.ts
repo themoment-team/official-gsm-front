@@ -1,4 +1,4 @@
-import { FileInfoType } from '../../../api/client/src/types/post/index';
+import { FileInfoType } from 'types';
 
 const extentions = ['JPG', 'PNG', 'HEIC', 'JPEG', 'WEBP'];
 

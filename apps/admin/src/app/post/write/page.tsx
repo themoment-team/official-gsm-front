@@ -22,9 +22,10 @@ import {
 import * as S from 'admin/styles/page/write';
 
 import { usePostWritePost } from 'api/admin';
-import type { PostCategoryType } from 'api/client';
 
 import { Button } from 'ui';
+
+import type { CategoryQueryStringType } from 'types';
 
 const schema = z.object({
   title: z
@@ -44,13 +45,22 @@ const categoryPath = {
   EVENT_GALLERY: '/gallery',
 } as const;
 
+const categoryQueryStrings = Object.keys(categoryPath);
+
 const preventClose = (e: BeforeUnloadEvent) => {
   e.preventDefault();
   e.returnValue = '';
 };
 
-export default function WritePage() {
-  const [category, setCategory] = useState<PostCategoryType>('NOTICE');
+interface WritePageProps {
+  searchParams: {
+    category: CategoryQueryStringType;
+  };
+}
+
+export default function WritePage({
+  searchParams: { category },
+}: WritePageProps) {
   const [files, setFiles] = useState<File[]>([]);
   const fileInput = useRef<HTMLInputElement>(null);
 
@@ -64,6 +74,10 @@ export default function WritePage() {
   } = useForm<FormType>({ resolver: zodResolver(schema) });
 
   const { mutate, isSuccess } = usePostWritePost();
+
+  if (!category || !categoryQueryStrings.includes(category)) {
+    replace('/post/write?category=NOTICE');
+  }
 
   useEffect(() => {
     (() => {
@@ -119,7 +133,7 @@ export default function WritePage() {
         <S.FormWrap onSubmit={handleSubmit(onSubmit)}>
           <div>
             <S.FormItemTitle>카테고리</S.FormItemTitle>
-            <FormCategory category={category} setCategory={setCategory} />
+            <FormCategory category={category} />
           </div>
           <div>
             <S.FormItemTitle>제목</S.FormItemTitle>
