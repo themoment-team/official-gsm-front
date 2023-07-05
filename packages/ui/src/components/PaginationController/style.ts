@@ -1,11 +1,12 @@
 import styled from '@emotion/styled';
 
-export const PaginationController = styled.div`
+export const PaginationController = styled.div<{ marginTop: string }>`
   width: fit-content;
   display: flex;
   gap: 0.75rem;
   align-items: center;
-  margin-top: 2rem;
+  margin: 0 auto;
+  margin-top: ${({ marginTop }) => marginTop};
 `;
 
 export const PaginationButton = styled.button`

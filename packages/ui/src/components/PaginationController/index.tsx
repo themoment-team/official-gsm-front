@@ -10,11 +10,13 @@ interface PageNationControllerProps {
   /** 1 ~ totalpages */
   pageNumber: number;
   totalPages: number;
+  marginTop?: string;
 }
 
 const PaginationController: React.FC<PageNationControllerProps> = ({
   pageNumber,
   totalPages,
+  marginTop = '0',
 }) => {
   /**
    * return - `/`, `/newsletter`, `/gallery`
@@ -31,7 +33,7 @@ const PaginationController: React.FC<PageNationControllerProps> = ({
   };
 
   return (
-    <S.PaginationController>
+    <S.PaginationController marginTop={marginTop}>
       <S.PaginationButton
         onClick={() => updatePageNumber(pageNumber - 1)}
         type='button'
