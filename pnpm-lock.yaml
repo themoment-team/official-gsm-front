@@ -10,16 +10,19 @@ importers:
     dependencies:
       '@emotion/react':
         specifier: ^11.10.6
-        version: 11.10.6(react@18.2.0)
+        version: 11.10.6(@types/react@18.2.6)(react@18.2.0)
       '@emotion/styled':
         specifier: ^11.10.6
-        version: 11.10.6(@emotion/react@11.10.6)(react@18.2.0)
+        version: 11.10.6(@emotion/react@11.10.6)(@types/react@18.2.6)(react@18.2.0)
       '@tanstack/react-query':
         specifier: ^4.29.7
         version: 4.29.7(react-dom@18.2.0)(react@18.2.0)
       '@tanstack/react-query-devtools':
         specifier: ^4.29.7
         version: 4.29.7(@tanstack/react-query@4.29.7)(react-dom@18.2.0)(react@18.2.0)
+      '@types/react':
+        specifier: ^18.2.0
+        version: 18.2.6
       next:
         specifier: 13.4.2
         version: 13.4.2(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)
@@ -35,9 +38,6 @@ importers:
       '@types/node':
         specifier: 20.1.4
         version: 20.1.4
-      '@types/react':
-        specifier: 18.2.6
-        version: 18.2.6
       '@types/react-dom':
         specifier: 18.2.4
         version: 18.2.4
@@ -56,6 +56,9 @@ importers:
       react-hook-form:
         specifier: ^7.44.3
         version: 7.44.3(react@18.2.0)
+      types:
+        specifier: workspace:^
+        version: link:../../packages/types
       typescript:
         specifier: 5.0.4
         version: 5.0.4
@@ -81,9 +84,6 @@ importers:
       '@types/node':
         specifier: 20.1.4
         version: 20.1.4
-      '@types/react':
-        specifier: 18.2.6
-        version: 18.2.6
       '@types/react-dom':
         specifier: 18.2.4
         version: 18.2.4
@@ -102,6 +102,9 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
+      types:
+        specifier: workspace:^
+        version: link:../../packages/types
       typescript:
         specifier: 5.0.4
         version: 5.0.4
@@ -182,6 +185,9 @@ importers:
       eslint-config-custom:
         specifier: workspace:^
         version: link:../eslint-config-custom
+      types:
+        specifier: workspace:^
+        version: link:../types
     devDependencies:
       tsconfig:
         specifier: workspace:^
@@ -195,6 +201,9 @@ importers:
       tsconfig:
         specifier: workspace:^
         version: link:../tsconfig
+      types:
+        specifier: workspace:^
+        version: link:../types
       typescript:
         specifier: 5.0.4
         version: 5.0.4
@@ -232,11 +241,20 @@ importers:
 
   packages/tsconfig: {}
 
+  packages/types:
+    devDependencies:
+      eslint-config-custom:
+        specifier: workspace:^
+        version: link:../eslint-config-custom
+      tsconfig:
+        specifier: workspace:^
+        version: link:../tsconfig
+      typescript:
+        specifier: 5.0.4
+        version: 5.0.4
+
   packages/ui:
     dependencies:
-      '@types/react':
-        specifier: 18.0.38
-        version: 18.0.38
       common:
         specifier: workspace:^
         version: link:../common
@@ -1684,7 +1702,7 @@ packages:
   /@emotion/memoize@0.8.1:
     resolution: {integrity: sha512-W2P2c/VRW1/1tLox0mVUalvnWXxavmv/Oum2aPsRcoDJuob75FC3Y8FbpfLwUegRcxINtGUMPq0tFCvYNTBXNA==}
 
-  /@emotion/react@11.10.6(react@18.2.0):
+  /@emotion/react@11.10.6(@types/react@18.2.6)(react@18.2.0):
     resolution: {integrity: sha512-6HT8jBmcSkfzO7mc+N1L9uwvOnlcGoix8Zn7srt+9ga0MjREo6lRpuVX0kzo6Jp6oTqDhREOFsygN6Ew4fEQbw==}
     peerDependencies:
       '@types/react': '*'
@@ -1700,6 +1718,7 @@ packages:
       '@emotion/use-insertion-effect-with-fallbacks': 1.0.0(react@18.2.0)
       '@emotion/utils': 1.2.0
       '@emotion/weak-memoize': 0.3.0
+      '@types/react': 18.2.6
       hoist-non-react-statics: 3.3.2
       react: 18.2.0
     dev: false
@@ -1727,7 +1746,7 @@ packages:
     resolution: {integrity: sha512-zxRBwl93sHMsOj4zs+OslQKg/uhF38MB+OMKoCrVuS0nyTkqnau+BM3WGEoOptg9Oz45T/aIGs1qbVAsEFo3nA==}
     dev: false
 
-  /@emotion/styled@11.10.6(@emotion/react@11.10.6)(react@18.2.0):
+  /@emotion/styled@11.10.6(@emotion/react@11.10.6)(@types/react@18.2.6)(react@18.2.0):
     resolution: {integrity: sha512-OXtBzOmDSJo5Q0AFemHCfl+bUueT8BIcPSxu0EGTpGk6DmI5dnhSzQANm1e1ze0YZL7TDyAyy6s/b/zmGOS3Og==}
     peerDependencies:
       '@emotion/react': ^11.0.0-rc.0
@@ -1740,10 +1759,11 @@ packages:
       '@babel/runtime': 7.21.0
       '@emotion/babel-plugin': 11.11.0
       '@emotion/is-prop-valid': 1.2.0
-      '@emotion/react': 11.10.6(react@18.2.0)
+      '@emotion/react': 11.10.6(@types/react@18.2.6)(react@18.2.0)
       '@emotion/serialize': 1.1.2
       '@emotion/use-insertion-effect-with-fallbacks': 1.0.0(react@18.2.0)
       '@emotion/utils': 1.2.1
+      '@types/react': 18.2.6
       react: 18.2.0
     dev: false
 
@@ -3706,14 +3726,6 @@ packages:
       '@types/react': 18.2.6
     dev: false
 
-  /@types/react@18.0.38:
-    resolution: {integrity: sha512-ExsidLLSzYj4cvaQjGnQCk4HFfVT9+EZ9XZsQ8Hsrcn8QNgXtpZ3m9vSIC2MWtx7jHictK6wYhQgGh6ic58oOw==}
-    dependencies:
-      '@types/prop-types': 15.7.5
-      '@types/scheduler': 0.16.3
-      csstype: 3.1.2
-    dev: false
-
   /@types/react@18.2.6:
     resolution: {integrity: sha512-wRZClXn//zxCFW+ye/D2qY65UsYP1Fpex2YXorHc8awoNamkMZSvBxwxdYVInsHOZZd2Ppq8isnSzJL5Mpf8OA==}
     dependencies:
@@ -5245,7 +5257,7 @@ packages:
     peerDependencies:
       '@emotion/react': '>=11'
     dependencies:
-      '@emotion/react': 11.10.6(react@18.2.0)
+      '@emotion/react': 11.10.6(@types/react@18.2.6)(react@18.2.0)
     dev: false
 
   /encodeurl@1.0.2:

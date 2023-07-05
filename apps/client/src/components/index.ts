@@ -9,6 +9,7 @@ export { default as Header } from './Header';
 export { default as IdealTalent } from './About/Section7/IdealTalent';
 export { default as LinkToHelloGSM } from './LinkToHelloGSM';
 export { default as ListPageCategory } from './ListPage/Category';
+export { default as ListPagePostCard } from './ListPage/PostCard';
 export { default as ListPageTitle } from './ListPage/Title';
 export { default as MainPageNewsletterList } from './MainPage/NewsletterList';
 export { default as MajorCard } from './About/Section5/MajorCard';
