@@ -18,7 +18,11 @@ const ListPagePostCard: React.FC<ListPagePostCardProps> = ({
       <S.PostIndex>#{postIndex}</S.PostIndex>
       <S.PostTitle>{postTitle}</S.PostTitle>
     </S.IndexAndTitle>
-    <WriterAndDate postWriter={postWriter} createdAt={createdAt} />
+    <WriterAndDate
+      workspace='client'
+      postWriter={postWriter}
+      createdAt={createdAt}
+    />
   </S.PostCard>
 );
 
