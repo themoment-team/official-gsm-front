@@ -56,7 +56,7 @@ const PostCarousel: React.FC<PostCarouselProps> = ({ postSeq }) => {
           </S.MoveContainer>
         </S.IMGContainer>
       </S.IMGOuterWrapper>
-      {imageFiles?.length !== 0 && (
+      {imageFiles?.length > 0 && (
         <CarouselController
           setCurrentIndex={setCurrentIndex}
           currentIndex={currentIndex}

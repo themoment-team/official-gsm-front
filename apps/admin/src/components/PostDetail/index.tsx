@@ -17,7 +17,7 @@ const PostDetail: React.FC<PostDetailProps> = ({ postSeq }) => {
 
   return (
     <NoticeWrapper>
-      {imageFiles?.length !== 0 && <PostCarousel postSeq={postSeq} />}
+      {imageFiles?.length > 0 && <PostCarousel postSeq={postSeq} />}
       <CommonDetail postSeq={postSeq} />
     </NoticeWrapper>
   );
