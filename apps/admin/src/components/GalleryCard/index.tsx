@@ -2,9 +2,9 @@ import React from 'react';
 
 import Image from 'next/image';
 
-import type { ContentType } from 'api/client';
-
 import { WriterAndDate } from 'ui';
+
+import type { ContentType } from 'types';
 
 import * as S from './style';
 

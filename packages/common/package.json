@@ -6,6 +6,7 @@
   "dependencies": {
     "emotion-reset": "^3.0.1",
     "tsconfig": "workspace:^",
+    "types": "workspace:^",
     "typescript": "5.0.4"
   }
 }

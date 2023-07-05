@@ -9,13 +9,13 @@ import {
   ListPageTitle,
   ListPagePostCard,
 } from 'client/components';
-import type { CategoryParamsType } from 'client/types';
 
-import type { PostCategoryType } from 'api/client';
 import { useGetPostList } from 'api/client';
 
+import type { CategoryQueryStringType, CategoryType } from 'types';
+
 interface PostListQueryStringType {
-  [key: string]: PostCategoryType;
+  [key: string]: CategoryQueryStringType;
 }
 
 const postListQueryString: PostListQueryStringType = {
@@ -25,7 +25,7 @@ const postListQueryString: PostListQueryStringType = {
 } as const;
 
 interface ListPageProps {
-  params: { category: CategoryParamsType };
+  params: { category: CategoryType };
 }
 
 export default function ListPage({ params: { category } }: ListPageProps) {
