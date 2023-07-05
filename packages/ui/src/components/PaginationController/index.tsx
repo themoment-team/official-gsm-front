@@ -2,7 +2,7 @@ import React from 'react';
 
 import { usePathname, useRouter } from 'next/navigation';
 
-import { PaginationIcon } from 'admin/assets';
+import { PaginationIcon } from 'ui/assets';
 
 import * as S from './style';
 

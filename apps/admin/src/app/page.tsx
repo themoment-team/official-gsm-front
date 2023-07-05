@@ -10,10 +10,11 @@ import {
   Banner,
   PostListHeader,
   PostList,
-  PaginationController,
 } from 'admin/components';
 
 import { useGetPostList } from 'api/client';
+
+import { PaginationController } from 'ui';
 
 interface HomeProps {
   searchParams: {

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const PaginationController = styled.div`
   width: fit-content;
   display: flex;
-  gap: 2.5rem;
+  gap: 0.75rem;
   align-items: center;
   margin-top: 2rem;
 `;
@@ -12,16 +12,20 @@ export const PaginationButton = styled.button`
   :disabled {
     cursor: default;
   }
+  svg {
+    display: block;
+  }
 `;
 
 export const PageNumberWrapper = styled.div`
   display: flex;
-  gap: 1.5rem;
+  gap: 0.25rem;
 `;
 
 export const PageNumberButton = styled.button<{ selected: boolean }>`
-  color: ${({ selected }) => (selected ? '#050505' : '#888888')};
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  ${({ theme }) => theme.typo.body1}
+  width: 2rem;
+  color: ${({ theme, selected }) => theme.color.gray[selected ? '090' : '060']};
   font-weight: 600;
+  text-align: center;
 `;
