@@ -1,6 +1,8 @@
+import Link from 'next/link';
+
 import styled from '@emotion/styled';
 
-export const PostCard = styled.button`
+export const PostCard = styled(Link)`
   ${({ theme }) => theme.typo.h5}
   width: 77.5rem;
   padding: 1rem 1.5rem;
