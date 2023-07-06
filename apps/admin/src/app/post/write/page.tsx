@@ -21,10 +21,9 @@ import {
 import * as S from 'admin/styles/page/write';
 
 import { usePostWritePost } from 'api/admin';
+import type { PostCategoryType } from 'api/client';
 
 import { Button } from 'ui';
-
-import type { CategoryQueryStringType } from 'types';
 
 const schema = z.object({
   title: z
@@ -48,7 +47,7 @@ const categoryQueryStrings = Object.keys(categoryPath);
 
 interface WritePageProps {
   searchParams: {
-    category: CategoryQueryStringType;
+    category: PostCategoryType;
   };
 }
 
@@ -108,23 +107,9 @@ export default function WritePage({
 
   if (isSuccess) replace(categoryPath[category]);
 
-<<<<<<< HEAD
-=======
-  const postFile = () => {
-    setFiles(
-      fileInput.current?.files?.length
-        ? [...files, ...fileInput.current.files].filter(
-            (element, index, arr) =>
-              index === arr.findIndex((files) => files.name === element.name)
-          )
-        : files
-    );
-  };
-
   const isGallery = category === 'EVENT_GALLERY';
   const gallerySubmitDisabled = isGallery && files.length === 0;
 
->>>>>>> 9beccdb51684be820ba22ee27930331c6c1d4055
   return (
     <>
       <Header />
@@ -186,55 +171,7 @@ export default function WritePage({
               <S.ErrorMessage>{`* ${errors.content.message}`}</S.ErrorMessage>
             )}
           </div>
-<<<<<<< HEAD
-          <FileUpload file={files} setFiles={setFiles} />
-=======
-          <div>
-            {files.length > 0 ? (
-              <div>
-                <S.FileTitleWrapper>
-                  <S.FormItemTitle>첨부 파일</S.FormItemTitle>
-                  <FileUploadLabel htmlFor='fileUpload' />
-                  <input
-                    type='file'
-                    id='fileUpload'
-                    onChange={postFile}
-                    ref={fileInput}
-                    hidden
-                    multiple
-                  />
-                </S.FileTitleWrapper>
-                <S.FileCardBox>
-                  {files.map((file) => (
-                    <S.FileCardWrapper key={file.name}>
-                      <FileCard fileName={file.name} onCancel={handleCancel} />
-                    </S.FileCardWrapper>
-                  ))}
-                </S.FileCardBox>
-              </div>
-            ) : (
-              <>
-                <S.FormItemTitle>
-                  첨부 파일 {isGallery && '(필수)'}
-                </S.FormItemTitle>
-                <S.UploadBox>
-                  <S.UploadTitle>
-                    첫번째 등록하신 이미지는 썸네일 역할을 합니다.
-                  </S.UploadTitle>
-                  <FileUploadLabel htmlFor='fileUpload' />
-                  <input
-                    type='file'
-                    id='fileUpload'
-                    onChange={postFile}
-                    ref={fileInput}
-                    hidden
-                    multiple
-                  />
-                </S.UploadBox>
-              </>
-            )}
-          </div>
->>>>>>> 9beccdb51684be820ba22ee27930331c6c1d4055
+          <FileUpload file={files} setFiles={setFiles} isGallery={isGallery} />
           <S.BtnWrap>
             <S.CancelBtn onClick={back}>취소</S.CancelBtn>
             <Button

@@ -11,7 +11,7 @@ interface IFileTypes {
   object: File;
 }
 
-const FileDrop = ({ file }: any) => {
+const FileDrop = ({ file, isGallery }: any) => {
   const [files, setFiles] = useState<IFileTypes[]>(file);
 
   const dragRef = useRef<HTMLLabelElement | null>(null);
@@ -104,7 +104,10 @@ const FileDrop = ({ file }: any) => {
       {files.length > 0 ? (
         <>
           <S.FileTitleWrapper>
-            <S.FormItemTitle>첨부 파일</S.FormItemTitle>
+            <S.FormItemTitle>
+              첨부 파일
+              {isGallery && '(필수)'}
+            </S.FormItemTitle>
             <FileUploadLabel dragRef={dragRef} />
             <input
               type='file'
