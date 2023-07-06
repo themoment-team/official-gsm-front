@@ -8,7 +8,7 @@ import Banner from './Banner';
 import NoticeBannerController from './Controller';
 import * as S from './style';
 
-const PAGE_SIZE = 6;
+const PAGE_SIZE = 5;
 
 const NoticeBanner: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
