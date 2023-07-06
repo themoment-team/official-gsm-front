@@ -5,7 +5,7 @@ export const PaginationController = styled.div`
   display: flex;
   gap: 0.75rem;
   align-items: center;
-  margin-top: 2rem;
+  margin: 2.5rem auto 0;
 `;
 
 export const PaginationButton = styled.button`

@@ -5,17 +5,18 @@ import { useGetPostList } from 'api/client';
 
 import * as S from './style';
 
+const PAGE_SIZE = 4;
+
 const GalleryList = () => {
-  const { data } = useGetPostList('EVENT_GALLERY', 1);
+  const { data } = useGetPostList('EVENT_GALLERY', 1, PAGE_SIZE);
 
   return (
     <S.GalleryListWrapper>
       <CategoryHeader category='EVENT_GALLERY' />
       <S.GalleryList>
-        {data?.postList.map(
-          (post, index) =>
-            index < 4 && <GalleryCard key={post.postSeq} post={post} />
-        )}
+        {data?.postList.map((post) => (
+          <GalleryCard key={post.postSeq} post={post} />
+        ))}
       </S.GalleryList>
     </S.GalleryListWrapper>
   );
