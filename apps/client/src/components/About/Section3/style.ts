@@ -8,11 +8,32 @@ export const Layout = styled.div`
   gap: 5rem;
   width: 100vw;
   height: 54.0625rem;
-  padding: 11.25rem 21.25rem;
   background-color: ${({ theme }) => theme.color.background};
+
+  @media screen and (max-width: 1440px) {
+    background-color: yellow;
+    height: 75.625rem;
+  }
+
+  @media screen and (max-width: 600px) {
+    background-color: red;
+    height: 86.0625rem;
+    padding: 0 60px;
+  }
 `;
 
 export const EducationDirectionLayout = styled.div`
   display: flex;
   gap: 2.375rem;
+
+  @media screen and (max-width: 1440px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 `;

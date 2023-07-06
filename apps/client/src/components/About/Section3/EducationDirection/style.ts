@@ -10,6 +10,10 @@ export const EducationDirectionStyle = styled.div`
   background-color: #ffffff;
   box-shadow: 0rem 0.25rem 2.5rem rgba(175, 198, 209, 0.2);
   border-radius: 1.875rem;
+
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 `;
 
 export const Title = styled.h3`
