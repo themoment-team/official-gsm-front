@@ -13,8 +13,11 @@ export const Banner = styled.div`
   color: ${({ theme: { color } }) => color.white};
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
-    /* width: 56.5rem; */
     width: calc(100vw - 12.5rem);
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: calc(100vw - 7.5rem);
   }
 `;
 
@@ -41,6 +44,12 @@ export const TextBox = styled.div`
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
     margin: 0 calc(100vw - 48.9012rem) 0 2rem;
+    z-index: 1;
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: 27.3125rem;
+    margin: 0 calc(100vw - 36.9012rem) 0 2rem;
   }
 `;
 

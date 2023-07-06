@@ -8,8 +8,11 @@ export const NoticeBannerWrapper = styled.div`
   overflow-x: hidden;
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
-    /* width: 56.5rem; */
     width: calc(100vw - 12.5rem);
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: calc(100vw - 7.5rem);
   }
 `;
 
