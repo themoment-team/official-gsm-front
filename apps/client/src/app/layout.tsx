@@ -4,7 +4,11 @@ import React from 'react';
 
 import { ThemeProvider } from '@emotion/react';
 
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+
 import { GlobalStyle, theme } from 'common';
+
+import Providers from './providers';
 
 export default function RootLayout({
   children,
@@ -28,8 +32,11 @@ export default function RootLayout({
       </head>
       <body>
         <ThemeProvider theme={theme}>
-          <GlobalStyle />
-          {children}
+          <Providers>
+            <ReactQueryDevtools />
+            <GlobalStyle />
+            {children}
+          </Providers>
         </ThemeProvider>
       </body>
     </html>

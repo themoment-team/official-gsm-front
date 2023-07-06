@@ -1,16 +1,32 @@
-import Link from 'next/link';
-
 import styled from '@emotion/styled';
 
-export const LinkToHelloGSMWrapper = styled(Link)`
+export const LinkToHelloGSMWrapper = styled.a`
   width: 77.375rem;
   height: 8.0625rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90deg, #35d391 0%, #6cabe4 48.96%, #c0fbff 100%);
   border-radius: 1.25rem;
+  margin: 7.75rem 0;
+  z-index: 1;
+  position: relative;
+  background: linear-gradient(90deg, #35d391 0%, #6cabe4 48.96%, #c0fbff 100%);
+  background-size: 200% 200%;
+  &:hover {
+    animation: gradient 5s ease infinite;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 `;
 
 export const TextWrapper = styled.div`

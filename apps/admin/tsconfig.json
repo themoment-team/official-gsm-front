@@ -2,10 +2,10 @@
   "extends": "tsconfig/nextjs.json",
   "compilerOptions": {
     "jsx": "preserve",
-    "baseUrl": "./src",
     "paths": {
-      "api/*": ["../../../packages/api/*"],
-      "admin/*": ["*"]
+      "admin/*": ["./src/*"],
+      "api/*": ["../../packages/api/*"],
+      "ui/*": ["../../packages/ui/src/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

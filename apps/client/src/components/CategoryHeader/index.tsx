@@ -12,15 +12,18 @@ const categories = {
   EVENT_GALLERY: '우리 학교 갤러리',
 } as const;
 
+const categoryHref = {
+  FAMILY_NEWSLETTER: '/list/newsletter',
+  EVENT_GALLERY: '/list/gallery',
+} as const;
+
 const CategoryHeader: React.FC<CategoryHeaderProps> = ({ category }) => (
   <S.CategoryHeaderWrapper>
     <NewsTitle pointColor='lime'>{categories[category]}</NewsTitle>
-    <S.SeeMoreWrapper>
-      <S.SeeMoreText>더보기</S.SeeMoreText>
-      <S.ChevronIconWrapper>
-        <ChevronIcon />
-      </S.ChevronIconWrapper>
-    </S.SeeMoreWrapper>
+    <S.SeeMoreLink href={categoryHref[category]}>
+      더보기
+      <ChevronIcon />
+    </S.SeeMoreLink>
   </S.CategoryHeaderWrapper>
 );
 

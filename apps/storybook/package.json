@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "build": "storybook build"
+    "build": "storybook build",
+    "serve": "serve storybook-static"
   },
   "devDependencies": {
     "@emotion/babel-preset-css-prop": "^11.11.0",

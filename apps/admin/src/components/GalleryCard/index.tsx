@@ -2,9 +2,9 @@ import React from 'react';
 
 import Image from 'next/image';
 
-import { WriterAndDate } from 'admin/components';
+import { WriterAndDate } from 'ui';
 
-import type { ContentType } from 'api/client';
+import type { ContentType } from 'types';
 
 import * as S from './style';
 
@@ -26,10 +26,11 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     <S.IMGWrapper>
       <Image fill src={thumbnailUrl ?? ''} alt='ContentIMG' />
     </S.IMGWrapper>
-    <S.Title>{postTitle}</S.Title>
-    <S.ContentPreview>{contentPreview}</S.ContentPreview>
+    <S.Title className='text'>{postTitle}</S.Title>
+    <S.ContentPreview className='text'>{contentPreview}</S.ContentPreview>
     <S.WiterAndDateWrapper>
       <WriterAndDate
+        workspace='admin'
         createdAt={createdAt}
         postWriter={postWriter}
         margin='1.5rem 0 0 0'

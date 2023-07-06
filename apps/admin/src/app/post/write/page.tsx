@@ -1,6 +1,8 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+import { useRouter } from 'next/navigation';
 
 import { css } from '@emotion/react';
 
@@ -12,14 +14,18 @@ import { z } from 'zod';
 import {
   Input,
   TextArea,
-  Category,
   FileUploadLabel,
   Header,
   FileCard,
+  FormCategory,
 } from 'admin/components';
 import * as S from 'admin/styles/page/write';
 
+import { usePostWritePost } from 'api/admin';
+
 import { Button } from 'ui';
+
+import type { CategoryQueryStringType } from 'types';
 
 const schema = z.object({
   title: z
@@ -33,13 +39,32 @@ const schema = z.object({
 
 type FormType = z.infer<typeof schema>;
 
-export default function WritePage() {
+const categoryPath = {
+  NOTICE: '/',
+  FAMILY_NEWSLETTER: '/newsletter',
+  EVENT_GALLERY: '/gallery',
+} as const;
+
+const categoryQueryStrings = Object.keys(categoryPath);
+
+const preventClose = (e: BeforeUnloadEvent) => {
+  e.preventDefault();
+  e.returnValue = '';
+};
+
+interface WritePageProps {
+  searchParams: {
+    category: CategoryQueryStringType;
+  };
+}
+
+export default function WritePage({
+  searchParams: { category },
+}: WritePageProps) {
   const [files, setFiles] = useState<File[]>([]);
   const fileInput = useRef<HTMLInputElement>(null);
 
-  const handleCancel = (fileName: string) => {
-    setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
-  };
+  const { replace, back } = useRouter();
 
   const {
     register,
@@ -48,18 +73,46 @@ export default function WritePage() {
     formState: { errors },
   } = useForm<FormType>({ resolver: zodResolver(schema) });
 
+  const { mutate, isSuccess, isLoading } = usePostWritePost();
+
+  if (!category || !categoryQueryStrings.includes(category)) {
+    replace('/post/write?category=NOTICE');
+  }
+
+  useEffect(() => {
+    (() => {
+      window.addEventListener('beforeunload', preventClose);
+    })();
+
+    return () => {
+      window.removeEventListener('beforeunload', preventClose);
+    };
+  }, []);
+
+  const handleCancel = (fileName: string) => {
+    setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
+  };
+
   const onSubmit: SubmitHandler<FormType> = (data) => {
-    const contents = {
-      title: data.title,
-      content: data.content,
-      files: files,
-      // 나중에 통신코드 작성
-      // file:
+    const content = {
+      postTitle: data.title,
+      postContent: data.content,
+      category: category,
     };
 
-    // eslint-disable-next-line no-console
-    console.log(contents);
+    const formData = new FormData();
+
+    formData.append(
+      'content',
+      new Blob([JSON.stringify(content)], { type: 'application/json' })
+    );
+
+    files.forEach((file) => formData.append('file', file));
+
+    mutate(formData);
   };
+
+  if (isSuccess) replace(categoryPath[category]);
 
   const postFile = () => {
     setFiles(
@@ -72,20 +125,8 @@ export default function WritePage() {
     );
   };
 
-  const preventClose = (e: BeforeUnloadEvent) => {
-    e.preventDefault();
-    e.returnValue = '';
-  };
-
-  useEffect(() => {
-    (() => {
-      window.addEventListener('beforeunload', preventClose);
-    })();
-
-    return () => {
-      window.removeEventListener('beforeunload', preventClose);
-    };
-  }, []);
+  const isGallery = category === 'EVENT_GALLERY';
+  const gallerySubmitDisabled = isGallery && files.length === 0;
 
   return (
     <>
@@ -95,10 +136,10 @@ export default function WritePage() {
         <S.FormWrap onSubmit={handleSubmit(onSubmit)}>
           <div>
             <S.FormItemTitle>카테고리</S.FormItemTitle>
-            <Category width='36.125rem' category='notice' />
+            <FormCategory category={category} />
           </div>
           <div>
-            <S.FormItemTitle>제목</S.FormItemTitle>
+            <S.FormItemTitle>제목 (필수)</S.FormItemTitle>
             <div
               css={css`
                 position: relative;
@@ -128,10 +169,8 @@ export default function WritePage() {
                 {watch('title')?.length ?? 0}/60
               </span>
             </div>
-            {watch('title')?.length > 60 ? (
+            {watch('title')?.length >= 60 && (
               <S.ErrorMessage>글자수를 초과하였습니다.</S.ErrorMessage>
-            ) : (
-              ''
             )}
             {errors.title && (
               <S.ErrorMessage>{`* ${errors.title.message}`}</S.ErrorMessage>
@@ -176,7 +215,9 @@ export default function WritePage() {
               </div>
             ) : (
               <>
-                <S.FormItemTitle>첨부 파일</S.FormItemTitle>
+                <S.FormItemTitle>
+                  첨부 파일 {isGallery && '(필수)'}
+                </S.FormItemTitle>
                 <S.UploadBox>
                   <S.UploadTitle>
                     첫번째 등록하신 이미지는 썸네일 역할을 합니다.
@@ -195,8 +236,13 @@ export default function WritePage() {
             )}
           </div>
           <S.BtnWrap>
-            <S.CancelBtn>취소</S.CancelBtn>
-            <Button width='22.5625rem' type='submit'>
+            <S.CancelBtn onClick={back}>취소</S.CancelBtn>
+            <Button
+              width='22.5625rem'
+              type='submit'
+              disabled={gallerySubmitDisabled}
+              isLoading={isLoading}
+            >
               완료
             </Button>
           </S.BtnWrap>

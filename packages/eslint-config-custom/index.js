@@ -60,12 +60,17 @@ module.exports = {
             position: 'before',
           },
           {
-            pattern: 'common/**',
+            pattern: 'common',
             group: 'internal',
             position: 'before',
           },
           {
             pattern: 'ui',
+            group: 'internal',
+            position: 'before',
+          },
+          {
+            pattern: 'types',
             group: 'internal',
             position: 'before',
           },

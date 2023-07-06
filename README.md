@@ -4,14 +4,19 @@
 
 ## commands
 
+> root `package.json` scripts에 `--filter` command를 포함하여 작성해두었습니다.
+
 ```bash
+$ git clone https://github.com/themoment-team/official-gsm-front.git
+$ cd official-gsm-front
+$ pnpm install
+
+# command of a specific package
 $ pnpm <workspace-name> <command>
 
 # example
 $ pnpm client dev
 ```
-
-`package.json`에 `--filter` command를 포함하여 작성해두었습니다.
 
 ## directory structure
 
@@ -23,9 +28,11 @@ $ pnpm client dev
 │   └── storybook
 │
 │── packages
+│   └── api
 │   └── common
 │   └── eslint-config-custom
 │   └── tsconfig
+│   └── types
 │   └── ui
 ...
 ```

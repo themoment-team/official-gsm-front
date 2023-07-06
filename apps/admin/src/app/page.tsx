@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 import styled from '@emotion/styled';
 
@@ -10,15 +10,31 @@ import {
   Banner,
   PostListHeader,
   PostList,
-  PaginationController,
 } from 'admin/components';
 
 import { useGetPostList } from 'api/client';
 
-export default function Home() {
-  const [pageNumber, setPageNumber] = useState<number>(0);
+import { PaginationController } from 'ui';
 
-  const { data } = useGetPostList('NOTICE', pageNumber);
+interface HomeProps {
+  searchParams: {
+    pageNumber: string;
+  };
+}
+
+const PAGE_SIZE = 6;
+
+export default function Home({ searchParams }: HomeProps) {
+  const { replace } = useRouter();
+
+  /** 1 ~ totalPages */
+  const pageNumber = Number(searchParams.pageNumber ?? 1);
+
+  const { data } = useGetPostList('NOTICE', pageNumber, PAGE_SIZE);
+
+  if (Number.isNaN(pageNumber) || pageNumber < 1) {
+    replace('/');
+  }
 
   return (
     <>
@@ -31,7 +47,6 @@ export default function Home() {
         {(data?.totalPages ?? 0) > 1 && (
           <PaginationController
             pageNumber={pageNumber}
-            setPageNumber={setPageNumber}
             totalPages={data?.totalPages ?? 0}
           />
         )}
@@ -45,4 +60,5 @@ const ContentWrapper = styled.div`
   align-items: center;
   flex-direction: column;
   margin-top: 2.5rem;
+  padding-bottom: 5rem;
 `;
