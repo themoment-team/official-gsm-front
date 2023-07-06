@@ -3,17 +3,17 @@
 import type { ChangeEvent } from 'react';
 import React, { useCallback, useRef, useState, useEffect } from 'react';
 
-import { FileCard, FileUploadLabel } from 'admin/components';
+import { FileUploadLabel, FileCard } from 'admin/components';
 
 import * as S from './style';
-
 interface IFileTypes {
   id: number;
   object: File;
 }
 
-const FileDrop = () => {
-  const [files, setFiles] = useState<IFileTypes[]>([]);
+const FileDrop = ({ file }: any) => {
+  const [isDragging, setIsDragging] = useState<boolean>(false);
+  const [files, setFiles] = useState<IFileTypes[]>(file);
 
   const dragRef = useRef<HTMLLabelElement | null>(null);
   const fileId = useRef<number>(0);
@@ -59,11 +59,17 @@ const FileDrop = () => {
   const handleDragOut = useCallback((e: DragEvent): void => {
     e.preventDefault();
     e.stopPropagation();
+
+    setIsDragging(false);
   }, []);
 
   const handleDragOver = useCallback((e: DragEvent): void => {
     e.preventDefault();
     e.stopPropagation();
+
+    if (e.dataTransfer!.files) {
+      setIsDragging(true);
+    }
   }, []);
 
   const handleDrop = useCallback(
@@ -72,6 +78,7 @@ const FileDrop = () => {
       e.stopPropagation();
 
       onChangeFiles(e);
+      setIsDragging(false);
     },
     [onChangeFiles]
   );
@@ -106,7 +113,7 @@ const FileDrop = () => {
         <>
           <S.FileTitleWrapper>
             <S.FormItemTitle>첨부 파일</S.FormItemTitle>
-            <FileUploadLabel htmlFor='fileUpload' ref={dragRef} />
+            <FileUploadLabel dragRef={dragRef} />
             <input
               type='file'
               id='fileUpload'
@@ -116,25 +123,18 @@ const FileDrop = () => {
             />
           </S.FileTitleWrapper>
           <S.FileCardBox>
-            {files.map((file: IFileTypes) => {
-              const {
-                id,
-                object: { name },
-              } = file;
-
-              return (
-                <S.FileCardWrapper key={name}>
-                  <FileCard
-                    fileName={name}
-                    onClick={() => handleFilterFile(id)}
-                  />
-                </S.FileCardWrapper>
-              );
-            })}
+            {files.map((file: IFileTypes, i) => (
+              <S.FileCardWrapper key={i}>
+                <FileCard
+                  fileName={file.object ? file.object.name : ''}
+                  onClick={() => handleFilterFile(file.id)}
+                />
+              </S.FileCardWrapper>
+            ))}
           </S.FileCardBox>
         </>
       ) : (
-        <S.UploadBox>
+        <S.UploadBox className='DragDrop'>
           <input
             type='file'
             id='fileUpload'
@@ -145,7 +145,7 @@ const FileDrop = () => {
           <S.UploadTitle>
             첫번째 등록하신 이미지는 썸네일 역할을 합니다.
           </S.UploadTitle>
-          <FileUploadLabel htmlFor='fileUpload' ref={dragRef} />
+          <FileUploadLabel dragRef={dragRef} />
         </S.UploadBox>
       )}
     </div>

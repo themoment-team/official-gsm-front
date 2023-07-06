@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 
@@ -45,11 +45,6 @@ const categoryPath = {
 
 const categoryQueryStrings = Object.keys(categoryPath);
 
-const preventClose = (e: BeforeUnloadEvent) => {
-  e.preventDefault();
-  e.returnValue = '';
-};
-
 interface WritePageProps {
   searchParams: {
     category: PostCategoryType;
@@ -60,7 +55,6 @@ export default function WritePage({
   searchParams: { category },
 }: WritePageProps) {
   const [files, setFiles] = useState<File[]>([]);
-  const fileInput = useRef<HTMLInputElement>(null);
 
   const { replace, back } = useRouter();
 
@@ -77,19 +71,15 @@ export default function WritePage({
     replace('/post/write?category=NOTICE');
   }
 
-  useEffect(() => {
-    (() => {
-      window.addEventListener('beforeunload', preventClose);
-    })();
+  // useEffect(() => {
+  //   (() => {
+  //     window.addEventListener('beforeunload', preventClose);
+  //   })();
 
-    return () => {
-      window.removeEventListener('beforeunload', preventClose);
-    };
-  }, []);
-
-  const handleCancel = (fileName: string) => {
-    setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
-  };
+  //   return () => {
+  //     window.removeEventListener('beforeunload', preventClose);
+  //   };
+  // }, []);
 
   const onSubmit: SubmitHandler<FormType> = (data) => {
     const content = {
@@ -111,17 +101,6 @@ export default function WritePage({
   };
 
   if (isSuccess) replace(categoryPath[category]);
-
-  const postFile = () => {
-    setFiles(
-      fileInput.current?.files?.length
-        ? [...files, ...fileInput.current.files].filter(
-            (element, index, arr) =>
-              index === arr.findIndex((files) => files.name === element.name)
-          )
-        : files
-    );
-  };
 
   return (
     <>
@@ -149,7 +128,6 @@ export default function WritePage({
                 borderRadius='0.625rem'
                 isError={errors.title ? true : false}
                 {...register('title')}
-                // onChange={(e) => setInput(e.target.value)}
                 maxLength={60}
               />
               <span
@@ -186,7 +164,7 @@ export default function WritePage({
             )}
           </div>
           <div>
-            <FileDrop />
+            <FileDrop file={files} setFiles={setFiles} />
           </div>
           <S.BtnWrap>
             <S.CancelBtn onClick={back}>취소</S.CancelBtn>
