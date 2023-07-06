@@ -80,7 +80,9 @@ export default function WritePage({
   }
 
   useEffect(() => {
-    () => window.addEventListener('beforeunload', preventClose);
+    (() => {
+      window.addEventListener('beforeunload', preventClose);
+    })();
 
     return () => {
       window.removeEventListener('beforeunload', preventClose);
