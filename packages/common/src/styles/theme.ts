@@ -76,8 +76,17 @@ const typo = {
   },
 } as const;
 
+const breakPoint = {
+  600: '(max-width: 600px)',
+  1024: '(max-width: 1024px)',
+  1440: '(max-width: 1440px)',
+  1728: '(max-width: 1728px)',
+  1920: '(max-width: 1920px)',
+} as const;
+
 export const theme = {
   color,
   elevation,
   typo,
+  breakPoint,
 } as const;
