@@ -22,10 +22,11 @@ import {
 import * as S from 'admin/styles/page/write';
 
 import { usePatchPost } from 'api/admin';
-import type { FileInfoType } from 'api/client';
-import { useGetPostDetail, type PostCategoryType } from 'api/client';
+import { useGetPostDetail } from 'api/client';
 
 import { Button } from 'ui';
+
+import type { FileInfoType, CategoryQueryStringType } from 'types';
 
 interface EditPageProps {
   params: { postSeq: number };
@@ -55,7 +56,7 @@ const preventClose = (e: BeforeUnloadEvent) => {
 };
 
 export default function EditPage({ params: { postSeq } }: EditPageProps) {
-  const [category, setCategory] = useState<PostCategoryType>('NOTICE');
+  const [category, setCategory] = useState<CategoryQueryStringType>('NOTICE');
   const [files, setFiles] = useState<File[]>([]);
   const [prevFiles, setPrevFiles] = useState<FileInfoType[]>();
   const fileInput = useRef<HTMLInputElement>(null);
@@ -153,7 +154,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
         <S.FormWrap onSubmit={handleSubmit(onSubmit)}>
           <div>
             <S.FormItemTitle>카테고리</S.FormItemTitle>
-            <FormCategory category={category} setCategory={setCategory} />
+            <FormCategory category={category} />
           </div>
           <div>
             <S.FormItemTitle>제목 (필수)</S.FormItemTitle>

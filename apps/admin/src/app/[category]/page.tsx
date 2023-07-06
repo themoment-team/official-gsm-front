@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect } from 'react';
+
 import { useRouter } from 'next/navigation';
 
 import styled from '@emotion/styled';
@@ -42,13 +44,16 @@ export default function ListPage({
 
   const { data } = useGetPostList(categoryQueryString[category], pageNumber);
 
-  if (!categoryParamsArray.includes(category)) {
-    replace('/');
-  }
+  useEffect(() => {
+    if (!categoryParamsArray.includes(category)) {
+      replace('/');
+    }
 
-  if (Number.isNaN(pageNumber) || pageNumber < 1) {
-    replace(`/${category}`);
-  }
+    if (Number.isNaN(pageNumber) || pageNumber < 1) {
+      replace(`/${category}`);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
