@@ -8,10 +8,14 @@ export const Banner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   position: relative;
   background: ${({ theme: { color } }) => color.primary.navy};
   color: ${({ theme: { color } }) => color.white};
+
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    /* width: 56.5rem; */
+    width: calc(100vw - 12.5rem);
+  }
 `;
 
 export const DonutImageWrapper = styled.div`
@@ -33,6 +37,10 @@ export const TextBox = styled.div`
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    margin: 0 calc(100vw - 48.9012rem) 0 2rem;
   }
 `;
 
