@@ -8,15 +8,17 @@ import type { CategoryQueryStringType, PostListType } from 'types';
  *
  * @param category - 'NOTICE' | 'FAMILY_NEWSLETTER' | 'EVENT_GALLERY'
  * @param pageNumber - 1 부터 시작
+ * @param pageSize - number
  * @returns useQuery()
  */
 export const useGetPostList = (
   category: CategoryQueryStringType,
-  pageNumber: number
+  pageNumber: number,
+  pageSize: number
 ) =>
   useQuery(
     postQueryKeys.getPostList(category, pageNumber),
-    () => get<PostListType>(postUrl.postList(category, pageNumber)),
+    () => get<PostListType>(postUrl.postList(category, pageNumber, pageSize)),
     {
       keepPreviousData: true,
     }
