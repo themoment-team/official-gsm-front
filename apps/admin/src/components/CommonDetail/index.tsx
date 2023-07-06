@@ -2,8 +2,6 @@ import { useRef } from 'react';
 
 import { useRouter } from 'next/navigation';
 
-import { css } from '@emotion/react';
-
 import { EditButton, DeletePostButton, DeleteModal } from 'admin/components';
 
 import { useDeletePost } from 'api/admin';
@@ -66,18 +64,9 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
               </S.FileList>
             </>
           )}
-          <dialog
-            css={css`
-              border-radius: 0.625rem;
-              border: 0;
-              ::backdrop {
-                background: rgba(5, 5, 5, 0.4);
-              }
-            `}
-            ref={dialog}
-          >
+          <S.DeleteModal ref={dialog}>
             <DeleteModal onClick={deletePost} />
-          </dialog>
+          </S.DeleteModal>
         </S.CommonDetailWrapper>
       )}
     </>
