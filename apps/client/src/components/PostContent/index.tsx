@@ -15,15 +15,11 @@ const PostContent: React.FC<PostContentProps> = ({ postSeq }) => {
     <>
       {data && (
         <S.ContentWrapper>
-          {data.fileInfo.length > 0 && (
-            <S.ImageWrapper>
-              <Image
-                src={data.fileInfo[0].fileUrl}
-                alt={data.fileInfo[0].fileName}
-                fill
-              />
+          {data.fileInfo.map((file, index) => (
+            <S.ImageWrapper key={index}>
+              <Image src={file.fileUrl} alt={file.fileName} fill />
             </S.ImageWrapper>
-          )}
+          ))}
           <S.ContentText>{data?.postContent}</S.ContentText>
         </S.ContentWrapper>
       )}
