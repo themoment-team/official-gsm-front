@@ -1,8 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
-
-import { useRouter } from 'next/navigation';
+import { redirect } from 'next/navigation';
 
 import styled from '@emotion/styled';
 
@@ -37,23 +35,18 @@ export default function ListPage({
   params: { category },
   searchParams,
 }: ListPageProps) {
-  const { replace } = useRouter();
-
   /** 1 ~ totalPages */
   const pageNumber = Number(searchParams.pageNumber ?? 1);
 
   const { data } = useGetPostList(categoryQueryString[category], pageNumber);
 
-  useEffect(() => {
-    if (!categoryParamsArray.includes(category)) {
-      replace('/');
-    }
+  if (!categoryParamsArray.includes(category)) {
+    redirect('/');
+  }
 
-    if (Number.isNaN(pageNumber) || pageNumber < 1) {
-      replace(`/${category}`);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  if (Number.isNaN(pageNumber) || pageNumber < 1) {
+    redirect(`/${category}`);
+  }
 
   return (
     <>
