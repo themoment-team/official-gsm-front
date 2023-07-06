@@ -6,16 +6,16 @@ export const WriterAndDateWrapper = styled.div`
   gap: 0.5rem;
 `;
 
-export const WriterText = styled.p`
-  font-weight: 400;
-  font-size: 1.125rem;
+export const WriterText = styled.p<{ workspace: 'client' | 'admin' }>`
+  ${({ theme, workspace }) =>
+    workspace === 'client' ? theme.typo.body1 : theme.typo.body2}
   line-height: 1.6875rem;
-  color: #616161;
+  color: ${({ theme }) => theme.color.gray['070']};
 `;
 
 export const Dot = styled.div`
   width: 0.25rem;
   height: 0.25rem;
   border-radius: 0.125rem;
-  background: #616161;
+  background-color: ${({ theme }) => theme.color.gray['070']};
 `;

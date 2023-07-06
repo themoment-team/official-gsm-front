@@ -11,10 +11,11 @@ import {
   PostList,
   PostListHeader,
   GalleryList,
-  PaginationController,
 } from 'admin/components';
 
 import { useGetPostList } from 'api/client';
+
+import { PaginationController } from 'ui';
 
 const categoryParamsArray = ['', 'newsletter', 'gallery'] as const;
 

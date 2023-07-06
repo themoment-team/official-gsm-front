@@ -16,7 +16,11 @@ const PostCard: React.FC<PostCardProps> = ({
       <S.Title>{postTitle}</S.Title>
       <S.ContentPreview>{contentPreview}</S.ContentPreview>
     </S.TitleWrap>
-    <WriterAndDate postWriter={postWriter} createdAt={createdAt} />
+    <WriterAndDate
+      workspace='admin'
+      postWriter={postWriter}
+      createdAt={createdAt}
+    />
   </S.PostCard>
 );
 
