@@ -6,7 +6,8 @@
     "@types/node": "20.1.4",
     "axios": "^1.4.0",
     "common": "workspace:^",
-    "eslint-config-custom": "workspace:^"
+    "eslint-config-custom": "workspace:^",
+    "types": "workspace:^"
   },
   "devDependencies": {
     "tsconfig": "workspace:^"

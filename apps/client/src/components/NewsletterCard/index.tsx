@@ -1,6 +1,6 @@
 import { formatDate } from 'common';
 
-import type { ContentType } from 'api/client';
+import type { ContentType } from 'types';
 
 import * as S from './style';
 

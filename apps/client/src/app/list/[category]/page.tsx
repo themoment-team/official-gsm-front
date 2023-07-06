@@ -1,12 +1,50 @@
 'use client';
 
-import { ListPageCategory } from 'client/components';
-import type { CategoryParamsType } from 'client/types';
+import styled from '@emotion/styled';
+
+
+import {
+  Footer,
+  Header,
+  ListPageCategory,
+  ListPageTitle,
+  ListPagePostCard,
+} from 'client/components';
+
+import { useGetPostList } from 'api/client';
+
+import { categoryQueryString } from 'common';
+
+import type { CategoryType } from 'types';
 
 interface ListPageProps {
-  params: { category: CategoryParamsType };
+  params: { category: CategoryType };
 }
 
 export default function ListPage({ params: { category } }: ListPageProps) {
-  return <ListPageCategory categoryParam={category} />;
+  const { data } = useGetPostList(categoryQueryString[category], 1);
+
+  return (
+    <>
+      <Header segment={''} />
+      <Content>
+        <ListPageCategory categoryParam={category} />
+        <ListPageTitle category={category} />
+        {data?.postList?.map((post, index) => (
+          <ListPagePostCard
+            key={post.postSeq}
+            postIndex={index + 1}
+            post={post}
+          />
+        ))}
+      </Content>
+      <Footer />
+    </>
+  );
 }
+
+const Content = styled.div`
+  width: 77.5rem;
+  margin: 0 auto;
+  padding: 5rem 0 7.5rem;
+`;

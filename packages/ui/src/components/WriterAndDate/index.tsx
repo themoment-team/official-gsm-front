@@ -8,21 +8,26 @@ interface WriterAndDateProps {
   postWriter: string;
   createdAt: string;
   margin?: string;
+  workspace: 'client' | 'admin';
 }
 
 const WriterAndDate: React.FC<WriterAndDateProps> = ({
   postWriter,
   createdAt,
   margin,
+  workspace,
 }) => (
   <S.WriterAndDateWrapper
-    css={css`
-      margin: ${margin};
-    `}
+    css={
+      margin &&
+      css`
+        margin: ${margin};
+      `
+    }
   >
-    <S.WriterText>{postWriter}</S.WriterText>
+    <S.WriterText workspace={workspace}>{postWriter}</S.WriterText>
     <S.Dot />
-    <DateComponent createdAt={createdAt} />
+    <DateComponent createdAt={createdAt} workspace={workspace} />
   </S.WriterAndDateWrapper>
 );
 

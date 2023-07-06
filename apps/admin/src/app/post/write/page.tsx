@@ -22,9 +22,10 @@ import {
 import * as S from 'admin/styles/page/write';
 
 import { usePostWritePost } from 'api/admin';
-import type { PostCategoryType } from 'api/client';
 
 import { Button } from 'ui';
+
+import type { CategoryQueryStringType } from 'types';
 
 const schema = z.object({
   title: z
@@ -44,13 +45,22 @@ const categoryPath = {
   EVENT_GALLERY: '/gallery',
 } as const;
 
+const categoryQueryStrings = Object.keys(categoryPath);
+
 const preventClose = (e: BeforeUnloadEvent) => {
   e.preventDefault();
   e.returnValue = '';
 };
 
-export default function WritePage() {
-  const [category, setCategory] = useState<PostCategoryType>('NOTICE');
+interface WritePageProps {
+  searchParams: {
+    category: CategoryQueryStringType;
+  };
+}
+
+export default function WritePage({
+  searchParams: { category },
+}: WritePageProps) {
   const [files, setFiles] = useState<File[]>([]);
   const fileInput = useRef<HTMLInputElement>(null);
 
@@ -63,7 +73,11 @@ export default function WritePage() {
     formState: { errors },
   } = useForm<FormType>({ resolver: zodResolver(schema) });
 
-  const { mutate, isSuccess } = usePostWritePost();
+  const { mutate, isSuccess, isLoading } = usePostWritePost();
+
+  if (!category || !categoryQueryStrings.includes(category)) {
+    replace('/post/write?category=NOTICE');
+  }
 
   useEffect(() => {
     (() => {
@@ -111,6 +125,9 @@ export default function WritePage() {
     );
   };
 
+  const isGallery = category === 'EVENT_GALLERY';
+  const gallerySubmitDisabled = isGallery && files.length === 0;
+
   return (
     <>
       <Header />
@@ -119,10 +136,10 @@ export default function WritePage() {
         <S.FormWrap onSubmit={handleSubmit(onSubmit)}>
           <div>
             <S.FormItemTitle>카테고리</S.FormItemTitle>
-            <FormCategory category={category} setCategory={setCategory} />
+            <FormCategory category={category} />
           </div>
           <div>
-            <S.FormItemTitle>제목</S.FormItemTitle>
+            <S.FormItemTitle>제목 (필수)</S.FormItemTitle>
             <div
               css={css`
                 position: relative;
@@ -198,7 +215,9 @@ export default function WritePage() {
               </div>
             ) : (
               <>
-                <S.FormItemTitle>첨부 파일</S.FormItemTitle>
+                <S.FormItemTitle>
+                  첨부 파일 {isGallery && '(필수)'}
+                </S.FormItemTitle>
                 <S.UploadBox>
                   <S.UploadTitle>
                     첫번째 등록하신 이미지는 썸네일 역할을 합니다.
@@ -218,7 +237,12 @@ export default function WritePage() {
           </div>
           <S.BtnWrap>
             <S.CancelBtn onClick={back}>취소</S.CancelBtn>
-            <Button width='22.5625rem' type='submit'>
+            <Button
+              width='22.5625rem'
+              type='submit'
+              disabled={gallerySubmitDisabled}
+              isLoading={isLoading}
+            >
               완료
             </Button>
           </S.BtnWrap>
