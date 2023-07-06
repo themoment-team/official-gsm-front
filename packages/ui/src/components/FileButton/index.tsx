@@ -15,7 +15,7 @@ interface FileButtonProps {
 const FileButton: React.FC<FileButtonProps> = ({
   file: { fileUrl, fileName },
 }) => (
-  <S.FileButton href={fileUrl} download target='_blank'>
+  <S.FileButton href={fileUrl} download={fileName} target='_blank'>
     <FileIcon />
     <S.FileNameText>{fileName}</S.FileNameText>
   </S.FileButton>
