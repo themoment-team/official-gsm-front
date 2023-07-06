@@ -10,12 +10,12 @@ export const Layout = styled.div`
   height: 54.0625rem;
   background-color: ${({ theme }) => theme.color.background};
 
-  @media screen and (max-width: 1440px) {
+  @media ${({ theme }) => theme.breakPoint['1440']} {
     background-color: yellow;
     height: 75.625rem;
   }
 
-  @media screen and (max-width: 600px) {
+  @media ${({ theme }) => theme.breakPoint['600']} {
     background-color: red;
     height: 86.0625rem;
     padding: 0 60px;
@@ -26,12 +26,12 @@ export const EducationDirectionLayout = styled.div`
   display: flex;
   gap: 2.375rem;
 
-  @media screen and (max-width: 1440px) {
+  @media ${({ theme }) => theme.breakPoint['1440']} {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
-  @media screen and (max-width: 600px) {
+  @media ${({ theme }) => theme.breakPoint['600']} {
     width: 100%;
     display: flex;
     flex-direction: column;

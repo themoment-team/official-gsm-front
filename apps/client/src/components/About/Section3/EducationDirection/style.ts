@@ -11,7 +11,7 @@ export const EducationDirectionStyle = styled.div`
   box-shadow: 0rem 0.25rem 2.5rem rgba(175, 198, 209, 0.2);
   border-radius: 1.875rem;
 
-  @media screen and (max-width: 600px) {
+  @media ${({ theme }) => theme.breakPoint['600']} {
     width: 100%;
   }
 `;
