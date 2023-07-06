@@ -81,9 +81,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
   });
 
   useEffect(() => {
-    (() => {
-      window.addEventListener('beforeunload', preventClose);
-    })();
+    window.addEventListener('beforeunload', preventClose);
 
     return () => {
       window.removeEventListener('beforeunload', preventClose);
