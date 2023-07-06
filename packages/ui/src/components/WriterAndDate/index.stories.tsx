@@ -12,9 +12,18 @@ export default {
 
 type Story = StoryObj<typeof WriterAndDate>;
 
-export const Primary: Story = {
+export const Client: Story = {
   args: {
     postWriter: '최장우',
     createdAt: '2023-05-03T19:47:01.250197',
+    workspace: 'client',
+  },
+};
+
+export const Admin: Story = {
+  args: {
+    postWriter: '최장우',
+    createdAt: '2023-05-03T19:47:01.250197',
+    workspace: 'admin',
   },
 };

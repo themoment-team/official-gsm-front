@@ -52,4 +52,7 @@ const Content = styled.div`
   z-index: 1;
   margin-top: calc(56.25vw - 4rem);
   padding: 6.25rem 0 12.5rem;
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    display: none;
+  }
 `;

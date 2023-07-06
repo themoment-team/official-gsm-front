@@ -22,7 +22,6 @@ export { default as GoogleLoginButton } from './GoogleLoginButton';
 export { default as Header } from './Header';
 export { default as Input } from './Input';
 export { default as LogoutModal } from './LogoutModal';
-export { default as PaginationController } from './PaginationController';
 export { default as PostCard } from './PostCard';
 export { default as PostCarousel } from './Carousel/Post';
 export { default as PostDetail } from './PostDetail';

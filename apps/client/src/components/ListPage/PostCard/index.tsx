@@ -1,26 +1,28 @@
 import { WriterAndDate } from 'ui';
 
+import type { ContentType } from 'types';
+
 import * as S from './style';
 
 export interface ListPagePostCardProps {
   postIndex: number;
-  postTitle: string;
-  postWriter: string;
-  postDate: string;
+  post: Omit<ContentType, 'thumbnailUrl' | 'contentPreview'>;
 }
 
 const ListPagePostCard: React.FC<ListPagePostCardProps> = ({
   postIndex,
-  postTitle,
-  postWriter,
-  postDate,
+  post: { postSeq, postTitle, postWriter, createdAt },
 }) => (
-  <S.PostCard>
+  <S.PostCard href={`/post/${postSeq}`}>
     <S.IndexAndTitle>
       <S.PostIndex>#{postIndex}</S.PostIndex>
       <S.PostTitle>{postTitle}</S.PostTitle>
     </S.IndexAndTitle>
-    <WriterAndDate postWriter={postWriter} createdAt={postDate} />
+    <WriterAndDate
+      workspace='client'
+      postWriter={postWriter}
+      createdAt={createdAt}
+    />
   </S.PostCard>
 );
 

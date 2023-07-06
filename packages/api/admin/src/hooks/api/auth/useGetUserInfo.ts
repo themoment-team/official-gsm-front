@@ -1,7 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
 
-import type { UserInfoType } from 'api/admin';
 import { authQueryKeys, authUrl, get } from 'api/admin';
+
+import type { UserInfoType } from 'types';
 
 import type { UseQueryOptions } from '@tanstack/react-query';
 

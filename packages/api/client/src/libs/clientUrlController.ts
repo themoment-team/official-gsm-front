@@ -1,7 +1,11 @@
-import type { PostCategoryType } from 'api/client';
+import type { CategoryQueryStringType } from 'types';
 
 export const postUrl = {
-  postList: (category: PostCategoryType, pageNumber: number) =>
-    `/post?category=${category}&pageNumber=${pageNumber}`,
+  postList: (
+    category: CategoryQueryStringType,
+    pageNumber: number,
+    pageSize: number
+  ) =>
+    `/post?category=${category}&pageNumber=${pageNumber}&pageSize=${pageSize}`,
   postDetail: (postSeq: number) => `/post/${postSeq}`,
 } as const;

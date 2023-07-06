@@ -10,10 +10,11 @@ import {
   Banner,
   PostListHeader,
   PostList,
-  PaginationController,
 } from 'admin/components';
 
 import { useGetPostList } from 'api/client';
+
+import { PaginationController } from 'ui';
 
 interface HomeProps {
   searchParams: {
@@ -21,13 +22,15 @@ interface HomeProps {
   };
 }
 
+const PAGE_SIZE = 6;
+
 export default function Home({ searchParams }: HomeProps) {
   const { replace } = useRouter();
 
   /** 1 ~ totalPages */
   const pageNumber = Number(searchParams.pageNumber ?? 1);
 
-  const { data } = useGetPostList('NOTICE', pageNumber);
+  const { data } = useGetPostList('NOTICE', pageNumber, PAGE_SIZE);
 
   if (Number.isNaN(pageNumber) || pageNumber < 1) {
     replace('/');
