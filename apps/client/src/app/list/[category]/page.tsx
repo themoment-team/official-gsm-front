@@ -38,6 +38,10 @@ export default function ListPage({
     PAGE_SIZE
   );
 
+  /** 해당 카테고리의 전체 게시글 수 - (이전 페이지들의 게시글 수 + 현재 페이지 내의 게시글의 index) */
+  const postIndex = (index: number) =>
+    (data?.totalElements ?? 0) - (PAGE_SIZE * (pageNumber - 1) + index);
+
   return (
     <>
       <Header segment={'list'} />
@@ -47,10 +51,7 @@ export default function ListPage({
         {data?.postList?.map((post, index) => (
           <ListPagePostCard
             key={post.postSeq}
-            postIndex={
-              data.totalPages * PAGE_SIZE -
-              (index + 1 + PAGE_SIZE * (pageNumber - 1))
-            }
+            postIndex={postIndex(index)}
             post={post}
           />
         ))}
