@@ -12,7 +12,6 @@ interface IFileTypes {
 }
 
 const FileDrop = ({ file }: any) => {
-  const [isDragging, setIsDragging] = useState<boolean>(false);
   const [files, setFiles] = useState<IFileTypes[]>(file);
 
   const dragRef = useRef<HTMLLabelElement | null>(null);
@@ -59,17 +58,11 @@ const FileDrop = ({ file }: any) => {
   const handleDragOut = useCallback((e: DragEvent): void => {
     e.preventDefault();
     e.stopPropagation();
-
-    setIsDragging(false);
   }, []);
 
   const handleDragOver = useCallback((e: DragEvent): void => {
     e.preventDefault();
     e.stopPropagation();
-
-    if (e.dataTransfer!.files) {
-      setIsDragging(true);
-    }
   }, []);
 
   const handleDrop = useCallback(
@@ -78,7 +71,6 @@ const FileDrop = ({ file }: any) => {
       e.stopPropagation();
 
       onChangeFiles(e);
-      setIsDragging(false);
     },
     [onChangeFiles]
   );
@@ -134,7 +126,7 @@ const FileDrop = ({ file }: any) => {
           </S.FileCardBox>
         </>
       ) : (
-        <S.UploadBox className='DragDrop'>
+        <S.UploadBox htmlFor='fileUpload' ref={dragRef}>
           <input
             type='file'
             id='fileUpload'

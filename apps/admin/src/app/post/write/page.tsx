@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { useRouter } from 'next/navigation';
 
@@ -16,7 +16,7 @@ import {
   TextArea,
   Header,
   FormCategory,
-  FileDrop,
+  FileUpload,
 } from 'admin/components';
 import * as S from 'admin/styles/page/write';
 
@@ -71,15 +71,20 @@ export default function WritePage({
     replace('/post/write?category=NOTICE');
   }
 
-  // useEffect(() => {
-  //   (() => {
-  //     window.addEventListener('beforeunload', preventClose);
-  //   })();
+  const preventClose = (e: BeforeUnloadEvent) => {
+    e.preventDefault();
+    e.returnValue = '';
+  };
 
-  //   return () => {
-  //     window.removeEventListener('beforeunload', preventClose);
-  //   };
-  // }, []);
+  useEffect(() => {
+    (() => {
+      window.addEventListener('beforeunload', preventClose);
+    })();
+
+    return () => {
+      window.removeEventListener('beforeunload', preventClose);
+    };
+  }, []);
 
   const onSubmit: SubmitHandler<FormType> = (data) => {
     const content = {
@@ -163,9 +168,7 @@ export default function WritePage({
               <S.ErrorMessage>{`* ${errors.content.message}`}</S.ErrorMessage>
             )}
           </div>
-          <div>
-            <FileDrop file={files} setFiles={setFiles} />
-          </div>
+          <FileUpload file={files} setFiles={setFiles} />
           <S.BtnWrap>
             <S.CancelBtn onClick={back}>취소</S.CancelBtn>
             <Button width='22.5625rem' type='submit'>

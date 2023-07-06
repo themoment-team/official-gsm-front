@@ -11,7 +11,7 @@ export { default as CommonDetail } from './CommonDetail';
 export { default as DeletePostButton } from './DeletePostButton';
 export { default as EditButton } from './PostButton/Edit';
 export { default as FileCard } from './FileCard';
-export { default as FileDrop } from './FileDrop';
+export { default as FileUpload } from './FileUpload';
 export { default as FileUploadLabel } from './FileUploadLabel';
 export { default as FormCategory } from './FormCategory';
 export { default as GalleryCard } from './GalleryCard';
