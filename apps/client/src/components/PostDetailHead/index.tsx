@@ -23,6 +23,7 @@ const PostDetailProps: React.FC<PostDetailHeadProps> = ({ postSeq }) => {
           <S.CategoryText>{categoryTitle[data.category]}</S.CategoryText>
           <S.Title>{data.postTitle}</S.Title>
           <WriterAndDate
+            workspace='client'
             postWriter={data.postWriter}
             createdAt={data.createdAt}
           />

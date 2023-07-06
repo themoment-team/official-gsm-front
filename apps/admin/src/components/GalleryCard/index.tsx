@@ -30,6 +30,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
     <S.ContentPreview className='text'>{contentPreview}</S.ContentPreview>
     <S.WiterAndDateWrapper>
       <WriterAndDate
+        workspace='admin'
         createdAt={createdAt}
         postWriter={postWriter}
         margin='1.5rem 0 0 0'
