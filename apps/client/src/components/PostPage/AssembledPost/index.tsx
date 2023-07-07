@@ -28,13 +28,14 @@ const AssembledPost: React.FC<AssembledPostProps> = ({ postSeq }) => {
                 `}
               />
             </div>
-
-            <PostContent postSeq={postSeq} />
-            <S.FileWrapper>
-              {data?.fileInfo.map((file, index) => (
-                <FileButton key={index} file={file} />
-              ))}
-            </S.FileWrapper>
+            {data.postContent && <PostContent postSeq={postSeq} />}
+            {data.fileInfo.length > 0 && (
+              <S.FileWrapper>
+                {data?.fileInfo.map((file, index) => (
+                  <FileButton key={index} file={file} />
+                ))}
+              </S.FileWrapper>
+            )}
             <>{(data.fileInfo.length > 0 || data.postContent) && <S.Line />}</>
             <ReturnToList category={data.category} />
           </S.ContentWrapper>
