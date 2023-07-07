@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { EditButton, DeletePostButton, DeleteModal } from 'admin/components';
 
 import { useDeletePost } from 'api/admin';
-import { useGetPostDetail } from 'api/client';
+import { useGetPostDetail, useGetPostList } from 'api/client';
 
 import { WriterAndDate, FileButton } from 'ui';
 
@@ -30,10 +30,14 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
   const dialog = useRef<HTMLDialogElement>(null);
 
   const { mutate } = useDeletePost(postSeq);
+  const { refetch } = useGetPostList(category ?? 'NOTICE', 1, 6);
 
   const deletePost = () => {
     mutate();
-    if (category) replace(`/${categorys[category]}`);
+    if (category) {
+      refetch();
+      replace(`/${categorys[category]}`);
+    }
     alert('게시글이 삭제되었습니다');
   };
 
