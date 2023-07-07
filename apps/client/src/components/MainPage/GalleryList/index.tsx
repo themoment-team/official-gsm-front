@@ -17,15 +17,11 @@ const GalleryList = () => {
     <S.GalleryListWrapper>
       <CategoryHeader category='EVENT_GALLERY' />
       <S.GalleryList>
-        {data?.postList?.map((data, index) => {
-          if (windowWidth <= 1440 && windowWidth > 1024) {
-            return index < 3 && <GalleryCard key={data.postSeq} post={data} />;
-          } else if (windowWidth <= 1024) {
-            return index < 2 && <GalleryCard key={data.postSeq} post={data} />;
-          } else {
-            return <GalleryCard key={data.postSeq} post={data} />;
-          }
-        })}
+        {data?.postList
+          .slice(0, windowWidth <= 1024 ? 2 : windowWidth <= 1440 ? 3 : 4)
+          .map((data) => (
+            <GalleryCard key={data.postSeq} post={data} />
+          ))}
       </S.GalleryList>
     </S.GalleryListWrapper>
   );
