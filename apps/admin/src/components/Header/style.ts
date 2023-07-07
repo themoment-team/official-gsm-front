@@ -11,7 +11,8 @@ export const Header = styled.header`
   height: 5rem;
   width: 100vw;
   border-bottom: 0.0625rem solid #eeeeee;
-  backdrop-filter: blur(0.625rem);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(0.6875rem);
   padding: 0 4.8vw;
 `;
 
