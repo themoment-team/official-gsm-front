@@ -29,13 +29,18 @@ const FileDrop = ({ file, isGallery }: any) => {
       }
 
       for (const file of selectFiles) {
-        tempFiles = [
-          ...tempFiles,
-          {
-            id: fileId.current++,
-            object: file,
-          },
-        ];
+        const isDuplicate = tempFiles.some(
+          (existingFile) => existingFile.object.name === file.name
+        );
+        if (!isDuplicate) {
+          tempFiles = [
+            ...tempFiles,
+            {
+              id: fileId.current++,
+              object: file,
+            },
+          ];
+        }
       }
 
       setFiles(tempFiles);
