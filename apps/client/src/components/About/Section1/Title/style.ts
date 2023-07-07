@@ -56,6 +56,11 @@ export const FirstTitle = styled(Title)`
   font-family: initial;
   font-size: 3.8578rem;
   animation: ${leftFadeInOut} 1.5s ease-in-out forwards;
+
+  @media (max-width: 952px) {
+    font-size: 44.29px;
+    line-height: 52.85px;
+  }
 `;
 
 export const SecondTitle = styled(Title)`
@@ -64,12 +69,22 @@ export const SecondTitle = styled(Title)`
   justify-content: end;
   animation: ${rightFadeInOut} 1.5s ease-in-out forwards;
   animation-delay: 1s;
+
+  @media (max-width: 952px) {
+    font-size: 37.86px;
+    line-height: 45.18px;
+  }
 `;
 
 export const ThirdTitle = styled(Title)`
   font-size: 3.5019rem;
   animation: ${leftFadeInOut} 1.5s ease-in-out forwards;
   animation-delay: 2s;
+
+  @media (max-width: 952px) {
+    font-size: 47.98px;
+    line-height: 47.98px;
+  }
 `;
 
 export const Point = styled.div`
@@ -88,4 +103,9 @@ export const EnglishSchoolName = styled.p`
   animation: ${FadeInOut} 1.5s ease-in-out forwards;
   animation-delay: 3s;
   opacity: 0;
+
+  @media (max-width: 952px) {
+    font-size: 17.22px;
+    line-height: 20.55px;
+  }
 `;
