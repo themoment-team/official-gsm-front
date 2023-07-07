@@ -8,11 +8,11 @@ import { FileButton } from 'ui';
 
 import * as S from './style';
 
-interface PostPageProps {
+interface AssembledPostProps {
   postSeq: number;
 }
 
-const PostPage: React.FC<PostPageProps> = ({ postSeq }) => {
+const AssembledPost: React.FC<AssembledPostProps> = ({ postSeq }) => {
   const { data } = useGetPostDetail(postSeq);
 
   return (
@@ -43,4 +43,4 @@ const PostPage: React.FC<PostPageProps> = ({ postSeq }) => {
   );
 };
 
-export default PostPage;
+export default AssembledPost;

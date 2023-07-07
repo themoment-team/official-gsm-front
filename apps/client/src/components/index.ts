@@ -1,4 +1,5 @@
 export { default as AboutTitle } from './Title/About';
+export { default as AssembledPost } from './PostPage/AssembledPost';
 export { default as CategoryHeader } from './CategoryHeader';
 export { default as CurriculumCards } from './About/Section4/CurriculumCards';
 export { default as EducationDirection } from './About/Section3/EducationDirection';
