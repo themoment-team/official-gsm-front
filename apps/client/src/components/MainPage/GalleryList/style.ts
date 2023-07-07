@@ -16,7 +16,7 @@ export const GalleryList = styled.div`
     justify-content: space-between;
   }
 
-  @media (max-width: 1104px) {
+  @media ${({ theme }) => theme.breakPoint['1024']} {
     width: calc(100vw - 7.5rem);
   }
 `;

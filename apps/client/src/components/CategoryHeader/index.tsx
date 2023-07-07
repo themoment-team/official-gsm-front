@@ -1,5 +1,3 @@
-import { css } from '@emotion/react';
-
 import { ChevronIcon } from 'client/assets';
 import { NewsTitle } from 'client/components';
 
@@ -20,16 +18,7 @@ const categoryHref = {
 } as const;
 
 const CategoryHeader: React.FC<CategoryHeaderProps> = ({ category }) => (
-  <S.CategoryHeaderWrapper
-    css={
-      category === 'EVENT_GALLERY' &&
-      css`
-        @media (max-width: 1104px) {
-          width: calc(100vw - 7.5rem);
-        }
-      `
-    }
-  >
+  <S.CategoryHeaderWrapper>
     <NewsTitle pointColor='lime'>{categories[category]}</NewsTitle>
     <S.SeeMoreLink href={categoryHref[category]}>
       더보기
