@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import { CategoryHeader, NewsletterCard } from 'client/components';
 
 import { useGetPostList } from 'api/client';
@@ -8,14 +10,26 @@ const PAGE_SIZE = 3;
 
 const MainpageNewsletterList = () => {
   const { data } = useGetPostList('FAMILY_NEWSLETTER', 1, PAGE_SIZE);
+  const [windowSize, setWindowSize] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener('resize', () => setWindowSize(window.innerWidth));
+    return () => {
+      window.removeEventListener('resize', () =>
+        setWindowSize(window.innerWidth)
+      );
+    };
+  }, []);
 
   return (
     <S.MainpageNewsletterList>
       <CategoryHeader category={'FAMILY_NEWSLETTER'} />
       <S.NewsletterList>
-        {data?.postList?.map((data) => (
-          <NewsletterCard key={data.postSeq} post={data} />
-        ))}
+        {data?.postList?.map(
+          (data, index) =>
+            windowSize <= 1440 &&
+            index < 3 && <NewsletterCard key={data.postSeq} post={data} />
+        )}
       </S.NewsletterList>
     </S.MainpageNewsletterList>
   );

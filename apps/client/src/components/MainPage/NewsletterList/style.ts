@@ -27,4 +27,15 @@ export const NewsletterList = styled.div`
       color: #73962b;
     }
   }
+
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    width: calc(100vw - 12.5rem);
+    justify-content: space-between;
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: calc(100vw - 7.5rem);
+    flex-direction: column;
+    align-items: center;
+  }
 `;
