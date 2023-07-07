@@ -1,16 +1,33 @@
 import styled from '@emotion/styled';
 
 import CircleDecoration from './CircleDecoration';
+// import Scroll from './Scroll';
 import Scroll from './Scroll';
 import Title from './Title';
 
 const Section1 = () => (
   <SectionWrapper>
-    <CircleDecoration />
-    <Title />
+    <Dlwjddn>
+      <CircleDecoration />
+      <Title />
+    </Dlwjddn>
     <Scroll />
   </SectionWrapper>
 );
+
+export const Dlwjddn = styled.div`
+  width: 30.0625rem;
+  height: 26.0625rem;
+  /* background-color: red; */
+  position: relative;
+  top: 10.125rem;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const SectionWrapper = styled.div`
   width: 100%;

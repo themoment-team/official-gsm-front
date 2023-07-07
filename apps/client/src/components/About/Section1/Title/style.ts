@@ -35,9 +35,9 @@ export const TitleWrapper = styled.div`
   flex-direction: column;
   gap: 1.375rem;
   position: absolute;
-  top: 15.1875rem;
-  left: 50%;
-  transform: translateX(-50%);
+  /* top: 15.1875rem; */
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
 `;
 
 const Title = styled.div`
@@ -57,9 +57,9 @@ export const FirstTitle = styled(Title)`
   font-size: 3.8578rem;
   animation: ${leftFadeInOut} 1.5s ease-in-out forwards;
 
-  @media (max-width: 952px) {
-    font-size: 44.29px;
-    line-height: 52.85px;
+  @media (${({ theme }) => theme.breakPoint[600]}) {
+    font-size: 2.7681rem;
+    line-height: 3.3031rem;
   }
 `;
 
@@ -70,9 +70,9 @@ export const SecondTitle = styled(Title)`
   animation: ${rightFadeInOut} 1.5s ease-in-out forwards;
   animation-delay: 1s;
 
-  @media (max-width: 952px) {
-    font-size: 37.86px;
-    line-height: 45.18px;
+  @media (${({ theme }) => theme.breakPoint[600]}) {
+    font-size: 2.3662rem;
+    line-height: 2.8237rem;
   }
 `;
 
@@ -81,9 +81,9 @@ export const ThirdTitle = styled(Title)`
   animation: ${leftFadeInOut} 1.5s ease-in-out forwards;
   animation-delay: 2s;
 
-  @media (max-width: 952px) {
-    font-size: 47.98px;
-    line-height: 47.98px;
+  @media (${({ theme }) => theme.breakPoint[600]}) {
+    font-size: 2.9987rem;
+    line-height: 2.9987rem;
   }
 `;
 
@@ -104,8 +104,8 @@ export const EnglishSchoolName = styled.p`
   animation-delay: 3s;
   opacity: 0;
 
-  @media (max-width: 952px) {
-    font-size: 17.22px;
-    line-height: 20.55px;
+  @media (${({ theme }) => theme.breakPoint[600]}) {
+    font-size: 1.0762rem;
+    line-height: 1.2844rem;
   }
 `;
