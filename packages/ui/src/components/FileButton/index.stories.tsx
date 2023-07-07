@@ -14,9 +14,9 @@ export const Primary: Story = {
   args: {
     file: {
       fileUrl:
-        'http://bucket.ottokeng.site/d237c2c8-1691-4186-93bd-e8c94d499e28.png',
-      fileName: '[2022 서식] 특성화고장학금 지원신청서.pdf',
-      fileExtension: 'JPG',
+        'http://bucket.ottokeng.site/2bcb972e-710d-4751-8156-77ca09bf9474.png',
+      fileName: '더모먼트.png',
+      fileExtension: 'PNG',
     },
   },
 };
@@ -28,7 +28,7 @@ export const Secondary: Story = {
         'http://bucket.ottokeng.site/d237c2c8-1691-4186-93bd-e8c94d499e28.png',
       fileName:
         '[2022 서식] 특성화고장학금 지원신청서fdsafdsafdsafsadfsdaffdas.pdf',
-      fileExtension: 'JPG',
+      fileExtension: 'pdf',
     },
   },
 };
