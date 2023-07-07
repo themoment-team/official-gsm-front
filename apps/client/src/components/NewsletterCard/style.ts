@@ -10,11 +10,7 @@ export const NewsletterCardWrapper = styled.div`
   cursor: pointer;
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
-    width: 27.5rem;
-  }
-
-  @media ${({ theme }) => theme.breakPoint['1440']} {
-    width: 30rem;
+    width: 100%;
   }
 `;
 
