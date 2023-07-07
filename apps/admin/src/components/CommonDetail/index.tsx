@@ -22,7 +22,7 @@ const categorys = {
 } as const;
 
 const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
-  const { push } = useRouter();
+  const { replace } = useRouter();
 
   const { data } = useGetPostDetail(postSeq);
   const category = data?.category;
@@ -36,7 +36,7 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
     mutate();
     if (category) {
       refetch();
-      push(`/${categorys[category]}`);
+      replace(`/${categorys[category]}`);
     }
     alert('게시글이 삭제되었습니다');
   };
