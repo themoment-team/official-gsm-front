@@ -29,7 +29,7 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
 
   const dialog = useRef<HTMLDialogElement>(null);
 
-  const { mutate: deletePost, isSuccess } = useDeletePost(postSeq);
+  const { mutate: deletePost, isSuccess } = useDeletePost();
 
   if (isSuccess && category) {
     replace(`/${categorys[category]}`);
@@ -64,7 +64,7 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
             </>
           )}
           <S.DeleteModal ref={dialog}>
-            <DeleteModal onClick={deletePost} />
+            <DeleteModal onClick={() => deletePost(postSeq)} />
           </S.DeleteModal>
         </S.CommonDetailWrapper>
       )}
