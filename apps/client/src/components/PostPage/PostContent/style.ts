@@ -23,4 +23,5 @@ export const ContentText = styled.p`
   font-weight: 400;
   width: 50rem;
   word-break: break-all;
+  white-space: pre-wrap;
 `;
