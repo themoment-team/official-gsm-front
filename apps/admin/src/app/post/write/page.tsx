@@ -66,6 +66,8 @@ export default function WritePage({
   const { replace, back } = useRouter();
   const isGallery = category === 'EVENT_GALLERY';
   const gallerySubmitDisabled = isGallery && files.length === 0;
+  const fileExtension =
+    '.jpg, .png, .heic, .jpeg, .webp, hwp, .hwpx, .owpml, .docx, .doc, .xls, .xlsx, .ppt, .pptx, .pdf';
 
   const {
     register,
@@ -185,7 +187,7 @@ export default function WritePage({
                   <input
                     type='file'
                     id='fileUpload'
-                    accept='.jpg, .png, .heic, .jpeg, .webp, hwp, .hwpx, .owpml, .docx, .doc, .xls, .xlsx, .ppt, .pptx, .pdf'
+                    accept={fileExtension}
                     onChange={postFile}
                     ref={fileInput}
                     hidden
@@ -213,7 +215,7 @@ export default function WritePage({
                   <input
                     type='file'
                     id='fileUpload'
-                    accept='.jpg, .png, .heic, .jpeg, .webp, hwp, .hwpx, .owpml, .docx, .doc, .xls, .xlsx, .ppt, .pptx, .pdf'
+                    accept={fileExtension}
                     onChange={postFile}
                     ref={fileInput}
                     hidden
