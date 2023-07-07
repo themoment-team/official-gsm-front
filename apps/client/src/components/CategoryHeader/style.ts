@@ -8,6 +8,14 @@ export const CategoryHeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: end;
+
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    width: calc(100vw - 12.5rem);
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: calc(100vw - 7.5rem);
+  }
 `;
 
 export const SeeMoreLink = styled(Link)`
@@ -15,6 +23,6 @@ export const SeeMoreLink = styled(Link)`
   display: flex;
   align-items: center;
   font-weight: 400;
-  color: ${({ theme: { color } }) => color.gray['070']};
   cursor: pointer;
+  color: ${({ theme: { color } }) => color.gray['070']};
 `;

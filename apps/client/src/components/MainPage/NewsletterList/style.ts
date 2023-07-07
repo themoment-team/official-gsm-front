@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export const MainpageNewsletterList = styled.div`
   margin-top: 3.75rem;
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 1.25rem;
 `;
