@@ -10,9 +10,10 @@ const PAGE_SIZE = 3;
 
 const MainpageNewsletterList = () => {
   const { data } = useGetPostList('FAMILY_NEWSLETTER', 1, PAGE_SIZE);
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
-
+  const [windowSize, setWindowSize] = useState(0);
+  
   useEffect(() => {
+    setWindowSize(window.innerWidth);
     window.addEventListener('resize', () => setWindowSize(window.innerWidth));
     return () => {
       window.removeEventListener('resize', () =>
