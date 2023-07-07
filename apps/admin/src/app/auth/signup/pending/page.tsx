@@ -2,11 +2,12 @@
 
 import { useRouter } from 'next/navigation';
 
-import { secondsToMs } from 'common';
 
 import { AuthTitle, AuthModel, AuthDescription } from 'admin/components';
 
 import { useGetUserInfo } from 'api/admin';
+
+import { secondsToMs } from 'common';
 
 import { Button } from 'ui';
 

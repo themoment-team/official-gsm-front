@@ -11,10 +11,11 @@ import {
   PostList,
   PostListHeader,
   GalleryList,
-  PaginationController,
 } from 'admin/components';
 
 import { useGetPostList } from 'api/client';
+
+import { PaginationController } from 'ui';
 
 const categoryParamsArray = ['', 'newsletter', 'gallery'] as const;
 
@@ -22,6 +23,8 @@ const categoryQueryString = {
   newsletter: 'FAMILY_NEWSLETTER',
   gallery: 'EVENT_GALLERY',
 } as const;
+
+const PAGE_SIZE = 6;
 
 type CategoryParamsType = keyof typeof categoryQueryString;
 
@@ -39,7 +42,11 @@ export default function ListPage({
   /** 1 ~ totalPages */
   const pageNumber = Number(searchParams.pageNumber ?? 1);
 
-  const { data } = useGetPostList(categoryQueryString[category], pageNumber);
+  const { data } = useGetPostList(
+    categoryQueryString[category],
+    pageNumber,
+    PAGE_SIZE
+  );
 
   if (!categoryParamsArray.includes(category)) {
     replace('/');

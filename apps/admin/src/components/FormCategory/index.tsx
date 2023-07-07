@@ -4,7 +4,7 @@ import { usePathname, useRouter } from 'next/navigation';
 
 import { css } from '@emotion/react';
 
-import type { PostCategoryType } from 'api/client';
+import type { CategoryQueryStringType } from 'types';
 
 import * as S from './style';
 
@@ -15,11 +15,11 @@ const categoryArray = [
 ] as const;
 
 interface FormCategoryProps {
-  category: PostCategoryType;
+  category: CategoryQueryStringType;
 }
 
 const FormCategory: React.FC<FormCategoryProps> = ({ category }) => {
-  const acticeStyle = (categoryQueryString: PostCategoryType) =>
+  const acticeStyle = (categoryQueryString: CategoryQueryStringType) =>
     css`
       color: ${categoryQueryString === category ? '#ffffff' : '#a4a4a4'};
     `;
@@ -27,7 +27,7 @@ const FormCategory: React.FC<FormCategoryProps> = ({ category }) => {
   const pathname = usePathname();
   const { replace } = useRouter();
 
-  const updateCategory = (category: PostCategoryType) => {
+  const updateCategory = (category: CategoryQueryStringType) => {
     const params = new URLSearchParams();
     params.set('category', String(category));
 

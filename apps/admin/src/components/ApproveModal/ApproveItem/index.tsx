@@ -1,10 +1,8 @@
 import * as I from 'admin/assets';
 
-import {
-  usePatchApprove,
-  type UnapproveListType,
-  useDeleteApprove,
-} from 'api/admin';
+import { usePatchApprove, useDeleteApprove } from 'api/admin';
+
+import type { UnapproveListType } from 'types';
 
 import * as S from './style';
 interface ApproveItemProps extends UnapproveListType {

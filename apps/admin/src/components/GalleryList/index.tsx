@@ -2,7 +2,7 @@ import React from 'react';
 
 import { GalleryCard } from 'admin/components';
 
-import type { ContentType } from 'api/client';
+import type { ContentType } from 'types';
 
 import * as S from './style';
 

@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import styled from '@emotion/styled';
 
 export const CategoryHeaderWrapper = styled.div`
@@ -5,20 +7,14 @@ export const CategoryHeaderWrapper = styled.div`
   height: 2.5625rem;
   display: flex;
   justify-content: space-between;
+  align-items: end;
 `;
 
-export const SeeMoreWrapper = styled.div`
+export const SeeMoreLink = styled(Link)`
+  ${({ theme: { typo } }) => typo.h5}
   display: flex;
   align-items: center;
-  cursor: pointer;
-`;
-
-export const SeeMoreText = styled.h5`
-  ${({ theme: { typo } }) => typo.h5}
-  color: ${({ theme: { color } }) => color.gray['070']};
   font-weight: 400;
-`;
-
-export const ChevronIconWrapper = styled.div`
-  margin: 0 0.5625rem;
+  color: ${({ theme: { color } }) => color.gray['070']};
+  cursor: pointer;
 `;

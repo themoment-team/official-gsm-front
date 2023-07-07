@@ -43,6 +43,7 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
         <S.CommonDetailWrapper>
           <S.Title>{data.postTitle}</S.Title>
           <WriterAndDate
+            workspace='admin'
             margin='0.75rem 0'
             createdAt={data.createdAt}
             postWriter={data.postWriter}

@@ -2,7 +2,7 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { css, useTheme } from '@emotion/react';
 
-import type { ContentType } from 'api/client';
+import type { ContentType } from 'types';
 
 import * as S from './style';
 

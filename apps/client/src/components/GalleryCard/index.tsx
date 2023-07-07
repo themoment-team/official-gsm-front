@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
-import type { ContentType } from 'api/client';
-
 import { DateComponent } from 'ui';
+
+import type { ContentType } from 'types';
 
 import * as S from './style';
 
@@ -21,7 +21,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
       <S.Title className='text'>{postTitle}</S.Title>
       <S.ContentPreview className='text'>{contentPreview}</S.ContentPreview>
     </S.TextBox>
-    <DateComponent createdAt={createdAt} />
+    <DateComponent createdAt={createdAt} workspace='client' />
   </S.GalleryCard>
 );
 
