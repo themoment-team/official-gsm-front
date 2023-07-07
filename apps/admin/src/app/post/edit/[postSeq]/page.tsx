@@ -175,17 +175,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
                 // onChange={(e) => setInput(e.target.value)}
                 maxLength={60}
               />
-              <span
-                css={css`
-                  font-weight: 400;
-                  font-size: 0.75rem;
-                  line-height: 1.125rem;
-                  position: absolute;
-                  right: 1rem;
-                `}
-              >
-                {watch('title')?.length ?? 0}/60
-              </span>
+              <S.LengthTitle>{watch('title')?.length ?? 0}/60</S.LengthTitle>
             </div>
             {watch('title')?.length >= 60 && (
               <S.ErrorMessage>글자수를 초과하였습니다.</S.ErrorMessage>
