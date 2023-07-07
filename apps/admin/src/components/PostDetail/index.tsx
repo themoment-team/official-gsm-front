@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import { filterImages } from 'common';
+
 import { CommonDetail, PostCarousel } from 'admin/components';
 
 import { useGetPostDetail } from 'api/client';
@@ -11,9 +13,11 @@ interface PostDetailProps {
 const PostDetail: React.FC<PostDetailProps> = ({ postSeq }) => {
   const { data } = useGetPostDetail(postSeq);
 
+  const imageFiles = filterImages(data?.fileInfo);
+
   return (
     <NoticeWrapper>
-      {data?.fileInfo[0] && <PostCarousel postSeq={postSeq} />}
+      {imageFiles?.length > 0 && <PostCarousel postSeq={postSeq} />}
       <CommonDetail postSeq={postSeq} />
     </NoticeWrapper>
   );
