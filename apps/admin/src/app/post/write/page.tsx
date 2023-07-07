@@ -63,8 +63,9 @@ export default function WritePage({
 }: WritePageProps) {
   const [files, setFiles] = useState<File[]>([]);
   const fileInput = useRef<HTMLInputElement>(null);
-
   const { replace, back } = useRouter();
+  const isGallery = category === 'EVENT_GALLERY';
+  const gallerySubmitDisabled = isGallery && files.length === 0;
 
   const {
     register,
@@ -122,9 +123,6 @@ export default function WritePage({
         : files
     );
   };
-
-  const isGallery = category === 'EVENT_GALLERY';
-  const gallerySubmitDisabled = isGallery && files.length === 0;
 
   return (
     <>

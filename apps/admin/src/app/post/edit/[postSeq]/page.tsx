@@ -59,12 +59,15 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
   const [category, setCategory] = useState<CategoryQueryStringType>('NOTICE');
   const [files, setFiles] = useState<File[]>([]);
   const [prevFiles, setPrevFiles] = useState<FileInfoType[]>();
-  const fileInput = useRef<HTMLInputElement>(null);
   const [deleteFileUrl, setDeleteFileUrl] = useState<string[]>([]);
+  const fileInput = useRef<HTMLInputElement>(null);
 
   const { replace, back } = useRouter();
   const { mutate, isSuccess } = usePatchPost(postSeq);
   const { data } = useGetPostDetail(postSeq);
+
+  const isGallery = category === 'EVENT_GALLERY';
+  const gallerySubmitDisabled = isGallery && files.length === 0;
 
   const {
     register,
@@ -140,9 +143,6 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
         : files
     );
   };
-
-  const isGallery = category === 'EVENT_GALLERY';
-  const gallerySubmitDisabled = isGallery && files.length === 0;
 
   return (
     <>
