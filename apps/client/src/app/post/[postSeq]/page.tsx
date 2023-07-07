@@ -13,7 +13,7 @@ export default function PostPage({ params: { postSeq } }: PostPageProps) {
     <>
       <Header segment='list' />
       <BackGround>
-        <AssembledPost postSeq={postSeq} />
+        <AssembledPost postSeq={parseInt(postSeq)} />
       </BackGround>
       <Footer />
     </>

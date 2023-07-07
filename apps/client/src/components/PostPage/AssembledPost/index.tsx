@@ -36,7 +36,7 @@ const AssembledPost: React.FC<AssembledPostProps> = ({ postSeq }) => {
                 ))}
               </S.FileWrapper>
             )}
-            <>{(data.fileInfo.length > 0 || data.postContent) && <S.Line />}</>
+            {(data.fileInfo.length > 0 || data.postContent) && <S.Line />}
             <ReturnToList category={data.category} />
           </S.ContentWrapper>
         </S.PostPage>
