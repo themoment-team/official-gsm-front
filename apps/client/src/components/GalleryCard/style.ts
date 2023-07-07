@@ -18,11 +18,7 @@ export const GalleryCard = styled(Link)`
   }
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
-    width: 17.8331rem;
-  }
-
-  @media (max-width: 714px) {
-    width: 14.25rem;
+    width: 100%;
   }
 `;
 
@@ -39,11 +35,7 @@ export const IMGWrapper = styled.div`
   }
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
-    width: 17.8331rem;
-  }
-
-  @media (max-width: 714px) {
-    width: 14.25rem;
+    width: 100%;
   }
 `;
 
