@@ -31,7 +31,7 @@ const AssembledPost: React.FC<AssembledPostProps> = ({ postSeq }) => {
             {data.postContent && <PostContent postSeq={postSeq} />}
             {data.fileInfo.length > 0 && (
               <S.FileWrapper>
-                {data?.fileInfo.map((file, index) => (
+                {data.fileInfo.map((file, index) => (
                   <FileButton key={index} file={file} />
                 ))}
               </S.FileWrapper>
