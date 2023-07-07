@@ -24,8 +24,11 @@ const AboutTitle: React.FC<AboutTitleProps> = ({
 export default AboutTitle;
 
 export const AboutTitleStyle = styled.h1`
-  font-size: 3rem;
-  line-height: 4.438rem;
+  ${({ theme }) => theme.typo.h1}
   font-weight: 700;
   color: ${({ theme }) => theme.color.gray['090']};
+
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    ${({ theme }) => theme.typo.title}
+  }
 `;

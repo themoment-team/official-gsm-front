@@ -4,6 +4,8 @@ import Image from 'next/image';
 
 import { css } from '@emotion/react';
 
+import { filterImages } from 'common';
+
 import { CarouselController } from 'admin/components';
 import * as S from 'admin/components/Carousel/style';
 
@@ -17,6 +19,8 @@ const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ postSeq }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const { data } = useGetPostDetail(postSeq);
+
+  const imageFiles = filterImages(data?.fileInfo);
 
   return (
     <S.GalleryCarouselWrapper>
@@ -32,7 +36,7 @@ const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ postSeq }) => {
               right: ${currentIndex * 40.6256}rem;
             `}
           >
-            {data?.fileInfo.map((file, i) => (
+            {imageFiles?.map((file, i) => (
               <S.IMGWrapper
                 key={file.fileName + i}
                 css={css`
@@ -52,11 +56,13 @@ const GalleryCarousel: React.FC<GalleryCarouselProps> = ({ postSeq }) => {
           </S.MoveContainer>
         </S.IMGContainer>
       </S.IMGOuterWrapper>
-      <CarouselController
-        setCurrentIndex={setCurrentIndex}
-        currentIndex={currentIndex}
-        postSeq={postSeq}
-      />
+      {imageFiles?.length > 0 && (
+        <CarouselController
+          setCurrentIndex={setCurrentIndex}
+          currentIndex={currentIndex}
+          postSeq={postSeq}
+        />
+      )}
     </S.GalleryCarouselWrapper>
   );
 };
