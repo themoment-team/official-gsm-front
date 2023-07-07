@@ -25,11 +25,15 @@ const MainpageNewsletterList = () => {
     <S.MainpageNewsletterList>
       <CategoryHeader category={'FAMILY_NEWSLETTER'} />
       <S.NewsletterList>
-        {data?.postList?.map(
-          (data, index) =>
-            windowSize <= 1440 &&
-            index < 3 && <NewsletterCard key={data.postSeq} post={data} />
-        )}
+        {data?.postList?.map((data, index) => {
+          if (windowSize <= 1440) {
+            return (
+              index < 3 && <NewsletterCard key={data.postSeq} post={data} />
+            );
+          } else {
+            return <NewsletterCard key={data.postSeq} post={data} />;
+          }
+        })}
       </S.NewsletterList>
     </S.MainpageNewsletterList>
   );
