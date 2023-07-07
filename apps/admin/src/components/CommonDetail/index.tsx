@@ -30,7 +30,6 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
   const dialog = useRef<HTMLDialogElement>(null);
 
   const { mutate: deletePost, isSuccess } = useDeletePost(postSeq);
-  // const { refetch } = useGetPostList(category ?? 'NOTICE', 1, 6);
 
   if (isSuccess && category) {
     replace(`/${categorys[category]}`);
