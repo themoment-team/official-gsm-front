@@ -2,6 +2,8 @@ import type { Dispatch, SetStateAction } from 'react';
 
 import { css } from '@emotion/react';
 
+import { filterImages } from 'common';
+
 import { ChevronIcon } from 'admin/assets';
 
 import { useGetPostDetail } from 'api/client';
@@ -21,8 +23,10 @@ const CarouselController: React.FC<CarouselControllerProps> = ({
 }) => {
   const { data } = useGetPostDetail(postSeq);
 
+  const imageFiles = filterImages(data?.fileInfo);
+
   const min = 0;
-  const max = (data?.fileInfo.length ?? 0) - 1;
+  const max = (imageFiles?.length ?? 0) - 1;
 
   const moveLeft = () => {
     setCurrentIndex(currentIndex - 1);
@@ -40,7 +44,7 @@ const CarouselController: React.FC<CarouselControllerProps> = ({
         <ChevronIcon turn={'left'} />
       </S.MoveButton>
       <S.DotWrapper>
-        {data?.fileInfo.map((file, i) => (
+        {imageFiles?.map((file, i) => (
           <S.Dot
             key={file.fileName}
             css={
