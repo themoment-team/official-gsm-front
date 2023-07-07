@@ -35,9 +35,6 @@ export const TitleWrapper = styled.div`
   flex-direction: column;
   gap: 1.375rem;
   position: absolute;
-  /* top: 15.1875rem; */
-  /* left: 50%; */
-  /* transform: translateX(-50%); */
 `;
 
 const Title = styled.div`

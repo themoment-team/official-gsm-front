@@ -4,9 +4,6 @@ export const CircleWrapper = styled.div`
   position: absolute;
   width: 26rem;
   height: 26rem;
-  /* top: 10.125rem; */
-  left: 50%;
-  transform: translateX(-50%);
 `;
 
 const CircleTemplate = styled.div`

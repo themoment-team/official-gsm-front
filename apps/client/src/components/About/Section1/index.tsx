@@ -7,18 +7,18 @@ import Title from './Title';
 
 const Section1 = () => (
   <SectionWrapper>
-    <Dlwjddn>
+    <SectionTitleWrapper>
       <CircleDecoration />
       <Title />
-    </Dlwjddn>
+    </SectionTitleWrapper>
     <Scroll />
   </SectionWrapper>
 );
 
-export const Dlwjddn = styled.div`
+export const SectionTitleWrapper = styled.div`
   width: 30.0625rem;
   height: 26.0625rem;
-  /* background-color: red; */
+
   position: relative;
   top: 10.125rem;
 
