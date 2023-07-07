@@ -28,7 +28,9 @@ const AssembledPost: React.FC<AssembledPostProps> = ({ postSeq }) => {
                 `}
               />
             </div>
-            {data.postContent && <PostContent postSeq={postSeq} />}
+            {(data.fileInfo.length > 0 || data.postContent) && (
+              <PostContent postSeq={postSeq} />
+            )}
             {data.fileInfo.length > 0 && (
               <S.FileWrapper>
                 {data.fileInfo.map((file, index) => (
