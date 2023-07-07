@@ -216,6 +216,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
                   <input
                     type='file'
                     id='fileUpload'
+                    accept='.jpg, .png, .heic, .jpeg, .webp, hwp, .hwpx, .owpml, .docx, .doc, .xls, .xlsx, .ppt, .pptx, .pdf'
                     onChange={postFile}
                     ref={fileInput}
                     hidden
@@ -252,6 +253,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
                   <input
                     type='file'
                     id='fileUpload'
+                    accept='.jpg, .png, .heic, .jpeg, .webp, hwp, .hwpx, .owpml, .docx, .doc, .xls, .xlsx, .ppt, .pptx, .pdf'
                     onChange={postFile}
                     ref={fileInput}
                     hidden
