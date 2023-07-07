@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 
 import CircleDecoration from './CircleDecoration';
-// import Scroll from './Scroll';
 import Scroll from './Scroll';
 import Title from './Title';
 
