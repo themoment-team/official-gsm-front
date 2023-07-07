@@ -50,11 +50,6 @@ const categoryPath = {
   EVENT_GALLERY: '/gallery',
 } as const;
 
-const preventClose = (e: BeforeUnloadEvent) => {
-  e.preventDefault();
-  e.returnValue = '';
-};
-
 export default function EditPage({ params: { postSeq } }: EditPageProps) {
   const [category, setCategory] = useState<CategoryQueryStringType>('NOTICE');
   const [files, setFiles] = useState<File[]>([]);
@@ -84,6 +79,11 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
       content: data?.postContent,
     },
   });
+
+  const preventClose = (e: BeforeUnloadEvent) => {
+    e.preventDefault();
+    e.returnValue = '';
+  };
 
   useEffect(() => {
     window.addEventListener('beforeunload', preventClose);
