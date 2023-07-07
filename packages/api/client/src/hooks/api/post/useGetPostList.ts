@@ -18,7 +18,13 @@ export const useGetPostList = (
 ) =>
   useQuery(
     postQueryKeys.getPostList(category, pageNumber),
-    () => get<PostListType>(postUrl.postList(category, pageNumber, pageSize)),
+    () => {
+      // eslint-disable-next-line no-console
+      console.log(new Date());
+      return get<PostListType>(
+        postUrl.postList(category, pageNumber, pageSize)
+      );
+    },
     {
       keepPreviousData: true,
     }

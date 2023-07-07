@@ -34,8 +34,12 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
 
   const deletePost = () => {
     mutate();
+
     if (category) {
       // refetch();
+
+      // eslint-disable-next-line no-console
+      console.log(new Date());
       replace(`/${categorys[category]}`);
     }
   };
