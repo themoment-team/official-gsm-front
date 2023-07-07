@@ -10,7 +10,7 @@ const categories = {
   NOTICE: 'notice',
   FAMILY_NEWSLETTER: 'newsletter',
   EVENT_GALLERY: 'gallery',
-};
+} as const;
 
 const ReturnToList: React.FC<ReturnToListProps> = ({ category }) => (
   <S.ReturnToListWrapper href={`/list/${categories[category]}`}>
