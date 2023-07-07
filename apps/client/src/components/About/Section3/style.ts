@@ -11,14 +11,12 @@ export const Layout = styled.div`
   background-color: ${({ theme }) => theme.color.background};
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
-    background-color: yellow;
     height: 75.625rem;
   }
 
   @media ${({ theme }) => theme.breakPoint['600']} {
-    background-color: red;
     height: 86.0625rem;
-    padding: 0 60px;
+    padding: 0 3.75rem;
   }
 `;
 
@@ -28,7 +26,7 @@ export const EducationDirectionLayout = styled.div`
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media ${({ theme }) => theme.breakPoint['600']} {
