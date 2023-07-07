@@ -10,7 +10,7 @@ const PAGE_SIZE = 3;
 
 const MainpageNewsletterList = () => {
   const { data } = useGetPostList('FAMILY_NEWSLETTER', 1, PAGE_SIZE);
-  const [windowSize, setWindowSize] = useState(0);
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   useEffect(() => {
     window.addEventListener('resize', () => setWindowSize(window.innerWidth));
@@ -19,7 +19,7 @@ const MainpageNewsletterList = () => {
         setWindowSize(window.innerWidth)
       );
     };
-  }, []);
+  }, [windowSize]);
 
   return (
     <S.MainpageNewsletterList>
@@ -28,7 +28,7 @@ const MainpageNewsletterList = () => {
         {data?.postList?.map((data, index) => {
           if (windowSize <= 1440) {
             return (
-              index < 3 && <NewsletterCard key={data.postSeq} post={data} />
+              index < 2 && <NewsletterCard key={data.postSeq} post={data} />
             );
           } else {
             return <NewsletterCard key={data.postSeq} post={data} />;

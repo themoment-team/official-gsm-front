@@ -8,6 +8,14 @@ export const NewsletterCardWrapper = styled.div`
   height: 11.25rem;
   border-radius: 1.25rem;
   cursor: pointer;
+
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    width: 27.5rem;
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    width: 30rem;
+  }
 `;
 
 export const DateWrapper = styled.div`
