@@ -13,7 +13,7 @@ const categories = {
 };
 
 const ReturnToList: React.FC<ReturnToListProps> = ({ category }) => (
-  <S.ReturnToListWrapper href={`/list${categories[category]}`}>
+  <S.ReturnToListWrapper href={`/list/${categories[category]}`}>
     <ReturnChevronIcon />
     <S.ReturnText>목록으로 돌아가기</S.ReturnText>
   </S.ReturnToListWrapper>
