@@ -1,10 +1,9 @@
 import React from 'react';
 
 import { css, useTheme } from '@emotion/react';
+import styled from '@emotion/styled';
 
 import type { PointColorType, PointPositionType } from 'client/types';
-
-import * as S from './style';
 
 interface TitleProps {
   children: React.ReactNode;
@@ -22,19 +21,29 @@ const TitleTemplate: React.FC<TitleProps> = ({
 }) => {
   const theme = useTheme();
   return (
-    <S.TitleContainer>
+    <TitleContainer>
       {children}
-      <S.PointStyle
+      <PointStyle
         css={css`
           width: ${pointSize};
           height: ${pointSize};
           background-color: ${theme.color.primary[pointColor]};
           right: -1.25rem;
-          ${pointPosition === 'top' ? 'top: 0' : 'bottom: 15%'};
+          ${pointPosition === 'top' ? 'top: -3%' : 'bottom: 15%'};
         `}
       />
-    </S.TitleContainer>
+    </TitleContainer>
   );
 };
 
 export default TitleTemplate;
+
+const PointStyle = styled.div`
+  border-radius: 50%;
+  position: absolute;
+`;
+
+const TitleContainer = styled.div`
+  position: relative;
+  display: inline-block;
+`;

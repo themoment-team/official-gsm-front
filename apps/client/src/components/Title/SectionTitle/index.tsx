@@ -22,7 +22,13 @@ const SectionTitle: React.FC<SectionTitleProps> = ({
 export default SectionTitle;
 
 const SectionTitleContainer = styled.div`
-  display: inline-flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  gap: 3.75rem;
+
+  h1 {
+    margin-bottom: 0.75rem;
+
+    @media ${({ theme }) => theme.breakPoint['600']} {
+      margin-bottom: 0.25rem;
+    }
+  }
 `;
