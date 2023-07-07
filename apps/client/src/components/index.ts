@@ -19,7 +19,7 @@ export { default as NoticeBanner } from './NoticeBanner';
 export { default as PostContent } from './PostPage/PostContent';
 export { default as PostDetailHead } from './PostPage/PostDetailHead';
 export { default as PromotionVideo } from './PromotionVideo';
-export { default as ReturnToList } from './ReturnToList';
+export { default as ReturnToList } from './PostPage/ReturnToList';
 export { default as Section1 } from './About/Section1';
 export { default as Section2 } from './About/Section2';
 export { default as Section3 } from './About/Section3';

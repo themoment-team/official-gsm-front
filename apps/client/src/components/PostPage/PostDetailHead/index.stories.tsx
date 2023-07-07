@@ -3,7 +3,7 @@ import PostDetailHead from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'client/PostDetailHead',
+  title: 'client/Post/DetailHead',
   component: PostDetailHead,
 } as Meta<typeof PostDetailHead>;
 
