@@ -106,7 +106,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
   }, [data]);
 
   const handleCancel = (fileName: string, fileUrl?: string) => {
-    setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
+    setFiles((prevState) => prevState.filter((file) => file.name !== fileName));
     setPrevFiles((prevFiles) =>
       prevFiles?.filter((file) => file.fileName !== fileName)
     );
