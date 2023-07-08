@@ -46,8 +46,6 @@ const Section5 = () => {
       }
   }, [scrollHeight]);
 
-  console.log(scrollHeight);
-
   return (
     <S.Layout>
       <S.MajorSection>
