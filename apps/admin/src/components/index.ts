@@ -8,6 +8,7 @@ export { default as Banner } from './Banner';
 export { default as CarouselController } from './Carousel/Controller';
 export { default as Category } from './Category';
 export { default as CommonDetail } from './CommonDetail';
+export { default as DeleteModal } from './DeleteModal';
 export { default as DeletePostButton } from './DeletePostButton';
 export { default as EditButton } from './PostButton/Edit';
 export { default as FileCard } from './FileCard';

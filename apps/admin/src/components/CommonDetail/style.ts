@@ -45,3 +45,16 @@ export const FileList = styled.div`
   flex-direction: column;
   gap: 0.75rem;
 `;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 0.5rem;
+`;
+
+export const DeleteModal = styled.dialog`
+  border-radius: 0.625rem;
+  border: 0;
+  ::backdrop {
+    background: rgba(5, 5, 5, 0.4);
+  }
+`;
