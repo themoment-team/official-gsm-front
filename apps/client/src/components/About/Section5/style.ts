@@ -16,14 +16,26 @@ export const MajorSection = styled.div`
 
 export const MajorSelect = styled.div`
   margin-top: 3.375rem;
+  height: 11rem;
+  overflow: scroll;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
+
+export const Test = styled.div`
   display: flex;
   gap: 0.75rem;
-  width: 24.5rem;
-  height: 11rem;
 
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 1.8125rem;
+  width: 24.5rem;
+  height: 11rem;
+
+  position: sticky;
+  top: 0;
 `;
 
 export const DotContainer = styled.div`
