@@ -20,6 +20,7 @@ import {
   FormCategory,
 } from 'admin/components';
 import * as S from 'admin/styles/page/write';
+import { preventClose } from 'admin/utils';
 
 import { usePostWritePost } from 'api/admin';
 
@@ -46,11 +47,6 @@ const categoryPath = {
 } as const;
 
 const categoryQueryStrings = Object.keys(categoryPath);
-
-const preventClose = (e: BeforeUnloadEvent) => {
-  e.preventDefault();
-  e.returnValue = '';
-};
 
 interface WritePageProps {
   searchParams: {

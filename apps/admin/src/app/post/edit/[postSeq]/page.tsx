@@ -11,7 +11,6 @@ import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import { preventClose } from 'admin/Utils';
 import {
   Input,
   TextArea,
@@ -21,6 +20,7 @@ import {
   FileCard,
 } from 'admin/components';
 import * as S from 'admin/styles/page/write';
+import { preventClose } from 'admin/utils';
 
 import { usePatchPost } from 'api/admin';
 import { useGetPostDetail } from 'api/client';
