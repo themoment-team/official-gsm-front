@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export const MainpageNewsletterList = styled.div`
   margin-top: 3.75rem;
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 1.25rem;
 `;
@@ -25,5 +26,16 @@ export const NewsletterList = styled.div`
       background-color: ${({ theme: { color } }) => color.primary.lime};
       color: #73962b;
     }
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    width: calc(100vw - 12.5rem);
+    justify-content: space-between;
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: calc(100vw - 7.5rem);
+    flex-direction: column;
+    align-items: center;
   }
 `;
