@@ -54,7 +54,7 @@ export const FirstTitle = styled(Title)`
   font-size: 3.8578rem;
   animation: ${leftFadeInOut} 1.5s ease-in-out forwards;
 
-  @media (${({ theme }) => theme.breakPoint[600]}) {
+  @media ${({ theme }) => theme.breakPoint[600]} {
     font-size: 2.7681rem;
     line-height: 3.3031rem;
   }
@@ -67,7 +67,7 @@ export const SecondTitle = styled(Title)`
   animation: ${rightFadeInOut} 1.5s ease-in-out forwards;
   animation-delay: 1s;
 
-  @media (${({ theme }) => theme.breakPoint[600]}) {
+  @media ${({ theme }) => theme.breakPoint[600]} {
     font-size: 2.3662rem;
     line-height: 2.8237rem;
   }
@@ -78,8 +78,8 @@ export const ThirdTitle = styled(Title)`
   animation: ${leftFadeInOut} 1.5s ease-in-out forwards;
   animation-delay: 2s;
 
-  @media (${({ theme }) => theme.breakPoint[600]}) {
-    font-size: 2.9987rem;
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    font-size: 2.5125rem;
     line-height: 2.9987rem;
   }
 `;
@@ -101,7 +101,7 @@ export const EnglishSchoolName = styled.p`
   animation-delay: 3s;
   opacity: 0;
 
-  @media (${({ theme }) => theme.breakPoint[600]}) {
+  @media ${({ theme }) => theme.breakPoint[600]} {
     font-size: 1.0762rem;
     line-height: 1.2844rem;
   }
