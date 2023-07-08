@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import { css } from '@emotion/react';
+import { css, useTheme } from '@emotion/react';
 import styled from '@emotion/styled';
 
 import { sectionHeight } from 'client/components/About/Section2/sectionHeight';
@@ -12,6 +12,8 @@ interface ContentProps {
 }
 
 const Content = ({ children, index, scrollHeight }: ContentProps) => {
+  const theme = useTheme();
+
   const scrollSetting = {
     scrollMax:
       sectionHeight.contentSectionHeightPx -
@@ -26,11 +28,29 @@ const Content = ({ children, index, scrollHeight }: ContentProps) => {
 
   return (
     <ContentStyle
-      css={css`
-        font-size: ${isCentered ? '3.75rem' : '2.5rem'};
-        line-height: ${isCentered ? '4.475rem' : '2.9831rem'};
-        opacity: ${isCentered ? '1' : '0.4'};
-      `}
+      css={
+        isCentered
+          ? css`
+              font-size: 3.75rem;
+              line-height: 4.475rem;
+              opacity: 1;
+
+              @media ${theme.breakPoint['1024']} {
+                font-size: 2.5rem;
+                line-height: 3rem;
+              }
+            `
+          : css`
+              font-size: 2.5rem;
+              line-height: 2.9831rem;
+              opacity: 0.4;
+
+              @media ${theme.breakPoint['1024']} {
+                font-size: 2.125rem;
+                line-height: 2.5625rem;
+              }
+            `
+      }
     >
       {children}
     </ContentStyle>

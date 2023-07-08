@@ -1,5 +1,10 @@
-import { EditButton } from 'admin/components';
+import { useRef } from 'react';
 
+import { useRouter } from 'next/navigation';
+
+import { EditButton, DeletePostButton, DeleteModal } from 'admin/components';
+
+import { useDeletePost } from 'api/admin';
 import { useGetPostDetail } from 'api/client';
 
 import { WriterAndDate, FileButton } from 'ui';
@@ -10,8 +15,25 @@ interface CommonDetailProps {
   postSeq: number;
 }
 
+const categorys = {
+  NOTICE: '',
+  FAMILY_NEWSLETTER: 'newsletter',
+  EVENT_GALLERY: 'gallery',
+} as const;
+
 const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
+  const { replace } = useRouter();
+
   const { data } = useGetPostDetail(postSeq);
+  const category = data?.category;
+
+  const dialog = useRef<HTMLDialogElement>(null);
+
+  const { mutate: deletePost, isSuccess } = useDeletePost();
+
+  if (isSuccess && category) {
+    replace(`/${categorys[category]}`);
+  }
 
   return (
     <>
@@ -24,7 +46,10 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
             createdAt={data.createdAt}
             postWriter={data.postWriter}
           />
-          <EditButton href={`/post/edit/${postSeq}`} />
+          <S.ButtonWrapper>
+            <EditButton href={`/post/edit/${postSeq}`} />
+            <DeletePostButton onClick={() => dialog.current?.showModal()} />
+          </S.ButtonWrapper>
           <S.Horizon />
           <S.Content>{data.postContent}</S.Content>
           <S.Horizon />
@@ -38,6 +63,9 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
               </S.FileList>
             </>
           )}
+          <S.DeleteModal ref={dialog}>
+            <DeleteModal onClick={() => deletePost(postSeq)} />
+          </S.DeleteModal>
         </S.CommonDetailWrapper>
       )}
     </>

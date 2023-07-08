@@ -13,9 +13,10 @@ type Story = StoryObj<typeof FileButton>;
 export const Primary: Story = {
   args: {
     file: {
-      fileUrl: 'https://static-cse.canva.com/blob/649373/createbanners.jpg',
-      fileName: '[2022 서식] 특성화고장학금 지원신청서.pdf',
-      fileExtension: 'JPG',
+      fileUrl:
+        'http://bucket.ottokeng.site/2bcb972e-710d-4751-8156-77ca09bf9474.png',
+      fileName: '더모먼트.png',
+      fileExtension: 'PNG',
     },
   },
 };
@@ -23,10 +24,10 @@ export const Primary: Story = {
 export const Secondary: Story = {
   args: {
     file: {
-      fileUrl: 'https://static-cse.canva.com/blob/649373/createbanners.jpg',
-      fileName:
-        '[2022 서식] 특성화고장학금 지원신청서fdsafdsafdsafsadfsdaffdas.pdf',
-      fileExtension: 'JPG',
+      fileUrl:
+        'http://bucket.ottokeng.site/b91a7636-25a8-428a-8f88-57377685b566.pdf',
+      fileName: '2018산학겸임교사채용계획(공고용).pdf',
+      fileExtension: 'pdf',
     },
   },
 };

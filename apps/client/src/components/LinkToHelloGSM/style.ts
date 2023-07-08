@@ -27,6 +27,14 @@ export const LinkToHelloGSMWrapper = styled.a`
       background-position: 0% 50%;
     }
   }
+
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    width: calc(100vw - 12.5rem);
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: calc(100vw - 7.5rem);
+  }
 `;
 
 export const TextWrapper = styled.div`
@@ -41,6 +49,10 @@ export const AdmissionText = styled.h3`
   ${({ theme: { typo } }) => typo.h3}
   color: ${({ theme: { color } }) => color.white};
   font-weight: 700;
+
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    ${({ theme: { typo } }) => typo.h5}
+  }
 `;
 
 export const HashTagWrapper = styled.div`
@@ -52,4 +64,8 @@ export const HashTag = styled.h4`
   ${({ theme: { typo } }) => typo.h4}
   color: ${({ theme: { color } }) => color.white};
   font-weight: 400;
+
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    ${({ theme: { typo } }) => typo.body1}
+  }
 `;

@@ -13,4 +13,5 @@ export const authQueryKeys = {
 export const postQueryKeys = {
   postWritePost: () => ['post', 'write'],
   patchWritePost: () => ['post', 'patch'],
+  deletePost: () => ['post', 'del'],
 } as const;

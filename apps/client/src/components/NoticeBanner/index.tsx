@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import { css } from '@emotion/react';
+import { useTheme } from '@emotion/react';
 
 import { useGetPostList } from 'api/client';
 
@@ -11,6 +12,8 @@ import * as S from './style';
 const PAGE_SIZE = 5;
 
 const NoticeBanner: React.FC = () => {
+  const theme = useTheme();
+
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   const { data } = useGetPostList('NOTICE', 1, PAGE_SIZE);
@@ -31,7 +34,15 @@ const NoticeBanner: React.FC = () => {
     <S.NoticeBannerWrapper>
       <S.SlideContainer
         css={css`
-          right: calc(${currentIndex * 100}vw + ${currentIndex * 77.375}rem);
+          right: calc(${currentIndex} * (100vw + 77.375rem));
+
+          @media ${theme.breakPoint['1440']} {
+            right: calc(${currentIndex} * (200vw - 12.5rem));
+          }
+
+          @media ${theme.breakPoint['1024']} {
+            right: calc(${currentIndex} * (200vw - 7.5rem));
+          }
         `}
       >
         {data?.postList?.map((post) => (
