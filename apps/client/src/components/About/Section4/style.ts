@@ -6,6 +6,10 @@ export const SectionWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1335px) {
+    height: 2039px;
+  }
 `;
 
 export const SectionContentWrapper = styled.div`
@@ -15,4 +19,14 @@ export const SectionContentWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 1335px) {
+    width: 824px;
+    height: 1679px;
+  }
+
+  @media (${({ theme }) => theme.breakPoint[600]}) {
+    width: 480px;
+    height: 1618px;
+  }
 `;
