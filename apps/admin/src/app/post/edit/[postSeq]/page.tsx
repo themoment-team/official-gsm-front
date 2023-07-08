@@ -11,6 +11,7 @@ import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
+import { preventClose } from 'admin/Utils';
 import {
   Input,
   TextArea,
@@ -50,6 +51,9 @@ const categoryPath = {
   EVENT_GALLERY: '/gallery',
 } as const;
 
+const fileExtension =
+  '.jpg, .png, .heic, .jpeg, .webp, .hwp, .hwpx, .owpml, .docx, .doc, .xls, .xlsx, .ppt, .pptx, .pdf';
+
 export default function EditPage({ params: { postSeq } }: EditPageProps) {
   const [category, setCategory] = useState<CategoryQueryStringType>('NOTICE');
   const [files, setFiles] = useState<File[]>([]);
@@ -63,8 +67,6 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
 
   const isGallery = category === 'EVENT_GALLERY';
   const gallerySubmitDisabled = isGallery && files.length === 0;
-  const fileExtension =
-    '.jpg, .png, .heic, .jpeg, .webp, .hwp, .hwpx, .owpml, .docx, .doc, .xls, .xlsx, .ppt, .pptx, .pdf';
 
   const {
     register,
@@ -79,11 +81,6 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
       content: data?.postContent,
     },
   });
-
-  const preventClose = (e: BeforeUnloadEvent) => {
-    e.preventDefault();
-    e.returnValue = '';
-  };
 
   useEffect(() => {
     window.addEventListener('beforeunload', preventClose);
