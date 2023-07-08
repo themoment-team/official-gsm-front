@@ -8,7 +8,7 @@ export const SectionWrapper = styled.div`
   align-items: center;
 
   @media (max-width: 1335px) {
-    height: 2039px;
+    height: 127.4375rem;
   }
 `;
 
@@ -22,11 +22,11 @@ export const SectionContentWrapper = styled.div`
 
   @media (max-width: 1335px) {
     width: 824px;
-    height: 1679px;
+    height: 104.9375rem;
   }
 
-  @media (${({ theme }) => theme.breakPoint[600]}) {
-    width: 480px;
-    height: 1618px;
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    width: 30rem;
+    height: 101.125rem;
   }
 `;

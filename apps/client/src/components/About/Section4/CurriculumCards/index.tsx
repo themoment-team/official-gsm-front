@@ -100,9 +100,9 @@ const CurriculumArray: CardType[] = [
       height: 252,
     },
     imgResponsive: {
-      width1335: 346,
+      width1335: 350,
       height1335: 266,
-      width600: 267,
+      width600: 275,
       height600: 210,
       right1335: '2.4375rem',
       right600: '1.6875rem',
