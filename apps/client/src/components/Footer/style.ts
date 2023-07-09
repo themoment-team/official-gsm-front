@@ -14,13 +14,29 @@ export const FooterContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    width: calc(100vw - 12.5rem);
+    align-items: end;
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: calc(100vw - 7.5rem);
+    flex-direction: column;
+    align-items: start;
+    gap: 2.5rem;
+  }
 `;
 
 export const FooterTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: end;
-  gap: 4.0625rem;
+  gap: 4.06rem;
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    align-items: start;
+  }
 `;
 
 export const SiteInfo = styled.div`
@@ -29,6 +45,11 @@ export const SiteInfo = styled.div`
   flex-direction: column;
   align-items: end;
   gap: 0.5rem;
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    flex-direction: column;
+    align-items: start;
+  }
 `;
 
 export const Copyright = styled.p`
@@ -43,6 +64,12 @@ export const LinkWrapper = styled.div`
     ${({ theme }) => theme.typo.h5}
     font-weight: 700;
   }
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: start;
+  }
 `;
 
 export const SchoolInfo = styled.p`
@@ -50,4 +77,8 @@ export const SchoolInfo = styled.p`
   font-weight: 400;
   text-align: end;
   color: rgba(255, 255, 255, 0.6);
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    text-align: start;
+  }
 `;
