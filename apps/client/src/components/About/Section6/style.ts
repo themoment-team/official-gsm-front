@@ -15,6 +15,10 @@ export const BusinessLayout = styled.div`
   display: flex;
   gap: 6.875rem;
 
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    gap: 3rem;
+  }
+
   @media ${({ theme }) => theme.breakPoint['1024']} {
     flex-direction: column;
   }
