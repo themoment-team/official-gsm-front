@@ -10,10 +10,15 @@ export const GalleryCard = styled(Link)`
   gap: 1rem;
   cursor: pointer;
   position: relative;
+
   :hover {
     img {
       filter: brightness(60%);
     }
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    width: 100%;
   }
 `;
 
@@ -23,9 +28,14 @@ export const IMGWrapper = styled.div`
   border-radius: 1.25rem;
   overflow: hidden;
   position: relative;
+
   img {
     object-fit: cover;
     transition: filter ease-in-out 0.3s;
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    width: 100%;
   }
 `;
 
@@ -33,6 +43,7 @@ export const TextBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+
   .text {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -43,16 +54,16 @@ export const TextBox = styled.div`
 `;
 
 export const Title = styled.h5`
-  font-weight: 600;
-  -webkit-line-clamp: 1;
   ${({ theme }) => theme.typo.h5}
   color: ${({ theme }) => theme.color.gray['090']};
+  font-weight: 600;
+  -webkit-line-clamp: 1;
 `;
 
 export const ContentPreview = styled.p`
+  ${({ theme }) => theme.typo.body2}
+  color: ${({ theme }) => theme.color.gray['080']};
   height: 2.5rem;
   font-weight: 400;
   -webkit-line-clamp: 2;
-  ${({ theme }) => theme.typo.body2}
-  color: ${({ theme }) => theme.color.gray['080']};
 `;

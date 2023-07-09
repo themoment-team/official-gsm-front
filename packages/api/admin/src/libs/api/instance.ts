@@ -34,6 +34,15 @@ adminInstance.interceptors.response.use(
     return Promise.reject(response.data);
   },
   async (error) => {
+    /** fail refresh */
+    if (error.config.url === authUrl.refresh()) {
+      isRefreshing = false;
+
+      process.env.NODE_ENV === 'production' && location.replace('/auth/signin');
+
+      return Promise.reject(error);
+    }
+
     if (error.response.status === 401) {
       if (isRefreshing) {
         await waitRefreshEnd();
@@ -46,10 +55,6 @@ adminInstance.interceptors.response.use(
       await get(authUrl.refresh());
 
       return adminInstance(error.config);
-    }
-
-    {
-      process.env.NODE_ENV === 'production' && location.replace('/auth/signin');
     }
 
     return Promise.reject(error);
