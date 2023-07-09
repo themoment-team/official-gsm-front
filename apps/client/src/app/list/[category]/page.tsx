@@ -71,10 +71,6 @@ const Content = styled.div`
   padding: 5rem 0 7.5rem;
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
-    width: 56.5rem;
-  }
-
-  @media ${({ theme }) => theme.breakPoint['600']} {
-    width: 30rem;
+    width: calc(100vw - 7.5rem);
   }
 `;

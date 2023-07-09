@@ -24,11 +24,11 @@ export const IndexAndTitle = styled.div`
   align-items: center;
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
-    width: 40rem;
+    width: 34.5625rem;
   }
 
-  @media ${({ theme }) => theme.breakPoint['600']} {
-    width: 15rem;
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: 18.3125rem;
   }
 `;
 
@@ -45,10 +45,10 @@ export const PostTitle = styled.p`
   white-space: nowrap;
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
-    width: 30rem;
+    width: 29.8125rem;
   }
 
-  @media ${({ theme }) => theme.breakPoint['600']} {
-    width: 12rem;
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: 14.375rem;
   }
 `;
