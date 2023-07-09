@@ -15,8 +15,9 @@ const Footer = () => {
         <S.FooterTextWrapper>
           <S.SiteInfo>
             <S.Copyright>
-              ©2023 Copyright 광주소프트웨어마이스터고등학교 ALL RIGHTS
-              RESERVED.
+              ©2023 Copyright 광주소프트웨어마이스터고등학교
+              {width < 700 ? <br /> : ' '}
+              ALL RIGHTS RESERVED.
             </S.Copyright>
             <S.LinkWrapper>
               <Link href='#'>개인정보처리방침</Link>
