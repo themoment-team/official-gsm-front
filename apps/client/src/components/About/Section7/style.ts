@@ -24,6 +24,9 @@ export const Box = styled.div`
   position: relative;
   left: 21.25rem;
   top: 11.25rem;
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    left: 6.25rem;
+  }
 `;
 
 export const IconWrap = styled.div`
@@ -36,6 +39,12 @@ export const IconWrap = styled.div`
   svg {
     cursor: pointer;
   }
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    left: -12.5rem;
+  }
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    left: -11.25rem;
+  }
 `;
 
 export const IdealTalentLayout = styled.div`
@@ -45,6 +54,9 @@ export const IdealTalentLayout = styled.div`
   align-items: center;
   position: relative;
   right: 1.875rem;
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    overflow: visible;
+  }
 `;
 
 export const Slide = styled.div`
@@ -66,4 +78,7 @@ export const IdealTalent = styled.div`
   box-shadow: 0rem 0.25rem 2.5rem rgba(0, 0, 0, 0.06);
   border-radius: 1.875rem;
   margin-left: 1.875rem;
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    margin-left: 0.625rem;
+  }
 `;
