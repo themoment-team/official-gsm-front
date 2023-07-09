@@ -4,6 +4,8 @@ import { useRouter } from 'next/navigation';
 
 import styled from '@emotion/styled';
 
+import { ToastContainer } from 'react-toastify';
+
 import {
   Category,
   Header,
@@ -51,6 +53,7 @@ export default function Home({ searchParams }: HomeProps) {
           />
         )}
       </ContentWrapper>
+      <ToastContainer />
     </>
   );
 }
