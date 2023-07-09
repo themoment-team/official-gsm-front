@@ -20,7 +20,7 @@ import {
   FileCard,
 } from 'admin/components';
 import * as S from 'admin/styles/page/write';
-import { preventClose } from 'admin/utils ';
+import { preventClose } from 'admin/utils';
 
 import { usePatchPost } from 'api/admin';
 import { useGetPostDetail } from 'api/client';
