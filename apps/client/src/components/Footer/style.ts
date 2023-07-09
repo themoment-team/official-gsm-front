@@ -18,6 +18,10 @@ export const FooterContent = styled.div`
   @media ${({ theme }) => theme.breakPoint['1440']} {
     width: calc(100vw - 12.5rem);
     align-items: end;
+    svg {
+      width: 9rem;
+      height: 8.8125rem;
+    }
   }
 
   @media ${({ theme }) => theme.breakPoint['1024']} {

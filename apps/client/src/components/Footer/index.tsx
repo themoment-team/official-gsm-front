@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <S.Footer>
       <S.FooterContent>
-        <FooterGSMLogo isSmall={width < 1440} />
+        <FooterGSMLogo />
         <S.FooterTextWrapper>
           <S.SiteInfo>
             <S.Copyright>

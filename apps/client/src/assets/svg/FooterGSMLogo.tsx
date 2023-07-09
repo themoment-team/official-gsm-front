@@ -1,7 +1,7 @@
-const FooterGSMLogo = ({ isSmall }: { isSmall: boolean }) => (
+const FooterGSMLogo = () => (
   <svg
-    width={isSmall ? '9rem' : '14.4375rem'}
-    height={isSmall ? '5.5625rem' : '8.8125rem'}
+    width='231'
+    height='141'
     viewBox='0 0 231 141'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
