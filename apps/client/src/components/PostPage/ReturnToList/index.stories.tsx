@@ -3,7 +3,7 @@ import ReturnToList from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'client/ReturnToList',
+  title: 'client/PostPage/ReturnToList',
   component: ReturnToList,
 } as Meta<typeof ReturnToList>;
 
