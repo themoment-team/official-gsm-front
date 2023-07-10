@@ -164,12 +164,11 @@ const CurriculumCards = () => {
         <S.CardTemplate
           key={cardIndex}
           css={css`
-            width: ${width > 1335
-              ? card.isSmall
-                ? '30.9375rem'
-                : '44.6875rem'
-              : '100%'};
+            width: ${card.isSmall ? '30.9375rem' : '44.6875rem'};
 
+            @media (max-width: 1335px) {
+              width: 100%;
+            }
             background-color: ${card.bgColor};
           `}
         >
