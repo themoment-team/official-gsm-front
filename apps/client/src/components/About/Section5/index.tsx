@@ -11,8 +11,7 @@ import {
 import { useGetScrollHeight } from 'client/hooks';
 import type { MajorType } from 'client/types';
 
-import { pxToRem } from 'common';
-
+import { sectionHeight } from './sectionHeight';
 import * as S from './style';
 
 interface MajorArrayType {
@@ -33,36 +32,36 @@ const Section5 = () => {
   const majorScroll = useRef(null);
   const scrollHeight = useGetScrollHeight(majorScroll);
 
-  const majorScrollSection = 900;
+  const centerAverage =
+    sectionHeight.contentSectionHeightPx - sectionHeight.scrollSectionHeightPx;
 
   useEffect(() => {
     if (scrollHeight !== undefined)
-      if (scrollHeight >= 0 && scrollHeight < 300) {
+      if (scrollHeight <= centerAverage / 3) {
         setSelectedMajor('SW');
-      } else if (scrollHeight >= 300 && scrollHeight < 600) {
+      } else if (
+        scrollHeight >= centerAverage / 3 &&
+        scrollHeight < (centerAverage / 3) * 2
+      ) {
         setSelectedMajor('IOT');
-      } else if (scrollHeight >= 600 && scrollHeight <= 900) {
+      } else if (scrollHeight <= centerAverage) {
         setSelectedMajor('AI');
       }
-  }, [scrollHeight]);
+  }, [scrollHeight, centerAverage]);
 
   return (
-    <S.Layout>
-      <S.MajorSection>
-        <SectionTitle textAlign='left'>
-          <AboutTitle pointColor='sky'>
-            창의 융합력을 갖춘 <br />
-            글로벌 소프트웨어 학과 소개
-          </AboutTitle>
-          <SubTitle>체계적인 교육과정을 제공하는 소프트웨어 학과</SubTitle>
-        </SectionTitle>
-        <S.MajorSelect ref={majorScroll}>
-          <div
-            css={css`
-              height: ${pxToRem(majorScrollSection)}rem;
-            `}
-          >
-            <S.Test>
+    <S.Layout ref={majorScroll}>
+      <S.StickySection>
+        <S.MajorSection>
+          <S.TitleSection>
+            <SectionTitle textAlign='left'>
+              <AboutTitle pointColor='sky'>
+                창의 융합력을 갖춘 <br />
+                글로벌 소프트웨어 학과 소개
+              </AboutTitle>
+              <SubTitle>체계적인 교육과정을 제공하는 소프트웨어 학과</SubTitle>
+            </SectionTitle>
+            <S.MajorSelect>
               <S.DotContainer>
                 {majorArray.map(({ major }) => (
                   <S.SelectDot
@@ -78,11 +77,12 @@ const Section5 = () => {
                 ))}
                 <S.Line />
               </S.DotContainer>
-
               <S.Major>
                 {majorArray.map(({ major, name }) => (
                   <p
-                    onClick={() => setSelectedMajor(major)}
+                    onClick={() => {
+                      setSelectedMajor(major);
+                    }}
                     key={major}
                     css={css`
                       color: ${selectedMajor === major
@@ -95,11 +95,11 @@ const Section5 = () => {
                   </p>
                 ))}
               </S.Major>
-            </S.Test>
-          </div>
-        </S.MajorSelect>
-      </S.MajorSection>
-      <MajorCard major={selectedMajor} />
+            </S.MajorSelect>
+          </S.TitleSection>
+          <MajorCard major={selectedMajor} />
+        </S.MajorSection>
+      </S.StickySection>
     </S.Layout>
   );
 };

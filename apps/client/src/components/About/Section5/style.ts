@@ -1,41 +1,48 @@
 import styled from '@emotion/styled';
 
+import { pxToRem } from 'common';
+
+import { sectionHeight } from './sectionHeight';
+
 export const Layout = styled.div`
   width: 100vw;
-  display: flex;
-  gap: 6.25rem;
-  height: 71.125rem;
+  height: 68.75rem;
+  overflow: scroll;
+
+  height: ${pxToRem(sectionHeight.scrollSectionHeightPx)}rem;
+`;
+
+export const StickySection = styled.div`
+  height: 125rem;
   background: #f5f9fb;
-  align-items: center;
-  justify-content: center;
+
+  height: ${pxToRem(sectionHeight.contentSectionHeightPx)}rem;
 `;
 
 export const MajorSection = styled.div`
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6.25rem;
+  width: 100%;
+  height: 100vh;
+`;
+
+export const TitleSection = styled.div`
   height: 48.625rem;
 `;
 
 export const MajorSelect = styled.div`
   margin-top: 3.375rem;
   height: 11rem;
-  overflow: scroll;
-
-  ::-webkit-scrollbar {
-    display: none;
-  }
-`;
-
-export const Test = styled.div`
   display: flex;
   gap: 0.75rem;
-
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 1.8125rem;
   width: 24.5rem;
-  height: 11rem;
-
-  position: sticky;
-  top: 0;
 `;
 
 export const DotContainer = styled.div`
