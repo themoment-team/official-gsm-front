@@ -11,6 +11,7 @@ const BusinessCard = ({
   subTitle,
   color,
   img,
+  pointPosition,
 }: BusinessCardItemType) => {
   const theme = useTheme();
   return (
@@ -27,6 +28,12 @@ const BusinessCard = ({
         {title}
       </S.Title>
       <S.SubTitle>{subTitle}</S.SubTitle>
+      <S.MobileCircle
+        css={css`
+          background-color: ${theme.color.primary[color]};
+          ${pointPosition === 'left' ? 'left: 0' : 'right: 0'};
+        `}
+      />
     </S.Business>
   );
 };

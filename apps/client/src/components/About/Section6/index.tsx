@@ -11,18 +11,21 @@ const Section6 = () => {
       subTitle: '인성, 독서, 인문학 활동',
       color: 'sky',
       img: 'Mind.png',
+      pointPosition: 'right',
     },
     {
       title: '시야의 확장',
       subTitle: '국내외 IT 기업탐방 활동',
       color: 'lime',
       img: 'Eyesight.png',
+      pointPosition: 'left',
     },
     {
       title: '체력의 확장',
       subTitle: '뉴스포츠, 해양스포츠 활동',
       color: 'navy',
       img: 'Health.png',
+      pointPosition: 'right',
     },
   ];
 

@@ -6,11 +6,27 @@ import Title from './Title';
 
 const Section1 = () => (
   <SectionWrapper>
-    <CircleDecoration />
-    <Title />
+    <SectionTitleWrapper>
+      <CircleDecoration />
+      <Title />
+    </SectionTitleWrapper>
     <Scroll />
   </SectionWrapper>
 );
+
+export const SectionTitleWrapper = styled.div`
+  width: 30.0625rem;
+  height: 26.0625rem;
+
+  position: relative;
+  top: 10.125rem;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const SectionWrapper = styled.div`
   width: 100%;

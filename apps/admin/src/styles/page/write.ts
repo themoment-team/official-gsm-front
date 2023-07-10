@@ -106,13 +106,6 @@ export const CompleteBtn = styled.button`
   margin-left: 0.5rem;
 `;
 
-export const ErrorMessage = styled.p`
-  font-weight: 400;
-  font-size: 0.75rem;
-  margin-top: 0.25rem;
-  color: #f93535;
-`;
-
 export const FileTitleWrapper = styled.div`
   display: flex;
   align-items: center;

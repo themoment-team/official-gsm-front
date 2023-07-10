@@ -11,6 +11,11 @@ export const WriterText = styled.p<{ workspace: 'client' | 'admin' }>`
     workspace === 'client' ? theme.typo.body1 : theme.typo.body2}
   line-height: 1.6875rem;
   color: ${({ theme }) => theme.color.gray['070']};
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    ${({ theme }) => theme.typo.caption}
+    font-weight: 400;
+  }
 `;
 
 export const Dot = styled.div`

@@ -4,12 +4,13 @@ import Image from 'next/image';
 
 import { css } from '@emotion/react';
 
-import { filterImages } from 'common';
 
 import { CarouselController } from 'admin/components';
 import * as S from 'admin/components/Carousel/style';
 
 import { useGetPostDetail } from 'api/client';
+
+import { filterImages } from 'common';
 
 interface PostCarouselProps {
   postSeq: number;
