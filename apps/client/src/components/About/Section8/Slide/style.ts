@@ -64,7 +64,7 @@ export const SlideContainer = styled.div`
   flex-direction: column;
 
   @media ${({ theme }) => theme.breakPoint['600']} {
-    height: 14.0625rem;
+    height: 18.75rem;
   }
 
   .primary.first {
