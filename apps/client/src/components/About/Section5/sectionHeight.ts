@@ -1,4 +1,4 @@
 export const sectionHeight = {
-  contentSectionHeightPx: 1700,
+  contentSectionHeightPx: 2600,
   scrollSectionHeightPx: 1100,
 };
