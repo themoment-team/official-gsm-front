@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Link from 'next/link';
 
@@ -28,6 +28,10 @@ const Header: React.FC<HeaderProps> = ({
   const width = useGetWindowWidth();
 
   const isMobile = width <= 600;
+
+  useEffect(() => {
+    if (!isMobile) setIsHamburgerMenuShow(false);
+  }, [isMobile]);
 
   const selectStyle = (href: SegmentType) =>
     segment === href &&
