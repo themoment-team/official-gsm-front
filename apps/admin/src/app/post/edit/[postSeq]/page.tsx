@@ -16,17 +16,22 @@ import {
   TextArea,
   FileUploadLabel,
   Header,
-  FileCard,
   FormCategory,
+  FileCard,
 } from 'admin/components';
 import * as S from 'admin/styles/page/write';
 import { preventClose } from 'admin/utils';
 
-import { usePostWritePost } from 'api/admin';
+import { usePatchPost } from 'api/admin';
+import { useGetPostDetail } from 'api/client';
 
 import { Button } from 'ui';
 
-import type { CategoryQueryStringType } from 'types';
+import type { FileInfoType, CategoryQueryStringType } from 'types';
+
+interface EditPageProps {
+  params: { postSeq: number };
+}
 
 const schema = z.object({
   title: z
@@ -46,23 +51,20 @@ const categoryPath = {
   EVENT_GALLERY: '/gallery',
 } as const;
 
-const categoryQueryStrings = Object.keys(categoryPath);
-
-interface WritePageProps {
-  searchParams: {
-    category: CategoryQueryStringType;
-  };
-}
-
 const fileExtension =
   '.jpg, .png, .heic, .jpeg, .webp, .hwp, .hwpx, .owpml, .docx, .doc, .xls, .xlsx, .ppt, .pptx, .pdf';
 
-export default function WritePage({
-  searchParams: { category },
-}: WritePageProps) {
+export default function EditPage({ params: { postSeq } }: EditPageProps) {
+  const [category, setCategory] = useState<CategoryQueryStringType>('NOTICE');
   const [files, setFiles] = useState<File[]>([]);
+  const [prevFiles, setPrevFiles] = useState<FileInfoType[]>();
+  const [deleteFileUrl, setDeleteFileUrl] = useState<string[]>([]);
   const fileInput = useRef<HTMLInputElement>(null);
+
   const { replace, back } = useRouter();
+  const { mutate, isSuccess } = usePatchPost(postSeq);
+  const { data } = useGetPostDetail(postSeq);
+
   const isGallery = category === 'EVENT_GALLERY';
   const gallerySubmitDisabled = isGallery && files.length === 0;
 
@@ -70,14 +72,15 @@ export default function WritePage({
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
-  } = useForm<FormType>({ resolver: zodResolver(schema) });
-
-  const { mutate, isSuccess, isLoading } = usePostWritePost();
-
-  if (!category || !categoryQueryStrings.includes(category)) {
-    replace('/post/write?category=NOTICE');
-  }
+  } = useForm<FormType>({
+    resolver: zodResolver(schema),
+    defaultValues: {
+      title: data?.postTitle,
+      content: data?.postContent,
+    },
+  });
 
   useEffect(() => {
     window.addEventListener('beforeunload', preventClose);
@@ -87,15 +90,32 @@ export default function WritePage({
     };
   }, []);
 
-  const handleCancel = (fileName: string) => {
-    setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
+  useEffect(() => {
+    reset({
+      title: data?.postTitle,
+      content: data?.postContent,
+    });
+  }, [data?.postContent, data?.postTitle, reset]);
+
+  useEffect(() => {
+    setCategory(data?.category ?? 'NOTICE');
+    setPrevFiles(data?.fileInfo);
+  }, [data]);
+
+  const handleCancel = (fileName: string, fileUrl?: string) => {
+    setFiles((prevState) => prevState.filter((file) => file.name !== fileName));
+    setPrevFiles((prevState) =>
+      prevState?.filter((file) => file.fileName !== fileName)
+    );
+    fileUrl && setDeleteFileUrl((prevArray) => [...prevArray, fileUrl]);
   };
 
   const onSubmit: SubmitHandler<FormType> = (data) => {
     const content = {
       postTitle: data.title,
       postContent: data.content,
-      category: category,
+      category,
+      deleteFileUrl,
     };
 
     const formData = new FormData();
@@ -127,7 +147,7 @@ export default function WritePage({
     <>
       <Header />
       <S.WritePageWrap>
-        <S.WriteTitle>게시물 생성</S.WriteTitle>
+        <S.WriteTitle>게시물 수정</S.WriteTitle>
         <S.FormWrap onSubmit={handleSubmit(onSubmit)}>
           <div>
             <S.FormItemTitle>카테고리</S.FormItemTitle>
@@ -176,7 +196,8 @@ export default function WritePage({
             )}
           </div>
           <div>
-            {files.length > 0 ? (
+            {(prevFiles && prevFiles.length > 0) ||
+            (files && files.length > 0) ? (
               <div>
                 <S.FileTitleWrapper>
                   <S.FormItemTitle>첨부 파일</S.FormItemTitle>
@@ -192,7 +213,16 @@ export default function WritePage({
                   />
                 </S.FileTitleWrapper>
                 <S.FileCardBox>
-                  {files.map((file) => (
+                  {prevFiles?.map((file) => (
+                    <S.FileCardWrapper key={file.fileUrl}>
+                      <FileCard
+                        onCancel={handleCancel}
+                        fileName={file.fileName}
+                        fileUrl={file.fileUrl}
+                      />
+                    </S.FileCardWrapper>
+                  ))}
+                  {files?.map((file) => (
                     <S.FileCardWrapper key={file.name}>
                       <FileCard fileName={file.name} onCancel={handleCancel} />
                     </S.FileCardWrapper>
@@ -228,7 +258,6 @@ export default function WritePage({
               width='22.5625rem'
               type='submit'
               disabled={gallerySubmitDisabled}
-              isLoading={isLoading}
             >
               완료
             </Button>

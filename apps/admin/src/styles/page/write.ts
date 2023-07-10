@@ -30,6 +30,14 @@ export const FormItemTitle = styled.p`
   margin-bottom: 0.5rem;
 `;
 
+export const LengthTitle = styled.span`
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  position: absolute;
+  right: 1rem;
+`;
+
 export const UploadBox = styled.div`
   width: 100%;
   height: 12.5rem;
