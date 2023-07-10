@@ -21,7 +21,7 @@ export const SectionContentWrapper = styled.div`
   justify-content: space-between;
 
   @media (max-width: 1335px) {
-    width: 824px;
+    width: 51.5rem;
     height: 104.9375rem;
   }
 
