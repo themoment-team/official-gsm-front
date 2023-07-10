@@ -35,9 +35,6 @@ export const TitleWrapper = styled.div`
   flex-direction: column;
   gap: 1.375rem;
   position: absolute;
-  top: 15.1875rem;
-  left: 50%;
-  transform: translateX(-50%);
 `;
 
 const Title = styled.div`
@@ -56,6 +53,11 @@ export const FirstTitle = styled(Title)`
   font-family: initial;
   font-size: 3.8578rem;
   animation: ${leftFadeInOut} 1.5s ease-in-out forwards;
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    font-size: 2.7681rem;
+    line-height: 3.3031rem;
+  }
 `;
 
 export const SecondTitle = styled(Title)`
@@ -64,12 +66,24 @@ export const SecondTitle = styled(Title)`
   justify-content: end;
   animation: ${rightFadeInOut} 1.5s ease-in-out forwards;
   animation-delay: 1s;
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    font-size: 2.3662rem;
+    line-height: 2.8237rem;
+    color: ${({ theme }) => theme.color.sub.navy};
+  }
 `;
 
 export const ThirdTitle = styled(Title)`
   font-size: 3.5019rem;
   animation: ${leftFadeInOut} 1.5s ease-in-out forwards;
   animation-delay: 2s;
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    font-size: 2.5125rem;
+    line-height: 2.9987rem;
+    color: ${({ theme }) => theme.color.sub.navy};
+  }
 `;
 
 export const Point = styled.div`
@@ -88,4 +102,10 @@ export const EnglishSchoolName = styled.p`
   animation: ${FadeInOut} 1.5s ease-in-out forwards;
   animation-delay: 3s;
   opacity: 0;
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    font-size: 1.0762rem;
+    line-height: 1.2844rem;
+    color: ${({ theme }) => theme.color.sub.navy};
+  }
 `;
