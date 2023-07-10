@@ -4,17 +4,20 @@ import { css, useTheme } from '@emotion/react';
 
 import { CloseIcon, FooterGSMLogo } from 'client/assets';
 
+import BackgroundBall from './BackgroundBalls';
 import * as S from './style';
 
 type SegmentType = '' | 'about' | 'list';
 
 interface HamburgerMenuProps {
   segment: SegmentType;
+  isHamburgerMenuShow: boolean;
   closeHamburgerMenu: () => void;
 }
 
 const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
   segment,
+  isHamburgerMenuShow,
   closeHamburgerMenu,
 }) => {
   const theme = useTheme();
@@ -26,7 +29,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
     `;
 
   return (
-    <S.HamburgerMenuContainer>
+    <S.HamburgerMenuContainer isHamburgerMenuShow={isHamburgerMenuShow}>
       <S.CloseButton onClick={closeHamburgerMenu}>
         <CloseIcon />
       </S.CloseButton>
@@ -42,7 +45,8 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
         </Link>
         <a href='https://hellogsm.kr'>입학</a>
       </S.HamburgerNav>
-      <FooterGSMLogo />
+      <FooterGSMLogo isHamburger={true} />
+      <BackgroundBall />
     </S.HamburgerMenuContainer>
   );
 };
