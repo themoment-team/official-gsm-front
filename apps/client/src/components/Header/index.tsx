@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { css, useTheme } from '@emotion/react';
 
-import { GSMLogo, HamburgerIcon } from 'client/assets';
+import { HamburgerIcon, HeaderGSMLogo } from 'client/assets';
 import { HamburgerMenu } from 'client/components';
 import { useGetWindowWidth } from 'client/hooks';
 
@@ -47,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({
       <S.HeaderInner>
         <h1>
           <S.LogoLink href='/'>
-            <GSMLogo isBackgroundWhite={isBackgroundWhite} />
+            <HeaderGSMLogo isBackgroundWhite={isBackgroundWhite} />
           </S.LogoLink>
         </h1>
         {isMobile ? (
@@ -75,8 +75,9 @@ const Header: React.FC<HeaderProps> = ({
           </S.GlobalNav>
         )}
       </S.HeaderInner>
-      {isMobile && isHamburgerMenuShow && (
+      {isMobile && (
         <HamburgerMenu
+          isHamburgerMenuShow={isHamburgerMenuShow}
           closeHamburgerMenu={() => setIsHamburgerMenuShow(false)}
           segment={segment}
         />
