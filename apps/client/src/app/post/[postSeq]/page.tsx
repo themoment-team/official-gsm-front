@@ -25,4 +25,9 @@ const BackGround = styled.div`
   padding: 5rem 0 7.5rem 0;
   display: flex;
   justify-content: center;
+
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    background: ${({ theme }) => theme.color.white};
+    padding-top: 1.25rem;
+  }
 `;
