@@ -6,6 +6,7 @@ export const Background = styled.div`
   right: -4.13rem;
   width: 24.125rem;
   height: 40.6875rem;
+  z-index: 0;
 `;
 
 export const Ball = styled.div`
