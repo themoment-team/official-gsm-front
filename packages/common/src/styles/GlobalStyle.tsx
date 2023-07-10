@@ -9,6 +9,7 @@ export function GlobalStyle() {
 
         body {
           overscroll-behavior-y: none;
+          overflow-x: hidden;
         }
 
         body,

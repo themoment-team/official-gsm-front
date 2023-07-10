@@ -6,6 +6,7 @@ export { default as EducationDirection } from './About/Section3/EducationDirecti
 export { default as Footer } from './Footer';
 export { default as GalleryCard } from './GalleryCard';
 export { default as GalleryList } from './MainPage/GalleryList';
+export { default as HamburgerMenu } from './HamburgerMenu';
 export { default as Header } from './Header';
 export { default as IdealTalent } from './About/Section7/IdealTalent';
 export { default as LinkToHelloGSM } from './LinkToHelloGSM';
