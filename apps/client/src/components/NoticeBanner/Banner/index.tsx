@@ -9,9 +9,9 @@ interface BannerProps {
 }
 
 const Banner: React.FC<BannerProps> = ({
-  post: { postTitle, contentPreview },
+  post: { postSeq, postTitle, contentPreview },
 }) => (
-  <S.Banner>
+  <S.Banner href={`/post/${postSeq}`}>
     <S.TextBox>
       <S.Text>공지사항 📢</S.Text>
       <S.Title>{postTitle}</S.Title>
