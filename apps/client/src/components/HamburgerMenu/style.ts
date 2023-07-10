@@ -12,7 +12,7 @@ export const HamburgerBackground = styled.div<{
     isHamburgerMenuShow ? 'block' : 'none'};
 `;
 
-export const HamburgerMenu = styled.menu<{
+export const HamburgerMenu = styled.div<{
   isHamburgerMenuShow: boolean;
 }>`
   width: 28.75rem;
