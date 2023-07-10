@@ -189,13 +189,23 @@ const CurriculumCards = () => {
           <S.CardImg
             css={css`
               bottom: 0;
-              right: ${handleResponsiveImg(card).right};
+              right: ${card.cardPosition.right};
+
+              @media (max-width: 1335px) {
+                right: ${handleResponsiveImg(card).right};
+              }
             `}
           >
             <Image
               src={`/images/about/section4/${card.img.src}.png`}
-              width={handleResponsiveImg(card).width}
-              height={handleResponsiveImg(card).height}
+              width={card.img.width}
+              height={card.img.height}
+              css={css`
+                @media (max-width: 1335px) {
+                  width: ${handleResponsiveImg(card).width};
+                  height: ${handleResponsiveImg(card).height};
+                }
+              `}
               alt='교육과정 이미지'
             />
           </S.CardImg>
