@@ -1,8 +1,11 @@
+import { useState } from 'react';
+
 import Link from 'next/link';
 
 import { css, useTheme } from '@emotion/react';
 
 import { GSMLogo, HamburgerIcon } from 'client/assets';
+import { HamburgerMenu } from 'client/components';
 import { useGetWindowWidth } from 'client/hooks';
 
 import * as S from './style';
@@ -18,6 +21,9 @@ const Header: React.FC<HeaderProps> = ({
   segment,
   isBackgroundWhite = true,
 }) => {
+  const [isHamburgerMenuShow, setIsHamburgerMenuShow] =
+    useState<boolean>(false);
+
   const theme = useTheme();
   const width = useGetWindowWidth();
 
@@ -45,7 +51,7 @@ const Header: React.FC<HeaderProps> = ({
           </S.LogoLink>
         </h1>
         {isMobile ? (
-          <S.HamburgerButton>
+          <S.HamburgerButton onClick={() => setIsHamburgerMenuShow(true)}>
             <HamburgerIcon isBackgroundWhite={isBackgroundWhite} />
           </S.HamburgerButton>
         ) : (
@@ -69,6 +75,12 @@ const Header: React.FC<HeaderProps> = ({
           </S.GlobalNav>
         )}
       </S.HeaderInner>
+      {isMobile && isHamburgerMenuShow && (
+        <HamburgerMenu
+          closeHamburgerMenu={() => setIsHamburgerMenuShow(false)}
+          segment={segment}
+        />
+      )}
     </S.Header>
   );
 };
