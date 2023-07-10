@@ -29,25 +29,28 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
     `;
 
   return (
-    <S.HamburgerMenuContainer isHamburgerMenuShow={isHamburgerMenuShow}>
-      <S.CloseButton onClick={closeHamburgerMenu}>
-        <CloseIcon />
-      </S.CloseButton>
-      <S.HamburgerNav>
-        <Link css={selectStyle('')} href='/'>
-          홈
-        </Link>
-        <Link css={selectStyle('list')} href='/list/notice'>
-          학교소식
-        </Link>
-        <Link css={selectStyle('about')} href='/about'>
-          학교소개
-        </Link>
-        <a href='https://hellogsm.kr'>입학</a>
-      </S.HamburgerNav>
-      <FooterGSMLogo isHamburger={true} />
-      <BackgroundBall />
-    </S.HamburgerMenuContainer>
+    <>
+      <S.HamburgerBackground isHamburgerMenuShow={isHamburgerMenuShow} />
+      <S.HamburgerMenu isHamburgerMenuShow={isHamburgerMenuShow}>
+        <S.CloseButton onClick={closeHamburgerMenu}>
+          <CloseIcon />
+        </S.CloseButton>
+        <S.HamburgerNav>
+          <Link css={selectStyle('')} href='/'>
+            홈
+          </Link>
+          <Link css={selectStyle('list')} href='/list/notice'>
+            학교소식
+          </Link>
+          <Link css={selectStyle('about')} href='/about'>
+            학교소개
+          </Link>
+          <a href='https://hellogsm.kr'>입학</a>
+        </S.HamburgerNav>
+        <FooterGSMLogo isHamburger={true} />
+        <BackgroundBall />
+      </S.HamburgerMenu>
+    </>
   );
 };
 
