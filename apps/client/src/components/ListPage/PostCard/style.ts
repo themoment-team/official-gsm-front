@@ -15,6 +15,10 @@ export const PostCard = styled(Link)`
   :hover {
     background-color: ${({ theme }) => theme.color.gray['020']};
   }
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    ${({ theme }) => theme.typo.body1}
+  }
 `;
 
 export const IndexAndTitle = styled.div`
