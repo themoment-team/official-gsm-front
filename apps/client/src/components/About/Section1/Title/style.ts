@@ -70,6 +70,7 @@ export const SecondTitle = styled(Title)`
   @media ${({ theme }) => theme.breakPoint[600]} {
     font-size: 2.3662rem;
     line-height: 2.8237rem;
+    color: ${({ theme }) => theme.color.sub.navy};
   }
 `;
 
@@ -81,6 +82,7 @@ export const ThirdTitle = styled(Title)`
   @media ${({ theme }) => theme.breakPoint[600]} {
     font-size: 2.5125rem;
     line-height: 2.9987rem;
+    color: ${({ theme }) => theme.color.sub.navy};
   }
 `;
 
@@ -104,5 +106,6 @@ export const EnglishSchoolName = styled.p`
   @media ${({ theme }) => theme.breakPoint[600]} {
     font-size: 1.0762rem;
     line-height: 1.2844rem;
+    color: ${({ theme }) => theme.color.sub.navy};
   }
 `;
