@@ -41,6 +41,7 @@ export const TitleSection = styled.div`
 `;
 
 export const MajorSelect = styled.div`
+  position: relative;
   margin-top: 3.375rem;
   height: 11rem;
   display: flex;
@@ -51,42 +52,45 @@ export const MajorSelect = styled.div`
   width: 24.5rem;
 `;
 
-export const DotContainer = styled.div`
-  position: relative;
-  height: 100%;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
-  z-index: 2;
-`;
-
 export const Line = styled.div`
   position: absolute;
   width: 0rem;
   height: 100%;
   border: 0.125rem solid #cdd5e2;
   top: 0rem;
-  left: 50%;
+  left: calc(2rem / 2);
   margin: 0;
   z-index: -1;
   transform: translateX(-50%);
 `;
 
-export const SelectDot = styled.div`
-  width: 2rem;
-  height: 2rem;
-  background: #ffffff;
-  border: 0.5rem solid #003365;
-  border-radius: 50%;
-  cursor: pointer;
-`;
-
-export const Major = styled.div`
+export const MajorContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+`;
 
-  p {
+export const MajorName = styled.p`
+  display: inline-flex;
+  gap: 0.75rem;
+  align-items: center;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    background: #ffffff;
+    border-radius: 50%;
     cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+  }
+
+  &:hover {
+    color: #00336566;
+    &::before {
+      border-color: #00336566;
+    }
   }
 `;

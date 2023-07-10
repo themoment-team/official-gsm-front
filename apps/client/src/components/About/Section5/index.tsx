@@ -63,24 +63,10 @@ const Section5 = () => {
                 </SubTitle>
               </SectionTitle>
               <S.MajorSelect>
-                <S.DotContainer>
-                  {majorArray.map(({ major }) => (
-                    <S.SelectDot
-                      onClick={() => setSelectedMajor(major)}
-                      key={major}
-                      css={css`
-                        border: ${selectedMajor === major
-                          ? `0.5rem solid ${theme.color.primary.navy}`
-                          : `0.25rem solid ${theme.color.sub.gray}`};
-                        transition: border 0.5s;
-                      `}
-                    />
-                  ))}
-                  <S.Line />
-                </S.DotContainer>
-                <S.Major>
+                <S.Line />
+                <S.MajorContainer>
                   {majorArray.map(({ major, name }) => (
-                    <p
+                    <S.MajorName
                       onClick={() => setSelectedMajor(major)}
                       key={major}
                       css={css`
@@ -88,12 +74,19 @@ const Section5 = () => {
                           ? theme.color.primary.navy
                           : theme.color.sub.gray};
                         transition: color 0.5s;
+
+                        &::before {
+                          border: ${selectedMajor === major
+                            ? `0.5rem solid ${theme.color.primary.navy}`
+                            : `0.25rem solid ${theme.color.sub.gray}`};
+                          transition: border 0.5s;
+                        }
                       `}
                     >
                       {name}
-                    </p>
+                    </S.MajorName>
                   ))}
-                </S.Major>
+                </S.MajorContainer>
               </S.MajorSelect>
             </S.TitleSection>
             <MajorCard major={selectedMajor} />
