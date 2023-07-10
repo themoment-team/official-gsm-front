@@ -11,7 +11,7 @@ export const Background = styled.div`
 export const Ball = styled.div`
   border-radius: 100%;
   position: absolute;
-  filter: blur(100px);
+  filter: blur(6.25rem);
 `;
 
 export const Ball1 = styled(Ball)`
@@ -33,7 +33,7 @@ export const Ball3 = styled(Ball)`
   width: 17.875rem;
   height: 17.9375rem;
   background: #a8e3ff;
-  filter: blur(125px);
+  filter: blur(7.8125rem);
   top: 22.75rem;
   left: 6.25rem;
 `;
