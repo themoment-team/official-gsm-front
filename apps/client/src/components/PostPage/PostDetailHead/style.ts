@@ -2,7 +2,6 @@ import styled from '@emotion/styled';
 
 export const DetailWrapper = styled.div`
   width: 50rem;
-  margin: 0;
 `;
 
 export const CategoryText = styled.p`
