@@ -18,6 +18,14 @@ export const HeaderInner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    width: calc(100vw - 12.5rem);
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: calc(100vw - 7.5rem);
+  }
 `;
 
 export const LogoLink = styled(Link)`
@@ -30,5 +38,11 @@ export const GlobalNav = styled.nav`
   transition: color 0.3s;
   a {
     ${({ theme }) => theme.typo.body1};
+  }
+`;
+
+export const HamburgerButton = styled.button`
+  svg {
+    display: block;
   }
 `;
