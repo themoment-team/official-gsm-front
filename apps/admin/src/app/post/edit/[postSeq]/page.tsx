@@ -21,10 +21,10 @@ import {
   FormErrorMessage,
   FormTitleLengthOver,
 } from 'admin/components';
+import { usePreventClose } from 'admin/hooks';
 import { categoryPath, fileExtension, postFormSchema } from 'admin/shared';
 import * as S from 'admin/styles/page/write';
 import type { PostFormType } from 'admin/types';
-import { preventClose } from 'admin/utils';
 
 import { usePatchPost } from 'api/admin';
 import { useGetPostDetail } from 'api/client';
@@ -43,6 +43,8 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
   const [prevFiles, setPrevFiles] = useState<FileInfoType[]>();
   const [deleteFileUrl, setDeleteFileUrl] = useState<string[]>([]);
   const fileInput = useRef<HTMLInputElement>(null);
+
+  usePreventClose();
 
   const { replace, back } = useRouter();
   const { mutate, isSuccess } = usePatchPost(postSeq);
@@ -64,14 +66,6 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
       content: data?.postContent,
     },
   });
-
-  useEffect(() => {
-    window.addEventListener('beforeunload', preventClose);
-
-    return () => {
-      window.removeEventListener('beforeunload', preventClose);
-    };
-  }, []);
 
   useEffect(() => {
     reset({

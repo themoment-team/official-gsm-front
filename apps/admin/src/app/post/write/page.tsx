@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 
@@ -21,10 +21,10 @@ import {
   FormErrorMessage,
   FormTitleLengthOver,
 } from 'admin/components';
+import { usePreventClose } from 'admin/hooks';
 import { categoryPath, fileExtension, postFormSchema } from 'admin/shared';
 import * as S from 'admin/styles/page/write';
 import type { PostFormType } from 'admin/types';
-import { preventClose } from 'admin/utils';
 
 import { usePostWritePost } from 'api/admin';
 
@@ -49,6 +49,8 @@ export default function WritePage({
   const isGallery = category === 'EVENT_GALLERY';
   const gallerySubmitDisabled = isGallery && files.length === 0;
 
+  usePreventClose();
+
   const {
     register,
     handleSubmit,
@@ -61,14 +63,6 @@ export default function WritePage({
   if (!category || !categoryQueryStrings.includes(category)) {
     replace('/post/write?category=NOTICE');
   }
-
-  useEffect(() => {
-    window.addEventListener('beforeunload', preventClose);
-
-    return () => {
-      window.removeEventListener('beforeunload', preventClose);
-    };
-  }, []);
 
   const handleCancel = (fileName: string) => {
     setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
