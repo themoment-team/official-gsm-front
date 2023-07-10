@@ -1,7 +1,5 @@
 import { useGetPostDetail } from 'api/client';
 
-import { categoryTitle } from 'common';
-
 import { WriterAndDate } from 'ui';
 
 import * as S from './style';
@@ -10,10 +8,10 @@ interface PostDetailHeadProps {
   postSeq: number;
 }
 
-const categories = {
-  NOTICE: 'notice',
-  FAMILY_NEWSLETTER: 'newsletter',
-  EVENT_GALLERY: 'gallery',
+const categoryTitle = {
+  NOTICE: '📢 공지사항',
+  FAMILY_NEWSLETTER: '📃 가정통신문',
+  EVENT_GALLERY: '📷 행사 갤러리',
 } as const;
 
 const PostDetailHead: React.FC<PostDetailHeadProps> = ({ postSeq }) => {
@@ -22,9 +20,7 @@ const PostDetailHead: React.FC<PostDetailHeadProps> = ({ postSeq }) => {
     <>
       {data && (
         <S.DetailWrapper>
-          <S.CategoryText>
-            {categoryTitle[categories[data.category]]}
-          </S.CategoryText>
+          <S.CategoryText>{categoryTitle[data.category]}</S.CategoryText>
           <S.Title>{data.postTitle}</S.Title>
           <WriterAndDate
             workspace='client'
