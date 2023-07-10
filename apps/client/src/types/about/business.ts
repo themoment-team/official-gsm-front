@@ -5,4 +5,5 @@ export interface BusinessCardItemType {
   subTitle: string;
   color: PointColorType;
   img: string;
+  pointPosition: 'left' | 'right';
 }

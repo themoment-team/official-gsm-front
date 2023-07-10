@@ -47,7 +47,7 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
             postWriter={data.postWriter}
           />
           <S.ButtonWrapper>
-            <EditButton href='/post/edit' />
+            <EditButton href={`/post/edit/${postSeq}`} />
             <DeletePostButton onClick={() => dialog.current?.showModal()} />
           </S.ButtonWrapper>
           <S.Horizon />

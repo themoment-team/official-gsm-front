@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 
 export const PostCard = styled(Link)`
   ${({ theme }) => theme.typo.h5}
-  width: 77.5rem;
+  width: 100%;
   padding: 1rem 1.5rem;
   display: flex;
   align-items: center;
@@ -15,6 +15,10 @@ export const PostCard = styled(Link)`
   :hover {
     background-color: ${({ theme }) => theme.color.gray['020']};
   }
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    ${({ theme }) => theme.typo.body1}
+  }
 `;
 
 export const IndexAndTitle = styled.div`
@@ -22,6 +26,14 @@ export const IndexAndTitle = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    width: 34.5625rem;
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: 18.3125rem;
+  }
 `;
 
 export const PostIndex = styled.p`
@@ -35,4 +47,12 @@ export const PostTitle = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    width: 29.8125rem;
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: 14.375rem;
+  }
 `;
