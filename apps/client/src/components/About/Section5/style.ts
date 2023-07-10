@@ -6,28 +6,29 @@ import { sectionHeight } from './sectionHeight';
 
 export const Layout = styled.div`
   width: 100vw;
-  height: 68.75rem;
+
   overflow: scroll;
 
   height: ${pxToRem(sectionHeight.scrollSectionHeightPx)}rem;
+
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export const StickySection = styled.div`
-  height: 125rem;
   background: #f5f9fb;
 
   height: ${pxToRem(sectionHeight.contentSectionHeightPx)}rem;
 `;
 
 export const MajorSection = styled.div`
-  position: sticky;
-  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 6.25rem;
   width: 100%;
-  height: 100vh;
 `;
 
 export const TitleSection = styled.div`

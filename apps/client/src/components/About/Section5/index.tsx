@@ -52,53 +52,66 @@ const Section5 = () => {
   return (
     <S.Layout ref={majorScroll}>
       <S.StickySection>
-        <S.MajorSection>
-          <S.TitleSection>
-            <SectionTitle textAlign='left'>
-              <AboutTitle pointColor='sky'>
-                창의 융합력을 갖춘 <br />
-                글로벌 소프트웨어 학과 소개
-              </AboutTitle>
-              <SubTitle>체계적인 교육과정을 제공하는 소프트웨어 학과</SubTitle>
-            </SectionTitle>
-            <S.MajorSelect>
-              <S.DotContainer>
-                {majorArray.map(({ major }) => (
-                  <S.SelectDot
-                    onClick={() => setSelectedMajor(major)}
-                    key={major}
-                    css={css`
-                      border: ${selectedMajor === major
-                        ? `0.5rem solid ${theme.color.primary.navy}`
-                        : `0.25rem solid ${theme.color.sub.gray}`};
-                      transition: border 0.5s;
-                    `}
-                  />
-                ))}
-                <S.Line />
-              </S.DotContainer>
-              <S.Major>
-                {majorArray.map(({ major, name }) => (
-                  <p
-                    onClick={() => {
-                      setSelectedMajor(major);
-                    }}
-                    key={major}
-                    css={css`
-                      color: ${selectedMajor === major
-                        ? theme.color.primary.navy
-                        : theme.color.sub.gray};
-                      transition: color 0.5s;
-                    `}
-                  >
-                    {name}
-                  </p>
-                ))}
-              </S.Major>
-            </S.MajorSelect>
-          </S.TitleSection>
-          <MajorCard major={selectedMajor} />
-        </S.MajorSection>
+        <div
+          css={css`
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 1100px;
+            position: sticky;
+            top: 0;
+          `}
+        >
+          <S.MajorSection>
+            <S.TitleSection>
+              <SectionTitle textAlign='left'>
+                <AboutTitle pointColor='sky'>
+                  창의 융합력을 갖춘 <br />
+                  글로벌 소프트웨어 학과 소개
+                </AboutTitle>
+                <SubTitle>
+                  체계적인 교육과정을 제공하는 소프트웨어 학과
+                </SubTitle>
+              </SectionTitle>
+              <S.MajorSelect>
+                <S.DotContainer>
+                  {majorArray.map(({ major }) => (
+                    <S.SelectDot
+                      onClick={() => setSelectedMajor(major)}
+                      key={major}
+                      css={css`
+                        border: ${selectedMajor === major
+                          ? `0.5rem solid ${theme.color.primary.navy}`
+                          : `0.25rem solid ${theme.color.sub.gray}`};
+                        transition: border 0.5s;
+                      `}
+                    />
+                  ))}
+                  <S.Line />
+                </S.DotContainer>
+                <S.Major>
+                  {majorArray.map(({ major, name }) => (
+                    <p
+                      onClick={() => {
+                        setSelectedMajor(major);
+                      }}
+                      key={major}
+                      css={css`
+                        color: ${selectedMajor === major
+                          ? theme.color.primary.navy
+                          : theme.color.sub.gray};
+                        transition: color 0.5s;
+                      `}
+                    >
+                      {name}
+                    </p>
+                  ))}
+                </S.Major>
+              </S.MajorSelect>
+            </S.TitleSection>
+            <MajorCard major={selectedMajor} />
+          </S.MajorSection>
+        </div>
       </S.StickySection>
     </S.Layout>
   );
