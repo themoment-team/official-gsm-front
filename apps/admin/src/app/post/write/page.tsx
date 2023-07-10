@@ -9,7 +9,6 @@ import { css } from '@emotion/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
 
 import {
   Input,
@@ -18,8 +17,13 @@ import {
   Header,
   FileCard,
   FormCategory,
+  FormTitleLength,
+  FormErrorMessage,
+  FormTitleLengthOver,
 } from 'admin/components';
+import { categoryPath, fileExtension, postFormSchema } from 'admin/shared';
 import * as S from 'admin/styles/page/write';
+import type { PostFormType } from 'admin/types';
 import { preventClose } from 'admin/utils';
 
 import { usePostWritePost } from 'api/admin';
@@ -28,24 +32,6 @@ import { Button } from 'ui';
 
 import type { CategoryQueryStringType } from 'types';
 
-const schema = z.object({
-  title: z
-    .string()
-    .min(2, { message: '제목은 2글자 이상 입력해주세요.' })
-    .max(60, { message: '제목은 60글자 이하로 입력해주세요.' }),
-  content: z
-    .string()
-    .max(5000, { message: '내용은 5000글자 이하로 입력해주세요.' }),
-});
-
-type FormType = z.infer<typeof schema>;
-
-const categoryPath = {
-  NOTICE: '/',
-  FAMILY_NEWSLETTER: '/newsletter',
-  EVENT_GALLERY: '/gallery',
-} as const;
-
 const categoryQueryStrings = Object.keys(categoryPath);
 
 interface WritePageProps {
@@ -53,9 +39,6 @@ interface WritePageProps {
     category: CategoryQueryStringType;
   };
 }
-
-const fileExtension =
-  '.jpg, .png, .heic, .jpeg, .webp, .hwp, .hwpx, .owpml, .docx, .doc, .xls, .xlsx, .ppt, .pptx, .pdf';
 
 export default function WritePage({
   searchParams: { category },
@@ -69,9 +52,9 @@ export default function WritePage({
   const {
     register,
     handleSubmit,
-    watch,
+    control,
     formState: { errors },
-  } = useForm<FormType>({ resolver: zodResolver(schema) });
+  } = useForm<PostFormType>({ resolver: zodResolver(postFormSchema) });
 
   const { mutate, isSuccess, isLoading } = usePostWritePost();
 
@@ -91,7 +74,7 @@ export default function WritePage({
     setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
   };
 
-  const onSubmit: SubmitHandler<FormType> = (data) => {
+  const onSubmit: SubmitHandler<PostFormType> = (data) => {
     const content = {
       postTitle: data.title,
       postContent: data.content,
@@ -152,13 +135,11 @@ export default function WritePage({
                 // onChange={(e) => setInput(e.target.value)}
                 maxLength={60}
               />
-              <S.LengthTitle>{watch('title')?.length ?? 0}/60</S.LengthTitle>
+              <FormTitleLength control={control} />
             </div>
-            {watch('title')?.length >= 60 && (
-              <S.ErrorMessage>글자수를 초과하였습니다.</S.ErrorMessage>
-            )}
+            <FormTitleLengthOver control={control} />
             {errors.title && (
-              <S.ErrorMessage>{`* ${errors.title.message}`}</S.ErrorMessage>
+              <FormErrorMessage>{`* ${errors.title.message}`}</FormErrorMessage>
             )}
           </div>
           <div>
@@ -172,7 +153,7 @@ export default function WritePage({
               {...register('content')}
             />
             {errors.content && (
-              <S.ErrorMessage>{`* ${errors.content.message}`}</S.ErrorMessage>
+              <FormErrorMessage>{`* ${errors.content.message}`}</FormErrorMessage>
             )}
           </div>
           <div>
