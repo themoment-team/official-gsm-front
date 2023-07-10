@@ -2,11 +2,11 @@ import Image from 'next/image';
 
 import * as S from './style';
 const images = [
-  '/images/about/section8/MOU.png',
+  '/images/about/section8/MOU15.png',
   '/images/about/section8/MOU1.png',
   '/images/about/section8/MOU2.png',
   '/images/about/section8/MOU4.png',
-  '/images/about/section8/MOU.png',
+  '/images/about/section8/MOU15.png',
   '/images/about/section8/MOU1.png',
   '/images/about/section8/MOU2.png',
   '/images/about/section8/MOU4.png',
