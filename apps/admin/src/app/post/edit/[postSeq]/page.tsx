@@ -9,7 +9,6 @@ import { css } from '@emotion/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
 
 import {
   Input,
@@ -18,9 +17,14 @@ import {
   Header,
   FormCategory,
   FileCard,
+  FormTitleLength,
+  FormErrorMessage,
+  FormTitleLengthOver,
 } from 'admin/components';
+import { usePreventClose } from 'admin/hooks';
+import { categoryPath, fileExtension, postFormSchema } from 'admin/shared';
 import * as S from 'admin/styles/page/write';
-import { preventClose } from 'admin/utils';
+import type { PostFormType } from 'admin/types';
 
 import { usePatchPost } from 'api/admin';
 import { useGetPostDetail } from 'api/client';
@@ -33,33 +37,14 @@ interface EditPageProps {
   params: { postSeq: number };
 }
 
-const schema = z.object({
-  title: z
-    .string()
-    .min(2, { message: '제목은 2글자 이상 입력해주세요.' })
-    .max(60, { message: '제목은 60글자 이하로 입력해주세요.' }),
-  content: z
-    .string()
-    .max(5000, { message: '내용은 5000글자 이하로 입력해주세요.' }),
-});
-
-type FormType = z.infer<typeof schema>;
-
-const categoryPath = {
-  NOTICE: '/',
-  FAMILY_NEWSLETTER: '/newsletter',
-  EVENT_GALLERY: '/gallery',
-} as const;
-
-const fileExtension =
-  '.jpg, .png, .heic, .jpeg, .webp, .hwp, .hwpx, .owpml, .docx, .doc, .xls, .xlsx, .ppt, .pptx, .pdf';
-
 export default function EditPage({ params: { postSeq } }: EditPageProps) {
   const [category, setCategory] = useState<CategoryQueryStringType>('NOTICE');
   const [files, setFiles] = useState<File[]>([]);
   const [prevFiles, setPrevFiles] = useState<FileInfoType[]>();
   const [deleteFileUrl, setDeleteFileUrl] = useState<string[]>([]);
   const fileInput = useRef<HTMLInputElement>(null);
+
+  usePreventClose();
 
   const { replace, back } = useRouter();
   const { mutate, isSuccess } = usePatchPost(postSeq);
@@ -71,24 +56,16 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
   const {
     register,
     handleSubmit,
-    watch,
     reset,
+    control,
     formState: { errors },
-  } = useForm<FormType>({
-    resolver: zodResolver(schema),
+  } = useForm<PostFormType>({
+    resolver: zodResolver(postFormSchema),
     defaultValues: {
       title: data?.postTitle,
       content: data?.postContent,
     },
   });
-
-  useEffect(() => {
-    window.addEventListener('beforeunload', preventClose);
-
-    return () => {
-      window.removeEventListener('beforeunload', preventClose);
-    };
-  }, []);
 
   useEffect(() => {
     reset({
@@ -110,7 +87,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
     fileUrl && setDeleteFileUrl((prevArray) => [...prevArray, fileUrl]);
   };
 
-  const onSubmit: SubmitHandler<FormType> = (data) => {
+  const onSubmit: SubmitHandler<PostFormType> = (data) => {
     const content = {
       postTitle: data.title,
       postContent: data.content,
@@ -172,13 +149,11 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
                 // onChange={(e) => setInput(e.target.value)}
                 maxLength={60}
               />
-              <S.LengthTitle>{watch('title')?.length ?? 0}/60</S.LengthTitle>
+              <FormTitleLength control={control} />
             </div>
-            {watch('title')?.length >= 60 && (
-              <S.ErrorMessage>글자수를 초과하였습니다.</S.ErrorMessage>
-            )}
+            <FormTitleLengthOver control={control} />
             {errors.title && (
-              <S.ErrorMessage>{`* ${errors.title.message}`}</S.ErrorMessage>
+              <FormErrorMessage>{`* ${errors.title.message}`}</FormErrorMessage>
             )}
           </div>
           <div>
@@ -192,7 +167,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
               {...register('content')}
             />
             {errors.content && (
-              <S.ErrorMessage>{`* ${errors.content.message}`}</S.ErrorMessage>
+              <FormErrorMessage>{`* ${errors.content.message}`}</FormErrorMessage>
             )}
           </div>
           <div>
