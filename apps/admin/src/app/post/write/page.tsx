@@ -111,14 +111,6 @@ export default function WritePage({
   return (
     <>
       <Header />
-      <button
-        onClick={() => {
-          toast.success('sss');
-        }}
-      >
-        dddd
-      </button>
-
       <S.WritePageWrap>
         <S.WriteTitle>게시물 생성</S.WriteTitle>
         <S.FormWrap onSubmit={handleSubmit(onSubmit)}>
