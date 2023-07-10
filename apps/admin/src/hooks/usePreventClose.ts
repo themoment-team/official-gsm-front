@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 
-import { preventClose } from 'admin/utils';
+const preventClose = (e: BeforeUnloadEvent) => {
+  e.preventDefault();
+  e.returnValue = '';
+};
 
 export const usePreventClose = () =>
   useEffect(() => {
