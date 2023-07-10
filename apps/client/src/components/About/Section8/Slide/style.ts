@@ -57,11 +57,15 @@ const secondarySecond = keyframes`
 export const SlideContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100vw;
   height: 20.75rem;
   overflow: hidden;
   flex-direction: column;
+
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    height: 14.0625rem;
+  }
 
   .primary.first {
     animation: ${primaryFirst} 20s linear infinite;
