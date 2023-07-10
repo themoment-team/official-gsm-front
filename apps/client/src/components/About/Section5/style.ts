@@ -23,7 +23,7 @@ export const StickySection = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 1100px;
+  height: ${pxToRem(sectionHeight.scrollSectionHeightPx)}rem;
   position: sticky;
   top: 0;
 `;
