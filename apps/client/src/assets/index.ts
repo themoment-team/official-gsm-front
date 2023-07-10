@@ -1,4 +1,5 @@
 export { default as ChevronIcon } from './svg/icon/ChevronIcon';
+export { default as CloseIcon } from './svg/icon/CloseIcon';
 export { default as DownChevronsIcon } from './about/section1/DownChevronsIcon';
 export { default as DreamIcon } from './about/section3/DreamIcon';
 export { default as FooterGSMLogo } from './svg/FooterGSMLogo';
