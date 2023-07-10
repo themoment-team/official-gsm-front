@@ -30,7 +30,10 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
 
   return (
     <>
-      <S.HamburgerBackground isHamburgerMenuShow={isHamburgerMenuShow} />
+      <S.HamburgerBackground
+        onClick={closeHamburgerMenu}
+        isHamburgerMenuShow={isHamburgerMenuShow}
+      />
       <S.HamburgerMenu isHamburgerMenuShow={isHamburgerMenuShow}>
         <S.CloseButton onClick={closeHamburgerMenu}>
           <CloseIcon />
