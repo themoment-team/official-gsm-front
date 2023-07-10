@@ -137,13 +137,13 @@ const CurriculumCards = () => {
   const width = useGetWindowWidth();
 
   const handleResponsiveImg = (card: CardType) => {
-    if (width > 1335) {
+    if (width < 600) {
       return {
-        width: card.img.width,
-        height: card.img.height,
-        right: card.cardPosition.right,
+        width: card.imgResponsive.width600,
+        height: card.imgResponsive.height600,
+        right: card.imgResponsive.right600,
       };
-    } else if (width <= 1335 && width > 600) {
+    } else if (width <= 1335) {
       return {
         width: card.imgResponsive.width1335,
         height: card.imgResponsive.height1335,
@@ -151,9 +151,9 @@ const CurriculumCards = () => {
       };
     } else {
       return {
-        width: card.imgResponsive.width600,
-        height: card.imgResponsive.height600,
-        right: card.imgResponsive.right600,
+        width: card.img.width,
+        height: card.img.height,
+        right: card.cardPosition.right,
       };
     }
   };
