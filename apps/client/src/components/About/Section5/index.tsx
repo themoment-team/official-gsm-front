@@ -28,10 +28,8 @@ const majorArray: MajorArrayType[] = [
 const Section5 = () => {
   const [selectedMajor, setSelectedMajor] = useState<MajorType>('SW');
   const theme = useTheme();
-
-  const majorScroll = useRef(null);
+  const majorScroll = useRef<HTMLDivElement>(null);
   const scrollHeight = useGetScrollHeight(majorScroll);
-
   const centerAverage =
     sectionHeight.contentSectionHeightPx - sectionHeight.scrollSectionHeightPx;
 
@@ -50,18 +48,9 @@ const Section5 = () => {
   }, [scrollHeight, centerAverage]);
 
   return (
-    <S.Layout ref={majorScroll}>
-      <S.StickySection>
-        <div
-          css={css`
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 1100px;
-            position: sticky;
-            top: 0;
-          `}
-        >
+    <S.ScrollSection ref={majorScroll}>
+      <S.MajorLayout>
+        <S.StickySection>
           <S.MajorSection>
             <S.TitleSection>
               <SectionTitle textAlign='left'>
@@ -92,9 +81,7 @@ const Section5 = () => {
                 <S.Major>
                   {majorArray.map(({ major, name }) => (
                     <p
-                      onClick={() => {
-                        setSelectedMajor(major);
-                      }}
+                      onClick={() => setSelectedMajor(major)}
                       key={major}
                       css={css`
                         color: ${selectedMajor === major
@@ -111,9 +98,9 @@ const Section5 = () => {
             </S.TitleSection>
             <MajorCard major={selectedMajor} />
           </S.MajorSection>
-        </div>
-      </S.StickySection>
-    </S.Layout>
+        </S.StickySection>
+      </S.MajorLayout>
+    </S.ScrollSection>
   );
 };
 

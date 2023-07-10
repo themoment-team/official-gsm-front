@@ -4,23 +4,28 @@ import { pxToRem } from 'common';
 
 import { sectionHeight } from './sectionHeight';
 
-export const Layout = styled.div`
+export const ScrollSection = styled.div`
   width: 100vw;
-
   overflow: scroll;
-
   height: ${pxToRem(sectionHeight.scrollSectionHeightPx)}rem;
-
   -ms-overflow-style: none;
   &::-webkit-scrollbar {
     display: none;
   }
 `;
 
-export const StickySection = styled.div`
+export const MajorLayout = styled.div`
   background: #f5f9fb;
-
   height: ${pxToRem(sectionHeight.contentSectionHeightPx)}rem;
+`;
+
+export const StickySection = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1100px;
+  position: sticky;
+  top: 0;
 `;
 
 export const MajorSection = styled.div`
