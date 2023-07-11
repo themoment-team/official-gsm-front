@@ -109,8 +109,8 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
   };
 
   if (isSuccess) {
-    replace(categoryPath[category]);
     toast.success('게시물 수정이 완료되었어요.');
+    replace(categoryPath[category]);
   }
 
   if (isError) {

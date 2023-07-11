@@ -89,8 +89,8 @@ export default function WritePage({
   };
 
   if (isSuccess) {
-    replace(categoryPath[category]);
     toast.success('게시물 등록이 완료되었어요.');
+    replace(categoryPath[category]);
   }
 
   if (isError) {

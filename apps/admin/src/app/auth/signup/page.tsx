@@ -44,8 +44,8 @@ export default function SignupPage() {
   };
 
   if (userInfo?.userName || isSuccess) {
-    replace('/auth/signup/pending');
     toast.success('가입 요청이 완료되었어요.');
+    replace('/auth/signup/pending');
   }
 
   if (isError) {

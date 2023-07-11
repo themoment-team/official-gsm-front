@@ -34,8 +34,8 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
   const { mutate: deletePost, isSuccess, isError } = useDeletePost();
 
   if (isSuccess && category) {
-    replace(`/${categorys[category]}`);
     toast.success('게시물 삭제가 완료되었어요.');
+    replace(`/${categorys[category]}`);
   }
 
   if (isError) {
