@@ -1,6 +1,8 @@
+import Link from 'next/link';
+
 import styled from '@emotion/styled';
 
-export const Banner = styled.div`
+export const Banner = styled(Link)`
   width: 77.5rem;
   height: 14.9375rem;
   border-radius: 1.25rem;

@@ -3,7 +3,7 @@ import PostContent from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'client/PostContent',
+  title: 'client/PostPage/Content',
   component: PostContent,
 } as Meta<typeof PostContent>;
 

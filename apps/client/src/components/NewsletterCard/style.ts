@@ -1,6 +1,8 @@
+import Link from 'next/link';
+
 import styled from '@emotion/styled';
 
-export const NewsletterCardWrapper = styled.div`
+export const NewsletterCardWrapper = styled(Link)`
   display: flex;
   padding: 2rem;
   gap: 2rem;
