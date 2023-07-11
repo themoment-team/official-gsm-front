@@ -22,6 +22,8 @@ export default function Home() {
 
   const isTablet = windowWidth < 1024;
 
+  // TODO: 1rem의 px 값을 가져오는 hook 제작
+
   /** 가로 : 세로 = 16 : 9 = 100 : 56.25 (56.25%) */
   const promotionVideoHeightPx = isTablet ? 700 : (windowWidth / 100) * 56.25;
 
