@@ -20,8 +20,12 @@ export default function Home() {
   const windowScrollHeight = useGetWindowScrollHeight();
   const windowWidth = useGetWindowWidth();
 
+  const isTablet = windowWidth < 1024;
+
+  // TODO: 1rem의 px 값을 가져오는 hook 제작
+
   /** 가로 : 세로 = 16 : 9 = 100 : 56.25 (56.25%) */
-  const promotionVideoHeightPx = (windowWidth / 100) * 56.25;
+  const promotionVideoHeightPx = isTablet ? 700 : (windowWidth / 100) * 56.25;
 
   const videoOverlayPx = promotionVideoHeightPx - headerHeightPx;
 
@@ -52,4 +56,8 @@ const Content = styled.div`
   z-index: 1;
   margin-top: calc(56.25vw - 4rem);
   padding: 6.25rem 0 12.5rem;
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    margin-top: calc(43.75rem - 4rem);
+  }
 `;
