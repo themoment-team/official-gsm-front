@@ -7,8 +7,13 @@ export const SectionWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media${({ theme }) => theme.breakPoint[1440]} {
+  @media ${({ theme }) => theme.breakPoint[1440]} {
     height: 127.4375rem;
+  }
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    width: calc(100vw - 120px);
+    margin: 0 auto;
   }
 `;
 
