@@ -1,10 +1,25 @@
-const FooterGSMLogo = () => (
+import { css } from '@emotion/react';
+
+const FooterGSMLogo = ({ isHamburger = false }: { isHamburger?: boolean }) => (
   <svg
-    width='231'
-    height='141'
+    width='14.4375rem'
+    height='8.8125rem'
     viewBox='0 0 231 141'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
+    css={
+      isHamburger &&
+      css`
+        width: 10.375rem;
+        height: 6.4375rem;
+        position: absolute;
+        bottom: 2.5rem;
+        path {
+          fill: #003365;
+          fill-opacity: 0.1;
+        }
+      `
+    }
   >
     <g clipPath='url(#clip0_516_1556)'>
       <path

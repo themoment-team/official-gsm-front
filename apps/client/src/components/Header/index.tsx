@@ -1,8 +1,11 @@
+import { useEffect, useState } from 'react';
+
 import Link from 'next/link';
 
 import { css, useTheme } from '@emotion/react';
 
-import { GSMLogo, HamburgerIcon } from 'client/assets';
+import { HamburgerIcon, HeaderGSMLogo } from 'client/assets';
+import { HamburgerMenu } from 'client/components';
 import { useGetWindowWidth } from 'client/hooks';
 
 import * as S from './style';
@@ -18,10 +21,17 @@ const Header: React.FC<HeaderProps> = ({
   segment,
   isBackgroundWhite = true,
 }) => {
+  const [isHamburgerMenuShow, setIsHamburgerMenuShow] =
+    useState<boolean>(false);
+
   const theme = useTheme();
   const width = useGetWindowWidth();
 
   const isMobile = width <= 600;
+
+  useEffect(() => {
+    if (!isMobile) setIsHamburgerMenuShow(false);
+  }, [isMobile]);
 
   const selectStyle = (href: SegmentType) =>
     segment === href &&
@@ -41,11 +51,11 @@ const Header: React.FC<HeaderProps> = ({
       <S.HeaderInner>
         <h1>
           <S.LogoLink href='/'>
-            <GSMLogo isBackgroundWhite={isBackgroundWhite} />
+            <HeaderGSMLogo isBackgroundWhite={isBackgroundWhite} />
           </S.LogoLink>
         </h1>
         {isMobile ? (
-          <S.HamburgerButton>
+          <S.HamburgerButton onClick={() => setIsHamburgerMenuShow(true)}>
             <HamburgerIcon isBackgroundWhite={isBackgroundWhite} />
           </S.HamburgerButton>
         ) : (
@@ -69,6 +79,13 @@ const Header: React.FC<HeaderProps> = ({
           </S.GlobalNav>
         )}
       </S.HeaderInner>
+      {isMobile && (
+        <HamburgerMenu
+          isHamburgerMenuShow={isHamburgerMenuShow}
+          closeHamburgerMenu={() => setIsHamburgerMenuShow(false)}
+          segment={segment}
+        />
+      )}
     </S.Header>
   );
 };

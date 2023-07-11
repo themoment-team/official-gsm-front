@@ -9,7 +9,7 @@ interface NewsletterCardProps {
 }
 
 const NewsletterCard: React.FC<NewsletterCardProps> = ({
-  post: { postTitle, createdAt, contentPreview },
+  post: { postSeq, postTitle, createdAt, contentPreview },
 }) => {
   const createdAtDate = new Date(createdAt);
 
@@ -18,7 +18,7 @@ const NewsletterCard: React.FC<NewsletterCardProps> = ({
   const date = formatDate(createdAtDate.getDate());
 
   return (
-    <S.NewsletterCardWrapper>
+    <S.NewsletterCardWrapper href={`/post/${postSeq}`}>
       <S.DateWrapper>
         <S.DateCircle className='dateCircle'>{date}</S.DateCircle>
         <S.YearMonth>{`${year}.${month}`}</S.YearMonth>

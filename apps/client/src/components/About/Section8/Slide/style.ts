@@ -57,11 +57,15 @@ const secondarySecond = keyframes`
 export const SlideContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   width: 100vw;
   height: 20.75rem;
   overflow: hidden;
   flex-direction: column;
+
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    height: 18.75rem;
+  }
 
   .primary.first {
     animation: ${primaryFirst} 20s linear infinite;
@@ -115,12 +119,13 @@ export const SlideWrap = styled.div`
 `;
 
 export const Slide2 = styled.div`
-  width: 100vw;
+  width: 105vw;
   height: inherit;
   position: absolute;
   top: 0%;
   display: flex;
   align-items: center;
+  overflow: hidden;
   background-color: ${({ theme }) => theme.color.white};
   img {
     height: auto !important;
@@ -130,6 +135,8 @@ export const Slide2 = styled.div`
 `;
 
 export const Slide = styled.div`
+  width: 150vw;
+  overflow: hidden;
   height: inherit;
   position: absolute;
   left: 0%;
