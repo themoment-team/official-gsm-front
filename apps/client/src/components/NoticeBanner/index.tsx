@@ -23,7 +23,7 @@ const NoticeBanner: React.FC = () => {
       setCurrentIndex((currentIndex) =>
         currentIndex === (data?.postList.length ?? 0) - 1 ? 0 : currentIndex + 1
       );
-    }, 2000);
+    }, 5000);
 
     return () => {
       clearTimeout(timeoutId);
@@ -34,14 +34,14 @@ const NoticeBanner: React.FC = () => {
     <S.NoticeBannerWrapper>
       <S.SlideContainer
         css={css`
-          right: calc(${currentIndex} * (100vw + 77.375rem));
+          right: calc(${currentIndex} * (30vw + 77.375rem));
 
           @media ${theme.breakPoint['1440']} {
-            right: calc(${currentIndex} * (200vw - 12.5rem));
+            right: calc(${currentIndex} * (130vw - 12.5rem));
           }
 
           @media ${theme.breakPoint['1024']} {
-            right: calc(${currentIndex} * (200vw - 7.5rem));
+            right: calc(${currentIndex} * (130vw - 7.5rem));
           }
         `}
       >
