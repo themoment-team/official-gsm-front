@@ -112,8 +112,8 @@ const MajorCard = ({ major }: { major: MajorType }) => {
     <S.CardLayout>
       <Image
         src={`/images/about/section5/${major}.png`}
-        width={width > 880 ? 630 : 420}
-        height={width > 880 ? 250 : 167}
+        width={width > 800 ? 630 : 420}
+        height={width > 800 ? 250 : 167}
         alt=''
       />
 
@@ -128,7 +128,7 @@ const MajorCard = ({ major }: { major: MajorType }) => {
         >
           {selectedMajor.content}
         </S.Content>
-        {width > 880 ? (
+        {width > 800 && (
           <>
             <S.HashTagSection>
               {selectedMajor.hashTag.map((tag) => (
@@ -150,8 +150,6 @@ const MajorCard = ({ major }: { major: MajorType }) => {
               ))}
             </S.KeywordSection>
           </>
-        ) : (
-          ''
         )}
       </S.ContentSection>
     </S.CardLayout>

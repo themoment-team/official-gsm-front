@@ -9,13 +9,13 @@ export const CardLayout = styled.div`
   border-radius: 1.875rem;
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
-    margin-left: 190px;
+    margin-left: 11.875rem;
   }
 
-  @media (max-width: 880px) {
+  @media (max-width: 800px) {
     width: 26.25rem;
     height: 100%;
-    margin: 0;
+    margin: 0 2.5rem;
   }
 `;
 
@@ -30,8 +30,8 @@ export const Title = styled.h3`
   font-weight: 700;
   margin-bottom: 0.5rem;
 
-  @media (max-width: 880px) {
-    font-size: 1.5rem;
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    ${({ theme }) => theme.typo.h3};
   }
 `;
 
