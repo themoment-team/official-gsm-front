@@ -29,11 +29,11 @@ interface CardType {
   img: ImageType;
 
   imgResponsive: {
-    width1335: string;
-    height1335: string;
+    width1440: string;
+    height1440: string;
     width600: string;
     height600: string;
-    right1335: string;
+    right1440: string;
     right600: string;
   };
 }
@@ -54,11 +54,11 @@ const CurriculumArray: CardType[] = [
       height: 220,
     },
     imgResponsive: {
-      width1335: '17.875rem',
-      height1335: '15.125rem',
+      width1440: '17.875rem',
+      height1440: '15.125rem',
       width600: '13.5625rem',
       height600: '12.4375rem',
-      right1335: '3.6875rem',
+      right1440: '3.6875rem',
       right600: '1.25rem',
     },
   },
@@ -77,11 +77,11 @@ const CurriculumArray: CardType[] = [
       height: 260,
     },
     imgResponsive: {
-      width1335: '18.375rem',
-      height1335: '17.75rem',
+      width1440: '18.375rem',
+      height1440: '17.75rem',
       width600: '14rem',
       height600: '13.75rem',
-      right1335: '2.5625rem',
+      right1440: '2.5625rem',
       right600: '1.375rem',
     },
   },
@@ -100,11 +100,11 @@ const CurriculumArray: CardType[] = [
       height: 252,
     },
     imgResponsive: {
-      width1335: '21.875rem',
-      height1335: '16.625rem',
+      width1440: '21.875rem',
+      height1440: '16.625rem',
       width600: '17.1875rem',
       height600: '13.125rem',
-      right1335: '2.4375rem',
+      right1440: '2.4375rem',
       right600: '1.6875rem',
     },
   },
@@ -123,11 +123,11 @@ const CurriculumArray: CardType[] = [
       height: 220,
     },
     imgResponsive: {
-      width1335: '17.25rem',
-      height1335: '15rem',
+      width1440: '17.25rem',
+      height1440: '15rem',
       width600: '15.375rem',
       height600: '13.375rem',
-      right1335: '1.875rem',
+      right1440: '1.875rem',
       right600: '0',
     },
   },
@@ -145,9 +145,9 @@ const CurriculumCards = () => {
       };
     } else if (width <= 1440) {
       return {
-        width: card.imgResponsive.width1335,
-        height: card.imgResponsive.height1335,
-        right: card.imgResponsive.right1335,
+        width: card.imgResponsive.width1440,
+        height: card.imgResponsive.height1440,
+        right: card.imgResponsive.right1440,
       };
     } else {
       return {

@@ -12,7 +12,7 @@ export const SectionWrapper = styled.div`
   }
 
   @media ${({ theme }) => theme.breakPoint[600]} {
-    width: calc(100vw - 120px);
+    width: calc(100vw - 7.5rem);
     margin: 0 auto;
   }
 `;
