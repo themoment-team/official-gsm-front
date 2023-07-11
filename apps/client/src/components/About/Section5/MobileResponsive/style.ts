@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const ScrollSection = styled.div`
   width: 100%;
-  height: 850px;
+  height: 53.125rem;
   background: #f5f9fb;
   padding-top: 7.5rem;
 `;
