@@ -45,17 +45,53 @@ const rotate1 = keyframes`
 `;
 
 export const SlotMachineAnimation = styled.div`
-  width: 61.4375rem;
+  width: 61.875rem;
   display: flex;
   align-items: start;
   font-style: normal;
   font-weight: 700;
   font-size: 6.2376rem;
-  color: ${({ theme }) => theme.color.white};
+  color: ${({ theme }) => theme.color.black};
   position: fixed;
   top: 21.625rem;
   left: 50%;
   transform: translateX(-50%);
+  @media ${({ theme }) => theme.breakPoint[1440]} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      font-size: 6.2375rem;
+    }
+    svg {
+      width: 12.125rem;
+      height: 2.4838rem;
+      position: absolute;
+      top: 1.875rem;
+      right: -7.5rem;
+    }
+  }
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    span {
+      font-size: 4.3913rem;
+    }
+  }
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    align-items: center;
+    flex-direction: column;
+    width: 21.4375rem;
+    span {
+      font-size: 3.6088rem;
+    }
+    svg {
+      width: 12.125rem;
+      height: 2.4838rem;
+      background-color: pink;
+      position: absolute;
+      top: 9.375rem;
+      right: 3.125rem;
+    }
+  }
 `;
 
 export const ListWrap = styled.div`
@@ -69,6 +105,12 @@ export const ListWrap = styled.div`
 
 export const Point = styled.span`
   color: ${({ theme }) => theme.color.primary.lime};
+`;
+export const Icon = styled.div`
+  background-color: 'pink';
+  position: absolute;
+  top: 6.25rem;
+  left: 19.375rem;
 `;
 
 export const ListIconWrap = styled.div`
@@ -117,6 +159,14 @@ export const Item = styled.li`
   top: 0;
   list-style: none;
   transform-origin: 50% 50%;
+
+  @media ${({ theme }) => theme.breakPoint[600]} {
+    font-size: 5rem;
+  }
+
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    font-size: 4.8125rem;
+  }
 
   // 아이템 개수가 5개 이므로 108deg 씩 더합니다
   // z 속성은 아이템간의 간격을 결정한다고 보시면 됩니다
