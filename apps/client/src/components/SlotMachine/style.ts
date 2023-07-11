@@ -53,9 +53,9 @@ export const SlotMachineAnimation = styled.div`
   font-size: 6.2376rem;
   color: ${({ theme }) => theme.color.white};
   position: fixed;
-  top: 21.625rem;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 `;
 
 export const ListWrap = styled.div`
