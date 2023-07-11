@@ -8,7 +8,7 @@ export const CardLayout = styled.div`
   background-color: ${({ theme }) => theme.color.white};
   border-radius: 1.875rem;
 
-  @media (max-width: 1325px) {
+  @media ${({ theme }) => theme.breakPoint['1440']} {
     margin-left: 190px;
   }
 

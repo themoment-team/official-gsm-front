@@ -37,7 +37,7 @@ const Section5 = () => {
   const width = useGetWindowWidth();
 
   useEffect(() => {
-    if (width > 880) {
+    if (width >= 1440) {
       if (scrollHeight !== undefined)
         if (scrollHeight <= centerAverage / 3) {
           setSelectedMajor('SW');
@@ -104,6 +104,7 @@ const Section5 = () => {
       ) : (
         <MobileResponsive />
       )}
+      asdfsadf
     </>
   );
 };
