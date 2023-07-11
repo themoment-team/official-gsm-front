@@ -15,6 +15,11 @@ export const FileButton = styled.a`
       text-decoration: underline;
     }
   }
+
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    max-width: calc(100vw - 7.5rem);
+    overflow: hidden;
+  }
 `;
 
 export const FileNameText = styled.p`

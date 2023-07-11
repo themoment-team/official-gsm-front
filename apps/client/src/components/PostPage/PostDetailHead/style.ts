@@ -2,6 +2,10 @@ import styled from '@emotion/styled';
 
 export const DetailWrapper = styled.div`
   width: 50rem;
+
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    width: calc(100vw - 7.5rem);
+  }
 `;
 
 export const CategoryText = styled.p`
@@ -17,4 +21,8 @@ export const Title = styled.h1`
   width: 50rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
+
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    width: calc(100vw - 7.5rem);
+  }
 `;
