@@ -15,7 +15,8 @@ export const CardLayout = styled.div`
   @media (max-width: 800px) {
     width: 26.25rem;
     height: 100%;
-    margin: 0 2.5rem;
+    margin-left: 0;
+    margin-right: 0 2.5rem;
   }
 `;
 
