@@ -1,19 +1,8 @@
 import { MajorCard } from 'client/components';
 import { SubTitle, AboutTitle, SectionTitle } from 'client/components/';
-import type { MajorType } from 'client/types';
+import { majorArray } from 'client/components/About/Section5/majorArray';
 
 import * as S from './style';
-
-interface MajorArrayType {
-  major: MajorType;
-  name: string;
-}
-
-const majorArray: MajorArrayType[] = [
-  { major: 'SW', name: '소프트웨어 개발과' },
-  { major: 'IOT', name: '스마트 IOT(Internet of Things)' },
-  { major: 'AI', name: '인공 지능(AI)과' },
-];
 
 const MobileResponsive = () => (
   <S.ScrollSection>
