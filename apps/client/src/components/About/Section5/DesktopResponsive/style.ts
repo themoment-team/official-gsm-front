@@ -8,10 +8,10 @@ export const ScrollSection = styled.div`
   width: 100vw;
   overflow: scroll;
   height: ${pxToRem(sectionHeight.scrollSectionHeightPx)}rem;
-  /* -ms-overflow-style: none;
+  -ms-overflow-style: none;
   &::-webkit-scrollbar {
     display: none;
-  } */
+  }
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
     width: 100%;

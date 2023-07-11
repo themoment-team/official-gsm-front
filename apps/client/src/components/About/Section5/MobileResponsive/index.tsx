@@ -1,5 +1,9 @@
-import { MajorCard } from 'client/components';
-import { SubTitle, AboutTitle, SectionTitle } from 'client/components/';
+import {
+  MajorCard,
+  SubTitle,
+  AboutTitle,
+  SectionTitle,
+} from 'client/components';
 import { majorArray } from 'client/components/About/Section5/majorArray';
 
 import * as S from './style';
