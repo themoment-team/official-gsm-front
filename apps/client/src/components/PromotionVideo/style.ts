@@ -5,10 +5,21 @@ export const VidoeWrapper = styled.div`
   position: fixed;
   top: 0;
   z-index: 0;
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    height: 43.75rem;
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 export const Video = styled.video`
   width: 100%;
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: auto;
+    height: 100%;
+  }
 `;
 
 export const VideoCover = styled.div`
@@ -18,4 +29,8 @@ export const VideoCover = styled.div`
   position: absolute;
   top: 0;
   z-index: 2;
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    height: 43.75rem;
+  }
 `;
