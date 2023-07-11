@@ -11,6 +11,7 @@ import {
   MainPageNewsletterList,
   NoticeBanner,
   GalleryList,
+  SEOHelmet,
 } from 'client/components';
 import { useGetWindowScrollHeight, useGetWindowWidth } from 'client/hooks';
 
@@ -29,6 +30,7 @@ export default function Home() {
 
   return (
     <>
+      <SEOHelmet title={'테스트입니다'} description={'테스트입니다.'} />
       <Header segment='' isBackgroundWhite={isBackgroundWhite} />
       <PromotionVideo />
       <SlotMachine />

@@ -18,11 +18,6 @@ export default function RootLayout({
   return (
     <html lang='ko'>
       <head>
-        <title>광주소프트웨어마이스터고등학교</title>
-        <meta
-          name='description'
-          content='광주소프트웨어마이스터고등학교 공식 홈페이지'
-        />
         <link
           rel='stylesheet'
           as='style'
