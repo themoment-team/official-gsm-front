@@ -1,7 +1,5 @@
 import { MajorCard } from 'client/components';
-import AboutTitle from 'client/components/Title/About';
-import SectionTitle from 'client/components/Title/SectionTitle';
-import SubTitle from 'client/components/Title/SubTitle';
+import { SubTitle, AboutTitle, SectionTitle } from 'client/components/';
 import type { MajorType } from 'client/types';
 
 import * as S from './style';
@@ -21,7 +19,7 @@ const MobileResponsive = () => (
   <S.ScrollSection>
     <S.TitleSection>
       <SectionTitle textAlign='left'>
-        <AboutTitle pointColor='sky'>
+        <AboutTitle pointColor='sky' right='27%'>
           창의 융합력을 갖춘 <br />
           글로벌 소프트웨어 학과 소개
         </AboutTitle>

@@ -61,7 +61,7 @@ const Section5 = () => {
               <S.MajorSection>
                 <S.TitleSection>
                   <SectionTitle textAlign='left'>
-                    <AboutTitle pointColor='sky'>
+                    <AboutTitle pointColor='sky' right='27%'>
                       창의 융합력을 갖춘 <br />
                       글로벌 소프트웨어 학과 소개
                     </AboutTitle>
@@ -104,7 +104,6 @@ const Section5 = () => {
       ) : (
         <MobileResponsive />
       )}
-      asdfsadf
     </>
   );
 };
