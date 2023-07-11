@@ -143,7 +143,7 @@ const CurriculumCards = () => {
         height: card.imgResponsive.height600,
         right: card.imgResponsive.right600,
       };
-    } else if (width <= 1335) {
+    } else if (width <= 1440) {
       return {
         width: card.imgResponsive.width1335,
         height: card.imgResponsive.height1335,
@@ -166,7 +166,7 @@ const CurriculumCards = () => {
           css={css`
             width: ${card.isSmall ? '30.9375rem' : '44.6875rem'};
 
-            @media (max-width: 1335px) {
+            @media (max-width: 1440px) {
               width: 100%;
             }
             background-color: ${card.bgColor};
@@ -191,7 +191,7 @@ const CurriculumCards = () => {
               bottom: 0;
               right: ${card.cardPosition.right};
 
-              @media (max-width: 1335px) {
+              @media (max-width: 1440px) {
                 right: ${handleResponsiveImg(card).right};
               }
             `}
@@ -201,7 +201,7 @@ const CurriculumCards = () => {
               width={card.img.width}
               height={card.img.height}
               css={css`
-                @media (max-width: 1335px) {
+                @media (max-width: 1440px) {
                   width: ${handleResponsiveImg(card).width};
                   height: ${handleResponsiveImg(card).height};
                 }

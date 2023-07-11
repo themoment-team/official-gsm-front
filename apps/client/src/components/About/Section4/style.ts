@@ -7,7 +7,7 @@ export const SectionWrapper = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 1335px) {
+  @media (max-width: 1440px) {
     height: 127.4375rem;
   }
 `;
@@ -20,7 +20,7 @@ export const SectionContentWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: 1335px) {
+  @media (max-width: 1440px) {
     width: 51.5rem;
     height: 104.9375rem;
   }
