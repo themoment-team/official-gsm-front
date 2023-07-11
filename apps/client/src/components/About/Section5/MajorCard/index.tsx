@@ -128,25 +128,31 @@ const MajorCard = ({ major }: { major: MajorType }) => {
         >
           {selectedMajor.content}
         </S.Content>
-        <S.HashTagSection>
-          {selectedMajor.hashTag.map((tag) => (
-            <S.HashTag
-              key={tag}
-              css={css`
-                color: ${majorColor};
-                background-color: ${majorColor}1A;
-              `}
-            >
-              #{tag}
-            </S.HashTag>
-          ))}
-        </S.HashTagSection>
-        <S.Line />
-        <S.KeywordSection>
-          {selectedMajor.keyword.map((word, index) => (
-            <S.Keyword key={index}>{word}</S.Keyword>
-          ))}
-        </S.KeywordSection>
+        {width > 880 ? (
+          <>
+            <S.HashTagSection>
+              {selectedMajor.hashTag.map((tag) => (
+                <S.HashTag
+                  key={tag}
+                  css={css`
+                    color: ${majorColor};
+                    background-color: ${majorColor}1A;
+                  `}
+                >
+                  #{tag}
+                </S.HashTag>
+              ))}
+            </S.HashTagSection>
+            <S.Line />
+            <S.KeywordSection>
+              {selectedMajor.keyword.map((word, index) => (
+                <S.Keyword key={index}>{word}</S.Keyword>
+              ))}
+            </S.KeywordSection>
+          </>
+        ) : (
+          ''
+        )}
       </S.ContentSection>
     </S.CardLayout>
   );

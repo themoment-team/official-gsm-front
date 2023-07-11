@@ -27,13 +27,15 @@ const MobileResponsive = () => (
         </AboutTitle>
         <SubTitle>체계적인 교육과정을 제공하는 소프트웨어 학과</SubTitle>
       </SectionTitle>
-      <S.MajorContainer>
-        {majorArray.map(({ major, name }) => (
-          <div key={name}>
-            <MajorCard major={major} />
-          </div>
-        ))}
-      </S.MajorContainer>
+      <S.MajorWrap>
+        <S.MajorContainer>
+          {majorArray.map(({ major, name }) => (
+            <div key={name}>
+              <MajorCard major={major} />
+            </div>
+          ))}
+        </S.MajorContainer>
+      </S.MajorWrap>
     </S.TitleSection>
   </S.ScrollSection>
 );

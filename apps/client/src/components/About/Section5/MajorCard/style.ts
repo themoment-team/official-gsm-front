@@ -13,8 +13,9 @@ export const CardLayout = styled.div`
   }
 
   @media (max-width: 880px) {
-    width: 420px;
-    height: 441px;
+    width: 26.25rem;
+    height: 100%;
+    margin: 0;
   }
 `;
 
@@ -30,7 +31,7 @@ export const Title = styled.h3`
   margin-bottom: 0.5rem;
 
   @media (max-width: 880px) {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 `;
 
