@@ -94,7 +94,7 @@ export default function WritePage({
   }
 
   if (isError) {
-    toast.error(isError);
+    toast.error('게시물 등록이 실패되었어요.');
   }
 
   const postFile = () => {

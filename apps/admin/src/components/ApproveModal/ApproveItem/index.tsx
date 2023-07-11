@@ -17,17 +17,14 @@ const ApproveItem: React.FC<ApproveItemProps> = ({
   refetch,
   requestedAt,
 }) => {
-  const { mutate: patchMutate, isError: patchError } = usePatchApprove();
-  const { mutate: deleteMutate, isError: deletError } = useDeleteApprove();
+  const { mutate: patchMutate } = usePatchApprove();
+  const { mutate: deleteMutate } = useDeleteApprove();
 
   const patchApprove = () => {
     patchMutate(userSeq, {
       onSuccess: () => {
         refetch();
         toast.success('승인이 완료되었어요.');
-      },
-      onError: () => {
-        toast.error(patchError);
       },
     });
   };
@@ -37,9 +34,6 @@ const ApproveItem: React.FC<ApproveItemProps> = ({
       onSuccess: () => {
         refetch();
         toast.success('승인이 거절되었어요.');
-      },
-      onError: () => {
-        toast.error(deletError);
       },
     });
   };

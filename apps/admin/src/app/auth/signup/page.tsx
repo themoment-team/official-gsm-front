@@ -49,7 +49,7 @@ export default function SignupPage() {
   }
 
   if (isError) {
-    toast.error(isError);
+    toast.error('가입 요청이 실패되었어요.');
   }
 
   usePreventHistoryPop();

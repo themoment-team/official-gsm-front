@@ -39,7 +39,7 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
   }
 
   if (isError) {
-    toast.error(isError);
+    toast.error('게시물 삭제가 실패되었어요.');
   }
 
   return (

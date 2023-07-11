@@ -114,7 +114,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
   }
 
   if (isError) {
-    toast.error(isError);
+    toast.error('게시물 수정이 실패되었어요.');
   }
 
   const postFile = () => {
