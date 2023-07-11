@@ -2,6 +2,7 @@ import Image from 'next/image';
 
 import { css, useTheme } from '@emotion/react';
 
+import { useGetWindowWidth } from 'client/hooks';
 import type { PointColorType, MajorType } from 'client/types';
 
 import * as S from './style';
@@ -105,13 +106,14 @@ const MajorCard = ({ major }: { major: MajorType }) => {
   const selectedMajor = majorInformation[major];
   const theme = useTheme();
   const majorColor = theme.color.primary[selectedMajor.color];
+  const width = useGetWindowWidth();
 
   return (
     <S.CardLayout>
       <Image
         src={`/images/about/section5/${major}.png`}
-        width={630}
-        height={250}
+        width={width > 880 ? 630 : 420}
+        height={width > 880 ? 250 : 167}
         alt=''
       />
 

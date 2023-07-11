@@ -12,6 +12,11 @@ export const ScrollSection = styled.div`
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @media (max-width: 1325px) {
+    width: 100%;
+    height: 1678px;
+  }
 `;
 
 export const MajorLayout = styled.div`
@@ -26,6 +31,11 @@ export const StickySection = styled.div`
   height: ${pxToRem(sectionHeight.scrollSectionHeightPx)}rem;
   position: sticky;
   top: 0;
+
+  @media (max-width: 1325px) {
+    width: 100%;
+    height: 1678px;
+  }
 `;
 
 export const MajorSection = styled.div`
@@ -34,10 +44,25 @@ export const MajorSection = styled.div`
   align-items: center;
   gap: 6.25rem;
   width: 100%;
+
+  @media (max-width: 1325px) {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+
+    width: 824px;
+    height: 1318px;
+  }
 `;
 
 export const TitleSection = styled.div`
   height: 48.625rem;
+
+  @media (max-width: 1325px) {
+    height: 100%;
+
+    margin-right: 238px;
+  }
 `;
 
 export const MajorSelect = styled.div`

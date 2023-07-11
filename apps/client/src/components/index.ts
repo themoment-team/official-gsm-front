@@ -15,6 +15,7 @@ export { default as ListPagePostCard } from './ListPage/PostCard';
 export { default as ListPageTitle } from './ListPage/Title';
 export { default as MainPageNewsletterList } from './MainPage/NewsletterList';
 export { default as MajorCard } from './About/Section5/MajorCard';
+export { default as MobileResponsive } from './About/Section5/MobileResponsive';
 export { default as NewsTitle } from './Title/News';
 export { default as NewsletterCard } from './NewsletterCard';
 export { default as NoticeBanner } from './NoticeBanner';

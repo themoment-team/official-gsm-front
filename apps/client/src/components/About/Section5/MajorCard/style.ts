@@ -7,6 +7,15 @@ export const CardLayout = styled.div`
   height: 48.625rem;
   background-color: ${({ theme }) => theme.color.white};
   border-radius: 1.875rem;
+
+  @media (max-width: 1325px) {
+    margin-left: 190px;
+  }
+
+  @media (max-width: 880px) {
+    width: 420px;
+    height: 441px;
+  }
 `;
 
 export const ContentSection = styled.div`
@@ -19,6 +28,10 @@ export const Title = styled.h3`
   color: ${({ theme }) => theme.color.primary.navy};
   font-weight: 700;
   margin-bottom: 0.5rem;
+
+  @media (max-width: 880px) {
+    font-size: 24px;
+  }
 `;
 
 export const Content = styled.div`
