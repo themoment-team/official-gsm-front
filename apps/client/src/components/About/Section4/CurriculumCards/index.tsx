@@ -137,7 +137,7 @@ const CurriculumCards = () => {
   const width = useGetWindowWidth();
 
   const handleResponsiveImg = (card: CardType) => {
-    if (width < 600) {
+    if (width <= 600) {
       return {
         width: card.imgResponsive.width600,
         height: card.imgResponsive.height600,
