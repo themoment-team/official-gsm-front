@@ -5,18 +5,18 @@ import type { PointColorType } from 'client/types';
 interface NewsTitleProps {
   children: React.ReactNode;
   pointColor: PointColorType;
-  className?: string;
+  right?: string;
 }
 
 const NewsTitle: React.FC<NewsTitleProps> = ({
   children,
   pointColor,
-  className,
+  right = '-1.25rem',
 }) => (
   <TitleTemplate
-    point={{ pointColor, pointSize: '0.938rem', pointPosition: 'top' }}
+    point={{ pointColor, pointSize: '0.938rem', pointPosition: 'top', right }}
   >
-    <NewsTitleStyle className={className}>{children}</NewsTitleStyle>
+    <NewsTitleStyle>{children}</NewsTitleStyle>
   </TitleTemplate>
 );
 

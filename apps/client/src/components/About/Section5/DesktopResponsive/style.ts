@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 
-import { pxToRem } from 'common';
+import { sectionHeight } from 'client/components/About/Section5/sectionHeight';
 
-import { sectionHeight } from './sectionHeight';
+import { pxToRem } from 'common';
 
 export const ScrollSection = styled.div`
   width: 100vw;
