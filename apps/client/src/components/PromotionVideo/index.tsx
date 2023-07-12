@@ -6,7 +6,7 @@ const PromotionVideo = () => (
   <S.VidoeWrapper>
     <S.Video src='/video/promotion.mp4' autoPlay loop muted playsInline />
     <S.VideoCover>
-      <Scroll isWhite={true} />
+      <Scroll isPromotion={true} />
     </S.VideoCover>
   </S.VidoeWrapper>
 );

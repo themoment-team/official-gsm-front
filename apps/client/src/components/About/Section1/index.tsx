@@ -11,7 +11,7 @@ const Section1 = () => (
       <CircleDecoration />
       <Title />
     </SectionTitleWrapper>
-    <Scroll isWhite={false} />
+    <Scroll isPromotion={false} />
   </SectionWrapper>
 );
 

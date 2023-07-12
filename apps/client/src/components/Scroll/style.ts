@@ -1,17 +1,17 @@
 import styled from '@emotion/styled';
 
-export const ScrollContentsWrap = styled.div<{ isWhite: boolean }>`
+export const ScrollContentsWrap = styled.div<{ isPromotion: boolean }>`
   display: flex;
   flex-direction: column;
   gap: 0.375rem;
   align-items: center;
   animation: motion 0.7s linear 0s infinite alternate;
   position: absolute;
-  bottom: 2.625rem;
+  bottom: ${({ isPromotion }) => (isPromotion ? '4.5rem' : '2.625rem')};
   left: 50%;
   path {
-    stroke: ${({ isWhite }) => (isWhite ? '#ffffff' : '')};
-    fill: ${({ isWhite }) => (isWhite ? '#ffffff' : '')};
+    stroke: ${({ isPromotion }) => (isPromotion ? '#ffffff' : '')};
+    fill: ${({ isPromotion }) => (isPromotion ? '#ffffff' : '')};
   }
 
   @keyframes motion {
