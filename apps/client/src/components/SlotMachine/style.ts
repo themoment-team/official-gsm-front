@@ -45,7 +45,7 @@ const rotate1 = keyframes`
 `;
 
 export const SlotMachineAnimation = styled.div`
-  width: 61.4375rem;
+  width: 61.875rem;
   display: flex;
   align-items: start;
   font-style: normal;
@@ -56,6 +56,26 @@ export const SlotMachineAnimation = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    align-items: center;
+    flex-direction: column;
+    width: 21.4375rem;
+    height: 21.875rem;
+    justify-content: space-between;
+    span {
+      font-size: 3.6088rem;
+    }
+    svg {
+      width: 12.125rem;
+      height: 2.4838rem;
+      top: 4.375rem;
+      right: 3.125rem;
+    }
+    .second {
+      top: 14.375rem;
+    }
+  }
 `;
 
 export const ListWrap = styled.div`
@@ -65,17 +85,24 @@ export const ListWrap = styled.div`
   align-items: center;
   margin: 0rem 2.5rem;
   position: relative;
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    width: 9.375rem;
+  }
 `;
 
 export const Point = styled.span`
   color: ${({ theme }) => theme.color.primary.lime};
 `;
+export const Icon = styled.span``;
 
 export const ListIconWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  justify-content: center;
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    height: 6.25rem;
+  }
 `;
 
 export const Wrap = styled.div`
@@ -117,6 +144,10 @@ export const Item = styled.li`
   top: 0;
   list-style: none;
   transform-origin: 50% 50%;
+
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    font-size: 5rem;
+  }
 
   // 아이템 개수가 5개 이므로 108deg 씩 더합니다
   // z 속성은 아이템간의 간격을 결정한다고 보시면 됩니다
