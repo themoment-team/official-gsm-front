@@ -2,6 +2,8 @@ import { useRef } from 'react';
 
 import { useRouter } from 'next/navigation';
 
+import { toast } from 'react-toastify';
+
 import { EditButton, DeletePostButton, DeleteModal } from 'admin/components';
 
 import { useDeletePost } from 'api/admin';
@@ -29,10 +31,15 @@ const CommonDetail: React.FC<CommonDetailProps> = ({ postSeq }) => {
 
   const dialog = useRef<HTMLDialogElement>(null);
 
-  const { mutate: deletePost, isSuccess } = useDeletePost();
+  const { mutate: deletePost, isSuccess, isError } = useDeletePost();
 
   if (isSuccess && category) {
+    toast.success('게시물 삭제가 완료되었어요.');
     replace(`/${categorys[category]}`);
+  }
+
+  if (isError) {
+    toast.error('게시물 삭제가 실패되었어요.');
   }
 
   return (
