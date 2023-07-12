@@ -9,8 +9,6 @@ export const ScrollContentsWrap = styled.div<{ isWhite: boolean }>`
   position: absolute;
   bottom: 2.625rem;
   left: 50%;
-  transform: translateX(-50%);
-
   path {
     stroke: ${({ isWhite }) => (isWhite ? '#ffffff' : '')};
     fill: ${({ isWhite }) => (isWhite ? '#ffffff' : '')};
@@ -18,10 +16,10 @@ export const ScrollContentsWrap = styled.div<{ isWhite: boolean }>`
 
   @keyframes motion {
     0% {
-      transform: translateY(0.625rem);
+      transform: translate(-50%, 0.625rem);
     } /* 처음 위치 */
     100% {
-      transform: translateY(0);
+      transform: translate(-50%, 0);
     } /* 마지막 위치 */
   }
 `;
