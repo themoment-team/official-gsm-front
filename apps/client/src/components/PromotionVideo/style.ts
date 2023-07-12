@@ -1,3 +1,4 @@
+import { keyframes } from '@emotion/react';
 import styled from '@emotion/styled';
 
 export const VidoeWrapper = styled.div`
@@ -16,6 +17,15 @@ export const Video = styled.video`
   object-fit: cover;
 `;
 
+const downAndUp = keyframes`
+  0%{
+    transform: translate(-50%, 0);
+  }
+  100%{
+    transform: translate(-50%, -1.38rem);
+  }
+`;
+
 export const VideoCover = styled.div`
   width: 100%;
   height: 100vh;
@@ -23,4 +33,14 @@ export const VideoCover = styled.div`
   position: absolute;
   top: 0;
   z-index: 2;
+
+  & > svg {
+    position: absolute;
+    left: 50%;
+    bottom: 9%;
+    animation-name: ${downAndUp};
+    animation-duration: 500ms;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
 `;
