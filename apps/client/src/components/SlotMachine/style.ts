@@ -61,25 +61,25 @@ export const SlotMachineAnimation = styled.div`
     align-items: center;
     flex-direction: column;
     width: 21.4375rem;
+    height: 21.875rem;
+    justify-content: space-between;
     span {
       font-size: 3.6088rem;
     }
     svg {
       width: 12.125rem;
       height: 2.4838rem;
-      position: absolute;
       top: 4.375rem;
       right: 3.125rem;
     }
     .second {
-      position: absolute;
       top: 14.375rem;
     }
   }
 `;
 
 export const ListWrap = styled.div`
-  width: 224px;
+  width: 14rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -93,18 +93,16 @@ export const ListWrap = styled.div`
 export const Point = styled.span`
   color: ${({ theme }) => theme.color.primary.lime};
 `;
-export const Icon = styled.div`
-  background-color: 'pink';
-  position: absolute;
-  top: 6.25rem;
-  left: 19.375rem;
-`;
+export const Icon = styled.span``;
 
 export const ListIconWrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  justify-content: center;
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    height: 6.25rem;
+  }
 `;
 
 export const Wrap = styled.div`

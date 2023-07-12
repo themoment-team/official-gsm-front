@@ -29,14 +29,14 @@ const SlotMachine = () => {
           </S.Wrap>
           <span>{']'}</span>
         </S.ListWrap>
+        <S.Icon>
+          <UnderscoreIcon />
+        </S.Icon>
       </S.ListIconWrap>
       <span className='second'>
         할 수 있어
         <S.Point>.</S.Point>
       </span>
-      <S.Icon>
-        <UnderscoreIcon />
-      </S.Icon>
     </S.SlotMachineAnimation>
   );
 };
