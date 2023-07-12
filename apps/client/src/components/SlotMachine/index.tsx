@@ -30,7 +30,7 @@ const SlotMachine = () => {
           <span>{']'}</span>
         </S.ListWrap>
       </S.ListIconWrap>
-      <span>
+      <span className='second'>
         할 수 있어
         <S.Point>.</S.Point>
       </span>
