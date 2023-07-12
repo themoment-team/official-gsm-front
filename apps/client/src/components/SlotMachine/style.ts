@@ -53,16 +53,14 @@ export const SlotMachineAnimation = styled.div`
   font-size: 6.2376rem;
   color: ${({ theme }) => theme.color.white};
   position: fixed;
-  top: 21.625rem;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   @media ${({ theme }) => theme.breakPoint[1440]} {
     justify-content: center;
     align-items: center;
     span {
       font-size: 6.2375rem;
-    }
-    svg {
     }
   }
   @media ${({ theme }) => theme.breakPoint[1024]} {

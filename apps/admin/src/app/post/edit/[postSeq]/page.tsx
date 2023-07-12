@@ -9,6 +9,7 @@ import { css } from '@emotion/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 import {
   Input,
@@ -47,7 +48,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
   usePreventClose();
 
   const { replace, back } = useRouter();
-  const { mutate, isSuccess } = usePatchPost(postSeq);
+  const { mutate, isSuccess, isError } = usePatchPost(postSeq);
   const { data } = useGetPostDetail(postSeq);
 
   const isGallery = category === 'EVENT_GALLERY';
@@ -107,7 +108,14 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
     mutate(formData);
   };
 
-  if (isSuccess) replace(categoryPath[category]);
+  if (isSuccess) {
+    toast.success('게시물 수정이 완료되었어요.');
+    replace(categoryPath[category]);
+  }
+
+  if (isError) {
+    toast.error('게시물 수정이 실패되었어요.');
+  }
 
   const postFile = () => {
     setFiles(

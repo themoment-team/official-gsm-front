@@ -9,6 +9,7 @@ import { css } from '@emotion/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 
 import {
   Input,
@@ -58,7 +59,7 @@ export default function WritePage({
     formState: { errors },
   } = useForm<PostFormType>({ resolver: zodResolver(postFormSchema) });
 
-  const { mutate, isSuccess, isLoading } = usePostWritePost();
+  const { mutate, isSuccess, isLoading, isError } = usePostWritePost();
 
   if (!category || !categoryQueryStrings.includes(category)) {
     replace('/post/write?category=NOTICE');
@@ -87,7 +88,14 @@ export default function WritePage({
     mutate(formData);
   };
 
-  if (isSuccess) replace(categoryPath[category]);
+  if (isSuccess) {
+    toast.success('게시물 등록이 완료되었어요.');
+    replace(categoryPath[category]);
+  }
+
+  if (isError) {
+    toast.error('게시물 등록이 실패되었어요.');
+  }
 
   const postFile = () => {
     setFiles(

@@ -7,6 +7,7 @@ export const SectionCardWrapper = styled.div`
 `;
 
 export const CardTemplate = styled.div`
+  overflow: hidden;
   height: 21.6875rem;
   border-radius: 1.875rem;
   position: relative;
