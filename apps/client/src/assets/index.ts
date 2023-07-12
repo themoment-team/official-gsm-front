@@ -6,6 +6,7 @@ export { default as FooterGSMLogo } from './svg/FooterGSMLogo';
 export { default as FutureIcon } from './about/section3/FutureIcon';
 export { default as HamburgerIcon } from './svg/icon/HamburgerIcon';
 export { default as HeaderGSMLogo } from './svg/HeaderGSMLogo';
+export { default as HomeScrollDownIcon } from './svg/icon/HomeScrollDownIcon';
 export { default as ImaginationIcon } from './about/section3/ImaginationIcon';
 export { default as LeftArrowIcon } from './about/section7/LeftArrowIcon';
 export { default as MouseIcon } from './about/section1/MouseIcon';
