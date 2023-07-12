@@ -56,28 +56,8 @@ export const SlotMachineAnimation = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  @media ${({ theme }) => theme.breakPoint[1440]} {
-    justify-content: center;
-    align-items: center;
-    span {
-      font-size: 6.2375rem;
-    }
-  }
+
   @media ${({ theme }) => theme.breakPoint[1024]} {
-    justify-content: center;
-    align-items: center;
-    span {
-      font-size: 4.3913rem;
-    }
-    svg {
-      width: 12.125rem;
-      height: 2.4838rem;
-      position: absolute;
-      top: 1.25rem;
-      right: -14.0625rem;
-    }
-  }
-  @media ${({ theme }) => theme.breakPoint[600]} {
     align-items: center;
     flex-direction: column;
     width: 21.4375rem;
@@ -106,9 +86,6 @@ export const ListWrap = styled.div`
   margin: 0rem 2.5rem;
   position: relative;
   @media ${({ theme }) => theme.breakPoint[1024]} {
-    width: 11.25rem;
-  }
-  @media ${({ theme }) => theme.breakPoint[600]} {
     width: 9.375rem;
   }
 `;
@@ -170,12 +147,8 @@ export const Item = styled.li`
   list-style: none;
   transform-origin: 50% 50%;
 
-  @media ${({ theme }) => theme.breakPoint[600]} {
-    font-size: 5rem;
-  }
-
   @media ${({ theme }) => theme.breakPoint[1024]} {
-    font-size: 4.8125rem;
+    font-size: 5rem;
   }
 
   // 아이템 개수가 5개 이므로 108deg 씩 더합니다
