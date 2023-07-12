@@ -1,7 +1,8 @@
 import styled from '@emotion/styled';
 
+import { Scroll } from 'client/components';
+
 import CircleDecoration from './CircleDecoration';
-import Scroll from './Scroll';
 import Title from './Title';
 
 const Section1 = () => (
@@ -10,7 +11,7 @@ const Section1 = () => (
       <CircleDecoration />
       <Title />
     </SectionTitleWrapper>
-    <Scroll />
+    <Scroll isWhite={false} />
   </SectionWrapper>
 );
 

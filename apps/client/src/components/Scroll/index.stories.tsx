@@ -3,7 +3,7 @@ import Scroll from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'client/About/Section1/Scroll',
+  title: 'client/Scroll',
   component: Scroll,
   parameters: {},
 } as Meta<typeof Scroll>;

@@ -2,8 +2,12 @@ import { DownChevronsIcon, MouseIcon } from 'client/assets';
 
 import * as S from './style';
 
-const Scroll = () => (
-  <S.ScrollContentsWrap>
+interface ScrollProps {
+  isWhite: boolean;
+}
+
+const Scroll: React.FC<ScrollProps> = ({ isWhite }) => (
+  <S.ScrollContentsWrap isWhite={isWhite}>
     <S.ScrollTitle>scroll</S.ScrollTitle>
     <MouseIcon />
     <DownChevronsIcon />

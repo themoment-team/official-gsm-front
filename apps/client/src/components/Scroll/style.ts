@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const ScrollContentsWrap = styled.div`
+export const ScrollContentsWrap = styled.div<{ isWhite: boolean }>`
   display: flex;
   flex-direction: column;
   gap: 0.375rem;
@@ -10,6 +10,11 @@ export const ScrollContentsWrap = styled.div`
   bottom: 2.625rem;
   left: 50%;
   transform: translateX(-50%);
+
+  path {
+    stroke: ${({ isWhite }) => (isWhite ? '#ffffff' : '')};
+    fill: ${({ isWhite }) => (isWhite ? '#ffffff' : '')};
+  }
 
   @keyframes motion {
     0% {
@@ -26,4 +31,5 @@ export const ScrollTitle = styled.p`
   font-weight: 300;
   font-size: 1rem;
   line-height: 1.1875rem;
+  color: white;
 `;

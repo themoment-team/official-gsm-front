@@ -1,4 +1,4 @@
-import { HomeScrollDownIcon } from 'client/assets';
+import { Scroll } from 'client/components';
 
 import * as S from './style';
 
@@ -6,7 +6,7 @@ const PromotionVideo = () => (
   <S.VidoeWrapper>
     <S.Video src='/video/promotion.mp4' autoPlay loop muted playsInline />
     <S.VideoCover>
-      <HomeScrollDownIcon />
+      <Scroll isWhite={true} />
     </S.VideoCover>
   </S.VidoeWrapper>
 );
