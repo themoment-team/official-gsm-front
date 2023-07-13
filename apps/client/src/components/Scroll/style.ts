@@ -9,6 +9,8 @@ export const ScrollContentsWrap = styled.div<{ isPromotion: boolean }>`
   position: absolute;
   bottom: ${({ isPromotion }) => (isPromotion ? '4.5rem' : '2.625rem')};
   left: 50%;
+  color: ${({ isPromotion }) => (isPromotion ? '#ffffff' : '#424242')};
+
   path {
     stroke: ${({ isPromotion }) => (isPromotion ? '#ffffff' : '')};
     fill: ${({ isPromotion }) => (isPromotion ? '#ffffff' : '')};
@@ -25,9 +27,7 @@ export const ScrollContentsWrap = styled.div<{ isPromotion: boolean }>`
 `;
 
 export const ScrollTitle = styled.p`
-  color: ${({ theme }) => theme.color.gray['080']};
   font-weight: 300;
   font-size: 1rem;
   line-height: 1.1875rem;
-  color: white;
 `;
