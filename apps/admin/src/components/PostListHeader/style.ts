@@ -9,8 +9,7 @@ export const PostListHeader = styled.header`
 `;
 
 export const CategoryTitle = styled.h1`
+  ${({ theme }) => theme.typo.h4};
   font-weight: 700;
-  font-size: 1.25rem;
-  line-height: 1.625rem;
   color: #050505;
 `;
