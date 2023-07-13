@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { theme } from 'common';
 
 export const ScrollContentsWrap = styled.div<{ isPromotion: boolean }>`
   display: flex;
@@ -9,11 +10,12 @@ export const ScrollContentsWrap = styled.div<{ isPromotion: boolean }>`
   position: absolute;
   bottom: ${({ isPromotion }) => (isPromotion ? '4.5rem' : '2.625rem')};
   left: 50%;
-  color: ${({ isPromotion }) => (isPromotion ? '#ffffff' : '#424242')};
+  color: ${({ isPromotion }) =>
+    isPromotion ? theme.color.white : theme.color.gray[080]};
 
   path {
-    stroke: ${({ isPromotion }) => (isPromotion ? '#ffffff' : '')};
-    fill: ${({ isPromotion }) => (isPromotion ? '#ffffff' : '')};
+    stroke: ${({ isPromotion }) => (isPromotion ? theme.color.white : '')};
+    fill: ${({ isPromotion }) => (isPromotion ? theme.color.white : '')};
   }
 
   @keyframes motion {
