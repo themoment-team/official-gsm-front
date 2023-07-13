@@ -17,7 +17,7 @@ export const DeletePostText = styled.h5`
 `;
 
 export const ReQuestionText = styled.p`
-  ${({ theme }) => theme.typo.h4};
+  ${({ theme }) => theme.typo.body2};
   color: ${({ theme }) => theme.color.gray['060']};
   margin-top: 0.5rem;
 `;
