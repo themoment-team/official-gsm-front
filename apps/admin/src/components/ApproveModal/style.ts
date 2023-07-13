@@ -17,12 +17,11 @@ export const ModalConatiner = styled.div`
 `;
 
 export const ModalHeader = styled.div`
+  ${({ theme }) => theme.typo.h4};
+  color: ${({ theme }) => theme.color.black};
   display: flex;
   justify-content: space-between;
   font-weight: 600;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: #000000;
   margin-bottom: 1.125rem;
 
   svg {
