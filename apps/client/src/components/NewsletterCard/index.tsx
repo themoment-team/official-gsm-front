@@ -1,3 +1,5 @@
+'use client';
+
 import { formatDate } from 'common';
 
 import type { ContentType } from 'types';
