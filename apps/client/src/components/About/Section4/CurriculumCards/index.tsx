@@ -69,4 +69,5 @@ const CurriculumCards = () => (
     </S.Card4>
   </S.SectionCardWrapper>
 );
+
 export default CurriculumCards;
