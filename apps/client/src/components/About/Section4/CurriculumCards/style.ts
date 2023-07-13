@@ -37,7 +37,7 @@ export const Card1 = styled(smallCardTemplate)`
 `;
 
 export const Card2 = styled(bigCardTemplate)`
-  background-color: #f8fadb;
+  background-color: ${({ theme }) => theme.color.sub.yellow};
 `;
 
 export const Card3 = styled(bigCardTemplate)`
