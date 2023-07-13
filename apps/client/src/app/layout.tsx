@@ -6,6 +6,15 @@ import { GlobalStyle } from 'common';
 
 import Providers from './providers';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: {
+    template: '광주소프트웨어마이스터고등학교 - %s',
+    default: '광주소프트웨어마이스터고등학교',
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
