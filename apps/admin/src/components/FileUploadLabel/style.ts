@@ -13,8 +13,7 @@ export const Label = styled.label`
 `;
 
 export const Text = styled.p`
+  ${({ theme }) => theme.typo.body2};
   font-weight: 600;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: #fcfcfc;
+  color: ${({ theme }) => theme.color.gray['010']};
 `;
