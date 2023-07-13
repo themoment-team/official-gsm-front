@@ -22,5 +22,8 @@
     "@types/react": "^18.2.0",
     "next": "13.4.2",
     "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/gtag.js": "^0.0.12"
   }
 }
