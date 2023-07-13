@@ -6,7 +6,7 @@ import { pxToRem } from 'common';
 
 export const ScrollSection = styled.div`
   width: 100vw;
-  overflow: scroll;
+
   height: ${pxToRem(sectionHeight.scrollSectionHeightPx)}rem;
   -ms-overflow-style: none;
   &::-webkit-scrollbar {
