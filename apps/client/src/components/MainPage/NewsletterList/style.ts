@@ -12,7 +12,7 @@ export const NewsletterList = styled.div`
   display: flex;
   gap: 1.5rem;
 
-  & > div:nth-of-type(odd) {
+  & > a:nth-of-type(odd) {
     background: rgba(122, 205, 244, 0.1);
     .dateCircle {
       background-color: ${({ theme: { color } }) => color.primary.sky};
@@ -20,7 +20,7 @@ export const NewsletterList = styled.div`
     }
   }
 
-  & > div:nth-of-type(even) {
+  & > a:nth-of-type(even) {
     background: rgba(178, 228, 73, 0.1);
     .dateCircle {
       background-color: ${({ theme: { color } }) => color.primary.lime};

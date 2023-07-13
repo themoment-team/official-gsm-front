@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { useRouter } from 'next/navigation';
 
@@ -9,7 +9,7 @@ import { css } from '@emotion/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import type { SubmitHandler } from 'react-hook-form';
 import { useForm } from 'react-hook-form';
-import { z } from 'zod';
+import { toast } from 'react-toastify';
 
 import {
   Input,
@@ -18,8 +18,14 @@ import {
   Header,
   FileCard,
   FormCategory,
+  FormTitleLength,
+  FormErrorMessage,
+  FormTitleLengthOver,
 } from 'admin/components';
+import { usePreventClose } from 'admin/hooks';
+import { categoryPath, fileExtension, postFormSchema } from 'admin/shared';
 import * as S from 'admin/styles/page/write';
+import type { PostFormType } from 'admin/types';
 
 import { usePostWritePost } from 'api/admin';
 
@@ -27,30 +33,7 @@ import { Button } from 'ui';
 
 import type { CategoryQueryStringType } from 'types';
 
-const schema = z.object({
-  title: z
-    .string()
-    .min(2, { message: '제목은 2글자 이상 입력해주세요.' })
-    .max(60, { message: '제목은 60글자 이하로 입력해주세요.' }),
-  content: z
-    .string()
-    .max(5000, { message: '내용은 5000글자 이하로 입력해주세요.' }),
-});
-
-type FormType = z.infer<typeof schema>;
-
-const categoryPath = {
-  NOTICE: '/',
-  FAMILY_NEWSLETTER: '/newsletter',
-  EVENT_GALLERY: '/gallery',
-} as const;
-
 const categoryQueryStrings = Object.keys(categoryPath);
-
-const preventClose = (e: BeforeUnloadEvent) => {
-  e.preventDefault();
-  e.returnValue = '';
-};
 
 interface WritePageProps {
   searchParams: {
@@ -63,37 +46,30 @@ export default function WritePage({
 }: WritePageProps) {
   const [files, setFiles] = useState<File[]>([]);
   const fileInput = useRef<HTMLInputElement>(null);
-
   const { replace, back } = useRouter();
+  const isGallery = category === 'EVENT_GALLERY';
+  const gallerySubmitDisabled = isGallery && files.length === 0;
+
+  usePreventClose();
 
   const {
     register,
     handleSubmit,
-    watch,
+    control,
     formState: { errors },
-  } = useForm<FormType>({ resolver: zodResolver(schema) });
+  } = useForm<PostFormType>({ resolver: zodResolver(postFormSchema) });
 
-  const { mutate, isSuccess, isLoading } = usePostWritePost();
+  const { mutate, isSuccess, isLoading, isError } = usePostWritePost();
 
   if (!category || !categoryQueryStrings.includes(category)) {
     replace('/post/write?category=NOTICE');
   }
 
-  useEffect(() => {
-    (() => {
-      window.addEventListener('beforeunload', preventClose);
-    })();
-
-    return () => {
-      window.removeEventListener('beforeunload', preventClose);
-    };
-  }, []);
-
   const handleCancel = (fileName: string) => {
     setFiles((prevFiles) => prevFiles.filter((file) => file.name !== fileName));
   };
 
-  const onSubmit: SubmitHandler<FormType> = (data) => {
+  const onSubmit: SubmitHandler<PostFormType> = (data) => {
     const content = {
       postTitle: data.title,
       postContent: data.content,
@@ -112,7 +88,14 @@ export default function WritePage({
     mutate(formData);
   };
 
-  if (isSuccess) replace(categoryPath[category]);
+  if (isSuccess) {
+    toast.success('게시물 등록이 완료되었어요.');
+    replace(categoryPath[category]);
+  }
+
+  if (isError) {
+    toast.error('게시물 등록이 실패되었어요.');
+  }
 
   const postFile = () => {
     setFiles(
@@ -124,9 +107,6 @@ export default function WritePage({
         : files
     );
   };
-
-  const isGallery = category === 'EVENT_GALLERY';
-  const gallerySubmitDisabled = isGallery && files.length === 0;
 
   return (
     <>
@@ -157,23 +137,11 @@ export default function WritePage({
                 // onChange={(e) => setInput(e.target.value)}
                 maxLength={60}
               />
-              <span
-                css={css`
-                  font-weight: 400;
-                  font-size: 12px;
-                  line-height: 18px;
-                  position: absolute;
-                  right: 16px;
-                `}
-              >
-                {watch('title')?.length ?? 0}/60
-              </span>
+              <FormTitleLength control={control} />
             </div>
-            {watch('title')?.length >= 60 && (
-              <S.ErrorMessage>글자수를 초과하였습니다.</S.ErrorMessage>
-            )}
+            <FormTitleLengthOver control={control} />
             {errors.title && (
-              <S.ErrorMessage>{`* ${errors.title.message}`}</S.ErrorMessage>
+              <FormErrorMessage>{`* ${errors.title.message}`}</FormErrorMessage>
             )}
           </div>
           <div>
@@ -187,7 +155,7 @@ export default function WritePage({
               {...register('content')}
             />
             {errors.content && (
-              <S.ErrorMessage>{`* ${errors.content.message}`}</S.ErrorMessage>
+              <FormErrorMessage>{`* ${errors.content.message}`}</FormErrorMessage>
             )}
           </div>
           <div>
@@ -199,6 +167,7 @@ export default function WritePage({
                   <input
                     type='file'
                     id='fileUpload'
+                    accept={fileExtension}
                     onChange={postFile}
                     ref={fileInput}
                     hidden
@@ -226,6 +195,7 @@ export default function WritePage({
                   <input
                     type='file'
                     id='fileUpload'
+                    accept={fileExtension}
                     onChange={postFile}
                     ref={fileInput}
                     hidden

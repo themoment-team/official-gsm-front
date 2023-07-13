@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 
 export const Business = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,4 +38,17 @@ export const SubTitle = styled.p`
   ${({ theme }) => theme.typo.h3};
   color: ${({ theme }) => theme.color.gray['090']};
   font-weight: 600;
+`;
+
+export const MobileCircle = styled.div`
+  display: none;
+  width: 6.25rem;
+  height: 6.25rem;
+  filter: blur(5rem);
+  position: absolute;
+  bottom: 6.25rem;
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    display: block;
+  }
 `;

@@ -5,8 +5,10 @@ import React from 'react';
 import { ThemeProvider } from '@emotion/react';
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { ToastContainer } from 'react-toastify';
 
 import { GlobalStyle, theme } from 'common';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Providers from './providers';
 
@@ -32,6 +34,7 @@ export default function RootLayout({
           <Providers>
             <ReactQueryDevtools />
             <GlobalStyle />
+            <ToastContainer />
             {children}
           </Providers>
         </ThemeProvider>

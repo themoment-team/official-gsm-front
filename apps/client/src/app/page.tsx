@@ -12,18 +12,15 @@ import {
   NoticeBanner,
   GalleryList,
 } from 'client/components';
-import { useGetWindowScrollHeight, useGetWindowWidth } from 'client/hooks';
+import { useGetWindowScrollHeight, useGetWindowHeight } from 'client/hooks';
 
 const headerHeightPx = 64;
 
 export default function Home() {
   const windowScrollHeight = useGetWindowScrollHeight();
-  const windowWidth = useGetWindowWidth();
+  const windowHeight = useGetWindowHeight();
 
-  /** 가로 : 세로 = 16 : 9 = 100 : 56.25 (56.25%) */
-  const promotionVideoHeightPx = (windowWidth / 100) * 56.25;
-
-  const videoOverlayPx = promotionVideoHeightPx - headerHeightPx;
+  const videoOverlayPx = windowHeight - headerHeightPx;
 
   const isBackgroundWhite = windowScrollHeight > videoOverlayPx;
 
@@ -50,6 +47,6 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
   z-index: 1;
-  margin-top: calc(56.25vw - 4rem);
+  margin-top: calc(100vh - 4rem);
   padding: 6.25rem 0 12.5rem;
 `;

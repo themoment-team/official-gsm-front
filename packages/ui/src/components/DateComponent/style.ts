@@ -6,4 +6,9 @@ export const Date = styled.time<{ workspace: 'client' | 'admin' }>`
   color: ${({ theme }) => theme.color.gray['070']};
   font-weight: 400;
   font-feature-settings: 'tnum';
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    ${({ theme }) => theme.typo.caption}
+    font-weight: 400;
+  }
 `;

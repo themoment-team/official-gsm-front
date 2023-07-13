@@ -20,5 +20,5 @@ export const SlideContainer = styled.div`
   display: flex;
   position: relative;
   transition: ease-in-out 0.7s;
-  gap: 100vw;
+  gap: 30vw;
 `;

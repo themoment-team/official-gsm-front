@@ -7,6 +7,7 @@ import styled from '@emotion/styled';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import type { SubmitHandler } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import { z } from 'zod';
 
 import { ToBackButton, Input, AuthTitle } from 'admin/components';
@@ -29,7 +30,7 @@ type FormType = z.infer<typeof schema>;
 export default function SignupPage() {
   const { replace } = useRouter();
 
-  const { mutate, isSuccess, isLoading } = usePatchUserName();
+  const { mutate, isSuccess, isLoading, isError } = usePatchUserName();
   const { data: userInfo } = useGetUserInfo();
 
   const {
@@ -42,8 +43,17 @@ export default function SignupPage() {
     mutate(name);
   };
 
-  if (userInfo?.userName || isSuccess) {
+  if (userInfo?.userName) {
     replace('/auth/signup/pending');
+  }
+
+  if (isSuccess) {
+    toast.success('가입 요청이 완료되었어요.');
+    replace('/auth/signup/pending');
+  }
+
+  if (isError) {
+    toast.error('가입 요청이 실패되었어요.');
   }
 
   usePreventHistoryPop();
