@@ -1,65 +1,29 @@
-'use client';
-
-import styled from '@emotion/styled';
-
 import {
-  Header,
   PromotionVideo,
   Footer,
   SlotMachine,
-  LinkToHelloGSM,
-  MainPageNewsletterList,
-  NoticeBanner,
-  GalleryList,
-  SEOHelmet,
+  MainpageContent,
+  MainPageHeader,
 } from 'client/components';
-import { useGetWindowScrollHeight, useGetWindowWidth } from 'client/hooks';
 
-const headerHeightPx = 64;
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  description: '광주소프트웨어마이스터고등학교 공식 홈페이지',
+  openGraph: {
+    title: '광주소프트웨어마이스터고등학교',
+    description: '광주소프트웨어마이스터고등학교 공식 홈페이지',
+  },
+};
 
 export default function Home() {
-  const windowScrollHeight = useGetWindowScrollHeight();
-  const windowWidth = useGetWindowWidth();
-
-  const isTablet = windowWidth < 1024;
-
-  // TODO: 1rem의 px 값을 가져오는 hook 제작
-
-  /** 가로 : 세로 = 16 : 9 = 100 : 56.25 (56.25%) */
-  const promotionVideoHeightPx = isTablet ? 700 : (windowWidth / 100) * 56.25;
-
-  const videoOverlayPx = promotionVideoHeightPx - headerHeightPx;
-
-  const isBackgroundWhite = windowScrollHeight > videoOverlayPx;
-
   return (
     <>
-      <SEOHelmet title={'테스트입니다'} description={'테스트입니다.'} />
-      <Header segment='' isBackgroundWhite={isBackgroundWhite} />
+      <MainPageHeader />
       <PromotionVideo />
       <SlotMachine />
-      <Content>
-        <NoticeBanner />
-        <MainPageNewsletterList />
-        <LinkToHelloGSM />
-        <GalleryList />
-      </Content>
+      <MainpageContent />
       <Footer />
     </>
   );
 }
-
-const Content = styled.div`
-  position: relative;
-  background-color: ${({ theme }) => theme.color.white};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1;
-  margin-top: calc(56.25vw - 4rem);
-  padding: 6.25rem 0 12.5rem;
-
-  @media ${({ theme }) => theme.breakPoint['1024']} {
-    margin-top: calc(43.75rem - 4rem);
-  }
-`;
