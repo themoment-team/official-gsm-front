@@ -32,17 +32,14 @@ const DesktopResponsive = () => {
   const width = useGetWindowWidth();
 
   useEffect(() => {
-    if (width >= 1440 && scrollHeight !== undefined) {
-      if (scrollHeight < centerAverage / 3) {
-        setSelectedMajor('SW');
-      } else if (
-        scrollHeight >= centerAverage / 3 &&
-        scrollHeight < (centerAverage / 3) * 2
-      ) {
-        setSelectedMajor('IOT');
-      } else if (scrollHeight <= centerAverage) {
-        setSelectedMajor('AI');
-      }
+    if (width < 1440 || scrollHeight === undefined) return;
+
+    if (scrollHeight < centerAverage / 3) {
+      setSelectedMajor('SW');
+    } else if (scrollHeight < (centerAverage / 3) * 2) {
+      setSelectedMajor('IOT');
+    } else {
+      setSelectedMajor('AI');
     }
   }, [scrollHeight, centerAverage, width]);
 
