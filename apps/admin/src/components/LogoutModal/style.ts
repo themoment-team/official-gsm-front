@@ -11,7 +11,7 @@ export const ModalContainer = styled.div`
   gap: 1rem;
   width: 8.4375rem;
   padding: 1.25rem 0rem 0.875rem 0rem;
-  background-color: #fcfcfc;
+  background-color: ${({ theme }) => theme.color.gray['010']};
   border-radius: 1.25rem;
   box-shadow: 0rem 0rem 1.875rem 0rem rgba(0, 0, 0, 0.11);
 `;
@@ -23,13 +23,12 @@ export const Teacher = styled.p`
 `;
 
 export const Logout = styled.button`
-  color: #616161;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  ${({ theme }) => theme.typo.body2};
+  color: ${({ theme }) => theme.color.gray['070']};
 `;
 
 export const Line = styled.div`
   width: 8.4375rem;
   height: 0.0625rem;
-  background-color: #eeeeee;
+  background-color: ${({ theme }) => theme.color.gray['040']};
 `;
