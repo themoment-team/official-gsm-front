@@ -2,9 +2,13 @@
 
 import React from 'react';
 
+import Script from 'next/script';
+
 import { ThemeProvider } from '@emotion/react';
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+
+import * as gtag from 'client/lib/gtag';
 
 import { GlobalStyle, theme } from 'common';
 
@@ -28,6 +32,25 @@ export default function RootLayout({
           as='style'
           crossOrigin=''
           href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css'
+        />
+        {/* Global Site Tag (gtag.js) - Google Analytics */}
+        <Script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+        />
+        <Script
+          id='gtag-init'
+          strategy='afterInteractive'
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${gtag.GA_TRACKING_ID}', {
+            page_path: window.location.pathname,
+          });
+        `,
+          }}
         />
       </head>
 
