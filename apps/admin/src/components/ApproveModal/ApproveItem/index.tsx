@@ -1,3 +1,5 @@
+import { toast } from 'react-toastify';
+
 import * as I from 'admin/assets';
 
 import { usePatchApprove, useDeleteApprove } from 'api/admin';
@@ -22,6 +24,7 @@ const ApproveItem: React.FC<ApproveItemProps> = ({
     patchMutate(userSeq, {
       onSuccess: () => {
         refetch();
+        toast.success('승인이 완료되었어요.');
       },
     });
   };
@@ -30,6 +33,7 @@ const ApproveItem: React.FC<ApproveItemProps> = ({
     deleteMutate(userSeq, {
       onSuccess: () => {
         refetch();
+        toast.success('승인이 거절되었어요.');
       },
     });
   };

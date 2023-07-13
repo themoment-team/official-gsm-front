@@ -10,6 +10,7 @@ interface AboutTitleProps {
   pointColor: PointColorType;
   pointPosition?: PointPositionType;
   pointSize?: string;
+  right?: string;
 }
 
 const AboutTitle: React.FC<AboutTitleProps> = ({
@@ -17,8 +18,9 @@ const AboutTitle: React.FC<AboutTitleProps> = ({
   pointColor,
   pointPosition = 'top',
   pointSize = '1.125rem',
+  right = '-1.25rem',
 }) => (
-  <TitleTemplate point={{ pointColor, pointSize, pointPosition }}>
+  <TitleTemplate point={{ pointColor, pointSize, pointPosition, right }}>
     <AboutTitleStyle>{children}</AboutTitleStyle>
   </TitleTemplate>
 );

@@ -14,6 +14,10 @@ export const PostPage = styled.div`
   background: ${({ theme }) => theme.color.white};
   display: flex;
   flex-direction: column;
+
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    width: 100vw;
+  }
 `;
 
 export const ContentWrapper = styled.div`
@@ -36,4 +40,8 @@ export const Line = styled.div`
   width: 50rem;
   height: 0.0625rem;
   background: ${({ theme }) => theme.color.gray['050']};
+
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    width: calc(100vw - 7.5rem);
+  }
 `;

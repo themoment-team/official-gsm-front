@@ -16,12 +16,13 @@ interface TitleProps {
     pointSize: string;
     pointPosition: PointPositionType;
     pointColor: PointColorType;
+    right: string;
   };
 }
 
 const TitleTemplate: React.FC<TitleProps> = ({
   children,
-  point: { pointPosition, pointSize, pointColor },
+  point: { pointPosition, pointSize, pointColor, right },
 }) => {
   const theme = useTheme();
   return (
@@ -32,7 +33,7 @@ const TitleTemplate: React.FC<TitleProps> = ({
           width: ${pointSize};
           height: ${pointSize};
           background-color: ${theme.color.primary[pointColor]};
-          right: -1.25rem;
+          right: ${right};
           ${pointPosition === 'top' ? 'top: -3%' : 'bottom: 15%'};
         `}
       />

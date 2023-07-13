@@ -5,6 +5,10 @@ export const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    width: calc(100vw - 7.5rem);
+  }
 `;
 
 export const ImageWrapper = styled.div`
@@ -15,6 +19,10 @@ export const ImageWrapper = styled.div`
   img {
     object-fit: cover;
   }
+
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    width: calc(100vw - 7.5rem);
+  }
 `;
 
 export const ContentText = styled.p`
@@ -24,4 +32,8 @@ export const ContentText = styled.p`
   width: 50rem;
   word-break: break-all;
   white-space: pre-wrap;
+
+  @media ${({ theme }) => theme.breakPoint[1024]} {
+    width: calc(100vw - 7.5rem);
+  }
 `;
