@@ -1,3 +1,5 @@
+'use client';
+
 import * as S from './style';
 
 const LinkToHelloGSM = () => (
