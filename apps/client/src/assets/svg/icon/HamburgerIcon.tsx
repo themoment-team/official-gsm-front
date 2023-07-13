@@ -1,9 +1,11 @@
+'use client';
+
 import { useTheme } from '@emotion/react';
 
 const HamburgerIcon = ({
-  isBackgroundWhite,
+  isAbovePromotionVideo,
 }: {
-  isBackgroundWhite: boolean;
+  isAbovePromotionVideo: boolean;
 }) => {
   const theme = useTheme();
 
@@ -20,7 +22,7 @@ const HamburgerIcon = ({
           id='Vector'
           d='M8.33333 28.3333H31.6667M8.33333 20H31.6667M8.33333 11.6667H31.6667'
           stroke={
-            isBackgroundWhite ? theme.color.gray['090'] : theme.color.white
+            isAbovePromotionVideo ? theme.color.white : theme.color.gray['090']
           }
           strokeWidth='2'
           strokeLinecap='round'
