@@ -11,7 +11,7 @@ export const ScrollContentsWrap = styled.div<{ isPromotion: boolean }>`
   bottom: ${({ isPromotion }) => (isPromotion ? '4.5rem' : '2.625rem')};
   left: 50%;
   color: ${({ isPromotion }) =>
-    isPromotion ? theme.color.white : theme.color.gray[080]};
+    isPromotion ? theme.color.white : theme.color.gray['080']};
 
   path {
     stroke: ${({ isPromotion }) => (isPromotion ? theme.color.white : '')};
