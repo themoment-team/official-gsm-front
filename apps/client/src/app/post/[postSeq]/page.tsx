@@ -26,9 +26,7 @@ export const generateMetadata = async ({
   const postSeq = Number(params.postSeq);
 
   const post: Promise<PostDetailType> = await fetch(
-    `${process.env.NEXT_PUBLIC_BASE_URL}/api/client${postUrl.postDetail(
-      postSeq
-    )}`
+    `${process.env.BASE_URL}/api/client${postUrl.postDetail(postSeq)}`
   ).then((res) => res.json());
 
   return {
