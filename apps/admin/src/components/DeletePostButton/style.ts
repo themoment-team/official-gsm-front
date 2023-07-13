@@ -11,7 +11,7 @@ export const PostDeleteButton = styled.button`
 
 export const DeleteText = styled.p`
   width: 3.0625rem;
-  color: #fcfcfc;
+  color: ${({ theme }) => theme.color.gray['010']};
   font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.25rem;
