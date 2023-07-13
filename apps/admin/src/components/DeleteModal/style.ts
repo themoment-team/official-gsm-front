@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const ModalWrapper = styled.div`
   width: 18.125rem;
   height: 11.9375rem;
-  background: #fff;
+  background: ${({ theme }) => theme.color.white};
   padding: 1.5rem 3.5rem;
   display: flex;
   flex-direction: column;
@@ -11,16 +11,14 @@ export const ModalWrapper = styled.div`
 `;
 
 export const DeletePostText = styled.h5`
-  color: #000;
+  ${({ theme }) => theme.typo.h5};
+  color: ${({ theme }) => theme.color.black};
   font-weight: 700;
-  font-size: 1.125rem;
-  line-height: 1.6875rem;
 `;
 
 export const ReQuestionText = styled.p`
-  color: #9e9e9e;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  ${({ theme }) => theme.typo.h4};
+  color: ${({ theme }) => theme.color.gray['060']};
   margin-top: 0.5rem;
 `;
 
@@ -31,6 +29,8 @@ export const ButtonForm = styled.form`
 `;
 
 export const Button = styled.button`
+  ${({ theme }) => theme.typo.body2};
+  font-weight: 600;
   display: flex;
   width: 5.3125rem;
   height: 2rem;
@@ -38,14 +38,11 @@ export const Button = styled.button`
   align-items: center;
   border-radius: 1.25rem;
   cursor: pointer;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 600;
 `;
 
 export const CancleButton = styled(Button)`
-  background: #eee;
-  color: #424242;
+  background: ${({ theme }) => theme.color.gray['040']};
+  color: ${({ theme }) => theme.color.gray['080']};
 `;
 
 export const DeleteButton = styled(Button)`
