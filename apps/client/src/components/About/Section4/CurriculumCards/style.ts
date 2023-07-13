@@ -60,7 +60,6 @@ export const CardImgTemplate = styled.div`
 export const Card1Img = styled(CardImgTemplate)`
   width: 14.625rem;
   height: 13.75rem;
-
   right: 2.1875rem;
 
   @media ${({ theme }) => theme.breakPoint[1440]} {
@@ -73,7 +72,6 @@ export const Card1Img = styled(CardImgTemplate)`
   @media ${({ theme }) => theme.breakPoint[600]} {
     width: 13.5625rem;
     height: 12.4375rem;
-
     right: 1.25rem;
   }
 `;
@@ -81,20 +79,17 @@ export const Card1Img = styled(CardImgTemplate)`
 export const Card2Img = styled(CardImgTemplate)`
   width: 18.125rem;
   height: 16.25rem;
-
   right: 2.1875rem;
 
   @media ${({ theme }) => theme.breakPoint[1440]} {
     width: 18.375rem;
     height: 17.75rem;
-
     right: 2.5625rem;
   }
 
   @media ${({ theme }) => theme.breakPoint[600]} {
     width: 14rem;
     height: 13.75rem;
-
     right: 1.375rem;
   }
 `;
@@ -102,20 +97,17 @@ export const Card2Img = styled(CardImgTemplate)`
 export const Card3Img = styled(CardImgTemplate)`
   width: 22.5rem;
   height: 13.75rem;
-
   right: 1.375rem;
 
   @media ${({ theme }) => theme.breakPoint[1440]} {
     width: 21.875rem;
     height: 16.625rem;
-
     right: 2.4375rem;
   }
 
   @media ${({ theme }) => theme.breakPoint[600]} {
     width: 17.1875rem;
     height: 13.125rem;
-
     right: 1.6875rem;
   }
 `;
@@ -123,20 +115,17 @@ export const Card3Img = styled(CardImgTemplate)`
 export const Card4Img = styled(CardImgTemplate)`
   width: 15.75rem;
   height: 13.75rem;
-
   right: 0;
 
   @media ${({ theme }) => theme.breakPoint[1440]} {
     width: 17.25rem;
     height: 15rem;
-
     right: 1.875rem;
   }
 
   @media ${({ theme }) => theme.breakPoint[600]} {
     width: 15.375rem;
     height: 13.375rem;
-
     right: 0;
   }
 `;
