@@ -105,6 +105,7 @@ export const MajorName = styled.p`
   gap: 0.75rem;
   align-items: center;
   cursor: pointer;
+  width: fit-content;
 
   &::before {
     content: '';
