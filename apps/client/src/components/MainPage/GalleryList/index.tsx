@@ -1,3 +1,5 @@
+'use client';
+
 import CategoryHeader from 'client/components/CategoryHeader';
 import GalleryCard from 'client/components/GalleryCard';
 import { useGetWindowWidth } from 'client/hooks';
