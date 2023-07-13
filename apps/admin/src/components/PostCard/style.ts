@@ -26,7 +26,7 @@ export const TitleWrap = styled.div`
 `;
 
 export const Title = styled.p`
-  ${({ theme }) => theme.typo.h4};
+  ${({ theme }) => theme.typo.body2};
   font-weight: 600;
   color: #050505;
 `;
