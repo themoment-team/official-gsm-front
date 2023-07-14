@@ -9,7 +9,7 @@ import {
   NoticeBanner,
 } from 'client/components';
 
-const MainpageContent = () => (
+const MainPageContent = () => (
   <Content>
     <NoticeBanner />
     <MainPageNewsletterList />
@@ -18,7 +18,7 @@ const MainpageContent = () => (
   </Content>
 );
 
-export default MainpageContent;
+export default MainPageContent;
 
 const Content = styled.div`
   position: relative;

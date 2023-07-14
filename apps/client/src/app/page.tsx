@@ -2,7 +2,7 @@ import {
   PromotionVideo,
   Footer,
   SlotMachine,
-  MainpageContent,
+  MainPageContent,
   MainPageHeader,
 } from 'client/components';
 
@@ -22,7 +22,7 @@ export default function Home() {
       <MainPageHeader />
       <PromotionVideo />
       <SlotMachine />
-      <MainpageContent />
+      <MainPageContent />
       <Footer />
     </>
   );
