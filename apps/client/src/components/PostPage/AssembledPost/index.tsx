@@ -1,3 +1,7 @@
+/** @jsxImportSource @emotion/react */
+
+'use client';
+
 import { css } from '@emotion/react';
 
 import { PostContent, PostDetailHead, ReturnToList } from 'client/components';
@@ -16,7 +20,7 @@ const AssembledPost: React.FC<AssembledPostProps> = ({ postSeq }) => {
   const { data } = useGetPostDetail(postSeq);
 
   return (
-    <>
+    <S.BackGround>
       {data && (
         <S.PostPage
           css={
@@ -42,7 +46,7 @@ const AssembledPost: React.FC<AssembledPostProps> = ({ postSeq }) => {
           <ReturnToList category={data.category} />
         </S.PostPage>
       )}
-    </>
+    </S.BackGround>
   );
 };
 

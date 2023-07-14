@@ -1,3 +1,7 @@
+/** @jsxImportSource @emotion/react */
+
+'use client';
+
 import { css } from '@emotion/react';
 
 const FooterGSMLogo = ({ isHamburger = false }: { isHamburger?: boolean }) => (

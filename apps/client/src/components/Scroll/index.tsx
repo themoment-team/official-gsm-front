@@ -1,3 +1,5 @@
+'use client';
+
 import { DownChevronsIcon, MouseIcon } from 'client/assets';
 
 import * as S from './style';

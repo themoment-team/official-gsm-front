@@ -1,3 +1,5 @@
+'use client';
+
 import { CategoryHeader, NewsletterCard } from 'client/components';
 import { useGetWindowWidth } from 'client/hooks';
 

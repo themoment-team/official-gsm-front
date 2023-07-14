@@ -9,9 +9,9 @@ export default {
 
 type Story = StoryObj<typeof Header>;
 
-export const DarkBackground: Story = {
+export const Primary: Story = {
   args: {
-    isBackgroundWhite: false,
+    isAbovePromotionVideo: false,
     segment: '',
   },
   parameters: {
@@ -21,9 +21,9 @@ export const DarkBackground: Story = {
   },
 };
 
-export const LightBackground: Story = {
+export const AbovePromotionVideo: Story = {
   args: {
-    isBackgroundWhite: true,
+    isAbovePromotionVideo: true,
     segment: '',
   },
   parameters: {

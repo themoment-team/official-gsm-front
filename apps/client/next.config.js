@@ -3,11 +3,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   transpilePackages: ['ui', 'common'],
-  compiler: {
-    emotion: true,
-  },
   images: {
-    domains: ['bucket.ottokeng.site'],
+    domains: ['official-dev-bucket.s3.ap-northeast-2.amazonaws.com'],
   },
   rewrites: async () => [
     {

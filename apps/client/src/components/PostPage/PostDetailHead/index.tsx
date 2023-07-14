@@ -1,3 +1,5 @@
+'use client';
+
 import { useGetPostDetail } from 'api/client';
 
 import { WriterAndDate } from 'ui';

@@ -1,3 +1,5 @@
+'use client';
+
 import { Scroll } from 'client/components';
 
 import * as S from './style';

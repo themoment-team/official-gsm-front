@@ -1,3 +1,5 @@
+'use client';
+
 import { WriterAndDate } from 'ui';
 
 import type { ContentType } from 'types';

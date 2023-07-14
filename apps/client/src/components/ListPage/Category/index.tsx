@@ -1,3 +1,5 @@
+'use client';
+
 import type { CategoryType } from 'types';
 
 import CategoryLink from './CategoryLink';

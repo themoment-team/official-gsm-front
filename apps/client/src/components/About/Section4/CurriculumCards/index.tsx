@@ -1,3 +1,7 @@
+/** @jsxImportSource @emotion/react */
+
+'use client';
+
 import type { ImgHTMLAttributes } from 'react';
 
 import Image from 'next/image';
