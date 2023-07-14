@@ -4,11 +4,29 @@ import type { CategoryType } from 'types';
 
 import type { Metadata } from 'next';
 
-// export const dynamic = 'auto';
+const categoryTitle: {
+  [key in CategoryType]: { title: string; description: string };
+} = {
+  notice: {
+    title: '공지사항',
+    description: '광주소프트웨어마이스터고등학교 공지사항입니다.',
+  },
+  newsletter: {
+    title: '가정통신문',
+    description: '광주소프트웨어마이스터고등학교 가정통신문입니다.',
+  },
+  gallery: {
+    title: '행사 갤러리',
+    description: '광주소프트웨어마이스터고등학교 행사 갤러리입니다.',
+  },
+} as const;
 
-export const metadata: Metadata = {
-  title: '공지사항',
-};
+export const generateMetadata = async ({
+  params: { category },
+}: ListPageProps): Promise<Metadata> => ({
+  title: { absolute: categoryTitle[category].title },
+  description: categoryTitle[category].description,
+});
 
 interface ListPageProps {
   params: { category: CategoryType };
@@ -27,9 +45,3 @@ export default function ListPage({
     </>
   );
 }
-
-// export function generateStaticParams() {
-//   const categories: CategoryType[] = ['notice', 'newsletter', 'gallery'];
-
-//   return categories.map((category) => ({ category }));
-// }
