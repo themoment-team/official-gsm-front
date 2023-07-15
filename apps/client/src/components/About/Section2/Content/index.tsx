@@ -26,7 +26,7 @@ const Content = ({ children, index, scrollHeight }: ContentProps) => {
   const centerAverage = scrollSetting.scrollMax / scrollSetting.scrollItem;
   const isCentered =
     scrollHeight >= index * centerAverage &&
-    scrollHeight <= (index + 1) * centerAverage;
+    scrollHeight < (index + 1) * centerAverage;
 
   return (
     <ContentStyle
