@@ -69,4 +69,8 @@ export const Preview = styled.h4`
   ${({ theme: { typo } }) => typo.body1}
   color: ${({ theme: { color } }) => color.gray['080']};
   font-weight: 400;
+
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    ${({ theme: { typo } }) => typo.h5}
+  }
 `;

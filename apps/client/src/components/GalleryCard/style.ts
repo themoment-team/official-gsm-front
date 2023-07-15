@@ -66,4 +66,8 @@ export const ContentPreview = styled.p`
   height: 2.5rem;
   font-weight: 400;
   -webkit-line-clamp: 2;
+
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    ${({ theme }) => theme.typo.h5}
+  }
 `;

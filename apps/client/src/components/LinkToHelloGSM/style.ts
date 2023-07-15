@@ -53,6 +53,10 @@ export const AdmissionText = styled.h3`
   @media ${({ theme }) => theme.breakPoint['600']} {
     ${({ theme: { typo } }) => typo.h5}
   }
+
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    ${({ theme: { typo } }) => typo.h4}
+  }
 `;
 
 export const HashTagWrapper = styled.div`
@@ -67,5 +71,9 @@ export const HashTag = styled.h4`
 
   @media ${({ theme }) => theme.breakPoint['600']} {
     ${({ theme: { typo } }) => typo.body1}
+  }
+
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    ${({ theme: { typo } }) => typo.h5}
   }
 `;
