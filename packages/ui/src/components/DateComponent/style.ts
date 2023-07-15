@@ -13,6 +13,6 @@ export const Date = styled.time<{ workspace: 'client' | 'admin' }>`
   }
 
   @media ${({ theme }) => theme.breakPoint['600']} {
-    ${({ theme }) => theme.typo.h5}
+    ${({ theme }) => theme.typo.body1}
   }
 `;

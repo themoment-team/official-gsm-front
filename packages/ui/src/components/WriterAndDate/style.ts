@@ -16,6 +16,10 @@ export const WriterText = styled.p<{ workspace: 'client' | 'admin' }>`
     ${({ theme }) => theme.typo.caption}
     font-weight: 400;
   }
+
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    ${({ theme }) => theme.typo.body1}
+  }
 `;
 
 export const Dot = styled.div`
