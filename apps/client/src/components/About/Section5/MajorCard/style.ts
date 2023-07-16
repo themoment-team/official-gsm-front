@@ -16,13 +16,25 @@ export const CardLayout = styled.div`
     width: 26.25rem;
     height: 100%;
     margin-left: 0;
-    margin-right: 0 2.5rem;
+    margin-right: 2.5rem;
+  }
+`;
+
+export const ImgWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 15.625rem;
+
+  img {
+    object-fit: cover;
+    border-top-left-radius: 1.875rem;
+    border-top-right-radius: 1.875rem;
   }
 `;
 
 export const ContentSection = styled.div`
   padding: 2rem 2rem 2.5rem;
-  flex: 1;
+  height: 80%;
 `;
 
 export const Title = styled.h3`
@@ -40,6 +52,10 @@ export const Content = styled.div`
   ${({ theme }) => theme.typo.h4};
   color: ${({ theme }) => theme.color.gray['090']};
   margin-bottom: 1.25rem;
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    margin: 0;
+  }
 `;
 
 export const HashTagSection = styled.div`
