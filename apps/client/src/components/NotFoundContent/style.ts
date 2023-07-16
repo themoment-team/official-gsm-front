@@ -18,6 +18,7 @@ export const ContentWrapper = styled.div`
 export const ReturnTextBox = styled.div`
   display: flex;
   align-items: center;
+  padding-left: 1.5rem;
 `;
 
 export const ReturnText = styled.h4`
