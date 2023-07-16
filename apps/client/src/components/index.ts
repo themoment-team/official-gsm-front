@@ -22,6 +22,7 @@ export { default as MajorCard } from './About/Section5/MajorCard';
 export { default as MobileResponsive } from './About/Section5/MobileResponsive';
 export { default as NewsTitle } from './Title/News';
 export { default as NewsletterCard } from './NewsletterCard';
+export { default as NotFoundContent } from './NotFoundContent';
 export { default as NoticeBanner } from './NoticeBanner';
 export { default as PostContent } from './PostPage/PostContent';
 export { default as PostDetailHead } from './PostPage/PostDetailHead';
