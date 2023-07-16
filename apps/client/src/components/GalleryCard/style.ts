@@ -58,12 +58,15 @@ export const Title = styled.h5`
   color: ${({ theme }) => theme.color.gray['090']};
   font-weight: 600;
   -webkit-line-clamp: 1;
+
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    ${({ theme }) => theme.typo.h4}
+  }
 `;
 
 export const ContentPreview = styled.p`
   ${({ theme }) => theme.typo.body2}
   color: ${({ theme }) => theme.color.gray['080']};
-  height: 2.5rem;
   font-weight: 400;
   -webkit-line-clamp: 2;
 
