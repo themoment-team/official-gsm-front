@@ -31,9 +31,9 @@ const SlotMachine = () => {
           </S.Wrap>
           <span>{']'}</span>
         </S.ListWrap>
-        <S.Icon>
+        <span>
           <UnderscoreIcon />
-        </S.Icon>
+        </span>
       </S.ListIconWrap>
       <span className='second'>
         할 수 있어
