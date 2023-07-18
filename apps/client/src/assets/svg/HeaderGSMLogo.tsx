@@ -1,6 +1,14 @@
+/** @jsxImportSource @emotion/react */
+
+'use client';
+
 import { css } from '@emotion/react';
 
-const GSMLogo = ({ isBackgroundWhite }: { isBackgroundWhite: boolean }) => (
+const GSMLogo = ({
+  isAbovePromotionVideo,
+}: {
+  isAbovePromotionVideo: boolean;
+}) => (
   <svg
     width='79'
     height='35'
@@ -9,7 +17,7 @@ const GSMLogo = ({ isBackgroundWhite }: { isBackgroundWhite: boolean }) => (
     xmlns='http://www.w3.org/2000/svg'
     css={css`
       path {
-        ${!isBackgroundWhite && 'fill: white;'}
+        ${isAbovePromotionVideo && 'fill: white;'}
         transition: fill 0.5s;
       }
     `}

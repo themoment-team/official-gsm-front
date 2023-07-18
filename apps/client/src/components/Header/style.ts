@@ -11,6 +11,7 @@ export const Header = styled.header`
   top: 0;
   z-index: 5;
   transition: background 0.3s;
+  background: ${({ theme }) => theme.color.white};
 `;
 
 export const HeaderInner = styled.div`
@@ -36,6 +37,7 @@ export const GlobalNav = styled.nav`
   display: flex;
   gap: 3rem;
   transition: color 0.3s;
+  color: ${({ theme }) => theme.color.gray['080']};
   a {
     ${({ theme }) => theme.typo.body1};
   }

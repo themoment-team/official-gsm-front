@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 import { css, useTheme } from '@emotion/react';
 
 interface PaginationIconProp {

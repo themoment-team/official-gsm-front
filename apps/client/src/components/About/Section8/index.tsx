@@ -1,3 +1,5 @@
+'use client';
+
 import { AboutTitle, SectionTitle, SubTitle, Slide } from 'client/components';
 
 import * as S from './style';

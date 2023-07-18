@@ -1,3 +1,5 @@
+'use client';
+
 import * as I from 'client/assets';
 import {
   AboutTitle,

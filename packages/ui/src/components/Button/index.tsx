@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 import { css } from '@emotion/react';
 import { CustomButton } from './style';
 import LoadingCircle from '../LoadingCircle';

@@ -1,52 +1,29 @@
-'use client';
-
-import styled from '@emotion/styled';
-
 import {
-  Header,
   PromotionVideo,
   Footer,
   SlotMachine,
-  LinkToHelloGSM,
-  MainPageNewsletterList,
-  NoticeBanner,
-  GalleryList,
+  MainPageContent,
+  MainPageHeader,
 } from 'client/components';
-import { useGetWindowScrollHeight, useGetWindowHeight } from 'client/hooks';
 
-const headerHeightPx = 64;
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  description: '광주소프트웨어마이스터고등학교 공식 홈페이지',
+  openGraph: {
+    title: '광주소프트웨어마이스터고등학교',
+    description: '광주소프트웨어마이스터고등학교 공식 홈페이지',
+  },
+};
 
 export default function Home() {
-  const windowScrollHeight = useGetWindowScrollHeight();
-  const windowHeight = useGetWindowHeight();
-
-  const videoOverlayPx = windowHeight - headerHeightPx;
-
-  const isBackgroundWhite = windowScrollHeight > videoOverlayPx;
-
   return (
     <>
-      <Header segment='' isBackgroundWhite={isBackgroundWhite} />
+      <MainPageHeader />
       <PromotionVideo />
       <SlotMachine />
-      <Content>
-        <NoticeBanner />
-        <MainPageNewsletterList />
-        <LinkToHelloGSM />
-        <GalleryList />
-      </Content>
+      <MainPageContent />
       <Footer />
     </>
   );
 }
-
-const Content = styled.div`
-  position: relative;
-  background-color: ${({ theme }) => theme.color.white};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  z-index: 1;
-  margin-top: calc(100vh - 4rem);
-  padding: 6.25rem 0 12.5rem;
-`;

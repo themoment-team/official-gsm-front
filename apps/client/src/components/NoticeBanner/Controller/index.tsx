@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 import type { Dispatch, SetStateAction } from 'react';
 
 import { css, useTheme } from '@emotion/react';
