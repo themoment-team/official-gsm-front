@@ -1,3 +1,5 @@
+/** @jsxImportSource @emotion/react */
+
 import type { ReactNode } from 'react';
 
 import { css, useTheme } from '@emotion/react';

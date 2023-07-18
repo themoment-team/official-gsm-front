@@ -1,5 +1,12 @@
 import styled from '@emotion/styled';
 
+export const BackGround = styled.div`
+  background: ${({ theme }) => theme.color.background};
+  padding: 5rem 0 7.5rem 0;
+  display: flex;
+  justify-content: center;
+`;
+
 export const PostPage = styled.div`
   width: 57.5rem;
   padding: 3.75rem;

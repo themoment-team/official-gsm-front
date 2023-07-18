@@ -1,3 +1,5 @@
+'use client';
+
 import { ReturnChevronIcon } from 'client/assets';
 
 import * as S from './style';

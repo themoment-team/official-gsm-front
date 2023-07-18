@@ -1,3 +1,7 @@
+/** @jsxImportSource @emotion/react */
+
+'use client';
+
 import { useEffect, useState } from 'react';
 
 import Link from 'next/link';
@@ -14,20 +18,21 @@ type SegmentType = '' | 'about' | 'list';
 
 interface HeaderProps {
   segment: SegmentType;
-  isBackgroundWhite?: boolean;
+  isAbovePromotionVideo?: boolean;
 }
 
 const Header: React.FC<HeaderProps> = ({
   segment,
-  isBackgroundWhite = true,
+  isAbovePromotionVideo = false,
 }) => {
   const [isHamburgerMenuShow, setIsHamburgerMenuShow] =
     useState<boolean>(false);
 
   const theme = useTheme();
-  const width = useGetWindowWidth();
 
-  const isMobile = width <= 600;
+  const windowWidth = useGetWindowWidth();
+
+  const isMobile = windowWidth <= 600;
 
   useEffect(() => {
     if (!isMobile) setIsHamburgerMenuShow(false);
@@ -42,29 +47,30 @@ const Header: React.FC<HeaderProps> = ({
   return (
     <S.Header
       css={
-        isBackgroundWhite &&
+        isAbovePromotionVideo &&
         css`
-          background: ${theme.color.white};
+          background: inherit;
         `
       }
     >
       <S.HeaderInner>
         <h1>
           <S.LogoLink href='/'>
-            <HeaderGSMLogo isBackgroundWhite={isBackgroundWhite} />
+            <HeaderGSMLogo isAbovePromotionVideo={isAbovePromotionVideo} />
           </S.LogoLink>
         </h1>
         {isMobile ? (
           <S.HamburgerButton onClick={() => setIsHamburgerMenuShow(true)}>
-            <HamburgerIcon isBackgroundWhite={isBackgroundWhite} />
+            <HamburgerIcon isAbovePromotionVideo={isAbovePromotionVideo} />
           </S.HamburgerButton>
         ) : (
           <S.GlobalNav
-            css={css`
-              color: ${isBackgroundWhite
-                ? theme.color.gray['080']
-                : theme.color.white};
-            `}
+            css={
+              isAbovePromotionVideo &&
+              css`
+                color: ${theme.color.white};
+              `
+            }
           >
             <Link css={selectStyle('')} href='/'>
               홈

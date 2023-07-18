@@ -1,3 +1,5 @@
+'use client';
+
 import { ChevronIcon } from 'client/assets';
 import { NewsTitle } from 'client/components';
 
