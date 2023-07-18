@@ -1,3 +1,5 @@
+'use client';
+
 import type { EducationDirectionType } from 'client/types';
 
 import * as S from './style';

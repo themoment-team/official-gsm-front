@@ -1,3 +1,7 @@
+/** @jsxImportSource @emotion/react */
+
+'use client';
+
 import { useEffect, useRef, useState } from 'react';
 
 import { css, useTheme } from '@emotion/react';
@@ -10,7 +14,11 @@ import {
 } from 'client/components';
 import { majorArray } from 'client/components/About/Section5/majorArray';
 import { sectionHeight } from 'client/components/About/Section5/sectionHeight';
-import { useGetScrollHeight, useGetWindowWidth } from 'client/hooks';
+import {
+  useGetScrollHeight,
+  useGetWindowScrollHeight,
+  useGetWindowWidth,
+} from 'client/hooks';
 import type { MajorType } from 'client/types';
 
 import * as S from './style';
@@ -18,30 +26,42 @@ import * as S from './style';
 const DesktopResponsive = () => {
   const [selectedMajor, setSelectedMajor] = useState<MajorType>('SW');
   const theme = useTheme();
+
   const majorScroll = useRef<HTMLDivElement>(null);
   const scrollHeight = useGetScrollHeight(majorScroll);
   const centerAverage =
     sectionHeight.contentSectionHeightPx - sectionHeight.scrollSectionHeightPx;
 
+  const windowScrollHeight = useGetWindowScrollHeight();
   const width = useGetWindowWidth();
 
   useEffect(() => {
-    if (width >= 1440 && scrollHeight !== undefined) {
-      if (scrollHeight <= centerAverage / 3) {
-        setSelectedMajor('SW');
-      } else if (
-        scrollHeight >= centerAverage / 3 &&
-        scrollHeight < (centerAverage / 3) * 2
-      ) {
-        setSelectedMajor('IOT');
-      } else if (scrollHeight <= centerAverage) {
-        setSelectedMajor('AI');
-      }
+    if (width < 1440 || scrollHeight === undefined) return;
+
+    if (scrollHeight < centerAverage / 3) {
+      setSelectedMajor('SW');
+    } else if (scrollHeight < (centerAverage / 3) * 2) {
+      setSelectedMajor('IOT');
+    } else {
+      setSelectedMajor('AI');
     }
   }, [scrollHeight, centerAverage, width]);
 
   return (
-    <S.ScrollSection ref={majorScroll}>
+    <S.ScrollSection
+      ref={majorScroll}
+      css={
+        width >= 1440 &&
+        windowScrollHeight >= 3800 &&
+        windowScrollHeight <= 4000
+          ? css`
+              overflow: scroll;
+            `
+          : css`
+              overflow: hidden;
+            `
+      }
+    >
       <S.MajorLayout>
         <S.StickySection>
           <S.MajorSection>
@@ -60,7 +80,17 @@ const DesktopResponsive = () => {
                 <S.MajorContainer>
                   {majorArray.map(({ major, name }) => (
                     <S.MajorName
-                      onClick={() => setSelectedMajor(major)}
+                      onClick={() => {
+                        setSelectedMajor(major);
+                        switch (major) {
+                          case 'SW':
+                            return majorScroll.current?.scrollTo(0, 250);
+                          case 'IOT':
+                            return majorScroll.current?.scrollTo(0, 750);
+                          case 'AI':
+                            return majorScroll.current?.scrollTo(0, 1250);
+                        }
+                      }}
                       key={major}
                       css={css`
                         color: ${selectedMajor === major

@@ -1,3 +1,7 @@
+/** @jsxImportSource @emotion/react */
+
+'use client';
+
 import Link from 'next/link';
 
 import { css, useTheme } from '@emotion/react';

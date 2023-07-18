@@ -1,3 +1,5 @@
+'use client';
+
 import { SubTitle, AboutTitle, SectionTitle } from 'client/components';
 import type { BusinessCardItemType } from 'client/types';
 

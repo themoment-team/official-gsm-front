@@ -1,5 +1,3 @@
-'use client';
-
 import {
   Footer,
   Header,
@@ -13,10 +11,16 @@ import {
   Section8,
 } from 'client/components';
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '학교소개',
+};
+
 export default function AboutPage() {
   return (
     <>
-      <Header isBackgroundWhite={true} segment='about' />
+      <Header segment='about' />
       <Section1 />
       <Section2 />
       <Section3 />

@@ -1,3 +1,5 @@
+'use client';
+
 import type { IdealTalentType } from 'client/types';
 
 import * as S from './style';
