@@ -19,7 +19,8 @@ export const HamburgerMenu = styled.div<{
   height: 100vh;
   position: fixed;
   top: 0;
-  right: ${({ isHamburgerMenuShow }) => (isHamburgerMenuShow ? 0 : '-100%')};
+  right: ${({ isHamburgerMenuShow }) =>
+    isHamburgerMenuShow ? 0 : '-28.75rem'};
   background: ${({ theme }) => theme.color.white};
   z-index: 1;
   padding-top: 5rem;
