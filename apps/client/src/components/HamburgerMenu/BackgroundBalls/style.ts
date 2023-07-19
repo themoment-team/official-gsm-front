@@ -13,6 +13,7 @@ export const Ball = styled.div`
   border-radius: 100%;
   position: absolute;
   filter: blur(6.25rem);
+  will-change: filter;
 `;
 
 export const Ball1 = styled(Ball)`

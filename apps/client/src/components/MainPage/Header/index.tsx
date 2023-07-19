@@ -1,6 +1,7 @@
 'use client';
 
 import { Header } from 'client/components';
+
 import {
   useGetWindowHeight,
   useGetWindowScrollHeight,
@@ -13,7 +14,6 @@ const MainpageHeader = () => {
   const windowScrollHeight = useGetWindowScrollHeight();
   const windowHeight = useGetWindowHeight();
 
-  // 100vh - header height
   const videoOverlayPx = windowHeight - headerHeightPx;
 
   const isAbovePromotionVideo = windowScrollHeight < videoOverlayPx;

@@ -2,6 +2,7 @@
   "extends": "tsconfig/nextjs.json",
   "compilerOptions": {
     "jsx": "preserve",
+    "types": ["@types/gtag.js"],
     "paths": {
       "client/*": ["./src/*"],
       "api/*": ["../../packages/api/*"],

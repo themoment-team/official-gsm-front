@@ -25,7 +25,7 @@ export default function useGetWindowScrollHeight() {
   useEffect(() => {
     setWindowScrollHeight(window.scrollY);
 
-    window.addEventListener('scroll', onScroll);
+    window.addEventListener('scroll', onScroll, { passive: true });
 
     return () => {
       window.removeEventListener('scroll', onScroll);
