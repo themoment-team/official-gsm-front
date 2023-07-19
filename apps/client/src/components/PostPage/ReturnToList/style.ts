@@ -29,4 +29,8 @@ export const ReturnText = styled.p`
   font-weight: 600;
   ${({ theme }) => theme.typo.body1}
   color: ${({ theme }) => theme.color.primary.navy};
+
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    ${({ theme }) => theme.typo.body2};
+  }
 `;

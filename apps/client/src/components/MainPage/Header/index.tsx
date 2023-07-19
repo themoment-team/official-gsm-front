@@ -1,11 +1,16 @@
 'use client';
 
 import { Header } from 'client/components';
-import { useGetWindowHeight, useGetWindowScrollHeight } from 'client/hooks';
 
-const headerHeightPx = 64;
+import {
+  useGetWindowHeight,
+  useGetWindowScrollHeight,
+  useGetWindowWidth,
+} from 'client/hooks';
 
 const MainpageHeader = () => {
+  const windowWidth = useGetWindowWidth();
+  const headerHeightPx = windowWidth <= 600 ? 48 : 64;
   const windowScrollHeight = useGetWindowScrollHeight();
   const windowHeight = useGetWindowHeight();
 

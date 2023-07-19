@@ -11,4 +11,8 @@ export const Date = styled.time<{ workspace: 'client' | 'admin' }>`
     ${({ theme }) => theme.typo.caption}
     font-weight: 400;
   }
+
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    ${({ theme }) => theme.typo.body1}
+  }
 `;

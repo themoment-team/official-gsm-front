@@ -10,8 +10,8 @@ const GSMLogo = ({
   isAbovePromotionVideo: boolean;
 }) => (
   <svg
-    width='79'
-    height='35'
+    width='4.9375rem'
+    height='2.1875rem'
     viewBox='0 0 79 35'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
