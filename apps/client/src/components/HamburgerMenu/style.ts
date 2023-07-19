@@ -17,16 +17,15 @@ export const HamburgerMenu = styled.div<{
 }>`
   width: 28.75rem;
   height: 100vh;
-  position: absolute;
-  right: 0;
+  position: fixed;
+  top: 0;
+  right: ${({ isHamburgerMenuShow }) =>
+    isHamburgerMenuShow ? 0 : '-28.75rem'};
   background: ${({ theme }) => theme.color.white};
   z-index: 1;
   padding-top: 5rem;
   padding-left: 3.13rem;
-  transform: translateX(100%);
-  transition: transform 0.5s ease-in-out;
-  transform: ${({ isHamburgerMenuShow }) =>
-    isHamburgerMenuShow && 'translateX(0)'};
+  transition: right 0.5s ease-in-out;
 `;
 
 export const HamburgerNav = styled.nav`
