@@ -9,9 +9,38 @@ import Providers from './providers';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  applicationName: 'Official GSM',
+  keywords: [
+    '광주소프트웨어마이스터고등학교',
+    '광주',
+    '소프트웨어',
+    '마이스터고',
+    '마이스터고등학교',
+    'GSM',
+    'GwangjuSoftwareMeisterHighSchool',
+    'SoftWare',
+  ],
+  creator: 'the-moment',
+  publisher: 'the-moment',
+  description: '광주소프트웨어마이스터고등학교 공식 홈페이지입니다.',
   title: {
     template: '광주소프트웨어마이스터고등학교 - %s',
     default: '광주소프트웨어마이스터고등학교',
+  },
+  openGraph: {
+    title: '광주소프트웨어마이스터고등학교',
+    description: '광주소프트웨어마이스터고등학교 공식 홈페이지입니다.',
+    url: 'https://official.hellogsm.kr/',
+    siteName: 'Official GSM',
+    images: [
+      {
+        url: 'https://nextjs.org/og.png',
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'en-US',
+    type: 'website',
   },
 };
 
