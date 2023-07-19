@@ -34,13 +34,16 @@ export const metadata: Metadata = {
     siteName: 'Official GSM',
     images: [
       {
-        url: 'https://nextjs.org/og.png',
+        url: '/images/favicon/OfficialGSM.png',
         width: 800,
-        height: 600,
+        height: 800,
       },
     ],
-    locale: 'en-US',
+    locale: 'ko',
     type: 'website',
+  },
+  icons: {
+    icon: '/images/favicon/OfficialGSM.png',
   },
 };
 
