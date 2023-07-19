@@ -27,10 +27,6 @@ const Content = styled.div`
   flex-direction: column;
   align-items: center;
   z-index: 1;
-  margin-top: calc(56.25vw - 4rem);
+  margin-top: calc(100vh - 4rem);
   padding: 6.25rem 0 12.5rem;
-
-  @media ${({ theme }) => theme.breakPoint['1024']} {
-    margin-top: calc(43.75rem - 4rem);
-  }
 `;
