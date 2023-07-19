@@ -1,8 +1,8 @@
 const NotFoundTitle = () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
-    width='486'
-    height='190'
+    width='30.375rem'
+    height='11.875rem'
     viewBox='0 0 486 190'
     fill='none'
   >
