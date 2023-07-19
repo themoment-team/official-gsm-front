@@ -61,7 +61,7 @@ export default function RootLayout({
           <ReactQueryDevtools />
           <GlobalStyle />
           {children}
-          <Suspense>
+          <Suspense fallback={null}>
             <NavigationEvents />
           </Suspense>
         </Providers>
