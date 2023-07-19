@@ -20,6 +20,7 @@ export { default as MainPageHeader } from './MainPage/Header';
 export { default as MainPageNewsletterList } from './MainPage/NewsletterList';
 export { default as MajorCard } from './About/Section5/MajorCard';
 export { default as MobileResponsive } from './About/Section5/MobileResponsive';
+export { default as NavigationEvents } from './navigation-events';
 export { default as NewsTitle } from './Title/News';
 export { default as NewsletterCard } from './NewsletterCard';
 export { default as NoticeBanner } from './NoticeBanner';

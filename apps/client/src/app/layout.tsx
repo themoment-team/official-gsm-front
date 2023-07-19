@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { Suspense } from 'react';
 
-import { useRouter } from 'next/router';
 import Script from 'next/script';
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
+import { NavigationEvents } from 'client/components';
 import * as gtag from 'client/lib/gtag';
 
 import { GlobalStyle } from 'common';
@@ -25,24 +26,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const router = useRouter();
-
-  function pageViewHandler() {
-    if (window.gtag && gtag.GA_TRACKING_ID) {
-      window.gtag('config', gtag.GA_TRACKING_ID, {
-        page_path: window.location.pathname + window.location.search,
-      });
-    }
-  }
-
-  useEffect(() => {
-    router.events.on('routeChangeComplete', pageViewHandler);
-
-    return () => {
-      router.events.off('routeChangeComplete', pageViewHandler);
-    };
-  }, [router.events]);
-
   return (
     <html lang='ko'>
       <head>
@@ -78,6 +61,9 @@ export default function RootLayout({
           <ReactQueryDevtools />
           <GlobalStyle />
           {children}
+          <Suspense>
+            <NavigationEvents />
+          </Suspense>
         </Providers>
       </body>
     </html>
