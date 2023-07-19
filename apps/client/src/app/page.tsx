@@ -1,3 +1,7 @@
+import { useEffect } from 'react';
+
+import { useRouter } from 'next/router';
+
 import {
   PromotionVideo,
   Footer,
@@ -5,6 +9,7 @@ import {
   MainPageContent,
   MainPageHeader,
 } from 'client/components';
+import * as gtag from 'client/lib/gtag';
 
 import type { Metadata } from 'next';
 
@@ -17,6 +22,19 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = (url: URL) => {
+      gtag.pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
+
   return (
     <>
       <MainPageHeader />

@@ -28,8 +28,8 @@ export default function RootLayout({
   const router = useRouter();
 
   function pageViewHandler() {
-    if (window.gtag && process.env.NEXT_PUBLIC_GA_ID) {
-      window.gtag('config', process.env.NEXT_PUBLIC_GA_ID, {
+    if (window.gtag && gtag.GA_TRACKING_ID) {
+      window.gtag('config', gtag.GA_TRACKING_ID, {
         page_path: window.location.pathname + window.location.search,
       });
     }
