@@ -7,7 +7,7 @@ export const CategoryHeaderWrapper = styled.div`
   height: 2.5625rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
     width: calc(100vw - 12.5rem);
