@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
+import { useRouter } from 'next/router';
 import Script from 'next/script';
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
@@ -24,6 +25,24 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const router = useRouter();
+
+  function pageViewHandler() {
+    if (window.gtag && process.env.NEXT_PUBLIC_GA_ID) {
+      window.gtag('config', process.env.NEXT_PUBLIC_GA_ID, {
+        page_path: window.location.pathname + window.location.search,
+      });
+    }
+  }
+
+  useEffect(() => {
+    router.events.on('routeChangeComplete', pageViewHandler);
+
+    return () => {
+      router.events.off('routeChangeComplete', pageViewHandler);
+    };
+  }, [router.events]);
+
   return (
     <html lang='ko'>
       <head>
