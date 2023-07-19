@@ -1,7 +1,6 @@
 'use client';
 
 import { Header } from 'client/components';
-
 import {
   useGetWindowHeight,
   useGetWindowScrollHeight,
