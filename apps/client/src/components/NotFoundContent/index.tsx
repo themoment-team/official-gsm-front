@@ -1,12 +1,16 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
+
 import { NotFoundTitle, ArrowIcon } from 'client/assets';
 
 import * as S from './style';
 
 const NotFoundContent = () => {
+  const router = useRouter();
+  
   const handleClick = () => {
-    history.back();
+    router.back();
   };
 
   return (
