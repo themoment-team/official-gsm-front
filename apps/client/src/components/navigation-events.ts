@@ -12,10 +12,7 @@ const NavigationEvents = () => {
 
   useEffect(() => {
     const url = `${pathname}?${searchParams}`;
-    if (gtag.GA_TRACKING_ID)
-      window.gtag('config', gtag.GA_TRACKING_ID, {
-        page_path: window.location.pathname + url,
-      });
+    gtag.pageview(window.location.pathname + url);
   }, [pathname, searchParams]);
 
   return null;
