@@ -22,17 +22,17 @@ const config: StorybookConfig = {
   docs: {
     autodocs: 'tag',
   },
-  babel: async (options) => {
-    options.presets?.push([
+  babel: async (config) => {
+    config.presets?.push([
       'next/babel',
       {
         'preset-react': {
-          development: true,
           runtime: 'automatic',
+          importSource: '@emotion/react',
         },
       },
     ]);
-    return options;
+    return config;
   },
   // webpack: async (config) => {
   //   config?.module?.rules?.push({
@@ -40,44 +40,23 @@ const config: StorybookConfig = {
   //     loader: require.resolve('babel-loader'),
   //     options: {
   //       presets: [
-  //         // [
-  //         //   '@babel/preset-react',
-  //         //   {
-  //         //     development: true,
-  //         //     runtime: 'automatic',
-  //         //   },
-  //         // ],
+  //         [
+  //           '@babel/preset-react',
+  //           {
+  //             runtime: 'automatic',
+  //           },
+  //         ],
   //         [
   //           'next/babel',
   //           {
-  //             '@bable/preset-react': {
-  //               devleopment: true,
+  //             'preset-react': {
+  //               development: true,
   //               runtime: 'automatic',
-  //             },
-  //             'transform-runtime': {
-  //               useESModules: false,
-  //             },
-  //             fdaklsfjladskja: {
-  //               adksljflaksdfj: true,
+  //               importSource: '@emotion/react',
   //             },
   //           },
   //         ],
-  //         // [
-  //         //   '@babel/preset-react',
-  //         //   {
-  //         //     runtime: 'automatic',
-  //         //     importSource: '@emotion/react',
-  //         //   },
-  //         // ],
-  //         // [
-  //         //   '@babel/preset-typescript',
-  //         //   {
-  //         //     runtime: 'automatic',
-  //         //   },
-  //         // ],
   //       ],
-  //       // importSource cannot be set when runtime is classic. preset-react's
-  //       plugins: ['@emotion/babel-plugin'],
   //     },
   //   });
 
