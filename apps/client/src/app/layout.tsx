@@ -1,9 +1,11 @@
 import React from 'react';
+import { Suspense } from 'react';
 
 import Script from 'next/script';
 
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
+import { NavigationEvents } from 'client/components';
 import * as gtag from 'client/lib/gtag';
 
 import { GlobalStyle } from 'common';
@@ -59,6 +61,9 @@ export default function RootLayout({
           <ReactQueryDevtools />
           <GlobalStyle />
           {children}
+          <Suspense fallback={null}>
+            <NavigationEvents />
+          </Suspense>
         </Providers>
       </body>
     </html>
