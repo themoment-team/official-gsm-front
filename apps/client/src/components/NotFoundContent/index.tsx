@@ -7,10 +7,10 @@ import { NotFoundTitle, ArrowIcon } from 'client/assets';
 import * as S from './style';
 
 const NotFoundContent = () => {
-  const router = useRouter();
+  const { back } = useRouter();
   
   const handleClick = () => {
-    router.back();
+      back();
   };
 
   return (
