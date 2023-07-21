@@ -4,7 +4,10 @@ const nextConfig = {
   swcMinify: true,
   transpilePackages: ['ui', 'common'],
   images: {
-    domains: ['official-dev-bucket.s3.ap-northeast-2.amazonaws.com'],
+    domains: [
+      'official-dev-bucket.s3.ap-northeast-2.amazonaws.com',
+      'official-prod-bucket.s3.ap-northeast-2.amazonaws.com',
+    ],
   },
   rewrites: async () => [
     {

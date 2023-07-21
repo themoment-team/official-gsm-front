@@ -24,7 +24,10 @@ const nextConfig = {
     },
   ],
   images: {
-    domains: ['bucket.ottokeng.site'],
+    domains: [
+      'official-dev-bucket.s3.ap-northeast-2.amazonaws.com',
+      'official-prod-bucket.s3.ap-northeast-2.amazonaws.com',
+    ],
   },
 };
 
