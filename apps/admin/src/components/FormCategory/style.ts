@@ -12,7 +12,7 @@ export const Category = styled.div`
 `;
 
 export const CategoryLabel = styled.h3`
+  ${({ theme }) => theme.typo.body2};
   font-weight: 600;
-  font-size: 0.875rem;
   cursor: pointer;
 `;

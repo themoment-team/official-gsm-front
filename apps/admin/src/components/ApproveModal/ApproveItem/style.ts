@@ -30,7 +30,7 @@ export const ApproveItem = styled.div`
   }
 
   &:hover {
-    background-color: #eeeeee;
+    background-color: ${({ theme }) => theme.color.gray['040']};
     border-radius: 1.25rem;
     transition: all ease-in-out 0.1s;
   }
