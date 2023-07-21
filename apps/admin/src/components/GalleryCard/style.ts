@@ -25,7 +25,7 @@ export const GalleryCard = styled(Link)`
 export const IMGWrapper = styled.div`
   width: 21.8125rem;
   height: 13.75rem;
-  background: #eeeeee;
+  background: ${({ theme }) => theme.color.gray['040']};
   border-radius: 1.25rem;
   margin-bottom: 1rem;
   overflow: hidden;
@@ -37,20 +37,18 @@ export const IMGWrapper = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-weight: 700;
-  font-size: 1rem;
+  ${({ theme }) => theme.typo.body1};
   line-height: 1.5rem;
-  color: #212121;
+  color: ${({ theme }) => theme.color.gray['090']};
   margin-bottom: 0.5625rem;
   -webkit-line-clamp: 1;
 `;
 
 export const ContentPreview = styled.p`
+  ${({ theme }) => theme.typo.body2};
   width: 100%;
-  font-weight: 400;
-  font-size: 0.875rem;
   line-height: 1.25rem;
-  color: #424242;
+  color: ${({ theme }) => theme.color.gray['080']};
   -webkit-line-clamp: 2;
 `;
 
@@ -63,5 +61,5 @@ export const Writer = styled.p`
   font-weight: 400;
   font-size: 0.875rem;
   line-height: 1rem;
-  color: #9e9e9e;
+  color: ${({ theme }) => theme.color.gray['060']};
 `;

@@ -10,10 +10,10 @@ export const PostCard = styled(Link)`
   justify-content: space-between;
   align-items: center;
   padding: 0.9375rem 1.5rem;
-  background: #ffffff;
+  background: ${({ theme }) => theme.color.white};
   cursor: pointer;
   :hover {
-    background: #eeeeee;
+    background: ${({ theme }) => theme.color.gray['040']};
     transition: ease-in-out 300ms;
   }
 `;
@@ -26,9 +26,8 @@ export const TitleWrap = styled.div`
 `;
 
 export const Title = styled.p`
-  font-size: 0.875rem;
+  ${({ theme }) => theme.typo.body2};
   font-weight: 600;
-  line-height: 1.25rem;
   color: #050505;
 `;
 
@@ -38,7 +37,7 @@ export const ContentPreview = styled.p`
   font-weight: 400;
   line-height: 1rem;
   white-space: nowrap;
-  color: #424242;
+  color: ${({ theme }) => theme.color.gray['080']};
   overflow: hidden;
   text-overflow: ellipsis;
 `;

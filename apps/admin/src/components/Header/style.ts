@@ -10,7 +10,7 @@ export const Header = styled.header`
   justify-content: space-between;
   height: 5rem;
   width: 100vw;
-  border-bottom: 0.0625rem solid #eeeeee;
+  border-bottom: 0.0625rem solid ${({ theme }) => theme.color.gray['040']};
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(0.6875rem);
   padding: 0 4.8vw;
@@ -23,13 +23,12 @@ export const ApproveSection = styled.div`
 `;
 
 export const ApproveRequest = styled.button`
+  ${({ theme }) => theme.typo.body2};
   display: flex;
   align-items: center;
   gap: 0.4rem;
   position: relative;
   font-weight: 600;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
 `;
 
 export const Notification = styled.div`
@@ -47,8 +46,7 @@ export const LogoutSection = styled.div`
 `;
 
 export const LogoutButton = styled.button`
-  color: #505050;
+  ${({ theme }) => theme.typo.body2};
   font-weight: 700;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  color: #505050;
 `;
