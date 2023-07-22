@@ -9,9 +9,11 @@ import Providers from './providers';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  applicationName: 'Official GSM',
+  applicationName: 'official GSM',
   keywords: [
     '광주소프트웨어마이스터고등학교',
+    '광주소프트웨어마이스터고',
+    '광소마',
     '광주',
     '소프트웨어',
     '마이스터고',
@@ -31,10 +33,10 @@ export const metadata: Metadata = {
     title: '광주소프트웨어마이스터고등학교',
     description: '광주소프트웨어마이스터고등학교 공식 홈페이지입니다.',
     url: 'https://official.hellogsm.kr/',
-    siteName: 'Official GSM',
+    siteName: 'official GSM',
     images: [
       {
-        url: '/images/favicon/OfficialGSM.png',
+        url: '/favicon.png',
         width: 800,
         height: 800,
       },
@@ -43,7 +45,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   icons: {
-    icon: '/images/favicon/OfficialGSM.png',
+    icon: '/favicon.png',
   },
 };
 
