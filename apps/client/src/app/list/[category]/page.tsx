@@ -26,6 +26,11 @@ export const generateMetadata = async ({
 }: ListPageProps): Promise<Metadata> => ({
   title: { absolute: categoryTitle[category].title },
   description: categoryTitle[category].description,
+  openGraph: {
+    title: categoryTitle[category].title,
+    description: categoryTitle[category].description,
+    url: `https://official.hellogsm.kr/list/${category}`,
+  },
 });
 
 interface ListPageProps {
