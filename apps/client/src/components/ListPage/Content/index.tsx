@@ -6,6 +6,7 @@ import {
   ListPageCategory,
   ListPagePostCard,
   ListPageTitle,
+  GalleryListContent,
 } from 'client/components';
 
 import { useGetPostList } from 'api/client';
@@ -44,13 +45,17 @@ const ListPageContent: React.FC<ListPageContentProps> = ({
     <Content>
       <ListPageCategory categoryParam={category} />
       <ListPageTitle category={category} />
-      {data?.postList?.map((post, index) => (
-        <ListPagePostCard
-          key={post.postSeq}
-          postIndex={postIndex(index)}
-          post={post}
-        />
-      ))}
+      {categoryQueryString[category] === 'EVENT_GALLERY' ? (
+        <GalleryListContent category={category} searchParams={searchParams} />
+      ) : (
+        data?.postList?.map((post, index) => (
+          <ListPagePostCard
+            key={post.postSeq}
+            postIndex={postIndex(index)}
+            post={post}
+          />
+        ))
+      )}
       <PaginationController
         pageNumber={pageNumber}
         totalPages={data?.totalPages ?? 0}
