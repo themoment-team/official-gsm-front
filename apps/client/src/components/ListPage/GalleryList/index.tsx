@@ -32,8 +32,8 @@ const GalleryList: React.FC<ListPageContentProps> = ({
 
   return (
     <List>
-      {data?.postList?.map((post) => (
-        <GalleryCard key={post.postSeq} post={post} />
+      {data?.postList.map(() => (
+        <GalleryCard key={data?.postList[0].postSeq} post={data?.postList[0]} />
       ))}
     </List>
   );
@@ -46,12 +46,11 @@ export const List = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 2rem 1.5rem;
 
-  @media ${({ theme }) => theme.breakPoint['1440']} {
-    width: calc(100vw - 12.5rem);
-    justify-content: space-between;
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
-  @media ${({ theme }) => theme.breakPoint['1024']} {
-    width: calc(100vw - 7.5rem);
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    grid-template-columns: 1fr 1fr;
   }
 `;
