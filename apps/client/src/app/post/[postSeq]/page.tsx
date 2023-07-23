@@ -32,5 +32,10 @@ export const generateMetadata = async ({
   return {
     title: { absolute: (await post).postTitle },
     description: (await post).postContent,
+    openGraph: {
+      title: (await post).postTitle,
+      description: (await post).postContent,
+      url: `https://official.hellogsm.kr/post/${postSeq}`,
+    },
   };
 };
