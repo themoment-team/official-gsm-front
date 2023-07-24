@@ -6,7 +6,7 @@ import Script from 'next/script';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import { NavigationEvents } from 'client/components';
-import * as gtag from 'client/lib/gtag';
+import { GA_TRACKING_ID } from 'client/libs';
 
 import { GlobalStyle } from 'common';
 
@@ -72,7 +72,7 @@ export default function RootLayout({
         {/* Global Site Tag (gtag.js) - Google Analytics */}
         <Script
           async
-          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
         />
         <Script
           id='gtag-init'
@@ -82,7 +82,7 @@ export default function RootLayout({
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', '${gtag.GA_TRACKING_ID}', {
+          gtag('config', '${GA_TRACKING_ID}', {
             page_path: window.location.pathname,
           });
         `,

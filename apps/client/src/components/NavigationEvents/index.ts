@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 import { usePathname, useSearchParams } from 'next/navigation';
 
-import * as gtag from 'client/lib/gtag';
+import { pageview } from 'client/libs';
 
 const NavigationEvents = () => {
   const pathname = usePathname();
@@ -12,7 +12,8 @@ const NavigationEvents = () => {
 
   useEffect(() => {
     const url = `${pathname}?${searchParams}`;
-    gtag.pageview(window.location.pathname + url);
+
+    pageview(window.location.pathname + url);
   }, [pathname, searchParams]);
 
   return null;
