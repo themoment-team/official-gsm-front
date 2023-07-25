@@ -28,7 +28,7 @@ const ListPageContent: React.FC<ListPageContentProps> = ({
       <ListPageCategory categoryParam={category} />
       <ListPageTitle category={category} />
       {categoryQueryString[category] === 'EVENT_GALLERY' ? (
-        <GalleryList category={category} searchParams={searchParams} />
+        <GalleryList category={category} pageNumber={pageNumber} />
       ) : (
         <ListPagePostList category={category} pageNumber={pageNumber} />
       )}

@@ -1,4 +1,4 @@
-'use client';
+import { redirect } from 'next/navigation';
 
 import styled from '@emotion/styled';
 
@@ -16,21 +16,22 @@ const PAGE_SIZE = 12;
 
 interface ListPageContentProps {
   category: CategoryType;
-  searchParams: { pageNumber: string };
+  pageNumber: number;
 }
 
 const GalleryList: React.FC<ListPageContentProps> = ({
   category,
-  searchParams,
+  pageNumber,
 }) => {
-  /** 1 ~ totalPages */
-  const pageNumber = Number(searchParams.pageNumber ?? 1);
-
-  const { data } = useGetPostList(
+  const { data, isError } = useGetPostList(
     categoryQueryString[category],
     pageNumber,
     PAGE_SIZE
   );
+
+  if (isError) {
+    redirect(`/list/${category}`);
+  }
 
   return (
     <>
