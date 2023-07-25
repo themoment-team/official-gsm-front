@@ -14,12 +14,12 @@ import type { CategoryType } from 'types';
 
 const PAGE_SIZE = 12;
 
-interface ListPageContentProps {
+interface ListPageGalleryListProps {
   category: CategoryType;
   pageNumber: number;
 }
 
-const GalleryList: React.FC<ListPageContentProps> = ({
+const ListPageGalleryList: React.FC<ListPageGalleryListProps> = ({
   category,
   pageNumber,
 }) => {
@@ -48,7 +48,7 @@ const GalleryList: React.FC<ListPageContentProps> = ({
   );
 };
 
-export default GalleryList;
+export default ListPageGalleryList;
 
 export const List = styled.div`
   display: grid;

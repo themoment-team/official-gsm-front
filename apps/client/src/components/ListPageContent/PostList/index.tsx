@@ -10,14 +10,14 @@ import type { CategoryType } from 'types';
 
 import ListPagePostCard from './PostCard';
 
-interface PostListProps {
+interface ListPagePostListProps {
   category: CategoryType;
   pageNumber: number;
 }
 
 const PAGE_SIZE = 11;
 
-const ListPagePostList: React.FC<PostListProps> = ({
+const ListPagePostList: React.FC<ListPagePostListProps> = ({
   category,
   pageNumber,
 }) => {
