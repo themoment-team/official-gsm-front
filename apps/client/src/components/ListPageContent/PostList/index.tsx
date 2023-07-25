@@ -1,3 +1,5 @@
+import { redirect } from 'next/navigation';
+
 import { useGetPostList } from 'api/client';
 
 import { categoryQueryString } from 'common';
@@ -19,11 +21,15 @@ const ListPagePostList: React.FC<PostListProps> = ({
   category,
   pageNumber,
 }) => {
-  const { data } = useGetPostList(
+  const { data, isError } = useGetPostList(
     categoryQueryString[category],
     pageNumber,
     PAGE_SIZE
   );
+
+  if (isError) {
+    redirect(`/list/${category}`);
+  }
 
   /** 해당 카테고리의 전체 게시글 수 - (이전 페이지들의 게시글 수 + 현재 페이지 내의 게시글의 index) */
   const postIndex = (index: number) =>
