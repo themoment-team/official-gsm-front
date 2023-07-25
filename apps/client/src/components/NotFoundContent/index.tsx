@@ -8,9 +8,9 @@ import * as S from './style';
 
 const NotFoundContent = () => {
   const { back } = useRouter();
-  
+
   const handleClick = () => {
-      back();
+    back();
   };
 
   return (
