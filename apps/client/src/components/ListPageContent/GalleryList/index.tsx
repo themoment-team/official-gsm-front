@@ -8,6 +8,8 @@ import { useGetPostList } from 'api/client';
 
 import { categoryQueryString } from 'common';
 
+import { PaginationController } from 'ui';
+
 import type { CategoryType } from 'types';
 
 const PAGE_SIZE = 12;
@@ -31,11 +33,17 @@ const GalleryList: React.FC<ListPageContentProps> = ({
   );
 
   return (
-    <List>
-      {data?.postList.map(() => (
-        <GalleryCard key={data?.postList[0].postSeq} post={data?.postList[0]} />
-      ))}
-    </List>
+    <>
+      <List>
+        {data?.postList.map((post) => (
+          <GalleryCard key={post.postSeq} post={post} />
+        ))}
+      </List>
+      <PaginationController
+        pageNumber={pageNumber}
+        totalPages={data?.totalPages ?? 0}
+      />
+    </>
   );
 };
 

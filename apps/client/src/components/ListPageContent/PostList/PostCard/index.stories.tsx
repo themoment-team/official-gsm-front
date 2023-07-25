@@ -4,7 +4,7 @@ import type { ListPagePostCardProps } from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'client/Listpage/PostCard',
+  title: 'client/Listpage/PostList/PostCard',
   component: ListPagePostCard,
   parameters: {},
 } as Meta<typeof ListPagePostCard>;
