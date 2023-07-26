@@ -12,10 +12,10 @@ import { PaginationController } from 'ui';
 
 import type { CategoryType } from 'types';
 
-import ListPageCategory from './Category';
-import ListPageGalleryList from './GalleryList';
-import ListPagePostList from './PostList';
-import ListPageTitle from './Title';
+import Category from './Category';
+import GalleryList from './GalleryList';
+import PostList from './PostList';
+import Title from './Title';
 
 interface ListPageContentProps {
   category: CategoryType;
@@ -43,12 +43,12 @@ const ListPageContent: React.FC<ListPageContentProps> = ({
 
   return (
     <Content>
-      <ListPageCategory categoryParam={category} />
-      <ListPageTitle category={category} />
+      <Category categoryParam={category} />
+      <Title category={category} />
       {categoryQueryString[category] === 'EVENT_GALLERY' ? (
-        <ListPageGalleryList postList={data?.postList || []} />
+        <GalleryList postList={data?.postList || []} />
       ) : (
-        <ListPagePostList
+        <PostList
           postList={data?.postList || []}
           totalElements={data?.totalElements ?? 0}
           pageNumber={pageNumber}

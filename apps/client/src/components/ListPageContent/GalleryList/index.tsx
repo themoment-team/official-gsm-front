@@ -4,13 +4,11 @@ import { GalleryCard } from 'client/components';
 
 import type { ContentType } from 'types';
 
-interface ListPageGalleryListProps {
+interface GalleryListProps {
   postList: ContentType[];
 }
 
-const ListPageGalleryList: React.FC<ListPageGalleryListProps> = ({
-  postList,
-}) => (
+const GalleryList: React.FC<GalleryListProps> = ({ postList }) => (
   <List>
     {postList.map((post) => (
       <GalleryCard key={post.postSeq} post={post} />
@@ -18,7 +16,7 @@ const ListPageGalleryList: React.FC<ListPageGalleryListProps> = ({
   </List>
 );
 
-export default ListPageGalleryList;
+export default GalleryList;
 
 export const List = styled.div`
   display: grid;

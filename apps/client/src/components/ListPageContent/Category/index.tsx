@@ -9,13 +9,11 @@ const categoryList = [
   { href: '/list/gallery', category: '행사 갤러리' },
 ] as const;
 
-interface ListPageCategoryProps {
+interface CategoryProps {
   categoryParam: CategoryType;
 }
 
-const ListPageCategory: React.FC<ListPageCategoryProps> = ({
-  categoryParam,
-}) => (
+const Category: React.FC<CategoryProps> = ({ categoryParam }) => (
   <S.ListPageCategory>
     {categoryList.map(({ href, category }) => (
       <CategoryLink
@@ -29,4 +27,4 @@ const ListPageCategory: React.FC<ListPageCategoryProps> = ({
   </S.ListPageCategory>
 );
 
-export default ListPageCategory;
+export default Category;
