@@ -16,14 +16,14 @@ export const InputValueResetBtn = styled.button`
 `;
 
 export const InputBox = styled.input<{ borderRadius?: string }>`
+  ${({ theme }) => theme.typo.caption};
   width: 100%;
   height: 100%;
   border: 0.0625rem solid #dcdcdc;
   border-radius: ${({ borderRadius }) => borderRadius ?? '1.25rem'};
-  background-color: #fff;
+  background-color: ${({ theme }) => theme.color.white};
   padding: 0 3.125rem 0 1.25rem;
-  font-size: 0.75rem;
-  color: #424242;
+  color: ${({ theme }) => theme.color.gray['080']};
   transition: ease-in-out 0.3s;
   outline: none;
 

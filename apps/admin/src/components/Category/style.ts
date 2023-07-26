@@ -13,6 +13,6 @@ export const Category = styled.div`
 `;
 
 export const CustomLink = styled(Link)`
+  ${({ theme }) => theme.typo.body2};
   font-weight: 600;
-  font-size: 0.875rem;
 `;

@@ -2,12 +2,23 @@
 
 import { Global, css } from '@emotion/react';
 import emotionReset from 'emotion-reset';
+import { theme } from './theme';
 
 export function GlobalStyle() {
   return (
     <Global
       styles={css`
         ${emotionReset}
+
+        html {
+          @media ${theme.breakPoint['600']} {
+            font-size: 12px;
+          }
+
+          @media (max-width: 400px) {
+            font-size: 10px;
+          }
+        }
 
         body {
           overscroll-behavior-y: none;

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const FileCardWrap = styled.div`
   width: 36.25rem;
   height: 2.5rem;
-  background: #f5f5f5;
+  background: ${({ theme }) => theme.color.gray['030']};
   border-radius: 0.625rem;
   display: flex;
   justify-content: space-between;
@@ -20,10 +20,9 @@ export const FileNameWrapper = styled.div`
 `;
 
 export const Filename = styled.h3`
-  color: #9e9e9e;
+  ${({ theme }) => theme.typo.caption};
   font-weight: 400;
-  font-size: 0.75rem;
-  line-height: 1.125rem;
+  color: ${({ theme }) => theme.color.gray['060']};
 `;
 
 export const CancelButton = styled.button`

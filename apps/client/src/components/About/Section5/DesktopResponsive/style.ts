@@ -6,7 +6,7 @@ import { pxToRem } from 'common';
 
 export const ScrollSection = styled.div`
   width: 100vw;
-  overflow: scroll;
+
   height: ${pxToRem(sectionHeight.scrollSectionHeightPx)}rem;
   -ms-overflow-style: none;
   &::-webkit-scrollbar {
@@ -105,6 +105,7 @@ export const MajorName = styled.p`
   gap: 0.75rem;
   align-items: center;
   cursor: pointer;
+  width: fit-content;
 
   &::before {
     content: '';

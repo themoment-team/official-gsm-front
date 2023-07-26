@@ -51,7 +51,11 @@ export const AdmissionText = styled.h3`
   font-weight: 700;
 
   @media ${({ theme }) => theme.breakPoint['600']} {
-    ${({ theme: { typo } }) => typo.h5}
+    ${({ theme: { typo } }) => typo.h4}
+  }
+
+  @media (max-width: 400px) {
+    ${({ theme: { typo } }) => typo.body1}
   }
 `;
 
@@ -66,6 +70,10 @@ export const HashTag = styled.h4`
   font-weight: 400;
 
   @media ${({ theme }) => theme.breakPoint['600']} {
-    ${({ theme: { typo } }) => typo.body1}
+    ${({ theme: { typo } }) => typo.h5}
+  }
+
+  @media (max-width: 400px) {
+    ${({ theme: { typo } }) => typo.body2}
   }
 `;

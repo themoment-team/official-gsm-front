@@ -57,7 +57,7 @@ export const DotWrapper = styled.div`
 export const Dot = styled.div`
   width: 0.3125rem;
   height: 0.3125rem;
-  background: #9e9e9e;
+  background: ${({ theme }) => theme.color.gray['060']};
   border-radius: 0.25rem;
   margin: 0 0.1875rem;
 

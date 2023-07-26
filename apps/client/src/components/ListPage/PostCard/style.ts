@@ -24,8 +24,8 @@ export const PostCard = styled(Link)`
 export const IndexAndTitle = styled.div`
   width: 46.875rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 2.25rem;
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
     width: 34.5625rem;
@@ -33,6 +33,10 @@ export const IndexAndTitle = styled.div`
 
   @media ${({ theme }) => theme.breakPoint['1024']} {
     width: 18.3125rem;
+  }
+
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    width: 14.375rem;
   }
 `;
 
@@ -54,5 +58,9 @@ export const PostTitle = styled.p`
 
   @media ${({ theme }) => theme.breakPoint['1024']} {
     width: 14.375rem;
+  }
+
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    width: 10.375rem;
   }
 `;
