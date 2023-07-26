@@ -1,13 +1,19 @@
 'use client';
 
+import { redirect } from 'next/navigation';
+
 import styled from '@emotion/styled';
 
+import { useGetPostList } from 'api/client';
+
 import { categoryQueryString } from 'common';
+
+import { PaginationController } from 'ui';
 
 import type { CategoryType } from 'types';
 
 import ListPageCategory from './Category';
-import GalleryList from './GalleryList';
+import ListPageGalleryList from './GalleryList';
 import ListPagePostList from './PostList';
 import ListPageTitle from './Title';
 
@@ -16,6 +22,8 @@ interface ListPageContentProps {
   searchParams: { pageNumber: string };
 }
 
+export const PAGE_SIZE = 12;
+
 const ListPageContent: React.FC<ListPageContentProps> = ({
   category,
   searchParams,
@@ -23,15 +31,33 @@ const ListPageContent: React.FC<ListPageContentProps> = ({
   /** 1 ~ totalPages */
   const pageNumber = Number(searchParams.pageNumber ?? 1);
 
+  const { data, isError } = useGetPostList(
+    categoryQueryString[category],
+    pageNumber,
+    PAGE_SIZE
+  );
+
+  if (isError) {
+    redirect(`/list/${category}`);
+  }
+
   return (
     <Content>
       <ListPageCategory categoryParam={category} />
       <ListPageTitle category={category} />
       {categoryQueryString[category] === 'EVENT_GALLERY' ? (
-        <GalleryList category={category} pageNumber={pageNumber} />
+        <ListPageGalleryList postList={data?.postList || []} />
       ) : (
-        <ListPagePostList category={category} pageNumber={pageNumber} />
+        <ListPagePostList
+          postList={data?.postList || []}
+          totalElements={data?.totalElements ?? 0}
+          pageNumber={pageNumber}
+        />
       )}
+      <PaginationController
+        pageNumber={pageNumber}
+        totalPages={data?.totalPages ?? 0}
+      />
     </Content>
   );
 };
