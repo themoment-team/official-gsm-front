@@ -3,6 +3,7 @@
 import styled from '@emotion/styled';
 
 import { TitleTemplate } from 'client/components';
+import { useGetWindowWidth } from 'client/hooks';
 import type { PointColorType, PointPositionType } from 'client/types';
 
 interface AboutTitleProps {
@@ -18,12 +19,23 @@ const AboutTitle: React.FC<AboutTitleProps> = ({
   pointColor,
   pointPosition = 'top',
   pointSize = '1.125rem',
-  right = '-1.25rem',
-}) => (
-  <TitleTemplate point={{ pointColor, pointSize, pointPosition, right }}>
-    <AboutTitleStyle>{children}</AboutTitleStyle>
-  </TitleTemplate>
-);
+  right,
+}) => {
+  const isMobile = useGetWindowWidth() <= 600;
+  const pointRightPosition = isMobile ? '-1.8rem' : '-1.25rem';
+  return (
+    <TitleTemplate
+      point={{
+        pointColor,
+        pointSize,
+        pointPosition,
+        right: right ?? pointRightPosition,
+      }}
+    >
+      <AboutTitleStyle>{children}</AboutTitleStyle>
+    </TitleTemplate>
+  );
+};
 
 export default AboutTitle;
 

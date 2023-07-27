@@ -14,7 +14,7 @@ const MobileResponsive = () => (
   <S.ScrollSection>
     <S.TitleSection>
       <SectionTitle textAlign='left'>
-        <AboutTitle pointColor='sky' right='27%'>
+        <AboutTitle pointColor='sky' right='25%'>
           창의 융합력을 갖춘 <br />
           글로벌 소프트웨어 학과 소개
         </AboutTitle>
