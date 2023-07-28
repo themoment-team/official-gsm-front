@@ -55,6 +55,7 @@ export const FirstTitle = styled(Title)`
   animation: ${leftFadeInOut} 1.5s ease-in-out forwards;
 
   @media ${({ theme }) => theme.breakPoint[600]} {
+    font-family: Pretendard;
     font-size: 2.7681rem;
     line-height: 3.3031rem;
   }
