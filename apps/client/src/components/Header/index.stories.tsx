@@ -14,11 +14,6 @@ export const Primary: Story = {
     isAbovePromotionVideo: false,
     segment: '',
   },
-  parameters: {
-    backgrounds: {
-      default: 'dark',
-    },
-  },
 };
 
 export const AbovePromotionVideo: Story = {
@@ -28,7 +23,7 @@ export const AbovePromotionVideo: Story = {
   },
   parameters: {
     backgrounds: {
-      default: 'light',
+      default: 'dark',
     },
   },
 };
