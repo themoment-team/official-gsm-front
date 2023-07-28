@@ -30,7 +30,7 @@ const NotFoundTitle = () => (
         <stop stop-color='#B2E449' />
         <stop offset='0.488435' stopColor='#7ACDF4' />
         <stop offset='0.614583' stopColor='#5CA7D1' />
-        <stop offset='1' stop-color='#003365' />
+        <stop offset='1' stopColor='#003365' />
       </linearGradient>
       <linearGradient
         id='paint1_linear_2607_3639'

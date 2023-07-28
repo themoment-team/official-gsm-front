@@ -1,12 +1,8 @@
 'use client';
 
-import styled from '@emotion/styled';
+import { redirect } from 'next/navigation';
 
-import {
-  ListPageCategory,
-  ListPagePostCard,
-  ListPageTitle,
-} from 'client/components';
+import styled from '@emotion/styled';
 
 import { useGetPostList } from 'api/client';
 
@@ -16,12 +12,17 @@ import { PaginationController } from 'ui';
 
 import type { CategoryType } from 'types';
 
-const PAGE_SIZE = 11;
+import Category from './Category';
+import GalleryList from './GalleryList';
+import PostList from './PostList';
+import Title from './Title';
 
 interface ListPageContentProps {
   category: CategoryType;
   searchParams: { pageNumber: string };
 }
+
+export const PAGE_SIZE = 12;
 
 const ListPageContent: React.FC<ListPageContentProps> = ({
   category,
@@ -30,27 +31,29 @@ const ListPageContent: React.FC<ListPageContentProps> = ({
   /** 1 ~ totalPages */
   const pageNumber = Number(searchParams.pageNumber ?? 1);
 
-  const { data } = useGetPostList(
+  const { data, isError } = useGetPostList(
     categoryQueryString[category],
     pageNumber,
     PAGE_SIZE
   );
 
-  /** 해당 카테고리의 전체 게시글 수 - (이전 페이지들의 게시글 수 + 현재 페이지 내의 게시글의 index) */
-  const postIndex = (index: number) =>
-    (data?.totalElements ?? 0) - (PAGE_SIZE * (pageNumber - 1) + index);
+  if (isError) {
+    redirect(`/list/${category}`);
+  }
 
   return (
     <Content>
-      <ListPageCategory categoryParam={category} />
-      <ListPageTitle category={category} />
-      {data?.postList?.map((post, index) => (
-        <ListPagePostCard
-          key={post.postSeq}
-          postIndex={postIndex(index)}
-          post={post}
+      <Category categoryParam={category} />
+      <Title category={category} />
+      {categoryQueryString[category] === 'EVENT_GALLERY' ? (
+        <GalleryList postList={data?.postList || []} />
+      ) : (
+        <PostList
+          postList={data?.postList || []}
+          totalElements={data?.totalElements ?? 0}
+          pageNumber={pageNumber}
         />
-      ))}
+      )}
       <PaginationController
         pageNumber={pageNumber}
         totalPages={data?.totalPages ?? 0}

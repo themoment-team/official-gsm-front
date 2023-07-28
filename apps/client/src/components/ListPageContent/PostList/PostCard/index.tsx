@@ -1,17 +1,15 @@
-'use client';
-
 import { WriterAndDate } from 'ui';
 
 import type { ContentType } from 'types';
 
 import * as S from './style';
 
-export interface ListPagePostCardProps {
+export interface PostCardProps {
   postIndex: number;
   post: Omit<ContentType, 'thumbnailUrl' | 'contentPreview'>;
 }
 
-const ListPagePostCard: React.FC<ListPagePostCardProps> = ({
+const PostCard: React.FC<PostCardProps> = ({
   postIndex,
   post: { postSeq, postTitle, postWriter, createdAt },
 }) => (
@@ -28,4 +26,4 @@ const ListPagePostCard: React.FC<ListPagePostCardProps> = ({
   </S.PostCard>
 );
 
-export default ListPagePostCard;
+export default PostCard;

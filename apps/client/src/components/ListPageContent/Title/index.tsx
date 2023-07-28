@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 
 import { categoryTitle } from 'common';
@@ -8,12 +6,12 @@ import type { CategoryType } from 'types';
 
 import { ListPageH2 } from './style';
 
-interface ListPageTitleProps {
+interface TitleProps {
   category: CategoryType;
 }
 
-const ListPageTitle: React.FC<ListPageTitleProps> = ({ category }) => (
+const Title: React.FC<TitleProps> = ({ category }) => (
   <ListPageH2>{categoryTitle[category]}</ListPageH2>
 );
 
-export default ListPageTitle;
+export default Title;
