@@ -1,17 +1,17 @@
-import ListPagePostCard from '.';
+import PostCard from '.';
 
-import type { ListPagePostCardProps } from '.';
+import type { PostCardProps } from '.';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
   title: 'client/Listpage/PostList/PostCard',
-  component: ListPagePostCard,
+  component: PostCard,
   parameters: {},
-} as Meta<typeof ListPagePostCard>;
+} as Meta<typeof PostCard>;
 
-type Story = StoryObj<typeof ListPagePostCard>;
+type Story = StoryObj<typeof PostCard>;
 
-const args: ListPagePostCardProps = {
+const args: PostCardProps = {
   postIndex: 1,
   post: {
     postSeq: 1,
@@ -36,15 +36,15 @@ export const ThreeDigitIndex: Story = {
 export const MultipleCard: Story = {
   render: () => (
     <>
-      <ListPagePostCard {...args} />
-      <ListPagePostCard
+      <PostCard {...args} />
+      <PostCard
         postIndex={10}
         post={{
           ...args.post,
           postTitle: '2023학년도 교과서 파일(PDF) 제공 안내',
         }}
       />
-      <ListPagePostCard {...args} postIndex={100} />
+      <PostCard {...args} postIndex={100} />
     </>
   ),
 };
