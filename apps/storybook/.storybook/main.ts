@@ -2,7 +2,7 @@ import type { StorybookConfig } from '@storybook/nextjs';
 
 const config: StorybookConfig = {
   stories: [
-    '../../../packages/ui/src/components/**!(node_modules)/*.stories.@(js|jsx|ts|tsx)',
+    '../../../packages/ui/src/components/**/*.stories.@(js|jsx|ts|tsx)',
     '../../admin/src/components/**/*.stories.@(js|jsx|ts|tsx)',
     '../../client/src/components/**/*.stories.@(js|jsx|ts|tsx)',
   ],
@@ -13,16 +13,27 @@ const config: StorybookConfig = {
   ],
   framework: {
     name: '@storybook/nextjs',
-    options: {},
+    options: {
+      nextConfigPath: '../../admin/next.config.js',
+    },
   },
   staticDirs: ['../../admin/public', '../../client/public'],
   docs: {
     autodocs: 'tag',
   },
-  babel: async (options) => {
-    options.presets?.push('@emotion/babel-preset-css-prop');
-    return options;
-  },
+  babel: async (config) => ({
+    ...config,
+    presets: [
+      [
+        'next/babel',
+        {
+          'preset-react': {
+            runtime: 'automatic',
+          },
+        },
+      ],
+    ],
+  }),
 };
 
 export default config;
