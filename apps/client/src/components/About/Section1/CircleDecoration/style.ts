@@ -9,6 +9,7 @@ export const CircleWrapper = styled.div`
 const CircleTemplate = styled.div`
   position: absolute;
   filter: blur(5rem);
+  will-change: filter;
 `;
 
 export const GradationCircle1 = styled(CircleTemplate)`
