@@ -29,6 +29,7 @@ const config: StorybookConfig = {
         {
           'preset-react': {
             runtime: 'automatic',
+            importSource: '@emotion/react',
           },
         },
       ],
