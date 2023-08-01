@@ -25,23 +25,25 @@ export default function PostPage({ params: { postSeq } }: PostPageProps) {
 export const generateMetadata = async ({
   params,
 }: PostPageProps): Promise<Metadata> => {
-  const postSeq = Number(params.postSeq);
+  try {
+    const postSeq = Number(params.postSeq);
 
-  const post: PostDetailType = await fetch(
-    `${process.env.BASE_URL}/api/client${postUrl.postDetail(postSeq)}`
-  ).then((res) => res.json());
+    const post: PostDetailType = await fetch(
+      `${process.env.BASE_URL}/api/client${postUrl.postDetail(postSeq)}`
+    ).then((res) => res.json());
 
-  if (!post.postTitle) return notFound();
-
-  return {
-    title: { absolute: post.postTitle },
-    description: descriptionFormatting(post.postContent),
-    openGraph: {
-      title: post.postTitle,
+    return {
+      title: { absolute: post.postTitle },
       description: descriptionFormatting(post.postContent),
-      url: `https://official.hellogsm.kr/post/${postSeq}`,
-    },
-  };
+      openGraph: {
+        title: post.postTitle,
+        description: descriptionFormatting(post.postContent),
+        url: `https://official.hellogsm.kr/post/${postSeq}`,
+      },
+    };
+  } catch (e) {
+    return notFound();
+  }
 };
 
 const descriptionFormatting = (description: string) =>
