@@ -27,7 +27,7 @@ const NotFoundTitle = () => (
         y2='328.025'
         gradientUnits='userSpaceOnUse'
       >
-        <stop stop-color='#B2E449' />
+        <stop stopColor='#B2E449' />
         <stop offset='0.488435' stopColor='#7ACDF4' />
         <stop offset='0.614583' stopColor='#5CA7D1' />
         <stop offset='1' stopColor='#003365' />
@@ -40,7 +40,7 @@ const NotFoundTitle = () => (
         y2='328.025'
         gradientUnits='userSpaceOnUse'
       >
-        <stop stop-color='#B2E449' />
+        <stop stopColor='#B2E449' />
         <stop offset='0.488435' stopColor='#7ACDF4' />
         <stop offset='0.614583' stopColor='#5CA7D1' />
         <stop offset='1' stopColor='#003365' />
