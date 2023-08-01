@@ -27,19 +27,22 @@ export const generateMetadata = async ({
 }: PostPageProps): Promise<Metadata> => {
   const postSeq = Number(params.postSeq);
 
-  const post: Promise<PostDetailType> = await fetch(
+  const post: PostDetailType = await fetch(
     `${process.env.BASE_URL}/api/client${postUrl.postDetail(postSeq)}`
   ).then((res) => res.json());
 
-  if (!(await post).postTitle) return notFound();
+  if (!post.postTitle) return notFound();
 
   return {
-    title: { absolute: (await post).postTitle },
-    description: (await post).postContent,
+    title: { absolute: post.postTitle },
+    description: descriptionFormatting(post.postContent),
     openGraph: {
-      title: (await post).postTitle,
-      description: (await post).postContent,
+      title: post.postTitle,
+      description: descriptionFormatting(post.postContent),
       url: `https://official.hellogsm.kr/post/${postSeq}`,
     },
   };
 };
+
+const descriptionFormatting = (description: string) =>
+  description.replace(/\n/g, ' ').replace(/\s+/g, ' ').slice(0, 120);
