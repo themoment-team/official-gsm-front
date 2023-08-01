@@ -2,8 +2,6 @@
 
 'use client';
 
-import { notFound } from 'next/navigation';
-
 import { css } from '@emotion/react';
 
 import { PostContent, PostDetailHead, ReturnToList } from 'client/components';
@@ -19,9 +17,7 @@ interface AssembledPostProps {
 }
 
 const AssembledPost: React.FC<AssembledPostProps> = ({ postSeq }) => {
-  const { data, isError } = useGetPostDetail(postSeq);
-
-  if (isError) notFound();
+  const { data } = useGetPostDetail(postSeq);
 
   return (
     <S.BackGround>

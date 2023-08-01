@@ -1,3 +1,5 @@
+import { notFound } from 'next/navigation';
+
 import { Footer, Header, AssembledPost } from 'client/components';
 
 import { postUrl } from 'api/client';
@@ -28,6 +30,8 @@ export const generateMetadata = async ({
   const post: Promise<PostDetailType> = await fetch(
     `${process.env.BASE_URL}/api/client${postUrl.postDetail(postSeq)}`
   ).then((res) => res.json());
+
+  if (!(await post).postTitle) return notFound();
 
   return {
     title: { absolute: (await post).postTitle },
