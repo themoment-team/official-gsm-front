@@ -40,7 +40,7 @@ export const Button = styled.button`
   cursor: pointer;
 `;
 
-export const CancleButton = styled(Button)`
+export const CancelButton = styled(Button)`
   background: ${({ theme }) => theme.color.gray['040']};
   color: ${({ theme }) => theme.color.gray['080']};
 `;
