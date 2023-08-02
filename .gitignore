@@ -26,6 +26,7 @@
 
 # local env files
 **/.env*.local
+**/.env
 
 # vercel
 **/.vercel
@@ -34,3 +35,6 @@
 **/*.tsbuildinfo
 **/next-env.d.ts
 **/node_modules
+
+# storybook
+**/storybook-static

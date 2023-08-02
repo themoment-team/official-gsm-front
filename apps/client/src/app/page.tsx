@@ -1,7 +1,19 @@
-"use client";
-
-import { Button } from "ui";
+import {
+  PromotionVideo,
+  Footer,
+  SlotMachine,
+  MainPageContent,
+  MainPageHeader,
+} from 'client/components';
 
 export default function Home() {
-  return <Button>button</Button>;
+  return (
+    <>
+      <MainPageHeader />
+      <PromotionVideo />
+      <SlotMachine />
+      <MainPageContent />
+      <Footer />
+    </>
+  );
 }

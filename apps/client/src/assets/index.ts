@@ -1,0 +1,17 @@
+export { default as ArrowIcon } from './svg/icon/ArrowIcon';
+export { default as ChevronIcon } from './svg/icon/ChevronIcon';
+export { default as CloseIcon } from './svg/icon/CloseIcon';
+export { default as DownChevronsIcon } from './about/section1/DownChevronsIcon';
+export { default as DreamIcon } from './about/section3/DreamIcon';
+export { default as FooterGSMLogo } from './svg/FooterGSMLogo';
+export { default as FutureIcon } from './about/section3/FutureIcon';
+export { default as HamburgerIcon } from './svg/icon/HamburgerIcon';
+export { default as HeaderGSMLogo } from './svg/HeaderGSMLogo';
+export { default as HomeScrollDownIcon } from './svg/icon/HomeScrollDownIcon';
+export { default as ImaginationIcon } from './about/section3/ImaginationIcon';
+export { default as LeftArrowIcon } from './about/section7/LeftArrowIcon';
+export { default as MouseIcon } from './about/section1/MouseIcon';
+export { default as NotFoundTitle } from './svg/NotFoundTitle';
+export { default as ReturnChevronIcon } from './svg/icon/ReturnChevronIcon';
+export { default as RightArrowIcon } from './about/section7/RightArrowIcon';
+export { default as UnderscoreIcon } from './svg/icon/UnderscoreIcon';

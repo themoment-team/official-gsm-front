@@ -1,8 +1,59 @@
-"use client";
+import React from 'react';
+import { Suspense } from 'react';
 
-import { Inter } from "next/font/google";
+import Script from 'next/script';
 
-const inter = Inter({ subsets: ["latin"] });
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+
+import { NavigationEvents } from 'client/components';
+import { GA_TRACKING_ID } from 'client/libs';
+
+import { GlobalStyle } from 'common';
+
+import Providers from './providers';
+
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  applicationName: 'official GSM',
+  keywords: [
+    '광주소프트웨어마이스터고등학교',
+    '광주소프트웨어마이스터고',
+    '광소마',
+    '광주',
+    '소프트웨어',
+    '마이스터고',
+    '마이스터고등학교',
+    'GSM',
+    'GwangjuSoftwareMeisterHighSchool',
+    'SoftWare',
+  ],
+  creator: 'the-moment',
+  publisher: 'the-moment',
+  description: '광주소프트웨어마이스터고등학교 공식 홈페이지입니다.',
+  title: {
+    template: '광주소프트웨어마이스터고등학교 - %s',
+    default: '광주소프트웨어마이스터고등학교',
+  },
+  openGraph: {
+    title: '광주소프트웨어마이스터고등학교',
+    description: '광주소프트웨어마이스터고등학교 공식 홈페이지입니다.',
+    url: 'https://official.hellogsm.kr/',
+    siteName: 'official GSM',
+    images: [
+      {
+        url: '/favicon.png',
+        width: 800,
+        height: 800,
+      },
+    ],
+    locale: 'ko',
+    type: 'website',
+  },
+  icons: {
+    icon: '/favicon.png',
+  },
+};
 
 export default function RootLayout({
   children,
@@ -10,12 +61,45 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang='ko'>
       <head>
-        <title>Client</title>
-        <meta name="description" content="client" />
+        <link
+          rel='stylesheet'
+          as='style'
+          crossOrigin=''
+          href='https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css'
+        />
+        {/* Global Site Tag (gtag.js) - Google Analytics */}
+        <Script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+        />
+        <Script
+          id='gtag-init'
+          strategy='afterInteractive'
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_TRACKING_ID}', {
+            page_path: window.location.pathname,
+          });
+        `,
+          }}
+        />
       </head>
-      <body className={inter.className}>{children}</body>
+
+      <body>
+        <Providers>
+          <ReactQueryDevtools />
+          <GlobalStyle />
+          {children}
+          <Suspense fallback={null}>
+            <NavigationEvents />
+          </Suspense>
+        </Providers>
+      </body>
     </html>
   );
 }

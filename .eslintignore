@@ -1,0 +1,11 @@
+**/.next
+**/node_modules
+**/style.ts
+*.d.ts
+
+# axios http method function
+packages/api/admin/src/libs/api/admin.ts
+packages/api/client/src/libs/api/client.ts
+
+# page style
+**/styles/page/*.ts

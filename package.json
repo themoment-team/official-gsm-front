@@ -4,12 +4,26 @@
     "client": "pnpm --filter client",
     "admin": "pnpm --filter admin",
     "storybook": "pnpm --filter storybook",
+    "api": "pnpm --filter api",
     "common": "pnpm --filter common",
     "ui": "pnpm --filter ui",
     "tsconfig": "pnpm --filter tsconfig",
-    "eslint-config-custom": "pnpm --filter eslint-config-custom"
+    "eslint-config-custom": "pnpm --filter eslint-config-custom",
+    "types": "pnpm --filter types"
   },
   "private": true,
   "license": "MIT",
-  "packageManager": "pnpm@8.3.1"
+  "packageManager": "pnpm@8.6.2",
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@tanstack/react-query": "^4.29.7",
+    "@tanstack/react-query-devtools": "^4.29.7",
+    "@types/react": "^18.2.0",
+    "next": "13.4.2",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/gtag.js": "^0.0.12"
+  }
 }
