@@ -26,6 +26,7 @@ const Footer = () => {
               <Link href='#'>영상정보처리기기운영·관리방침</Link>
               <Link href='#'>저작권신고 및 보호규정</Link>
               <Link href='#'>찾아오시는 길</Link>
+              <Link href='#'>관리자</Link>
             </S.LinkWrapper>
           </S.SiteInfo>
           <S.SchoolInfo>
