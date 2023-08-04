@@ -26,6 +26,9 @@ export const NewsletterList = styled.div`
       background-color: ${({ theme: { color } }) => color.primary.lime};
       color: #73962b;
     }
+    p {
+      color: #73962b;
+    }
   }
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
