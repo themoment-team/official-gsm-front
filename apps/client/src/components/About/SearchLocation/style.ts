@@ -46,3 +46,7 @@ export const AddressAndConatctBox = styled.div`
 export const OntheWayBox = styled.div`
   background-color: gray;
 `;
+export const Address = styled.div``;
+export const Contact = styled.div``;
+export const Walk = styled.div``;
+export const Subway = styled.div``;
