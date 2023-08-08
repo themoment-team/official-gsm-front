@@ -9,9 +9,12 @@ interface BulletItemProps {
   isDark?: boolean;
 }
 
-const BulletItem: React.FC<BulletItemProps> = ({ children, isDark }) => (
+const BulletItem: React.FC<BulletItemProps> = ({
+  children,
+  isDark = false,
+}) => (
   <S.BulletItemWrapper>
-    <S.Bullet isDark={isDark ?? false} />
+    <S.Bullet isDark={isDark} />
     <S.Text>{children}</S.Text>
   </S.BulletItemWrapper>
 );
