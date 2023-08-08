@@ -9,14 +9,14 @@ export const Bullet = styled.div<{ isDark: boolean }>`
   width: 0.625rem;
   height: 0.625rem;
   border-radius: 50%;
-  background: #${({ isDark }) => (isDark ? '9E9E9E' : 'b2e449')};
+  background: ${({ isDark, theme }) =>
+    isDark ? theme.color.gray['060'] : theme.color.primary.lime};
   margin-top: 0.5938rem;
 `;
 
-export const Text = styled.p`
+export const Text = styled.h4`
+  ${({ theme }) => theme.typo.h4}
   width: 76.125rem;
-  color: #616161;
-  font-size: 1.25rem;
   font-weight: 400;
-  line-height: 1.8125rem;
+  color: ${({ theme }) => theme.color.gray['070']};
 `;
