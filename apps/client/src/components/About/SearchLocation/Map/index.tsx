@@ -60,7 +60,7 @@ function Map({ latitude, longitude }: MapProps) {
 }
 
 const MapContainer = styled.div`
-  margin: 32px 0px;
+  margin: 2rem 0rem;
   aspect-ratio: 320 / 220;
 `;
 
