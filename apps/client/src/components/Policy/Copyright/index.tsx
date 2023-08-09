@@ -6,7 +6,7 @@ import * as S from './style';
 
 const CopyrightPolicy = () => (
   <S.ContentWrapper>
-    <S.Section1>
+    <S.Section>
       <S.Title>저작권신고 및 보호규정</S.Title>
       <S.SubContentWrapper>
         <S.RegularSubTitle>저작권신고 및 보호규정</S.RegularSubTitle>
@@ -41,7 +41,35 @@ const CopyrightPolicy = () => (
           있습니다.
         </BulletItem>
       </S.SubContentWrapper>
-    </S.Section1>
+    </S.Section>
+    <S.Section>
+      <div />
+      <S.SubContentWrapper>
+        <S.BoldSubTitle>재게시요청 신청</S.BoldSubTitle>
+        <BulletItem>
+          게시가 중단된 저작물을 게시한 이용자가 해당 저작물이 정당한 권리에
+          의한 게시라고 판단되면 해당 절차에 따라서 재게시를 요청합니다.
+        </BulletItem>
+        <BulletItem>
+          게시중단을 통보받은 저작물에 대하여 재 게시를 요청할 경우에는 아래
+          문서를 다운로드 하여 작성한 후 ‘저작권 신고 접수 수령인’에게 방문 또는
+          전자우편으로 접수합니다.
+        </BulletItem>
+        <BulletItem>
+          정당한 권리 없이 게시중단을 요청하면 법에 의해 손해배상의 책임이
+          있습니다.
+        </BulletItem>
+        <BulletItem>
+          게시자 이의신청자가 신청서 소명자료를 제출하여 신청을 하고 이를 신고
+          수령인이 접수하여 검토 후 YES인 경우는 서비스를 제공하고 NO인 경우는
+          재게시 불가 통보를한다.
+        </BulletItem>
+        <BulletItem>
+          검토 후 YES였던 경우 중 재게시가 발생하게 되면 재게시 승인통보를 한다.
+        </BulletItem>
+      </S.SubContentWrapper>
+    </S.Section>
+    <div />
   </S.ContentWrapper>
 );
 

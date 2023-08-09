@@ -12,7 +12,7 @@ export const ContentWrapper = styled(Column)`
   margin: 0 auto;
 `;
 
-export const Section1 = styled(Column)`
+export const Section = styled(Column)`
   gap: 48px;
 `;
 
