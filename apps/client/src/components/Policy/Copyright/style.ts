@@ -6,25 +6,25 @@ const Column = styled.div`
 `;
 
 export const ContentWrapper = styled(Column)`
-  width: 1240px;
-  gap: 80px;
-  padding: 80px 0 120px;
+  width: 77.5rem;
+  gap: 5rem;
+  padding: 5rem 0 7.5rem;
   margin: 0 auto;
 `;
 
 export const Section = styled(Column)`
-  gap: 48px;
+  gap: 3rem;
 `;
 
 export const Title = styled.h2`
   ${({ theme }) => theme.typo.h2};
   color: ${({ theme }) => theme.color.gray['090']};
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
 `;
 
 export const SubContentWrapper = styled(Column)`
-  gap: 8px;
+  gap: 0.5rem;
 `;
 
 export const RegularSubTitle = styled.p`
@@ -45,7 +45,7 @@ export const Description = styled.p`
 
 export const DownloadWrapper = styled.div`
   display: flex;
-  gap: 12px;
+  gap: 0.75rem;
   align-items: center;
 `;
 
@@ -54,9 +54,9 @@ export const DownloadButton = styled.button`
   color: ${({ theme }) => theme.color.gray['060']};
   font-weight: 600;
 
-  width: 96px;
-  height: 28px;
-  border-radius: 4px;
+  width: 6rem;
+  height: 1.75rem;
+  border-radius: 0.25rem;
   background: ${({ theme }) => theme.color.gray['040']};
   cursor: pointer;
 `;
