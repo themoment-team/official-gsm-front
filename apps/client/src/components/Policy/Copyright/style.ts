@@ -42,3 +42,21 @@ export const Description = styled.p`
   color: ${({ theme }) => theme.color.gray['070']};
   font-weight: 400;
 `;
+
+export const DownloadWrapper = styled.div`
+  display: flex;
+  gap: 12px;
+  align-items: center;
+`;
+
+export const DownloadButton = styled.button`
+  ${({ theme }) => theme.typo.body2};
+  color: ${({ theme }) => theme.color.gray['060']};
+  font-weight: 600;
+
+  width: 96px;
+  height: 28px;
+  border-radius: 4px;
+  background: ${({ theme }) => theme.color.gray['040']};
+  cursor: pointer;
+`;

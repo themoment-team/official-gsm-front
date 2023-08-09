@@ -28,7 +28,10 @@ const CopyrightPolicy = () => (
         <BulletItem>주소 : 우)62423 광주광역시 광산구 상무대로 312</BulletItem>
       </S.SubContentWrapper>
       <S.SubContentWrapper>
-        <S.BoldSubTitle>게시중단요청 신청</S.BoldSubTitle>
+        <S.DownloadWrapper>
+          <S.BoldSubTitle>게시중단요청 신청</S.BoldSubTitle>
+          <S.DownloadButton>양식 다운로드</S.DownloadButton>
+        </S.DownloadWrapper>
         <BulletItem>
           게시된 저작물에 의해 권리를 침해당하였다고 판단되면 해당 절차에 따라서
           게시중단을 요청합니다.
