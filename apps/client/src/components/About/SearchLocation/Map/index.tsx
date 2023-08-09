@@ -29,6 +29,7 @@ function Map({ latitude, longitude }: MapProps) {
           center: new window.kakao.maps.LatLng(latitude, longitude),
         };
         const map = new window.kakao.maps.Map(container, options);
+
         const markerPosition = new window.kakao.maps.LatLng(
           latitude,
           longitude
@@ -36,6 +37,17 @@ function Map({ latitude, longitude }: MapProps) {
         const marker = new window.kakao.maps.Marker({
           position: markerPosition,
         });
+
+        const infowindow = new window.kakao.maps.InfoWindow({
+          content:
+            '<div style="width: 250px; padding: 10px;">광주 소프트웨어마이스터고등학교</div>',
+          removable: true,
+        });
+
+        window.kakao.maps.event.addListener(marker, 'click', function () {
+          infowindow.open(map, marker);
+        });
+
         marker.setMap(map);
       });
     };
