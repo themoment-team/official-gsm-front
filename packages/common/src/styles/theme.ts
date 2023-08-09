@@ -11,6 +11,7 @@ const color = {
     orange: '#FF9877',
     yellow: '#F8FADB',
     gray: '#CDD5E2',
+    green: '#73962B',
   },
   gray: {
     '010': '#FCFCFC',
