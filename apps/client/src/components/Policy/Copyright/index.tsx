@@ -1,0 +1,48 @@
+'use client';
+
+import { BulletItem } from 'client/components';
+
+import * as S from './style';
+
+const CopyrightPolicy = () => (
+  <S.ContentWrapper>
+    <S.Section1>
+      <S.Title>저작권신고 및 보호규정</S.Title>
+      <S.SubContentWrapper>
+        <S.RegularSubTitle>저작권신고 및 보호규정</S.RegularSubTitle>
+        <S.Description>
+          저작물의 무단 전재 및 배포시 저작권법 136조에 의거 최고 5년 이하의
+          징역 또는 5천만원 이하의 벌금에 처하거나 이를 병과 할 수 있습니다. 본
+          서비스는 게시된 저작물로 인하여 저작권을 침해받은 경우 이를 처리하기
+          위한 서비스입니다. 다음 사항을 참고하여 신고하여 주시기 바랍니다.
+        </S.Description>
+      </S.SubContentWrapper>
+      <S.SubContentWrapper>
+        <S.BoldSubTitle>저작권 신고 접수 수령인(담당자)</S.BoldSubTitle>
+        <BulletItem>
+          성명 및 소속부서 : 광주소프트웨어마이스터고등학교 개인정보보호책임관
+        </BulletItem>
+        <BulletItem>전화번호 : 062)949-6801</BulletItem>
+        <BulletItem>주소 : 우)62423 광주광역시 광산구 상무대로 312</BulletItem>
+      </S.SubContentWrapper>
+      <S.SubContentWrapper>
+        <S.BoldSubTitle>게시중단요청 신청</S.BoldSubTitle>
+        <BulletItem>
+          게시된 저작물에 의해 권리를 침해당하였다고 판단되면 해당 절차에 따라서
+          게시중단을 요청합니다.
+        </BulletItem>
+        <BulletItem>
+          게시된 저작물의 게시중단(복제·전송 중단)을 요청할 경우에는 아래 문서를
+          다운로드 하여 작성한 후 ‘저작권 신고 접수 수령인’에게 방문 또는
+          전자우편으로 신청합니다.
+        </BulletItem>
+        <BulletItem>
+          정당한 권리 없이 게시중단을 요청하면 법에 의해 손해배상의 책임이
+          있습니다.
+        </BulletItem>
+      </S.SubContentWrapper>
+    </S.Section1>
+  </S.ContentWrapper>
+);
+
+export default CopyrightPolicy;
