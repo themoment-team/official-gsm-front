@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 import { BulletItem } from 'client/components';
 
 import * as S from './style';
@@ -43,7 +45,12 @@ const CopyrightPolicy = () => (
       </S.SubContentWrapper>
     </S.Section>
     <S.Section>
-      <div />
+      <Image
+        alt='개시중단요청 신청'
+        src='/images/policy/Copyright1.png'
+        width={1043}
+        height={511}
+      />
       <S.SubContentWrapper>
         <S.BoldSubTitle>재게시요청 신청</S.BoldSubTitle>
         <BulletItem>
@@ -69,7 +76,12 @@ const CopyrightPolicy = () => (
         </BulletItem>
       </S.SubContentWrapper>
     </S.Section>
-    <div />
+    <Image
+      alt='재게시요청 신청'
+      src='/images/policy/Copyright2.png'
+      width={1043}
+      height={511}
+    />
   </S.ContentWrapper>
 );
 
