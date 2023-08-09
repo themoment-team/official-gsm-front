@@ -50,7 +50,8 @@ export const TextWrapper = styled.div`
   flex-direction: column;
   gap: 0.625rem;
 
-  h4 {
+  h3,
+  p {
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -58,14 +59,14 @@ export const TextWrapper = styled.div`
   }
 `;
 
-export const Title = styled.h4`
+export const Title = styled.h3`
   ${({ theme: { typo } }) => typo.h4}
   color: ${({ theme: { color } }) => color.gray['090']};
   font-weight: 600;
   height: 3.625rem;
 `;
 
-export const Preview = styled.h4`
+export const Preview = styled.p`
   ${({ theme: { typo } }) => typo.body1}
   color: ${({ theme: { color } }) => color.gray['080']};
   font-weight: 400;
