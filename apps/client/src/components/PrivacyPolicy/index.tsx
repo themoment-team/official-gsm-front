@@ -2,7 +2,7 @@
 
 'use client';
 
-import { BulleItem } from 'client/components';
+import { BulletItem } from 'client/components';
 
 import FifthTable from './FifthTable';
 import FirstTable from './FirstTable';
@@ -20,20 +20,20 @@ const PrivacyPolicy = () => (
         <S.IntroTitle>
           광주소프트웨어마이스터고등학교 홈페이지를 이용하시면서
         </S.IntroTitle>
-        <BulleItem isDark={true}>
+        <BulletItem isDark={true} isSmall={true}>
           광주소프트웨어마이스터고등학교가 취급하는 모든 개인정보는
           개인정보보호법 등 관련 법령상의 개인정보보호 규정을 준수하여 이용자의
           개인정보보호 및 권익을 보호
           <br />
           하고 개인정보와 관련한 이용자의 고충을 원활하게 처리할 수 있도록
           다음과 같은 처리방침을 두고 있습니다.{' '}
-        </BulleItem>
-        <BulleItem isDark={true}>
+        </BulletItem>
+        <BulletItem isDark={true} isSmall={true}>
           이 개인정보처리방침은 시행일로부터 적용되며, 법령 및 방침에 따른
           변경내용의 추가, 삭제 및 정정이 있는 경우에는 변경사항의 시행 7일
           전부터 공지사항을 통하여 고<br />
           지할 것입니다.
-        </BulleItem>
+        </BulletItem>
       </S.IntroContentBox>
       <S.PolicyContentBox>
         <S.PolicyTitle>제 1조 (개인정보의 처리 목적)</S.PolicyTitle>
@@ -88,21 +88,21 @@ const PrivacyPolicy = () => (
           브라우저에게 보내는 소량의 정보이며 이용자들의 PC 컴퓨터내의
           하드디스크에 저장되기도 합니다.
         </S.SubTitle>
-        <S.BulleItemWrap>
-          <BulleItem>
+        <S.BulletItemWrap>
+          <BulletItem isSmall={true}>
             쿠키의 사용 목적 : 자주 찾는 서비스를 설정할 수 있도록 하여
             이용자에게 최적화된 정보 제공을 위해 사용됩니다.
-          </BulleItem>
-          <BulleItem>
+          </BulletItem>
+          <BulletItem isSmall={true}>
             쿠키의 설치·운영 및 거부 : 웹브라우저 상단의 도구 {'>'} 인터넷 옵션
             {'>'} 개인정보 메뉴의 옵션 설정을 통해 쿠키 저장을 거부할 수
             있습니다.
-          </BulleItem>
-          <BulleItem>
+          </BulletItem>
+          <BulletItem isSmall={true}>
             쿠키 저장을 거부할 경우 일부 서비스 이용에 어려움이 발생할 수
             있습니다.
-          </BulleItem>
-        </S.BulleItemWrap>
+          </BulletItem>
+        </S.BulletItemWrap>
       </S.PolicyContentBox>
       <S.PolicyContentBox>
         <S.PolicyTitle>
@@ -115,38 +115,42 @@ const PrivacyPolicy = () => (
           제외하고는 정보주체의 사전 동의 없이는 본래의 목적 범위를 초과하여
           처리하거나 제3자에게 제공하지 않습니다.
         </S.SubTitle>
-        <S.BulleItemWrap>
-          <BulleItem>정보주체로부터 별도의 동의를 받는 경우</BulleItem>
-          <BulleItem>법률에 특별한 규정이 있는 경우 있습니다.</BulleItem>
-          <BulleItem>
+        <S.BulletItemWrap>
+          <BulletItem isSmall={true}>
+            정보주체로부터 별도의 동의를 받는 경우
+          </BulletItem>
+          <BulletItem isSmall={true}>
+            법률에 특별한 규정이 있는 경우 있습니다.
+          </BulletItem>
+          <BulletItem isSmall={true}>
             보주체 또는 법정대리인이 의사표시를 할 수 없는 상태에 있거나
             주소불명 등으로 사전 동의를 받을 수 없는 경우로서 명백히 정보주체
             또는 제3자의 급박한 생명, 신체, 재산의 이익을 위하여 필요하다고
             인정되는 경우
-          </BulleItem>
-          <BulleItem>
+          </BulletItem>
+          <BulletItem isSmall={true}>
             통계작성 및 학술연구 등의 목적을 위하여 필요한 경우로서 특정 개인을
             알아 볼 수 없는 형태로 개인정보를 제공하는 경우
-          </BulleItem>
-          <BulleItem>
+          </BulletItem>
+          <BulletItem isSmall={true}>
             개인정보를 목적 외의 용도로 이용하거나 이를 제3자에게 제공하지
             아니하면 다른 법률에서 정하는 소관 업무를 수행할 수 없는 경우로서
             보호위원회의 심의·의결을 거친 경우
-          </BulleItem>
-          <BulleItem>
+          </BulletItem>
+          <BulletItem isSmall={true}>
             조약, 그 밖의 국제협정의 이행을 위하여 외국정보 또는 국제기구에
             제공하기 위하여 필요한 경우
-          </BulleItem>
-          <BulleItem>
+          </BulletItem>
+          <BulletItem isSmall={true}>
             범죄의 수사와 공소의 제기 및 유지를 위하여 필요한 경우
-          </BulleItem>
-          <BulleItem>
+          </BulletItem>
+          <BulletItem isSmall={true}>
             범죄의 수사와 공소의 제기 및 유지를 위하여 필요한 경우
-          </BulleItem>
-          <BulleItem>
+          </BulletItem>
+          <BulletItem isSmall={true}>
             형 및 감호, 보호처분의 집행을 위하여 필요한 경우
-          </BulleItem>
-        </S.BulleItemWrap>
+          </BulletItem>
+        </S.BulletItemWrap>
       </S.PolicyContentBox>
       <S.PolicyContentBox>
         <S.PolicyTitle>제 5조 (개인정보의 처리 위탁에 관한 사항)</S.PolicyTitle>
@@ -155,12 +159,16 @@ const PrivacyPolicy = () => (
           광주소프트웨어마이스터고등학교는 개인정보의 처리 업무를 위탁하는 경우
           다음의 내용이 포함된 문서에 의하여 처리하고 있습니다.
         </S.SubTitle>
-        <S.BulleItemWrap>
-          <BulleItem>
+        <S.BulletItemWrap>
+          <BulletItem isSmall={true}>
             위탁업무 수행 목적 외 개인정보의 처리 금지에 관한 사항
-          </BulleItem>
-          <BulleItem>개인정보의 관리적·기술적 보호조치에 관한 사항</BulleItem>
-          <BulleItem>개인정보의 안전관리에 관한 사항</BulleItem>
+          </BulletItem>
+          <BulletItem isSmall={true}>
+            개인정보의 관리적·기술적 보호조치에 관한 사항
+          </BulletItem>
+          <BulletItem isSmall={true}>
+            개인정보의 안전관리에 관한 사항
+          </BulletItem>
           <S.MiniTitle>
             <span>-</span>
             위탁업무의 목적 및 범위, 재 위탁 제한에 관한 사항, 개인정보 안전성
@@ -168,7 +176,7 @@ const PrivacyPolicy = () => (
             관리현황점검 등 감독에 관한 사항, 수탁자가 준수하여야할 의무를
             위반한 경우의 손해배상책임에 관한 사항
           </S.MiniTitle>
-        </S.BulleItemWrap>
+        </S.BulletItemWrap>
         <SecondTable />
       </S.PolicyContentBox>
       <S.PolicyContentBox>
@@ -180,12 +188,12 @@ const PrivacyPolicy = () => (
           광주소프트웨어마이스터고등학교는 개인정보의 처리 업무를 위탁하는 경우
           다음의 내용이 포함된 문서에 의하여 처리하고 있습니다.
         </S.SubTitle>
-        <S.BulleItemWrap>
-          <BulleItem>개인정보 열람요구</BulleItem>
-          <BulleItem>오류 등이 있을 경우 정정 요구</BulleItem>
-          <BulleItem>삭제요구</BulleItem>
-          <BulleItem>처리정지 요구</BulleItem>
-        </S.BulleItemWrap>
+        <S.BulletItemWrap>
+          <BulletItem isSmall={true}>개인정보 열람요구</BulletItem>
+          <BulletItem isSmall={true}>오류 등이 있을 경우 정정 요구</BulletItem>
+          <BulletItem isSmall={true}>삭제요구</BulletItem>
+          <BulletItem isSmall={true}>처리정지 요구</BulletItem>
+        </S.BulletItemWrap>
         <S.SubTitle>
           <span>2&nbsp;.&nbsp;</span>
           제1항에 따른 권리 행사는 개인정보보호법 시행규칙 별지 제8호 서식에
@@ -244,8 +252,8 @@ const PrivacyPolicy = () => (
           하는 경우에는 그러하지 않을 수 있습니다. 파기의 절차, 기한 및 방법은
           다음과 같습니다.
         </S.SubTitle>
-        <S.BulleItemWrap>
-          <BulleItem>파기절차</BulleItem>
+        <S.BulletItemWrap>
+          <BulletItem isSmall={true}>파기절차</BulletItem>
           <S.MiniTitle isPadding={true}>
             <span>-</span>
             불필요한 개인정보 및 개인정보파일은 개인정보책임자의 책임 하에
@@ -278,7 +286,7 @@ const PrivacyPolicy = () => (
             종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여
             파기합니다.
           </S.MiniTitle>
-          <BulleItem>파기방법</BulleItem>
+          <BulletItem isSmall={true}>파기방법</BulletItem>
           <S.MiniTitle isPadding={true}>
             <span>-</span>
             전자적 형태의 정보는 기록을 재생할 수 없는 기술적 방법을 사용합니다.
@@ -288,7 +296,7 @@ const PrivacyPolicy = () => (
             종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여
             파기합니다.
           </S.MiniTitle>
-        </S.BulleItemWrap>
+        </S.BulletItemWrap>
       </S.PolicyContentBox>
       <S.PolicyContentBox>
         <S.PolicyTitle>제 9조 (개인정보 안정성 확보조치)</S.PolicyTitle>
@@ -299,38 +307,38 @@ const PrivacyPolicy = () => (
           하는 경우에는 그러하지 않을 수 있습니다. 파기의 절차, 기한 및 방법은
           다음과 같습니다.
         </S.SubTitle>
-        <S.BulleItemWrap>
-          <BulleItem>
+        <S.BulletItemWrap>
+          <BulletItem isSmall={true}>
             개인정보 취급 직원의 최소화 및 교육 개인정보를 취급하는 직원은
             반드시 필요한 인원에 한하여 지정 관리하고 있으며, 취급직원을
             대상으로 안전한 관리를 위한 교육을 실시하고 있습니다.
-          </BulleItem>
-          <BulleItem>
+          </BulletItem>
+          <BulletItem isSmall={true}>
             개인정보에 대한 접근 제한 개인정보를 처리하는 개인정보처리시스템에
             대한 접근권한의 부여, 변경, 말소를 통하여 개인정보에 대한 접근통제를
             위한 필요한 조치를 하고 있으며 침입차단시스템을 이용하여
             외부로부터의 무단 접근을 통제하고 있습니다.
-          </BulleItem>
-          <BulleItem>
+          </BulletItem>
+          <BulletItem isSmall={true}>
             접속기록의 보관 개인정보처리시스템에 접속한 기록을 최소 6개월 이상
             보관하고 있습니다.
-          </BulleItem>
-          <BulleItem>
+          </BulletItem>
+          <BulletItem isSmall={true}>
             개인정보의 암호화 개인정보는 암호화 등을 통해 안전하게 저장 및
             관리되고 있습니다. 또한 중요한 데이터는 저장 및 전송 시 암호화하여
             사용하는 등의 별도 보안기능을 사용하고 있습니다.
-          </BulleItem>
-          <BulleItem>
+          </BulletItem>
+          <BulletItem isSmall={true}>
             보안프로그램 설치 및 주기적 점검 갱신 해킹이나 컴퓨터 바이러스 등에
             의한 개인정보 유출 및 훼손을 막기 위하여 보안프로그램을 설치하고,
             주기적인 갱신·점검하고 있습니다.
-          </BulleItem>
-          <BulleItem>
+          </BulletItem>
+          <BulletItem isSmall={true}>
             비인가자에 대한 출입 통제 개인정보를 보관하고 있는
             개인정보처리시스템의 물리적 보관 장소를 별도로 두고 이에 대해
             출입통제 절차를 수립, 운영하고 있습니다.
-          </BulleItem>
-        </S.BulleItemWrap>
+          </BulletItem>
+        </S.BulletItemWrap>
       </S.PolicyContentBox>
       <S.PolicyContentBox>
         <S.PolicyTitle>제 10조 (권익침해 구제방법)</S.PolicyTitle>

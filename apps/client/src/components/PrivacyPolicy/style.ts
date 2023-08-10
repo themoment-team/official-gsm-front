@@ -73,7 +73,7 @@ export const PolicyContentBox = styled(ContentBoxTemplate)`
   gap: 0.25rem;
 `;
 
-export const BulleItemWrap = styled.div`
+export const BulletItemWrap = styled.div`
   padding-left: 1.25rem;
 
   > p {
