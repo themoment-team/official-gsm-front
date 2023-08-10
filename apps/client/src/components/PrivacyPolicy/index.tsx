@@ -8,7 +8,7 @@ import FifthTable from './FifthTable';
 import FirstTable from './FirstTable';
 import FourthTable from './FourthTable';
 import SecondTable from './SecondTable';
-import SixthTable from './Sixth';
+import SixthTable from './SixthTable';
 import ThirdTable from './ThirdTable';
 import * as S from './style';
 
