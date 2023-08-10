@@ -12,7 +12,6 @@ export const ContentBox = styled.div`
   width: 77.5rem;
   height: 44.75rem;
   display: flex;
-  align-items: left;
   flex-direction: column;
   justify-content: space-between;
 `;
@@ -65,16 +64,13 @@ export const OntheWayBox = styled.div`
 export const Address = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 0.5rem;
 `;
 
 export const Subtitle = styled.div`
+  ${({ theme }) => theme.typo.h4};
   color: ${({ theme }) => theme.color.primary.navy};
-  font-size: 1.25rem;
-  font-style: normal;
   font-weight: 700;
-  line-height: 1.8125rem;
 `;
 
 export const Desc = styled.div`
@@ -87,7 +83,6 @@ export const Desc = styled.div`
 export const Contact = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 0.5rem;
 `;
 
