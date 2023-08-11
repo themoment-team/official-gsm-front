@@ -6,7 +6,10 @@ import * as S from './style';
 
 const PromotionVideo = () => (
   <S.VideoWrapper>
-    <S.Video src='/video/promotion.mp4' autoPlay loop muted playsInline />
+    <S.Video autoPlay loop muted playsInline>
+      <source src='/video/promotion.webm' type='video/webm' />
+      <source src='/video/promotion.mp4' type='video/mp4' />
+    </S.Video>
     <S.VideoCover>
       <Scroll isPromotion={true} />
     </S.VideoCover>
