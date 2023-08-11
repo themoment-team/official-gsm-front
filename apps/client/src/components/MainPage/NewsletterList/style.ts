@@ -26,7 +26,7 @@ export const NewsletterList = styled.div`
       background-color: ${({ theme: { color } }) => color.primary.lime};
       color: ${({ theme }) => theme.color.sub.green};
     }
-    p {
+    & > div:nth-of-type(1) > p {
       color: ${({ theme }) => theme.color.sub.green};
     }
   }
