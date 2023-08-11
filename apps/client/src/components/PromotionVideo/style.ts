@@ -9,12 +9,7 @@ export const VideoWrapper = styled.div`
   z-index: 0;
   display: flex;
   justify-content: center;
-`;
-
-export const Video = styled.video`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background-color: ${({ theme }) => theme.color.black};
 `;
 
 export const VideoCover = styled.div`
