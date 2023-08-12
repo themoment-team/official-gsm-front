@@ -1,14 +1,9 @@
 'use client';
 
-import dynamic from 'next/dynamic';
-
 import { Scroll } from 'client/components';
 
+import Video from './Video';
 import * as S from './style';
-
-const Video = dynamic(() => import('./Video'), {
-  ssr: false,
-});
 
 const PromotionVideo = () => (
   <S.VideoWrapper>
