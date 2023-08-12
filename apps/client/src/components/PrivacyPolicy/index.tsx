@@ -38,12 +38,12 @@ const PrivacyPolicy = () => (
       <S.PolicyContentBox>
         <S.PolicyTitle>제 1조 (개인정보의 처리 목적)</S.PolicyTitle>
         <S.SubTitle>
-          <span>1&nbsp;.&nbsp;</span> 광주소프트웨어마이스터고등학교는 대국민
-          서비스 제공 및 민원처리, 소관업무 수행 등의 목적으로 필요에 의한
-          최소한의 개인정보를 수집하고 있습니다.
+          <span>1.&nbsp;</span> 광주소프트웨어마이스터고등학교는 대국민 서비스
+          제공 및 민원처리, 소관업무 수행 등의 목적으로 필요에 의한 최소한의
+          개인정보를 수집하고 있습니다.
         </S.SubTitle>
         <S.SubTitle>
-          <span>2&nbsp;.&nbsp;</span> 제1항에 대한 사항은
+          <span>2.&nbsp;</span> 제1항에 대한 사항은
           광주소프트웨어마이스터고등학교 및 각 부서에서 운영하는 소관업무
           홈페이지에 게재하여 정보주체가 확인할 수 있도록 안내를 하고 있습니다.
         </S.SubTitle>
@@ -51,19 +51,19 @@ const PrivacyPolicy = () => (
       <S.PolicyContentBox>
         <S.PolicyTitle>제 2조 (개인정보의 처리 및 보유기간)</S.PolicyTitle>
         <S.SubTitle>
-          <span>1&nbsp;.&nbsp;</span> 광주소프트웨어마이스터고등학교에서
-          처리하는 개인정보는 수집 이용 목적으로 명시한 범위 내에서 처리하며,
+          <span>1.&nbsp;</span> 광주소프트웨어마이스터고등학교에서 처리하는
+          개인정보는 수집 이용 목적으로 명시한 범위 내에서 처리하며,
           개인정보보호법 및 관련 법령에서 정하는 보유기간을 준용하여 이행하고
           있습니다.
         </S.SubTitle>
         <S.SubTitle>
-          <span>2&nbsp;.&nbsp;</span> 개인정보파일은 연1회 조사하여 대장
-          정비하며, 이후 등록 대상 발생 건은 별도 처리합니다.
+          <span>2.&nbsp;</span> 개인정보파일은 연1회 조사하여 대장 정비하며,
+          이후 등록 대상 발생 건은 별도 처리합니다.
         </S.SubTitle>
         <S.SubTitle>
-          <span>3&nbsp;.&nbsp;</span> 광주소프트웨어마이스터고등학교는 각
-          부서에서 운영하는 소관업무 및 홈페이지를 통해서 수집 보유하고 있는
-          주요 개인정보파일을 다음과 같이 안내하고 있습니다.
+          <span>3.&nbsp;</span> 광주소프트웨어마이스터고등학교는 각 부서에서
+          운영하는 소관업무 및 홈페이지를 통해서 수집 보유하고 있는 주요
+          개인정보파일을 다음과 같이 안내하고 있습니다.
         </S.SubTitle>
         <S.SubTitle>
           [ 세부 내용은 개인정보보호 포털(https://www.privacy.go.kr) ▶
@@ -78,12 +78,12 @@ const PrivacyPolicy = () => (
           제 3조 (개인정보 자동 수집 장치의 설치,운영 및 거부에 관한 사항)
         </S.PolicyTitle>
         <S.SubTitle>
-          <span>1&nbsp;.&nbsp;</span>
+          <span>1.&nbsp;</span>
           광주소프트웨어마이스터고등학교 홈페이지 이용자에게 서비스를 제공하기
           위해 이용정보를 저장하고 수시로 불러오는 ‘쿠키(cookie)’를 사용합니다.
         </S.SubTitle>
         <S.SubTitle>
-          <span>2&nbsp;.&nbsp;</span>
+          <span>2.&nbsp;</span>
           쿠키는 웹사이트를 운영하는데 이용되는 서버(http)가 이용자의 컴퓨터
           브라우저에게 보내는 소량의 정보이며 이용자들의 PC 컴퓨터내의
           하드디스크에 저장되기도 합니다.
@@ -109,7 +109,7 @@ const PrivacyPolicy = () => (
           제 4조 (개인정보 자동 수집 장치의 설치,운영 및 거부에 관한 사항)
         </S.PolicyTitle>
         <S.SubTitle>
-          <span>1&nbsp;.&nbsp;</span>
+          <span>1.&nbsp;</span>
           광주소프트웨어마이스터고등학교는 원칙적으로 정보주체의 개인정보를
           수집·이용 목적으로 명시한 범위 내에서 처리하며, 다음의 경우를
           제외하고는 정보주체의 사전 동의 없이는 본래의 목적 범위를 초과하여
@@ -155,7 +155,7 @@ const PrivacyPolicy = () => (
       <S.PolicyContentBox>
         <S.PolicyTitle>제 5조 (개인정보의 처리 위탁에 관한 사항)</S.PolicyTitle>
         <S.SubTitle>
-          <span>1&nbsp;.&nbsp;</span>
+          <span>1.&nbsp;</span>
           광주소프트웨어마이스터고등학교는 개인정보의 처리 업무를 위탁하는 경우
           다음의 내용이 포함된 문서에 의하여 처리하고 있습니다.
         </S.SubTitle>
@@ -184,7 +184,7 @@ const PrivacyPolicy = () => (
           제 6조 (정보추제의 권리, 의무 및 그 행사방법에 관한 사항)
         </S.PolicyTitle>
         <S.SubTitle>
-          <span>1&nbsp;.&nbsp;</span>
+          <span>1.&nbsp;</span>
           광주소프트웨어마이스터고등학교는 개인정보의 처리 업무를 위탁하는 경우
           다음의 내용이 포함된 문서에 의하여 처리하고 있습니다.
         </S.SubTitle>
@@ -195,40 +195,40 @@ const PrivacyPolicy = () => (
           <BulletItem isSmall={true}>처리정지 요구</BulletItem>
         </S.BulletItemWrap>
         <S.SubTitle>
-          <span>2&nbsp;.&nbsp;</span>
+          <span>2.&nbsp;</span>
           제1항에 따른 권리 행사는 개인정보보호법 시행규칙 별지 제8호 서식에
           따라 작성 후 서면 전자우편, 모사전송(FAX) 등을 통하여 하실 수 있으며,
           기관은 이에 대해 지체 없이 조치하겠습니다.
         </S.SubTitle>
         <S.SubTitle>
-          <span>3&nbsp;.&nbsp;</span>
+          <span>3.&nbsp;</span>
           정보주체가 개인정보의 오류 등에 대한 정정 또는 삭제를 요구한 경우에는
           정정 또는 삭제를 완료할 때까지 당해 개인정보를 이용하거나 제공하지
           않겠습니다.
         </S.SubTitle>
         <S.SubTitle>
-          <span>4&nbsp;.&nbsp;</span>
+          <span>4.&nbsp;</span>
           제1항에 따른 권리 행사는 정보주체의 법정대리인이나 위임을 받은 자 등
           대리인을 통하여 하실 수 있습니다. 이 경우 개인정보보호법 시행규칙 별제
           제11호 서식에 따른 위임장을 제출하셔야 합니다.
         </S.SubTitle>
         <S.SubTitle>
-          <span>5&nbsp;.&nbsp;</span>
+          <span>5.&nbsp;</span>
           개인정보 열람 및 처리정지 요구는 개인정보보호법 제35조 제5항, 제37조
           제2항에 의하여 정보주체의 권리를 제한 할 수 있습니다.
         </S.SubTitle>
         <S.SubTitle>
-          <span>6&nbsp;.&nbsp;</span>
+          <span>6.&nbsp;</span>
           개인정보의 정정 및 삭제 요구는 다른 법령에서 그 개인정보가 수집
           대상으로 명시되어 있는 경우에는 그 삭제를 요구할 수 없습니다.
         </S.SubTitle>
         <S.SubTitle>
-          <span>7&nbsp;.&nbsp;</span>
+          <span>7.&nbsp;</span>
           정보주체 권리에 따른 열람의 요구, 정정·삭제의 요구, 처리정지의 요구 시
           열람 등 요구를 한 자가 본인이거나 정당한 대리인인지를 확인합니다.
         </S.SubTitle>
         <S.SubTitle>
-          <span>8&nbsp;.&nbsp;</span>
+          <span>8.&nbsp;</span>
           광주소프트웨어마이스터고등학교에서 보유중인 개인정보파일의 열람,
           정정ㆍ삭제, 처리정지 요구 등을 접수ㆍ처리하는 해당 부서는 다음과
           같습니다.
@@ -246,7 +246,7 @@ const PrivacyPolicy = () => (
       <S.PolicyContentBox>
         <S.PolicyTitle>제 8조 (개인정보 파기절차 및 방법)</S.PolicyTitle>
         <S.SubTitle>
-          <span>1&nbsp;.&nbsp;</span>
+          <span>1.&nbsp;</span>
           광주소프트웨어마이스터고등학교는 원칙적으로 개인정보 처리목적이 달성된
           개인정보는 지체 없이 파기합니다. 다만, 다른 법령에 따라 보존하여야
           하는 경우에는 그러하지 않을 수 있습니다. 파기의 절차, 기한 및 방법은
@@ -301,7 +301,7 @@ const PrivacyPolicy = () => (
       <S.PolicyContentBox>
         <S.PolicyTitle>제 9조 (개인정보 안정성 확보조치)</S.PolicyTitle>
         <S.SubTitle>
-          <span>1&nbsp;.&nbsp;</span>
+          <span>1.&nbsp;</span>
           광주소프트웨어마이스터고등학교는 원칙적으로 개인정보 처리목적이 달성된
           개인정보는 지체 없이 파기합니다. 다만, 다른 법령에 따라 보존하여야
           하는 경우에는 그러하지 않을 수 있습니다. 파기의 절차, 기한 및 방법은
@@ -354,14 +354,14 @@ const PrivacyPolicy = () => (
           제 11조 (개인정보보호 (분야별) 책임자 및 담당자 연락처)
         </S.PolicyTitle>
         <S.SubTitle>
-          <span>1&nbsp;.&nbsp;</span>
+          <span>1.&nbsp;</span>
           광주소프트웨어마이스터고등학교는 개인정보를 보호하고 개인정보와 관련한
           불만을 처리하기 위하여 아래와 같이 개인정보 보호책임자 및 담당자를
           지정하고 있습니다.
         </S.SubTitle>
         <FifthTable />
         <S.SubTitle>
-          <span>2&nbsp;.&nbsp;</span>
+          <span>2.&nbsp;</span>
           광주소프트웨어마이스터고등학교는 각 부서의 장을 개인정보보호 분야별
           책임자로 아래와 같이 지정하고 있습니다.
         </S.SubTitle>
