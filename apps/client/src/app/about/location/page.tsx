@@ -1,4 +1,4 @@
-import { SearchLocation, Header, Footer } from 'client/components';
+import { Location, Header, Footer } from 'client/components';
 
 import type { Metadata } from 'next';
 
@@ -14,11 +14,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function SearchLocationPage() {
+export default function locationPage() {
   return (
     <>
       <Header segment='about' />
-      <SearchLocation />
+      <Location />
       <Footer />
     </>
   );

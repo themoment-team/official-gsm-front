@@ -5,8 +5,8 @@ import * as I from 'client/assets';
 import Map from './Map';
 import * as S from './style';
 
-const SearchLocation = () => (
-  <S.SearchLocation>
+const Location = () => (
+  <S.Location>
     <S.ContentBox>
       <S.Title>🔍 찾아오시는 길</S.Title>
       <S.Line />
@@ -53,7 +53,7 @@ const SearchLocation = () => (
         </S.OntheWayBox>
       </S.MapContentBox>
     </S.ContentBox>
-  </S.SearchLocation>
+  </S.Location>
 );
 
-export default SearchLocation;
+export default Location;

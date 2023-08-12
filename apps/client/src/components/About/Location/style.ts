@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const SearchLocation = styled.div`
+export const Location = styled.div`
   width: 100vw;
   height: 80vh;
   display: flex;
