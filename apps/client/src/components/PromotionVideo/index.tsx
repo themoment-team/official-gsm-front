@@ -6,9 +6,7 @@ import { Scroll } from 'client/components';
 
 import * as S from './style';
 
-const Video = dynamic(() => import('./Video'), {
-  ssr: false,
-});
+const Video = dynamic(() => import('./Video'));
 
 const PromotionVideo = () => (
   <S.VideoWrapper>
