@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect } from 'react';
+
 import Image from 'next/image';
 
 import { BulletItem } from 'client/components';
@@ -26,56 +28,63 @@ const 재게시요청신청방법 = [
   '검토 후 YES였던 경우 중 재게시가 발생하게 되면 재게시 승인통보를 한다.',
 ];
 
-const CopyrightPolicy = () => (
-  <S.ContentWrapper>
-    <S.Section>
-      <S.Title>저작권신고 및 보호규정</S.Title>
-      <S.SubContentWrapper>
-        <S.RegularSubTitle>저작권신고 및 보호규정</S.RegularSubTitle>
-        <S.Description>
-          저작물의 무단 전재 및 배포시 저작권법 136조에 의거 최고 5년 이하의
-          징역 또는 5천만원 이하의 벌금에 처하거나 이를 병과 할 수 있습니다. 본
-          서비스는 게시된 저작물로 인하여 저작권을 침해받은 경우 이를 처리하기
-          위한 서비스입니다. 다음 사항을 참고하여 신고하여 주시기 바랍니다.
-        </S.Description>
-      </S.SubContentWrapper>
-      <S.SubContentWrapper>
-        <S.BoldSubTitle>저작권 신고 접수 수령인(담당자)</S.BoldSubTitle>
-        {저작관신고접수수령인정보.map((text, index) => (
-          <BulletItem key={index}>{text}</BulletItem>
-        ))}
-      </S.SubContentWrapper>
-      <S.SubContentWrapper>
-        <S.DownloadWrapper>
-          <S.BoldSubTitle>게시중단요청 신청</S.BoldSubTitle>
-          <S.DownloadButton>양식 다운로드</S.DownloadButton>
-        </S.DownloadWrapper>
-        {게시중단요청신청방법.map((text, index) => (
-          <BulletItem key={index}>{text}</BulletItem>
-        ))}
-      </S.SubContentWrapper>
-    </S.Section>
-    <S.Section>
+const CopyrightPolicy = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <S.ContentWrapper>
+      <S.Section>
+        <S.Title>저작권신고 및 보호규정</S.Title>
+        <S.SubContentWrapper>
+          <S.RegularSubTitle>저작권신고 및 보호규정</S.RegularSubTitle>
+          <S.Description>
+            저작물의 무단 전재 및 배포시 저작권법 136조에 의거 최고 5년 이하의
+            징역 또는 5천만원 이하의 벌금에 처하거나 이를 병과 할 수 있습니다.
+            본 서비스는 게시된 저작물로 인하여 저작권을 침해받은 경우 이를
+            처리하기 위한 서비스입니다. 다음 사항을 참고하여 신고하여 주시기
+            바랍니다.
+          </S.Description>
+        </S.SubContentWrapper>
+        <S.SubContentWrapper>
+          <S.BoldSubTitle>저작권 신고 접수 수령인(담당자)</S.BoldSubTitle>
+          {저작관신고접수수령인정보.map((text, index) => (
+            <BulletItem key={index}>{text}</BulletItem>
+          ))}
+        </S.SubContentWrapper>
+        <S.SubContentWrapper>
+          <S.DownloadWrapper>
+            <S.BoldSubTitle>게시중단요청 신청</S.BoldSubTitle>
+            <S.DownloadButton>양식 다운로드</S.DownloadButton>
+          </S.DownloadWrapper>
+          {게시중단요청신청방법.map((text, index) => (
+            <BulletItem key={index}>{text}</BulletItem>
+          ))}
+        </S.SubContentWrapper>
+      </S.Section>
+      <S.Section>
+        <Image
+          alt='개시중단요청 신청'
+          src='/images/policy/Copyright1.png'
+          width={1043}
+          height={511}
+        />
+        <S.SubContentWrapper>
+          <S.BoldSubTitle>재게시요청 신청</S.BoldSubTitle>
+          {재게시요청신청방법.map((text, index) => (
+            <BulletItem key={index}>{text}</BulletItem>
+          ))}
+        </S.SubContentWrapper>
+      </S.Section>
       <Image
-        alt='개시중단요청 신청'
-        src='/images/policy/Copyright1.png'
+        alt='재게시요청 신청'
+        src='/images/policy/Copyright2.png'
         width={1043}
         height={511}
       />
-      <S.SubContentWrapper>
-        <S.BoldSubTitle>재게시요청 신청</S.BoldSubTitle>
-        {재게시요청신청방법.map((text, index) => (
-          <BulletItem key={index}>{text}</BulletItem>
-        ))}
-      </S.SubContentWrapper>
-    </S.Section>
-    <Image
-      alt='재게시요청 신청'
-      src='/images/policy/Copyright2.png'
-      width={1043}
-      height={511}
-    />
-  </S.ContentWrapper>
-);
+    </S.ContentWrapper>
+  );
+};
 
 export default CopyrightPolicy;
