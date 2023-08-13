@@ -1,4 +1,4 @@
-import { Footer, Header, Media } from 'client/components';
+import { Footer, Header, MediaPolicy } from 'client/components';
 
 import type { Metadata } from 'next';
 
@@ -18,7 +18,7 @@ export default function cctvPage() {
   return (
     <>
       <Header segment='about' />
-      <Media />
+      <MediaPolicy />
       <Footer />
     </>
   );

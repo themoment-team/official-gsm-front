@@ -1,5 +1,6 @@
 export { default as AboutTitle } from './Title/About';
 export { default as AssembledPost } from './PostPage/AssembledPost';
+export { default as BulletItem } from './Policy/BulletItem';
 export { default as CategoryHeader } from './CategoryHeader';
 export { default as CurriculumCards } from './About/Section4/CurriculumCards';
 export { default as DesktopResponsive } from './About/Section5/DesktopResponsive';
@@ -16,7 +17,7 @@ export { default as MainPageContent } from './MainPage/Content';
 export { default as MainPageHeader } from './MainPage/Header';
 export { default as MainPageNewsletterList } from './MainPage/NewsletterList';
 export { default as MajorCard } from './About/Section5/MajorCard';
-export { default as Media } from './Policy/Media';
+export { default as MediaPolicy } from './Policy/Media';
 export { default as MobileResponsive } from './About/Section5/MobileResponsive';
 export { default as NavigationEvents } from './NavigationEvents';
 export { default as NewsTitle } from './Title/News';
