@@ -17,7 +17,7 @@ const GalleryCard: React.FC<GalleryCardProps> = ({
 }) => (
   <S.GalleryCard href={`/post/${postSeq}`}>
     <S.IMGWrapper>
-      <Image src={thumbnailUrl ?? ''} alt='content image' fill />
+      <Image src={thumbnailUrl ?? ''} alt='content image' fill sizes='400px' />
     </S.IMGWrapper>
     <S.TextBox>
       <S.Title className='text'>{postTitle}</S.Title>
