@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
 
+import Image from 'next/image';
+
 const Column = styled.div`
   display: flex;
   flex-direction: column;
@@ -10,6 +12,14 @@ export const ContentWrapper = styled(Column)`
   gap: 5rem;
   padding: 5rem 0 7.5rem;
   margin: 0 auto;
+
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    width: calc(100vw - 12.5rem);
+  }
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: calc(100vw - 7.5rem);
+  }
 `;
 
 export const Section = styled(Column)`
@@ -59,4 +69,13 @@ export const DownloadButton = styled.button`
   border-radius: 0.25rem;
   background: ${({ theme }) => theme.color.gray['040']};
   cursor: pointer;
+`;
+
+export const ImageWrapper = styled.div`
+  max-width: 65.1875rem;
+  width: 100%;
+`;
+
+export const PolicyImage = styled(Image)`
+  position: relative !important;
 `;
