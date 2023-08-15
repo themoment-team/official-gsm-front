@@ -5,12 +5,17 @@ import * as I from 'client/assets';
 import Map from './Map';
 import * as S from './style';
 
+const schoolCoordinate = {
+  latitude: 35.14273861528659,
+  longitude: 126.80073120716628,
+} as const;
+
 const Location = () => (
   <S.Location>
     <S.ContentBox>
       <S.Title>🔍 찾아오시는 길</S.Title>
       <S.Line />
-      <Map latitude={35.14280841629563} longitude={126.80069811685026} />
+      <Map {...schoolCoordinate} />
       <S.MapContentBox>
         <S.AddressAndContactBox>
           <S.Address>
