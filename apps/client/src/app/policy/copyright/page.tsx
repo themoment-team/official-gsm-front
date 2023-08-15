@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Copyright() {
+export default function CopyrightPage() {
   return (
     <>
       <Header segment='about' />
