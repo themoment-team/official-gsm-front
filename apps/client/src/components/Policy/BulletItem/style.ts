@@ -16,7 +16,7 @@ export const Bullet = styled.div<{ isDark: boolean }>`
 
 export const Text = styled.p`
   ${({ theme }) => theme.typo.h4}
-  width: 76.125rem;
+  width: 100%;
   font-weight: 400;
   color: ${({ theme }) => theme.color.gray['070']};
 `;
