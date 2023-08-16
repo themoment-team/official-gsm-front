@@ -1,4 +1,6 @@
-import { useEffect } from 'react';
+import { useRef } from 'react';
+
+import Script from 'next/script';
 
 import styled from '@emotion/styled';
 
@@ -14,49 +16,45 @@ declare global {
 }
 
 function Map({ latitude, longitude }: MapProps) {
-  useEffect(() => {
-    const mapScript = document.createElement('script');
+  const containerRef = useRef<HTMLDivElement>(null);
 
-    mapScript.async = true;
-    mapScript.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAOMAP_APPKEY}&autoload=false`;
+  const onLoadKakaoMap = () => {
+    window.kakao.maps.load(() => {
+      const options = {
+        center: new window.kakao.maps.LatLng(latitude, longitude),
+      };
 
-    document.head.appendChild(mapScript);
+      const map = new window.kakao.maps.Map(containerRef.current, options);
 
-    const onLoadKakaoMap = () => {
-      window.kakao.maps.load(() => {
-        const container = document.getElementById('map');
-        const options = {
-          center: new window.kakao.maps.LatLng(latitude, longitude),
-        };
-        const map = new window.kakao.maps.Map(container, options);
+      const markerPosition = new window.kakao.maps.LatLng(latitude, longitude);
 
-        const markerPosition = new window.kakao.maps.LatLng(
-          latitude,
-          longitude
-        );
-        const marker = new window.kakao.maps.Marker({
-          position: markerPosition,
-        });
-
-        const infowindow = new window.kakao.maps.InfoWindow({
-          content:
-            '<div style="width: 250px; padding: 10px;">광주 소프트웨어마이스터고등학교</div>',
-          removable: true,
-        });
-
-        window.kakao.maps.event.addListener(marker, 'click', function () {
-          infowindow.open(map, marker);
-        });
-
-        marker.setMap(map);
+      const marker = new window.kakao.maps.Marker({
+        position: markerPosition,
       });
-    };
-    mapScript.addEventListener('load', onLoadKakaoMap);
 
-    return () => mapScript.removeEventListener('load', onLoadKakaoMap);
-  }, [latitude, longitude]);
+      const infoWindow = new window.kakao.maps.InfoWindow({
+        content:
+          '<div style="width: 250px; padding: 10px;">광주소프트웨어마이스터고등학교</div>',
+        removable: true,
+      });
 
-  return <MapContainer id='map' />;
+      window.kakao.maps.event.addListener(marker, 'click', function () {
+        infoWindow.open(map, marker);
+      });
+
+      marker.setMap(map);
+    });
+  };
+
+  return (
+    <>
+      <Script
+        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAOMAP_APPKEY}&autoload=false`}
+        onLoad={onLoadKakaoMap}
+      />
+      <MapContainer id='map' ref={containerRef} />
+    </>
+  );
 }
 
 const MapContainer = styled.div`
