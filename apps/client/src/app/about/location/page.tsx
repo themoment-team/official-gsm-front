@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: '찾아오시는 길',
     description:
       '광주소프트웨어마이스터고등학교 공식 홈페이지 학교 소개 페이지입니다.',
-    url: 'https://official.hellogsm.kr/about',
+    url: 'https://official.hellogsm.kr/about/location',
   },
 };
 
