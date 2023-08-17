@@ -1,6 +1,8 @@
 export { default as AboutTitle } from './Title/About';
 export { default as AssembledPost } from './PostPage/AssembledPost';
+export { default as BulletItem } from './Policy/BulletItem';
 export { default as CategoryHeader } from './CategoryHeader';
+export { default as CopyrightPolicy } from './Policy/Copyright';
 export { default as CurriculumCards } from './About/Section4/CurriculumCards';
 export { default as DesktopResponsive } from './About/Section5/DesktopResponsive';
 export { default as EducationDirection } from './About/Section3/EducationDirection';
