@@ -39,7 +39,7 @@ $ pnpm client dev
 
 ## Skill set
 
-```md
+```txt
 - application
   Next.js - App Router
 
