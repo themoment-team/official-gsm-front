@@ -1,6 +1,5 @@
 import { BulletItem } from 'client/components';
-
-import * as S from './style';
+import * as S from 'client/components/Policy/PrivacyPolicy/style';
 
 const Policy9 = () => (
   <S.PolicyContentBox>

@@ -1,4 +1,6 @@
-import * as S from './style';
+import * as S from 'client/components/Policy/PrivacyPolicy/style';
+
+import * as T from './style';
 
 const Policy10 = () => (
   <S.PolicyContentBox>
@@ -8,29 +10,29 @@ const Policy10 = () => (
       분쟁조정위원회, 한국인터넷진흥원 개인정보침해 신고센터 등에 분쟁해결이나
       상담 등을 신청할 수 있습니다.
     </S.SubTitle>
-    <S.TableTitle>
-      <S.TableTitleContent>구분</S.TableTitleContent>
-      <S.TableTitleContent>홈페이지</S.TableTitleContent>
-      <S.TableTitleContent>전화</S.TableTitleContent>
-      <S.TableContent>
-        <S.TableRowContent>
+    <T.TableTitle>
+      <T.TableTitleContent>구분</T.TableTitleContent>
+      <T.TableTitleContent>홈페이지</T.TableTitleContent>
+      <T.TableTitleContent>전화</T.TableTitleContent>
+      <T.TableContent>
+        <T.TableRowContent>
           개인정보 침해신고센터(한국인터넷진흥원 운영)
-        </S.TableRowContent>
-        <S.TableRowContent>http://privacy.kisa.or.kr</S.TableRowContent>
-        <S.TableRowContent>(국번없이) 118</S.TableRowContent>
-        <S.TableRowContent>
+        </T.TableRowContent>
+        <T.TableRowContent>http://privacy.kisa.or.kr</T.TableRowContent>
+        <T.TableRowContent>(국번없이) 118</T.TableRowContent>
+        <T.TableRowContent>
           개인정보 분쟁조정위원회(개인정보보호위원회 운영)
-        </S.TableRowContent>
-        <S.TableRowContent>http://www.kopico.go.kr</S.TableRowContent>
-        <S.TableRowContent>1833-6972</S.TableRowContent>
-        <S.TableRowContent>경찰청 사이버안전국</S.TableRowContent>
-        <S.TableRowContent>http://cyberbureau.police.go.kr</S.TableRowContent>
-        <S.TableRowContent>(국번없이) 182</S.TableRowContent>
-        <S.TableRowContent>대검찰청 사이버수사과</S.TableRowContent>
-        <S.TableRowContent>http://www.spo.go.kr</S.TableRowContent>
-        <S.TableRowContent>(국번없이) 130118</S.TableRowContent>
-      </S.TableContent>
-    </S.TableTitle>
+        </T.TableRowContent>
+        <T.TableRowContent>http://www.kopico.go.kr</T.TableRowContent>
+        <T.TableRowContent>1833-6972</T.TableRowContent>
+        <T.TableRowContent>경찰청 사이버안전국</T.TableRowContent>
+        <T.TableRowContent>http://cyberbureau.police.go.kr</T.TableRowContent>
+        <T.TableRowContent>(국번없이) 182</T.TableRowContent>
+        <T.TableRowContent>대검찰청 사이버수사과</T.TableRowContent>
+        <T.TableRowContent>http://www.spo.go.kr</T.TableRowContent>
+        <T.TableRowContent>(국번없이) 130118</T.TableRowContent>
+      </T.TableContent>
+    </T.TableTitle>
   </S.PolicyContentBox>
 );
 

@@ -6,22 +6,20 @@ export const SectionWrap = styled.div`
 
 export const Title = styled.h1`
   color: ${({ theme }) => theme.color.gray['090']};
-  font-size: 2.125rem;
+  ${({ theme }) => theme.typo.h2}
   font-weight: 600;
-  line-height: 3.125rem;
   margin-bottom: 3.5rem;
   padding-left: 0.5rem;
 `;
 
 export const IntroTitle = styled.h2`
   color: ${({ theme }) => theme.color.gray['090']};
-  font-size: 1.5rem;
+  ${({ theme }) => theme.typo.h3}
   font-weight: 400;
-  line-height: 2.25rem;
 `;
 
 export const PolicyTitle = styled.h2`
-  font-size: 1.5rem;
+  ${({ theme }) => theme.typo.h3}
   color: ${({ theme }) => theme.color.gray['090']};
   font-weight: 600;
   padding-bottom: 0.25rem;
@@ -29,11 +27,9 @@ export const PolicyTitle = styled.h2`
 
 export const SubTitle = styled.p`
   color: ${({ theme }) => theme.color.gray['070']};
+  ${({ theme }) => theme.typo.h4}
   display: flex;
-  font-size: 1.25rem;
   font-weight: 400;
-  line-height: 1.8125rem;
-
   span {
     display: block;
   }
@@ -41,9 +37,8 @@ export const SubTitle = styled.p`
 
 export const MiniTitle = styled(SubTitle)<{ isPadding?: boolean }>`
   color: ${({ theme }) => theme.color.gray['070']};
+  ${({ theme }) => theme.typo.body1}
   display: flex;
-  font-size: 1rem;
-  line-height: 1.5rem;
   padding-bottom: ${({ isPadding }) => isPadding && '0.5rem'};
   > span {
     padding-right: 0.5rem;
@@ -87,9 +82,8 @@ export const BulletItemWrap = styled.div`
 
 export const StartDateTitle = styled.p`
   color: ${({ theme }) => theme.color.gray['070']};
-  font-size: 1.25rem;
+  ${({ theme }) => theme.typo.h4}
   font-weight: 600;
-  line-height: 1.8125rem;
   padding: 0.5rem 0 0.25rem 0;
 `;
 
@@ -99,9 +93,8 @@ export const DateTitle = styled(StartDateTitle)`
 
   > span {
     color: ${({ theme }) => theme.color.gray['060']};
-    font-size: 1rem;
+    ${({ theme }) => theme.typo.body1}
     font-weight: 600;
-    line-height: 1.5rem;
     padding-left: 0.75rem;
   }
 `;

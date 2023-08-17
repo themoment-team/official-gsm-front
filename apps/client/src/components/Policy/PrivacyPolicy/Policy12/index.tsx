@@ -1,4 +1,4 @@
-import * as S from './style';
+import * as S from 'client/components/Policy/PrivacyPolicy/style';
 
 const Policy12 = () => (
   <S.PolicyContentBox>

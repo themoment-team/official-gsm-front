@@ -1,6 +1,7 @@
 import { BulletItem } from 'client/components';
+import * as S from 'client/components/Policy/PrivacyPolicy/style';
 
-import * as S from './style';
+import * as T from './style';
 
 const Policy6 = () => (
   <S.PolicyContentBox>
@@ -55,14 +56,14 @@ const Policy6 = () => (
       광주소프트웨어마이스터고등학교에서 보유중인 개인정보파일의 열람,
       정정ㆍ삭제, 처리정지 요구 등을 접수ㆍ처리하는 해당 부서는 다음과 같습니다.
     </S.SubTitle>
-    <S.TableTitle>
-      <S.TableTitleContent>열람 요구 접수 처리부서명</S.TableTitleContent>
-      <S.TableTitleContent>개인정보파일명</S.TableTitleContent>
-      <S.TableTitleContent>문의처</S.TableTitleContent>
-      <S.TableContent>
-        <S.TableRowContent>행정실/각 학년부</S.TableRowContent>
-        <S.TableRowContent>학교생활기록부</S.TableRowContent>
-        <S.TableRowContent>
+    <T.TableTitle>
+      <T.TableTitleContent>열람 요구 접수 처리부서명</T.TableTitleContent>
+      <T.TableTitleContent>개인정보파일명</T.TableTitleContent>
+      <T.TableTitleContent>문의처</T.TableTitleContent>
+      <T.TableContent>
+        <T.TableRowContent>행정실/각 학년부</T.TableRowContent>
+        <T.TableRowContent>학교생활기록부</T.TableRowContent>
+        <T.TableRowContent>
           행정실062-949-6806
           <br />
           1학년 062-949-6813
@@ -70,36 +71,36 @@ const Policy6 = () => (
           2학년 062-949-6821
           <br />
           3학년 062-949-6834
-        </S.TableRowContent>
+        </T.TableRowContent>
 
-        <S.TableRowContent>보건실</S.TableRowContent>
-        <S.TableRowContent>학생건강기록부</S.TableRowContent>
-        <S.TableRowContent>062-949-6820</S.TableRowContent>
+        <T.TableRowContent>보건실</T.TableRowContent>
+        <T.TableRowContent>학생건강기록부</T.TableRowContent>
+        <T.TableRowContent>062-949-6820</T.TableRowContent>
 
-        <S.TableRowContent>각 학년부</S.TableRowContent>
-        <S.TableRowContent>학부모서비스 이용자 명단</S.TableRowContent>
-        <S.TableRowContent>
+        <T.TableRowContent>각 학년부</T.TableRowContent>
+        <T.TableRowContent>학부모서비스 이용자 명단</T.TableRowContent>
+        <T.TableRowContent>
           1학년 062-949-6813
           <br /> 2학년 062-949-6821
           <br /> 3학년 062-949-6834
-        </S.TableRowContent>
-        <S.TableRowContent>인문정보부</S.TableRowContent>
-        <S.TableRowContent>홈페이지 회원정보</S.TableRowContent>
-        <S.TableRowContent>062-949-6850</S.TableRowContent>
-        <S.TableRowContent>행정실</S.TableRowContent>
-        <S.TableRowContent>민원사무처리부</S.TableRowContent>
-        <S.TableRowContent>062-949-6806</S.TableRowContent>
-        <S.TableRowContent>행정실</S.TableRowContent>
-        <S.TableRowContent>학교운영위원회 명부</S.TableRowContent>
-        <S.TableRowContent>062-949-6804</S.TableRowContent>
-        <S.TableRowContent>행정실</S.TableRowContent>
-        <S.TableRowContent>스쿨뱅킹(CMS) 정보</S.TableRowContent>
-        <S.TableRowContent>062-949-6806</S.TableRowContent>
-        <S.TableRowContent>행정실</S.TableRowContent>
-        <S.TableRowContent>발전기금 기탁자 명부</S.TableRowContent>
-        <S.TableRowContent>062-949-6808</S.TableRowContent>
-      </S.TableContent>
-    </S.TableTitle>
+        </T.TableRowContent>
+        <T.TableRowContent>인문정보부</T.TableRowContent>
+        <T.TableRowContent>홈페이지 회원정보</T.TableRowContent>
+        <T.TableRowContent>062-949-6850</T.TableRowContent>
+        <T.TableRowContent>행정실</T.TableRowContent>
+        <T.TableRowContent>민원사무처리부</T.TableRowContent>
+        <T.TableRowContent>062-949-6806</T.TableRowContent>
+        <T.TableRowContent>행정실</T.TableRowContent>
+        <T.TableRowContent>학교운영위원회 명부</T.TableRowContent>
+        <T.TableRowContent>062-949-6804</T.TableRowContent>
+        <T.TableRowContent>행정실</T.TableRowContent>
+        <T.TableRowContent>스쿨뱅킹(CMS) 정보</T.TableRowContent>
+        <T.TableRowContent>062-949-6806</T.TableRowContent>
+        <T.TableRowContent>행정실</T.TableRowContent>
+        <T.TableRowContent>발전기금 기탁자 명부</T.TableRowContent>
+        <T.TableRowContent>062-949-6808</T.TableRowContent>
+      </T.TableContent>
+    </T.TableTitle>
   </S.PolicyContentBox>
 );
 

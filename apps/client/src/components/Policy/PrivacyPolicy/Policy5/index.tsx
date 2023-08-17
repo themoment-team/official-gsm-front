@@ -1,6 +1,7 @@
 import { BulletItem } from 'client/components';
+import * as S from 'client/components/Policy/PrivacyPolicy/style';
 
-import * as S from './style';
+import * as T from './style';
 
 const Policy5 = () => (
   <S.PolicyContentBox>
@@ -26,34 +27,34 @@ const Policy5 = () => (
         경우의 손해배상책임에 관한 사항
       </S.MiniTitle>
     </S.BulletItemWrap>
-    <S.TableTitle>
-      <S.TableTitleContent>위탁하는 업무의 내용</S.TableTitleContent>
-      <S.TableTitleContent>수탁 업체(명)</S.TableTitleContent>
-      <S.TableTitleContent>위탁 항목</S.TableTitleContent>
-      <S.TableContent>
-        <S.TableRowContent>
+    <T.TableTitle>
+      <T.TableTitleContent>위탁하는 업무의 내용</T.TableTitleContent>
+      <T.TableTitleContent>수탁 업체(명)</T.TableTitleContent>
+      <T.TableTitleContent>위탁 항목</T.TableTitleContent>
+      <T.TableContent>
+        <T.TableRowContent>
           광주소프트웨어마이스터고등학교
           <br /> 홈페이지 유지관리
-        </S.TableRowContent>
-        <S.TableRowContent>
+        </T.TableRowContent>
+        <T.TableRowContent>
           이름,학년,반,번호
           <br />※ 회원가입시 수집하는 항목
-        </S.TableRowContent>
-        <S.TableRowContent>더모먼트</S.TableRowContent>
-        <S.TableRowContent>방과후 학교 프로그램운영</S.TableRowContent>
-        <S.TableRowContent>
+        </T.TableRowContent>
+        <T.TableRowContent>더모먼트</T.TableRowContent>
+        <T.TableRowContent>방과후 학교 프로그램운영</T.TableRowContent>
+        <T.TableRowContent>
           이름,학년,반,번호,학생개인연락처,부 또는 모 성함 및 연락처
           <br />※ 위탁시 제공하는 항목
-        </S.TableRowContent>
-        <S.TableRowContent>
+        </T.TableRowContent>
+        <T.TableRowContent>
           업체명: ㈜엑스메카
           <br />
           주소: 광주광역시 서구 천변좌로 268 KDB생명빌딩 2510호
           <br />
           전화번호: 062-374-9986
-        </S.TableRowContent>
-      </S.TableContent>
-    </S.TableTitle>
+        </T.TableRowContent>
+      </T.TableContent>
+    </T.TableTitle>
   </S.PolicyContentBox>
 );
 
