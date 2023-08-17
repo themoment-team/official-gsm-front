@@ -1,7 +1,5 @@
 'use client';
 
-import Image from 'next/image';
-
 import { BulletItem } from 'client/components';
 
 import * as S from './style';
@@ -63,12 +61,25 @@ const MediaPolicy = () => (
           귀하의 영상정보를 보호하고 개인영상정보와 관련한 불만을 처리하기
           위하여 아래와 같이 개인영상정보 보호책임자를 두고 있습니다.
         </S.Description>
-        <Image
-          alt='개시중단요청 신청'
-          src='/images/policy/Graph1.png'
-          width={1240}
-          height={156}
-        />
+        <S.TableTitle className='first'>
+          <S.TableTitleContent>구분</S.TableTitleContent>
+          <S.TableTitleContent>이름</S.TableTitleContent>
+          <S.TableTitleContent>소속</S.TableTitleContent>
+          <S.TableTitleContent>직위</S.TableTitleContent>
+          <S.TableTitleContent>연락처</S.TableTitleContent>
+          <S.TableContent className='first'>
+            <S.TableRowContent>관리책임자</S.TableRowContent>
+            <S.TableRowContent>이수연</S.TableRowContent>
+            <S.TableRowContent>실장</S.TableRowContent>
+            <S.TableRowContent>행정실</S.TableRowContent>
+            <S.TableRowContent>062-949-6803</S.TableRowContent>
+            <S.TableRowContent>접근관리자</S.TableRowContent>
+            <S.TableRowContent>장희연</S.TableRowContent>
+            <S.TableRowContent>주무관</S.TableRowContent>
+            <S.TableRowContent>행정실</S.TableRowContent>
+            <S.TableRowContent>062-949-6808</S.TableRowContent>
+          </S.TableContent>
+        </S.TableTitle>
       </S.SubContentWrapper>
       <S.SubContentWrapper>
         <S.BoldSubTitle>
@@ -79,12 +90,18 @@ const MediaPolicy = () => (
           요구에 관한 사항을 기록ㆍ관리하고, 보관기간 만료 시 복원이 불가능한
           방법으로 영구 삭제(출력물의 경우 파쇄 또는 소각)합니다.
         </BulletItem>
-        <Image
-          alt='개시중단요청 신청'
-          src='/images/policy/Graph2.png'
-          width={1240}
-          height={132}
-        />
+        <S.TableTitle className='second'>
+          <S.TableTitleContent>촬영시간</S.TableTitleContent>
+          <S.TableTitleContent>연락처</S.TableTitleContent>
+          <S.TableTitleContent>연락처</S.TableTitleContent>
+          <S.TableContent className='second'>
+            <S.TableRowContent>24시간</S.TableRowContent>
+            <S.TableRowContent>
+              - 촬영일로부터 20일 - 보유기관 경과 자동삭제
+            </S.TableRowContent>
+            <S.TableRowContent>중앙통제실(당직실)</S.TableRowContent>
+          </S.TableContent>
+        </S.TableTitle>
       </S.SubContentWrapper>
       <S.SubContentWrapper>
         <S.BoldSubTitle>
