@@ -12,6 +12,7 @@ export { default as Header } from './Header';
 export { default as IdealTalent } from './About/Section7/IdealTalent';
 export { default as LinkToHelloGSM } from './LinkToHelloGSM';
 export { default as ListPageContent } from './ListPageContent';
+export { default as Location } from './About/Location';
 export { default as MainPageContent } from './MainPage/Content';
 export { default as MainPageHeader } from './MainPage/Header';
 export { default as MainPageNewsletterList } from './MainPage/NewsletterList';
