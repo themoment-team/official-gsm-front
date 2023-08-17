@@ -18,6 +18,7 @@ const categoryTitle = {
 
 const PostDetailHead: React.FC<PostDetailHeadProps> = ({ postSeq }) => {
   const { data } = useGetPostDetail(postSeq);
+
   return (
     <>
       {data && (
@@ -34,4 +35,5 @@ const PostDetailHead: React.FC<PostDetailHeadProps> = ({ postSeq }) => {
     </>
   );
 };
+
 export default PostDetailHead;
