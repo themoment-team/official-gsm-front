@@ -11,11 +11,12 @@ export const ContentWrapper = styled(Column)`
   padding: 5rem 0 7.5rem;
   margin: 0 auto;
 
-  @media ${({ theme }) => theme.breakPoint['1024']} {
-    width: 56.5rem;
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    width: calc(100vw - 200px);
   }
-  @media ${({ theme }) => theme.breakPoint['600']} {
-    width: 30rem;
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: calc(100vw - 120px);
   }
 `;
 
