@@ -10,6 +10,13 @@ export const ContentWrapper = styled(Column)`
   gap: 5rem;
   padding: 5rem 0 7.5rem;
   margin: 0 auto;
+
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: 56.5rem;
+  }
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    width: 30rem;
+  }
 `;
 
 export const Section = styled(Column)`
