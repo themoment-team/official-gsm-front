@@ -55,7 +55,7 @@ export const TextBox = styled.div`
   }
 `;
 
-export const Text = styled.h5`
+export const Text = styled.p`
   font-weight: 600;
   ${({ theme: { typo } }) => typo.h5};
 `;
@@ -66,7 +66,7 @@ export const Title = styled.p`
   ${({ theme: { typo } }) => typo.title};
 `;
 
-export const Preview = styled.h4`
+export const Preview = styled.p`
   margin-top: 0.5rem;
   font-weight: 400;
   ${({ theme: { typo } }) => typo.h4};

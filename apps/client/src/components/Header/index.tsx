@@ -55,7 +55,7 @@ const Header: React.FC<HeaderProps> = ({
     >
       <S.HeaderInner>
         <h1>
-          <S.LogoLink href='/'>
+          <S.LogoLink href='/' aria-label='logo'>
             <HeaderGSMLogo isAbovePromotionVideo={isAbovePromotionVideo} />
           </S.LogoLink>
         </h1>
