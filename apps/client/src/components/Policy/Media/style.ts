@@ -26,10 +26,10 @@ export const Title = styled.h2`
 export const SubContentWrapper = styled(Column)`
   gap: 0.5rem;
   .first {
-    grid-template-columns: 320px 200px 200px 200px 320px;
+    grid-template-columns: 20rem 12.5rem 12.5rem 12.5rem 20rem;
   }
   .second {
-    grid-template-columns: 320px 520px 400px;
+    grid-template-columns: 20rem 32.5rem 25rem;
   }
   img {
     margin-top: 0.9375rem;
@@ -55,14 +55,14 @@ export const Description = styled.p`
 export const TableTitle = styled.div`
   display: grid;
   margin-top: 0.75rem;
-  grid-template-rows: 60px;
+  grid-template-rows: 3.75rem;
   .first {
-    grid-template-columns: 320px 200px 200px 200px 320px;
-    grid-template-rows: 48px 48px;
+    grid-template-columns: 20rem 12.5rem 12.5rem 12.5rem 20rem;
+    grid-template-rows: 3rem 3rem;
   }
   .second {
-    grid-template-columns: 320px 520px 400px;
-    grid-template-rows: 72px;
+    grid-template-columns: 20rem 32.5rem 25rem;
+    grid-template-rows: 4.5rem;
   }
 `;
 
