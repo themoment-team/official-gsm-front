@@ -50,7 +50,7 @@ export const generateMetadata = async ({
 
 async function getPostDetail(postSeq: number) {
   const res = await fetch(
-    `${process.env.CLIENT_API_URL}/api${postUrl.postDetail(postSeq)}`,
+    `${process.env.BASE_URL}/api/client${postUrl.postDetail(postSeq)}`,
     {
       next: {
         revalidate: 60,
