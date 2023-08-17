@@ -97,7 +97,8 @@ const MediaPolicy = () => (
           <S.TableContent className='second'>
             <S.TableRowContent>24시간</S.TableRowContent>
             <S.TableRowContent>
-              - 촬영일로부터 20일 - 보유기관 경과 자동삭제
+              - 촬영일로부터 20일
+              <br />- 보유기관 경과 자동삭제
             </S.TableRowContent>
             <S.TableRowContent>중앙통제실(당직실)</S.TableRowContent>
           </S.TableContent>
@@ -135,9 +136,15 @@ const MediaPolicy = () => (
         <S.BoldSubTitle>영상정보 처리방침 변경에 관한 사항</S.BoldSubTitle>
         {영상정보처리방침변경에관한사항.map((text, index) => (
           <BulletItem key={index}>
-            <pre style={index === 1 ? { textDecoration: 'underline' } : {}}>
+            <span
+              style={
+                index === 1
+                  ? { textDecoration: 'underline', whiteSpace: 'pre-wrap' }
+                  : { whiteSpace: 'pre-wrap' }
+              }
+            >
               {text}
-            </pre>
+            </span>
           </BulletItem>
         ))}
       </S.SubContentWrapper>
