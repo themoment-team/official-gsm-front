@@ -96,7 +96,7 @@ export const TableTitleContent = styled(TabelCellTemplate)`
 `;
 
 export const TableRowContent = styled(TabelCellTemplate)`
-  color: ${({ theme }) => theme.color.gray['070']};
   ${({ theme }) => theme.typo.body1};
+  color: ${({ theme }) => theme.color.gray['070']};
   font-weight: 400;
 `;
