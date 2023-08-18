@@ -36,7 +36,7 @@ const AssembledPost: React.FC<AssembledPostProps> = ({ postSeq, post }) => {
           }
         >
           <PostDetailHead postSeq={postSeq} />
-          {data.postContent && (
+          {(data.postContent || data.fileInfo.length > 0) && (
             <S.ContentWrapper>
               <PostContent postSeq={postSeq} />
               {data.fileInfo.length > 0 && (
