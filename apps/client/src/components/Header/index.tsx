@@ -10,6 +10,7 @@ import { css, useTheme } from '@emotion/react';
 
 import { HamburgerIcon, HeaderGSMLogo } from 'client/assets';
 import { HamburgerMenu } from 'client/components';
+import { useScrollToTop } from 'client/hooks';
 import { useGetWindowWidth } from 'client/hooks';
 
 import * as S from './style';
@@ -25,6 +26,8 @@ const Header: React.FC<HeaderProps> = ({
   segment,
   isAbovePromotionVideo = false,
 }) => {
+  useScrollToTop();
+
   const [isHamburgerMenuShow, setIsHamburgerMenuShow] =
     useState<boolean>(false);
 
