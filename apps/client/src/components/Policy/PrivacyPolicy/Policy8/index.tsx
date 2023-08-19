@@ -13,16 +13,16 @@ const Policy8 = () => (
     </S.SubTitle>
     <S.BulletItemWrap>
       <BulletItem isSmall={true}>파기절차</BulletItem>
-      <S.MiniTitle isPadding={true}>
+      <S.MiniTitle>
         <span>-</span>
         불필요한 개인정보 및 개인정보파일은 개인정보책임자의 책임 하에 내부방침
         절차에 따라 다음과 같이 처리하고 있습니다.
       </S.MiniTitle>
-      <S.MiniTitle isPadding={true}>
+      <S.MiniTitle>
         <span>-</span>
         개인정보의 파기
       </S.MiniTitle>
-      <S.MiniTitle isPadding={true}>
+      <S.MiniTitle>
         <span>-</span>
         보유기간이 경과한 개인정보는 종료일로부터 지체없이 파기합니다.
       </S.MiniTitle>
@@ -36,20 +36,12 @@ const Policy8 = () => (
         개인정보파일이 불필요하게 되었을 때에는 개인정보의 처리가 불필요한
         것으로 인정되는 날로부터 지체 없이 그 개인정보파일을 파기합니다.
       </S.MiniTitle>
-      <S.MiniTitle isPadding={true}>
-        <span>-</span>
-        전자적 형태의 정보는 기록을 재생할 수 없는 기술적 방법을 사용합니다.
-      </S.MiniTitle>
-      <S.MiniTitle isPadding={true}>
-        <span>-</span>
-        종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다.
-      </S.MiniTitle>
       <BulletItem isSmall={true}>파기방법</BulletItem>
-      <S.MiniTitle isPadding={true}>
+      <S.MiniTitle>
         <span>-</span>
         전자적 형태의 정보는 기록을 재생할 수 없는 기술적 방법을 사용합니다.
       </S.MiniTitle>
-      <S.MiniTitle isPadding={true}>
+      <S.MiniTitle>
         <span>-</span>
         종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다.
       </S.MiniTitle>

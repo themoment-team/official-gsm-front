@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const FifthTableTitle = styled.div`
   display: grid;
-  margin: 0.75rem 0 1.5rem 0;
+  margin: 1.25rem 0 1.25rem 0;
   grid-template-columns: 11.25rem 40rem 26.25rem;
   grid-template-rows: 3.75rem;
 `;
@@ -38,7 +38,7 @@ export const FifthTableRowContent = styled(FifthTableCellTemplate)`
 
 export const SixthTableTitle = styled.div`
   display: grid;
-  margin: 0.75rem 0 1.5rem 0;
+  margin: 0.75rem 0 0;
   grid-template-columns: 33.75rem 25.5rem 12.5rem 5.75rem;
   grid-template-rows: 3.75rem;
 `;

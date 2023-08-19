@@ -1,7 +1,19 @@
 import styled from '@emotion/styled';
 
 export const SectionWrap = styled.div`
-  margin: 5rem 24.75rem 7.5rem 24.75rem;
+  margin: 5rem 0 7.5rem 0;
+`;
+
+export const ContentWrap = styled.div`
+  width: 1248px;
+  margin: 0 auto;
+  padding-left: 0.5rem;
+`;
+
+export const PolicyContentWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
 `;
 
 export const Title = styled.h1`
@@ -22,7 +34,7 @@ export const PolicyTitle = styled.h2`
   ${({ theme }) => theme.typo.h3}
   color: ${({ theme }) => theme.color.gray['090']};
   font-weight: 600;
-  padding-bottom: 0.25rem;
+  padding-bottom: 4px;
 `;
 
 export const SubTitle = styled.p`
@@ -39,20 +51,10 @@ export const MiniTitle = styled(SubTitle)<{ isPadding?: boolean }>`
   color: ${({ theme }) => theme.color.gray['070']};
   ${({ theme }) => theme.typo.body1}
   display: flex;
-  padding-bottom: ${({ isPadding }) => isPadding && '0.5rem'};
+  padding-bottom: ${({ isPadding }) => isPadding && '2px'};
   > span {
     padding-right: 0.5rem;
   }
-`;
-
-export const PolicyContentWrap = styled.div`
-  width: 78.0625rem;
-  height: 417.5rem;
-
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  padding-left: 0.5rem;
 `;
 
 export const ContentBoxTemplate = styled.div`
@@ -65,18 +67,19 @@ export const IntroContentBox = styled(ContentBoxTemplate)`
 `;
 
 export const PolicyContentBox = styled(ContentBoxTemplate)`
-  gap: 0.25rem;
+  gap: 4px;
 `;
 
 export const BulletItemWrap = styled.div`
-  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding-top: 8px;
+  padding-left: 20px;
 
   > p {
     padding-left: 1.625rem;
-  }
-
-  div {
-    padding-bottom: 0.5rem;
   }
 `;
 
@@ -88,13 +91,18 @@ export const StartDateTitle = styled.p`
 `;
 
 export const DateTitle = styled(StartDateTitle)`
-  padding: 0;
   font-weight: 400;
-
+  padding: 0;
   > span {
     color: ${({ theme }) => theme.color.gray['060']};
     ${({ theme }) => theme.typo.body1}
     font-weight: 600;
     padding-left: 0.75rem;
   }
+`;
+
+export const DateTitleWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 `;

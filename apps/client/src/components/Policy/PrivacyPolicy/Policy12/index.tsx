@@ -8,26 +8,28 @@ const Policy12 = () => (
       아래에서 확인할 수 있습니다.
     </S.SubTitle>
     <S.StartDateTitle>시행일자 : 2022. 09. 28.</S.StartDateTitle>
-    <S.DateTitle>
-      2016. 7. 20. ~ 2017. 2. 28.
-      <span>개인정보처리방침 보기</span>
-    </S.DateTitle>
-    <S.DateTitle>
-      2016. 3. 01. ~ 2018. 2. 28.
-      <span>개인정보처리방침 보기</span>
-    </S.DateTitle>
-    <S.DateTitle>
-      2016. 3. 01. ~ 2018. 4. 1.
-      <span>개인정보처리방침 보기</span>
-    </S.DateTitle>
-    <S.DateTitle>
-      2016. 4. 02. ~ 2019. 3. 19.
-      <span>개인정보처리방침 보기</span>
-    </S.DateTitle>
-    <S.DateTitle>
-      2016. 3. 20. ~ 2019. 12. 1.
-      <span>개인정보처리방침 보기</span>
-    </S.DateTitle>
+    <S.DateTitleWrap>
+      <S.DateTitle>
+        2016. 7. 20. ~ 2017. 2. 28.
+        <span>개인정보처리방침 보기</span>
+      </S.DateTitle>
+      <S.DateTitle>
+        2016. 3. 01. ~ 2018. 2. 28.
+        <span>개인정보처리방침 보기</span>
+      </S.DateTitle>
+      <S.DateTitle>
+        2016. 3. 01. ~ 2018. 4. 1.
+        <span>개인정보처리방침 보기</span>
+      </S.DateTitle>
+      <S.DateTitle>
+        2016. 4. 02. ~ 2019. 3. 19.
+        <span>개인정보처리방침 보기</span>
+      </S.DateTitle>
+      <S.DateTitle>
+        2016. 3. 20. ~ 2019. 12. 1.
+        <span>개인정보처리방침 보기</span>
+      </S.DateTitle>
+    </S.DateTitleWrap>
   </S.PolicyContentBox>
 );
 
