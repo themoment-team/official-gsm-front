@@ -8,6 +8,13 @@ export const ContentWrap = styled.div`
   width: 1248px;
   margin: 0 auto;
   padding-left: 0.5rem;
+
+  @media ${({ theme }) => theme.breakPoint['1440']} {
+    width: calc(100vw - 12.5rem);
+  }
+  @media ${({ theme }) => theme.breakPoint['1024']} {
+    width: calc(100vw - 7.5rem);
+  }
 `;
 
 export const PolicyContentWrap = styled.div`
@@ -67,6 +74,7 @@ export const IntroContentBox = styled(ContentBoxTemplate)`
 `;
 
 export const PolicyContentBox = styled(ContentBoxTemplate)`
+  width: 100%;
   gap: 4px;
 `;
 
@@ -105,4 +113,12 @@ export const DateTitleWrap = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
+`;
+
+export const TableWrap = styled.div`
+  @media (max-width: 1400px) {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
 `;

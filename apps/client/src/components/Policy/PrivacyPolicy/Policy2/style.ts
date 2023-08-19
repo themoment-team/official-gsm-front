@@ -5,6 +5,20 @@ export const TableTitle = styled.div`
   margin-top: 0.75rem;
   grid-template-columns: 9rem 14.75rem 20rem 17.5rem 8rem 8.25rem;
   grid-template-rows: 4rem;
+
+  @media (max-width: 1400px) {
+    display: grid;
+    margin: 0;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-template-rows: 4rem;
+  }
+
+  @media (max-width: 900px) {
+    display: grid;
+    margin: 0;
+    grid-template-columns: 100%;
+    grid-template-rows: 4rem;
+  }
 `;
 
 export const TableContent = styled.div`
@@ -13,6 +27,24 @@ export const TableContent = styled.div`
 
   div {
     height: 4.25rem;
+  }
+
+  @media (max-width: 1400px) {
+    display: grid;
+    grid-template-columns: 100% 100% 100%;
+
+    div {
+      height: 4.25rem;
+    }
+  }
+
+  @media (max-width: 900px) {
+    display: grid;
+    grid-template-columns: 100%;
+
+    div {
+      height: 4.25rem;
+    }
   }
 `;
 

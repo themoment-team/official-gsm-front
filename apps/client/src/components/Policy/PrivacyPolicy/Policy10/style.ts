@@ -5,12 +5,38 @@ export const TableTitle = styled.div`
   margin-top: 0.75rem;
   grid-template-columns: 25rem 32.5rem 20rem;
   grid-template-rows: 3.75rem;
+
+  @media (max-width: 1400px) {
+    display: grid;
+    margin: 0;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    grid-template-rows: 3.75rem;
+  }
+
+  @media (max-width: 900px) {
+    display: grid;
+    margin: 0;
+    grid-template-columns: 100%;
+    grid-template-rows: 3.75rem;
+  }
 `;
 
 export const TableContent = styled.div`
   display: grid;
   grid-template-columns: 25rem 32.5rem 20rem;
   grid-template-rows: 3rem 3rem 3rem 3rem;
+
+  @media (max-width: 1400px) {
+    display: grid;
+    grid-template-columns: 100% 100% 100%;
+    grid-template-rows: 3rem 3rem 3rem 3rem;
+  }
+
+  @media (max-width: 900px) {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 3rem 3.75rem 3rem 3rem;
+  }
 `;
 
 export const TabelCellTemplate = styled.div`

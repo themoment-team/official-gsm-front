@@ -1,18 +1,48 @@
 import styled from '@emotion/styled';
 
-export const TableTitle = styled.div`
+export const TableTitle = styled.div<{ isOnly?: boolean }>`
   display: grid;
   margin-top: 0.75rem;
   grid-template-columns: 20rem 25.5rem 32rem;
   grid-template-rows: 3.75rem;
+
+  @media (max-width: 1400px) {
+    margin: 0;
+    display: grid;
+    grid-template-columns: ${({ isOnly }) => (isOnly ? '100%' : '50% 50%')};
+  }
+
+  @media (max-width: 900px) {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 100%;
+  }
 `;
 
-export const TableContent = styled.div`
+export const TableContent = styled.div<{ isOnly?: boolean }>`
   display: grid;
   grid-template-columns: 20rem 25.5rem 32rem;
 
   div {
     height: 6.25rem;
+  }
+
+  @media (max-width: 1400px) {
+    display: grid;
+    grid-template-columns: 100% 100%;
+
+    div {
+      height: 6.25rem;
+    }
+  }
+
+  @media (max-width: 900px) {
+    display: grid;
+    grid-template-columns: 100%;
+
+    div {
+      height: 6.25rem;
+    }
   }
 `;
 
