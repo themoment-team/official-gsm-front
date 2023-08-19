@@ -52,8 +52,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
   const { data } = useGetPostDetail(postSeq);
 
   const isGallery = category === 'EVENT_GALLERY';
-  const galleryEditDisabled =
-    isGallery && (prevFiles?.length || files.length) === 0;
+  const galleryEditDisabled = isGallery && !prevFiles?.length && !files.length;
 
   const {
     register,
