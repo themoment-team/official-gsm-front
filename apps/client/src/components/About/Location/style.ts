@@ -202,7 +202,7 @@ export const Circle = styled.div<{ isVisible?: boolean }>`
   background: ${({ theme }) => theme.color.primary.navy};
   border-radius: 100%;
   path {
-    stroke: white;
+    stroke: ${({ theme }) => theme.color.white};
   }
 `;
 
