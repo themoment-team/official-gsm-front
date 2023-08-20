@@ -6,7 +6,7 @@ export const TableTitle = styled.div<{ isOnly?: boolean }>`
   grid-template-columns: 20rem 25.5rem 32rem;
   grid-template-rows: 3.75rem;
 
-  @media (max-width: 1400px) {
+  @media ${({ theme }) => theme.breakPoint['1440']} {
     margin: 0;
     display: grid;
     grid-template-columns: ${({ isOnly }) => (isOnly ? '100%' : '50% 50%')};
@@ -27,7 +27,7 @@ export const TableContent = styled.div<{ isOnly?: boolean }>`
     height: 6.25rem;
   }
 
-  @media (max-width: 1400px) {
+  @media ${({ theme }) => theme.breakPoint['1440']} {
     display: grid;
     grid-template-columns: 100% 100%;
 

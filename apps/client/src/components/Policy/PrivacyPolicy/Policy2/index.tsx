@@ -1,6 +1,6 @@
 import * as S from 'client/components/Policy/PrivacyPolicy/style';
 
-import Table1400 from './Table1400';
+import Table1440 from './Table1440';
 import Table900 from './Table900';
 import * as T from './style';
 
@@ -33,7 +33,7 @@ const Policy2 = ({ width }: Props) => (
       광주소프트웨어마이스터고등학교 [개인정보파일 목록] 보기(클릭) ]
     </S.SubTitle>
     <S.TableWrap>
-      {width > 1400 && (
+      {width > 1440 && (
         <T.TableTitle>
           <T.TableTitleContent>개인정보 파일명</T.TableTitleContent>
           <T.TableTitleContent>보유목적</T.TableTitleContent>
@@ -150,7 +150,7 @@ const Policy2 = ({ width }: Props) => (
           </T.TableContent>
         </T.TableTitle>
       )}
-      {width < 1400 && width > 900 && <Table1400 />}
+      {width < 1440 && width > 900 && <Table1440 />}
       {width < 900 && <Table900 />}
     </S.TableWrap>
   </S.PolicyContentBox>

@@ -116,7 +116,7 @@ export const DateTitleWrap = styled.div`
 `;
 
 export const TableWrap = styled.div`
-  @media (max-width: 1400px) {
+  @media ${({ theme }) => theme.breakPoint['1440']} {
     display: flex;
     flex-direction: column;
     gap: 24px;

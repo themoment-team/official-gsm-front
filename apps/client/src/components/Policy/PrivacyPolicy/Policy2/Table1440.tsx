@@ -1,6 +1,6 @@
 import * as T from './style';
 
-const Table1400 = () => (
+const Table1440 = () => (
   <>
     <T.TableTitle>
       <T.TableTitleContent>개인정보 파일명</T.TableTitleContent>
@@ -102,4 +102,4 @@ const Table1400 = () => (
   </>
 );
 
-export default Table1400;
+export default Table1440;

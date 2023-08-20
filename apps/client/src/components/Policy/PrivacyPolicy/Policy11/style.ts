@@ -6,7 +6,7 @@ export const FifthTableTitle = styled.div`
   grid-template-columns: 11.25rem 40rem 26.25rem;
   grid-template-rows: 3.75rem;
 
-  @media (max-width: 1400px) {
+  @media ${({ theme }) => theme.breakPoint['1440']} {
     display: grid;
     margin: 0;
     margin-bottom: 20px;
@@ -27,7 +27,7 @@ export const FifthTableContent = styled.div`
   grid-template-columns: 11.25rem 40rem 26.25rem;
   grid-template-rows: 3rem 3rem 3rem;
 
-  @media (max-width: 1400px) {
+  @media ${({ theme }) => theme.breakPoint['1440']} {
     display: grid;
     grid-template-columns: 100% 352.7% 231.5%;
     grid-template-rows: 3rem 3rem 3rem;
@@ -69,7 +69,7 @@ export const SixthTableTitle = styled.div`
   grid-template-columns: 33.75rem 25.5rem 12.5rem 5.75rem;
   grid-template-rows: 3.75rem;
 
-  @media (max-width: 1400px) {
+  @media ${({ theme }) => theme.breakPoint['1440']} {
     display: grid;
     margin-bottom: 0.75rem 0 0 0;
     grid-template-columns: 42% 33% 16.7% 8.6%;
@@ -89,7 +89,7 @@ export const BigSixthTableTitle = styled.div`
   grid-template-columns: 33.75rem;
   grid-template-rows: 33rem;
 
-  @media (max-width: 1400px) {
+  @media ${({ theme }) => theme.breakPoint['1440']} {
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 33rem;
@@ -107,7 +107,7 @@ export const SixthTableContent = styled.div`
   grid-template-columns: 25.5rem 12.5rem 5.75rem;
   grid-template-rows: repeat(11, 3rem);
 
-  @media (max-width: 1400px) {
+  @media ${({ theme }) => theme.breakPoint['1440']} {
     display: grid;
     grid-template-columns: 100% 50.6% 26.1%;
     grid-template-rows: repeat(11, 3rem);

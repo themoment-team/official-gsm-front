@@ -1,7 +1,7 @@
 import { BulletItem } from 'client/components';
 import * as S from 'client/components/Policy/PrivacyPolicy/style';
 
-import Table1400 from './Table1400';
+import Table1440 from './Table1440';
 import Table900 from './Table900';
 import * as T from './style';
 
@@ -34,7 +34,7 @@ const Policy5 = ({ width }: Props) => (
       </S.MiniTitle>
     </S.BulletItemWrap>
     <S.TableWrap>
-      {width > 1400 && (
+      {width > 1440 && (
         <T.TableTitle>
           <T.TableTitleContent>위탁하는 업무의 내용</T.TableTitleContent>
           <T.TableTitleContent>수탁 업체(명)</T.TableTitleContent>
@@ -64,7 +64,7 @@ const Policy5 = ({ width }: Props) => (
           </T.TableContent>
         </T.TableTitle>
       )}
-      {width < 1400 && width > 900 && <Table1400 />}
+      {width < 1440 && width > 900 && <Table1440 />}
       {width < 900 && <Table900 />}
     </S.TableWrap>
   </S.PolicyContentBox>

@@ -6,7 +6,7 @@ export const TableTitle = styled.div`
   grid-template-columns: 25.75rem 26rem 25.75rem;
   grid-template-rows: 3.75rem;
 
-  @media (max-width: 1400px) {
+  @media ${({ theme }) => theme.breakPoint['1440']} {
     display: grid;
     margin: 0;
     grid-template-columns: 33.3% 33.3% 33.3%;
@@ -24,7 +24,7 @@ export const TableContent = styled.div`
   grid-template-columns: 25.75rem 26rem 25.75rem;
   grid-template-rows: 7.8125rem 3rem 6.5rem 3rem 3rem 3rem 3rem 3rem;
 
-  @media (max-width: 1400px) {
+  @media ${({ theme }) => theme.breakPoint['1440']} {
     display: grid;
     grid-template-columns: 100% 100% 100%;
   }
