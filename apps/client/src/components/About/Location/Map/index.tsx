@@ -58,8 +58,8 @@ function Map({ latitude, longitude }: MapProps) {
 }
 
 const MapContainer = styled.div`
-  width: 1240px;
-  height: 400px;
+  width: 77.5rem;
+  height: 25rem;
   @media ${({ theme }) => theme.breakPoint['1440']} {
     width: calc(100vw - 12.5rem);
   }

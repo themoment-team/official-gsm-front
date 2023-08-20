@@ -1,8 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-
 import * as I from 'client/assets';
+import { useGetWindowWidth } from 'client/hooks';
 
 import Map from './Map';
 import * as S from './style';
@@ -13,20 +12,7 @@ const schoolCoordinate = {
 } as const;
 
 const Location = () => {
-  const [isBreakpoint600, setIsBreakpoint1024] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsBreakpoint1024(window.innerWidth <= 600);
-    };
-
-    window.addEventListener('resize', handleResize);
-    handleResize();
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const width = useGetWindowWidth();
 
   return (
     <S.Location>
@@ -40,8 +26,8 @@ const Location = () => {
           <S.AddressAndContactBox>
             <S.Address>
               <S.IconBox>
-                {isBreakpoint600 ? (
-                  <S.Circle isVisible={isBreakpoint600}>
+                {width < 600 ? (
+                  <S.Circle isVisible={true}>
                     <I.MarkIcon />
                   </S.Circle>
                 ) : (
@@ -55,8 +41,8 @@ const Location = () => {
             </S.Address>
             <S.Contact>
               <S.IconBox>
-                {isBreakpoint600 ? (
-                  <S.Circle isVisible={isBreakpoint600}>
+                {width < 600 ? (
+                  <S.Circle isVisible={true}>
                     <I.ContactIcon />
                   </S.Circle>
                 ) : (
