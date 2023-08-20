@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import styled from '@emotion/styled';
 
 export const ContentWrapper = styled.div`
@@ -11,9 +13,12 @@ export const ContentWrapper = styled.div`
   }
 `;
 
+export const ContentImage = styled(Image)`
+  position: relative !important;
+`;
+
 export const ImageWrapper = styled.div`
   width: 50rem;
-  height: 30.375rem;
   overflow: hidden;
   position: relative;
   img {
