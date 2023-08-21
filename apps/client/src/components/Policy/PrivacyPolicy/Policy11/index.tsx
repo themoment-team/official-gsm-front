@@ -71,7 +71,7 @@ const Policy11: React.FC<Props> = ({ width }) => (
       지정하고 있습니다.
     </S.SubTitle>
     <S.TableWrap>
-      {width > 900 && (
+      {width > 900 ? (
         <T.FifthTableTitle>
           {TableTitle1.map((title, index) => (
             <T.FifthTableTitleContent key={index}>
@@ -86,8 +86,9 @@ const Policy11: React.FC<Props> = ({ width }) => (
             ))}
           </T.FifthTableContent>
         </T.FifthTableTitle>
+      ) : (
+        <FifthTable900 />
       )}
-      {width < 900 && <FifthTable900 />}
     </S.TableWrap>
     <S.SubTitle>
       <span>2.&nbsp;</span>
@@ -95,7 +96,7 @@ const Policy11: React.FC<Props> = ({ width }) => (
       책임자로 아래와 같이 지정하고 있습니다.
     </S.SubTitle>
     <S.TableWrap>
-      {width > 900 && (
+      {width > 900 ? (
         <T.SixthTableTitle>
           {TableTitle2.map((title, index) => (
             <T.FifthTableTitleContent key={index}>
@@ -115,8 +116,9 @@ const Policy11: React.FC<Props> = ({ width }) => (
             ))}
           </T.SixthTableContent>
         </T.SixthTableTitle>
+      ) : (
+        <SixthTable900 />
       )}
-      {width < 900 && <SixthTable900 />}
     </S.TableWrap>
   </S.PolicyContentBox>
 );
