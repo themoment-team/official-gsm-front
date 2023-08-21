@@ -46,6 +46,7 @@ export const Line = styled.div`
   height: 0.0625rem;
   margin-top: 1.75rem;
   background: ${({ theme }) => theme.color.gray['050']};
+
   @media ${({ theme }) => theme.breakPoint['600']} {
     margin-bottom: 0.625rem;
   }
@@ -71,7 +72,6 @@ export const MapContentBox = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 1.875rem;
-  background: pink;
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
     width: calc(100vw - 7.5rem);
@@ -135,6 +135,7 @@ export const Address = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
   @media ${({ theme }) => theme.breakPoint['600']} {
     width: calc(100vw - 6.25rem);
   }
@@ -162,6 +163,7 @@ export const Contact = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+
   @media ${({ theme }) => theme.breakPoint['600']} {
     width: calc(100vw - 6.25rem);
   }
