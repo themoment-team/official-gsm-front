@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Location = styled.div`
   width: 100vw;
-  height: 916px;
+  height: 57.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +25,7 @@ export const ContentBox = styled.div`
   }
 
   @media ${({ theme }) => theme.breakPoint['600']} {
-    height: 940px;
+    height: 58.75rem;
     justify-content: space-evenly;
   }
 `;
