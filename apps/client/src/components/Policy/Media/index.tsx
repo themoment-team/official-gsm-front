@@ -62,50 +62,54 @@ const MediaPolicy = () => {
             위하여 아래와 같이 개인영상정보 보호책임자를 두고 있습니다.
           </S.Description>
           {width > 1024 ? (
-            <S.TableTitle className='first'>
-              <S.TableTitleContent>구분</S.TableTitleContent>
-              <S.TableTitleContent>이름</S.TableTitleContent>
-              <S.TableTitleContent>직위</S.TableTitleContent>
-              <S.TableTitleContent>소속</S.TableTitleContent>
-              <S.TableTitleContent>연락처</S.TableTitleContent>
-              <S.TableContent className='first'>
-                <S.TableRowContent>관리책임자</S.TableRowContent>
-                <S.TableRowContent>이수연</S.TableRowContent>
-                <S.TableRowContent>실장</S.TableRowContent>
-                <S.TableRowContent>행정실</S.TableRowContent>
-                <S.TableRowContent>062-949-6803</S.TableRowContent>
-                <S.TableRowContent>접근관리자</S.TableRowContent>
-                <S.TableRowContent>장희연</S.TableRowContent>
-                <S.TableRowContent>주무관</S.TableRowContent>
-                <S.TableRowContent>행정실</S.TableRowContent>
-                <S.TableRowContent>062-949-6808</S.TableRowContent>
-              </S.TableContent>
-            </S.TableTitle>
-          ) : (
-            <>
+            <S.Wrap>
               <S.TableTitle className='first'>
                 <S.TableTitleContent>구분</S.TableTitleContent>
                 <S.TableTitleContent>이름</S.TableTitleContent>
                 <S.TableTitleContent>직위</S.TableTitleContent>
+                <S.TableTitleContent>소속</S.TableTitleContent>
+                <S.TableTitleContent>연락처</S.TableTitleContent>
                 <S.TableContent className='first'>
                   <S.TableRowContent>관리책임자</S.TableRowContent>
                   <S.TableRowContent>이수연</S.TableRowContent>
                   <S.TableRowContent>실장</S.TableRowContent>
+                  <S.TableRowContent>행정실</S.TableRowContent>
+                  <S.TableRowContent>062-949-6803</S.TableRowContent>
                   <S.TableRowContent>접근관리자</S.TableRowContent>
                   <S.TableRowContent>장희연</S.TableRowContent>
                   <S.TableRowContent>주무관</S.TableRowContent>
-                </S.TableContent>
-              </S.TableTitle>
-              <S.TableTitle className='firser'>
-                <S.TableTitleContent>소속</S.TableTitleContent>
-                <S.TableTitleContent>연락처</S.TableTitleContent>
-                <S.TableContent className='firser'>
-                  <S.TableRowContent>행정실</S.TableRowContent>
-                  <S.TableRowContent>062-949-6803</S.TableRowContent>
                   <S.TableRowContent>행정실</S.TableRowContent>
                   <S.TableRowContent>062-949-6808</S.TableRowContent>
                 </S.TableContent>
               </S.TableTitle>
+            </S.Wrap>
+          ) : (
+            <>
+              <S.Wrap>
+                <S.TableTitle className='first'>
+                  <S.TableTitleContent>구분</S.TableTitleContent>
+                  <S.TableTitleContent>이름</S.TableTitleContent>
+                  <S.TableTitleContent>직위</S.TableTitleContent>
+                  <S.TableContent className='first'>
+                    <S.TableRowContent>관리책임자</S.TableRowContent>
+                    <S.TableRowContent>이수연</S.TableRowContent>
+                    <S.TableRowContent>실장</S.TableRowContent>
+                    <S.TableRowContent>접근관리자</S.TableRowContent>
+                    <S.TableRowContent>장희연</S.TableRowContent>
+                    <S.TableRowContent>주무관</S.TableRowContent>
+                  </S.TableContent>
+                </S.TableTitle>
+                <S.TableTitle className='divide'>
+                  <S.TableTitleContent>소속</S.TableTitleContent>
+                  <S.TableTitleContent>연락처</S.TableTitleContent>
+                  <S.TableContent className='divide'>
+                    <S.TableRowContent>행정실</S.TableRowContent>
+                    <S.TableRowContent>062-949-6803</S.TableRowContent>
+                    <S.TableRowContent>행정실</S.TableRowContent>
+                    <S.TableRowContent>062-949-6808</S.TableRowContent>
+                  </S.TableContent>
+                </S.TableTitle>
+              </S.Wrap>
             </>
           )}
         </S.SubContentWrapper>

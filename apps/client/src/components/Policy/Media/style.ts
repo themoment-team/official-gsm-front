@@ -12,17 +12,18 @@ export const ContentWrapper = styled(Column)`
   margin: 0 auto;
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
-    width: calc(100vw - 200px);
+    width: calc(100vw - 12.5rem);
   }
 
   @media ${({ theme }) => theme.breakPoint['1024']} {
-    width: calc(100vw - 120px);
+    width: calc(100vw - 7.5rem);
   }
 `;
 
 export const Section = styled(Column)`
   gap: 3rem;
 `;
+export const Wrap = styled.div``;
 
 export const Title = styled.h2`
   ${({ theme }) => theme.typo.h2};
@@ -33,30 +34,46 @@ export const Title = styled.h2`
 
 export const SubContentWrapper = styled(Column)`
   gap: 0.5rem;
+
   .first {
     grid-template-columns: 20rem 12.5rem 12.5rem 12.5rem 20rem;
-    @media ${({ theme }) => theme.breakPoint['1024']} {
-      grid-template-columns: 402px 251px 251px;
+
+    @media ${({ theme }) => theme.breakPoint['1440']} {
+      grid-template-columns: 20% 20% 20% 20% 20%;
     }
+    @media ${({ theme }) => theme.breakPoint['1024']} {
+      grid-template-columns: 33% 33% 33%;
+    }
+
     @media ${({ theme }) => theme.breakPoint['600']} {
-      grid-template-columns: 213px 134px 133px;
+      grid-template-columns: 33% 33% 33%;
     }
   }
-  .firser {
-    grid-template-columns: 348px 556px;
+  .divide {
+    grid-template-columns: 21.75rem 34.75rem;
+
+    @media ${({ theme }) => theme.breakPoint['1024']} {
+      grid-template-columns: 50% 50%;
+    }
     @media ${({ theme }) => theme.breakPoint['600']} {
-      grid-template-columns: 185px 295px;
+      grid-template-columns: 50% 50%;
     }
   }
   .second {
     grid-template-columns: 20rem 32.5rem 25rem;
-    @media ${({ theme }) => theme.breakPoint['1024']} {
-      grid-template-columns: 232px 380px 292px;
+
+    @media ${({ theme }) => theme.breakPoint['1440']} {
+      grid-template-columns: 33% 33% 33%;
     }
+    @media ${({ theme }) => theme.breakPoint['1024']} {
+      grid-template-columns: 33% 33% 33%;
+    }
+
     @media ${({ theme }) => theme.breakPoint['600']} {
-      grid-template-columns: 123px 202px 155px;
+      grid-template-columns: 33% 33% 33%;
     }
   }
+
   img {
     margin-top: 0.9375rem;
   }
@@ -82,31 +99,46 @@ export const TableTitle = styled.div`
   display: grid;
   margin-top: 0.75rem;
   grid-template-rows: 3.75rem;
+
   .first {
     grid-template-columns: 20rem 12.5rem 12.5rem 12.5rem 20rem;
-    grid-template-rows: 48px 48px;
-    @media ${({ theme }) => theme.breakPoint['1024']} {
-      grid-template-columns: 402px 251px 251px;
+    grid-template-rows: 3rem 3rem;
+
+    @media ${({ theme }) => theme.breakPoint['1440']} {
+      grid-template-columns: 100% 100% 100% 100% 100%;
     }
+    @media ${({ theme }) => theme.breakPoint['1024']} {
+      grid-template-columns: 100% 100% 100%;
+    }
+
     @media ${({ theme }) => theme.breakPoint['600']} {
-      grid-template-columns: 213px 134px 133px;
+      grid-template-columns: 100% 100% 100%;
     }
   }
-  .firser {
-    grid-template-columns: 348px 556px;
-    grid-template-rows: 48px 48px;
+  .divide {
+    grid-template-columns: 21.75rem 34.75rem;
+    grid-template-rows: 3rem 3rem;
+
+    @media ${({ theme }) => theme.breakPoint['1024']} {
+      grid-template-columns: 100% 100%;
+    }
     @media ${({ theme }) => theme.breakPoint['600']} {
-      grid-template-columns: 185px 295px;
+      grid-template-columns: 100% 100%;
     }
   }
   .second {
     grid-template-columns: 20rem 32.5rem 25rem;
     grid-template-rows: 4.5rem;
-    @media ${({ theme }) => theme.breakPoint['1024']} {
-      grid-template-columns: 232px 380px 292px;
+
+    @media ${({ theme }) => theme.breakPoint['1440']} {
+      grid-template-columns: 100% 100% 100%;
     }
+    @media ${({ theme }) => theme.breakPoint['1024']} {
+      grid-template-columns: 100% 100% 100%;
+    }
+
     @media ${({ theme }) => theme.breakPoint['600']} {
-      grid-template-columns: 123px 202px 155px;
+      grid-template-columns: 100% 100% 100%;
     }
   }
 `;
