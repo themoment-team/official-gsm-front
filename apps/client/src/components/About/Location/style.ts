@@ -6,6 +6,7 @@ export const Location = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
   @media ${({ theme }) => theme.breakPoint['600']} {
     height: 70.875rem;
   }
@@ -69,9 +70,10 @@ export const MapContentBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1.875rem;
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
-    width: calc(100vw - 12.5rem);
+    width: calc(100vw - 120px);
   }
 
   @media ${({ theme }) => theme.breakPoint['1024']} {
@@ -114,6 +116,7 @@ export const OnTheWayBox = styled.div`
   margin-right: 2.3125rem;
 
   @media ${({ theme }) => theme.breakPoint['1024']} {
+    gap: 0.625rem;
     flex-direction: column;
     height: 11.5rem;
     margin: 0;
