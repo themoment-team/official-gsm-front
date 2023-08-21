@@ -4,13 +4,13 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   description:
-    '광주소프트웨어마이스터고등학교 공식 홈페이지 학교 소개 페이지입니다.',
-  title: { absolute: '학교 소개' },
+    '광주소프트웨어마이스터고등학교 공식 홈페이지 영상정보처리기기 운영ㆍ관리 방침 페이지입니다.',
+  title: { absolute: '영상정보처리기기 운영ㆍ관리 방침' },
   openGraph: {
-    title: '학교 소개',
+    title: '영상정보처리기기 운영ㆍ관리 방침',
     description:
-      '광주소프트웨어마이스터고등학교 공식 홈페이지 학교 소개 페이지입니다.',
-    url: 'https://official.hellogsm.kr/about',
+      '광주소프트웨어마이스터고등학교 공식 홈페이지 영상정보처리기기 운영ㆍ관리 방침 페이지입니다.',
+    url: 'https://official.hellogsm.kr/policy/copyright',
   },
 };
 
