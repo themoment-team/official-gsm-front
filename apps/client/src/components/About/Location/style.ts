@@ -39,7 +39,6 @@ export const Title = styled.div`
 `;
 
 export const Line = styled.div`
-  width: 77.5rem;
   height: 0.0625rem;
   margin-top: 1.75rem;
   background: ${({ theme }) => theme.color.gray['050']};
