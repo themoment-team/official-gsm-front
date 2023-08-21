@@ -6,6 +6,9 @@ export const Location = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    height: 70.875rem;
+  }
 `;
 
 export const ContentBox = styled.div`
@@ -25,7 +28,7 @@ export const ContentBox = styled.div`
   }
 
   @media ${({ theme }) => theme.breakPoint['600']} {
-    height: 58.75rem;
+    height: 26.25rem;
     justify-content: space-evenly;
   }
 `;
@@ -42,6 +45,9 @@ export const Line = styled.div`
   height: 0.0625rem;
   margin-top: 1.75rem;
   background: ${({ theme }) => theme.color.gray['050']};
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    margin-bottom: 0.625rem;
+  }
 `;
 
 export const Map = styled.div`
@@ -74,8 +80,9 @@ export const MapContentBox = styled.div`
   }
 
   @media ${({ theme }) => theme.breakPoint['600']} {
+    margin-top: 3.75rem;
+    height: 37.5rem;
     flex-direction: column;
-    height: 29.125rem;
     justify-content: space-between;
   }
 `;
