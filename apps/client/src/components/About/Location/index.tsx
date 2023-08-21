@@ -17,10 +17,10 @@ const Location = () => {
   return (
     <S.Location>
       <S.ContentBox>
-        <div>
+        <>
           <S.Title>🔍 찾아오시는 길</S.Title>
           <S.Line />
-        </div>
+        </>
         <S.Map>
           <Map {...schoolCoordinate} />
         </S.Map>
@@ -59,7 +59,7 @@ const Location = () => {
               </S.Desc>
             </S.Contact>
           </S.AddressAndContactBox>
-          <S.Divide />
+          {width > 600 && <S.Divide />}
           <S.OnTheWayBox>
             <S.Walk>
               <S.Circle>

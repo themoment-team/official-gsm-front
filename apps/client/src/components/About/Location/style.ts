@@ -29,7 +29,7 @@ export const ContentBox = styled.div`
   }
 
   @media ${({ theme }) => theme.breakPoint['600']} {
-    height: 26.25rem;
+    height: 660px;
     justify-content: space-evenly;
   }
 `;
@@ -71,20 +71,21 @@ export const MapContentBox = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 1.875rem;
+  background: pink;
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
     width: calc(100vw - 120px);
   }
 
   @media ${({ theme }) => theme.breakPoint['1024']} {
-    width: calc(100vw - 7.5rem);
+    width: calc(100vw - 120px);
     height: 11.5rem;
   }
 
   @media ${({ theme }) => theme.breakPoint['600']} {
-    width: calc(100vw - 120px);
+    width: calc(100vw - 80px);
     margin-top: 6.75rem;
-    height: 37.5rem;
+    height: 700px;
     flex-direction: column;
     justify-content: space-between;
   }
@@ -103,9 +104,9 @@ export const AddressAndContactBox = styled.div`
   }
 
   @media ${({ theme }) => theme.breakPoint['600']} {
+    width: calc(100vw - 100px);
     flex-direction: row;
     gap: 1.875rem;
-    width: calc(100vw - 10.5rem);
   }
 `;
 
@@ -124,7 +125,7 @@ export const OnTheWayBox = styled.div`
   }
 
   @media ${({ theme }) => theme.breakPoint['600']} {
-    width: calc(100vw - 10.5rem);
+    width: calc(100vw - 100px);
     flex-direction: row;
     gap: 1.875rem;
   }
@@ -134,6 +135,9 @@ export const Address = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    width: calc(100vw - 100px);
+  }
 `;
 
 export const Subtitle = styled.div`
@@ -150,7 +154,6 @@ export const Desc = styled.div`
   line-height: 1.5rem;
 
   @media ${({ theme }) => theme.breakPoint['600']} {
-    width: 13.125rem;
     text-align: center;
   }
 `;
@@ -159,6 +162,9 @@ export const Contact = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  @media ${({ theme }) => theme.breakPoint['600']} {
+    width: calc(100vw - 100px);
+  }
 `;
 
 export const IconBox = styled.div`
@@ -184,7 +190,7 @@ export const Walk = styled.div`
 
   @media ${({ theme }) => theme.breakPoint['600']} {
     flex-direction: column;
-    width: 13.125rem;
+    width: calc(100vw - 100px);
     align-items: center;
     text-align: center;
     height: 8.8125rem;
@@ -196,9 +202,9 @@ export const Subway = styled.div`
   gap: 1.25rem;
 
   @media ${({ theme }) => theme.breakPoint['600']} {
+    width: calc(100vw - 100px);
     flex-direction: column;
     align-items: center;
-    width: 13.125rem;
     text-align: center;
     height: 8.8125rem;
   }
