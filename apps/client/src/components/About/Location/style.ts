@@ -82,6 +82,7 @@ export const MapContentBox = styled.div`
   }
 
   @media ${({ theme }) => theme.breakPoint['600']} {
+    width: calc(100vw - 120px);
     margin-top: 6.75rem;
     height: 37.5rem;
     flex-direction: column;
