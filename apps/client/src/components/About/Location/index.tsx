@@ -29,7 +29,7 @@ const Location = () => {
             <S.Address>
               <S.IconBox>
                 {width < 600 ? (
-                  <S.Circle isVisible={true}>
+                  <S.Circle>
                     <I.MarkIcon />
                   </S.Circle>
                 ) : (
@@ -44,7 +44,7 @@ const Location = () => {
             <S.Contact>
               <S.IconBox>
                 {width < 600 ? (
-                  <S.Circle isVisible={true}>
+                  <S.Circle>
                     <I.ContactIcon />
                   </S.Circle>
                 ) : (
@@ -60,7 +60,7 @@ const Location = () => {
             </S.Contact>
           </S.AddressAndContactBox>
           <S.Divide />
-          <S.OntheWayBox>
+          <S.OnTheWayBox>
             <S.Walk>
               <S.Circle>
                 <I.MapIcon />
@@ -79,7 +79,7 @@ const Location = () => {
                 <S.Desc>송정공원역 1번출구 220m 앞</S.Desc>
               </S.DescBox>
             </S.Subway>
-          </S.OntheWayBox>
+          </S.OnTheWayBox>
         </S.MapContentBox>
       </S.ContentBox>
     </S.Location>

@@ -99,7 +99,7 @@ export const AddressAndContactBox = styled.div`
   }
 `;
 
-export const OntheWayBox = styled.div`
+export const OnTheWayBox = styled.div`
   width: 35.0625rem;
   height: 4rem;
   display: flex;
@@ -192,7 +192,7 @@ export const Subway = styled.div`
   }
 `;
 
-export const Circle = styled.div<{ isVisible?: boolean }>`
+export const Circle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
