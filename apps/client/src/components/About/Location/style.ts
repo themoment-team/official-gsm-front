@@ -101,6 +101,7 @@ export const AddressAndContactBox = styled.div`
 
   @media ${({ theme }) => theme.breakPoint['600']} {
     flex-direction: row;
+    gap: 1.875rem;
     width: calc(100vw - 10.5rem);
   }
 `;
@@ -121,6 +122,7 @@ export const OnTheWayBox = styled.div`
   @media ${({ theme }) => theme.breakPoint['600']} {
     width: calc(100vw - 10.5rem);
     flex-direction: row;
+    gap: 1.875rem;
   }
 `;
 
