@@ -48,6 +48,7 @@ export const FifthTableCellTemplate = styled.div`
   color: ${({ theme }) => theme.color.gray['080']};
   border: 0.0625rem solid ${({ theme }) => theme.color.gray['050']};
   box-sizing: border-box;
+  white-space: pre;
 `;
 
 export const FifthTableTitleContent = styled(FifthTableCellTemplate)`
@@ -128,6 +129,7 @@ export const SixthTableCellTemplate = styled.div`
   color: ${({ theme }) => theme.color.gray['080']};
   border: 0.0625rem solid ${({ theme }) => theme.color.gray['050']};
   box-sizing: border-box;
+  white-space: pre;
 `;
 
 export const SixthTableTitleContent = styled(SixthTableCellTemplate)`

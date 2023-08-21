@@ -1,36 +1,52 @@
 import * as T from './style';
 
-const FifthTable900 = () => (
-  <>
-    <T.FifthTableTitle>
-      <T.FifthTableTitleContent>구분</T.FifthTableTitleContent>
-      <T.FifthTableContent>
-        <T.FifthTableRowContent>담당부서</T.FifthTableRowContent>
-        <T.FifthTableRowContent>성명</T.FifthTableRowContent>
-        <T.FifthTableRowContent>전화번호</T.FifthTableRowContent>
-      </T.FifthTableContent>
-    </T.FifthTableTitle>
+const FifthTable900 = () => {
+  const TableContent1 = ['담당부서', '성명', '전화번호'];
 
-    <T.FifthTableTitle>
-      <T.FifthTableTitleContent>개인정보 보호책임자</T.FifthTableTitleContent>
-      <T.FifthTableContent>
-        <T.FifthTableRowContent>
-          광주소프트웨어마이스터고등학교장
-        </T.FifthTableRowContent>
-        <T.FifthTableRowContent>최홍진</T.FifthTableRowContent>
-        <T.FifthTableRowContent>062-949-6801</T.FifthTableRowContent>
-      </T.FifthTableContent>
-    </T.FifthTableTitle>
+  const TableContent2 = [
+    '광주소프트웨어마이스터고등학교장',
+    '최홍진',
+    '062-949-6801',
+  ];
 
-    <T.FifthTableTitle>
-      <T.FifthTableTitleContent>개인정보 보호담당자</T.FifthTableTitleContent>
-      <T.FifthTableContent>
-        <T.FifthTableRowContent>인문정보부</T.FifthTableRowContent>
-        <T.FifthTableRowContent>정문정</T.FifthTableRowContent>
-        <T.FifthTableRowContent>062-949-6850</T.FifthTableRowContent>
-      </T.FifthTableContent>
-    </T.FifthTableTitle>
-  </>
-);
+  const TableContent3 = ['인문정보부', '정문정', '062-949-6850'];
+
+  return (
+    <>
+      <T.FifthTableTitle>
+        <T.FifthTableTitleContent>구분</T.FifthTableTitleContent>
+        <T.FifthTableContent>
+          {TableContent1.map((content, index) => (
+            <T.FifthTableRowContent key={index}>
+              {content}
+            </T.FifthTableRowContent>
+          ))}
+        </T.FifthTableContent>
+      </T.FifthTableTitle>
+
+      <T.FifthTableTitle>
+        <T.FifthTableTitleContent>개인정보 보호책임자</T.FifthTableTitleContent>
+        <T.FifthTableContent>
+          {TableContent2.map((content, index) => (
+            <T.FifthTableRowContent key={index}>
+              {content}
+            </T.FifthTableRowContent>
+          ))}
+        </T.FifthTableContent>
+      </T.FifthTableTitle>
+
+      <T.FifthTableTitle>
+        <T.FifthTableTitleContent>개인정보 보호담당자</T.FifthTableTitleContent>
+        <T.FifthTableContent>
+          {TableContent3.map((content, index) => (
+            <T.FifthTableRowContent key={index}>
+              {content}
+            </T.FifthTableRowContent>
+          ))}
+        </T.FifthTableContent>
+      </T.FifthTableTitle>
+    </>
+  );
+};
 
 export default FifthTable900;

@@ -56,6 +56,7 @@ export const TabelCellTemplate = styled.div`
   border: 0.0625rem solid ${({ theme }) => theme.color.gray['050']};
   color: ${({ theme }) => theme.color.gray['070']};
   box-sizing: border-box;
+  white-space: pre;
 `;
 
 export const TableTitleContent = styled(TabelCellTemplate)`
