@@ -80,7 +80,7 @@ export const MapContentBox = styled.div`
   }
 
   @media ${({ theme }) => theme.breakPoint['600']} {
-    margin-top: 3.75rem;
+    margin-top: 6.75rem;
     height: 37.5rem;
     flex-direction: column;
     justify-content: space-between;
