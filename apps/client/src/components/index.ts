@@ -28,6 +28,7 @@ export { default as NotFoundContent } from './NotFoundContent';
 export { default as NoticeBanner } from './NoticeBanner';
 export { default as PostContent } from './PostPage/PostContent';
 export { default as PostDetailHead } from './PostPage/PostDetailHead';
+export { default as PrivacyPolicy } from './Policy/PrivacyPolicy';
 export { default as PromotionVideo } from './PromotionVideo';
 export { default as ReturnToList } from './PostPage/ReturnToList';
 export { default as Scroll } from './Scroll';
