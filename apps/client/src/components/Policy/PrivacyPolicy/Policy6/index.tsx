@@ -87,7 +87,7 @@ const Policy6: React.FC<Props> = ({ width }) => (
       </S.SubTitle>
     ))}
     <S.TableWrap>
-      {width > 900 && (
+      {width > 900 ? (
         <T.TableTitle>
           {TableTitle.map((title, index) => (
             <T.TableTitleContent key={index}>{title}</T.TableTitleContent>
@@ -98,8 +98,9 @@ const Policy6: React.FC<Props> = ({ width }) => (
             ))}
           </T.TableContent>
         </T.TableTitle>
+      ) : (
+        <Table900 />
       )}
-      {width < 900 && <Table900 />}
     </S.TableWrap>
   </S.PolicyContentBox>
 );

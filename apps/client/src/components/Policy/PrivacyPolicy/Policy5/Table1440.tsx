@@ -25,16 +25,14 @@ const Table1400 = () => (
       <T.TableContent>
         <T.TableRowContent>더모먼트</T.TableRowContent>
         <T.TableRowContent>
-          업체명: ㈜엑스메카
-          <br /> 주소: 광주광역시 북구 첨단과기로208번길 43-22 와이어스파크 A동
-          612호
-          <br /> 전화번호: 062-374-9986
+          업체명: 더모먼트
+          <br /> 주소: 광주광역시 광산구 상무대로 312
+          <br /> 전화번호: 062-949-6800
         </T.TableRowContent>
         <T.TableRowContent>
-          업체명: ㈜엑스메카
-          <br /> 주소: 광주광역시 북구 첨단과기로208번길 43-22 와이어스파크 A동
-          612호
-          <br /> 전화번호: 062-374-9986
+          업체명: 더모먼트
+          <br /> 주소: 광주광역시 광산구 상무대로 312
+          <br /> 전화번호: 062-949-6800
         </T.TableRowContent>
       </T.TableContent>
     </T.TableTitle>

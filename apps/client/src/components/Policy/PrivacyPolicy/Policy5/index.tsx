@@ -17,7 +17,7 @@ const TableContent = [
   '더모먼트',
   '방과후 학교 프로그램운영',
   '이름,학년,반,번호,학생개인연락처,부 또는 모 성함 및 연락처\n※ 위탁시 제공하는 항목',
-  '업체명: ㈜엑스메카\n 주소: 광주광역시 서구 천변좌로 268 KDB생명빌딩 2510호\n전화번호: 062-374-9986',
+  '업체명: 더모먼트\n 주소: 광주광역시 광산구 상무대로 312\n전화번호: 062-374-9986',
 ];
 
 const BulletItemTitle = [
@@ -49,7 +49,7 @@ const Policy5 = ({ width }: Props) => (
       </S.MiniTitle>
     </S.BulletItemWrap>
     <S.TableWrap>
-      {width > 1440 && (
+      {width > 1440 ? (
         <T.TableTitle>
           {TableTitle.map((title, index) => (
             <T.TableTitleContent key={index}>{title}</T.TableTitleContent>
@@ -60,9 +60,11 @@ const Policy5 = ({ width }: Props) => (
             ))}
           </T.TableContent>
         </T.TableTitle>
+      ) : width > 900 ? (
+        <Table1440 />
+      ) : (
+        <Table900 />
       )}
-      {width < 1440 && width > 900 && <Table1440 />}
-      {width < 900 && <Table900 />}
     </S.TableWrap>
   </S.PolicyContentBox>
 );
