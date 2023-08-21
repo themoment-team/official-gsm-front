@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 export const Location = styled.div`
   width: 100vw;
-  height: 80vh;
+  height: 916px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,7 +25,8 @@ export const ContentBox = styled.div`
   }
 
   @media ${({ theme }) => theme.breakPoint['600']} {
-    margin-bottom: 16.25rem;
+    height: 940px;
+    justify-content: space-evenly;
   }
 `;
 
@@ -74,7 +75,6 @@ export const MapContentBox = styled.div`
   }
 
   @media ${({ theme }) => theme.breakPoint['600']} {
-    margin-top: 11.75rem;
     flex-direction: column;
     width: calc(100vw - 5.625rem);
     height: 29.125rem;
