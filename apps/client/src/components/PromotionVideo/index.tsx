@@ -2,15 +2,16 @@
 
 import { Scroll } from 'client/components';
 
+import Video from './Video';
 import * as S from './style';
 
 const PromotionVideo = () => (
-  <S.VidoeWrapper>
-    <S.Video src='/video/promotion.mp4' autoPlay loop muted playsInline />
+  <S.VideoWrapper>
+    <Video />
     <S.VideoCover>
       <Scroll isPromotion={true} />
     </S.VideoCover>
-  </S.VidoeWrapper>
+  </S.VideoWrapper>
 );
 
 export default PromotionVideo;

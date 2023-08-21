@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const ModalConatiner = styled.div`
+export const ModalContainer = styled.div`
   display: flex;
   flex-direction: column;
   position: absolute;

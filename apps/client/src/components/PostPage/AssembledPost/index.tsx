@@ -10,14 +10,19 @@ import { useGetPostDetail } from 'api/client';
 
 import { FileButton } from 'ui';
 
+import type { PostDetailType } from 'types';
+
 import * as S from './style';
 
 interface AssembledPostProps {
+  post: PostDetailType;
   postSeq: number;
 }
 
-const AssembledPost: React.FC<AssembledPostProps> = ({ postSeq }) => {
-  const { data } = useGetPostDetail(postSeq);
+const AssembledPost: React.FC<AssembledPostProps> = ({ postSeq, post }) => {
+  const { data } = useGetPostDetail(postSeq, {
+    initialData: post,
+  });
 
   return (
     <S.BackGround>
@@ -31,7 +36,7 @@ const AssembledPost: React.FC<AssembledPostProps> = ({ postSeq }) => {
           }
         >
           <PostDetailHead postSeq={postSeq} />
-          {data.postContent && (
+          {(data.postContent || data.fileInfo.length > 0) && (
             <S.ContentWrapper>
               <PostContent postSeq={postSeq} />
               {data.fileInfo.length > 0 && (

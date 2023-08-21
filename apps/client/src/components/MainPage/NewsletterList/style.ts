@@ -24,7 +24,10 @@ export const NewsletterList = styled.div`
     background: rgba(178, 228, 73, 0.1);
     .dateCircle {
       background-color: ${({ theme: { color } }) => color.primary.lime};
-      color: #73962b;
+      color: ${({ theme }) => theme.color.sub.green};
+    }
+    & > div:nth-of-type(1) > p {
+      color: ${({ theme }) => theme.color.sub.green};
     }
   }
 

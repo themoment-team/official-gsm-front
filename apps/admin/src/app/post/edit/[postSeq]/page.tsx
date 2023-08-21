@@ -52,7 +52,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
   const { data } = useGetPostDetail(postSeq);
 
   const isGallery = category === 'EVENT_GALLERY';
-  const gallerySubmitDisabled = isGallery && files.length === 0;
+  const galleryEditDisabled = isGallery && !prevFiles?.length && !files.length;
 
   const {
     register,
@@ -240,7 +240,7 @@ export default function EditPage({ params: { postSeq } }: EditPageProps) {
             <Button
               width='22.5625rem'
               type='submit'
-              disabled={gallerySubmitDisabled}
+              disabled={galleryEditDisabled}
             >
               완료
             </Button>

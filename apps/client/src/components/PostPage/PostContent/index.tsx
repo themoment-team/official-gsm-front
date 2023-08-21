@@ -1,7 +1,5 @@
 'use client';
 
-import Image from 'next/image';
-
 import { useGetPostDetail } from 'api/client';
 
 import { filterImages } from 'common';
@@ -23,7 +21,7 @@ const PostContent: React.FC<PostContentProps> = ({ postSeq }) => {
         <S.ContentWrapper>
           {imageFiles.map((file, index) => (
             <S.ImageWrapper key={index}>
-              <Image src={file.fileUrl} alt={file.fileName} fill />
+              <S.ContentImage src={file.fileUrl} alt={file.fileName} fill />
             </S.ImageWrapper>
           ))}
           <S.ContentText>{data?.postContent}</S.ContentText>

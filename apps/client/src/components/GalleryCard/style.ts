@@ -53,7 +53,7 @@ export const TextBox = styled.div`
   }
 `;
 
-export const Title = styled.h5`
+export const Title = styled.h3`
   ${({ theme }) => theme.typo.h5}
   color: ${({ theme }) => theme.color.gray['090']};
   font-weight: 600;
