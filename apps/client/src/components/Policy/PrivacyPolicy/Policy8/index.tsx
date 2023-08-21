@@ -26,10 +26,6 @@ const Policy8 = () => (
         <span>-</span>
         보유기간이 경과한 개인정보는 종료일로부터 지체없이 파기합니다.
       </S.MiniTitle>
-      <S.MiniTitle>
-        <span>-</span>
-        보유기간이 경과한 개인정보는 종료일로부터 지체없이 파기합니다.
-      </S.MiniTitle>
       <S.MiniTitle isPadding={true}>
         <span>-</span>
         개인정보파일의 처리 목적 달성, 해당 서비스의 폐지, 사업의 종료 등 그
