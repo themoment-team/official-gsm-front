@@ -17,10 +17,8 @@ const Location = () => {
   return (
     <S.Location>
       <S.ContentBox>
-        <>
-          <S.Title>🔍 찾아오시는 길</S.Title>
-          <S.Line />
-        </>
+        <S.Title>🔍 찾아오시는 길</S.Title>
+        <S.Line />
         <S.Map>
           <Map {...schoolCoordinate} />
         </S.Map>
