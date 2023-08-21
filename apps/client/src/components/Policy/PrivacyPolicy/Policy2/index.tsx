@@ -11,7 +11,7 @@ interface Props {
 }
 
 const Policy2 = ({ width }: Props) => {
-  const TableTitle: string[] = [
+  const TableTitle = [
     `개인정보 파일명`,
     `보유목적`,
     `보유근거`,
@@ -20,7 +20,7 @@ const Policy2 = ({ width }: Props) => {
     `열람요구\n접수처리부서`,
   ];
 
-  const TableContent: string[] = [
+  const TableContent = [
     `학교생활 기록부`,
     `학생의 학업성취도 평가를 통한 내실화 도모`,
     ` -「초ㆍ중등교육법」제25조\n -「초ㆍ중등교육법 시행규칙」제21조`,
