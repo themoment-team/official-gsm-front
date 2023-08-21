@@ -35,9 +35,27 @@ export const SubContentWrapper = styled(Column)`
   gap: 0.5rem;
   .first {
     grid-template-columns: 20rem 12.5rem 12.5rem 12.5rem 20rem;
+    @media ${({ theme }) => theme.breakPoint['1024']} {
+      grid-template-columns: 402px 251px 251px;
+    }
+    @media ${({ theme }) => theme.breakPoint['600']} {
+      grid-template-columns: 213px 134px 133px;
+    }
+  }
+  .firser {
+    grid-template-columns: 348px 556px;
+    @media ${({ theme }) => theme.breakPoint['600']} {
+      grid-template-columns: 185px 295px;
+    }
   }
   .second {
     grid-template-columns: 20rem 32.5rem 25rem;
+    @media ${({ theme }) => theme.breakPoint['1024']} {
+      grid-template-columns: 232px 380px 292px;
+    }
+    @media ${({ theme }) => theme.breakPoint['600']} {
+      grid-template-columns: 123px 202px 155px;
+    }
   }
   img {
     margin-top: 0.9375rem;
@@ -66,11 +84,30 @@ export const TableTitle = styled.div`
   grid-template-rows: 3.75rem;
   .first {
     grid-template-columns: 20rem 12.5rem 12.5rem 12.5rem 20rem;
-    grid-template-rows: 3rem 3rem;
+    grid-template-rows: 48px 48px;
+    @media ${({ theme }) => theme.breakPoint['1024']} {
+      grid-template-columns: 402px 251px 251px;
+    }
+    @media ${({ theme }) => theme.breakPoint['600']} {
+      grid-template-columns: 213px 134px 133px;
+    }
+  }
+  .firser {
+    grid-template-columns: 348px 556px;
+    grid-template-rows: 48px 48px;
+    @media ${({ theme }) => theme.breakPoint['600']} {
+      grid-template-columns: 185px 295px;
+    }
   }
   .second {
     grid-template-columns: 20rem 32.5rem 25rem;
     grid-template-rows: 4.5rem;
+    @media ${({ theme }) => theme.breakPoint['1024']} {
+      grid-template-columns: 232px 380px 292px;
+    }
+    @media ${({ theme }) => theme.breakPoint['600']} {
+      grid-template-columns: 123px 202px 155px;
+    }
   }
 `;
 
