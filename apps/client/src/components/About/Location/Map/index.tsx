@@ -34,7 +34,7 @@ function Map({ latitude, longitude }: MapProps) {
 
       const infoWindow = new window.kakao.maps.InfoWindow({
         content:
-          '<div style="width: 250px; padding: 10px;">광주소프트웨어마이스터고등학교</div>',
+          '<div class="hi"> <div class="locationContent"><h1>광주소프트웨어마이스터고등학교</h1><br/>광주 광산구 상무대로 312(우) 62423(지번) 송정동 710-3<br/>062-949-6800</div><div class="IconBox"><div class="icon"></div><div class="icon"></div><div class="icon"></div></div></div>',
         removable: true,
       });
 
@@ -60,6 +60,31 @@ function Map({ latitude, longitude }: MapProps) {
 const MapContainer = styled.div`
   width: 77.5rem;
   height: 25rem;
+  .hi {
+    width: 342px;
+    height: 200px;
+    background: #ffffff;
+    border-radius: 12px;
+    .locationContent {
+      width: 208px;
+      height: 92px;
+      h1 {
+        color: #212121;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 24px;
+      }
+    }
+    .IconBox {
+      .icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 100%;
+        background: pink;
+      }
+    }
+  }
   @media ${({ theme }) => theme.breakPoint['1440']} {
     width: calc(100vw - 12.5rem);
   }
