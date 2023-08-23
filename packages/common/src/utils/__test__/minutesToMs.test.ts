@@ -1,4 +1,4 @@
-import minutesToMs from './minutesToMs';
+import minutesToMs from '../minutesToMs';
 
 describe('minutesToMs', () => {
   test('5분은 300000ms이다.', () => {

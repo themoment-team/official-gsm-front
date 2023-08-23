@@ -1,4 +1,4 @@
-import secondsToMs from './secondsToMs';
+import secondsToMs from '../secondsToMs';
 
 describe('secondsToMs', () => {
   test('1초는 1000ms이다', () => {

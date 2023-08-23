@@ -1,5 +1,5 @@
 import { FileInfoType } from 'types';
-import filterImages from './filterImages';
+import filterImages from '../filterImages';
 
 describe('filterImages', () => {
   test('JPG, PNG, HEIC, JPEG, WEBP 확장자의 경우 그대로 반환됩니다.', () => {

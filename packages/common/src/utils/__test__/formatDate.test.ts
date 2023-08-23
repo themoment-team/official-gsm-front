@@ -1,4 +1,4 @@
-import formatDate from './formatDate';
+import formatDate from '../formatDate';
 
 describe('formatDate', () => {
   test('1일은 01이다.', () => {

@@ -1,4 +1,4 @@
-import descriptionFormatting from './descriptionFormatting';
+import descriptionFormatting from '../descriptionFormatting';
 
 const generateRandomString = (length: number) => {
   const characters =

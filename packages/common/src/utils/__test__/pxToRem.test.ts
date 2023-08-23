@@ -1,4 +1,4 @@
-import pxToRem from './pxToRem';
+import pxToRem from '../pxToRem';
 
 describe('pxToREM', () => {
   test('80px은 5rem이다', () => {
