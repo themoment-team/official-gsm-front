@@ -54,8 +54,13 @@ export default async function ListPage({
   params: { category },
   searchParams,
 }: ListPageProps) {
-  const pageNumber = Number(searchParams.pageNumber ?? 1);
+  /**falsy 값을 1로 대체 (ex. '', 0, undefined) */
+  const pageNumber = Number(searchParams.pageNumber || 1);
   const postList = await getPostList(category, pageNumber);
+
+  if (postList.postList.length < 1) {
+    return redirect(`/list/${category}`);
+  }
 
   return (
     <>
@@ -70,7 +75,10 @@ export default async function ListPage({
   );
 }
 
-async function getPostList(category: CategoryType, pageNumber: number) {
+async function getPostList(
+  category: CategoryType,
+  pageNumber: number
+): Promise<PostListType> {
   const PAGE_SIZE = 12;
 
   try {
@@ -89,12 +97,8 @@ async function getPostList(category: CategoryType, pageNumber: number) {
 
     const data: PostListType = await res.json();
 
-    if (data.postList.length < 1) {
-      return redirect(`/list/${category}`);
-    }
-
     return data;
   } catch (e) {
-    return redirect(`/list/${category}`);
+    return notFound();
   }
 }
