@@ -17,7 +17,7 @@ export const useGetPostList = (
   pageSize: number
 ) =>
   useQuery(
-    postQueryKeys.getPostList(category, pageNumber),
+    postQueryKeys.getPostList(category, pageNumber, pageSize),
     () => get<PostListType>(postUrl.postList(category, pageNumber, pageSize)),
     {
       keepPreviousData: true,

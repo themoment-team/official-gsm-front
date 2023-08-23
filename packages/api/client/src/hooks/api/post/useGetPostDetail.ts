@@ -13,5 +13,5 @@ export const useGetPostDetail = (
   useQuery<PostDetailType>(
     postQueryKeys.getPostDetail(seq),
     () => get(postUrl.postDetail(seq)),
-    { staleTime: 1000, ...options }
+    options
   );
