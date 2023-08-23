@@ -1,2 +1,1 @@
-export * from './postListQueryString';
-export * from './categoryTitle';
+export * from './category';
