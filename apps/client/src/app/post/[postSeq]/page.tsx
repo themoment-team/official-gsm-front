@@ -4,7 +4,7 @@ import { Footer, Header, AssembledPost } from 'client/components';
 
 import { postUrl } from 'api/client';
 
-import { descriptionFormatting } from 'common';
+import { descriptionFormatting, minutesToSeconds } from 'common';
 
 import type { PostDetailType } from 'types';
 
@@ -53,7 +53,7 @@ async function getPostDetail(postSeq: number) {
     `${process.env.BASE_URL}/api/client${postUrl.postDetail(postSeq)}`,
     {
       next: {
-        revalidate: 60,
+        revalidate: minutesToSeconds(5),
       },
     }
   );
