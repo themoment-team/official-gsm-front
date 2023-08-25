@@ -39,6 +39,10 @@ function Map({ latitude, longitude }: MapProps) {
       const Chevron = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M6 12L10 7.5L6 3" stroke="#9E9E9E" stroke-width="1.5" stroke-linecap="round"/> </svg>`;
 
+      const Close = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M5 5L15 15M5 15L15 5" stroke="#424242" stroke-width="1.5" stroke-linecap="round"/></svg>
+      `;
+
       const customOverlayContent = document.createElement('div');
       customOverlayContent.innerHTML = `
       <div class="customOverlay">
@@ -48,18 +52,22 @@ function Map({ latitude, longitude }: MapProps) {
           <div class="chevron">${Chevron}</div>
         </div>
         <div class="next">
-          <div class="contentBox">
-            <div class="title">광주소프트웨어마이스터고등학교</div>
-            <div class="address">광주 광산구 상무대로 312 </div>
-            <div> (우) 62423&nbsp;&nbsp;(지번) 송정동 710-3</div>
-            <div class="number">062-949-6800</div>
-          </div>
-          <div class="iconBox">
+          <div class="box">
+            <div class="close">${Close}</div>
+            <div class="contentBox">
+              <div class="title">광주소프트웨어마이스터고등학교</div>
+              <div class="address">광주 광산구 상무대로 312 </div>
+              <div> (우) 62423&nbsp;&nbsp;(지번) 송정동 710-3</div>
+              <div class="number">062-949-6800</div>
+            </div>
+            <div class="bottomBox">
+            <div class="iconBox">
             <div class="icon"></div>
             <div class="icon"></div>
-            <div class="icon"></div>
-          </div>
-          <div class="locationBtn">길찾기</div>
+            </div>
+            <div class="locationBtn">길찾기</div>
+            </div>
+            </div>
         </div>
       </div>
   `;
@@ -142,51 +150,71 @@ const MapContainer = styled.div`
     .next {
       width: 342px;
       height: 200px;
-      background: black;
+      background: white;
       border-radius: 12px;
-      .contentBox {
-        width: 208px;
-        height: 92px;
-        background: pink;
+      .box {
+        padding: 16px;
+        width: 342px;
+        height: 200px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        color: #424242;
-        font-size: 12px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 20px;
-        .address {
-          font-size: 14px;
+        .close {
+          display: flex;
+          position: absolute;
+          right: 32px;
         }
-        .number {
-          color: #3c8aaf;
+        .contentBox {
+          width: 208px;
+          height: 92px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          color: #424242;
+          font-size: 12px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 20px;
+          .address {
+            font-size: 14px;
+          }
+          .number {
+            color: #3c8aaf;
+          }
         }
-      }
-      .locationBtn {
-        display: flex;
-        width: 85px;
-        height: 36px;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        background: #003365;
-        border-radius: 8px;
-        color: var(--white, #fff);
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 20px;
-      }
-      .iconBox {
-        width: 112px;
-        height: 32px;
-        display: flex;
-        .icon {
-          width: 32px;
-          height: 32px;
-          border-radius: 100%;
-          background: rgba(0, 51, 101, 0.12);
+        .bottomBox {
+          position: relative;
+          bottom: 0;
+          height: 36px;
+          display: flex;
+          justify-content: space-between;
+          .locationBtn {
+            display: flex;
+            width: 85px;
+            height: 36px;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            background: #003365;
+            border-radius: 8px;
+            color: var(--white, #fff);
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 20px;
+          }
+          .iconBox {
+            width: 72px;
+            height: 32px;
+            display: flex;
+            justify-content: space-between;
+            .icon {
+              width: 32px;
+              height: 32px;
+              border-radius: 100%;
+              background: rgba(0, 51, 101, 0.12);
+            }
+          }
         }
       }
     }
