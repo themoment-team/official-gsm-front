@@ -4,7 +4,7 @@ import { Footer, Header, ListPageContent } from 'client/components';
 
 import { postUrl } from 'api/client';
 
-import { categoryList, categoryQueryString } from 'common';
+import { categoryList, categoryQueryString, minutesToSeconds } from 'common';
 
 import type { CategoryType, PostListType } from 'types';
 
@@ -90,7 +90,7 @@ async function getPostList(
       )}`,
       {
         next: {
-          revalidate: 60,
+          revalidate: minutesToSeconds(5),
         },
       }
     );
