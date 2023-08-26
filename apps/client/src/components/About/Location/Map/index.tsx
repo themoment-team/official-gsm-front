@@ -119,10 +119,9 @@ function Map({ latitude, longitude }: MapProps) {
               if (closeButtonRef.current) {
                 const closeButton = closeButtonRef.current;
                 closeButton.addEventListener('click', () => {
-                  customOverlay.setMap(null); // Hide the overlay
+                  customOverlay.setMap(null);
                   setIsVisible(false);
 
-                  // Remove the infoWindowElement from its parent
                   if (infoWindowElement.parentElement) {
                     infoWindowElement.parentElement.removeChild(
                       infoWindowElement
@@ -134,14 +133,14 @@ function Map({ latitude, longitude }: MapProps) {
                 const locationButton = locationButtonRef.current;
                 locationButton.addEventListener('click', () => {
                   const kakaoMapLink = `https://map.kakao.com/link/to/광주소프트웨어마이스터고등학교,${latitude},${longitude}`;
-                  window.open(kakaoMapLink, '_blank'); // Open the link in a new tab
+                  window.open(kakaoMapLink, '_blank');
                 });
               }
               if (roadViewButtonRef.current) {
                 const roadViewButton = roadViewButtonRef.current;
                 roadViewButton.addEventListener('click', () => {
                   const kakaoMapLink = `https://map.kakao.com/link/roadview/${latitude},${longitude}`;
-                  window.open(kakaoMapLink, '_blank'); // Open the link in a new tab
+                  window.open(kakaoMapLink, '_blank');
                 });
               }
               if (copyLinkButtonRef.current) {
@@ -181,8 +180,8 @@ function Map({ latitude, longitude }: MapProps) {
 }
 
 const MapContainer = styled.div`
-  width: 1240px;
-  height: 400px;
+  width: 77.5rem;
+  height: 25rem;
   .customOverlay {
     position: absolute;
     bottom: 5rem;
