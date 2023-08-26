@@ -1,4 +1,6 @@
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef, useCallback } from 'react';
+
+import Script from 'next/script';
 
 import styled from '@emotion/styled';
 
@@ -168,19 +170,12 @@ function Map({ latitude, longitude }: MapProps) {
     });
   }, [latitude, longitude]);
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = `//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAOMAP_APPKEY}&autoload=false`;
-    script.onload = onLoadKakaoMap;
-    document.head.appendChild(script);
-
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, [onLoadKakaoMap]);
-
   return (
     <>
+      <Script
+        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAOMAP_APPKEY}&autoload=false`}
+        onLoad={onLoadKakaoMap}
+      />
       <MapContainer id='map' ref={containerRef} />
     </>
   );
