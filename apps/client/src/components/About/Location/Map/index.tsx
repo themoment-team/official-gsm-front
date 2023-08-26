@@ -1,4 +1,4 @@
-import { useRef, useCallback } from 'react';
+import { useRef } from 'react';
 
 import Script from 'next/script';
 
@@ -18,7 +18,7 @@ declare global {
 function Map({ latitude, longitude }: MapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const onLoadKakaoMap = useCallback(() => {
+  const onLoadKakaoMap = () => {
     window.kakao.maps.load(() => {
       const options = {
         center: new window.kakao.maps.LatLng(latitude, longitude),
@@ -27,12 +27,10 @@ function Map({ latitude, longitude }: MapProps) {
       const map = new window.kakao.maps.Map(containerRef.current, options);
 
       const imageSrc = '/images/about/Location/Marker.png',
-        imageSize = new window.kakao.maps.Size(60, 60),
-        imageOption = { offset: new window.kakao.maps.Point(27, 69) };
+        imageSize = new window.kakao.maps.Size(60, 60);
       const markerImage = new window.kakao.maps.MarkerImage(
         imageSrc,
-        imageSize,
-        imageOption
+        imageSize
       );
       const markerPosition = new window.kakao.maps.LatLng(latitude, longitude);
 
@@ -168,7 +166,7 @@ function Map({ latitude, longitude }: MapProps) {
       });
       marker.setMap(map);
     });
-  }, [latitude, longitude]);
+  };
 
   return (
     <>
