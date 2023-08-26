@@ -7,7 +7,7 @@ import { PaginationIcon } from 'ui/assets';
 import * as S from './style';
 
 interface PageNationControllerProps {
-  /** 1 ~ totalpages */
+  /** 1 ~ totalPages */
   pageNumber: number;
   totalPages: number;
 }
@@ -36,6 +36,7 @@ const PaginationController: React.FC<PageNationControllerProps> = ({
         onClick={() => updatePageNumber(pageNumber - 1)}
         type='button'
         disabled={pageNumber === 1}
+        aria-label='이전'
       >
         <PaginationIcon turn='left' disabled={pageNumber === 1} />
       </S.PaginationButton>
@@ -59,6 +60,7 @@ const PaginationController: React.FC<PageNationControllerProps> = ({
         onClick={() => updatePageNumber(pageNumber + 1)}
         type='button'
         disabled={pageNumber === totalPages}
+        aria-label='다음'
       >
         <PaginationIcon turn='right' disabled={pageNumber === totalPages} />
       </S.PaginationButton>

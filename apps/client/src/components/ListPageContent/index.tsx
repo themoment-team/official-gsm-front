@@ -10,7 +10,7 @@ import { categoryQueryString } from 'common';
 
 import { PaginationController } from 'ui';
 
-import type { CategoryType } from 'types';
+import type { CategoryType, PostListType } from 'types';
 
 import Category from './Category';
 import GalleryList from './GalleryList';
@@ -19,22 +19,23 @@ import Title from './Title';
 
 interface ListPageContentProps {
   category: CategoryType;
-  searchParams: { pageNumber: string };
+  postList: PostListType;
+  /** 1 ~ totalPages */
+  pageNumber: number;
 }
 
 export const PAGE_SIZE = 12;
 
 const ListPageContent: React.FC<ListPageContentProps> = ({
   category,
-  searchParams,
+  postList,
+  pageNumber,
 }) => {
-  /** 1 ~ totalPages */
-  const pageNumber = Number(searchParams.pageNumber ?? 1);
-
   const { data, isError } = useGetPostList(
     categoryQueryString[category],
     pageNumber,
-    PAGE_SIZE
+    PAGE_SIZE,
+    { initialData: postList }
   );
 
   if (isError) {

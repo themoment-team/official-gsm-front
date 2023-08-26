@@ -1,6 +1,12 @@
+import { notFound, redirect } from 'next/navigation';
+
 import { Footer, Header, ListPageContent } from 'client/components';
 
-import type { CategoryType } from 'types';
+import { postUrl } from 'api/client';
+
+import { categoryList, categoryQueryString, minutesToSeconds } from 'common';
+
+import type { CategoryType, PostListType } from 'types';
 
 import type { Metadata } from 'next';
 
@@ -21,32 +27,78 @@ const categoryTitle: {
   },
 } as const;
 
-export const generateMetadata = async ({
+export const generateMetadata = ({
   params: { category },
-}: ListPageProps): Promise<Metadata> => ({
-  title: { absolute: categoryTitle[category].title },
-  description: categoryTitle[category].description,
-  openGraph: {
-    title: categoryTitle[category].title,
+}: ListPageProps): Metadata => {
+  if (!categoryList.includes(category)) {
+    return notFound();
+  }
+
+  return {
+    title: { absolute: categoryTitle[category].title },
     description: categoryTitle[category].description,
-    url: `https://official.hellogsm.kr/list/${category}`,
-  },
-});
+    openGraph: {
+      title: categoryTitle[category].title,
+      description: categoryTitle[category].description,
+      url: `https://official.hellogsm.kr/list/${category}`,
+    },
+  };
+};
 
 interface ListPageProps {
   params: { category: CategoryType };
   searchParams: { pageNumber: string };
 }
 
-export default function ListPage({
+export default async function ListPage({
   params: { category },
   searchParams,
 }: ListPageProps) {
+  /**falsy 값을 1로 대체 (ex. '', 0, undefined) */
+  const pageNumber = Number(searchParams.pageNumber || 1);
+  const postList = await getPostList(category, pageNumber);
+
+  if (postList.postList.length < 1) {
+    return redirect(`/list/${category}`);
+  }
+
   return (
     <>
       <Header segment={'list'} />
-      <ListPageContent category={category} searchParams={searchParams} />
+      <ListPageContent
+        category={category}
+        postList={postList}
+        pageNumber={pageNumber}
+      />
       <Footer />
     </>
   );
+}
+
+async function getPostList(
+  category: CategoryType,
+  pageNumber: number
+): Promise<PostListType> {
+  const PAGE_SIZE = 12;
+
+  try {
+    const res = await fetch(
+      `${process.env.BASE_URL}/api/client${postUrl.postList(
+        categoryQueryString[category],
+        pageNumber,
+        PAGE_SIZE
+      )}`,
+      {
+        next: {
+          revalidate: minutesToSeconds(5),
+        },
+      }
+    );
+
+    const data: PostListType = await res.json();
+
+    return data;
+  } catch (e) {
+    return notFound();
+  }
 }
