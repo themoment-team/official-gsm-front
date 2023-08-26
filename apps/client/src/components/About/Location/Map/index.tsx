@@ -1,4 +1,4 @@
-import { useRef, useEffect, useCallback, useState } from 'react';
+import { useRef, useEffect, useCallback } from 'react';
 
 import styled from '@emotion/styled';
 
@@ -15,11 +15,7 @@ declare global {
 
 function Map({ latitude, longitude }: MapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const closeButtonRef = useRef<HTMLDivElement | null>(null);
-  const locationButtonRef = useRef<HTMLDivElement | null>(null);
-  const roadViewButtonRef = useRef<HTMLDivElement | null>(null);
-  const copyLinkButtonRef = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
+
   const onLoadKakaoMap = useCallback(() => {
     window.kakao.maps.load(() => {
       const options = {
@@ -80,6 +76,8 @@ function Map({ latitude, longitude }: MapProps) {
         content: customOverlayContent,
       });
 
+      let isVisible = false;
+
       window.kakao.maps.event.addListener(marker, 'mouseover', function () {
         customOverlay.setMap(map);
         const chevronElement = customOverlayContent.querySelector(
@@ -116,11 +114,23 @@ function Map({ latitude, longitude }: MapProps) {
                 </div>
               </div>`;
               customOverlayContent.appendChild(infoWindowElement);
-              if (closeButtonRef.current) {
-                const closeButton = closeButtonRef.current;
+              const closeButton = infoWindowElement.querySelector(
+                '.close'
+              ) as HTMLElement | null;
+              const locationButton = infoWindowElement.querySelector(
+                '.locationBtn'
+              ) as HTMLElement | null;
+              const RoadViewButton = infoWindowElement.querySelector(
+                '.roadView'
+              ) as HTMLElement | null;
+              const CopyLinkButton = infoWindowElement.querySelector(
+                '.copyLink'
+              ) as HTMLElement | null;
+
+              if (closeButton) {
                 closeButton.addEventListener('click', () => {
                   customOverlay.setMap(null);
-                  setIsVisible(false);
+                  isVisible = false;
 
                   if (infoWindowElement.parentElement) {
                     infoWindowElement.parentElement.removeChild(
@@ -129,30 +139,27 @@ function Map({ latitude, longitude }: MapProps) {
                   }
                 });
               }
-              if (locationButtonRef.current) {
-                const locationButton = locationButtonRef.current;
+              if (locationButton) {
                 locationButton.addEventListener('click', () => {
                   const kakaoMapLink = `https://map.kakao.com/link/to/광주소프트웨어마이스터고등학교,${latitude},${longitude}`;
                   window.open(kakaoMapLink, '_blank');
                 });
               }
-              if (roadViewButtonRef.current) {
-                const roadViewButton = roadViewButtonRef.current;
-                roadViewButton.addEventListener('click', () => {
+              if (RoadViewButton) {
+                RoadViewButton.addEventListener('click', () => {
                   const kakaoMapLink = `https://map.kakao.com/link/roadview/${latitude},${longitude}`;
                   window.open(kakaoMapLink, '_blank');
                 });
               }
-              if (copyLinkButtonRef.current) {
-                const copyLinkButton = copyLinkButtonRef.current;
-                copyLinkButton.addEventListener('click', () => {
+              if (CopyLinkButton) {
+                CopyLinkButton.addEventListener('click', () => {
                   const linkToCopy = 'http://kko.to/CtKpnV33Dj';
                   navigator.clipboard.writeText(linkToCopy).then(() => {
                     alert('링크가 복사되었습니다');
                   });
                 });
               }
-              setIsVisible(true);
+              isVisible = true;
             }
           });
         }
