@@ -39,23 +39,6 @@ function Map({ latitude, longitude }: MapProps) {
         image: markerImage,
       });
 
-      const MarkerIcon = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 7C10 7.53043 9.78929 8.03914 9.41421 8.41421C9.03914 8.78929 8.53043 9 8 9C7.46957 9 6.96086 8.78929 6.58579 8.41421C6.21071 8.03914 6 7.53043 6 7C6 6.46957 6.21071 5.96086 6.58579 5.58579C6.96086 5.21071 7.46957 5 8 5C8.53043 5 9.03914 5.21071 9.41421 5.58579C9.78929 5.96086 10 6.46957 10 7Z" stroke="#003365" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M13 7C13 11.7613 8 14.5 8 14.5C8 14.5 3 11.7613 3 7C3 5.67392 3.52678 4.40215 4.46447 3.46447C5.40215 2.52678 6.67392 2 8 2C9.32608 2 10.5979 2.52678 11.5355 3.46447C12.4732 4.40215 13 5.67392 13 7Z" stroke="#003365" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      `;
-
-      const Chevron = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M6 12L10 7.5L6 3" stroke="#9E9E9E" stroke-width="1.5" stroke-linecap="round"/> </svg>`;
-
-      const Close = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M5 5L15 15M5 15L15 5" stroke="#424242" stroke-width="1.5" stroke-linecap="round"/></svg>
-      `;
-      const CopyLink = `<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M8.96404 6.26321C9.35394 6.44936 9.69347 6.72637 9.95411 7.07095C10.2147 7.41553 10.3889 7.81764 10.4619 8.24348C10.5349 8.66932 10.5047 9.10647 10.3737 9.51819C10.2427 9.92992 10.0149 10.3042 9.70924 10.6096L7.00924 13.3096C6.50289 13.816 5.81613 14.1004 5.10004 14.1004C4.38395 14.1004 3.69719 13.816 3.19084 13.3096C2.68449 12.8033 2.40002 12.1165 2.40002 11.4004C2.40002 10.6843 2.68449 9.99756 3.19084 9.49121L4.24504 8.43701M12.255 8.06381L13.3092 7.00961C13.8156 6.50326 14.1001 5.8165 14.1001 5.10041C14.1001 4.38432 13.8156 3.69756 13.3092 3.19121C12.8029 2.68486 12.1161 2.40039 11.4 2.40039C10.684 2.40039 9.99719 2.68486 9.49084 3.19121L6.79084 5.89121C6.48522 6.19661 6.25736 6.57089 6.12639 6.98262C5.99542 7.39435 5.96517 7.83149 6.03818 8.25733C6.1112 8.68318 6.28534 9.08528 6.54598 9.42986C6.80662 9.77445 7.14615 10.0515 7.53604 10.2376" stroke="#003365" stroke-opacity="0.4" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      `;
-
       const customOverlayContent = document.createElement('div');
       customOverlayContent.innerHTML = `
       <div class="customOverlay">
@@ -68,6 +51,7 @@ function Map({ latitude, longitude }: MapProps) {
           <img src="/images/about/location/svg/ChevronIcon.svg" />
           </div>
         </div>
+        <div class="triangle"></div>
       </div>
   `;
 
@@ -109,16 +93,19 @@ function Map({ latitude, longitude }: MapProps) {
                   </div>
                   <div class="bottomBox">
                     <div class="iconBox">
-                    <div class="icon roadView">
-                    <img src="/images/about/location/svg/SmallMarkerIcon.svg" />
+                      <div class="icon roadView">
+                        <img src="/images/about/location/svg/SmallMarkerIcon.svg" />
+                      </div>
+                      <div class="icon copyLink">
+                        <img src="/images/about/location/svg/CopyLinkIcon.svg" />
+                      </div>
                     </div>
-                    <div class="icon copyLink">
-                    <img src="/images/about/location/svg/CopyLinkIcon.svg" />
-                    </div>
-                    </div>
-                  <div class="locationBtn">길찾기</div>
+                    <div class="locationBtn">길찾기</div>
+                  </div>
                 </div>
-              </div>`;
+              <div class="triangle"></div>
+              </div>
+              `;
               customOverlayContent.appendChild(infoWindowElement);
               const closeButton = infoWindowElement.querySelector(
                 '.close'
@@ -192,6 +179,17 @@ const MapContainer = styled.div`
     position: absolute;
     bottom: 5rem;
     right: -11.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .triangle {
+      width: 0;
+      height: 0;
+      border-top: 1rem solid ${({ theme }) => theme.color.white};
+      border-left: 0.5rem solid transparent;
+      border-right: 0.5rem solid transparent;
+    }
     .title {
       color: #424242;
       font-size: 1rem;
@@ -203,7 +201,7 @@ const MapContainer = styled.div`
       &.hidden {
         display: none;
       }
-      background: #ffffff;
+      background: ${({ theme }) => theme.color.white};
       border-radius: 3.125rem;
       width: 22.4375rem;
       height: 3.5rem;
@@ -226,8 +224,21 @@ const MapContainer = styled.div`
     .next {
       width: 21.375rem;
       height: 12.5rem;
-      background: white;
+      background: ${({ theme }) => theme.color.white};
       border-radius: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .triangle {
+        position: relative;
+        top: 15px;
+        width: 0;
+        height: 0;
+        border-top: 1rem solid ${({ theme }) => theme.color.white};
+        border-left: 0.5rem solid transparent;
+        border-right: 0.5rem solid transparent;
+      }
       .box {
         padding: 1rem;
         width: 21.375rem;
@@ -255,7 +266,7 @@ const MapContainer = styled.div`
             font-size: 0.875rem;
           }
           .number {
-            color: #3c8aaf;
+            color: ${({ theme }) => theme.color.sub.blue};
           }
         }
         .bottomBox {
@@ -271,7 +282,7 @@ const MapContainer = styled.div`
             justify-content: center;
             align-items: center;
             gap: 0.5rem;
-            background: #003365;
+            background: ${({ theme }) => theme.color.primary.navy};
             border-radius: 0.5rem;
             color: var(--white, #fff);
             font-size: 0.875rem;
