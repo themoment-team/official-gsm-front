@@ -2,7 +2,6 @@ export { default as ArrowIcon } from './svg/icon/ArrowIcon';
 export { default as ChevronIcon } from './svg/icon/ChevronIcon';
 export { default as CloseIcon } from './svg/icon/CloseIcon';
 export { default as ContactIcon } from './svg/icon/ContactIcon';
-export { default as CopyLinkIcon } from './svg/icon/CopyLinkIcon';
 export { default as DownChevronsIcon } from './about/section1/DownChevronsIcon';
 export { default as DreamIcon } from './about/section3/DreamIcon';
 export { default as FavoriteIcon } from './svg/icon/FavoriteIcon';
