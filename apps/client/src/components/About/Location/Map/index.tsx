@@ -232,7 +232,7 @@ const MapContainer = styled.div`
       align-items: center;
       .triangle {
         position: relative;
-        top: 15px;
+        top: 0.9375rem;
         width: 0;
         height: 0;
         border-top: 1rem solid ${({ theme }) => theme.color.white};
