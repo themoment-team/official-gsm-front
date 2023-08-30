@@ -45,7 +45,7 @@ function SchoolMap({ latitude, longitude }: MapProps) {
             src: imageSrc,
             size: { width: 60, height: 60 },
           }}
-          onClick={handleMarkerClick}
+          onMouseOver={handleMarkerClick}
         />
         {isInfoWindowVisible && (
           <CustomOverlayMap position={{ lat: latitude, lng: longitude }}>
