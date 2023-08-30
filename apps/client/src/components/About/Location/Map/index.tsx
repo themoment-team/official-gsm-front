@@ -20,10 +20,12 @@ declare global {
 }
 
 function SchoolMap({ latitude, longitude }: MapProps) {
-  const [isInfoWindowOpen, setIsInfoWindowOpen] = useState<boolean>(false);
+  const [isInfoWindowVisible, setIsInfoWindowVisible] =
+    useState<boolean>(false);
   const imageSrc = '/images/about/Location/Marker.png';
+
   const handleMarkerClick = () => {
-    setIsInfoWindowOpen(!isInfoWindowOpen);
+    setIsInfoWindowVisible(true);
   };
 
   return (
@@ -45,9 +47,13 @@ function SchoolMap({ latitude, longitude }: MapProps) {
           }}
           onClick={handleMarkerClick}
         />
-        {isInfoWindowOpen && (
+        {isInfoWindowVisible && (
           <CustomOverlayMap position={{ lat: latitude, lng: longitude }}>
-            <Overlay latitude={latitude} longitude={longitude} />
+            <Overlay
+              latitude={latitude}
+              longitude={longitude}
+              onCloseInfoWindow={() => setIsInfoWindowVisible(false)}
+            />
           </CustomOverlayMap>
         )}
       </Map>

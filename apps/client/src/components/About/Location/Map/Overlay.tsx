@@ -6,9 +6,14 @@ import * as S from './style';
 interface OverlayProps {
   latitude: number;
   longitude: number;
+  onCloseInfoWindow: () => void;
 }
 
-const Overlay: React.FC<OverlayProps> = ({ latitude, longitude }) => {
+const Overlay: React.FC<OverlayProps> = ({
+  latitude,
+  longitude,
+  onCloseInfoWindow,
+}) => {
   const [isOverlayVisible, setIsOverlayVisible] = useState(true);
   const [isInfoWindowVisible, setIsInfoWindowVisible] = useState(false);
 
@@ -17,32 +22,30 @@ const Overlay: React.FC<OverlayProps> = ({ latitude, longitude }) => {
     setIsOverlayVisible(false);
   };
 
-  const closeOverlayAndInfoWindow = () => {
-    setIsInfoWindowVisible(false);
-    setIsOverlayVisible(false);
-  };
-
   return (
     <S.CustomOverlay>
       {isOverlayVisible && (
         <>
-          <S.Default className='default'>
-            <S.MarkerIcon className='markerIcon'>
+          <S.Default>
+            <S.MarkerIcon>
               <img src='/images/about/location/svg/MarkerIcon.svg' />
             </S.MarkerIcon>
-            <S.Title className='title'>광주소프트웨어 마이스터고등학교</S.Title>
-            <S.Chevron className='chevron' onClick={ChevronClick}>
+            <S.Title>광주소프트웨어 마이스터고등학교</S.Title>
+            <S.Chevron onClick={ChevronClick}>
               <img src='/images/about/location/svg/ChevronIcon.svg' />
             </S.Chevron>
           </S.Default>
-          <S.Triangle className='triangle' />
+          <S.Triangle />
         </>
       )}
       {isInfoWindowVisible && (
         <InfoWindow
           latitude={latitude}
           longitude={longitude}
-          onClose={closeOverlayAndInfoWindow}
+          onClose={() => {
+            setIsInfoWindowVisible(false);
+            onCloseInfoWindow();
+          }}
         />
       )}
     </S.CustomOverlay>
