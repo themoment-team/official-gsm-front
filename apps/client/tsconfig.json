@@ -2,7 +2,7 @@
   "extends": "tsconfig/nextjs.json",
   "compilerOptions": {
     "jsx": "preserve",
-    "types": ["@types/gtag.js"],
+    "types": ["@types/gtag.js", "kakao.maps.d.ts"],
     "paths": {
       "client/*": ["./src/*"],
       "api/*": ["../../packages/api/*"],
