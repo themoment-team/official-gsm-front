@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 
 import Script from 'next/script';
 
@@ -17,6 +17,11 @@ declare global {
 
 function Map({ latitude, longitude }: MapProps) {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    console.log(isVisible);
+  }, [isVisible]);
 
   const onLoadKakaoMap = () => {
     window.kakao.maps.load(() => {
@@ -60,9 +65,8 @@ function Map({ latitude, longitude }: MapProps) {
         content: customOverlayContent,
       });
 
-      let isVisible = false;
-
-      window.kakao.maps.event.addListener(marker, 'mouseover', function () {
+      window.kakao.maps.event.addListener(marker, 'click', function () {
+        setIsVisible(true);
         customOverlay.setMap(map);
         const chevronElement = customOverlayContent.querySelector(
           '.chevron'
@@ -70,16 +74,16 @@ function Map({ latitude, longitude }: MapProps) {
 
         if (chevronElement) {
           chevronElement.addEventListener('click', () => {
+            console.log('click');
             const defaultElement = customOverlayContent.querySelector(
               '.default'
             ) as HTMLElement | null;
             if (defaultElement) {
               defaultElement.classList.toggle('hidden');
             }
-            if (!isVisible) {
-              const infoWindowElement = document.createElement('div');
-              infoWindowElement.className = 'customOverlay';
-              infoWindowElement.innerHTML = `
+            const infoWindowElement = document.createElement('div');
+            infoWindowElement.className = 'customOverlay';
+            infoWindowElement.innerHTML = `
               <div class="next">
                 <div class="box">
                   <div class="close">
@@ -103,56 +107,54 @@ function Map({ latitude, longitude }: MapProps) {
                     <div class="locationBtn">길찾기</div>
                   </div>
                 </div>
-              <div class="triangle"></div>
+                <div class="triangle"></div>
               </div>
               `;
-              customOverlayContent.appendChild(infoWindowElement);
-              const closeButton = infoWindowElement.querySelector(
-                '.close'
-              ) as HTMLElement | null;
-              const locationButton = infoWindowElement.querySelector(
-                '.locationBtn'
-              ) as HTMLElement | null;
-              const RoadViewButton = infoWindowElement.querySelector(
-                '.roadView'
-              ) as HTMLElement | null;
-              const CopyLinkButton = infoWindowElement.querySelector(
-                '.copyLink'
-              ) as HTMLElement | null;
+            customOverlayContent.appendChild(infoWindowElement);
+            const closeButton = infoWindowElement.querySelector(
+              '.close'
+            ) as HTMLElement | null;
+            const locationButton = infoWindowElement.querySelector(
+              '.locationBtn'
+            ) as HTMLElement | null;
+            const RoadViewButton = infoWindowElement.querySelector(
+              '.roadView'
+            ) as HTMLElement | null;
+            const CopyLinkButton = infoWindowElement.querySelector(
+              '.copyLink'
+            ) as HTMLElement | null;
 
-              if (closeButton) {
-                closeButton.addEventListener('click', () => {
-                  customOverlay.setMap(null);
-                  isVisible = false;
+            if (closeButton) {
+              closeButton.addEventListener('click', () => {
+                customOverlay.setMap(null);
+                setIsVisible(false);
 
-                  if (infoWindowElement.parentElement) {
-                    infoWindowElement.parentElement.removeChild(
-                      infoWindowElement
-                    );
-                  }
+                if (infoWindowElement.parentElement) {
+                  infoWindowElement.parentElement.removeChild(
+                    infoWindowElement
+                  );
+                }
+              });
+            }
+            if (locationButton) {
+              locationButton.addEventListener('click', () => {
+                const kakaoMapLink = `https://map.kakao.com/link/to/광주소프트웨어마이스터고등학교,${latitude},${longitude}`;
+                window.open(kakaoMapLink, '_blank');
+              });
+            }
+            if (RoadViewButton) {
+              RoadViewButton.addEventListener('click', () => {
+                const kakaoMapLink = `https://map.kakao.com/link/roadview/${latitude},${longitude}`;
+                window.open(kakaoMapLink, '_blank');
+              });
+            }
+            if (CopyLinkButton) {
+              CopyLinkButton.addEventListener('click', () => {
+                const linkToCopy = 'http://kko.to/CtKpnV33Dj';
+                navigator.clipboard.writeText(linkToCopy).then(() => {
+                  alert('링크가 복사되었습니다');
                 });
-              }
-              if (locationButton) {
-                locationButton.addEventListener('click', () => {
-                  const kakaoMapLink = `https://map.kakao.com/link/to/광주소프트웨어마이스터고등학교,${latitude},${longitude}`;
-                  window.open(kakaoMapLink, '_blank');
-                });
-              }
-              if (RoadViewButton) {
-                RoadViewButton.addEventListener('click', () => {
-                  const kakaoMapLink = `https://map.kakao.com/link/roadview/${latitude},${longitude}`;
-                  window.open(kakaoMapLink, '_blank');
-                });
-              }
-              if (CopyLinkButton) {
-                CopyLinkButton.addEventListener('click', () => {
-                  const linkToCopy = 'http://kko.to/CtKpnV33Dj';
-                  navigator.clipboard.writeText(linkToCopy).then(() => {
-                    alert('링크가 복사되었습니다');
-                  });
-                });
-              }
-              isVisible = true;
+              });
             }
           });
         }
