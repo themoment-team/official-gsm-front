@@ -9,12 +9,12 @@ export const CustomOverlay = styled.div`
   justify-content: center;
 `;
 
-export const Default = styled.div`
+export const Default = styled.div<{ isVisible: boolean }>`
+  display: ${({ isVisible }) => (isVisible ? 'flex' : 'none')};
   background: ${({ theme }) => theme.color.white};
   border-radius: 3.125rem;
   width: 22.4375rem;
   height: 3.5rem;
-  display: flex;
   align-items: center;
   justify-content: space-around;
 `;

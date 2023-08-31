@@ -1,7 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-
 import { CustomOverlayMap, Map, MapMarker } from 'react-kakao-maps-sdk';
 
 import Overlay from './Overlay';
@@ -18,13 +16,7 @@ declare global {
 }
 
 function SchoolMap({ latitude, longitude }: MapProps) {
-  const [isInfoWindowVisible, setIsInfoWindowVisible] =
-    useState<boolean>(false);
   const imageSrc = '/images/about/Location/Marker.png';
-
-  const handleMarkerClick = () => {
-    setIsInfoWindowVisible(true);
-  };
 
   return (
     <>
@@ -38,17 +30,10 @@ function SchoolMap({ latitude, longitude }: MapProps) {
             src: imageSrc,
             size: { width: 60, height: 60 },
           }}
-          onMouseOver={handleMarkerClick}
         />
-        {isInfoWindowVisible && (
-          <CustomOverlayMap position={{ lat: latitude, lng: longitude }}>
-            <Overlay
-              latitude={latitude}
-              longitude={longitude}
-              onCloseInfoWindow={() => setIsInfoWindowVisible(false)}
-            />
-          </CustomOverlayMap>
-        )}
+        <CustomOverlayMap position={{ lat: latitude, lng: longitude }}>
+          <Overlay latitude={latitude} longitude={longitude} />
+        </CustomOverlayMap>
       </Map>
     </>
   );
