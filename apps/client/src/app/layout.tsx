@@ -88,6 +88,11 @@ export default function RootLayout({
         `,
           }}
         />
+        <Script
+          src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAOMAP_APPKEY}&autoload=false&libraries=services,clusterer`}
+          type='text/javascript'
+          strategy='beforeInteractive'
+        />
       </head>
 
       <body>
