@@ -25,7 +25,7 @@ export const ContentBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: #424242;
+  color: ${({ theme }) => theme.color.gray['080']};
   font-size: 0.75rem;
   font-style: normal;
   font-weight: 400;
