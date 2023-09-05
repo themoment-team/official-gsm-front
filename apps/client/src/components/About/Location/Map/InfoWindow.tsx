@@ -16,14 +16,6 @@ const InfoWindow: React.FC<InfoWindowProps> = ({
     onClose();
   };
 
-  const locationButtonClick = () => {
-    const kakaoMapLink = `https://map.kakao.com/link/to/광주소프트웨어마이스터고등학교,${latitude},${longitude}`;
-    window.open(kakaoMapLink, '_blank');
-  };
-  const roadViewButtonClick = () => {
-    const kakaoMapLink = `https://map.kakao.com/link/roadview/${latitude},${longitude}`;
-    window.open(kakaoMapLink, '_blank');
-  };
   const copyLinkButtonClick = () => {
     const linkToCopy = 'http://kko.to/CtKpnV33Dj';
     navigator.clipboard.writeText(linkToCopy).then(() => {
@@ -45,14 +37,19 @@ const InfoWindow: React.FC<InfoWindowProps> = ({
         </S.ContentBox>
         <S.BottomBox>
           <S.IconBox>
-            <S.Icon onClick={roadViewButtonClick}>
-              <Image
-                width={16}
-                height={16}
-                alt='smallMarker'
-                src='/images/about/location/svg/SmallMarkerIcon.svg'
-              />
-            </S.Icon>
+            <a
+              href={`https://map.kakao.com/link/roadview/${latitude},${longitude}`}
+              target='_blank'
+            >
+              <S.Icon>
+                <Image
+                  width={16}
+                  height={16}
+                  alt='smallMarker'
+                  src='/images/about/location/svg/SmallMarkerIcon.svg'
+                />
+              </S.Icon>
+            </a>
             <S.Icon onClick={copyLinkButtonClick}>
               <Image
                 width={16}
@@ -62,7 +59,12 @@ const InfoWindow: React.FC<InfoWindowProps> = ({
               />
             </S.Icon>
           </S.IconBox>
-          <S.LocationBtn onClick={locationButtonClick}>길찾기</S.LocationBtn>
+          <a
+            href={`https://map.kakao.com/link/to/광주소프트웨어마이스터고등학교,${latitude},${longitude}`}
+            target='_blank'
+          >
+            <S.LocationBtn>길찾기</S.LocationBtn>
+          </a>
         </S.BottomBox>
       </S.Box>
       <S.Triangle2 />
