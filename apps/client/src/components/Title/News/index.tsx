@@ -22,7 +22,7 @@ const NewsTitle: React.FC<NewsTitleProps> = ({
   </TitleTemplate>
 );
 
-export const NewsTitleStyle = styled.h1`
+export const NewsTitleStyle = styled.h2`
   font-size: 1.75rem;
   line-height: 2.563rem;
   font-weight: 600;

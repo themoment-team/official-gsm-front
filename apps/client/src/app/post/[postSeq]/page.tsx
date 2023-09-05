@@ -4,6 +4,8 @@ import { Footer, Header, AssembledPost } from 'client/components';
 
 import { postUrl } from 'api/client';
 
+import { descriptionFormatting, minutesToSeconds } from 'common';
+
 import type { PostDetailType } from 'types';
 
 import type { Metadata } from 'next';
@@ -12,11 +14,13 @@ interface PostPageProps {
   params: { postSeq: string };
 }
 
-export default function PostPage({ params: { postSeq } }: PostPageProps) {
+export default async function PostPage({ params: { postSeq } }: PostPageProps) {
+  const post = await getPostDetail(parseInt(postSeq));
+
   return (
     <>
       <Header segment='list' />
-      <AssembledPost postSeq={parseInt(postSeq)} />
+      <AssembledPost post={post} postSeq={parseInt(postSeq)} />
       <Footer />
     </>
   );
@@ -28,9 +32,7 @@ export const generateMetadata = async ({
   try {
     const postSeq = Number(params.postSeq);
 
-    const post: PostDetailType = await fetch(
-      `${process.env.BASE_URL}/api/client${postUrl.postDetail(postSeq)}`
-    ).then((res) => res.json());
+    const post = await getPostDetail(postSeq);
 
     return {
       title: { absolute: post.postTitle },
@@ -46,5 +48,17 @@ export const generateMetadata = async ({
   }
 };
 
-const descriptionFormatting = (description: string) =>
-  description.replace(/\n/g, ' ').replace(/\s+/g, ' ').slice(0, 120);
+async function getPostDetail(postSeq: number) {
+  const res = await fetch(
+    `${process.env.BASE_URL}/api/client${postUrl.postDetail(postSeq)}`,
+    {
+      next: {
+        revalidate: minutesToSeconds(5),
+      },
+    }
+  );
+
+  const data: PostDetailType = await res.json();
+
+  return data;
+}

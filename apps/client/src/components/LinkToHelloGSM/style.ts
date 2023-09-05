@@ -64,7 +64,7 @@ export const HashTagWrapper = styled.div`
   gap: 1rem;
 `;
 
-export const HashTag = styled.h4`
+export const HashTag = styled.p`
   ${({ theme: { typo } }) => typo.h4}
   color: ${({ theme: { color } }) => color.white};
   font-weight: 400;

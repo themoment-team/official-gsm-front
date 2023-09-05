@@ -2,7 +2,7 @@
 
 광주소프트웨어마이스터고등학교 공식 홈페이지입니다.
 
-## commands
+## Commands
 
 > root `package.json` scripts에 `--filter` command를 포함하여 작성해두었습니다.
 
@@ -12,13 +12,13 @@ $ cd official-gsm-front
 $ pnpm install
 
 # command of a specific package
-$ pnpm <workspace-name> <command>
+$ pnpm <package-name> <command>
 
 # example
 $ pnpm client dev
 ```
 
-## directory structure
+## Directory structure
 
 ```bash
 ...
@@ -35,4 +35,18 @@ $ pnpm client dev
 │   └── types
 │   └── ui
 ...
+```
+
+## Skill set
+
+```txt
+- application
+  Next.js - App Router
+
+- core library
+  Storybook
+  Typescript
+  emotion
+  @tanstack/react-query
+  axios
 ```

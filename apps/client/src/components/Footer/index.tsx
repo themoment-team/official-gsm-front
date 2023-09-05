@@ -22,9 +22,9 @@ const Footer = () => {
               ALL RIGHTS RESERVED.
             </S.Copyright>
             <S.LinkWrapper>
-              <Link href='#'>개인정보처리방침</Link>
-              <Link href='#'>영상정보처리기기운영·관리방침</Link>
-              <Link href='#'>저작권신고 및 보호규정</Link>
+              <Link href='/policy/privacy'>개인정보처리방침</Link>
+              <Link href='/policy/cctv'>영상정보처리기기운영·관리방침</Link>
+              <Link href='/policy/copyright'>저작권신고 및 보호규정</Link>
               <Link href='/about/location'>찾아오시는 길</Link>
               <a href='https://admin.official.hellogsm.kr/'>관리자</a>
             </S.LinkWrapper>

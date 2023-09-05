@@ -14,8 +14,8 @@ export const Bullet = styled.div<{ isDark: boolean }>`
   margin-top: 0.5938rem;
 `;
 
-export const Text = styled.p`
-  ${({ theme }) => theme.typo.h4}
+export const Text = styled.p<{ isSmall: boolean }>`
+  ${({ theme, isSmall }) => (isSmall ? theme.typo.h5 : theme.typo.h4)}
   width: 76.125rem;
   font-weight: 400;
   color: ${({ theme }) => theme.color.gray['070']};
