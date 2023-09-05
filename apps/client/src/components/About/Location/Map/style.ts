@@ -2,15 +2,15 @@ import styled from '@emotion/styled';
 
 export const CustomOverlay = styled.div`
   position: absolute;
-  bottom: 5rem;
-  right: -11.25rem;
+  bottom: 4.0625rem;
+  right: -11.375rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
 `;
 
-export const Default = styled.div<{ isVisible: boolean }>`
-  display: ${({ isVisible }) => (isVisible ? 'flex' : 'none')};
+export const Default = styled.div`
+  display: flex;
   background: ${({ theme }) => theme.color.white};
   border-radius: 3.125rem;
   width: 22.4375rem;
@@ -64,6 +64,9 @@ export const Chevron = styled.div`
 `;
 
 export const Next = styled.div`
+  position: absolute;
+  bottom: 5rem;
+  right: -10.9375rem;
   width: 21.375rem;
   height: 12.5rem;
   background: ${({ theme }) => theme.color.white};
