@@ -1,5 +1,6 @@
-import * as S from './style';
+import Image from 'next/image';
 
+import * as S from './style';
 interface InfoWindowProps {
   latitude: number;
   longitude: number;
@@ -45,10 +46,20 @@ const InfoWindow: React.FC<InfoWindowProps> = ({
         <S.BottomBox>
           <S.IconBox>
             <S.Icon onClick={roadViewButtonClick}>
-              <img src='/images/about/location/svg/SmallMarkerIcon.svg' />
+              <Image
+                width={16}
+                height={16}
+                alt='smallMarker'
+                src='/images/about/location/svg/SmallMarkerIcon.svg'
+              />
             </S.Icon>
             <S.Icon onClick={copyLinkButtonClick}>
-              <img src='/images/about/location/svg/CopyLinkIcon.svg' />
+              <Image
+                width={16}
+                height={16}
+                alt='CopyLinkIcon'
+                src='/images/about/location/svg/CopyLinkIcon.svg'
+              />
             </S.Icon>
           </S.IconBox>
           <S.LocationBtn onClick={locationButtonClick}>길찾기</S.LocationBtn>
