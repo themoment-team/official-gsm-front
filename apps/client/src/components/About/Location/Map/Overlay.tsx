@@ -24,6 +24,8 @@ const Overlay: React.FC<OverlayProps> = ({ latitude, longitude }) => {
       <S.Default isVisible={isCustomOverlayVisible}>
         <S.MarkerIcon>
           <Image
+            width={20}
+            height={20}
             alt='markerIcon'
             src='/images/about/location/svg/MarkerIcon.svg'
           />
@@ -31,6 +33,8 @@ const Overlay: React.FC<OverlayProps> = ({ latitude, longitude }) => {
         <S.Title>광주소프트웨어 마이스터고등학교</S.Title>
         <S.Chevron>
           <Image
+            width={20}
+            height={20}
             alt='chevronIcon'
             src='/images/about/location/svg/ChevronIcon.svg'
           />
