@@ -20,10 +20,7 @@ function SchoolMap({ latitude, longitude }: MapProps) {
   const markerCoords = { lat: latitude, lng: longitude };
   return (
     <>
-      <Map
-        center={{ lat: latitude, lng: longitude }}
-        style={{ width: '100%', height: '100%' }}
-      >
+      <Map center={markerCoords} style={{ width: '100%', height: '100%' }}>
         <MapMarker
           position={markerCoords}
           image={{
