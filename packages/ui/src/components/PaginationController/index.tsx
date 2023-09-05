@@ -6,13 +6,13 @@ import { PaginationIcon } from 'ui/assets';
 
 import * as S from './style';
 
-interface PageNationControllerProps {
+interface PagiNationControllerProps {
   /** 1 ~ totalPages */
   pageNumber: number;
   totalPages: number;
 }
 
-const PaginationController: React.FC<PageNationControllerProps> = ({
+const PaginationController: React.FC<PagiNationControllerProps> = ({
   pageNumber,
   totalPages,
 }) => {
