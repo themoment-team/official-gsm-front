@@ -140,6 +140,9 @@ importers:
       eslint-config-custom:
         specifier: workspace:^
         version: link:../../packages/eslint-config-custom
+      kakao.maps.d.ts:
+        specifier: ^0.1.38
+        version: 0.1.38
       tsconfig:
         specifier: workspace:^
         version: link:../../packages/tsconfig
@@ -8368,7 +8371,6 @@ packages:
 
   /kakao.maps.d.ts@0.1.38:
     resolution: {integrity: sha512-ub3ITsp/XfM7OikRvnsQiK6oZgyqVKVvGm9bmChudfDRjFa6xrS2O/bLNs0EyFCQZufVBXLLJK9+T06LOYxNiw==}
-    dev: false
 
   /kind-of@6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}

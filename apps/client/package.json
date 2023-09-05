@@ -24,6 +24,7 @@
   "devDependencies": {
     "@storybook/react": "^7.0.6",
     "eslint-config-custom": "workspace:^",
+    "kakao.maps.d.ts": "^0.1.38",
     "tsconfig": "workspace:^"
   }
 }
