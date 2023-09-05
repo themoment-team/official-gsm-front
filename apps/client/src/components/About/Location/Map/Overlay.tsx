@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import Image from 'next/image';
+
 import InfoWindow from './InfoWindow';
 import * as S from './style';
 
@@ -21,11 +23,17 @@ const Overlay: React.FC<OverlayProps> = ({ latitude, longitude }) => {
     <S.CustomOverlay onClick={onCustomOverlayClick}>
       <S.Default isVisible={isCustomOverlayVisible}>
         <S.MarkerIcon>
-          <img src='/images/about/location/svg/MarkerIcon.svg' />
+          <Image
+            alt='markerIcon'
+            src='/images/about/location/svg/MarkerIcon.svg'
+          />
         </S.MarkerIcon>
         <S.Title>광주소프트웨어 마이스터고등학교</S.Title>
         <S.Chevron>
-          <img src='/images/about/location/svg/ChevronIcon.svg' />
+          <Image
+            alt='chevronIcon'
+            src='/images/about/location/svg/ChevronIcon.svg'
+          />
         </S.Chevron>
       </S.Default>
       <S.Triangle />

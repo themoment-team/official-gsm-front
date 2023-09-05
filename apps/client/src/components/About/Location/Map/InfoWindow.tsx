@@ -27,7 +27,12 @@ const InfoWindow: React.FC<InfoWindowProps> = ({
     <S.Next>
       <S.Box>
         <S.Close onClick={CloseButtonClick}>
-          <img src='/images/about/location/svg/CloseIcon.svg' />
+          <Image
+            alt='closeIcon'
+            width={20}
+            height={20}
+            src='/images/about/location/svg/CloseIcon.svg'
+          />
         </S.Close>
         <S.ContentBox>
           <S.Title>광주소프트웨어마이스터고등학교</S.Title>

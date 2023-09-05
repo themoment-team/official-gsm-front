@@ -17,7 +17,7 @@ declare global {
 
 function SchoolMap({ latitude, longitude }: MapProps) {
   const imageSrc = '/images/about/Location/Marker.png';
-
+  const markerCoords = { lat: latitude, lng: longitude };
   return (
     <>
       <Map
@@ -25,13 +25,13 @@ function SchoolMap({ latitude, longitude }: MapProps) {
         style={{ width: '100%', height: '100%' }}
       >
         <MapMarker
-          position={{ lat: latitude, lng: longitude }}
+          position={markerCoords}
           image={{
             src: imageSrc,
             size: { width: 60, height: 60 },
           }}
         />
-        <CustomOverlayMap position={{ lat: latitude, lng: longitude }}>
+        <CustomOverlayMap position={markerCoords}>
           <Overlay latitude={latitude} longitude={longitude} />
         </CustomOverlayMap>
       </Map>
