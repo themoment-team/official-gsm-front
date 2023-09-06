@@ -121,6 +121,9 @@ importers:
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
+      react-kakao-maps-sdk:
+        specifier: ^1.1.12
+        version: 1.1.12(react-dom@18.2.0)(react@18.2.0)
       types:
         specifier: workspace:^
         version: link:../../packages/types
@@ -137,6 +140,9 @@ importers:
       eslint-config-custom:
         specifier: workspace:^
         version: link:../../packages/eslint-config-custom
+      kakao.maps.d.ts:
+        specifier: ^0.1.38
+        version: 0.1.38
       tsconfig:
         specifier: workspace:^
         version: link:../../packages/tsconfig
@@ -8363,6 +8369,9 @@ packages:
       object.values: 1.1.6
     dev: false
 
+  /kakao.maps.d.ts@0.1.38:
+    resolution: {integrity: sha512-ub3ITsp/XfM7OikRvnsQiK6oZgyqVKVvGm9bmChudfDRjFa6xrS2O/bLNs0EyFCQZufVBXLLJK9+T06LOYxNiw==}
+
   /kind-of@6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
@@ -9705,6 +9714,17 @@ packages:
   /react-is@18.1.0:
     resolution: {integrity: sha512-Fl7FuabXsJnV5Q1qIOQwx/sagGF18kogb4gpfcG4gjLBWO0WDiiz1ko/ExayuxE7InyQkBLkxRFG5oxY6Uu3Kg==}
     dev: true
+
+  /react-kakao-maps-sdk@1.1.12(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-kMwU08i5akZ76aN0kd/3iFbkTDRhJOhHMh1Uv2U2vwDGcOnAHQAQO/zHk+MBocgLva9J4oOm0ZBvBI61yMwGCA==}
+    peerDependencies:
+      react: '>=16.9.0'
+      react-dom: '>=16.9.0'
+    dependencies:
+      kakao.maps.d.ts: 0.1.38
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
 
   /react-refresh@0.11.0:
     resolution: {integrity: sha512-F27qZr8uUqwhWZboondsPx8tnC3Ct3SxZA3V5WyEvujRyyNv0VYPhoBg1gZ8/MV5tubQp76Trw8lTv9hzRBa+A==}
