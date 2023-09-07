@@ -1,10 +1,10 @@
 import { CategoryQueryStringType, CategoryType } from 'types';
 
-type PostListQueryStringType = {
+type CategoryQueryString = {
   [key in CategoryType]: CategoryQueryStringType;
 };
 
-export const categoryQueryString: PostListQueryStringType = {
+export const categoryQueryString: CategoryQueryString = {
   notice: 'NOTICE',
   newsletter: 'FAMILY_NEWSLETTER',
   gallery: 'EVENT_GALLERY',

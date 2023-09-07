@@ -1,8 +1,8 @@
-import { useRef } from 'react';
+'use client';
 
-import Script from 'next/script';
+import { CustomOverlayMap, Map, MapMarker } from 'react-kakao-maps-sdk';
 
-import styled from '@emotion/styled';
+import Overlay from './Overlay';
 
 interface MapProps {
   latitude: number;
@@ -15,57 +15,25 @@ declare global {
   }
 }
 
-function Map({ latitude, longitude }: MapProps) {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  const onLoadKakaoMap = () => {
-    window.kakao.maps.load(() => {
-      const options = {
-        center: new window.kakao.maps.LatLng(latitude, longitude),
-      };
-
-      const map = new window.kakao.maps.Map(containerRef.current, options);
-
-      const markerPosition = new window.kakao.maps.LatLng(latitude, longitude);
-
-      const marker = new window.kakao.maps.Marker({
-        position: markerPosition,
-      });
-
-      const infoWindow = new window.kakao.maps.InfoWindow({
-        content:
-          '<div style="width: 250px; padding: 10px;">광주소프트웨어마이스터고등학교</div>',
-        removable: true,
-      });
-
-      window.kakao.maps.event.addListener(marker, 'click', function () {
-        infoWindow.open(map, marker);
-      });
-
-      marker.setMap(map);
-    });
-  };
-
+function SchoolMap({ latitude, longitude }: MapProps) {
+  const imageSrc = '/images/about/Location/Marker.png';
+  const markerCoords = { lat: latitude, lng: longitude };
   return (
     <>
-      <Script
-        src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAOMAP_APPKEY}&autoload=false`}
-        onLoad={onLoadKakaoMap}
-      />
-      <MapContainer id='map' ref={containerRef} />
+      <Map center={markerCoords} style={{ width: '100%', height: '100%' }}>
+        <MapMarker
+          position={markerCoords}
+          image={{
+            src: imageSrc,
+            size: { width: 60, height: 60 },
+          }}
+        />
+        <CustomOverlayMap position={markerCoords}>
+          <Overlay latitude={latitude} longitude={longitude} />
+        </CustomOverlayMap>
+      </Map>
     </>
   );
 }
 
-const MapContainer = styled.div`
-  width: 77.5rem;
-  height: 25rem;
-  @media ${({ theme }) => theme.breakPoint['1440']} {
-    width: calc(100vw - 12.5rem);
-  }
-  @media ${({ theme }) => theme.breakPoint['1024']} {
-    width: calc(100vw - 7.5rem);
-  }
-`;
-
-export default Map;
+export default SchoolMap;

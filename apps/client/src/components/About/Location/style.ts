@@ -44,7 +44,7 @@ export const Line = styled.div`
 
 export const Map = styled.div`
   width: 77.5rem;
-  height: 25rem;
+  height: 37.5rem;
 
   @media ${({ theme }) => theme.breakPoint['1440']} {
     width: calc(100vw - 12.5rem);

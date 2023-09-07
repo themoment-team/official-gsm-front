@@ -6,7 +6,7 @@ import { ThemeProvider } from '@emotion/react';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import { theme } from 'common';
+import { minutesToMs, theme } from 'common';
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   // TODO: client api 연동 시, queryclient option 공유 가능하도록 구성 변경
@@ -16,6 +16,8 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         defaultOptions: {
           queries: {
             retry: false,
+            staleTime: minutesToMs(5),
+            cacheTime: minutesToMs(5),
           },
         },
       })
