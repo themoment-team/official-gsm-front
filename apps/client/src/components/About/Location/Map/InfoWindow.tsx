@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import * as I from 'client/assets';
 
 import * as S from './style';
 interface InfoWindowProps {
@@ -26,14 +26,8 @@ const InfoWindow: React.FC<InfoWindowProps> = ({
   return (
     <S.Next>
       <S.Box>
-        <S.Close>
-          <Image
-            alt='closeIcon'
-            width={20}
-            height={20}
-            src='/images/about/location/svg/CloseIcon.svg'
-            onClick={CloseButtonClick}
-          />
+        <S.Close onClick={CloseButtonClick}>
+          <I.MapCloseIcon />
         </S.Close>
         <S.ContentBox>
           <S.Title>광주소프트웨어마이스터고등학교</S.Title>
@@ -48,21 +42,11 @@ const InfoWindow: React.FC<InfoWindowProps> = ({
               target='_blank'
             >
               <S.Icon>
-                <Image
-                  width={16}
-                  height={16}
-                  alt='smallMarker'
-                  src='/images/about/location/svg/SmallMarkerIcon.svg'
-                />
+                <I.SmallMarkerIcon />
               </S.Icon>
             </a>
             <S.Icon onClick={copyLinkButtonClick}>
-              <Image
-                width={16}
-                height={16}
-                alt='CopyLinkIcon'
-                src='/images/about/location/svg/CopyLinkIcon.svg'
-              />
+              <I.CopyLinkIcon />
             </S.Icon>
           </S.IconBox>
           <a
