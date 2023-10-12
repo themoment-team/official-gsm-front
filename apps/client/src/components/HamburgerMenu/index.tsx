@@ -52,7 +52,14 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
           <Link css={selectStyle('about')} href='/about'>
             학교소개
           </Link>
-          <a href='https://hellogsm.kr'>입학</a>
+          <a href='https://hellogsm.kr'>입학 접수</a>
+          <a
+            href='http://gsm.gen.hs.kr/sub/page.php?page_code=entrance_01'
+            target='_blank'
+            rel='noreferrer noopener'
+          >
+            입학 안내
+          </a>
         </S.HamburgerNav>
         <FooterGSMLogo isHamburger={true} />
         <BackgroundBall />
