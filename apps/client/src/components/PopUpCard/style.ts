@@ -64,9 +64,7 @@ export const IndexBox = styled.div`
   background: rgba(255, 255, 255, 0.8);
   z-index: 1;
 
-  color: ${({ theme }) => theme.color.primary.navy};
-  font-feature-settings: 'clig' off, 'liga' off;
-
   ${({ theme }) => theme.typo.body2};
+  color: ${({ theme }) => theme.color.primary.navy};
   font-weight: 400;
 `;
