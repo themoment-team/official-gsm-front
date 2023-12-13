@@ -15,15 +15,14 @@ export const Primary: Story = {
     index: 1,
     imgUrl: 'https://cdn.aitimes.kr/news/photo/202303/27617_41603_044.jpg',
     title:
-      '2023년 중학생 대상 학교 방문 체험 프로그램 2023년 중학생 학교 방문 후 체험 등',
+      '2023년 중학생 대상 학교 방문 체험 프로그램 2023년 중학생 학교 방문합니다',
   },
 };
 
 export const Secondary: Story = {
   args: {
-    index: 1,
-    imgUrl: 'https://cdn.aitimes.kr/news/photo/202303/27617_41603_044.jpg',
-    title:
-      '2023년 중학생 대상 학교 방문 체험 프로그램 2023년 중학생 학교 방문 후 체험 등',
+    index: 2,
+    imgUrl: null,
+    title: '2023년 중학생 대상 학교 방문',
   },
 };

@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 
 export const PopUpCard = styled(Link)`
   width: 269px;
-  height: 125px;
+  height: 191px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -16,18 +16,15 @@ export const PopUpCard = styled(Link)`
       filter: brightness(60%);
     }
   }
-
-  @media ${({ theme }) => theme.breakPoint['1440']} {
-    width: 100%;
-  }
 `;
 
 export const IMGWrapper = styled.div`
   width: 269px;
   height: 125px;
-  border-radius: 20px;
+  border-radius: 8px;
   overflow: hidden;
   position: relative;
+  background: ${({ theme }) => theme.color.gray['040']};
 
   img {
     object-fit: cover;
@@ -41,7 +38,7 @@ export const IMGWrapper = styled.div`
 
 export const Title = styled.p`
   ${({ theme }) => theme.typo.h5};
-  color: ${({ theme }) => theme.color.gray['090']};
+  color: ${({ theme }) => theme.color.gray['070']};
   font-weight: 600;
   -webkit-line-clamp: 2;
 
@@ -65,6 +62,7 @@ export const IndexBox = styled.div`
   align-items: center;
   border-radius: 8px 0px 4px 0px;
   background: rgba(255, 255, 255, 0.8);
+  z-index: 1;
 
   color: ${({ theme }) => theme.color.primary.navy};
   font-feature-settings: 'clig' off, 'liga' off;
