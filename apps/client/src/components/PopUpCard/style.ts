@@ -3,11 +3,11 @@ import Link from 'next/link';
 import styled from '@emotion/styled';
 
 export const PopUpCard = styled(Link)`
-  width: 269px;
-  height: 191px;
+  width: 16.8125rem;
+  height: 11.9375rem;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 0.75rem;
   cursor: pointer;
   position: relative;
 
@@ -19,9 +19,9 @@ export const PopUpCard = styled(Link)`
 `;
 
 export const IMGWrapper = styled.div`
-  width: 269px;
-  height: 125px;
-  border-radius: 8px;
+  width: 16.8125rem;
+  height: 7.8125rem;
+  border-radius: 0.5rem;
   overflow: hidden;
   position: relative;
   background: ${({ theme }) => theme.color.gray['040']};
@@ -56,11 +56,11 @@ export const Title = styled.p`
 export const IndexBox = styled.div`
   position: absolute;
   display: flex;
-  width: 28px;
-  height: 28px;
+  width: 1.75rem;
+  height: 1.75rem;
   justify-content: center;
   align-items: center;
-  border-radius: 8px 0px 4px 0px;
+  border-radius: 0.5rem 0rem 0.25rem 0rem;
   background: rgba(255, 255, 255, 0.8);
   z-index: 1;
 
