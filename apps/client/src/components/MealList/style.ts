@@ -1,8 +1,6 @@
 import styled from '@emotion/styled';
 
 export const MealContainer = styled.div `
-    display: flex;
-    align-items: flex-start;
     padding: 1.5rem;
     gap: 0.5rem;
     border-radius: 1.25rem;
@@ -18,6 +16,7 @@ export const MealInfo = styled.div`
 `
 
 export const MealBox = styled.div`
+    display: flex;
     width: 17rem;
     padding: 2.0625rem 4.125rem;
     justify-content: center;
