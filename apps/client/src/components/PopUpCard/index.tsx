@@ -16,7 +16,7 @@ const PopUpCard: React.FC<PopUpCardProps> = ({ index, imgUrl, title }) => (
       <S.IndexBox>{index}</S.IndexBox>
       {imgUrl && <Image src={imgUrl} alt='content image' fill sizes='269px' />}
     </S.IMGWrapper>
-    <S.Title className='text'>{title}</S.Title>
+    <S.Title>{title}</S.Title>
   </S.PopUpCard>
 );
 
