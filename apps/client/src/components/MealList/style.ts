@@ -18,7 +18,7 @@ export const MealInfo = styled.div`
 export const MealBox = styled.div`
     display: flex;
     width: 17rem;
-    padding: 2.0625rem 4.125rem;
+    padding: 2.0625rem 0;
     justify-content: center;
     align-items: center;
     background: ${({ theme }) => theme.color.gray['030']};
