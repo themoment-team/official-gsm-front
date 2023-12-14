@@ -7,7 +7,7 @@ export const MealContainer = styled.div `
     gap: 0.5rem;
     border-radius: 1.25rem;
     background: #fff;
-    box-shadow: 0px 4px 40px 0px rgba(175, 198, 209, 0.20);
+    box-shadow: 0rem 0.25rem 2.5rem 0px rgba(175, 198, 209, 0.20);
     width: fit-content;
 `
 
@@ -22,7 +22,7 @@ export const MealBox = styled.div`
     padding: 2.0625rem 4.125rem;
     justify-content: center;
     align-items: center;
-    background: var(--gray030, #F5F5F5);
+    background: ${({ theme }) => theme.color.gray['030']};
 `
 
 export const MealContent = styled.div `
@@ -34,18 +34,16 @@ export const MealContent = styled.div `
 `
 
 export const MealText = styled.h4 `
-    color: var(--gray090, #212121);
+    ${({ theme }) => theme.typo.h4};
+    color: ${({ theme }) => theme.color.gray['090']};
     text-align: center;
-    font-size: 1.25rem;
     font-weight: 400;
-    line-height: 1.8125rem;
 `
 
 export const DateContent = styled.h4`
-    color: var(--gray070, #616161);
-    font-size: 1.25rem;
+    ${({ theme }) => theme.typo.h4};
+    color: ${({ theme }) => theme.color.gray['070']};
     font-weight: 400;
-    line-height: 1.8125rem;
 `
 
 export const DateBox = styled.div`
