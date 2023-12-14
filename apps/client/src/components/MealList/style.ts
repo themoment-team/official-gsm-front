@@ -47,7 +47,6 @@ export const DateContent = styled.h4`
 
 export const DateBox = styled.div`
     display: flex;
-    flex-direction: row;
     gap: 0.3rem;
     align-items: center;
 `
