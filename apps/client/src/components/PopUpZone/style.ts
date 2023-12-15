@@ -4,15 +4,22 @@ export const PopUpZoneWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 20px;
+  gap: 1.25rem;
 `;
 
 export const PopUpList = styled.div`
   display: grid;
-  width: 887px;
-  height: 458px;
-  padding: 24px 24px 36px 24px;
-  gap: 16px;
+  width: 55.4375rem;
+  height: 28.625rem;
+  padding: 1.5rem 1.5rem 2.25rem 1.5rem;
+  gap: 1rem;
 
   grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+
+  border-radius: 1.25rem;
+  background: #fff;
+
+  /* elevation_blue */
+  box-shadow: 0rem 0.25rem 2.5rem 0rem rgba(175, 198, 209, 0.2);
 `;
