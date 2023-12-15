@@ -19,7 +19,6 @@ export const PopUpCard = styled(Link)`
 `;
 
 export const IMGWrapper = styled.div`
-  width: 16.8125rem;
   height: 7.8125rem;
   border-radius: 0.5rem;
   overflow: hidden;
