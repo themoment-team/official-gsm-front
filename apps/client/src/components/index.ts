@@ -26,6 +26,7 @@ export { default as NewsTitle } from './Title/News';
 export { default as NewsletterCard } from './NewsletterCard';
 export { default as NotFoundContent } from './NotFoundContent';
 export { default as NoticeBanner } from './NoticeBanner';
+export { default as PopUpCard } from './PopUpCard';
 export { default as PostContent } from './PostPage/PostContent';
 export { default as PostDetailHead } from './PostPage/PostDetailHead';
 export { default as PrivacyPolicy } from './Policy/PrivacyPolicy';
