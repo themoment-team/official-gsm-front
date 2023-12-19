@@ -1,7 +1,5 @@
 'use client';
 
-import React from 'react';
-
 import { CalendarIcon } from 'client/assets';
 
 import * as S from './style';

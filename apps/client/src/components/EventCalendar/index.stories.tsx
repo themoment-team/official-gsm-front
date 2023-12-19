@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 export default {
   title: 'client/EventCalendar',
   component: EventCalendar,
-  parameters: {},
 } as Meta<typeof EventCalendar>;
 
 type Story = StoryObj<typeof EventCalendar>;

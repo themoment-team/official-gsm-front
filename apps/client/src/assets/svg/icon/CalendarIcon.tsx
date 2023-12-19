@@ -1,8 +1,8 @@
 const CalendarIcon = () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
-    width='20'
-    height='20'
+    width='1.25rem'
+    height='1.25rem'
     viewBox='0 0 20 20'
     fill='none'
   >
