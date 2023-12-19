@@ -1,6 +1,6 @@
 'use client';
 
-import { CalendarIcon } from 'client/assets';
+import { ScheduleIcon } from 'client/assets';
 
 import * as S from './style';
 
@@ -12,7 +12,7 @@ const EventCalendar: React.FC<EventCalendarProps> = ({ event }) => (
   <S.EventCalendar>
     <S.Title>
       이벤트
-      <CalendarIcon />
+      <ScheduleIcon />
     </S.Title>
     {event.map((subtitle, index) => (
       <S.Subtitle key={index}>
