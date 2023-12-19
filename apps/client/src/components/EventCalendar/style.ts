@@ -45,5 +45,6 @@ export const Subtitle = styled.div`
   p {
     position: relative;
     top: -0.0625rem;
+    width: 9.5625rem;
   }
 `;
