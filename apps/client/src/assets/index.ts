@@ -1,5 +1,5 @@
 export { default as ArrowIcon } from './svg/icon/ArrowIcon';
-export { default as CalendarIcon } from './svg/icon/CalenderIcon';
+export { default as CalendarIcon } from './svg/icon/CalendarIcon';
 export { default as ChevronIcon } from './svg/icon/ChevronIcon';
 export { default as CloseIcon } from './svg/icon/CloseIcon';
 export { default as ContactIcon } from './svg/icon/ContactIcon';
