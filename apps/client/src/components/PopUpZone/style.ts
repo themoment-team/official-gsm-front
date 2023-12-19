@@ -18,7 +18,7 @@ export const PopUpList = styled.div`
   grid-template-rows: repeat(2, 1fr);
 
   border-radius: 1.25rem;
-  background: #fff;
+  background : ${({ theme }) => theme.color.white};
 
   /* elevation_blue */
   box-shadow: 0rem 0.25rem 2.5rem 0rem ${({ theme }) => theme.elevation.blue};
