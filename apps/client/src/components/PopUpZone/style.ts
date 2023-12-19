@@ -21,5 +21,5 @@ export const PopUpList = styled.div`
   background: #fff;
 
   /* elevation_blue */
-  box-shadow: 0rem 0.25rem 2.5rem 0rem rgba(175, 198, 209, 0.2);
+  box-shadow: 0rem 0.25rem 2.5rem 0rem ${({ theme }) => theme.elevation.blue};
 `;
