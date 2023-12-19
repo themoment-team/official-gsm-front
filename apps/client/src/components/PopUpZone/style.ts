@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 export const PopUpZoneWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 1.25rem;
 `;
 
@@ -18,8 +17,7 @@ export const PopUpList = styled.div`
   grid-template-rows: repeat(2, 1fr);
 
   border-radius: 1.25rem;
-  background : ${({ theme }) => theme.color.white};
+  background: ${({ theme }) => theme.color.white};
 
-  /* elevation_blue */
   box-shadow: 0rem 0.25rem 2.5rem 0rem ${({ theme }) => theme.elevation.blue};
 `;
