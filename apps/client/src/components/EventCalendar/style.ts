@@ -34,7 +34,7 @@ export const Point = styled.div`
   border-radius: 100%;
 `;
 
-export const Subtitle = styled.div`
+export const SubtitleBox = styled.div`
   ${({ theme }) => theme.typo.h5};
   color: ${({ theme }) => theme.color.gray['070']};
   font-weight: 300;
@@ -42,9 +42,10 @@ export const Subtitle = styled.div`
   gap: 0.5rem;
   align-items: center;
   padding-bottom: 0.5rem;
-  p {
-    position: relative;
-    top: -0.0625rem;
-    width: 9.5625rem;
-  }
+`;
+
+export const Subtitle = styled.p`
+  position: relative;
+  top: -0.0625rem;
+  width: 9.5625rem;
 `;

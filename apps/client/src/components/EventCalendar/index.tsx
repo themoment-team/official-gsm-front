@@ -15,10 +15,10 @@ const EventCalendar: React.FC<EventCalendarProps> = ({ event }) => (
       <ScheduleIcon />
     </S.Title>
     {event.map((subtitle, index) => (
-      <S.Subtitle key={index}>
+      <S.SubtitleBox key={index}>
         <S.Point />
-        <p>{subtitle}</p>
-      </S.Subtitle>
+        <S.Subtitle>{subtitle}</S.Subtitle>
+      </S.SubtitleBox>
     ))}
   </S.EventCalendar>
 );
