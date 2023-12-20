@@ -4,8 +4,8 @@ export const MealContainer = styled.div`
   padding: 1.5rem;
   gap: 0.5rem;
   border-radius: 1.25rem;
-  background: #fff;
-  box-shadow: 0rem 0.25rem 2.5rem 0px rgba(175, 198, 209, 0.2);
+  background: ${({ theme }) => theme.color.white};
+  box-shadow: 0rem 0.25rem 2.5rem 0rem ${({ theme }) => theme.elevation.blue};
   width: fit-content;
 `;
 
