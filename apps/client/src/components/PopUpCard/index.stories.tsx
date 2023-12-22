@@ -5,7 +5,6 @@ import type { Meta, StoryObj } from '@storybook/react';
 export default {
   title: 'client/PopUpCard',
   component: PopUpCard,
-  parameters: {},
 } as Meta<typeof PopUpCard>;
 
 type Story = StoryObj<typeof PopUpCard>;
