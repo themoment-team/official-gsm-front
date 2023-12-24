@@ -1,5 +1,5 @@
 export { default as ArrowIcon } from './svg/icon/ArrowIcon';
-export { default as CalenderIcon} from './svg/icon/CalenderIcon';
+export { default as CalendarIcon } from './svg/icon/CalendarIcon';
 export { default as ChevronIcon } from './svg/icon/ChevronIcon';
 export { default as CloseIcon } from './svg/icon/CloseIcon';
 export { default as ContactIcon } from './svg/icon/ContactIcon';
@@ -22,6 +22,7 @@ export { default as MouseIcon } from './about/section1/MouseIcon';
 export { default as NotFoundTitle } from './svg/NotFoundTitle';
 export { default as ReturnChevronIcon } from './svg/icon/ReturnChevronIcon';
 export { default as RightArrowIcon } from './about/section7/RightArrowIcon';
+export { default as ScheduleIcon } from './svg/icon/ScheduleIcon';
 export { default as SmallMarkerIcon } from './svg/icon/SmallMarkerIcon';
 export { default as SubwayIcon } from './svg/icon/SubwayIcon';
 export { default as UnderscoreIcon } from './svg/icon/UnderscoreIcon';
