@@ -10,6 +10,10 @@ export const authQueryKeys = {
   deleteLogout: () => ['auth', 'logout'],
 } as const;
 
+export const popupQueryKeys = {
+  postPopup: () => ['popup', 'create'],
+};
+
 export const postQueryKeys = {
   postWritePost: () => ['post', 'write'],
   patchWritePost: () => ['post', 'patch'],

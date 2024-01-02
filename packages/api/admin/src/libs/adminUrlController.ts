@@ -10,6 +10,10 @@ export const authUrl = {
   logout: () => '/auth/logout',
 } as const;
 
+export const popupUrl = {
+  popup: () => `/popup`,
+};
+
 export const postUrl = {
   writePost: () => `/post`,
   patchPost: (postSeq: number) => `/post/${postSeq}`,
