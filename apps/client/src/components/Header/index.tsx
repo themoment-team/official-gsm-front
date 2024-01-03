@@ -15,7 +15,7 @@ import { useGetWindowWidth } from 'client/hooks';
 
 import * as S from './style';
 
-type SegmentType = '' | 'about' | 'list';
+type SegmentType = '' | 'about' | 'list' | 'calendar';
 
 interface HeaderProps {
   segment: SegmentType;
