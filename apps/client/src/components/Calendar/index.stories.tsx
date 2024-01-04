@@ -1,4 +1,4 @@
-import Calendar from '.';
+import { Calendar } from '.';
 
 import type { Meta, StoryObj } from '@storybook/react';
 

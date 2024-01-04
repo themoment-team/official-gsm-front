@@ -23,6 +23,9 @@ importers:
       '@types/react':
         specifier: ^18.2.0
         version: 18.2.0
+      date-fns:
+        specifier: ^3.0.6
+        version: 3.0.6
       next:
         specifier: 13.4.2
         version: 13.4.2(@babel/core@7.22.9)(react-dom@18.2.0)(react@18.2.0)
@@ -5672,6 +5675,10 @@ packages:
 
   /damerau-levenshtein@1.0.8:
     resolution: {integrity: sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==}
+    dev: false
+
+  /date-fns@3.0.6:
+    resolution: {integrity: sha512-W+G99rycpKMMF2/YD064b2lE7jJGUe+EjOES7Q8BIGY8sbNdbgcs9XFTZwvzc9Jx1f3k7LB7gZaZa7f8Agzljg==}
     dev: false
 
   /debug@2.6.9:
