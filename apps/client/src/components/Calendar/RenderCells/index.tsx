@@ -46,6 +46,7 @@ export const RenderCells: React.FC<RenderCellsProps> = ({
         <div
           key={formattedDate}
           onClick={() => onDateClick(parse(formattedDate, 'd', new Date()))}
+          className='hi'
         >
           <S.Day
             remainDays={
@@ -59,9 +60,13 @@ export const RenderCells: React.FC<RenderCellsProps> = ({
       );
       day = addDays(day, 1);
     }
-    rows.push(<S.RowDay key={day.toISOString()}>{days}</S.RowDay>);
+    rows.push(<S.GridDay key={day.toISOString()}>{days}</S.GridDay>);
     days = [];
   }
 
-  return <S.DayBox className='body'>{rows}</S.DayBox>;
+  return (
+    <S.Container>
+      <S.RowBox>{rows}</S.RowBox>
+    </S.Container>
+  );
 };

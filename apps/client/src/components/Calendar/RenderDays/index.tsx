@@ -14,11 +14,9 @@ export const RenderDays: React.FC = () => {
   ];
 
   return (
-    <S.WeekBox className='days row'>
+    <S.WeekBox>
       {days.map((day, index) => (
-        <S.Week className='col' key={index}>
-          {day}
-        </S.Week>
+        <S.Week key={index}>{day}</S.Week>
       ))}
     </S.WeekBox>
   );
