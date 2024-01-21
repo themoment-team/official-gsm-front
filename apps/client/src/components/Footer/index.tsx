@@ -10,6 +10,8 @@ import * as S from './style';
 const Footer = () => {
   const width = useGetWindowWidth();
 
+  const year = new Date().getFullYear();
+
   return (
     <S.Footer>
       <S.FooterContent>
@@ -17,7 +19,7 @@ const Footer = () => {
         <S.FooterTextWrapper>
           <S.SiteInfo>
             <S.Copyright>
-              ©2023 Copyright 광주소프트웨어마이스터고등학교
+              ©{year} Copyright 광주소프트웨어마이스터고등학교
               {width < 700 ? <br /> : ' '}
               ALL RIGHTS RESERVED.
             </S.Copyright>
