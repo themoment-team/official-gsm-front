@@ -6,9 +6,6 @@ export const GridDay = styled.div`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   .hi {
-  }
-
-  > div {
     width: 8.25rem;
     height: 8.75rem;
     box-sizing: border-box;
@@ -41,10 +38,8 @@ export const Container = styled.div`
   justify-content: center;
   border-radius: 18px;
   border: 1px solid ${({ theme }) => theme.color.gray['050']};
-  /*border-bottom: 1px solid ${({ theme }) => theme.color.gray['050']}; */
 `;
 
 export const RowBox = styled.div`
-  background-color: pink;
   border-bottom: none;
 `;
