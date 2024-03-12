@@ -11,7 +11,7 @@ import { CloseIcon, FooterGSMLogo } from 'client/assets';
 import BackgroundBall from './BackgroundBalls';
 import * as S from './style';
 
-type SegmentType = '' | 'about' | 'list';
+type SegmentType = '' | 'about' | 'list' | 'calendar';
 
 interface HamburgerMenuProps {
   segment: SegmentType;
