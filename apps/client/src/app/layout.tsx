@@ -64,6 +64,7 @@ export default function RootLayout({
     <html lang='ko'>
       <head>
         <meta name='robots' content='noindex' />
+        <meta name='msvalidate.01' content='14471419A8701E4145F89E3ADCCFB1D6' />
         <link
           rel='stylesheet'
           as='style'
