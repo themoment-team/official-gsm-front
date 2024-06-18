@@ -63,6 +63,7 @@ export default function RootLayout({
   return (
     <html lang='ko'>
       <head>
+        <meta name='robots' content='noindex' />
         <link
           rel='stylesheet'
           as='style'
